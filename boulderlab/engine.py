@@ -97,7 +97,7 @@ def canonical_hash(value):
 def code_hash():
     paths = [Path(__file__), Path(__file__).with_name("kinematics.py"),
              Path(__file__).with_name("geometry.py"), Path(__file__).with_name("catalog.py"), Path(__file__).with_name("route_design.py"), Path(__file__).with_name("full_route.py"),
-             Path(__file__).with_name("statics.py"), Path(__file__).with_name("setting.py"), Path(__file__).with_name("hold_assets.py"), Path(__file__).with_name("wall_profiles.py"), Path(__file__).with_name("beta_audit.py"), ROOT / "schemas/request.schema.json", ROOT / "schemas/candidate.schema.json"]
+             Path(__file__).with_name("statics.py"), Path(__file__).with_name("setting.py"), Path(__file__).with_name("hold_assets.py"), Path(__file__).with_name("wall_profiles.py"), Path(__file__).with_name("wall_clearance.py"), Path(__file__).with_name("beta_audit.py"), ROOT / "schemas/request.schema.json", ROOT / "schemas/candidate.schema.json"]
     return "sha256:" + hashlib.sha256(b"".join(p.read_bytes() for p in paths)).hexdigest()
 
 
@@ -483,6 +483,22 @@ def _sequence_errors(request, candidate, placements, inventory, *, sequence_poli
     return errors, hand_moves, foot_moves
 
 
+def _skeleton_wall_check(scene, pose):
+    """Independent P0 evidence, separate from IK's optimization objective."""
+    if not scene.get("wall_panels"):
+        return None
+    from .wall_clearance import wall_clearance_report
+    if pose["status"] == "pass":
+        evidence = wall_clearance_report(scene, pose["joints"])
+        status = evidence["status"]
+    else:
+        status = "unknown" if pose["status"] == "unknown" else "not_checked"
+        evidence = {"reason": "verified_skeleton_unavailable", "pose_status": pose["status"]}
+    return {"id": "skeleton_wall", "status": status, "label": "骨架与有限墙板",
+            "detail": "独立复核离散姿态的骨架中心线是否穿过墙板；不验证人体厚度、岩点碰撞或连续动作。",
+            "state_id": pose["state_id"], "scope": "P0", "evidence": evidence}
+
+
 def evaluate(request, candidate, *, sequence_policy="request", deadline=None, include_design_analysis=True):
     if sequence_policy not in ("request", "independent_beta"):
         raise ValueError("unknown sequence policy")
@@ -586,13 +602,17 @@ def evaluate(request, candidate, *, sequence_policy="request", deadline=None, in
                         pose = {"status": "unknown", "residual_m": None, "evidence": {"reason": "shared_audit_time_budget", "attempts": 0}}
                     else:
                         solver = request["solver"] if remaining is None else dict(request["solver"], timeout_seconds=min(request["solver"].get("timeout_seconds", 15), remaining))
-                        pose = solve_pose(body, targets, solver, seed=request["seed"]+index, initial=previous_q)
+                        pose = solve_pose(body, targets, solver, seed=request["seed"]+index, initial=previous_q,
+                                          scene=request["scene"])
                     pose["state_id"] = state["id"]
                     if pose["status"] == "pass":
                         previous_q = pose["q"]
                     check("ik", pose["status"], "接触姿态 IK", "同一骨架的离散接触姿态；动态转换未检查。", state_id=state["id"],
                           evidence={"residual_m": pose["residual_m"], **pose.get("evidence", {})})
                 poses.append(pose)
+                wall_check = _skeleton_wall_check(request["scene"], pose)
+                if wall_check is not None:
+                    checks.append(wall_check)
         else:
             check("ik", "not_checked", "接触姿态 IK", "被无效接触序列、库存引用或安装面约束阻断。", scope="P0")
     else:
@@ -754,7 +774,7 @@ def _validate_evaluation(request, candidate, evaluation):
     state_map = {s["id"]: s for s in candidate["states"]}
     placement_map = {p["id"]: p for p in candidate["placements"]}
     p1 = {id for id, _ in P1_CHECKS}
-    allowed = p1 | {"schema", "inventory", "request_conformance", "fixed_layout", "boundary", "hold_collision", "hand_span", "ik", "mounting"}
+    allowed = p1 | {"schema", "inventory", "request_conformance", "fixed_layout", "boundary", "hold_collision", "hand_span", "ik", "mounting", "skeleton_wall"}
     seen = set()
     for c in checks:
         if not isinstance(c, dict) or any(not isinstance(c.get(k), str) for k in ("id", "status", "label", "detail")):
@@ -799,6 +819,10 @@ def _validate_evaluation(request, candidate, evaluation):
         matching = [c for c in checks if c["id"] == "ik" and c.get("state_id") == sid]
         if len(matching) != 1 or matching[0]["status"] != pose["status"]:
             raise ValueError("pose and IK check disagree")
+        expected_wall_check = _skeleton_wall_check(request["scene"], pose)
+        wall_checks = [c for c in checks if c["id"] == "skeleton_wall" and c.get("state_id") == sid]
+        if wall_checks != ([expected_wall_check] if expected_wall_check is not None else []):
+            raise ValueError("skeleton-wall check missing or inconsistent with verified joints and finite panels")
         if pose["status"] != "pass":
             if "joints" in pose or "q" in pose:
                 raise ValueError("unverified pose cannot contain rendered skeleton")
@@ -831,6 +855,9 @@ def _validate_evaluation(request, candidate, evaluation):
     state_ik = {c["state_id"] for c in checks if c["id"] == "ik" and "state_id" in c}
     if state_ik != pose_ids:
         raise ValueError("IK checks and pose records do not correspond")
+    wall_state_ids = {c.get("state_id") for c in checks if c["id"] == "skeleton_wall"}
+    if wall_state_ids != (pose_ids if request["scene"].get("wall_panels") else set()):
+        raise ValueError("skeleton-wall checks and pose records do not correspond")
     if status == "pass" and pose_ids != set(state_map):
         raise ValueError("all-pass evaluation must cover every state")
 

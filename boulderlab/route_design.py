@@ -15,7 +15,7 @@ import numpy as np
 
 from .geometry import contact_world, grip_surfaces, placement_frames, selected_contact, wall_basis
 
-MODEL_VERSION = "style-proxy-1"
+MODEL_VERSION = "style-proxy-2"
 STYLE_GOALS = [
     {"id": "power", "label": "力量与爆发倾向", "description": "偏向较长移手和较高握持要求，安排局部难点。"},
     {"id": "sustained", "label": "持续输出", "description": "偏向连续、相近的动作负荷，减少明显缓和段。"},
@@ -123,6 +123,7 @@ def _context(request, placements):
         _, rot = frames[p["id"]]
         out[p["id"]] = {"position": contact_world(request, p, item, placements, frames), "uv": np.array([p["u"], p["v"]]),
                          "attrs": attrs, "limbs": contact["limbs"], "pull": rot @ pull,
+                         "normal": rot @ np.asarray(contact.get("normal", [0., 0., 1.]), float),
                          "key": (p["v"], p["u"], p["rotation_deg"], item["type"], item["width"], item["height"], item["depth"])}
         if request["scene"].get("wall_panels"):
             out[p["id"]]["uv"] = (wall_basis(request["scene"]["angle_deg"]).T @ out[p["id"]]["position"])[:2]
@@ -143,7 +144,12 @@ def _metrics(request, context, before, limb, target):
         inclination = sum(context[pid]["inclination"] for pid in contact_ids)/max(1, len(contact_ids))
     others = {l: context[r["placement_id"]] for l, r in before.items() if r and l != limb}
     feet = [p for l, p in others.items() if l.endswith("F")]
-    foot_support = sum(p["attrs"]["grip_accessibility"] for p in feet)/2
+    # A down-facing roof tread is not the same standing/recovery opportunity
+    # as the same foothold facing upward. This is a gravity-aware proxy only;
+    # the separate contact-cone solver still decides actual equilibrium.
+    # Hand/foot hooks and active tension are outside this contact grammar.
+    standing = [max(0., min(1., float(p["normal"][1]))) if "normal" in p else 1. for p in feet]
+    foot_support = sum(p["attrs"]["grip_accessibility"]*factor for p, factor in zip(feet, standing))/2
     attrs = dest["attrs"]
     supporting_hands = [p for l, p in others.items() if l.endswith("H")]
     supporting_hand_demand = sum(p["attrs"]["force_demand"] for p in supporting_hands)/max(1, len(supporting_hands))
@@ -167,6 +173,7 @@ def _metrics(request, context, before, limb, target):
     return {"strength": strength*100, "power": power*100, "technical": technical*100, "load": load*100,
             "attributes": {"span_ratio": span, "grip_accessibility": attrs["grip_accessibility"], "precision": attrs["precision"],
                            "foot_support": support, "inclination": inclination, "directional_demand": direction,
+                           "standing_foot_support": sum(standing)/2,
                            "friction_dependence": attrs["friction_dependence"], "supporting_hand_demand": supporting_hand_demand,
                            "support_precision": support_precision}}
 

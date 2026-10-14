@@ -21,7 +21,7 @@ LIMITATIONS = [
     "这是同一空间种子在声明墙形上的适配实验，尚未经定线员现场试攀。墙板位置、安装点和法向参与实际计算。",
     "墙形角度是相对基础墙坐标的角度；scene.angle_deg 会整体旋转所有墙板。整体倾角为0°时屋檐段水平。",
     "墙板为无厚度结构面；未验证墙体强度、完整人体与墙面碰撞、屋檐跨角连续运动。",
-    "当前走法搜索采用投影高度与窄接触走廊剪枝，屋檐、转角上的合理解可能被排除；无完整序列不等于线路不可攀。",
+    "屋檐走法用实际三维手脚中心轴筛选接触，其余结构保留投影走廊；有限束搜索仍可能漏解，无完整序列不等于线路不可攀。",
 ]
 
 
@@ -110,7 +110,7 @@ def apply_profile(request, profile):
     return request
 
 
-def repair_panel_spacing(request):
+def repair_panel_spacing(request, protected_ids=()):
     """Resolve fold-induced OBB overlaps without moving the four start anchors.
 
     Panel folding is an explicit layout adaptation, so its 25-cm bound is
@@ -119,7 +119,7 @@ def repair_panel_spacing(request):
     """
     scene = request["scene"]; points = request["reference_layout"]
     inventory = {h["id"]: h for h in scene["inventory"]}
-    start = {ref["placement_id"] for ref in request["start_contacts"].values() if ref}
+    start = {ref["placement_id"] for ref in request["start_contacts"].values() if ref} | set(protected_ids)
     eligible = [p for p in points if p["id"] not in start and "mount" not in p]
     feet = [p for p in eligible if set(selected_contact(p, inventory[p["inventory_id"]])["limbs"]) <= {"LF", "RF"}]
     hands = [p for p in reversed(eligible) if p not in feet]

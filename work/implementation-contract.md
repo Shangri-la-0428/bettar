@@ -111,12 +111,12 @@ The bounded search chooses targets from the possible installation pool and allow
 ```text
 rest_opportunity = max(0, (a − 0.65) / 0.35) × f × (1 − i) × max(0, 1 − g)
 recovery_proxy   = L × 0.24 × rest_opportunity
-next_load        = max(0, 0.91 × L + 0.70 × d − recovery_proxy)
+next_load        = max(0, L + 0.70 × d − recovery_proxy)
 effective_burden = d + 0.17 × L
 fresh_burden     = d
 ```
 
-Phase labels and targets do not enter the rest calculation. A relief target may still accumulate load when incoming effort and the selected contacts provide insufficient relief. These quantities have no physiological units, may exceed 100 and do not measure remaining energy, muscle fatigue, recovery time or injury risk. The four per-action demand indices still describe synthetic strength, explosive tendency, technique and raw load; they are not components of a calibrated V-grade predictor.
+The roof revision removes the old unconditional 0.91 retention: prior load no longer disappears when contacts offer no recovery. Foot support now includes the selected contact surface’s upward world-normal component as an uncalibrated standing-support proxy; a down-facing roof tread cannot earn standing recovery from its shape label alone. Phase labels and targets do not enter the rest calculation. A relief target may still accumulate load when incoming effort and the selected contacts provide insufficient relief. These quantities have no physiological units, may exceed 100 and do not measure remaining energy, muscle fatigue, recovery time or injury risk. The four per-action demand indices still describe synthetic strength, explosive tendency, technique and raw load; they are not components of a calibrated V-grade predictor.
 
 Each analyzed move exposes `prior_load`, `rest_opportunity`, `recovery_proxy`, `fresh_burden`, `effective_burden`, `accumulated_load` plus the existing geometric attributes and four dimensions. `history_comparison` includes hand-move `fresh_peak`, `with_history_peak`, their `delta`, `late_move_delta` (mean history increment over the last third of hand transfers), `initial_load`, `source` and a description. This compares the same selected action sequence with zero prior state at every action against continuous propagation; it does not generate a second route or represent a human experiment. Underlying demand/history estimates depend on the candidate and context, not its requested program label; targets affect objective cost and choice.
 
@@ -222,3 +222,18 @@ If the existing search finds no complete beta on a nondefault wall, the result m
 `GET /api/setting-examples?hold_source=assets|templates` reads the two saved three-route groups. `GET /api/wall-examples` reads four separately validated wall drafts; optional `wall_profile` selects one. Setting comparison and request POST endpoints accept hold and wall sources. Three selectable scene palettes affect only rendering and local preference, never the request, geometry, evaluation or bundle fingerprint. Same-route hand/foot holds share color; selection/contact indicators and unused-hold contrast remain separate.
 
 Reproduction: `scripts/prepare_demo.py` generates all 24 current example bundles; `--profile setting` generates the two three-route groups and the default alias, `--profile wall` generates four wall examples. `scripts/report_asset_study.py` validates current bundles before recording comparison data. Final checks and browser evidence are stored in `outputs/asset-study/verification.json`; old outputs remain historical evidence, not current checks.
+
+
+## Roof exit: contact search, wall clearance and load history (2026-10-15)
+
+The horizontal roof keeps its three real panels and 0.8 m underside. Contact search uses three-dimensional hand/foot centre separation when a near-horizontal overhead panel is present. This removes the upright projected-height assumption; it does not install a fixed hand/foot order, require every hold, or relax joint bounds/contact tolerances. Other finite search corridors and beam/deadline limits remain explicit restrictions.
+
+`solve_pose(..., scene=...)` uses finite-panel residual guidance to find a pose around the lip and checks exact skeleton segment intersections before returning a solved pose. `wall_clearance_report(scene, joints, tolerance_m=0.001)` independently tests 15 zero-radius skeleton segments against finite zero-thickness panels. An intersection must cross both sides beyond normal tolerance and lie inside the actual rectangular panel; touching the plane at an endpoint is not strict penetration, and an infinite back half-space is not treated as a solid. Missing poses remain unknown.
+
+Every evaluated pose in a scene with explicit `wall_panels` receives a separate P0 `skeleton_wall` check. Import validation recomputes it from verified FK joints and actual panels; deleting it, changing its evidence, or excluding it from P0 is rejected even with a new bundle digest. The new module enters the evaluator code hash. Full body thickness, contact with holds, self-collision and continuous movement remain unverified P1 concerns.
+
+The roof view derives its approach/underside/cross-lip/upper contact regions from actual occupied panels, and can revisit a region. Release and landing states remain independently selectable. Hip and shoulder positions come from solved joints in the exit panel’s frame; current wall-crossing status is shown separately. The display does not assign a named technique or claim the whole body has cleared the lip from contact labels alone.
+
+Roof exports may include two main candidates: the existing whole-route static-support ranking and a different geometry with better local exit support. The latter is an optional tradeoff, not a global winner. `roof_exit_support` includes the release before the first hand reaches `upper-wall` and all remaining states through matched TOP. Baseline/result counts are independently recomputed during import. Before/after UI context is keyed by the selected main candidate, so comparison returns to the same layout. Changed but unused placements stay visible; local improvement is not causally attributed to a moved hold that the searched beta skips.
+
+`outputs/roof-study/before-folded-bundle.json` preserves the previous engine’s no-sequence result as historical evidence only. The current fixture’s baseline, selected revision and alternatives share the current model; `scripts/report_roof_study.py` validates them and records actual contacts, exit-frame body coordinates, wall checks, static diagnostics and same-action fresh/history values. Older reports are not silently relabeled as current verification.

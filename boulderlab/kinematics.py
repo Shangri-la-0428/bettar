@@ -110,7 +110,45 @@ def initial_pose(body, targets, solver):
     return np.clip(q, lo + 1e-8, hi - 1e-8)
 
 
-def solve_pose(body, targets, solver, seed=0, initial=None):
+def _wall_residual_function(scene):
+    """Fixed-size, bounded-panel guidance for the nonlinear IK iterations.
+
+    Samples guide optimization only. Acceptance independently checks complete
+    bone segments against finite panels, so no sampled gap is called clear.
+    The penetration penalty is capped by distance to a panel's finite edge:
+    exiting around a roof lip is permitted; crossing its interior is not.
+    """
+    if not scene or not scene.get("wall_panels"):
+        return None
+    from .geometry import panel_frame
+    from .wall_clearance import SEGMENTS
+    panels = [(panel_frame(p, scene["angle_deg"]), p["width"], p["height"]) for p in scene["wall_panels"]]
+    fractions = np.linspace(0., 1., 5)[None, :, None]
+
+    def residual(joints):
+        starts = np.array([joints[a] for a, b in SEGMENTS])
+        ends = np.array([joints[b] for a, b in SEGMENTS])
+        samples = (starts[:, None, :]+fractions*(ends-starts)[:, None, :]).reshape((-1, 3))
+        result = []
+        for (origin, rotation), width, height in panels:
+            local = (samples-origin)@rotation
+            inside = np.minimum.reduce([width/2-abs(local[:, 0]), local[:, 1], height-local[:, 1]])
+            result.append(5.*np.maximum(0., np.minimum(-local[:, 2]+.002, inside)))
+            # A short crossing next to a roof lip can fall between samples.
+            # Guide the exact plane intersection toward the finite edge too.
+            a, b = (starts-origin)@rotation, (ends-origin)@rotation
+            denominator = b[:, 2]-a[:, 2]
+            safe = np.where(abs(denominator) > 1e-10, denominator, 1.)
+            t = -a[:, 2]/safe
+            intersection = a+t[:, None]*(b-a)
+            edge = np.minimum.reduce([width/2-abs(intersection[:, 0]), intersection[:, 1], height-intersection[:, 1]])
+            crossing = (a[:, 2]*b[:, 2] < 0.) & (t > 0.) & (t < 1.)
+            result.append(5.*np.where(crossing, np.maximum(0., np.minimum(edge+.002, np.minimum(abs(a[:, 2]), abs(b[:, 2])))), 0.))
+        return np.concatenate(result)
+    return residual
+
+
+def solve_pose(body, targets, solver, seed=0, initial=None, *, scene=None):
     """Solve all declared contacts together; no convergence is *unknown*."""
     started = time.perf_counter()
     if not targets:
@@ -131,6 +169,7 @@ def solve_pose(body, targets, solver, seed=0, initial=None):
     attempts = []
     timeout = float(solver.get("timeout_seconds", 15))
     deadline = started + timeout
+    wall_residual = _wall_residual_function(scene)
     for restart in range(solver["restarts"]):
         if time.perf_counter() >= deadline:
             attempts.append({"reason": "time_budget"})
@@ -143,7 +182,10 @@ def solve_pose(body, targets, solver, seed=0, initial=None):
             points = contact_endpoints(body, q)
             contact_error = np.concatenate([points[l] - target for l, target in targets.items()])
             # Weak tie-break only. It never replaces independent contact checking.
-            return np.concatenate([contact_error, .0005 * (q - base)])
+            parts = [contact_error, .0005 * (q - base)]
+            if wall_residual is not None:
+                parts.append(wall_residual(forward_kinematics(body, q)))
+            return np.concatenate(parts)
 
         try:
             result = least_squares(residual, x0, bounds=(lo, hi), max_nfev=solver["max_nfev"],
@@ -157,10 +199,18 @@ def solve_pose(body, targets, solver, seed=0, initial=None):
                 best = (worst, q, errors)
             if worst <= solver["contact_tolerance_m"] and np.all(q >= lo) and np.all(q <= hi):
                 joints = forward_kinematics(body, q)
+                clearance = None
+                if wall_residual is not None:
+                    from .wall_clearance import wall_clearance_report
+                    clearance = wall_clearance_report(scene, joints)
+                    if clearance["status"] != "pass":
+                        attempts[-1]["wall_clearance"] = clearance
+                        continue
                 return {"status": "pass", "joints": {k: v.tolist() for k, v in joints.items()},
                         "q": q.tolist(), "residual_m": worst,
                         "evidence": {"contact_errors_m": errors, "attempts": attempts, "joint_limits_pass": True,
-                                     "body_id": body["id"], "elapsed_ms": round((time.perf_counter()-started)*1000, 2)}}
+                                     "body_id": body["id"], "elapsed_ms": round((time.perf_counter()-started)*1000, 2),
+                                     **({"wall_clearance": clearance} if clearance is not None else {})}}
         except (ValueError, FloatingPointError, TimeoutError, np.linalg.LinAlgError) as exc:
             attempts.append({"reason": type(exc).__name__, "detail": str(exc)})
     return {"status": "unknown", "residual_m": best[0] if best else None,

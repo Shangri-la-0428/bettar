@@ -1,0 +1,46 @@
+{
+  "status": "pass",
+  "saved_paths": 11,
+  "saved_states": 265,
+  "complete_saved_roof": true,
+  "checks": [
+    "contact-derived phases can repeat",
+    "release and landing bind to actual states",
+    "mounted child inherits wall panel",
+    "verified IK only",
+    "exit frame invariant to global wall angle",
+    "fatigue numbers preserve existing analysis",
+    "missing or stale evaluation hides observations",
+    "old no_sequence remains a layout",
+    "IK pass does not imply skeleton collision pass",
+    "two primary variants show local support and whole-route costs",
+    "exit window includes the pre-transfer release",
+    "modified but unused exit hold is not assigned causal credit"
+  ],
+  "primary_candidates": [
+    {
+      "candidate_id": "setting-diagonal_balance-trial0-beta1",
+      "role": "whole_route_support",
+      "exit_feasible": 2,
+      "exit_states": 8,
+      "exit_release_feasible": 1,
+      "exit_release_states": 4,
+      "transfers": 11,
+      "total_proxy_effort": 541.09584,
+      "unused_changed_ids": []
+    },
+    {
+      "candidate_id": "setting-diagonal_balance-trial2-beta2",
+      "role": "exit_support_tradeoff",
+      "exit_feasible": 6,
+      "exit_states": 8,
+      "exit_release_feasible": 2,
+      "exit_release_states": 4,
+      "transfers": 13,
+      "total_proxy_effort": 752.36691,
+      "unused_changed_ids": [
+        "foot-8"
+      ]
+    }
+  ]
+}

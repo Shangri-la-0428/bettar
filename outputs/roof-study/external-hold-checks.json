@@ -1,0 +1,91 @@
+{
+  "status": "pass",
+  "scope": "available assets only; family coverage incomplete",
+  "missing_families": [
+    "pocket"
+  ],
+  "assets": 4,
+  "models": 8,
+  "surfaces": 16,
+  "fixture_asset_instances": 21,
+  "sampled_patch_vertices": 1754,
+  "max_vertex_error_m": 1.5564737943037957e-8,
+  "max_anchor_error_m": 3.179800655392251e-17,
+  "max_patch_error_m": 7.990773465937297e-9,
+  "checks": [
+    "registered mesh topology and uniform scale",
+    "real mesh contact anchors and ray picking",
+    "grip patches stay on source triangles",
+    "side and incut annotations do not project to outer shell",
+    "comparison geometry parity",
+    "missing, hash-mismatched and distorted assets omitted",
+    "stripped references with retained mesh markers cannot become templates",
+    "all three asset inventories bind geometry and grip annotations"
+  ],
+  "results": [
+    {
+      "asset": "setrsoft-12-jug",
+      "family": "jug",
+      "scale": 1,
+      "vertices": 1752,
+      "triangles": 3500,
+      "surfaces": 2
+    },
+    {
+      "asset": "setrsoft-12-jug",
+      "family": "jug",
+      "scale": 0.65,
+      "vertices": 1752,
+      "triangles": 3500,
+      "surfaces": 2
+    },
+    {
+      "asset": "setrsoft-25-crimp",
+      "family": "crimp",
+      "scale": 1,
+      "vertices": 1474,
+      "triangles": 2944,
+      "surfaces": 2
+    },
+    {
+      "asset": "setrsoft-25-crimp",
+      "family": "crimp",
+      "scale": 0.65,
+      "vertices": 1474,
+      "triangles": 2944,
+      "surfaces": 2
+    },
+    {
+      "asset": "setrsoft-17-pinch",
+      "family": "pinch",
+      "scale": 1,
+      "vertices": 1760,
+      "triangles": 3499,
+      "surfaces": 2
+    },
+    {
+      "asset": "setrsoft-17-pinch",
+      "family": "pinch",
+      "scale": 0.65,
+      "vertices": 1760,
+      "triangles": 3499,
+      "surfaces": 2
+    },
+    {
+      "asset": "setrsoft-11-sloper",
+      "family": "sloper",
+      "scale": 1,
+      "vertices": 1752,
+      "triangles": 3500,
+      "surfaces": 2
+    },
+    {
+      "asset": "setrsoft-11-sloper",
+      "family": "sloper",
+      "scale": 0.65,
+      "vertices": 1752,
+      "triangles": 3500,
+      "surfaces": 2
+    }
+  ]
+}

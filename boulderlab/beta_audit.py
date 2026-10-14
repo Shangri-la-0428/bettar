@@ -19,7 +19,7 @@ from .full_route import _history
 from .geometry import selected_contact, wall_basis
 from .route_design import DIMS, _context, _metrics, _ref, _valid_contact_geometry
 
-MODEL_VERSION = "independent-beta-proxy-2"
+MODEL_VERSION = "independent-beta-proxy-3"
 LIMBS = ("LH", "RH", "LF", "RF")
 MATCHING_POLICY = {
     "source": "conservative_synthetic_search_assumption",
@@ -81,6 +81,38 @@ def _occupancy_error(context, key):
     if hands[0] == hands[1] and not context[hands[0]]["hand_match_allowed"]:
         return "hand_match_not_supported_by_selected_patch"
     return None
+
+
+def _setting_contact_corridor(context, contacts, body, solver):
+    """A local 3-D search corridor, not a feasibility test.
+
+    On a horizontal ceiling projected world height loses the progress axis:
+    feet and hands may have the same height while being far apart in depth.
+    Measure separation along the actual hand/foot centroid axis instead. The
+    old upright corridor remains the declared grammar on non-roof structures.
+    Every accepted state still needs the unchanged joint/contact and wall
+    clearance checks. In particular this does not permit hooks or free feet.
+    """
+    from .full_route import _contact_valid
+    if not any(p.get("inclination", 0.) > .85 for p in context.values()):
+        return _contact_valid(context, contacts, body, solver)
+    if not _valid_contact_geometry(context, contacts, body, solver):
+        return False
+    hands = np.array([context[contacts[l]["placement_id"]]["position"] for l in ("LH", "RH")])
+    feet = np.array([context[contacts[l]["placement_id"]]["position"] for l in ("LF", "RF")])
+    hand_mid, foot_mid = hands.mean(axis=0), feet.mean(axis=0)
+    axis = hand_mid-foot_mid
+    separation = float(np.linalg.norm(axis))
+    arm = body["upper_arm"]+body["forearm"]
+    leg = body["thigh"]+body["shin"]
+    if not .45 < separation < body["torso"]+arm*.65+leg*.65:
+        return False
+    axis /= separation
+    if abs(hands[0, 0]-hands[1, 0]) > arm*1.35 or abs(float((hands[0]-hands[1])@axis)) > arm*1.30:
+        return False
+    if abs(feet[0, 0]-feet[1, 0]) > leg*.95 or abs(float((feet[0]-feet[1])@axis)) > leg*.72:
+        return False
+    return abs(hand_mid[0]-foot_mid[0]) < leg*.65
 
 
 def _round(value):
@@ -273,8 +305,7 @@ def _search(request, original, objective, options, *, deadline=None):
                     if not _valid_contact_geometry(context, after, request["body"], request["solver"]):
                         rejected["necessary_contact_span"] += 1; continue
                     if request.get("profile") == "setting":
-                        from .full_route import _contact_valid
-                        if not _contact_valid(context, after, request["body"], request["solver"]):
+                        if not _setting_contact_corridor(context, after, request["body"], request["solver"]):
                             rejected["local_contact_corridor_search_assumption"] += 1; continue
                     _, load, metrics, rest, recovery, burden, support = _step(request, context, before, limb, pid, previous)
                     effort = burden+support["proxy_penalty"]

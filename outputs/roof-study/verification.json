@@ -1,0 +1,229 @@
+{
+  "date": "2026-10-15",
+  "status": "accepted_with_declared_model_limits",
+  "code_hash": "sha256:f79d7ece1320201c6f02fa7d47e68eedf95551990cdd7a2e3739bf7ab092ee59",
+  "checks": {
+    "pytest": {
+      "command": ".venv/bin/python -m pytest tests -q",
+      "passed": 312,
+      "seconds": 173.53
+    },
+    "build": {
+      "command": "npm --prefix web run build",
+      "status": "pass",
+      "javascript_kb": 1237.51,
+      "gzip_kb": 401.32,
+      "remaining_warning": "Existing single chunk exceeds 500 kB."
+    },
+    "bundles": {
+      "count": 24,
+      "candidates": 51,
+      "p0_status_counts": {
+        "pass": 45,
+        "unknown": 6
+      },
+      "all_nested_evidence_validated": true
+    },
+    "placement_geometry": 1234,
+    "roof_ui": {
+      "paths": 11,
+      "states": 265,
+      "status": "pass"
+    },
+    "mechanics_rendering": {
+      "status": "pass",
+      "checked_paths": 36,
+      "states": {
+        "feasible": 409,
+        "infeasible": 503,
+        "unknown": 4
+      },
+      "force_contacts": 1493,
+      "max_rendered_force_residual_n": 1.7320509098562123e-07,
+      "max_rendered_torque_residual_nm": 8.830185679309132e-05
+    },
+    "external_assets": {
+      "command": "node --experimental-strip-types web/scripts/verify-external-hold-models.mjs --allow-partial --fixtures",
+      "status": "pass",
+      "known_missing_family": "pocket; explicit parameter fallback remains"
+    },
+    "palettes": {
+      "status": "pass",
+      "palettes": 3,
+      "inventory_instances": 18,
+      "geometry_comparisons": 54,
+      "checks": [
+        "view-only copy",
+        "one route colour across hand and foot types",
+        "coordinated volumes",
+        "identical vertices and topology",
+        "original bundle and calculation fingerprints unmodified",
+        "saved preference fallback"
+      ]
+    }
+  },
+  "primary_candidates": [
+    {
+      "id": "setting-diagonal_balance-trial0-beta1",
+      "name": "屋檐 · 全程支撑排序保留方案",
+      "selection_role": "whole_route_support",
+      "p0": {
+        "status": "pass",
+        "passed": 69,
+        "total": 69
+      },
+      "discrete_poses": 23,
+      "alternatives": 2,
+      "placement_changes": 0,
+      "exit_support": {
+        "first_exit_event_index": 7,
+        "state_ids": [
+          "b15",
+          "b16",
+          "b17",
+          "b18",
+          "b19",
+          "b20",
+          "b21",
+          "b22"
+        ],
+        "states": 8,
+        "feasible_states": 2,
+        "infeasible_states": 6,
+        "unknown_states": 0,
+        "release_states": 4,
+        "release_feasible_states": 1,
+        "release_unknown_states": 0,
+        "feasible_fraction": 0.25,
+        "release_feasible_fraction": 0.25,
+        "finish_status": "infeasible",
+        "basis": "first exit hand-transfer release through matched TOP; current synthetic static model"
+      },
+      "load": {
+        "hand_moves": 6,
+        "foot_moves": 5,
+        "transfers": 11,
+        "total_proxy_effort": 541.09584,
+        "peak_proxy_burden": 78.47043,
+        "final_load": 206.99125
+      },
+      "all_states_mechanics": {
+        "status": "infeasible",
+        "feasible_states": 10,
+        "infeasible_states": 13,
+        "unknown_states": 0,
+        "release_states": 11,
+        "release_infeasible_states": 7,
+        "release_unknown_states": 0,
+        "max_capacity_utilization": 0.5504391,
+        "worst_state_id": "b5"
+      }
+    },
+    {
+      "id": "setting-diagonal_balance-trial2-beta2",
+      "name": "屋檐 · 转换调整方案（增加动作）",
+      "selection_role": "exit_support_tradeoff",
+      "p0": {
+        "status": "pass",
+        "passed": 80,
+        "total": 80
+      },
+      "discrete_poses": 27,
+      "alternatives": 5,
+      "placement_changes": 6,
+      "exit_support": {
+        "first_exit_event_index": 9,
+        "state_ids": [
+          "b19",
+          "b20",
+          "b21",
+          "b22",
+          "b23",
+          "b24",
+          "b25",
+          "b26"
+        ],
+        "states": 8,
+        "feasible_states": 6,
+        "infeasible_states": 2,
+        "unknown_states": 0,
+        "release_states": 4,
+        "release_feasible_states": 2,
+        "release_unknown_states": 0,
+        "feasible_fraction": 0.75,
+        "release_feasible_fraction": 0.5,
+        "finish_status": "feasible",
+        "basis": "first exit hand-transfer release through matched TOP; current synthetic static model"
+      },
+      "load": {
+        "hand_moves": 7,
+        "foot_moves": 6,
+        "transfers": 13,
+        "total_proxy_effort": 752.36691,
+        "peak_proxy_burden": 96.68276,
+        "final_load": 272.75674
+      },
+      "all_states_mechanics": {
+        "status": "infeasible",
+        "feasible_states": 12,
+        "infeasible_states": 15,
+        "unknown_states": 0,
+        "release_states": 13,
+        "release_infeasible_states": 10,
+        "release_unknown_states": 0,
+        "max_capacity_utilization": 0.9808667,
+        "worst_state_id": "b3"
+      }
+    }
+  ],
+  "browser": {
+    "url": "http://127.0.0.1:5174/",
+    "viewports": [
+      {
+        "width": 1440,
+        "height": 1000,
+        "document_scroll_width": 1435
+      },
+      {
+        "width": 390,
+        "height": 844,
+        "document_scroll_width": 385
+      }
+    ],
+    "console_errors": 0,
+    "console_warnings": 0,
+    "verified": [
+      "Two actual roof layouts and 2/5 alternatives load from current fixtures.",
+      "Second layout before/after returns to the same main candidate and preserves its comparison.",
+      "Alternative 3 independently changes the sequence from 7 hands/6 feet to 5 hands/6 feet.",
+      "First exit hand transfer selects b20; release selects b19 and removes RH contact.",
+      "Hip/shoulder coordinates and actual solved skeleton update with selected state.",
+      "Adjusted first exit: incoming 216.27291; fresh 40.53423; history burden 77.30063.",
+      "Modified but unused upper-wall foot-8 is disclosed, without claiming it caused exit improvement.",
+      "Rotate unused foot-8 by 5 degrees; revision 2 removes stale comparison, pose observation and alternatives.",
+      "Recheck revision 2 obtains 80/80 P0 and preserves static limitations.",
+      "Exported 3-candidate/3-evaluation bundle imports successfully in UI and independently passes backend validation.",
+      "Desktop and mobile have no page horizontal overflow; viewport override reset."
+    ],
+    "edited_bundle": "outputs/roof-study/browser-edited-bundle.json",
+    "screenshots": [
+      "outputs/roof-study/desktop-exit-pose.png",
+      "outputs/roof-study/desktop-comparison.png",
+      "outputs/roof-study/mobile-roof-observations.png"
+    ]
+  },
+  "limits": [
+    "Both complete roof paths retain infeasible quasi-static states, including exit release states.",
+    "Only discrete zero-radius skeleton segments against finite zero-thickness wall panels are checked.",
+    "Continuous movement, body thickness, self/hold collisions, heel/toe hooks and human forerunning remain unverified.",
+    "Loads are synthetic relative proxies; they do not reduce physical force capacities or establish true fatigue, energy or grade.",
+    "Different geometry and independent beta change together; the comparison does not isolate single-hold causality."
+  ],
+  "reproduction": [
+    ".venv/bin/python scripts/prepare_demo.py --profile all",
+    ".venv/bin/python scripts/report_roof_study.py",
+    "node --experimental-strip-types web/scripts/verify-roof-study.mjs",
+    "node --experimental-strip-types web/scripts/verify-placement-geometry.mjs",
+    "node --experimental-strip-types web/scripts/verify-mechanics-render-data.mjs"
+  ]
+}

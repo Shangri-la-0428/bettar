@@ -1,0 +1,431 @@
+{
+  "status": "pass",
+  "code_hash": "sha256:f79d7ece1320201c6f02fa7d47e68eedf95551990cdd7a2e3739bf7ab092ee59",
+  "bundles": 24,
+  "candidates": 51,
+  "records": [
+    {
+      "file": "fixtures/catalog-10deg-bundle.json",
+      "candidates": 3,
+      "digest": "sha256:f2dafd275e4215c592d64801b2a335553012dc22b3530dcc805b5bd31cceb425",
+      "summaries": [
+        {
+          "status": "pass",
+          "passed": 23,
+          "total": 23
+        },
+        {
+          "status": "pass",
+          "passed": 23,
+          "total": 23
+        },
+        {
+          "status": "pass",
+          "passed": 23,
+          "total": 23
+        }
+      ]
+    },
+    {
+      "file": "fixtures/catalog-demo-bundle.json",
+      "candidates": 3,
+      "digest": "sha256:db4ce4743ce798c1872ea2138254f00bd097314b1f126f3c6514dd5a26248913",
+      "summaries": [
+        {
+          "status": "pass",
+          "passed": 23,
+          "total": 23
+        },
+        {
+          "status": "pass",
+          "passed": 23,
+          "total": 23
+        },
+        {
+          "status": "pass",
+          "passed": 23,
+          "total": 23
+        }
+      ]
+    },
+    {
+      "file": "fixtures/competition-10deg-bundle.json",
+      "candidates": 3,
+      "digest": "sha256:04fb5a85bb9663b0e435fbd6a2f5dccadf69e525b7adeefcbf08d01c45bab5a6",
+      "summaries": [
+        {
+          "status": "unknown",
+          "passed": 33,
+          "total": 36
+        },
+        {
+          "status": "unknown",
+          "passed": 33,
+          "total": 36
+        },
+        {
+          "status": "unknown",
+          "passed": 33,
+          "total": 36
+        }
+      ]
+    },
+    {
+      "file": "fixtures/competition-demo-bundle.json",
+      "candidates": 3,
+      "digest": "sha256:1be41e4133b6d2dd1da68daf04fd829820182ff3f97b7bc8c2d58df4c0b352d0",
+      "summaries": [
+        {
+          "status": "unknown",
+          "passed": 33,
+          "total": 36
+        },
+        {
+          "status": "unknown",
+          "passed": 33,
+          "total": 36
+        },
+        {
+          "status": "unknown",
+          "passed": 33,
+          "total": 36
+        }
+      ]
+    },
+    {
+      "file": "fixtures/demo-bundle.json",
+      "candidates": 3,
+      "digest": "sha256:31c8d23dc63ecaf5017188d4560f935e4966ed30a9468f720aefac9690fbc829",
+      "summaries": [
+        {
+          "status": "pass",
+          "passed": 22,
+          "total": 22
+        },
+        {
+          "status": "pass",
+          "passed": 22,
+          "total": 22
+        },
+        {
+          "status": "pass",
+          "passed": 22,
+          "total": 22
+        }
+      ]
+    },
+    {
+      "file": "fixtures/route-demo-bundle.json",
+      "candidates": 3,
+      "digest": "sha256:574dc25b1136a3bd7571e30c3df74e4d95ce20a9d0a471bf47d6ae27fe79d8bc",
+      "summaries": [
+        {
+          "status": "pass",
+          "passed": 70,
+          "total": 70
+        },
+        {
+          "status": "pass",
+          "passed": 70,
+          "total": 70
+        },
+        {
+          "status": "pass",
+          "passed": 70,
+          "total": 70
+        }
+      ]
+    },
+    {
+      "file": "fixtures/route-mixed_flow-bundle.json",
+      "candidates": 3,
+      "digest": "sha256:574dc25b1136a3bd7571e30c3df74e4d95ce20a9d0a471bf47d6ae27fe79d8bc",
+      "summaries": [
+        {
+          "status": "pass",
+          "passed": 70,
+          "total": 70
+        },
+        {
+          "status": "pass",
+          "passed": 70,
+          "total": 70
+        },
+        {
+          "status": "pass",
+          "passed": 70,
+          "total": 70
+        }
+      ]
+    },
+    {
+      "file": "fixtures/route-power_finish-bundle.json",
+      "candidates": 3,
+      "digest": "sha256:e73ea3bfc9f00b3bc100bb2d690744a8f6442a5b897b6a64fdd05eff38c90151",
+      "summaries": [
+        {
+          "status": "pass",
+          "passed": 70,
+          "total": 70
+        },
+        {
+          "status": "pass",
+          "passed": 70,
+          "total": 70
+        },
+        {
+          "status": "pass",
+          "passed": 70,
+          "total": 70
+        }
+      ]
+    },
+    {
+      "file": "fixtures/route-sustained_finish-bundle.json",
+      "candidates": 3,
+      "digest": "sha256:531583607a25b7a046c6fceda0df52b432380d5db190beb584bb6e2056a061bb",
+      "summaries": [
+        {
+          "status": "pass",
+          "passed": 74,
+          "total": 74
+        },
+        {
+          "status": "pass",
+          "passed": 74,
+          "total": 74
+        },
+        {
+          "status": "pass",
+          "passed": 74,
+          "total": 74
+        }
+      ]
+    },
+    {
+      "file": "fixtures/setting-demo-bundle.json",
+      "candidates": 1,
+      "digest": "sha256:ef050aa6e545f15569aa648d93a2e5e02b2ea0799bfee4cd2e1e982107b47e4e",
+      "summaries": [
+        {
+          "status": "pass",
+          "passed": 75,
+          "total": 75
+        }
+      ]
+    },
+    {
+      "file": "fixtures/setting-diagonal_balance-bundle.json",
+      "candidates": 1,
+      "digest": "sha256:ef050aa6e545f15569aa648d93a2e5e02b2ea0799bfee4cd2e1e982107b47e4e",
+      "summaries": [
+        {
+          "status": "pass",
+          "passed": 75,
+          "total": 75
+        }
+      ]
+    },
+    {
+      "file": "fixtures/setting-opposing_sidepulls-bundle.json",
+      "candidates": 1,
+      "digest": "sha256:610e1f679d35297d17f98093ee40f174637048de3ccd4f829409f10049870b6b",
+      "summaries": [
+        {
+          "status": "pass",
+          "passed": 75,
+          "total": 75
+        }
+      ]
+    },
+    {
+      "file": "fixtures/setting-roof_exit-bundle.json",
+      "candidates": 1,
+      "digest": "sha256:d54624c0421c26e885b489e3e61bbe38c3078540638214d15b313301720910b5",
+      "summaries": [
+        {
+          "status": "pass",
+          "passed": 86,
+          "total": 86
+        }
+      ]
+    },
+    {
+      "file": "fixtures/setting-templates-diagonal_balance-bundle.json",
+      "candidates": 1,
+      "digest": "sha256:9e62b53f0aa06e4617122f1ba04abf6fa4b9aab32c019a5d19aab512a529215d",
+      "summaries": [
+        {
+          "status": "pass",
+          "passed": 81,
+          "total": 81
+        }
+      ]
+    },
+    {
+      "file": "fixtures/setting-templates-opposing_sidepulls-bundle.json",
+      "candidates": 1,
+      "digest": "sha256:829fcbddb245ba946d44e7fb92bb18f039c9e53c142a0014caafb5b1c3e9becf",
+      "summaries": [
+        {
+          "status": "pass",
+          "passed": 76,
+          "total": 76
+        }
+      ]
+    },
+    {
+      "file": "fixtures/setting-templates-roof_exit-bundle.json",
+      "candidates": 1,
+      "digest": "sha256:99b6aabb6c8808b6113325eaed5e2388ca7404fdd4c261c030577c1b4dafefd4",
+      "summaries": [
+        {
+          "status": "pass",
+          "passed": 86,
+          "total": 86
+        }
+      ]
+    },
+    {
+      "file": "fixtures/style-demo-bundle.json",
+      "candidates": 3,
+      "digest": "sha256:b645ed614f7a8dd47756cdf9c48c6ac16525c47f91aeab8ba4ec89628a6a678b",
+      "summaries": [
+        {
+          "status": "pass",
+          "passed": 36,
+          "total": 36
+        },
+        {
+          "status": "pass",
+          "passed": 36,
+          "total": 36
+        },
+        {
+          "status": "pass",
+          "passed": 36,
+          "total": 36
+        }
+      ]
+    },
+    {
+      "file": "fixtures/style-power-bundle.json",
+      "candidates": 3,
+      "digest": "sha256:b645ed614f7a8dd47756cdf9c48c6ac16525c47f91aeab8ba4ec89628a6a678b",
+      "summaries": [
+        {
+          "status": "pass",
+          "passed": 36,
+          "total": 36
+        },
+        {
+          "status": "pass",
+          "passed": 36,
+          "total": 36
+        },
+        {
+          "status": "pass",
+          "passed": 36,
+          "total": 36
+        }
+      ]
+    },
+    {
+      "file": "fixtures/style-sustained-bundle.json",
+      "candidates": 3,
+      "digest": "sha256:6777b7deaaaadd12554c07bd33d0d8cbb2386138383384196dacf72c07491750",
+      "summaries": [
+        {
+          "status": "pass",
+          "passed": 36,
+          "total": 36
+        },
+        {
+          "status": "pass",
+          "passed": 36,
+          "total": 36
+        },
+        {
+          "status": "pass",
+          "passed": 36,
+          "total": 36
+        }
+      ]
+    },
+    {
+      "file": "fixtures/style-technical-bundle.json",
+      "candidates": 3,
+      "digest": "sha256:54c493c28b261b55fbf3201f7318852e20315838fe46912cfea4e34cbc4468b1",
+      "summaries": [
+        {
+          "status": "pass",
+          "passed": 36,
+          "total": 36
+        },
+        {
+          "status": "pass",
+          "passed": 36,
+          "total": 36
+        },
+        {
+          "status": "pass",
+          "passed": 36,
+          "total": 36
+        }
+      ]
+    },
+    {
+      "file": "fixtures/wall-arete-bundle.json",
+      "candidates": 1,
+      "digest": "sha256:16ce83db3c94a3e2c1e0b5ddee68d25b516c8d7317320b698f57abaf5eba218e",
+      "summaries": [
+        {
+          "status": "pass",
+          "passed": 75,
+          "total": 75
+        }
+      ]
+    },
+    {
+      "file": "fixtures/wall-dihedral-bundle.json",
+      "candidates": 1,
+      "digest": "sha256:aa31b4d0599789643f9ba16257cb872594958d98b5e49c5c4895c359892f2c7e",
+      "summaries": [
+        {
+          "status": "pass",
+          "passed": 75,
+          "total": 75
+        }
+      ]
+    },
+    {
+      "file": "fixtures/wall-overhang-bundle.json",
+      "candidates": 1,
+      "digest": "sha256:a9743a31dad193b179ba22d2b3428e931ee63e692c2bbb6de48b6cae07c9e632",
+      "summaries": [
+        {
+          "status": "pass",
+          "passed": 81,
+          "total": 81
+        }
+      ]
+    },
+    {
+      "file": "fixtures/wall-roof-bundle.json",
+      "candidates": 2,
+      "digest": "sha256:3f3e3256a25a1f2f541e5941d979f03d96fd4266632128eed612e1ac4cb297ec",
+      "summaries": [
+        {
+          "status": "pass",
+          "passed": 69,
+          "total": 69
+        },
+        {
+          "status": "pass",
+          "passed": 80,
+          "total": 80
+        }
+      ]
+    }
+  ]
+}

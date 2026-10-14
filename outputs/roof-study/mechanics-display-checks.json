@@ -1,0 +1,194 @@
+{
+  "status": "pass",
+  "checked_paths": 36,
+  "states": {
+    "feasible": 409,
+    "infeasible": 503,
+    "unknown": 4
+  },
+  "force_contacts": 1493,
+  "max_point_error_m": 6.45141214810229e-8,
+  "max_normal_error": 7.416091551239851e-8,
+  "max_rendered_force_residual_n": 1.7320509098562123e-7,
+  "max_rendered_torque_residual_nm": 0.00008830185679309132,
+  "checks": [
+    "state and release binding",
+    "renderer contact frame parity",
+    "failed solve has no drawable force",
+    "axial/transverse values share model axis",
+    "rendered forces balance gravity and moment",
+    "all four wall experiments, including actual starting state without a complete beta"
+  ],
+  "programs": [
+    {
+      "program": "diagonal_balance",
+      "before": {
+        "status": "infeasible",
+        "feasible_states": 17,
+        "infeasible_states": 10,
+        "unknown_states": 0,
+        "release_states": 13,
+        "release_infeasible_states": 7,
+        "release_unknown_states": 0,
+        "max_capacity_utilization": 0.8404679,
+        "worst_state_id": "b11"
+      },
+      "after": {
+        "status": "infeasible",
+        "feasible_states": 17,
+        "infeasible_states": 8,
+        "unknown_states": 0,
+        "release_states": 12,
+        "release_infeasible_states": 5,
+        "release_unknown_states": 0,
+        "max_capacity_utilization": 0.7817613,
+        "worst_state_id": "b13"
+      },
+      "alternatives": 3
+    },
+    {
+      "program": "opposing_sidepulls",
+      "before": {
+        "status": "infeasible",
+        "feasible_states": 13,
+        "infeasible_states": 12,
+        "unknown_states": 0,
+        "release_states": 12,
+        "release_infeasible_states": 7,
+        "release_unknown_states": 0,
+        "max_capacity_utilization": 0.6795922,
+        "worst_state_id": "b3"
+      },
+      "after": {
+        "status": "infeasible",
+        "feasible_states": 13,
+        "infeasible_states": 12,
+        "unknown_states": 0,
+        "release_states": 12,
+        "release_infeasible_states": 7,
+        "release_unknown_states": 0,
+        "max_capacity_utilization": 0.6795922,
+        "worst_state_id": "b3"
+      },
+      "alternatives": 2
+    },
+    {
+      "program": "roof_exit",
+      "before": {
+        "status": "infeasible",
+        "feasible_states": 10,
+        "infeasible_states": 19,
+        "unknown_states": 0,
+        "release_states": 14,
+        "release_infeasible_states": 11,
+        "release_unknown_states": 0,
+        "max_capacity_utilization": 0.4748441,
+        "worst_state_id": "b3"
+      },
+      "after": {
+        "status": "infeasible",
+        "feasible_states": 10,
+        "infeasible_states": 19,
+        "unknown_states": 0,
+        "release_states": 14,
+        "release_infeasible_states": 11,
+        "release_unknown_states": 0,
+        "max_capacity_utilization": 0.4748441,
+        "worst_state_id": "b3"
+      },
+      "alternatives": 2
+    }
+  ],
+  "wall_profiles": [
+    {
+      "profile": "overhang",
+      "layout_only": false,
+      "states": 27,
+      "events": 13,
+      "summary": {
+        "status": "infeasible",
+        "feasible_states": 10,
+        "infeasible_states": 17,
+        "unknown_states": 0,
+        "release_states": 13,
+        "release_infeasible_states": 10,
+        "release_unknown_states": 0,
+        "max_capacity_utilization": 1.3084707,
+        "worst_state_id": "b3"
+      },
+      "alternatives": 2
+    },
+    {
+      "profile": "roof",
+      "layout_only": false,
+      "states": 23,
+      "events": 11,
+      "summary": {
+        "status": "infeasible",
+        "feasible_states": 10,
+        "infeasible_states": 13,
+        "unknown_states": 0,
+        "release_states": 11,
+        "release_infeasible_states": 7,
+        "release_unknown_states": 0,
+        "max_capacity_utilization": 0.5504391,
+        "worst_state_id": "b5"
+      },
+      "alternatives": 2
+    },
+    {
+      "profile": "roof",
+      "layout_only": false,
+      "states": 27,
+      "events": 13,
+      "summary": {
+        "status": "infeasible",
+        "feasible_states": 12,
+        "infeasible_states": 15,
+        "unknown_states": 0,
+        "release_states": 13,
+        "release_infeasible_states": 10,
+        "release_unknown_states": 0,
+        "max_capacity_utilization": 0.9808667,
+        "worst_state_id": "b3"
+      },
+      "alternatives": 5
+    },
+    {
+      "profile": "dihedral",
+      "layout_only": false,
+      "states": 25,
+      "events": 12,
+      "summary": {
+        "status": "infeasible",
+        "feasible_states": 13,
+        "infeasible_states": 12,
+        "unknown_states": 0,
+        "release_states": 12,
+        "release_infeasible_states": 6,
+        "release_unknown_states": 0,
+        "max_capacity_utilization": 0.7694499,
+        "worst_state_id": "b13"
+      },
+      "alternatives": 2
+    },
+    {
+      "profile": "arete",
+      "layout_only": false,
+      "states": 25,
+      "events": 12,
+      "summary": {
+        "status": "infeasible",
+        "feasible_states": 16,
+        "infeasible_states": 9,
+        "unknown_states": 0,
+        "release_states": 12,
+        "release_infeasible_states": 6,
+        "release_unknown_states": 0,
+        "max_capacity_utilization": 0.7969228,
+        "worst_state_id": "b5"
+      },
+      "alternatives": 2
+    }
+  ]
+}

@@ -151,12 +151,20 @@ export interface SettingAlternative {
   candidate: Candidate; summary: BetaSummary; evaluation: Evaluation; analysis: DesignAnalysis;
   id?: string; label?: string;
 }
+export interface RoofExitSupport {
+  first_exit_event_index: number | null; state_ids: string[]; states: number;
+  feasible_states: number; infeasible_states: number; unknown_states: number;
+  release_states: number; release_feasible_states: number; release_unknown_states: number;
+  feasible_fraction: number; release_feasible_fraction: number;
+  finish_status: MechanicsStatus; basis: string;
+}
 export interface SettingReport {
   model_version: string; program: string; intent: string;
-  baseline: { summary: BetaSummary; character?: Record<string, number | string>; mechanics_summary?: MechanicsSummary; search: Record<string, unknown>; geometry_hash: string };
-  result: { summary: BetaSummary; character?: Record<string, number | string>; mechanics_summary?: MechanicsSummary; search: Record<string, unknown>; geometry_hash: string };
+  selection_role?: 'whole_route_support' | 'exit_support_tradeoff';
+  baseline: { summary: BetaSummary; character?: Record<string, number | string>; mechanics_summary?: MechanicsSummary; exit_support?: RoofExitSupport; search: Record<string, unknown>; geometry_hash: string };
+  result: { summary: BetaSummary; character?: Record<string, number | string>; mechanics_summary?: MechanicsSummary; exit_support?: RoofExitSupport; search: Record<string, unknown>; geometry_hash: string };
   baseline_candidate: Candidate; baseline_evaluation: Evaluation; baseline_analysis: DesignAnalysis;
-  changes: { placement_id: string; before: { u: number; v: number; rotation_deg: number }; after: { u: number; v: number; rotation_deg: number }; reason: string }[];
+  changes: { placement_id: string; before: { u: number; v: number; rotation_deg: number; wall_panel_id?: string }; after: { u: number; v: number; rotation_deg: number; wall_panel_id?: string }; reason: string }[];
   observed_movement_tags: { id: string; label: string; evidence: unknown }[];
   allowed_alternatives: SettingAlternative[];
   limitations: string[]; search: Record<string, unknown>;

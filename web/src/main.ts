@@ -167,7 +167,7 @@ let wallExamples: StyleExample[] = [];
 let palette = getScenePalette(defaultPaletteId);
 try { palette = getScenePalette(localStorage.getItem('betar.scene-palette') || defaultPaletteId); } catch { /* Storage is optional; rendering remains local. */ }
 $<HTMLSelectElement>('#scene-palette').value = palette.id;
-const settingBeforeBundles = new Map<string, Bundle>();
+const settingBeforeBundles = new Map<string, { bundle: Bundle; exampleId: string; candidateId: string }>();
 let settingAlternativeId = '';
 let betaReport: BetaAudit | undefined;
 let betaSelectedId = '';
@@ -193,25 +193,34 @@ catch (error) { showNotice(`三维画布无法启动：${error instanceof Error 
 function sourceCandidate(): Candidate | undefined { return bundle?.candidates.find((candidate) => candidate.id === activeId); }
 function selectedBeta() { return betaReport?.alternatives.find(item => item.id === betaSelectedId); }
 function settingContext() {
-  const example = settingExamples.find(item => item.bundle.id === bundle?.id || settingBeforeBundles.get(item.id)?.id === bundle?.id);
-  return example ? { example, stage: settingBeforeBundles.get(example.id)?.id === bundle?.id ? 'before' : 'after' } : undefined;
+  const before = [...settingBeforeBundles.values()].find(item => item.bundle.id === bundle?.id);
+  const example = [...settingExamples, ...wallExamples].find(item => before ? item.id === before.exampleId : item.bundle.id === bundle?.id);
+  const originCandidate = before ? example?.bundle.candidates.find(item => item.id === before.candidateId) : sourceCandidate();
+  return example ? { example, originCandidate, stage: before ? 'before' : 'after' } : undefined;
 }
 function activeSettingReport(): SettingReport | undefined {
   const context = settingContext();
-  return context?.stage === 'before' && sourceCandidate()?.id === context.example.bundle.candidates[0]?.setting_report?.baseline_candidate.id
-    ? context.example.bundle.candidates[0].setting_report : sourceCandidate()?.setting_report;
+  return context?.stage === 'before' && sourceCandidate()?.id === context.originCandidate?.setting_report?.baseline_candidate.id
+    ? context.originCandidate?.setting_report : sourceCandidate()?.setting_report;
 }
 function selectedSettingAlternative() { return activeSettingReport()?.allowed_alternatives?.find(item => item.candidate.id === settingAlternativeId); }
 function viewingAlternative() { return !!selectedBeta() || !!selectedSettingAlternative(); }
 function current(): Candidate | undefined { return selectedSettingAlternative()?.candidate || selectedBeta()?.candidate || sourceCandidate(); }
 function selectSettingExample(id: string, stage = 'after') {
-  const example = settingExamples.find(item => item.id === id); if (!example || busy) return;
-  const report = example.bundle.candidates[0]?.setting_report;
-  const resetView = settingContext()?.example.id !== id;
+  const example = [...settingExamples, ...wallExamples].find(item => item.id === id); if (!example || busy) return;
+  const context = settingContext();
+  const chosen = context?.example.id === id && context.originCandidate?.setting_report ? context.originCandidate : example.bundle.candidates[0];
+  const report = chosen?.setting_report;
+  const resetView = context?.example.id !== id;
   if (stage === 'before' && report) {
-    if (!settingBeforeBundles.has(id)) settingBeforeBundles.set(id, { ...example.bundle, id: `${example.bundle.id}-before`, candidates: [report.baseline_candidate], evaluations: [report.baseline_evaluation], reviews: [] });
-    acceptBundle(settingBeforeBundles.get(id)!, !histories.includes(settingBeforeBundles.get(id)!), resetView);
-  } else acceptBundle(example.bundle, !histories.includes(example.bundle), resetView);
+    const key = `${example.bundle.id}:${chosen.id}`;
+    if (!settingBeforeBundles.has(key)) settingBeforeBundles.set(key, { exampleId: id, candidateId: chosen.id, bundle: { ...example.bundle, id: `${example.bundle.id}-before-${chosen.id}`, candidates: [report.baseline_candidate], evaluations: [report.baseline_evaluation], reviews: [] } });
+    const beforeBundle = settingBeforeBundles.get(key)!.bundle;
+    acceptBundle(beforeBundle, !histories.includes(beforeBundle), resetView);
+  } else {
+    acceptBundle(example.bundle, !histories.includes(example.bundle), resetView);
+    if (chosen && chosen.id !== activeId) { activeId = chosen.id; renderAll(); }
+  }
 }
 async function loadWallExample(profile: string) {
   if (busy) return;
@@ -267,7 +276,7 @@ function renderSettingStudy() {
   list.innerHTML = list.hidden ? '' : settingExamplesHTML(settingExamples, context?.example.id || '', busy, bundle);
   host.hidden = bundle?.request.profile !== 'setting' || !candidate || !!selectedBeta();
   const evidenceOpen = host.querySelector<HTMLDetailsElement>('.setting-evidence')?.open;
-  host.innerHTML = !host.hidden && bundle && candidate ? settingStudyHTML(bundle, candidate, evaluation(), activeSettingReport(), context?.stage || 'after', selectedSettingAlternative(), step, !!context, busy, context?.example.bundle.evaluations.find(item => item.candidate_id === context.example.bundle.candidates[0]?.id)) : '';
+  host.innerHTML = !host.hidden && bundle && candidate ? settingStudyHTML(bundle, candidate, evaluation(), activeSettingReport(), context?.stage || 'after', selectedSettingAlternative(), step, !!context && !!activeSettingReport(), busy, context?.example.bundle.evaluations.find(item => item.candidate_id === context.originCandidate?.id)) : '';
   const evidence = host.querySelector<HTMLDetailsElement>('.setting-evidence'); if (evidence && evidenceOpen) evidence.open = true;
 }
 function clearBetaAudit() {
@@ -479,7 +488,7 @@ function renderAll() {
   $('#revision-badge').textContent = candidate ? `修订 ${candidate.revision}${viewingAlternative() ? ' · 替代走法' : ''}` : '—';
   if (bundle) {
     const r = bundle.request;
-    $('#scene-title').textContent = viewingAlternative() ? `同一岩壁 · ${selectedBeta()?.label || selectedSettingAlternative()?.label || '备选走法'}` : r.profile === 'setting' ? settingNames[r.setting_design?.program || ''] || '手脚协同摆点' : r.profile === 'route' ? '当前线路 · 同色岩点' : r.profile === 'style' ? '固定训练板 · 选点与动作搜索' : r.design_brief?.title || (r.profile === 'catalog' ? '标准模板 · 有限库存与组合安装' : '') || scenarioNames[r.scenario] || r.scenario;
+    $('#scene-title').textContent = viewingAlternative() ? `同一岩壁 · ${selectedBeta()?.label || selectedSettingAlternative()?.label || '备选走法'}` : r.profile === 'setting' ? (r.setting_design?.wall_profile === 'roof' ? '水平屋檐 · 出檐手脚配合' : settingNames[r.setting_design?.program || ''] || '手脚协同摆点') : r.profile === 'route' ? '当前线路 · 同色岩点' : r.profile === 'style' ? '固定训练板 · 选点与动作搜索' : r.design_brief?.title || (r.profile === 'catalog' ? '标准模板 · 有限库存与组合安装' : '') || scenarioNames[r.scenario] || r.scenario;
     $('#canvas-legend').style.setProperty('--route-ink', `#${palette.route.toString(16).padStart(6, '0')}`);
     $('#canvas-legend').innerHTML = `<span><i class="dot jug"></i>${current()?.layout_report ? '布局试案' : viewingAlternative() ? '当前走法使用' : '当前线路'}</span>${viewingAlternative() ? '<span><i class="dot skipped"></i>已安装但未用</span>' : '<span>手 / 脚：实际用途</span>'}` + (r.profile === 'catalog' ? '<span><i class="dot normal"></i>面法向</span>' : current()?.layout_report ? '<span>仅起始接触，未生成移手序列</span>' : '<span>数字：移手次序</span>');
     const wallHeight = wallHeightMeasures(r.scene);
@@ -945,6 +954,13 @@ document.addEventListener('click', (event) => {
   else if (action === 'beta-export' && betaReport && !busy) download(betaReport, `beta-audit-${betaReport.source.candidate_id}-r${betaReport.source.revision}.json`);
   else if (action === 'candidate') { clearBetaAudit(); activeId = button.dataset.id!; step = 0; selectedHold = ''; selectedInventory = ''; renderAll(); }
   else if (action === 'phase') { step = Number(button.dataset.step); renderSteps(); renderBrief(); view?.setStep(step); }
+  else if (action === 'roof-step' || action === 'roof-view') {
+    const nextStep = Number(button.dataset.step);
+    if (busy || !Number.isInteger(nextStep) || !current()?.states[nextStep]) return;
+    step = nextStep; $<HTMLInputElement>('#show-body').checked = true; view?.setBody(true);
+    renderSteps(); view?.setStep(step);
+    if (action === 'roof-view') $('.canvas-shell').scrollIntoView({ block: 'center', behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
+  }
   else if (action === 'step') { step = Number(button.dataset.step); renderSteps(); view?.setStep(step); }
   else if (action === 'previous' || action === 'next') { step += action === 'previous' ? -1 : 1; renderSteps(); view?.setStep(step); }
   else if (action === 'front' || action === 'perspective') {

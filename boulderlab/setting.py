@@ -14,7 +14,7 @@ from .catalog import hold_taxonomy
 from .geometry import grip_surfaces
 from .route_design import AFFORDANCES, _ref
 
-MODEL_VERSION = "geometry-beta-statics-codesign-2"
+MODEL_VERSION = "geometry-beta-statics-codesign-3"
 PROGRAMS = [
  {"id":"diagonal_balance", "label":"斜向移重", "description":"斜向手点与错开的脚点，引出横向移重和换脚。"},
  {"id":"opposing_sidepulls", "label":"对向侧拉", "description":"两侧朝内的抓握方向与支撑脚联动，允许不同换手顺序。"},
@@ -24,10 +24,10 @@ LIMITATIONS = [
  "本轮排名是静态支撑导向的研究选择，不是通用定线评分；不可行不作为动态线路的不可攀结论，仍需定线员修改与现场试爬。",
  "三个布局是合成定线研究，尚未经真人试攀；按当前求得姿态的准静态反力、摩擦/抓握包络与容量检查比较修订。参数及整体手部抓握包络未标定。",
  "先给空间和动作意图，再在同一布局上自由搜索手脚接触，依据反例提议位置、朝向及脚点调整，再重新搜索；不要求使用每个岩点。",
- "搜索以窄接触走廊剪枝：双手横差≤1.35臂长、竖差≤1.30臂长，双脚横差≤0.95腿长、竖差≤0.72腿长，手脚中心高差>0.45m；高抬脚、大跨度和部分真人可行解可能被排除。",
+ "搜索以窄接触走廊剪枝；屋檐结构用实际三维手脚中心轴，其他结构沿用竖墙投影。阈值是搜索假设，仍可能漏掉高抬脚、大跨度等真人走法。",
  "有限束搜索并非穷举；未找到捷径不能证明难点不可绕过，搜索出的较低负担也不等于真人更省力。",
  "侧拉、横向移重、脚点转换仅为可观测几何标签；准静态可行不验证连续运动、足部旋转、挂脚、摆荡、动态飞行与落点。",
- "姿态 IK 验证离散接触，不能证明动作可连续完成。墙板转角改变真实接触坐标与接触法向；人体碰撞、关节力矩与人体可攀性仍未验证。",
+ "姿态 IK 验证离散接触及有限墙板骨架穿越；无皮肤厚度和连续动作扫掠，不能证明动作可连续完成。关节力矩与真人可攀性仍未验证。",
 ]
 
 
@@ -172,6 +172,10 @@ def _proposal(request,original,record,strength):
 def candidate_state(candidate,index):return candidate["states"][index*2]["contacts"]
 
 
+def _placement_change_fields(placement):
+    return {k: placement[k] for k in ("u", "v", "rotation_deg", "wall_panel_id") if k in placement}
+
+
 def analyze_setting(request,candidate):
     from .beta_audit import analyze_beta
     return analyze_beta(request,candidate)[0]
@@ -218,19 +222,70 @@ def _search_cached(encoded):
         raise ValueError("bounded setting search found no complete sequence; enlarge search budget or revise geometry")
     feasible=[t for t in trials if t["status"]=="pass"]
     selected=min(feasible or [t for t in trials if t["records"]],key=lambda t:(_mechanical_rank(t["records"][0]),t["index"]))
-    best=selected["records"][0];candidate=copy.deepcopy(best["candidate"])
-    changes=[]
-    old={p["id"]:p for p in original}
-    for p in candidate["placements"]:
-        if p!=old[p["id"]]:changes.append({"placement_id":p["id"],"before":{k:old[p["id"]][k] for k in ("u","v","rotation_deg")},"after":{k:p[k] for k in ("u","v","rotation_deg")},"reason":"依据当前释放态的准静态反力/重心，调整手点反力朝向与支撑脚位置；调整后重新搜索、求姿态并检查平衡。"})
-    alternatives=[]
-    for r in selected["records"][1:]:
-        if r["evaluation"]["summary"]["status"]=="pass":alternatives.append({k:copy.deepcopy(r[k]) for k in ("candidate","summary","evaluation","analysis")})
-    tags=[{"id":"lateral-transfer","label":"横向手脚转换","evidence":best["character"]}, {"id":"directional-contact","label":"朝向与支撑配合（几何代理）","evidence":{"mean_directional_demand":best["character"]["mean_directional_demand"]}}]
-    candidate["setting_report"]={"model_version":MODEL_VERSION,"program":request["setting_design"]["program"],"intent":request["setting_design"]["intent"],"baseline_candidate":copy.deepcopy(baseline["candidate"]),"baseline_evaluation":copy.deepcopy(baseline["evaluation"]),"baseline_analysis":copy.deepcopy(baseline["analysis"]),
-      "baseline":{"mechanics_summary":baseline["evaluation"].get("mechanics_report",{}).get("summary"),"summary":baseline["summary"],"character":baseline["character"],"search":trials[0]["search"],"geometry_hash":canonical_hash(original)},"result":{"mechanics_summary":best["evaluation"].get("mechanics_report",{}).get("summary"),"summary":best["summary"],"character":best["character"],"search":selected["search"],"geometry_hash":canonical_hash(candidate["placements"])},"changes":changes,"observed_movement_tags":tags,"allowed_alternatives":alternatives,"limitations":LIMITATIONS,
-      "search":{"timeout_seconds":60,"elapsed_ms":round((time.perf_counter()-started)*1000,2),"time_budget_exhausted":time.perf_counter()>=deadline,"geometry_trials":len(trials),"selected_trial":selected["index"],"hand_count_policy":"free; only start/TOP required","coverage_policy":"unused installed holds allowed","ranking":"P0 first; maximize current-pose release equilibrium fraction, then all-state equilibrium fraction, then lower required axial capacity utilization; geometry character does not select layouts","trials":[{k:v for k,v in t.items() if k!="records"}|{"evaluations":[{"summary":r["summary"],"status":r["evaluation"]["summary"]["status"],"character":r["character"],"mechanics_summary":r["evaluation"].get("mechanics_report",{}).get("summary")} for r in t["records"]]} for t in trials]}}
-    return [candidate]
+    def exported(selected, best, role):
+        candidate=copy.deepcopy(best["candidate"])
+        changes=[]
+        old={p["id"]:p for p in original}
+        for p in candidate["placements"]:
+            if p!=old[p["id"]]:changes.append({"placement_id":p["id"],"before":_placement_change_fields(old[p["id"]]),"after":_placement_change_fields(p),"reason":"依据当前释放态的准静态反力/重心及墙面支撑方向，调整手点朝向与脚点安装位置；调整后重新搜索、求姿态并检查平衡。"})
+        alternatives=[]
+        for r in selected["records"]:
+            if r is best:continue
+            if r["evaluation"]["summary"]["status"]=="pass":alternatives.append({k:copy.deepcopy(r[k]) for k in ("candidate","summary","evaluation","analysis")})
+        tags=[{"id":"lateral-transfer","label":"横向手脚转换","evidence":best["character"]}, {"id":"directional-contact","label":"朝向与支撑配合（几何代理）","evidence":{"mean_directional_demand":best["character"]["mean_directional_demand"]}}]
+        candidate["setting_report"]={"model_version":MODEL_VERSION,"program":request["setting_design"]["program"],"intent":request["setting_design"]["intent"],"baseline_candidate":copy.deepcopy(baseline["candidate"]),"baseline_evaluation":copy.deepcopy(baseline["evaluation"]),"baseline_analysis":copy.deepcopy(baseline["analysis"]),
+          "baseline":{"mechanics_summary":baseline["evaluation"].get("mechanics_report",{}).get("summary"),"summary":baseline["summary"],"character":baseline["character"],"search":trials[0]["search"],"geometry_hash":canonical_hash(original)},"result":{"mechanics_summary":best["evaluation"].get("mechanics_report",{}).get("summary"),"summary":best["summary"],"character":best["character"],"search":selected["search"],"geometry_hash":canonical_hash(candidate["placements"])},"changes":changes,"observed_movement_tags":tags,"allowed_alternatives":alternatives,"limitations":LIMITATIONS,
+          "search":{"timeout_seconds":60,"elapsed_ms":round((time.perf_counter()-started)*1000,2),"time_budget_exhausted":time.perf_counter()>=deadline,"geometry_trials":len(trials),"selected_trial":selected["index"],"hand_count_policy":"free; only start/TOP required","coverage_policy":"unused installed holds allowed","ranking":"P0 first; maximize current-pose release equilibrium fraction, then all-state equilibrium fraction, then lower required axial capacity utilization; geometry character does not select layouts","trials":[{k:v for k,v in t.items() if k!="records"}|{"evaluations":[{"summary":r["summary"],"status":r["evaluation"]["summary"]["status"],"character":r["character"],"mechanics_summary":r["evaluation"].get("mechanics_report",{}).get("summary")} for r in t["records"]]} for t in trials]}}
+        if request["setting_design"].get("wall_profile") == "roof":
+            report = candidate["setting_report"]
+            report["selection_role"] = role
+            report["baseline"]["exit_support"] = roof_exit_support(baseline["candidate"], baseline["evaluation"])
+            report["result"]["exit_support"] = roof_exit_support(candidate, best["evaluation"])
+            if role == "exit_support_tradeoff":
+                candidate["name"] = "屋檐 · 转换调整方案（增加动作）"
+                report["search"]["ranking"] = "P0 first; optional design prioritizes exit release equilibrium then exit all-state equilibrium; full-route support and added transfers remain visible, not a global improvement claim"
+            else:
+                candidate["name"] = "屋檐 · 全程支撑排序保留方案"
+        return candidate
+    best = selected["records"][0]
+    candidates = [exported(selected, best, "whole_route_support")]
+    if request["setting_design"].get("wall_profile") == "roof":
+        def exit_rank(record):
+            support = roof_exit_support(record["candidate"], record["evaluation"])
+            return (-support["release_feasible_fraction"], -support["feasible_fraction"], _mechanical_rank(record))
+        choices = [(trial, record) for trial in trials for record in trial["records"]
+                   if record["evaluation"]["summary"]["status"] == "pass"
+                   and canonical_hash(record["candidate"]["placements"]) != canonical_hash(best["candidate"]["placements"])]
+        if choices:
+            trial, alternate = min(choices, key=lambda pair: exit_rank(pair[1]))
+            if exit_rank(alternate)[:2] < exit_rank(best)[:2]:
+                candidates.append(exported(trial, alternate, "exit_support_tradeoff"))
+    return candidates
+
+
+def roof_exit_support(candidate, evaluation):
+    """Observed exit contact window, derived only after independent search.
+
+    Includes the release *before* the first hand reaches the exit face, so the
+    awkward roof-to-exit handoff cannot disappear from the local comparison.
+    """
+    panels = {p["id"]: p.get("wall_panel_id") for p in candidate["placements"]}
+    by_state = {s["id"]: s for s in candidate["states"]}
+    first = next((i for i, event in enumerate(candidate["events"])
+                  if event["limb"].endswith("H") and
+                  panels[by_state[event["to_state"]]["contacts"][event["limb"]]["placement_id"]] == "upper-wall"), None)
+    ordered_states = candidate["states"][2*first+1:] if first is not None else []
+    state_ids = [s["id"] for s in ordered_states]
+    states = [s for s in evaluation.get("mechanics_report", {}).get("states", []) if s["state_id"] in state_ids]
+    release = [s for s in states if s["is_release"]]
+    count = lambda rows, status: sum(s["status"] == status for s in rows)
+    return {"first_exit_event_index": first, "state_ids": state_ids,
+            "states": len(states), "feasible_states": count(states, "feasible"), "infeasible_states": count(states, "infeasible"), "unknown_states": count(states, "unknown"),
+            "release_states": len(release), "release_feasible_states": count(release, "feasible"), "release_unknown_states": count(release, "unknown"),
+            "feasible_fraction": count(states, "feasible")/max(1, len(states)),
+            "release_feasible_fraction": count(release, "feasible")/max(1, len(release)),
+            "finish_status": states[-1]["status"] if states else "unknown",
+            "basis": "first exit hand-transfer release through matched TOP; current synthetic static model"}
 
 
 def validate_setting_report(request,candidate,current_evaluation=None):
@@ -249,6 +304,8 @@ def validate_setting_report(request,candidate,current_evaluation=None):
     if request.get("profile")!="setting":raise ValueError("setting report requires setting profile")
     if report.get("model_version")!=MODEL_VERSION or report.get("program")!=request["setting_design"]["program"]:
         raise ValueError("stale setting report version/program")
+    if request["setting_design"].get("wall_profile") == "roof" and report.get("selection_role") not in ("whole_route_support", "exit_support_tradeoff"):
+        raise ValueError("roof setting report requires explicit selection tradeoff")
     baseline=report.get("baseline_candidate")
     if not isinstance(baseline,dict) or "setting_report" in baseline:raise ValueError("invalid nested setting baseline")
     _schema(baseline,"candidate")
@@ -263,6 +320,9 @@ def validate_setting_report(request,candidate,current_evaluation=None):
         mechanical_evaluation=evaluation if key=="baseline" else current_evaluation
         if mechanical_evaluation is not None and actual.get("mechanics_summary")!=mechanical_evaluation.get("mechanics_report",{}).get("summary"):
             raise ValueError("setting mechanics summary mismatch")
+        if request["setting_design"].get("wall_profile") == "roof" and mechanical_evaluation is not None:
+            if actual.get("exit_support") != roof_exit_support(current, mechanical_evaluation):
+                raise ValueError("setting roof exit support mismatch")
         if evaluation is not None:_validate_evaluation(request,current,evaluation)
         if key=="baseline" and analysis!=expected_analysis:raise ValueError("setting baseline analysis mismatch")
     character=report["result"]["character"]
@@ -270,7 +330,7 @@ def validate_setting_report(request,candidate,current_evaluation=None):
     if report.get("observed_movement_tags")!=expected_tags:raise ValueError("setting movement evidence mismatch")
     old={p["id"]:p for p in baseline["placements"]};new={p["id"]:p for p in candidate["placements"]}
     if old.keys()!=new.keys():raise ValueError("setting refinement must retain installed inventory")
-    expected={pid:({k:old[pid][k] for k in ("u","v","rotation_deg")},{k:new[pid][k] for k in ("u","v","rotation_deg")}) for pid in old if old[pid]!=new[pid]}
+    expected={pid:(_placement_change_fields(old[pid]),_placement_change_fields(new[pid])) for pid in old if old[pid]!=new[pid]}
     actual={}
     for change in report.get("changes",[]):
         if change["placement_id"] in actual:raise ValueError("duplicate setting change")
@@ -335,4 +395,34 @@ def _mechanical_proposal(request,original,record,strength):
         p=byid[pid]
         for field,key in (("turn","rotation_deg"),("u","u"),("v","v")):
             if values[field]:p[key]=round(p[key]+strength*sum(v*w for v,w in values[field])/sum(w for _,w in values[field]),4)
+    if request["setting_design"].get("wall_profile") == "roof":
+        # Do not turn a border hold into a physically un-installable footprint.
+        # Reject that orientation proposal rather than moving the TOP to make
+        # room; the rest of the independently re-searched revision can proceed.
+        from .geometry import panel_fit
+        original_by_id = {p["id"]: p for p in original}
+        for error in panel_fit(points, inventory, request["scene"]):
+            pid = error["placement_id"]
+            byid[pid]["rotation_deg"] = original_by_id[pid]["rotation_deg"]
+        # A roof tread facing down cannot provide standing support at exit.
+        # Propose re-installing one *used* ceiling foot on the exit face. The
+        # search remains free to ignore it, match/skip hands, or reject the
+        # geometry; this is a spatial proposal, never a required move order.
+        roof_feet = [p for p in points if p.get("wall_panel_id") == "roof"
+                     and inventory[p["inventory_id"]]["type"] == "foothold"
+                     and any(p["id"] == ref["placement_id"] for s in record["candidate"]["states"]
+                             for ref in s["contacts"].values() if ref)]
+        if roof_feet:
+            p = max(roof_feet, key=lambda p: (p["v"], p["u"]))
+            exit_panel = next(panel for panel in request["scene"]["wall_panels"] if panel["id"] == "upper-wall")
+            item = inventory[p["inventory_id"]]
+            p.update(wall_panel_id=exit_panel["id"], v=request["scene"]["margin"]+item["height"]/2+.015,
+                     rotation_deg=0.)
+        # Rotations change the actual footprint. Re-fit and space the proposal
+        # before spending IK time, retaining the same start and TOP positions.
+        from .wall_profiles import fit_installed_footprints, repair_panel_spacing
+        proposed_request = copy.deepcopy(request)
+        proposed_request["reference_layout"] = points
+        fit_installed_footprints(proposed_request)
+        repair_panel_spacing(proposed_request, protected_ids=top)
     return points

@@ -23,10 +23,11 @@ PROGRAMS = [
     {"id": "power_finish", "label": "后段力量", "description": "连续推进与转换后，保留后段力量难点。"},
     {"id": "sustained_finish", "label": "持续收尾", "description": "前段难点与缓和后，连接连续输出。"},
 ]
-MODEL_VERSION = "full-route-proxy-1"
+MODEL_VERSION = "full-route-proxy-2"
 LIMITATIONS = [
     "岩点属性、动作需求和负荷递推系数均为合成假设；不是实际抓力、疲劳、功率或攀爬等级。",
     "历史负荷参与动作选择；缓和机会来自当前手脚接触条件，不由阶段名称直接给予恢复。",
+    "没有接触条件支持的缓和时不自动遗忘前序负荷；向下的屋檐踩面不获得站立恢复加成。",
     "束搜索允许每次移手前 0–2 次脚调整及最终双手匹配 TOP；不是完整动作学或全局最优搜索。",
     "只生成 8、10、12 次移手的合成抱石路线；连续动力学、摩擦、平衡与真人试攀未验证。",
 ]
@@ -123,7 +124,10 @@ def _history(previous, metrics, context, after):
     # it; labels and requested phase targets never enter this calculation.
     rest = max(0., (access-.65)/.35) * metrics["attributes"]["foot_support"] * (1-metrics["attributes"]["inclination"]) * max(0., 1-grip)
     recovery = previous*.24*rest
-    accumulated = max(0., previous*.91 + metrics["load"]*.70 - recovery)
+    # Adding cheap shuffles must not erase prior effort when the contacts offer
+    # no relief. The old unconditional .91 retention did exactly that after a
+    # demanding section; only explicit contact-derived recovery may reduce it.
+    accumulated = max(0., previous + metrics["load"]*.70 - recovery)
     burden = metrics["load"] + previous*.17
     return accumulated, rest, recovery, burden
 

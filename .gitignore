@@ -18,6 +18,9 @@ dist/
 
 # Keep current examples; older generated snapshots remain local.
 fixtures/history/
+# Intermediate roof probes predate the final source fingerprint.
+outputs/roof-study/*-probe.json
+outputs/roof-study/roof-trial-details.json
 outputs/workspace-takeover/
 
 # Reference photos are linked and attributed, not redistributed.

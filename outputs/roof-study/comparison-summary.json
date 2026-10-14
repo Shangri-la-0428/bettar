@@ -1,0 +1,134 @@
+[
+  {
+    "name": "屋檐 · 全程支撑排序保留方案",
+    "after": {
+      "p0": {
+        "status": "pass",
+        "passed": 69,
+        "total": 69
+      },
+      "moves": 11,
+      "exit_peak": {
+        "event_index": 7,
+        "limb": "RH",
+        "target": "hand-5",
+        "target_panel": "upper-wall",
+        "from_state": "b14",
+        "release_state": "b15",
+        "to_state": "b16",
+        "spans_exit_and_lower_contacts": true,
+        "prior_load": 142.76851,
+        "fresh_burden": 43.61852,
+        "effective_burden": 67.88917,
+        "accumulated_load": 172.14007,
+        "rest_opportunity": 0.0339,
+        "recovery_proxy": 1.16141
+      },
+      "exit_support": {
+        "first_exit_event_index": 7,
+        "state_ids": [
+          "b15",
+          "b16",
+          "b17",
+          "b18",
+          "b19",
+          "b20",
+          "b21",
+          "b22"
+        ],
+        "states": 8,
+        "feasible_states": 2,
+        "infeasible_states": 6,
+        "unknown_states": 0,
+        "release_states": 4,
+        "release_feasible_states": 1,
+        "release_unknown_states": 0,
+        "feasible_fraction": 0.25,
+        "release_feasible_fraction": 0.25,
+        "finish_status": "infeasible",
+        "basis": "first exit hand-transfer release through matched TOP; current synthetic static model"
+      },
+      "mechanics_summary": {
+        "status": "infeasible",
+        "feasible_states": 10,
+        "infeasible_states": 13,
+        "unknown_states": 0,
+        "release_states": 11,
+        "release_infeasible_states": 7,
+        "release_unknown_states": 0,
+        "max_capacity_utilization": 0.5504391,
+        "worst_state_id": "b5"
+      }
+    },
+    "alternatives": 2,
+    "changed_placements": 0,
+    "changed_but_unused": []
+  },
+  {
+    "name": "屋檐 · 转换调整方案（增加动作）",
+    "after": {
+      "p0": {
+        "status": "pass",
+        "passed": 80,
+        "total": 80
+      },
+      "moves": 13,
+      "exit_peak": {
+        "event_index": 9,
+        "limb": "RH",
+        "target": "hand-5",
+        "target_panel": "upper-wall",
+        "from_state": "b18",
+        "release_state": "b19",
+        "to_state": "b20",
+        "spans_exit_and_lower_contacts": true,
+        "prior_load": 216.27291,
+        "fresh_burden": 40.53423,
+        "effective_burden": 77.30063,
+        "accumulated_load": 244.22022,
+        "rest_opportunity": 0.00822,
+        "recovery_proxy": 0.42665
+      },
+      "exit_support": {
+        "first_exit_event_index": 9,
+        "state_ids": [
+          "b19",
+          "b20",
+          "b21",
+          "b22",
+          "b23",
+          "b24",
+          "b25",
+          "b26"
+        ],
+        "states": 8,
+        "feasible_states": 6,
+        "infeasible_states": 2,
+        "unknown_states": 0,
+        "release_states": 4,
+        "release_feasible_states": 2,
+        "release_unknown_states": 0,
+        "feasible_fraction": 0.75,
+        "release_feasible_fraction": 0.5,
+        "finish_status": "feasible",
+        "basis": "first exit hand-transfer release through matched TOP; current synthetic static model"
+      },
+      "mechanics_summary": {
+        "status": "infeasible",
+        "feasible_states": 12,
+        "infeasible_states": 15,
+        "unknown_states": 0,
+        "release_states": 13,
+        "release_infeasible_states": 10,
+        "release_unknown_states": 0,
+        "max_capacity_utilization": 0.9808667,
+        "worst_state_id": "b3"
+      }
+    },
+    "alternatives": 5,
+    "changed_placements": 6,
+    "changed_but_unused": [
+      "foot-8"
+    ]
+  }
+]

@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
-  "id": "bundle-a83e22454c-1791994487165051000",
-  "created_at": "2026-10-14T16:14:47.165053+00:00",
+  "id": "bundle-a83e22454c-1791997560240865000",
+  "created_at": "2026-10-14T17:06:00.240867+00:00",
   "request": {
     "schema_version": "1.0",
     "id": "request-style-technical-A",
@@ -3555,15 +3555,15 @@
       ],
       "search_metadata": {
         "algorithm": "bounded_contact_beam_v1",
-        "expanded": 10229,
+        "expanded": 10230,
         "expansion_limit": 16000,
         "beam_width": 128,
-        "complete_sequences": 123,
+        "complete_sequences": 124,
         "returned_candidates": 3,
         "distinct_hand_sequences": 3,
         "rejected": {
-          "beam_duplicate_state": 5533,
-          "beam_pruned": 2268,
+          "beam_duplicate_state": 5532,
+          "beam_pruned": 2269,
           "duplicate_contact": 2048
         },
         "budget_exhausted": false,
@@ -4174,15 +4174,15 @@
       ],
       "search_metadata": {
         "algorithm": "bounded_contact_beam_v1",
-        "expanded": 10229,
+        "expanded": 10230,
         "expansion_limit": 16000,
         "beam_width": 128,
-        "complete_sequences": 123,
+        "complete_sequences": 124,
         "returned_candidates": 3,
         "distinct_hand_sequences": 3,
         "rejected": {
-          "beam_duplicate_state": 5533,
-          "beam_pruned": 2268,
+          "beam_duplicate_state": 5532,
+          "beam_pruned": 2269,
           "duplicate_contact": 2048
         },
         "budget_exhausted": false,
@@ -4793,15 +4793,15 @@
       ],
       "search_metadata": {
         "algorithm": "bounded_contact_beam_v1",
-        "expanded": 10229,
+        "expanded": 10230,
         "expansion_limit": 16000,
         "beam_width": 128,
-        "complete_sequences": 123,
+        "complete_sequences": 124,
         "returned_candidates": 3,
         "distinct_hand_sequences": 3,
         "rejected": {
-          "beam_duplicate_state": 5533,
-          "beam_pruned": 2268,
+          "beam_duplicate_state": 5532,
+          "beam_pruned": 2269,
           "duplicate_contact": 2048
         },
         "budget_exhausted": false,
@@ -4819,9 +4819,9 @@
   ],
   "evaluations": [
     {
-      "id": "eval-candidate-style-42-1-66b3029af2",
+      "id": "eval-candidate-style-42-1-5b25e01682",
       "candidate_id": "candidate-style-42-1",
-      "fingerprint": "sha256:7856d193bcff11bc5b1eb2c9844797ab7dc540db2364354440bd3e66b3029af2",
+      "fingerprint": "sha256:cb3bd4f34efab9ad080610e1764c5711279a1db13e7a8802123d9d5b25e01682",
       "version": "0.1.0",
       "checks": [
         {
@@ -4896,7 +4896,7 @@
             "upper_arm": 0.28,
             "forearm": 0.25,
             "endpoint_offset_sum_m": 0.0,
-            "fingerprint": "sha256:7856d193bcff11bc5b1eb2c9844797ab7dc540db2364354440bd3e66b3029af2"
+            "fingerprint": "sha256:cb3bd4f34efab9ad080610e1764c5711279a1db13e7a8802123d9d5b25e01682"
           }
         },
         {
@@ -4922,7 +4922,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 68.81
+            "elapsed_ms": 70.13
           }
         },
         {
@@ -4938,7 +4938,7 @@
             "upper_arm": 0.28,
             "forearm": 0.25,
             "endpoint_offset_sum_m": 0.0,
-            "fingerprint": "sha256:7856d193bcff11bc5b1eb2c9844797ab7dc540db2364354440bd3e66b3029af2"
+            "fingerprint": "sha256:cb3bd4f34efab9ad080610e1764c5711279a1db13e7a8802123d9d5b25e01682"
           }
         },
         {
@@ -4963,7 +4963,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 3.34
+            "elapsed_ms": 3.51
           }
         },
         {
@@ -4979,7 +4979,7 @@
             "upper_arm": 0.28,
             "forearm": 0.25,
             "endpoint_offset_sum_m": 0.0,
-            "fingerprint": "sha256:7856d193bcff11bc5b1eb2c9844797ab7dc540db2364354440bd3e66b3029af2"
+            "fingerprint": "sha256:cb3bd4f34efab9ad080610e1764c5711279a1db13e7a8802123d9d5b25e01682"
           }
         },
         {
@@ -5005,7 +5005,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 125.76
+            "elapsed_ms": 127.57
           }
         },
         {
@@ -5030,7 +5030,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 3.59
+            "elapsed_ms": 3.46
           }
         },
         {
@@ -5046,7 +5046,7 @@
             "upper_arm": 0.28,
             "forearm": 0.25,
             "endpoint_offset_sum_m": 0.0,
-            "fingerprint": "sha256:7856d193bcff11bc5b1eb2c9844797ab7dc540db2364354440bd3e66b3029af2"
+            "fingerprint": "sha256:cb3bd4f34efab9ad080610e1764c5711279a1db13e7a8802123d9d5b25e01682"
           }
         },
         {
@@ -5072,7 +5072,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 71.09
+            "elapsed_ms": 71.63
           }
         },
         {
@@ -5088,7 +5088,7 @@
             "upper_arm": 0.28,
             "forearm": 0.25,
             "endpoint_offset_sum_m": 0.0,
-            "fingerprint": "sha256:7856d193bcff11bc5b1eb2c9844797ab7dc540db2364354440bd3e66b3029af2"
+            "fingerprint": "sha256:cb3bd4f34efab9ad080610e1764c5711279a1db13e7a8802123d9d5b25e01682"
           }
         },
         {
@@ -5113,7 +5113,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 3.49
+            "elapsed_ms": 3.43
           }
         },
         {
@@ -5129,7 +5129,7 @@
             "upper_arm": 0.28,
             "forearm": 0.25,
             "endpoint_offset_sum_m": 0.0,
-            "fingerprint": "sha256:7856d193bcff11bc5b1eb2c9844797ab7dc540db2364354440bd3e66b3029af2"
+            "fingerprint": "sha256:cb3bd4f34efab9ad080610e1764c5711279a1db13e7a8802123d9d5b25e01682"
           }
         },
         {
@@ -5155,7 +5155,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 93.76
+            "elapsed_ms": 96.18
           }
         },
         {
@@ -5180,7 +5180,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 3.35
+            "elapsed_ms": 3.45
           }
         },
         {
@@ -5196,7 +5196,7 @@
             "upper_arm": 0.28,
             "forearm": 0.25,
             "endpoint_offset_sum_m": 0.0,
-            "fingerprint": "sha256:7856d193bcff11bc5b1eb2c9844797ab7dc540db2364354440bd3e66b3029af2"
+            "fingerprint": "sha256:cb3bd4f34efab9ad080610e1764c5711279a1db13e7a8802123d9d5b25e01682"
           }
         },
         {
@@ -5222,7 +5222,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 130.5
+            "elapsed_ms": 132.0
           }
         },
         {
@@ -5238,7 +5238,7 @@
             "upper_arm": 0.28,
             "forearm": 0.25,
             "endpoint_offset_sum_m": 0.0,
-            "fingerprint": "sha256:7856d193bcff11bc5b1eb2c9844797ab7dc540db2364354440bd3e66b3029af2"
+            "fingerprint": "sha256:cb3bd4f34efab9ad080610e1764c5711279a1db13e7a8802123d9d5b25e01682"
           }
         },
         {
@@ -5263,7 +5263,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 3.31
+            "elapsed_ms": 3.57
           }
         },
         {
@@ -5279,7 +5279,7 @@
             "upper_arm": 0.28,
             "forearm": 0.25,
             "endpoint_offset_sum_m": 0.0,
-            "fingerprint": "sha256:7856d193bcff11bc5b1eb2c9844797ab7dc540db2364354440bd3e66b3029af2"
+            "fingerprint": "sha256:cb3bd4f34efab9ad080610e1764c5711279a1db13e7a8802123d9d5b25e01682"
           }
         },
         {
@@ -5305,7 +5305,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 130.04
+            "elapsed_ms": 134.07
           }
         },
         {
@@ -5330,7 +5330,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 3.29
+            "elapsed_ms": 3.53
           }
         },
         {
@@ -5346,7 +5346,7 @@
             "upper_arm": 0.28,
             "forearm": 0.25,
             "endpoint_offset_sum_m": 0.0,
-            "fingerprint": "sha256:7856d193bcff11bc5b1eb2c9844797ab7dc540db2364354440bd3e66b3029af2"
+            "fingerprint": "sha256:cb3bd4f34efab9ad080610e1764c5711279a1db13e7a8802123d9d5b25e01682"
           }
         },
         {
@@ -5372,7 +5372,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 104.86
+            "elapsed_ms": 108.7
           }
         },
         {
@@ -5388,7 +5388,7 @@
             "upper_arm": 0.28,
             "forearm": 0.25,
             "endpoint_offset_sum_m": 0.0,
-            "fingerprint": "sha256:7856d193bcff11bc5b1eb2c9844797ab7dc540db2364354440bd3e66b3029af2"
+            "fingerprint": "sha256:cb3bd4f34efab9ad080610e1764c5711279a1db13e7a8802123d9d5b25e01682"
           }
         },
         {
@@ -5413,7 +5413,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 3.68
+            "elapsed_ms": 3.5
           }
         },
         {
@@ -5429,7 +5429,7 @@
             "upper_arm": 0.28,
             "forearm": 0.25,
             "endpoint_offset_sum_m": 0.0,
-            "fingerprint": "sha256:7856d193bcff11bc5b1eb2c9844797ab7dc540db2364354440bd3e66b3029af2"
+            "fingerprint": "sha256:cb3bd4f34efab9ad080610e1764c5711279a1db13e7a8802123d9d5b25e01682"
           }
         },
         {
@@ -5455,7 +5455,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 132.31
+            "elapsed_ms": 124.71
           }
         },
         {
@@ -5480,7 +5480,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 3.71
+            "elapsed_ms": 3.51
           }
         },
         {
@@ -5496,7 +5496,7 @@
             "upper_arm": 0.28,
             "forearm": 0.25,
             "endpoint_offset_sum_m": 0.0,
-            "fingerprint": "sha256:7856d193bcff11bc5b1eb2c9844797ab7dc540db2364354440bd3e66b3029af2"
+            "fingerprint": "sha256:cb3bd4f34efab9ad080610e1764c5711279a1db13e7a8802123d9d5b25e01682"
           }
         },
         {
@@ -5522,7 +5522,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 126.25
+            "elapsed_ms": 124.19
           }
         },
         {
@@ -5677,7 +5677,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 68.81
+            "elapsed_ms": 70.13
           },
           "state_id": "s0"
         },
@@ -5795,7 +5795,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 3.34
+            "elapsed_ms": 3.51
           },
           "state_id": "s1"
         },
@@ -5914,7 +5914,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 125.76
+            "elapsed_ms": 127.57
           },
           "state_id": "s2"
         },
@@ -6032,7 +6032,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 3.59
+            "elapsed_ms": 3.46
           },
           "state_id": "s3"
         },
@@ -6151,7 +6151,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 71.09
+            "elapsed_ms": 71.63
           },
           "state_id": "s4"
         },
@@ -6269,7 +6269,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 3.49
+            "elapsed_ms": 3.43
           },
           "state_id": "s5"
         },
@@ -6388,7 +6388,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 93.76
+            "elapsed_ms": 96.18
           },
           "state_id": "s6"
         },
@@ -6506,7 +6506,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 3.35
+            "elapsed_ms": 3.45
           },
           "state_id": "s7"
         },
@@ -6625,7 +6625,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 130.5
+            "elapsed_ms": 132.0
           },
           "state_id": "s8"
         },
@@ -6743,7 +6743,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 3.31
+            "elapsed_ms": 3.57
           },
           "state_id": "s9"
         },
@@ -6862,7 +6862,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 130.04
+            "elapsed_ms": 134.07
           },
           "state_id": "s10"
         },
@@ -6980,7 +6980,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 3.29
+            "elapsed_ms": 3.53
           },
           "state_id": "s11"
         },
@@ -7099,7 +7099,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 104.86
+            "elapsed_ms": 108.7
           },
           "state_id": "s12"
         },
@@ -7217,7 +7217,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 3.68
+            "elapsed_ms": 3.5
           },
           "state_id": "s13"
         },
@@ -7336,7 +7336,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 132.31
+            "elapsed_ms": 124.71
           },
           "state_id": "s14"
         },
@@ -7454,7 +7454,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 3.71
+            "elapsed_ms": 3.51
           },
           "state_id": "s15"
         },
@@ -7573,7 +7573,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 126.25
+            "elapsed_ms": 124.19
           },
           "state_id": "s16"
         }
@@ -7583,17 +7583,17 @@
         "passed": 36,
         "total": 36
       },
-      "elapsed_ms": 1048.74,
+      "elapsed_ms": 1054.6,
       "design_analysis": {
         "source": "synthetic_assumption",
-        "model_version": "style-proxy-1",
+        "model_version": "style-proxy-2",
         "style_goal": "technical",
         "rhythm": "late_crux",
         "dimensions": {
-          "strength": 37.36691,
+          "strength": 38.25004,
           "power": 43.66044,
-          "technical": 53.3003,
-          "load": 37.84934
+          "technical": 54.25703,
+          "load": 38.44472
         },
         "moves": [
           {
@@ -7603,29 +7603,30 @@
             "limb": "RF",
             "from_placement_id": "board-14",
             "to_placement_id": "board-19",
-            "strength": 11.52402,
+            "strength": 11.63963,
             "power": 24.53001,
-            "technical": 49.34352,
-            "load": 15.88074,
+            "technical": 49.62368,
+            "load": 15.96689,
             "attributes": {
               "span_ratio": 1.417,
               "grip_accessibility": 0.5,
               "precision": 0.65,
-              "foot_support": 0.32844,
+              "foot_support": 0.30309,
               "inclination": 0.0,
               "directional_demand": 0.69641,
+              "standing_foot_support": 0.4614,
               "friction_dependence": 0.35,
               "supporting_hand_demand": 0.2,
               "support_precision": 0.5
             },
-            "accumulated_load": 15.88074,
+            "accumulated_load": 15.96689,
             "phase_target": {
               "strength": 32.64,
               "power": 29.24,
               "technical": 48.96,
               "load": 32.64
             },
-            "burden": 15.88074
+            "burden": 15.96689
           },
           {
             "event_index": 1,
@@ -7634,29 +7635,30 @@
             "limb": "RH",
             "from_placement_id": "board-02",
             "to_placement_id": "board-05",
-            "strength": 35.62642,
+            "strength": 36.53655,
             "power": 28.68899,
-            "technical": 47.72728,
-            "load": 32.45594,
+            "technical": 48.71326,
+            "load": 33.06952,
             "attributes": {
               "span_ratio": 0.55345,
               "grip_accessibility": 0.58,
               "precision": 0.6,
-              "foot_support": 0.48074,
+              "foot_support": 0.4049,
               "inclination": 0.0,
               "directional_demand": 0.07282,
+              "standing_foot_support": 0.82499,
               "friction_dependence": 0.55,
               "supporting_hand_demand": 0.2,
               "support_precision": 0.575
             },
-            "accumulated_load": 45.02401,
+            "accumulated_load": 45.72733,
             "phase_target": {
               "strength": 32.64,
               "power": 29.24,
               "technical": 48.96,
               "load": 32.64
             },
-            "burden": 34.36163
+            "burden": 34.98555
           },
           {
             "event_index": 2,
@@ -7665,29 +7667,30 @@
             "limb": "LF",
             "from_placement_id": "board-13",
             "to_placement_id": "board-15",
-            "strength": 12.09773,
+            "strength": 12.39631,
             "power": 13.38142,
-            "technical": 47.10247,
-            "load": 13.50592,
+            "technical": 47.82599,
+            "load": 13.7284,
             "attributes": {
               "span_ratio": 0.68557,
               "grip_accessibility": 0.643,
               "precision": 0.55,
-              "foot_support": 0.24,
+              "foot_support": 0.17452,
               "inclination": 0.0,
               "directional_demand": 0.66635,
+              "standing_foot_support": 0.36359,
               "friction_dependence": 0.35,
               "supporting_hand_demand": 0.41,
               "support_precision": 0.65
             },
-            "accumulated_load": 47.26101,
+            "accumulated_load": 48.03315,
             "phase_target": {
               "strength": 41.28,
               "power": 36.98,
               "technical": 61.92,
               "load": 41.28
             },
-            "burden": 18.9088
+            "burden": 19.21568
           },
           {
             "event_index": 3,
@@ -7696,29 +7699,30 @@
             "limb": "RH",
             "from_placement_id": "board-05",
             "to_placement_id": "board-12",
-            "strength": 31.30951,
+            "strength": 32.43116,
             "power": 47.18194,
-            "technical": 52.76306,
-            "load": 35.63505,
+            "technical": 53.97818,
+            "load": 36.39122,
             "attributes": {
               "span_ratio": 0.89832,
               "grip_accessibility": 0.71,
               "precision": 0.38,
-              "foot_support": 0.40234,
+              "foot_support": 0.30887,
               "inclination": 0.0,
               "directional_demand": 0.40084,
+              "standing_foot_support": 0.76318,
               "friction_dependence": 0.4,
               "supporting_hand_demand": 0.2,
               "support_precision": 0.6
             },
-            "accumulated_load": 73.3681,
+            "accumulated_load": 74.82066,
             "phase_target": {
               "strength": 41.28,
               "power": 36.98,
               "technical": 61.92,
               "load": 41.28
             },
-            "burden": 41.30637
+            "burden": 42.1552
           },
           {
             "event_index": 4,
@@ -7727,29 +7731,30 @@
             "limb": "LF",
             "from_placement_id": "board-15",
             "to_placement_id": "board-22",
-            "strength": 10.94727,
+            "strength": 11.23091,
             "power": 17.52705,
-            "technical": 46.69485,
-            "load": 13.77724,
+            "technical": 47.3822,
+            "load": 13.98859,
             "attributes": {
               "span_ratio": 0.92051,
               "grip_accessibility": 0.714,
               "precision": 0.5,
-              "foot_support": 0.228,
+              "foot_support": 0.1658,
               "inclination": 0.0,
               "directional_demand": 0.61473,
+              "standing_foot_support": 0.36359,
               "friction_dependence": 0.35,
               "supporting_hand_demand": 0.31,
               "support_precision": 0.65
             },
-            "accumulated_load": 68.82605,
+            "accumulated_load": 70.16206,
             "phase_target": {
               "strength": 53.76,
               "power": 48.16,
               "technical": 80.64,
               "load": 53.76
             },
-            "burden": 22.58141
+            "burden": 22.96707
           },
           {
             "event_index": 5,
@@ -7758,29 +7763,30 @@
             "limb": "LH",
             "from_placement_id": "board-01",
             "to_placement_id": "board-09",
-            "strength": 50.68541,
+            "strength": 51.60015,
             "power": 57.88844,
-            "technical": 72.97254,
-            "load": 51.13441,
+            "technical": 73.9635,
+            "load": 51.75109,
             "attributes": {
               "span_ratio": 1.283,
               "grip_accessibility": 0.44,
               "precision": 0.88,
-              "foot_support": 0.48317,
+              "foot_support": 0.40694,
               "inclination": 0.0,
               "directional_demand": 0.78483,
+              "standing_foot_support": 0.82499,
               "friction_dependence": 0.38,
               "supporting_hand_demand": 0.42,
               "support_precision": 0.575
             },
-            "accumulated_load": 108.4318,
+            "accumulated_load": 110.2559,
             "phase_target": {
               "strength": 53.76,
               "power": 48.16,
               "technical": 80.64,
               "load": 53.76
             },
-            "burden": 59.39354
+            "burden": 60.17054
           },
           {
             "event_index": 6,
@@ -7789,29 +7795,30 @@
             "limb": "RF",
             "from_placement_id": "board-19",
             "to_placement_id": "board-23",
-            "strength": 12.12103,
+            "strength": 12.22508,
             "power": 24.29465,
-            "technical": 47.38229,
-            "load": 15.98661,
+            "technical": 47.63444,
+            "load": 16.06414,
             "attributes": {
               "span_ratio": 1.26665,
               "grip_accessibility": 0.714,
               "precision": 0.5,
-              "foot_support": 0.2956,
+              "foot_support": 0.27278,
               "inclination": 0.0,
               "directional_demand": 0.61473,
+              "standing_foot_support": 0.4614,
               "friction_dependence": 0.35,
               "supporting_hand_demand": 0.57,
               "support_precision": 0.5
             },
-            "accumulated_load": 97.87111,
+            "accumulated_load": 99.34495,
             "phase_target": {
               "strength": 60.48,
               "power": 54.18,
               "technical": 90.72,
               "load": 60.48
             },
-            "burden": 28.99843
+            "burden": 29.29485
           },
           {
             "event_index": 7,
@@ -7820,29 +7827,30 @@
             "limb": "LH",
             "from_placement_id": "board-09",
             "to_placement_id": "board-11",
-            "strength": 31.84629,
+            "strength": 32.4323,
             "power": 40.88239,
-            "technical": 39.73833,
-            "load": 32.17197,
+            "technical": 40.37317,
+            "load": 32.56704,
             "attributes": {
               "span_ratio": 1.00858,
               "grip_accessibility": 0.71,
               "precision": 0.38,
-              "foot_support": 0.6326,
+              "foot_support": 0.58377,
               "inclination": 0.0,
               "directional_demand": 0.40084,
+              "standing_foot_support": 0.92281,
               "friction_dependence": 0.4,
               "supporting_hand_demand": 0.42,
               "support_precision": 0.5
             },
-            "accumulated_load": 109.56633,
+            "accumulated_load": 111.21322,
             "phase_target": {
               "strength": 60.48,
               "power": 54.18,
               "technical": 90.72,
               "load": 60.48
             },
-            "burden": 43.91651
+            "burden": 44.48843
           }
         ],
         "phases": [
@@ -7858,10 +7866,10 @@
               "load": 32.64
             },
             "estimate": {
-              "strength": 35.62642,
+              "strength": 36.53655,
               "power": 28.68899,
-              "technical": 47.72728,
-              "load": 34.36163
+              "technical": 48.71326,
+              "load": 34.98555
             },
             "load_basis": "contextual_burden_capped_100"
           },
@@ -7877,10 +7885,10 @@
               "load": 41.28
             },
             "estimate": {
-              "strength": 31.30951,
+              "strength": 32.43116,
               "power": 47.18194,
-              "technical": 52.76306,
-              "load": 41.30637
+              "technical": 53.97818,
+              "load": 42.1552
             },
             "load_basis": "contextual_burden_capped_100"
           },
@@ -7896,10 +7904,10 @@
               "load": 53.76
             },
             "estimate": {
-              "strength": 50.68541,
+              "strength": 51.60015,
               "power": 57.88844,
-              "technical": 72.97254,
-              "load": 59.39354
+              "technical": 73.9635,
+              "load": 60.17054
             },
             "load_basis": "contextual_burden_capped_100"
           },
@@ -7915,23 +7923,23 @@
               "load": 60.48
             },
             "estimate": {
-              "strength": 31.84629,
+              "strength": 32.4323,
               "power": 40.88239,
-              "technical": 39.73833,
-              "load": 43.91651
+              "technical": 40.37317,
+              "load": 44.48843
             },
             "load_basis": "contextual_burden_capped_100"
           }
         ],
         "summary": {
-          "peak_strength": 50.68541,
+          "peak_strength": 51.60015,
           "peak_power": 57.88844,
-          "mean_technical": 53.3003,
-          "total_load": 210.54788,
-          "peak_burden": 59.39354,
+          "mean_technical": 54.25703,
+          "total_load": 213.5269,
+          "peak_burden": 60.17054,
           "crux_event_index": 5,
-          "objective": 0.18537,
-          "load_variability": 7.7897
+          "objective": 0.1786,
+          "load_variability": 7.8217
         },
         "limitations": [
           "0–100 为未标定的设计模型指数，不是岩点难度、真实力/功率或 V 等级。",
@@ -7941,15 +7949,15 @@
         ],
         "search": {
           "algorithm": "bounded_contact_beam_v1",
-          "expanded": 10229,
+          "expanded": 10230,
           "expansion_limit": 16000,
           "beam_width": 128,
-          "complete_sequences": 123,
+          "complete_sequences": 124,
           "returned_candidates": 3,
           "distinct_hand_sequences": 3,
           "rejected": {
-            "beam_duplicate_state": 5533,
-            "beam_pruned": 2268,
+            "beam_duplicate_state": 5532,
+            "beam_pruned": 2269,
             "duplicate_contact": 2048
           },
           "budget_exhausted": false,
@@ -7961,9 +7969,9 @@
       }
     },
     {
-      "id": "eval-candidate-style-42-2-09be48489f",
+      "id": "eval-candidate-style-42-2-a5befcacba",
       "candidate_id": "candidate-style-42-2",
-      "fingerprint": "sha256:bf9a67b5e470e5a45e29f5d937bb81fa1a672b739e593b94f09b6d09be48489f",
+      "fingerprint": "sha256:6f873616acaef2fc079b3da34e0c89274167260263f8edea69314da5befcacba",
       "version": "0.1.0",
       "checks": [
         {
@@ -8038,7 +8046,7 @@
             "upper_arm": 0.28,
             "forearm": 0.25,
             "endpoint_offset_sum_m": 0.0,
-            "fingerprint": "sha256:bf9a67b5e470e5a45e29f5d937bb81fa1a672b739e593b94f09b6d09be48489f"
+            "fingerprint": "sha256:6f873616acaef2fc079b3da34e0c89274167260263f8edea69314da5befcacba"
           }
         },
         {
@@ -8064,7 +8072,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 68.64
+            "elapsed_ms": 71.11
           }
         },
         {
@@ -8080,7 +8088,7 @@
             "upper_arm": 0.28,
             "forearm": 0.25,
             "endpoint_offset_sum_m": 0.0,
-            "fingerprint": "sha256:bf9a67b5e470e5a45e29f5d937bb81fa1a672b739e593b94f09b6d09be48489f"
+            "fingerprint": "sha256:6f873616acaef2fc079b3da34e0c89274167260263f8edea69314da5befcacba"
           }
         },
         {
@@ -8105,7 +8113,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 3.55
+            "elapsed_ms": 3.46
           }
         },
         {
@@ -8121,7 +8129,7 @@
             "upper_arm": 0.28,
             "forearm": 0.25,
             "endpoint_offset_sum_m": 0.0,
-            "fingerprint": "sha256:bf9a67b5e470e5a45e29f5d937bb81fa1a672b739e593b94f09b6d09be48489f"
+            "fingerprint": "sha256:6f873616acaef2fc079b3da34e0c89274167260263f8edea69314da5befcacba"
           }
         },
         {
@@ -8147,7 +8155,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 127.01
+            "elapsed_ms": 127.9
           }
         },
         {
@@ -8172,7 +8180,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 3.33
+            "elapsed_ms": 3.95
           }
         },
         {
@@ -8188,7 +8196,7 @@
             "upper_arm": 0.28,
             "forearm": 0.25,
             "endpoint_offset_sum_m": 0.0,
-            "fingerprint": "sha256:bf9a67b5e470e5a45e29f5d937bb81fa1a672b739e593b94f09b6d09be48489f"
+            "fingerprint": "sha256:6f873616acaef2fc079b3da34e0c89274167260263f8edea69314da5befcacba"
           }
         },
         {
@@ -8214,7 +8222,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 71.59
+            "elapsed_ms": 72.12
           }
         },
         {
@@ -8230,7 +8238,7 @@
             "upper_arm": 0.28,
             "forearm": 0.25,
             "endpoint_offset_sum_m": 0.0,
-            "fingerprint": "sha256:bf9a67b5e470e5a45e29f5d937bb81fa1a672b739e593b94f09b6d09be48489f"
+            "fingerprint": "sha256:6f873616acaef2fc079b3da34e0c89274167260263f8edea69314da5befcacba"
           }
         },
         {
@@ -8255,7 +8263,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 3.35
+            "elapsed_ms": 3.52
           }
         },
         {
@@ -8271,7 +8279,7 @@
             "upper_arm": 0.28,
             "forearm": 0.25,
             "endpoint_offset_sum_m": 0.0,
-            "fingerprint": "sha256:bf9a67b5e470e5a45e29f5d937bb81fa1a672b739e593b94f09b6d09be48489f"
+            "fingerprint": "sha256:6f873616acaef2fc079b3da34e0c89274167260263f8edea69314da5befcacba"
           }
         },
         {
@@ -8297,7 +8305,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 94.44
+            "elapsed_ms": 95.55
           }
         },
         {
@@ -8322,7 +8330,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 3.29
+            "elapsed_ms": 3.43
           }
         },
         {
@@ -8338,7 +8346,7 @@
             "upper_arm": 0.28,
             "forearm": 0.25,
             "endpoint_offset_sum_m": 0.0,
-            "fingerprint": "sha256:bf9a67b5e470e5a45e29f5d937bb81fa1a672b739e593b94f09b6d09be48489f"
+            "fingerprint": "sha256:6f873616acaef2fc079b3da34e0c89274167260263f8edea69314da5befcacba"
           }
         },
         {
@@ -8364,7 +8372,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 130.49
+            "elapsed_ms": 133.75
           }
         },
         {
@@ -8380,7 +8388,7 @@
             "upper_arm": 0.28,
             "forearm": 0.25,
             "endpoint_offset_sum_m": 0.0,
-            "fingerprint": "sha256:bf9a67b5e470e5a45e29f5d937bb81fa1a672b739e593b94f09b6d09be48489f"
+            "fingerprint": "sha256:6f873616acaef2fc079b3da34e0c89274167260263f8edea69314da5befcacba"
           }
         },
         {
@@ -8405,7 +8413,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 3.36
+            "elapsed_ms": 3.38
           }
         },
         {
@@ -8421,7 +8429,7 @@
             "upper_arm": 0.28,
             "forearm": 0.25,
             "endpoint_offset_sum_m": 0.0,
-            "fingerprint": "sha256:bf9a67b5e470e5a45e29f5d937bb81fa1a672b739e593b94f09b6d09be48489f"
+            "fingerprint": "sha256:6f873616acaef2fc079b3da34e0c89274167260263f8edea69314da5befcacba"
           }
         },
         {
@@ -8447,7 +8455,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 131.03
+            "elapsed_ms": 133.81
           }
         },
         {
@@ -8472,7 +8480,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 3.36
+            "elapsed_ms": 3.6
           }
         },
         {
@@ -8488,7 +8496,7 @@
             "upper_arm": 0.28,
             "forearm": 0.25,
             "endpoint_offset_sum_m": 0.0,
-            "fingerprint": "sha256:bf9a67b5e470e5a45e29f5d937bb81fa1a672b739e593b94f09b6d09be48489f"
+            "fingerprint": "sha256:6f873616acaef2fc079b3da34e0c89274167260263f8edea69314da5befcacba"
           }
         },
         {
@@ -8514,7 +8522,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 109.92
+            "elapsed_ms": 112.76
           }
         },
         {
@@ -8530,7 +8538,7 @@
             "upper_arm": 0.28,
             "forearm": 0.25,
             "endpoint_offset_sum_m": 0.0,
-            "fingerprint": "sha256:bf9a67b5e470e5a45e29f5d937bb81fa1a672b739e593b94f09b6d09be48489f"
+            "fingerprint": "sha256:6f873616acaef2fc079b3da34e0c89274167260263f8edea69314da5befcacba"
           }
         },
         {
@@ -8555,7 +8563,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 3.51
+            "elapsed_ms": 3.43
           }
         },
         {
@@ -8571,7 +8579,7 @@
             "upper_arm": 0.28,
             "forearm": 0.25,
             "endpoint_offset_sum_m": 0.0,
-            "fingerprint": "sha256:bf9a67b5e470e5a45e29f5d937bb81fa1a672b739e593b94f09b6d09be48489f"
+            "fingerprint": "sha256:6f873616acaef2fc079b3da34e0c89274167260263f8edea69314da5befcacba"
           }
         },
         {
@@ -8597,7 +8605,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 134.63
+            "elapsed_ms": 138.12
           }
         },
         {
@@ -8622,7 +8630,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 3.38
+            "elapsed_ms": 3.48
           }
         },
         {
@@ -8638,7 +8646,7 @@
             "upper_arm": 0.28,
             "forearm": 0.25,
             "endpoint_offset_sum_m": 0.0,
-            "fingerprint": "sha256:bf9a67b5e470e5a45e29f5d937bb81fa1a672b739e593b94f09b6d09be48489f"
+            "fingerprint": "sha256:6f873616acaef2fc079b3da34e0c89274167260263f8edea69314da5befcacba"
           }
         },
         {
@@ -8664,7 +8672,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 122.1
+            "elapsed_ms": 124.03
           }
         },
         {
@@ -8819,7 +8827,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 68.64
+            "elapsed_ms": 71.11
           },
           "state_id": "s0"
         },
@@ -8937,7 +8945,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 3.55
+            "elapsed_ms": 3.46
           },
           "state_id": "s1"
         },
@@ -9056,7 +9064,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 127.01
+            "elapsed_ms": 127.9
           },
           "state_id": "s2"
         },
@@ -9174,7 +9182,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 3.33
+            "elapsed_ms": 3.95
           },
           "state_id": "s3"
         },
@@ -9293,7 +9301,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 71.59
+            "elapsed_ms": 72.12
           },
           "state_id": "s4"
         },
@@ -9411,7 +9419,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 3.35
+            "elapsed_ms": 3.52
           },
           "state_id": "s5"
         },
@@ -9530,7 +9538,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 94.44
+            "elapsed_ms": 95.55
           },
           "state_id": "s6"
         },
@@ -9648,7 +9656,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 3.29
+            "elapsed_ms": 3.43
           },
           "state_id": "s7"
         },
@@ -9767,7 +9775,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 130.49
+            "elapsed_ms": 133.75
           },
           "state_id": "s8"
         },
@@ -9885,7 +9893,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 3.36
+            "elapsed_ms": 3.38
           },
           "state_id": "s9"
         },
@@ -10004,7 +10012,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 131.03
+            "elapsed_ms": 133.81
           },
           "state_id": "s10"
         },
@@ -10122,7 +10130,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 3.36
+            "elapsed_ms": 3.6
           },
           "state_id": "s11"
         },
@@ -10241,7 +10249,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 109.92
+            "elapsed_ms": 112.76
           },
           "state_id": "s12"
         },
@@ -10359,7 +10367,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 3.51
+            "elapsed_ms": 3.43
           },
           "state_id": "s13"
         },
@@ -10478,7 +10486,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 134.63
+            "elapsed_ms": 138.12
           },
           "state_id": "s14"
         },
@@ -10596,7 +10604,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 3.38
+            "elapsed_ms": 3.48
           },
           "state_id": "s15"
         },
@@ -10715,7 +10723,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 122.1
+            "elapsed_ms": 124.03
           },
           "state_id": "s16"
         }
@@ -10725,17 +10733,17 @@
         "passed": 36,
         "total": 36
       },
-      "elapsed_ms": 1055.01,
+      "elapsed_ms": 1075.05,
       "design_analysis": {
         "source": "synthetic_assumption",
-        "model_version": "style-proxy-1",
+        "model_version": "style-proxy-2",
         "style_goal": "technical",
         "rhythm": "late_crux",
         "dimensions": {
-          "strength": 36.9869,
+          "strength": 37.916,
           "power": 34.87046,
-          "technical": 50.89298,
-          "load": 35.1443
+          "technical": 51.8995,
+          "load": 35.77066
         },
         "moves": [
           {
@@ -10745,29 +10753,30 @@
             "limb": "RF",
             "from_placement_id": "board-14",
             "to_placement_id": "board-19",
-            "strength": 11.52402,
+            "strength": 11.63963,
             "power": 24.53001,
-            "technical": 49.34352,
-            "load": 15.88074,
+            "technical": 49.62368,
+            "load": 15.96689,
             "attributes": {
               "span_ratio": 1.417,
               "grip_accessibility": 0.5,
               "precision": 0.65,
-              "foot_support": 0.32844,
+              "foot_support": 0.30309,
               "inclination": 0.0,
               "directional_demand": 0.69641,
+              "standing_foot_support": 0.4614,
               "friction_dependence": 0.35,
               "supporting_hand_demand": 0.2,
               "support_precision": 0.5
             },
-            "accumulated_load": 15.88074,
+            "accumulated_load": 15.96689,
             "phase_target": {
               "strength": 32.64,
               "power": 29.24,
               "technical": 48.96,
               "load": 32.64
             },
-            "burden": 15.88074
+            "burden": 15.96689
           },
           {
             "event_index": 1,
@@ -10776,29 +10785,30 @@
             "limb": "RH",
             "from_placement_id": "board-02",
             "to_placement_id": "board-05",
-            "strength": 35.62642,
+            "strength": 36.53655,
             "power": 28.68899,
-            "technical": 47.72728,
-            "load": 32.45594,
+            "technical": 48.71326,
+            "load": 33.06952,
             "attributes": {
               "span_ratio": 0.55345,
               "grip_accessibility": 0.58,
               "precision": 0.6,
-              "foot_support": 0.48074,
+              "foot_support": 0.4049,
               "inclination": 0.0,
               "directional_demand": 0.07282,
+              "standing_foot_support": 0.82499,
               "friction_dependence": 0.55,
               "supporting_hand_demand": 0.2,
               "support_precision": 0.575
             },
-            "accumulated_load": 45.02401,
+            "accumulated_load": 45.72733,
             "phase_target": {
               "strength": 32.64,
               "power": 29.24,
               "technical": 48.96,
               "load": 32.64
             },
-            "burden": 34.36163
+            "burden": 34.98555
           },
           {
             "event_index": 2,
@@ -10807,29 +10817,30 @@
             "limb": "LF",
             "from_placement_id": "board-13",
             "to_placement_id": "board-15",
-            "strength": 12.09773,
+            "strength": 12.39631,
             "power": 13.38142,
-            "technical": 47.10247,
-            "load": 13.50592,
+            "technical": 47.82599,
+            "load": 13.7284,
             "attributes": {
               "span_ratio": 0.68557,
               "grip_accessibility": 0.643,
               "precision": 0.55,
-              "foot_support": 0.24,
+              "foot_support": 0.17452,
               "inclination": 0.0,
               "directional_demand": 0.66635,
+              "standing_foot_support": 0.36359,
               "friction_dependence": 0.35,
               "supporting_hand_demand": 0.41,
               "support_precision": 0.65
             },
-            "accumulated_load": 47.26101,
+            "accumulated_load": 48.03315,
             "phase_target": {
               "strength": 41.28,
               "power": 36.98,
               "technical": 61.92,
               "load": 41.28
             },
-            "burden": 18.9088
+            "burden": 19.21568
           },
           {
             "event_index": 3,
@@ -10838,29 +10849,30 @@
             "limb": "RH",
             "from_placement_id": "board-05",
             "to_placement_id": "board-12",
-            "strength": 31.30951,
+            "strength": 32.43116,
             "power": 47.18194,
-            "technical": 52.76306,
-            "load": 35.63505,
+            "technical": 53.97818,
+            "load": 36.39122,
             "attributes": {
               "span_ratio": 0.89832,
               "grip_accessibility": 0.71,
               "precision": 0.38,
-              "foot_support": 0.40234,
+              "foot_support": 0.30887,
               "inclination": 0.0,
               "directional_demand": 0.40084,
+              "standing_foot_support": 0.76318,
               "friction_dependence": 0.4,
               "supporting_hand_demand": 0.2,
               "support_precision": 0.6
             },
-            "accumulated_load": 73.3681,
+            "accumulated_load": 74.82066,
             "phase_target": {
               "strength": 41.28,
               "power": 36.98,
               "technical": 61.92,
               "load": 41.28
             },
-            "burden": 41.30637
+            "burden": 42.1552
           },
           {
             "event_index": 4,
@@ -10869,29 +10881,30 @@
             "limb": "LF",
             "from_placement_id": "board-15",
             "to_placement_id": "board-22",
-            "strength": 10.94727,
+            "strength": 11.23091,
             "power": 17.52705,
-            "technical": 46.69485,
-            "load": 13.77724,
+            "technical": 47.3822,
+            "load": 13.98859,
             "attributes": {
               "span_ratio": 0.92051,
               "grip_accessibility": 0.714,
               "precision": 0.5,
-              "foot_support": 0.228,
+              "foot_support": 0.1658,
               "inclination": 0.0,
               "directional_demand": 0.61473,
+              "standing_foot_support": 0.36359,
               "friction_dependence": 0.35,
               "supporting_hand_demand": 0.31,
               "support_precision": 0.65
             },
-            "accumulated_load": 68.82605,
+            "accumulated_load": 70.16206,
             "phase_target": {
               "strength": 53.76,
               "power": 48.16,
               "technical": 80.64,
               "load": 53.76
             },
-            "burden": 22.58141
+            "burden": 22.96707
           },
           {
             "event_index": 5,
@@ -10900,29 +10913,30 @@
             "limb": "LH",
             "from_placement_id": "board-01",
             "to_placement_id": "board-04",
-            "strength": 49.16539,
+            "strength": 50.26399,
             "power": 25.71041,
-            "technical": 63.34323,
-            "load": 41.02989,
+            "technical": 64.53338,
+            "load": 41.77053,
             "attributes": {
               "span_ratio": 0.52097,
               "grip_accessibility": 0.44,
               "precision": 0.88,
-              "foot_support": 0.58029,
+              "foot_support": 0.48874,
               "inclination": 0.0,
               "directional_demand": 0.74543,
+              "standing_foot_support": 0.82499,
               "friction_dependence": 0.38,
               "supporting_hand_demand": 0.42,
               "support_precision": 0.575
             },
-            "accumulated_load": 96.79728,
+            "accumulated_load": 98.73477,
             "phase_target": {
               "strength": 53.76,
               "power": 48.16,
               "technical": 80.64,
               "load": 53.76
             },
-            "burden": 49.28902
+            "burden": 50.18998
           },
           {
             "event_index": 6,
@@ -10931,29 +10945,30 @@
             "limb": "RF",
             "from_placement_id": "board-19",
             "to_placement_id": "board-23",
-            "strength": 12.12103,
+            "strength": 12.22508,
             "power": 24.29465,
-            "technical": 47.38229,
-            "load": 15.98661,
+            "technical": 47.63444,
+            "load": 16.06414,
             "attributes": {
               "span_ratio": 1.26665,
               "grip_accessibility": 0.714,
               "precision": 0.5,
-              "foot_support": 0.2956,
+              "foot_support": 0.27278,
               "inclination": 0.0,
               "directional_demand": 0.61473,
+              "standing_foot_support": 0.4614,
               "friction_dependence": 0.35,
               "supporting_hand_demand": 0.57,
               "support_precision": 0.5
             },
-            "accumulated_load": 89.08507,
+            "accumulated_load": 90.64257,
             "phase_target": {
               "strength": 60.48,
               "power": 54.18,
               "technical": 90.72,
               "load": 60.48
             },
-            "burden": 27.60228
+            "burden": 27.91231
           },
           {
             "event_index": 7,
@@ -10962,29 +10977,30 @@
             "limb": "LH",
             "from_placement_id": "board-04",
             "to_placement_id": "board-11",
-            "strength": 31.84629,
+            "strength": 32.4323,
             "power": 37.90049,
-            "technical": 39.73833,
-            "load": 31.45632,
+            "technical": 40.37317,
+            "load": 31.85138,
             "attributes": {
               "span_ratio": 0.91099,
               "grip_accessibility": 0.71,
               "precision": 0.38,
-              "foot_support": 0.6326,
+              "foot_support": 0.58377,
               "inclination": 0.0,
               "directional_demand": 0.40084,
+              "standing_foot_support": 0.92281,
               "friction_dependence": 0.4,
               "supporting_hand_demand": 0.42,
               "support_precision": 0.5
             },
-            "accumulated_load": 101.7626,
+            "accumulated_load": 103.46563,
             "phase_target": {
               "strength": 60.48,
               "power": 54.18,
               "technical": 90.72,
               "load": 60.48
             },
-            "burden": 42.14652
+            "burden": 42.72849
           }
         ],
         "phases": [
@@ -11000,10 +11016,10 @@
               "load": 32.64
             },
             "estimate": {
-              "strength": 35.62642,
+              "strength": 36.53655,
               "power": 28.68899,
-              "technical": 47.72728,
-              "load": 34.36163
+              "technical": 48.71326,
+              "load": 34.98555
             },
             "load_basis": "contextual_burden_capped_100"
           },
@@ -11019,10 +11035,10 @@
               "load": 41.28
             },
             "estimate": {
-              "strength": 31.30951,
+              "strength": 32.43116,
               "power": 47.18194,
-              "technical": 52.76306,
-              "load": 41.30637
+              "technical": 53.97818,
+              "load": 42.1552
             },
             "load_basis": "contextual_burden_capped_100"
           },
@@ -11038,10 +11054,10 @@
               "load": 53.76
             },
             "estimate": {
-              "strength": 49.16539,
+              "strength": 50.26399,
               "power": 25.71041,
-              "technical": 63.34323,
-              "load": 49.28902
+              "technical": 64.53338,
+              "load": 50.18998
             },
             "load_basis": "contextual_burden_capped_100"
           },
@@ -11057,23 +11073,23 @@
               "load": 60.48
             },
             "estimate": {
-              "strength": 31.84629,
+              "strength": 32.4323,
               "power": 37.90049,
-              "technical": 39.73833,
-              "load": 42.14652
+              "technical": 40.37317,
+              "load": 42.72849
             },
             "load_basis": "contextual_burden_capped_100"
           }
         ],
         "summary": {
-          "peak_strength": 49.16539,
+          "peak_strength": 50.26399,
           "peak_power": 47.18194,
-          "mean_technical": 50.89298,
-          "total_load": 199.72771,
-          "peak_burden": 49.28902,
+          "mean_technical": 51.8995,
+          "total_load": 202.83068,
+          "peak_burden": 50.18998,
           "crux_event_index": 5,
-          "objective": 0.20715,
-          "load_variability": 3.73194
+          "objective": 0.19852,
+          "load_variability": 3.84189
         },
         "limitations": [
           "0–100 为未标定的设计模型指数，不是岩点难度、真实力/功率或 V 等级。",
@@ -11083,15 +11099,15 @@
         ],
         "search": {
           "algorithm": "bounded_contact_beam_v1",
-          "expanded": 10229,
+          "expanded": 10230,
           "expansion_limit": 16000,
           "beam_width": 128,
-          "complete_sequences": 123,
+          "complete_sequences": 124,
           "returned_candidates": 3,
           "distinct_hand_sequences": 3,
           "rejected": {
-            "beam_duplicate_state": 5533,
-            "beam_pruned": 2268,
+            "beam_duplicate_state": 5532,
+            "beam_pruned": 2269,
             "duplicate_contact": 2048
           },
           "budget_exhausted": false,
@@ -11103,9 +11119,9 @@
       }
     },
     {
-      "id": "eval-candidate-style-42-3-52cb1b1737",
+      "id": "eval-candidate-style-42-3-bda0aec199",
       "candidate_id": "candidate-style-42-3",
-      "fingerprint": "sha256:c7bf09704ee77017335459305ba89b9a7a3d960a1f1de5ae69800452cb1b1737",
+      "fingerprint": "sha256:ec926fbbdbe06b76cdb5d1ab11a2781e3625dd47e021ce37ffd82dbda0aec199",
       "version": "0.1.0",
       "checks": [
         {
@@ -11180,7 +11196,7 @@
             "upper_arm": 0.28,
             "forearm": 0.25,
             "endpoint_offset_sum_m": 0.0,
-            "fingerprint": "sha256:c7bf09704ee77017335459305ba89b9a7a3d960a1f1de5ae69800452cb1b1737"
+            "fingerprint": "sha256:ec926fbbdbe06b76cdb5d1ab11a2781e3625dd47e021ce37ffd82dbda0aec199"
           }
         },
         {
@@ -11206,7 +11222,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 69.23
+            "elapsed_ms": 69.15
           }
         },
         {
@@ -11222,7 +11238,7 @@
             "upper_arm": 0.28,
             "forearm": 0.25,
             "endpoint_offset_sum_m": 0.0,
-            "fingerprint": "sha256:c7bf09704ee77017335459305ba89b9a7a3d960a1f1de5ae69800452cb1b1737"
+            "fingerprint": "sha256:ec926fbbdbe06b76cdb5d1ab11a2781e3625dd47e021ce37ffd82dbda0aec199"
           }
         },
         {
@@ -11247,7 +11263,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 3.4
+            "elapsed_ms": 3.69
           }
         },
         {
@@ -11263,7 +11279,7 @@
             "upper_arm": 0.28,
             "forearm": 0.25,
             "endpoint_offset_sum_m": 0.0,
-            "fingerprint": "sha256:c7bf09704ee77017335459305ba89b9a7a3d960a1f1de5ae69800452cb1b1737"
+            "fingerprint": "sha256:ec926fbbdbe06b76cdb5d1ab11a2781e3625dd47e021ce37ffd82dbda0aec199"
           }
         },
         {
@@ -11289,7 +11305,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 127.03
+            "elapsed_ms": 128.83
           }
         },
         {
@@ -11314,7 +11330,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 3.62
+            "elapsed_ms": 3.52
           }
         },
         {
@@ -11330,7 +11346,7 @@
             "upper_arm": 0.28,
             "forearm": 0.25,
             "endpoint_offset_sum_m": 0.0,
-            "fingerprint": "sha256:c7bf09704ee77017335459305ba89b9a7a3d960a1f1de5ae69800452cb1b1737"
+            "fingerprint": "sha256:ec926fbbdbe06b76cdb5d1ab11a2781e3625dd47e021ce37ffd82dbda0aec199"
           }
         },
         {
@@ -11356,7 +11372,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 114.9
+            "elapsed_ms": 116.94
           }
         },
         {
@@ -11372,7 +11388,7 @@
             "upper_arm": 0.28,
             "forearm": 0.25,
             "endpoint_offset_sum_m": 0.0,
-            "fingerprint": "sha256:c7bf09704ee77017335459305ba89b9a7a3d960a1f1de5ae69800452cb1b1737"
+            "fingerprint": "sha256:ec926fbbdbe06b76cdb5d1ab11a2781e3625dd47e021ce37ffd82dbda0aec199"
           }
         },
         {
@@ -11397,7 +11413,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 3.41
+            "elapsed_ms": 3.46
           }
         },
         {
@@ -11413,7 +11429,7 @@
             "upper_arm": 0.28,
             "forearm": 0.25,
             "endpoint_offset_sum_m": 0.0,
-            "fingerprint": "sha256:c7bf09704ee77017335459305ba89b9a7a3d960a1f1de5ae69800452cb1b1737"
+            "fingerprint": "sha256:ec926fbbdbe06b76cdb5d1ab11a2781e3625dd47e021ce37ffd82dbda0aec199"
           }
         },
         {
@@ -11439,7 +11455,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 129.07
+            "elapsed_ms": 130.8
           }
         },
         {
@@ -11464,7 +11480,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 3.56
+            "elapsed_ms": 3.46
           }
         },
         {
@@ -11480,7 +11496,7 @@
             "upper_arm": 0.28,
             "forearm": 0.25,
             "endpoint_offset_sum_m": 0.0,
-            "fingerprint": "sha256:c7bf09704ee77017335459305ba89b9a7a3d960a1f1de5ae69800452cb1b1737"
+            "fingerprint": "sha256:ec926fbbdbe06b76cdb5d1ab11a2781e3625dd47e021ce37ffd82dbda0aec199"
           }
         },
         {
@@ -11506,7 +11522,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 124.95
+            "elapsed_ms": 128.02
           }
         },
         {
@@ -11522,7 +11538,7 @@
             "upper_arm": 0.28,
             "forearm": 0.25,
             "endpoint_offset_sum_m": 0.0,
-            "fingerprint": "sha256:c7bf09704ee77017335459305ba89b9a7a3d960a1f1de5ae69800452cb1b1737"
+            "fingerprint": "sha256:ec926fbbdbe06b76cdb5d1ab11a2781e3625dd47e021ce37ffd82dbda0aec199"
           }
         },
         {
@@ -11547,7 +11563,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 3.33
+            "elapsed_ms": 3.46
           }
         },
         {
@@ -11563,7 +11579,7 @@
             "upper_arm": 0.28,
             "forearm": 0.25,
             "endpoint_offset_sum_m": 0.0,
-            "fingerprint": "sha256:c7bf09704ee77017335459305ba89b9a7a3d960a1f1de5ae69800452cb1b1737"
+            "fingerprint": "sha256:ec926fbbdbe06b76cdb5d1ab11a2781e3625dd47e021ce37ffd82dbda0aec199"
           }
         },
         {
@@ -11589,7 +11605,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 117.54
+            "elapsed_ms": 120.65
           }
         },
         {
@@ -11614,7 +11630,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 1.88
+            "elapsed_ms": 1.78
           }
         },
         {
@@ -11630,7 +11646,7 @@
             "upper_arm": 0.28,
             "forearm": 0.25,
             "endpoint_offset_sum_m": 0.0,
-            "fingerprint": "sha256:c7bf09704ee77017335459305ba89b9a7a3d960a1f1de5ae69800452cb1b1737"
+            "fingerprint": "sha256:ec926fbbdbe06b76cdb5d1ab11a2781e3625dd47e021ce37ffd82dbda0aec199"
           }
         },
         {
@@ -11656,7 +11672,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 121.38
+            "elapsed_ms": 123.29
           }
         },
         {
@@ -11672,7 +11688,7 @@
             "upper_arm": 0.28,
             "forearm": 0.25,
             "endpoint_offset_sum_m": 0.0,
-            "fingerprint": "sha256:c7bf09704ee77017335459305ba89b9a7a3d960a1f1de5ae69800452cb1b1737"
+            "fingerprint": "sha256:ec926fbbdbe06b76cdb5d1ab11a2781e3625dd47e021ce37ffd82dbda0aec199"
           }
         },
         {
@@ -11697,7 +11713,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 3.55
+            "elapsed_ms": 3.38
           }
         },
         {
@@ -11713,7 +11729,7 @@
             "upper_arm": 0.28,
             "forearm": 0.25,
             "endpoint_offset_sum_m": 0.0,
-            "fingerprint": "sha256:c7bf09704ee77017335459305ba89b9a7a3d960a1f1de5ae69800452cb1b1737"
+            "fingerprint": "sha256:ec926fbbdbe06b76cdb5d1ab11a2781e3625dd47e021ce37ffd82dbda0aec199"
           }
         },
         {
@@ -11739,7 +11755,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 128.62
+            "elapsed_ms": 131.75
           }
         },
         {
@@ -11764,7 +11780,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 3.33
+            "elapsed_ms": 3.4
           }
         },
         {
@@ -11780,7 +11796,7 @@
             "upper_arm": 0.28,
             "forearm": 0.25,
             "endpoint_offset_sum_m": 0.0,
-            "fingerprint": "sha256:c7bf09704ee77017335459305ba89b9a7a3d960a1f1de5ae69800452cb1b1737"
+            "fingerprint": "sha256:ec926fbbdbe06b76cdb5d1ab11a2781e3625dd47e021ce37ffd82dbda0aec199"
           }
         },
         {
@@ -11806,7 +11822,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 127.21
+            "elapsed_ms": 130.2
           }
         },
         {
@@ -11961,7 +11977,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 69.23
+            "elapsed_ms": 69.15
           },
           "state_id": "s0"
         },
@@ -12079,7 +12095,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 3.4
+            "elapsed_ms": 3.69
           },
           "state_id": "s1"
         },
@@ -12198,7 +12214,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 127.03
+            "elapsed_ms": 128.83
           },
           "state_id": "s2"
         },
@@ -12316,7 +12332,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 3.62
+            "elapsed_ms": 3.52
           },
           "state_id": "s3"
         },
@@ -12435,7 +12451,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 114.9
+            "elapsed_ms": 116.94
           },
           "state_id": "s4"
         },
@@ -12553,7 +12569,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 3.41
+            "elapsed_ms": 3.46
           },
           "state_id": "s5"
         },
@@ -12672,7 +12688,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 129.07
+            "elapsed_ms": 130.8
           },
           "state_id": "s6"
         },
@@ -12790,7 +12806,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 3.56
+            "elapsed_ms": 3.46
           },
           "state_id": "s7"
         },
@@ -12909,7 +12925,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 124.95
+            "elapsed_ms": 128.02
           },
           "state_id": "s8"
         },
@@ -13027,7 +13043,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 3.33
+            "elapsed_ms": 3.46
           },
           "state_id": "s9"
         },
@@ -13146,7 +13162,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 117.54
+            "elapsed_ms": 120.65
           },
           "state_id": "s10"
         },
@@ -13264,7 +13280,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 1.88
+            "elapsed_ms": 1.78
           },
           "state_id": "s11"
         },
@@ -13383,7 +13399,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 121.38
+            "elapsed_ms": 123.29
           },
           "state_id": "s12"
         },
@@ -13501,7 +13517,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 3.55
+            "elapsed_ms": 3.38
           },
           "state_id": "s13"
         },
@@ -13620,7 +13636,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 128.62
+            "elapsed_ms": 131.75
           },
           "state_id": "s14"
         },
@@ -13738,7 +13754,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 3.33
+            "elapsed_ms": 3.4
           },
           "state_id": "s15"
         },
@@ -13857,7 +13873,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 127.21
+            "elapsed_ms": 130.2
           },
           "state_id": "s16"
         }
@@ -13867,17 +13883,17 @@
         "passed": 36,
         "total": 36
       },
-      "elapsed_ms": 1123.53,
+      "elapsed_ms": 1142.93,
       "design_analysis": {
         "source": "synthetic_assumption",
-        "model_version": "style-proxy-1",
+        "model_version": "style-proxy-2",
         "style_goal": "technical",
         "rhythm": "late_crux",
         "dimensions": {
-          "strength": 38.85833,
+          "strength": 39.75199,
           "power": 46.1269,
-          "technical": 49.04223,
-          "load": 38.44821
+          "technical": 50.01036,
+          "load": 39.05069
         },
         "moves": [
           {
@@ -13887,29 +13903,30 @@
             "limb": "RF",
             "from_placement_id": "board-14",
             "to_placement_id": "board-19",
-            "strength": 11.52402,
+            "strength": 11.63963,
             "power": 24.53001,
-            "technical": 49.34352,
-            "load": 15.88074,
+            "technical": 49.62368,
+            "load": 15.96689,
             "attributes": {
               "span_ratio": 1.417,
               "grip_accessibility": 0.5,
               "precision": 0.65,
-              "foot_support": 0.32844,
+              "foot_support": 0.30309,
               "inclination": 0.0,
               "directional_demand": 0.69641,
+              "standing_foot_support": 0.4614,
               "friction_dependence": 0.35,
               "supporting_hand_demand": 0.2,
               "support_precision": 0.5
             },
-            "accumulated_load": 15.88074,
+            "accumulated_load": 15.96689,
             "phase_target": {
               "strength": 32.64,
               "power": 29.24,
               "technical": 48.96,
               "load": 32.64
             },
-            "burden": 15.88074
+            "burden": 15.96689
           },
           {
             "event_index": 1,
@@ -13918,29 +13935,30 @@
             "limb": "LH",
             "from_placement_id": "board-01",
             "to_placement_id": "board-05",
-            "strength": 35.62642,
+            "strength": 36.53655,
             "power": 42.4949,
-            "technical": 47.72728,
-            "load": 35.76936,
+            "technical": 48.71326,
+            "load": 36.38294,
             "attributes": {
               "span_ratio": 1.00528,
               "grip_accessibility": 0.58,
               "precision": 0.6,
-              "foot_support": 0.48074,
+              "foot_support": 0.4049,
               "inclination": 0.0,
               "directional_demand": 0.07282,
+              "standing_foot_support": 0.82499,
               "friction_dependence": 0.55,
               "supporting_hand_demand": 0.2,
               "support_precision": 0.575
             },
-            "accumulated_load": 48.45319,
+            "accumulated_load": 49.15713,
             "phase_target": {
               "strength": 32.64,
               "power": 29.24,
               "technical": 48.96,
               "load": 32.64
             },
-            "burden": 37.67505
+            "burden": 38.29897
           },
           {
             "event_index": 2,
@@ -13949,29 +13967,30 @@
             "limb": "LF",
             "from_placement_id": "board-13",
             "to_placement_id": "board-20",
-            "strength": 10.65733,
+            "strength": 10.92355,
             "power": 17.8689,
-            "technical": 46.1058,
-            "load": 13.64731,
+            "technical": 46.75094,
+            "load": 13.84568,
             "attributes": {
               "span_ratio": 0.84801,
               "grip_accessibility": 0.857,
               "precision": 0.4,
-              "foot_support": 0.214,
+              "foot_support": 0.15562,
               "inclination": 0.0,
               "directional_demand": 0.61473,
+              "standing_foot_support": 0.36359,
               "friction_dependence": 0.35,
               "supporting_hand_demand": 0.41,
               "support_precision": 0.65
             },
-            "accumulated_load": 49.98837,
+            "accumulated_load": 50.73617,
             "phase_target": {
               "strength": 41.28,
               "power": 36.98,
               "technical": 61.92,
               "load": 41.28
             },
-            "burden": 19.46169
+            "burden": 19.74454
           },
           {
             "event_index": 3,
@@ -13980,29 +13999,30 @@
             "limb": "RH",
             "from_placement_id": "board-02",
             "to_placement_id": "board-04",
-            "strength": 51.11717,
+            "strength": 52.31312,
             "power": 39.77153,
-            "technical": 60.14516,
-            "load": 44.81726,
+            "technical": 61.44077,
+            "load": 45.62353,
             "attributes": {
               "span_ratio": 1.02984,
               "grip_accessibility": 0.44,
               "precision": 0.88,
-              "foot_support": 0.66764,
+              "foot_support": 0.56798,
               "inclination": 0.0,
               "directional_demand": 0.74543,
+              "standing_foot_support": 0.82499,
               "friction_dependence": 0.38,
               "supporting_hand_demand": 0.62,
               "support_precision": 0.525
             },
-            "accumulated_load": 85.73763,
+            "accumulated_load": 87.24604,
             "phase_target": {
               "strength": 41.28,
               "power": 36.98,
               "technical": 61.92,
               "load": 41.28
             },
-            "burden": 50.81586
+            "burden": 51.71187
           },
           {
             "event_index": 4,
@@ -14011,29 +14031,30 @@
             "limb": "LF",
             "from_placement_id": "board-20",
             "to_placement_id": "board-22",
-            "strength": 12.99927,
+            "strength": 13.28291,
             "power": 10.38569,
-            "technical": 46.69485,
-            "load": 13.28889,
+            "technical": 47.3822,
+            "load": 13.50024,
             "attributes": {
               "span_ratio": 0.40114,
               "grip_accessibility": 0.714,
               "precision": 0.5,
-              "foot_support": 0.228,
+              "foot_support": 0.1658,
               "inclination": 0.0,
               "directional_demand": 0.61473,
+              "standing_foot_support": 0.36359,
               "friction_dependence": 0.35,
               "supporting_hand_demand": 0.67,
               "support_precision": 0.65
             },
-            "accumulated_load": 77.52657,
+            "accumulated_load": 78.90865,
             "phase_target": {
               "strength": 53.76,
               "power": 48.16,
               "technical": 80.64,
               "load": 53.76
             },
-            "burden": 23.57741
+            "burden": 23.96977
           },
           {
             "event_index": 5,
@@ -14042,29 +14063,30 @@
             "limb": "RH",
             "from_placement_id": "board-04",
             "to_placement_id": "board-12",
-            "strength": 36.84343,
+            "strength": 37.72598,
             "power": 54.90141,
-            "technical": 48.55814,
-            "load": 39.4845,
+            "technical": 49.51425,
+            "load": 40.07949,
             "attributes": {
               "span_ratio": 1.26223,
               "grip_accessibility": 0.71,
               "precision": 0.38,
-              "foot_support": 0.46618,
+              "foot_support": 0.39263,
               "inclination": 0.0,
               "directional_demand": 0.40084,
+              "standing_foot_support": 0.82499,
               "friction_dependence": 0.4,
               "supporting_hand_demand": 0.62,
               "support_precision": 0.575
             },
-            "accumulated_load": 102.03805,
+            "accumulated_load": 103.85148,
             "phase_target": {
               "strength": 53.76,
               "power": 48.16,
               "technical": 80.64,
               "load": 53.76
             },
-            "burden": 48.78769
+            "burden": 49.54853
           },
           {
             "event_index": 6,
@@ -14073,29 +14095,30 @@
             "limb": "RF",
             "from_placement_id": "board-19",
             "to_placement_id": "board-23",
-            "strength": 11.83603,
+            "strength": 11.94008,
             "power": 24.29465,
-            "technical": 47.38229,
-            "load": 15.83226,
+            "technical": 47.63444,
+            "load": 15.90979,
             "attributes": {
               "span_ratio": 1.26665,
               "grip_accessibility": 0.714,
               "precision": 0.5,
-              "foot_support": 0.2956,
+              "foot_support": 0.27278,
               "inclination": 0.0,
               "directional_demand": 0.61473,
+              "standing_foot_support": 0.4614,
               "friction_dependence": 0.35,
               "supporting_hand_demand": 0.52,
               "support_precision": 0.5
             },
-            "accumulated_load": 92.85374,
+            "accumulated_load": 94.31782,
             "phase_target": {
               "strength": 60.48,
               "power": 54.18,
               "technical": 90.72,
               "load": 60.48
             },
-            "burden": 28.07683
+            "burden": 28.37197
           },
           {
             "event_index": 7,
@@ -14104,29 +14127,30 @@
             "limb": "LH",
             "from_placement_id": "board-05",
             "to_placement_id": "board-11",
-            "strength": 31.84629,
+            "strength": 32.4323,
             "power": 47.33975,
-            "technical": 39.73833,
-            "load": 33.72174,
+            "technical": 40.37317,
+            "load": 34.11681,
             "attributes": {
               "span_ratio": 1.21991,
               "grip_accessibility": 0.71,
               "precision": 0.38,
-              "foot_support": 0.6326,
+              "foot_support": 0.58377,
               "inclination": 0.0,
               "directional_demand": 0.40084,
+              "standing_foot_support": 0.92281,
               "friction_dependence": 0.4,
               "supporting_hand_demand": 0.42,
               "support_precision": 0.5
             },
-            "accumulated_load": 107.46505,
+            "accumulated_load": 109.10485,
             "phase_target": {
               "strength": 60.48,
               "power": 54.18,
               "technical": 90.72,
               "load": 60.48
             },
-            "burden": 44.86419
+            "burden": 45.43494
           }
         ],
         "phases": [
@@ -14142,10 +14166,10 @@
               "load": 32.64
             },
             "estimate": {
-              "strength": 35.62642,
+              "strength": 36.53655,
               "power": 42.4949,
-              "technical": 47.72728,
-              "load": 37.67505
+              "technical": 48.71326,
+              "load": 38.29897
             },
             "load_basis": "contextual_burden_capped_100"
           },
@@ -14161,10 +14185,10 @@
               "load": 41.28
             },
             "estimate": {
-              "strength": 51.11717,
+              "strength": 52.31312,
               "power": 39.77153,
-              "technical": 60.14516,
-              "load": 50.81586
+              "technical": 61.44077,
+              "load": 51.71187
             },
             "load_basis": "contextual_burden_capped_100"
           },
@@ -14180,10 +14204,10 @@
               "load": 53.76
             },
             "estimate": {
-              "strength": 36.84343,
+              "strength": 37.72598,
               "power": 54.90141,
-              "technical": 48.55814,
-              "load": 48.78769
+              "technical": 49.51425,
+              "load": 49.54853
             },
             "load_basis": "contextual_burden_capped_100"
           },
@@ -14199,23 +14223,23 @@
               "load": 60.48
             },
             "estimate": {
-              "strength": 31.84629,
+              "strength": 32.4323,
               "power": 47.33975,
-              "technical": 39.73833,
-              "load": 44.86419
+              "technical": 40.37317,
+              "load": 45.43494
             },
             "load_basis": "contextual_burden_capped_100"
           }
         ],
         "summary": {
-          "peak_strength": 51.11717,
+          "peak_strength": 52.31312,
           "peak_power": 54.90141,
-          "mean_technical": 49.04223,
-          "total_load": 212.44206,
-          "peak_burden": 50.81586,
+          "mean_technical": 50.01036,
+          "total_load": 215.42537,
+          "peak_burden": 51.71187,
           "crux_event_index": 3,
-          "objective": 0.24188,
-          "load_variability": 4.21765
+          "objective": 0.23376,
+          "load_variability": 4.35088
         },
         "limitations": [
           "0–100 为未标定的设计模型指数，不是岩点难度、真实力/功率或 V 等级。",
@@ -14225,15 +14249,15 @@
         ],
         "search": {
           "algorithm": "bounded_contact_beam_v1",
-          "expanded": 10229,
+          "expanded": 10230,
           "expansion_limit": 16000,
           "beam_width": 128,
-          "complete_sequences": 123,
+          "complete_sequences": 124,
           "returned_candidates": 3,
           "distinct_hand_sequences": 3,
           "rejected": {
-            "beam_duplicate_state": 5533,
-            "beam_pruned": 2268,
+            "beam_duplicate_state": 5532,
+            "beam_pruned": 2269,
             "duplicate_contact": 2048
           },
           "budget_exhausted": false,
@@ -14247,7 +14271,7 @@
   ],
   "manifest": {
     "engine_version": "0.1.0",
-    "code_hash": "sha256:ee1b70881fc44f8e1a9669d973458c2917435592f32cc786176760164b75fb08",
+    "code_hash": "sha256:f79d7ece1320201c6f02fa7d47e68eedf95551990cdd7a2e3739bf7ab092ee59",
     "source": "synthetic_assumption",
     "python": "3.11.15",
     "numpy": "2.4.6",
@@ -14263,7 +14287,7 @@
       "连续动作转换",
       "真实难度与体验"
     ],
-    "bundle_digest": "sha256:9389bec61180a95c6060171e6a97b98fdf63f0108b5c558ed56ddca1e918b391"
+    "bundle_digest": "sha256:54c493c28b261b55fbf3201f7318852e20315838fe46912cfea4e34cbc4468b1"
   },
   "reviews": []
 }
