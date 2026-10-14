@@ -12,6 +12,16 @@ retained. The database/pool/service, training and evolutionary generator are
 omitted. Inference is explicitly CPU, deterministic, 100 steps and x_offset=0.
 The original MIT notice is retained in `BETAZERO-LICENSE.txt`.
 
+Adapter v2 uses a locally seeded RNG with a fresh draw at each diffusion step,
+matching the production `deterministic=False` branch while remaining repeatable.
+Adapter v1 used the nondefault `deterministic=True` implementation, which feeds
+the previous noisy state back as noise and collapses most 25-degree samples to
+null. `sampling_mode="recursive_noisy"` explicitly reproduces that old branch.
+See `outputs/betazero-diagnosis/README.md` for native-wall evidence and the
+separate seeded-fresh comparison. The original web study is historical and is
+not silently overwritten. Backend defaults are CFG 3 / projection 0.8; current
+upstream frontend defaults are CFG 5 / projection 0.5. Both are tested separately.
+
 The upstream repository includes production weights and scaler under its root
 license, but supplies no separate model/data license statement. We link to and
 download the exact upstream artifacts into ignored local storage; neither

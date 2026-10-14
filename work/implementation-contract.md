@@ -1,5 +1,13 @@
 # Implementation contract · 2026-10-14
 
+## Current addendum · native BetaZero sampling diagnosis · 2026-10-15
+
+The optional adapter is now `betazero-fixed-wall/2`: a local seeded RNG generates fresh noise at every diffusion step, equivalent to pinned production `deterministic=False`. Reproducibility does not require upstream `deterministic=True`, whose implementation reuses the previous noisy state rather than the initial noise described in its help text. `sampling_mode="recursive_noisy"` preserves that old branch only for explicit reproduction. Provenance records `noise_mode`, `seeded_rng` and `upstream_deterministic` separately.
+
+`scripts/diagnose_betazero.py` compares the original 642-hold Kilter and 204-hold home wall with bettar, matched-angle controls, three independently thinned 18-hold subsets and a neutral-attribute condition. Native coordinates/attributes come from a hash-verified, read-only upstream production SQLite database; owner/user/share fields are never exported. The original database remains local. Backend and frontend inference defaults are recorded as separate experiments. Source-parity checks use only hash-verified selected upstream classes, with restricted tensor weights and primitive scalers.
+
+`scripts/check_betazero_diagnosis.py` checks the corrected proposals with unchanged four-limb masks, anchors, body and 60-second budgets. Optional `--all-feet-ablation` is an explicitly external repair: both model and matched random keep their hand choices and receive every originally legal foot contact. It never grants foot permissions on hand-only patches. These bundles and results live under `outputs/betazero-diagnosis/`, separately from the historical web experiment. A nonempty proposal or completed discrete beta is not physical validation, and the foot repair is not credited to the model.
+
 ## Current addendum · saved learned proposal experiment · 2026-10-15
 
 The primary UI follows routesetter intent → target grade condition → saved wall area → draft review. Style is a locally saved brief only; it does not condition the current BetaZero model. V3/V4/V5 select saved model conditions only on the frozen 25° wall. Roof/dihedral/arete select existing rule drafts, with style/grade nonparticipation explicit. Advanced generation and detailed reports remain available in disclosures.

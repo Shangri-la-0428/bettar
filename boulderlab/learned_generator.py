@@ -19,7 +19,7 @@ from .geometry import rotation_z, selected_contact
 
 UPSTREAM_COMMIT = "6f0acb414a5f1ab070aa62d02ac98f2602011821"
 UPSTREAM_REPOSITORY = "https://github.com/EvanMcCormick37/ml-homewall-climb-generator"
-ADAPTER_VERSION = "betazero-fixed-wall/1"
+ADAPTER_VERSION = "betazero-fixed-wall/2"
 DEFAULT_CACHE = Path(__file__).resolve().parent.parent / ".runtime/learned-model"
 MODEL_FILES = {
     "ddpm-weights.pth": {
@@ -264,15 +264,20 @@ def _discretize(tensor, nearest, manifold, placement_ids):
     return slots, selections, repairs
 
 
-def generate_proposal(request, placements, grade, seed, cache_dir=None):
+def generate_proposal(request, placements, grade, seed, cache_dir=None, sampling_mode="seeded_fresh"):
     """Generate a raw hold set. Bettar anchor/role fixes belong to the experiment.
 
     The 20 diffusion slots are exchangeable model slots, NOT transfer order.
     Inference uses CPU, float32, 100 steps, CFG=3, projection_start=.8 and fixed
     x_offset=0. This removes upstream's optional random horizontal translation.
+    A local seeded RNG draws fresh noise each step, matching the upstream normal
+    branch without losing reproducibility. recursive_noisy is retained only to
+    reproduce the first experiment's problematic deterministic=True branch.
     """
     if type(seed) is not int or not 0 <= seed < 2**63:
         raise ValueError("Seed must be a nonnegative int below 2**63")
+    if sampling_mode not in {"seeded_fresh", "recursive_noisy"}:
+        raise ValueError("Unknown BetaZero sampling mode")
     started = time.monotonic()
     cache = Path(cache_dir or DEFAULT_CACHE)
     scaler = load_scaler(cache)
@@ -301,7 +306,9 @@ def generate_proposal(request, placements, grade, seed, cache_dir=None):
                 projected = torch.cat([projected_features.reshape(1, 20, 7), translated[:, :, 7:]], dim=2)
                 clean = strength * (projected - translation) + (1 - strength) * clean
             t -= .01
-            noisy = model.forward_diffusion(clean, t, noisy)
+            noise = (torch.randn(noisy.shape, generator=generator)
+                     if sampling_mode == "seeded_fresh" else noisy)
+            noisy = model.forward_diffusion(clean, t, noise)
         output = clean + translation
         nearest = _nearest(torch, output.reshape(-1, 12), manifold).numpy()
         tensor = output[0].numpy()
@@ -325,7 +332,9 @@ def generate_proposal(request, placements, grade, seed, cache_dir=None):
             "physical_input_sha256": canonical_sha256({"scene": request["scene"], "placements": placements}),
             "runtime": {"torch": torch.__version__, "numpy": np.__version__, "device": "cpu", "threads": 2},
             "inference": {"timesteps": 100, "slots": 20, "guidance": guidance,
-                          "projection_start": .8, "x_offset": 0, "deterministic": True},
+                          "projection_start": .8, "x_offset": 0, "deterministic": True,
+                          "seeded_rng": True, "noise_mode": sampling_mode,
+                          "upstream_deterministic": sampling_mode == "recursive_noisy"},
         },
         "diagnostics": diagnostics,
     }

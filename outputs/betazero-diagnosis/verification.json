@@ -1,0 +1,112 @@
+{
+  "verified_at": "2026-10-14T19:15:34.481843+00:00",
+  "engine_code_hash": "sha256:17247b8606a4e1edaa0ce8766f69fccd0cdc7fbb63b3821fbb09de3cb5e8e062",
+  "sampler_version": "betazero-fixed-wall/2",
+  "tests": {
+    "command": "BETTAR_TEST_MODEL=1 .venv/bin/python -m pytest -q tests/test_betazero_diagnosis.py tests/test_learned_generator.py",
+    "passed": 22,
+    "elapsed_seconds": 24.28,
+    "upstream_exact_tensor_cases": 8,
+    "corrected_adapter_all_30_bit_identical": true,
+    "same_seed_reproduces": true,
+    "legacy_branch_reproduces": true
+  },
+  "inference_samples": {
+    "main": 240,
+    "density_and_attributes": 120,
+    "upstream_ui_defaults": 90
+  },
+  "trace": {
+    "recursive_noisy": {
+      "matched_wall_pairs_before_projection": 30,
+      "pairs": 30,
+      "all_null_at_step20": 29
+    },
+    "seeded_fresh": {
+      "matched_wall_pairs_before_projection": 30,
+      "pairs": 30,
+      "all_null_at_step20": 0
+    }
+  },
+  "checked_bettar": {
+    "runs": 61,
+    "unique_bundles": 20,
+    "all_saved_runs_validated": true,
+    "summary": {
+      "model": {
+        "total": 30,
+        "complete": 0,
+        "p0_pass": 0,
+        "unique": 10,
+        "search_unresolved": 30,
+        "generation_failed": 0,
+        "empty_proposals": 0,
+        "no_intermediate_holds": 0
+      },
+      "random": {
+        "total": 30,
+        "complete": 0,
+        "p0_pass": 0,
+        "unique": 15,
+        "search_unresolved": 30,
+        "generation_failed": 0
+      },
+      "baseline": {
+        "total": 1,
+        "complete": 1,
+        "p0_pass": 1,
+        "unique": 1,
+        "search_unresolved": 0,
+        "generation_failed": 0
+      }
+    }
+  },
+  "foot_diagnostic": {
+    "runs": 61,
+    "unique_bundles": 13,
+    "all_bundles_validated": true,
+    "summary": {
+      "betazero": {
+        "total": 30,
+        "complete": 7,
+        "p0_pass": 7
+      },
+      "random": {
+        "total": 30,
+        "complete": 9,
+        "p0_pass": 9
+      },
+      "baseline": {
+        "total": 1,
+        "complete": 1,
+        "p0_pass": 1
+      }
+    },
+    "model_successes_all_equal_full_pool_baseline": true,
+    "successful_model_unique_masks": 1,
+    "successful_release_states": {
+      "pass": 2,
+      "total": 13
+    },
+    "max_search_elapsed_ms": 10610.18
+  },
+  "files": {
+    "comparison.json": "8629c7c3843dd5b59f2f15a46a813a7da4ed3899dbd0d103c4545320ba4303a1",
+    "density-attributes.json": "052dda2837e5f7b8921fcf073026c55a55d0f62b7227900bfa00ee0769971189",
+    "upstream-ui-defaults.json": "8ce442eb6fa01b3c687d1b9be1d3c729bb041eb556bc8e143ceb3799d2551f23",
+    "bettar-recheck/experiment.json": "6f198e233b2ae04fee13ea1be39268818384942428f71fc88bc9e1b4bc85ffd3",
+    "feet-ablation/experiment.json": "d62086ee04a7307ab05a502b0cdbb80440cb28982e0c2c02e799d95270ad1150"
+  },
+  "independent_review": {
+    "blocking_findings": 0,
+    "checks": [
+      "native data whitelist and exact DB hash",
+      "paired RNG and upstream parity",
+      "same body/wall/anchors/60-second budgets",
+      "all-feet ablation respects original limb permissions",
+      "model successes are repeated full-pool baseline, not novel routes"
+    ]
+  },
+  "decision": "Retain as offline research comparator. Correct sampling; do not adopt as primary generator or train further on evidence from this single sparse wall.",
+  "historical_web_experiment_preserved": true
+}

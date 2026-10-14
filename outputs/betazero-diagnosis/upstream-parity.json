@@ -1,0 +1,189 @@
+{
+  "schema_version": "betazero-diagnosis-upstream-parity/1",
+  "upstream_commit": "6f0acb414a5f1ab070aa62d02ac98f2602011821",
+  "verification_date": "2026-10-15",
+  "evidence_provenance": {
+    "kind": "summary-reconstructed-from-successful-strict-assertions",
+    "explanation": "The worker stdout was not separately persisted. This record reconstructs the eight enumerated cases from the executed test, which asserted np.array_equal on all final 20x12 tensors before returning successfully. No new inference was run to write this summary.",
+    "command": "BETTAR_TEST_MODEL=1 .venv/bin/python -m pytest -q tests/test_betazero_diagnosis.py",
+    "observed_result": "1 passed in 24.81s",
+    "default_command": ".venv/bin/python -m pytest -q tests/test_betazero_diagnosis.py",
+    "default_observed_result": "1 skipped in 0.01s",
+    "test_path": "tests/test_betazero_diagnosis.py",
+    "test_sha256": "2efdf39659c96b0594598b54d4d3583a141605945c016e8b9c3b83b4d8491d82"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "torch": "2.10.0",
+    "numpy": "2.4.6",
+    "platform": "macOS-26.2-arm64-arm-64bit",
+    "machine": "arm64",
+    "device": "cpu",
+    "threads": 2,
+    "versions_recorded_after_successful_test": true
+  },
+  "method": {
+    "oracle": "AST-selected, blob-verified upstream Noiser/ClimbDDPM/ClimbDDPMGenerator classes; original generate(deterministic=False); original _project_onto_indices replaced only with final-tensor capture to preserve all-null outputs",
+    "oracle_randomness": "torch.manual_seed(3) immediately before each generate call, including before native optional random horizontal offset",
+    "adapter_randomness": "seeded local torch.Generator with fresh noise every step",
+    "scaler": "Pinned numeric extraction; no joblib or pickle execution",
+    "weights": "Existing restricted torch.load(weights_only=True), exact model state_dict loaded strictly into original upstream architecture",
+    "steps": 100,
+    "slots": 20,
+    "noise_mode": "seeded_fresh"
+  },
+  "weight_sha256": "b8bf14a7e5a82a78b4516ab3e382c3fa0d6edab83378f5f3b038301fca0de5aa",
+  "scaler_source_sha256": "1fc77830c37e1dc80c2fd7399176e8a09de0b861c454353e14fc127df5039a48",
+  "source_blobs": [
+    {
+      "path": "climb-backend/app/services/utils/ddpm_model.py",
+      "cache_path": ".runtime/learned-model/upstream/ddpm_model.py",
+      "url": "https://raw.githubusercontent.com/EvanMcCormick37/ml-homewall-climb-generator/6f0acb414a5f1ab070aa62d02ac98f2602011821/climb-backend/app/services/utils/ddpm_model.py",
+      "git_blob_sha1": "60f3f6c691bf2808bfc0747858794a2d1cdeca16",
+      "sha256": "f95f15b41b14b6d3495e6d8864ddab17967d32a243d7adde075b2ea9ed103509",
+      "bytes": 11148
+    },
+    {
+      "path": "climb-backend/app/services/utils/generation_utils.py",
+      "cache_path": ".runtime/learned-model/upstream/generation_utils.py",
+      "url": "https://raw.githubusercontent.com/EvanMcCormick37/ml-homewall-climb-generator/6f0acb414a5f1ab070aa62d02ac98f2602011821/climb-backend/app/services/utils/generation_utils.py",
+      "git_blob_sha1": "5df4faee5f6bc0e9eea3ab2aecb31b82cf9bd0ed",
+      "sha256": "1a12bb82020fe3ad7ef44a7445960478eea8232559fff6b6447eed921bd2f2e6",
+      "bytes": 16183
+    }
+  ],
+  "fresh_noise_cases": [
+    {
+      "wall": "bettar18",
+      "hold_count": 18,
+      "angle_deg": 25,
+      "seed": 3,
+      "grade": 18,
+      "x_offset": 0,
+      "guidance": 3.0,
+      "projection_start": 0.8,
+      "exact_tensor_match": true,
+      "max_absolute_difference": 0.0
+    },
+    {
+      "wall": "bettar18",
+      "hold_count": 18,
+      "angle_deg": 25,
+      "seed": 3,
+      "grade": 18,
+      "x_offset": 0,
+      "guidance": 5.0,
+      "projection_start": 0.5,
+      "exact_tensor_match": true,
+      "max_absolute_difference": 0.0
+    },
+    {
+      "wall": "bettar18",
+      "hold_count": 18,
+      "angle_deg": 25,
+      "seed": 3,
+      "grade": 18,
+      "x_offset": null,
+      "guidance": 3.0,
+      "projection_start": 0.8,
+      "exact_tensor_match": true,
+      "max_absolute_difference": 0.0
+    },
+    {
+      "wall": "bettar18",
+      "hold_count": 18,
+      "angle_deg": 25,
+      "seed": 3,
+      "grade": 18,
+      "x_offset": null,
+      "guidance": 5.0,
+      "projection_start": 0.5,
+      "exact_tensor_match": true,
+      "max_absolute_difference": 0.0
+    },
+    {
+      "wall": "kilter642",
+      "hold_count": 642,
+      "angle_deg": 40,
+      "seed": 3,
+      "grade": 18,
+      "x_offset": 0,
+      "guidance": 3.0,
+      "projection_start": 0.8,
+      "exact_tensor_match": true,
+      "max_absolute_difference": 0.0
+    },
+    {
+      "wall": "kilter642",
+      "hold_count": 642,
+      "angle_deg": 40,
+      "seed": 3,
+      "grade": 18,
+      "x_offset": 0,
+      "guidance": 5.0,
+      "projection_start": 0.5,
+      "exact_tensor_match": true,
+      "max_absolute_difference": 0.0
+    },
+    {
+      "wall": "kilter642",
+      "hold_count": 642,
+      "angle_deg": 40,
+      "seed": 3,
+      "grade": 18,
+      "x_offset": null,
+      "guidance": 3.0,
+      "projection_start": 0.8,
+      "exact_tensor_match": true,
+      "max_absolute_difference": 0.0
+    },
+    {
+      "wall": "kilter642",
+      "hold_count": 642,
+      "angle_deg": 40,
+      "seed": 3,
+      "grade": 18,
+      "x_offset": null,
+      "guidance": 5.0,
+      "projection_start": 0.5,
+      "exact_tensor_match": true,
+      "max_absolute_difference": 0.0
+    }
+  ],
+  "recursive_adapter_parity": {
+    "wall": "bettar18",
+    "seed": 3,
+    "grade": 18,
+    "x_offset": 0,
+    "guidance": 3.0,
+    "projection_start": 0.8,
+    "exact_tensor_match": true,
+    "max_absolute_difference": 0.0,
+    "raw_slots_match": true,
+    "raw_selections_match": true,
+    "role_repairs_match": true,
+    "reference": "boulderlab.learned_generator.generate_proposal"
+  },
+  "reproduce": {
+    "working_directory": "repository root",
+    "setup_commands": [
+      "python3.11 -m venv .venv",
+      ".venv/bin/python -m pip install -r requirements.txt",
+      "python3.11 -m venv .runtime/venv-ml",
+      ".runtime/venv-ml/bin/python -m pip install -r requirements-ml.txt",
+      ".venv/bin/python scripts/prepare_learned_model.py"
+    ],
+    "additional_source_cache_setup": "Save source_cache_python below as .runtime/prepare_parity_sources.py and run .venv/bin/python .runtime/prepare_parity_sources.py. It only fetches and verifies pinned bytes; it does not execute upstream code.",
+    "source_cache_python": "import hashlib, json, pathlib, urllib.request\ncommit = \"6f0acb414a5f1ab070aa62d02ac98f2602011821\"\nbase = pathlib.Path(\".runtime/learned-model\")\n(base / \"upstream\").mkdir(parents=True, exist_ok=True)\ntree_url = f\"https://api.github.com/repos/EvanMcCormick37/ml-homewall-climb-generator/git/trees/{commit}?recursive=1\"\nwith urllib.request.urlopen(tree_url, timeout=60) as response:\n    tree = json.load(response)\nassert tree[\"sha\"] == commit and not tree[\"truncated\"]\nentries = {row[\"path\"]: row for row in tree[\"tree\"]}\nsources = {\n    \"ddpm_model.py\": (\"60f3f6c691bf2808bfc0747858794a2d1cdeca16\", \"f95f15b41b14b6d3495e6d8864ddab17967d32a243d7adde075b2ea9ed103509\", 11148),\n    \"generation_utils.py\": (\"5df4faee5f6bc0e9eea3ab2aecb31b82cf9bd0ed\", \"1a12bb82020fe3ad7ef44a7445960478eea8232559fff6b6447eed921bd2f2e6\", 16183),\n}\nfor name, (blob, sha256, size) in sources.items():\n    source_path = \"climb-backend/app/services/utils/\" + name\n    entry = entries[source_path]\n    assert entry[\"type\"] == \"blob\" and entry[\"sha\"] == blob and entry[\"size\"] == size\n    url = f\"https://raw.githubusercontent.com/EvanMcCormick37/ml-homewall-climb-generator/{commit}/{source_path}\"\n    with urllib.request.urlopen(url, timeout=60) as response:\n        data = response.read(size + 1)\n    assert len(data) == size and hashlib.sha256(data).hexdigest() == sha256\n    assert hashlib.sha1(f\"blob {len(data)}\\0\".encode() + data).hexdigest() == blob\n    (base / \"upstream\" / name).write_bytes(data)\n(base / \"tree.json\").write_text(json.dumps(tree) + \"\\n\")\nprint(\"Pinned parity sources prepared; no downloaded code has been executed.\")\n",
+    "run_command": "BETTAR_TEST_MODEL=1 .venv/bin/python -m pytest -q tests/test_betazero_diagnosis.py",
+    "native_database": {
+      "note": "native_wall(kilter) downloads this only if absent, verifies bytes/SHA256 and opens SQLite read-only with query_only. No database deserialization code executes.",
+      "cache_path": ".runtime/betazero-diagnosis/climb-backend/data/storage.db",
+      "url": "https://raw.githubusercontent.com/EvanMcCormick37/ml-homewall-climb-generator/6f0acb414a5f1ab070aa62d02ac98f2602011821/climb-backend/data/storage.db",
+      "bytes": 806912,
+      "sha256": "9fcf87f93830e7d761fc6ba089de8463c5e574d75b35f6b8e46bbb9ea13f8ff5"
+    },
+    "network": "Only setup/downloads need network; cached model parity is offline. All caches remain ignored; no production dependencies change.",
+    "source_cache_recipe_validation": "Executed successfully in an empty temporary directory with URL responses replaced by the already verified cached bytes; no network and no model inference."
+  }
+}
