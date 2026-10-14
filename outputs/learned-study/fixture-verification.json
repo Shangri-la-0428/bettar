@@ -1,0 +1,200 @@
+{
+  "code_hash": "sha256:17247b8606a4e1edaa0ce8766f69fccd0cdc7fbb63b3821fbb09de3cb5e8e062",
+  "bundles": [
+    {
+      "file": "fixtures/catalog-10deg-bundle.json",
+      "candidates": 3,
+      "statuses": [
+        "pass",
+        "pass",
+        "pass"
+      ]
+    },
+    {
+      "file": "fixtures/catalog-demo-bundle.json",
+      "candidates": 3,
+      "statuses": [
+        "pass",
+        "pass",
+        "pass"
+      ]
+    },
+    {
+      "file": "fixtures/competition-10deg-bundle.json",
+      "candidates": 3,
+      "statuses": [
+        "unknown",
+        "unknown",
+        "unknown"
+      ]
+    },
+    {
+      "file": "fixtures/competition-demo-bundle.json",
+      "candidates": 3,
+      "statuses": [
+        "unknown",
+        "unknown",
+        "unknown"
+      ]
+    },
+    {
+      "file": "fixtures/demo-bundle.json",
+      "candidates": 3,
+      "statuses": [
+        "pass",
+        "pass",
+        "pass"
+      ]
+    },
+    {
+      "file": "fixtures/route-demo-bundle.json",
+      "candidates": 3,
+      "statuses": [
+        "pass",
+        "pass",
+        "pass"
+      ]
+    },
+    {
+      "file": "fixtures/route-mixed_flow-bundle.json",
+      "candidates": 3,
+      "statuses": [
+        "pass",
+        "pass",
+        "pass"
+      ]
+    },
+    {
+      "file": "fixtures/route-power_finish-bundle.json",
+      "candidates": 3,
+      "statuses": [
+        "pass",
+        "pass",
+        "pass"
+      ]
+    },
+    {
+      "file": "fixtures/route-sustained_finish-bundle.json",
+      "candidates": 3,
+      "statuses": [
+        "pass",
+        "pass",
+        "pass"
+      ]
+    },
+    {
+      "file": "fixtures/setting-demo-bundle.json",
+      "candidates": 1,
+      "statuses": [
+        "pass"
+      ]
+    },
+    {
+      "file": "fixtures/setting-diagonal_balance-bundle.json",
+      "candidates": 1,
+      "statuses": [
+        "pass"
+      ]
+    },
+    {
+      "file": "fixtures/setting-opposing_sidepulls-bundle.json",
+      "candidates": 1,
+      "statuses": [
+        "pass"
+      ]
+    },
+    {
+      "file": "fixtures/setting-roof_exit-bundle.json",
+      "candidates": 1,
+      "statuses": [
+        "pass"
+      ]
+    },
+    {
+      "file": "fixtures/setting-templates-diagonal_balance-bundle.json",
+      "candidates": 1,
+      "statuses": [
+        "pass"
+      ]
+    },
+    {
+      "file": "fixtures/setting-templates-opposing_sidepulls-bundle.json",
+      "candidates": 1,
+      "statuses": [
+        "pass"
+      ]
+    },
+    {
+      "file": "fixtures/setting-templates-roof_exit-bundle.json",
+      "candidates": 1,
+      "statuses": [
+        "pass"
+      ]
+    },
+    {
+      "file": "fixtures/style-demo-bundle.json",
+      "candidates": 3,
+      "statuses": [
+        "pass",
+        "pass",
+        "pass"
+      ]
+    },
+    {
+      "file": "fixtures/style-power-bundle.json",
+      "candidates": 3,
+      "statuses": [
+        "pass",
+        "pass",
+        "pass"
+      ]
+    },
+    {
+      "file": "fixtures/style-sustained-bundle.json",
+      "candidates": 3,
+      "statuses": [
+        "pass",
+        "pass",
+        "pass"
+      ]
+    },
+    {
+      "file": "fixtures/style-technical-bundle.json",
+      "candidates": 3,
+      "statuses": [
+        "pass",
+        "pass",
+        "pass"
+      ]
+    },
+    {
+      "file": "fixtures/wall-arete-bundle.json",
+      "candidates": 1,
+      "statuses": [
+        "pass"
+      ]
+    },
+    {
+      "file": "fixtures/wall-dihedral-bundle.json",
+      "candidates": 1,
+      "statuses": [
+        "pass"
+      ]
+    },
+    {
+      "file": "fixtures/wall-overhang-bundle.json",
+      "candidates": 1,
+      "statuses": [
+        "pass"
+      ]
+    },
+    {
+      "file": "fixtures/wall-roof-bundle.json",
+      "candidates": 2,
+      "statuses": [
+        "pass",
+        "pass"
+      ]
+    }
+  ]
+}

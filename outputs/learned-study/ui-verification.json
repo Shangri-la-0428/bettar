@@ -1,0 +1,72 @@
+{
+  "startedAt": "2026-10-14T18:40:18.665Z",
+  "checks": [
+    {
+      "check": "baseline-all-27-states",
+      "states": 27,
+      "distinctContacts": 27,
+      "finalNextDisabled": true
+    },
+    {
+      "check": "single-hold-model-paired-random",
+      "panel": "保存实验 · V3 · 种子 3\n配对随机选点\n预算内未找到\nBetaZero 选点\n配对随机选点\n全部岩点基线\n\n本次搜索预算内未找到完整走法。场景只显示安装布局与起始接触，不代表这些点不可攀。\n\n选中 / 实际使用 / 跳过\n6 / — / —\n移手 / 移脚\n— / —\n几何检查\n未成线\n释放 / 落点静态通过\n0/0 · 0/1\n峰值 / 最终负荷\n— / —\n累计动作代价\n—\n\n负荷与动作代价是合成模型中的相对数值，尚未以真人疲劳标定。\n\n模型来源、选点调整与搜索记录"
+    },
+    {
+      "check": "V4-condition",
+      "passed": true
+    },
+    {
+      "check": "V5-condition",
+      "passed": true
+    },
+    {
+      "check": "edit-invalidates-experiment-and-evaluation",
+      "experimentHidden": true,
+      "summary": "已修改，等待重新检查\n\n原方案与报告已保留。这个修订需要重新计算，才能获得自己的结果。\n\n受力与连续动作尚未验证\n\n检查当前修订"
+    },
+    {
+      "check": "edited-baseline-recheck",
+      "summary": "几何与姿态检查通过\n81 / 81\n已实现检查\n81 通过\n0 违反条件\n0 无法判断\n\n准静态结果另列；真实参数与连续动作尚未验证\n\n重新检查",
+      "exported": true
+    },
+    {
+      "check": "export-import-clears-experiment-attribution",
+      "revision": "修订 1",
+      "experimentHidden": true,
+      "summary": "几何与姿态检查通过\n81 / 81\n已实现检查\n81 通过\n0 违反条件\n0 无法判断\n\n准静态结果另列；真实参数与连续动作尚未验证\n\n重新检查"
+    },
+    {
+      "check": "roof-rule-draft-honest-conditioning",
+      "context": "当前草稿\n水平屋檐 + 出口 · 已有规则草稿\n意图：动态协调\n目标等级与风格未参与这份规则草稿的生成。",
+      "gradeDisabled": true
+    },
+    {
+      "check": "mobile-390-no-page-overflow",
+      "scrollWidth": 385,
+      "width": 390
+    },
+    {
+      "check": "mobile-all-61-rows-contained",
+      "rows": 61,
+      "scrollWidth": 385,
+      "width": 390
+    },
+    {
+      "check": "desktop-1440-no-page-overflow",
+      "width": 1440,
+      "scrollWidth": 1435,
+      "canvasTop": 738.7109375
+    },
+    {
+      "check": "final-console",
+      "errors": 0,
+      "warnings": 0
+    }
+  ],
+  "screenshots": [
+    "ui-desktop.jpg",
+    "ui-mobile.jpg"
+  ],
+  "exportedBundle": "edited-roundtrip-bundle.json",
+  "finishedAt": "2026-10-14T18:50:45.878Z"
+}

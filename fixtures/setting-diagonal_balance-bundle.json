@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
-  "id": "bundle-183c8db03a-1791997639194707000",
-  "created_at": "2026-10-14T17:07:19.194708+00:00",
+  "id": "bundle-183c8db03a-1792002712497409000",
+  "created_at": "2026-10-14T18:31:52.497422+00:00",
   "request": {
     "schema_version": "1.0",
     "id": "request-setting-diagonal_balance-A",
@@ -6826,9 +6826,9 @@
           ]
         },
         "baseline_evaluation": {
-          "id": "eval-setting-diagonal_balance-trial0-beta2-d5e5c6ba6c",
+          "id": "eval-setting-diagonal_balance-trial0-beta2-10b33511d8",
           "candidate_id": "setting-diagonal_balance-trial0-beta2",
-          "fingerprint": "sha256:fd632720012ba9e16d9b2168ce564933ff61379abb3a19872be041d5e5c6ba6c",
+          "fingerprint": "sha256:de63e535e6bb4e642527c1a3af603b795c6606813bd2001fdcd9f110b33511d8",
           "version": "0.1.0",
           "checks": [
             {
@@ -6897,7 +6897,7 @@
                 "upper_arm": 0.28,
                 "forearm": 0.25,
                 "endpoint_offset_sum_m": 0.0,
-                "fingerprint": "sha256:fd632720012ba9e16d9b2168ce564933ff61379abb3a19872be041d5e5c6ba6c"
+                "fingerprint": "sha256:de63e535e6bb4e642527c1a3af603b795c6606813bd2001fdcd9f110b33511d8"
               }
             },
             {
@@ -6923,7 +6923,7 @@
                 ],
                 "joint_limits_pass": true,
                 "body_id": "A",
-                "elapsed_ms": 162.24,
+                "elapsed_ms": 146.09,
                 "wall_clearance": {
                   "model_version": "finite-panel-skeleton-crossing-1",
                   "status": "pass",
@@ -6977,7 +6977,7 @@
                 "upper_arm": 0.28,
                 "forearm": 0.25,
                 "endpoint_offset_sum_m": 0.0,
-                "fingerprint": "sha256:fd632720012ba9e16d9b2168ce564933ff61379abb3a19872be041d5e5c6ba6c"
+                "fingerprint": "sha256:de63e535e6bb4e642527c1a3af603b795c6606813bd2001fdcd9f110b33511d8"
               }
             },
             {
@@ -7002,7 +7002,7 @@
                 ],
                 "joint_limits_pass": true,
                 "body_id": "A",
-                "elapsed_ms": 6.86,
+                "elapsed_ms": 5.94,
                 "wall_clearance": {
                   "model_version": "finite-panel-skeleton-crossing-1",
                   "status": "pass",
@@ -7056,7 +7056,7 @@
                 "upper_arm": 0.28,
                 "forearm": 0.25,
                 "endpoint_offset_sum_m": 0.0,
-                "fingerprint": "sha256:fd632720012ba9e16d9b2168ce564933ff61379abb3a19872be041d5e5c6ba6c"
+                "fingerprint": "sha256:de63e535e6bb4e642527c1a3af603b795c6606813bd2001fdcd9f110b33511d8"
               }
             },
             {
@@ -7082,7 +7082,7 @@
                 ],
                 "joint_limits_pass": true,
                 "body_id": "A",
-                "elapsed_ms": 253.4,
+                "elapsed_ms": 231.65,
                 "wall_clearance": {
                   "model_version": "finite-panel-skeleton-crossing-1",
                   "status": "pass",
@@ -7145,7 +7145,7 @@
                 ],
                 "joint_limits_pass": true,
                 "body_id": "A",
-                "elapsed_ms": 9.56,
+                "elapsed_ms": 5.91,
                 "wall_clearance": {
                   "model_version": "finite-panel-skeleton-crossing-1",
                   "status": "pass",
@@ -7199,7 +7199,7 @@
                 "upper_arm": 0.28,
                 "forearm": 0.25,
                 "endpoint_offset_sum_m": 0.0,
-                "fingerprint": "sha256:fd632720012ba9e16d9b2168ce564933ff61379abb3a19872be041d5e5c6ba6c"
+                "fingerprint": "sha256:de63e535e6bb4e642527c1a3af603b795c6606813bd2001fdcd9f110b33511d8"
               }
             },
             {
@@ -7225,7 +7225,7 @@
                 ],
                 "joint_limits_pass": true,
                 "body_id": "A",
-                "elapsed_ms": 239.6,
+                "elapsed_ms": 220.51,
                 "wall_clearance": {
                   "model_version": "finite-panel-skeleton-crossing-1",
                   "status": "pass",
@@ -7279,7 +7279,7 @@
                 "upper_arm": 0.28,
                 "forearm": 0.25,
                 "endpoint_offset_sum_m": 0.0,
-                "fingerprint": "sha256:fd632720012ba9e16d9b2168ce564933ff61379abb3a19872be041d5e5c6ba6c"
+                "fingerprint": "sha256:de63e535e6bb4e642527c1a3af603b795c6606813bd2001fdcd9f110b33511d8"
               }
             },
             {
@@ -7304,7 +7304,7 @@
                 ],
                 "joint_limits_pass": true,
                 "body_id": "A",
-                "elapsed_ms": 7.24,
+                "elapsed_ms": 5.96,
                 "wall_clearance": {
                   "model_version": "finite-panel-skeleton-crossing-1",
                   "status": "pass",
@@ -7358,7 +7358,7 @@
                 "upper_arm": 0.28,
                 "forearm": 0.25,
                 "endpoint_offset_sum_m": 0.0,
-                "fingerprint": "sha256:fd632720012ba9e16d9b2168ce564933ff61379abb3a19872be041d5e5c6ba6c"
+                "fingerprint": "sha256:de63e535e6bb4e642527c1a3af603b795c6606813bd2001fdcd9f110b33511d8"
               }
             },
             {
@@ -7384,7 +7384,7 @@
                 ],
                 "joint_limits_pass": true,
                 "body_id": "A",
-                "elapsed_ms": 240.87,
+                "elapsed_ms": 209.84,
                 "wall_clearance": {
                   "model_version": "finite-panel-skeleton-crossing-1",
                   "status": "pass",
@@ -7447,7 +7447,7 @@
                 ],
                 "joint_limits_pass": true,
                 "body_id": "A",
-                "elapsed_ms": 6.6,
+                "elapsed_ms": 6.15,
                 "wall_clearance": {
                   "model_version": "finite-panel-skeleton-crossing-1",
                   "status": "pass",
@@ -7501,7 +7501,7 @@
                 "upper_arm": 0.28,
                 "forearm": 0.25,
                 "endpoint_offset_sum_m": 0.0,
-                "fingerprint": "sha256:fd632720012ba9e16d9b2168ce564933ff61379abb3a19872be041d5e5c6ba6c"
+                "fingerprint": "sha256:de63e535e6bb4e642527c1a3af603b795c6606813bd2001fdcd9f110b33511d8"
               }
             },
             {
@@ -7527,7 +7527,7 @@
                 ],
                 "joint_limits_pass": true,
                 "body_id": "A",
-                "elapsed_ms": 288.7,
+                "elapsed_ms": 263.44,
                 "wall_clearance": {
                   "model_version": "finite-panel-skeleton-crossing-1",
                   "status": "pass",
@@ -7581,7 +7581,7 @@
                 "upper_arm": 0.28,
                 "forearm": 0.25,
                 "endpoint_offset_sum_m": 0.0,
-                "fingerprint": "sha256:fd632720012ba9e16d9b2168ce564933ff61379abb3a19872be041d5e5c6ba6c"
+                "fingerprint": "sha256:de63e535e6bb4e642527c1a3af603b795c6606813bd2001fdcd9f110b33511d8"
               }
             },
             {
@@ -7606,7 +7606,7 @@
                 ],
                 "joint_limits_pass": true,
                 "body_id": "A",
-                "elapsed_ms": 6.51,
+                "elapsed_ms": 6.02,
                 "wall_clearance": {
                   "model_version": "finite-panel-skeleton-crossing-1",
                   "status": "pass",
@@ -7660,7 +7660,7 @@
                 "upper_arm": 0.28,
                 "forearm": 0.25,
                 "endpoint_offset_sum_m": 0.0,
-                "fingerprint": "sha256:fd632720012ba9e16d9b2168ce564933ff61379abb3a19872be041d5e5c6ba6c"
+                "fingerprint": "sha256:de63e535e6bb4e642527c1a3af603b795c6606813bd2001fdcd9f110b33511d8"
               }
             },
             {
@@ -7686,7 +7686,7 @@
                 ],
                 "joint_limits_pass": true,
                 "body_id": "A",
-                "elapsed_ms": 222.56,
+                "elapsed_ms": 205.99,
                 "wall_clearance": {
                   "model_version": "finite-panel-skeleton-crossing-1",
                   "status": "pass",
@@ -7749,7 +7749,7 @@
                 ],
                 "joint_limits_pass": true,
                 "body_id": "A",
-                "elapsed_ms": 6.42,
+                "elapsed_ms": 6.26,
                 "wall_clearance": {
                   "model_version": "finite-panel-skeleton-crossing-1",
                   "status": "pass",
@@ -7803,7 +7803,7 @@
                 "upper_arm": 0.28,
                 "forearm": 0.25,
                 "endpoint_offset_sum_m": 0.0,
-                "fingerprint": "sha256:fd632720012ba9e16d9b2168ce564933ff61379abb3a19872be041d5e5c6ba6c"
+                "fingerprint": "sha256:de63e535e6bb4e642527c1a3af603b795c6606813bd2001fdcd9f110b33511d8"
               }
             },
             {
@@ -7829,7 +7829,7 @@
                 ],
                 "joint_limits_pass": true,
                 "body_id": "A",
-                "elapsed_ms": 271.79,
+                "elapsed_ms": 347.22,
                 "wall_clearance": {
                   "model_version": "finite-panel-skeleton-crossing-1",
                   "status": "pass",
@@ -7883,7 +7883,7 @@
                 "upper_arm": 0.28,
                 "forearm": 0.25,
                 "endpoint_offset_sum_m": 0.0,
-                "fingerprint": "sha256:fd632720012ba9e16d9b2168ce564933ff61379abb3a19872be041d5e5c6ba6c"
+                "fingerprint": "sha256:de63e535e6bb4e642527c1a3af603b795c6606813bd2001fdcd9f110b33511d8"
               }
             },
             {
@@ -7908,7 +7908,7 @@
                 ],
                 "joint_limits_pass": true,
                 "body_id": "A",
-                "elapsed_ms": 6.82,
+                "elapsed_ms": 12.31,
                 "wall_clearance": {
                   "model_version": "finite-panel-skeleton-crossing-1",
                   "status": "pass",
@@ -7962,7 +7962,7 @@
                 "upper_arm": 0.28,
                 "forearm": 0.25,
                 "endpoint_offset_sum_m": 0.0,
-                "fingerprint": "sha256:fd632720012ba9e16d9b2168ce564933ff61379abb3a19872be041d5e5c6ba6c"
+                "fingerprint": "sha256:de63e535e6bb4e642527c1a3af603b795c6606813bd2001fdcd9f110b33511d8"
               }
             },
             {
@@ -7988,7 +7988,7 @@
                 ],
                 "joint_limits_pass": true,
                 "body_id": "A",
-                "elapsed_ms": 265.9,
+                "elapsed_ms": 249.9,
                 "wall_clearance": {
                   "model_version": "finite-panel-skeleton-crossing-1",
                   "status": "pass",
@@ -8042,7 +8042,7 @@
                 "upper_arm": 0.28,
                 "forearm": 0.25,
                 "endpoint_offset_sum_m": 0.0,
-                "fingerprint": "sha256:fd632720012ba9e16d9b2168ce564933ff61379abb3a19872be041d5e5c6ba6c"
+                "fingerprint": "sha256:de63e535e6bb4e642527c1a3af603b795c6606813bd2001fdcd9f110b33511d8"
               }
             },
             {
@@ -8067,7 +8067,7 @@
                 ],
                 "joint_limits_pass": true,
                 "body_id": "A",
-                "elapsed_ms": 6.48,
+                "elapsed_ms": 6.07,
                 "wall_clearance": {
                   "model_version": "finite-panel-skeleton-crossing-1",
                   "status": "pass",
@@ -8121,7 +8121,7 @@
                 "upper_arm": 0.28,
                 "forearm": 0.25,
                 "endpoint_offset_sum_m": 0.0,
-                "fingerprint": "sha256:fd632720012ba9e16d9b2168ce564933ff61379abb3a19872be041d5e5c6ba6c"
+                "fingerprint": "sha256:de63e535e6bb4e642527c1a3af603b795c6606813bd2001fdcd9f110b33511d8"
               }
             },
             {
@@ -8147,7 +8147,7 @@
                 ],
                 "joint_limits_pass": true,
                 "body_id": "A",
-                "elapsed_ms": 240.76,
+                "elapsed_ms": 215.49,
                 "wall_clearance": {
                   "model_version": "finite-panel-skeleton-crossing-1",
                   "status": "pass",
@@ -8210,7 +8210,7 @@
                 ],
                 "joint_limits_pass": true,
                 "body_id": "A",
-                "elapsed_ms": 6.83,
+                "elapsed_ms": 5.93,
                 "wall_clearance": {
                   "model_version": "finite-panel-skeleton-crossing-1",
                   "status": "pass",
@@ -8264,7 +8264,7 @@
                 "upper_arm": 0.28,
                 "forearm": 0.25,
                 "endpoint_offset_sum_m": 0.0,
-                "fingerprint": "sha256:fd632720012ba9e16d9b2168ce564933ff61379abb3a19872be041d5e5c6ba6c"
+                "fingerprint": "sha256:de63e535e6bb4e642527c1a3af603b795c6606813bd2001fdcd9f110b33511d8"
               }
             },
             {
@@ -8290,7 +8290,7 @@
                 ],
                 "joint_limits_pass": true,
                 "body_id": "A",
-                "elapsed_ms": 275.23,
+                "elapsed_ms": 257.72,
                 "wall_clearance": {
                   "model_version": "finite-panel-skeleton-crossing-1",
                   "status": "pass",
@@ -8344,7 +8344,7 @@
                 "upper_arm": 0.28,
                 "forearm": 0.25,
                 "endpoint_offset_sum_m": 0.0,
-                "fingerprint": "sha256:fd632720012ba9e16d9b2168ce564933ff61379abb3a19872be041d5e5c6ba6c"
+                "fingerprint": "sha256:de63e535e6bb4e642527c1a3af603b795c6606813bd2001fdcd9f110b33511d8"
               }
             },
             {
@@ -8369,7 +8369,7 @@
                 ],
                 "joint_limits_pass": true,
                 "body_id": "A",
-                "elapsed_ms": 6.57,
+                "elapsed_ms": 6.09,
                 "wall_clearance": {
                   "model_version": "finite-panel-skeleton-crossing-1",
                   "status": "pass",
@@ -8423,7 +8423,7 @@
                 "upper_arm": 0.28,
                 "forearm": 0.25,
                 "endpoint_offset_sum_m": 0.0,
-                "fingerprint": "sha256:fd632720012ba9e16d9b2168ce564933ff61379abb3a19872be041d5e5c6ba6c"
+                "fingerprint": "sha256:de63e535e6bb4e642527c1a3af603b795c6606813bd2001fdcd9f110b33511d8"
               }
             },
             {
@@ -8449,7 +8449,7 @@
                 ],
                 "joint_limits_pass": true,
                 "body_id": "A",
-                "elapsed_ms": 246.03,
+                "elapsed_ms": 225.19,
                 "wall_clearance": {
                   "model_version": "finite-panel-skeleton-crossing-1",
                   "status": "pass",
@@ -8512,7 +8512,7 @@
                 ],
                 "joint_limits_pass": true,
                 "body_id": "A",
-                "elapsed_ms": 6.32,
+                "elapsed_ms": 5.99,
                 "wall_clearance": {
                   "model_version": "finite-panel-skeleton-crossing-1",
                   "status": "pass",
@@ -8566,7 +8566,7 @@
                 "upper_arm": 0.28,
                 "forearm": 0.25,
                 "endpoint_offset_sum_m": 0.0,
-                "fingerprint": "sha256:fd632720012ba9e16d9b2168ce564933ff61379abb3a19872be041d5e5c6ba6c"
+                "fingerprint": "sha256:de63e535e6bb4e642527c1a3af603b795c6606813bd2001fdcd9f110b33511d8"
               }
             },
             {
@@ -8592,7 +8592,7 @@
                 ],
                 "joint_limits_pass": true,
                 "body_id": "A",
-                "elapsed_ms": 228.8,
+                "elapsed_ms": 209.04,
                 "wall_clearance": {
                   "model_version": "finite-panel-skeleton-crossing-1",
                   "status": "pass",
@@ -8646,7 +8646,7 @@
                 "upper_arm": 0.28,
                 "forearm": 0.25,
                 "endpoint_offset_sum_m": 0.0,
-                "fingerprint": "sha256:fd632720012ba9e16d9b2168ce564933ff61379abb3a19872be041d5e5c6ba6c"
+                "fingerprint": "sha256:de63e535e6bb4e642527c1a3af603b795c6606813bd2001fdcd9f110b33511d8"
               }
             },
             {
@@ -8671,7 +8671,7 @@
                 ],
                 "joint_limits_pass": true,
                 "body_id": "A",
-                "elapsed_ms": 6.63,
+                "elapsed_ms": 5.93,
                 "wall_clearance": {
                   "model_version": "finite-panel-skeleton-crossing-1",
                   "status": "pass",
@@ -8725,7 +8725,7 @@
                 "upper_arm": 0.28,
                 "forearm": 0.25,
                 "endpoint_offset_sum_m": 0.0,
-                "fingerprint": "sha256:fd632720012ba9e16d9b2168ce564933ff61379abb3a19872be041d5e5c6ba6c"
+                "fingerprint": "sha256:de63e535e6bb4e642527c1a3af603b795c6606813bd2001fdcd9f110b33511d8"
               }
             },
             {
@@ -8751,7 +8751,7 @@
                 ],
                 "joint_limits_pass": true,
                 "body_id": "A",
-                "elapsed_ms": 264.55,
+                "elapsed_ms": 250.93,
                 "wall_clearance": {
                   "model_version": "finite-panel-skeleton-crossing-1",
                   "status": "pass",
@@ -8814,7 +8814,7 @@
                 ],
                 "joint_limits_pass": true,
                 "body_id": "A",
-                "elapsed_ms": 6.54,
+                "elapsed_ms": 5.95,
                 "wall_clearance": {
                   "model_version": "finite-panel-skeleton-crossing-1",
                   "status": "pass",
@@ -8868,7 +8868,7 @@
                 "upper_arm": 0.28,
                 "forearm": 0.25,
                 "endpoint_offset_sum_m": 0.0,
-                "fingerprint": "sha256:fd632720012ba9e16d9b2168ce564933ff61379abb3a19872be041d5e5c6ba6c"
+                "fingerprint": "sha256:de63e535e6bb4e642527c1a3af603b795c6606813bd2001fdcd9f110b33511d8"
               }
             },
             {
@@ -8894,7 +8894,7 @@
                 ],
                 "joint_limits_pass": true,
                 "body_id": "A",
-                "elapsed_ms": 269.73,
+                "elapsed_ms": 248.21,
                 "wall_clearance": {
                   "model_version": "finite-panel-skeleton-crossing-1",
                   "status": "pass",
@@ -9087,7 +9087,7 @@
                 ],
                 "joint_limits_pass": true,
                 "body_id": "A",
-                "elapsed_ms": 162.24,
+                "elapsed_ms": 146.09,
                 "wall_clearance": {
                   "model_version": "finite-panel-skeleton-crossing-1",
                   "status": "pass",
@@ -9220,7 +9220,7 @@
                 ],
                 "joint_limits_pass": true,
                 "body_id": "A",
-                "elapsed_ms": 6.86,
+                "elapsed_ms": 5.94,
                 "wall_clearance": {
                   "model_version": "finite-panel-skeleton-crossing-1",
                   "status": "pass",
@@ -9354,7 +9354,7 @@
                 ],
                 "joint_limits_pass": true,
                 "body_id": "A",
-                "elapsed_ms": 253.4,
+                "elapsed_ms": 231.65,
                 "wall_clearance": {
                   "model_version": "finite-panel-skeleton-crossing-1",
                   "status": "pass",
@@ -9487,7 +9487,7 @@
                 ],
                 "joint_limits_pass": true,
                 "body_id": "A",
-                "elapsed_ms": 9.56,
+                "elapsed_ms": 5.91,
                 "wall_clearance": {
                   "model_version": "finite-panel-skeleton-crossing-1",
                   "status": "pass",
@@ -9621,7 +9621,7 @@
                 ],
                 "joint_limits_pass": true,
                 "body_id": "A",
-                "elapsed_ms": 239.6,
+                "elapsed_ms": 220.51,
                 "wall_clearance": {
                   "model_version": "finite-panel-skeleton-crossing-1",
                   "status": "pass",
@@ -9754,7 +9754,7 @@
                 ],
                 "joint_limits_pass": true,
                 "body_id": "A",
-                "elapsed_ms": 7.24,
+                "elapsed_ms": 5.96,
                 "wall_clearance": {
                   "model_version": "finite-panel-skeleton-crossing-1",
                   "status": "pass",
@@ -9888,7 +9888,7 @@
                 ],
                 "joint_limits_pass": true,
                 "body_id": "A",
-                "elapsed_ms": 240.87,
+                "elapsed_ms": 209.84,
                 "wall_clearance": {
                   "model_version": "finite-panel-skeleton-crossing-1",
                   "status": "pass",
@@ -10021,7 +10021,7 @@
                 ],
                 "joint_limits_pass": true,
                 "body_id": "A",
-                "elapsed_ms": 6.6,
+                "elapsed_ms": 6.15,
                 "wall_clearance": {
                   "model_version": "finite-panel-skeleton-crossing-1",
                   "status": "pass",
@@ -10155,7 +10155,7 @@
                 ],
                 "joint_limits_pass": true,
                 "body_id": "A",
-                "elapsed_ms": 288.7,
+                "elapsed_ms": 263.44,
                 "wall_clearance": {
                   "model_version": "finite-panel-skeleton-crossing-1",
                   "status": "pass",
@@ -10288,7 +10288,7 @@
                 ],
                 "joint_limits_pass": true,
                 "body_id": "A",
-                "elapsed_ms": 6.51,
+                "elapsed_ms": 6.02,
                 "wall_clearance": {
                   "model_version": "finite-panel-skeleton-crossing-1",
                   "status": "pass",
@@ -10422,7 +10422,7 @@
                 ],
                 "joint_limits_pass": true,
                 "body_id": "A",
-                "elapsed_ms": 222.56,
+                "elapsed_ms": 205.99,
                 "wall_clearance": {
                   "model_version": "finite-panel-skeleton-crossing-1",
                   "status": "pass",
@@ -10555,7 +10555,7 @@
                 ],
                 "joint_limits_pass": true,
                 "body_id": "A",
-                "elapsed_ms": 6.42,
+                "elapsed_ms": 6.26,
                 "wall_clearance": {
                   "model_version": "finite-panel-skeleton-crossing-1",
                   "status": "pass",
@@ -10689,7 +10689,7 @@
                 ],
                 "joint_limits_pass": true,
                 "body_id": "A",
-                "elapsed_ms": 271.79,
+                "elapsed_ms": 347.22,
                 "wall_clearance": {
                   "model_version": "finite-panel-skeleton-crossing-1",
                   "status": "pass",
@@ -10822,7 +10822,7 @@
                 ],
                 "joint_limits_pass": true,
                 "body_id": "A",
-                "elapsed_ms": 6.82,
+                "elapsed_ms": 12.31,
                 "wall_clearance": {
                   "model_version": "finite-panel-skeleton-crossing-1",
                   "status": "pass",
@@ -10956,7 +10956,7 @@
                 ],
                 "joint_limits_pass": true,
                 "body_id": "A",
-                "elapsed_ms": 265.9,
+                "elapsed_ms": 249.9,
                 "wall_clearance": {
                   "model_version": "finite-panel-skeleton-crossing-1",
                   "status": "pass",
@@ -11089,7 +11089,7 @@
                 ],
                 "joint_limits_pass": true,
                 "body_id": "A",
-                "elapsed_ms": 6.48,
+                "elapsed_ms": 6.07,
                 "wall_clearance": {
                   "model_version": "finite-panel-skeleton-crossing-1",
                   "status": "pass",
@@ -11223,7 +11223,7 @@
                 ],
                 "joint_limits_pass": true,
                 "body_id": "A",
-                "elapsed_ms": 240.76,
+                "elapsed_ms": 215.49,
                 "wall_clearance": {
                   "model_version": "finite-panel-skeleton-crossing-1",
                   "status": "pass",
@@ -11356,7 +11356,7 @@
                 ],
                 "joint_limits_pass": true,
                 "body_id": "A",
-                "elapsed_ms": 6.83,
+                "elapsed_ms": 5.93,
                 "wall_clearance": {
                   "model_version": "finite-panel-skeleton-crossing-1",
                   "status": "pass",
@@ -11490,7 +11490,7 @@
                 ],
                 "joint_limits_pass": true,
                 "body_id": "A",
-                "elapsed_ms": 275.23,
+                "elapsed_ms": 257.72,
                 "wall_clearance": {
                   "model_version": "finite-panel-skeleton-crossing-1",
                   "status": "pass",
@@ -11623,7 +11623,7 @@
                 ],
                 "joint_limits_pass": true,
                 "body_id": "A",
-                "elapsed_ms": 6.57,
+                "elapsed_ms": 6.09,
                 "wall_clearance": {
                   "model_version": "finite-panel-skeleton-crossing-1",
                   "status": "pass",
@@ -11757,7 +11757,7 @@
                 ],
                 "joint_limits_pass": true,
                 "body_id": "A",
-                "elapsed_ms": 246.03,
+                "elapsed_ms": 225.19,
                 "wall_clearance": {
                   "model_version": "finite-panel-skeleton-crossing-1",
                   "status": "pass",
@@ -11890,7 +11890,7 @@
                 ],
                 "joint_limits_pass": true,
                 "body_id": "A",
-                "elapsed_ms": 6.32,
+                "elapsed_ms": 5.99,
                 "wall_clearance": {
                   "model_version": "finite-panel-skeleton-crossing-1",
                   "status": "pass",
@@ -12024,7 +12024,7 @@
                 ],
                 "joint_limits_pass": true,
                 "body_id": "A",
-                "elapsed_ms": 228.8,
+                "elapsed_ms": 209.04,
                 "wall_clearance": {
                   "model_version": "finite-panel-skeleton-crossing-1",
                   "status": "pass",
@@ -12157,7 +12157,7 @@
                 ],
                 "joint_limits_pass": true,
                 "body_id": "A",
-                "elapsed_ms": 6.63,
+                "elapsed_ms": 5.93,
                 "wall_clearance": {
                   "model_version": "finite-panel-skeleton-crossing-1",
                   "status": "pass",
@@ -12291,7 +12291,7 @@
                 ],
                 "joint_limits_pass": true,
                 "body_id": "A",
-                "elapsed_ms": 264.55,
+                "elapsed_ms": 250.93,
                 "wall_clearance": {
                   "model_version": "finite-panel-skeleton-crossing-1",
                   "status": "pass",
@@ -12424,7 +12424,7 @@
                 ],
                 "joint_limits_pass": true,
                 "body_id": "A",
-                "elapsed_ms": 6.54,
+                "elapsed_ms": 5.95,
                 "wall_clearance": {
                   "model_version": "finite-panel-skeleton-crossing-1",
                   "status": "pass",
@@ -12558,7 +12558,7 @@
                 ],
                 "joint_limits_pass": true,
                 "body_id": "A",
-                "elapsed_ms": 269.73,
+                "elapsed_ms": 248.21,
                 "wall_clearance": {
                   "model_version": "finite-panel-skeleton-crossing-1",
                   "status": "pass",
@@ -12583,7 +12583,7 @@
             "passed": 81,
             "total": 81
           },
-          "elapsed_ms": 3612.98,
+          "elapsed_ms": 3417.06,
           "design_analysis": {
             "source": "synthetic_assumption",
             "model_version": "independent-beta-proxy-3",
@@ -13209,7 +13209,7 @@
           },
           "mechanics_report": {
             "model_version": "quasistatic-contact-lp-1",
-            "model_fingerprint": "sha256:c9d814eee7fcc96de478fd5a0f6e014040ca496902ae468f65e2987b650218be",
+            "model_fingerprint": "sha256:ecdd6c0fdb83aa6eedf6a0363aaba3f87dabbec04924ae286c7c9172edb37ec8",
             "parameters": {
               "com_model": "synthetic_segments_v1",
               "cone_sides": 8,
@@ -19050,9 +19050,9 @@
               "final_load": 206.94472
             },
             "evaluation": {
-              "id": "eval-setting-diagonal_balance-trial1-beta3-dcdced5809",
+              "id": "eval-setting-diagonal_balance-trial1-beta3-28c5c90b9b",
               "candidate_id": "setting-diagonal_balance-trial1-beta3",
-              "fingerprint": "sha256:f6e73e9596f1f7b8fd5acb2a3ae0342f9533f34a00eb2d9b9751f1dcdced5809",
+              "fingerprint": "sha256:25a01a41f8fb62703525d96cd78f48900bb9cf834feca15d86135528c5c90b9b",
               "version": "0.1.0",
               "checks": [
                 {
@@ -19121,7 +19121,7 @@
                     "upper_arm": 0.28,
                     "forearm": 0.25,
                     "endpoint_offset_sum_m": 0.0,
-                    "fingerprint": "sha256:f6e73e9596f1f7b8fd5acb2a3ae0342f9533f34a00eb2d9b9751f1dcdced5809"
+                    "fingerprint": "sha256:25a01a41f8fb62703525d96cd78f48900bb9cf834feca15d86135528c5c90b9b"
                   }
                 },
                 {
@@ -19147,7 +19147,7 @@
                     ],
                     "joint_limits_pass": true,
                     "body_id": "A",
-                    "elapsed_ms": 151.04,
+                    "elapsed_ms": 146.15,
                     "wall_clearance": {
                       "model_version": "finite-panel-skeleton-crossing-1",
                       "status": "pass",
@@ -19201,7 +19201,7 @@
                     "upper_arm": 0.28,
                     "forearm": 0.25,
                     "endpoint_offset_sum_m": 0.0,
-                    "fingerprint": "sha256:f6e73e9596f1f7b8fd5acb2a3ae0342f9533f34a00eb2d9b9751f1dcdced5809"
+                    "fingerprint": "sha256:25a01a41f8fb62703525d96cd78f48900bb9cf834feca15d86135528c5c90b9b"
                   }
                 },
                 {
@@ -19226,7 +19226,7 @@
                     ],
                     "joint_limits_pass": true,
                     "body_id": "A",
-                    "elapsed_ms": 6.1,
+                    "elapsed_ms": 6.03,
                     "wall_clearance": {
                       "model_version": "finite-panel-skeleton-crossing-1",
                       "status": "pass",
@@ -19280,7 +19280,7 @@
                     "upper_arm": 0.28,
                     "forearm": 0.25,
                     "endpoint_offset_sum_m": 0.0,
-                    "fingerprint": "sha256:f6e73e9596f1f7b8fd5acb2a3ae0342f9533f34a00eb2d9b9751f1dcdced5809"
+                    "fingerprint": "sha256:25a01a41f8fb62703525d96cd78f48900bb9cf834feca15d86135528c5c90b9b"
                   }
                 },
                 {
@@ -19306,7 +19306,7 @@
                     ],
                     "joint_limits_pass": true,
                     "body_id": "A",
-                    "elapsed_ms": 230.76,
+                    "elapsed_ms": 231.15,
                     "wall_clearance": {
                       "model_version": "finite-panel-skeleton-crossing-1",
                       "status": "pass",
@@ -19369,7 +19369,7 @@
                     ],
                     "joint_limits_pass": true,
                     "body_id": "A",
-                    "elapsed_ms": 6.16,
+                    "elapsed_ms": 6.02,
                     "wall_clearance": {
                       "model_version": "finite-panel-skeleton-crossing-1",
                       "status": "pass",
@@ -19423,7 +19423,7 @@
                     "upper_arm": 0.28,
                     "forearm": 0.25,
                     "endpoint_offset_sum_m": 0.0,
-                    "fingerprint": "sha256:f6e73e9596f1f7b8fd5acb2a3ae0342f9533f34a00eb2d9b9751f1dcdced5809"
+                    "fingerprint": "sha256:25a01a41f8fb62703525d96cd78f48900bb9cf834feca15d86135528c5c90b9b"
                   }
                 },
                 {
@@ -19449,7 +19449,7 @@
                     ],
                     "joint_limits_pass": true,
                     "body_id": "A",
-                    "elapsed_ms": 206.32,
+                    "elapsed_ms": 205.82,
                     "wall_clearance": {
                       "model_version": "finite-panel-skeleton-crossing-1",
                       "status": "pass",
@@ -19503,7 +19503,7 @@
                     "upper_arm": 0.28,
                     "forearm": 0.25,
                     "endpoint_offset_sum_m": 0.0,
-                    "fingerprint": "sha256:f6e73e9596f1f7b8fd5acb2a3ae0342f9533f34a00eb2d9b9751f1dcdced5809"
+                    "fingerprint": "sha256:25a01a41f8fb62703525d96cd78f48900bb9cf834feca15d86135528c5c90b9b"
                   }
                 },
                 {
@@ -19528,7 +19528,7 @@
                     ],
                     "joint_limits_pass": true,
                     "body_id": "A",
-                    "elapsed_ms": 6.1,
+                    "elapsed_ms": 6.03,
                     "wall_clearance": {
                       "model_version": "finite-panel-skeleton-crossing-1",
                       "status": "pass",
@@ -19582,7 +19582,7 @@
                     "upper_arm": 0.28,
                     "forearm": 0.25,
                     "endpoint_offset_sum_m": 0.0,
-                    "fingerprint": "sha256:f6e73e9596f1f7b8fd5acb2a3ae0342f9533f34a00eb2d9b9751f1dcdced5809"
+                    "fingerprint": "sha256:25a01a41f8fb62703525d96cd78f48900bb9cf834feca15d86135528c5c90b9b"
                   }
                 },
                 {
@@ -19608,7 +19608,7 @@
                     ],
                     "joint_limits_pass": true,
                     "body_id": "A",
-                    "elapsed_ms": 259.41,
+                    "elapsed_ms": 253.91,
                     "wall_clearance": {
                       "model_version": "finite-panel-skeleton-crossing-1",
                       "status": "pass",
@@ -19671,7 +19671,7 @@
                     ],
                     "joint_limits_pass": true,
                     "body_id": "A",
-                    "elapsed_ms": 6.16,
+                    "elapsed_ms": 5.92,
                     "wall_clearance": {
                       "model_version": "finite-panel-skeleton-crossing-1",
                       "status": "pass",
@@ -19725,7 +19725,7 @@
                     "upper_arm": 0.28,
                     "forearm": 0.25,
                     "endpoint_offset_sum_m": 0.0,
-                    "fingerprint": "sha256:f6e73e9596f1f7b8fd5acb2a3ae0342f9533f34a00eb2d9b9751f1dcdced5809"
+                    "fingerprint": "sha256:25a01a41f8fb62703525d96cd78f48900bb9cf834feca15d86135528c5c90b9b"
                   }
                 },
                 {
@@ -19751,7 +19751,7 @@
                     ],
                     "joint_limits_pass": true,
                     "body_id": "A",
-                    "elapsed_ms": 242.6,
+                    "elapsed_ms": 234.32,
                     "wall_clearance": {
                       "model_version": "finite-panel-skeleton-crossing-1",
                       "status": "pass",
@@ -19805,7 +19805,7 @@
                     "upper_arm": 0.28,
                     "forearm": 0.25,
                     "endpoint_offset_sum_m": 0.0,
-                    "fingerprint": "sha256:f6e73e9596f1f7b8fd5acb2a3ae0342f9533f34a00eb2d9b9751f1dcdced5809"
+                    "fingerprint": "sha256:25a01a41f8fb62703525d96cd78f48900bb9cf834feca15d86135528c5c90b9b"
                   }
                 },
                 {
@@ -19830,7 +19830,7 @@
                     ],
                     "joint_limits_pass": true,
                     "body_id": "A",
-                    "elapsed_ms": 6.15,
+                    "elapsed_ms": 5.93,
                     "wall_clearance": {
                       "model_version": "finite-panel-skeleton-crossing-1",
                       "status": "pass",
@@ -19884,7 +19884,7 @@
                     "upper_arm": 0.28,
                     "forearm": 0.25,
                     "endpoint_offset_sum_m": 0.0,
-                    "fingerprint": "sha256:f6e73e9596f1f7b8fd5acb2a3ae0342f9533f34a00eb2d9b9751f1dcdced5809"
+                    "fingerprint": "sha256:25a01a41f8fb62703525d96cd78f48900bb9cf834feca15d86135528c5c90b9b"
                   }
                 },
                 {
@@ -19910,7 +19910,7 @@
                     ],
                     "joint_limits_pass": true,
                     "body_id": "A",
-                    "elapsed_ms": 156.19,
+                    "elapsed_ms": 150.85,
                     "wall_clearance": {
                       "model_version": "finite-panel-skeleton-crossing-1",
                       "status": "pass",
@@ -19973,7 +19973,7 @@
                     ],
                     "joint_limits_pass": true,
                     "body_id": "A",
-                    "elapsed_ms": 6.12,
+                    "elapsed_ms": 5.97,
                     "wall_clearance": {
                       "model_version": "finite-panel-skeleton-crossing-1",
                       "status": "pass",
@@ -20027,7 +20027,7 @@
                     "upper_arm": 0.28,
                     "forearm": 0.25,
                     "endpoint_offset_sum_m": 0.0,
-                    "fingerprint": "sha256:f6e73e9596f1f7b8fd5acb2a3ae0342f9533f34a00eb2d9b9751f1dcdced5809"
+                    "fingerprint": "sha256:25a01a41f8fb62703525d96cd78f48900bb9cf834feca15d86135528c5c90b9b"
                   }
                 },
                 {
@@ -20053,7 +20053,7 @@
                     ],
                     "joint_limits_pass": true,
                     "body_id": "A",
-                    "elapsed_ms": 222.67,
+                    "elapsed_ms": 215.15,
                     "wall_clearance": {
                       "model_version": "finite-panel-skeleton-crossing-1",
                       "status": "pass",
@@ -20107,7 +20107,7 @@
                     "upper_arm": 0.28,
                     "forearm": 0.25,
                     "endpoint_offset_sum_m": 0.0,
-                    "fingerprint": "sha256:f6e73e9596f1f7b8fd5acb2a3ae0342f9533f34a00eb2d9b9751f1dcdced5809"
+                    "fingerprint": "sha256:25a01a41f8fb62703525d96cd78f48900bb9cf834feca15d86135528c5c90b9b"
                   }
                 },
                 {
@@ -20132,7 +20132,7 @@
                     ],
                     "joint_limits_pass": true,
                     "body_id": "A",
-                    "elapsed_ms": 6.25,
+                    "elapsed_ms": 6.03,
                     "wall_clearance": {
                       "model_version": "finite-panel-skeleton-crossing-1",
                       "status": "pass",
@@ -20186,7 +20186,7 @@
                     "upper_arm": 0.28,
                     "forearm": 0.25,
                     "endpoint_offset_sum_m": 0.0,
-                    "fingerprint": "sha256:f6e73e9596f1f7b8fd5acb2a3ae0342f9533f34a00eb2d9b9751f1dcdced5809"
+                    "fingerprint": "sha256:25a01a41f8fb62703525d96cd78f48900bb9cf834feca15d86135528c5c90b9b"
                   }
                 },
                 {
@@ -20212,7 +20212,7 @@
                     ],
                     "joint_limits_pass": true,
                     "body_id": "A",
-                    "elapsed_ms": 226.17,
+                    "elapsed_ms": 218.44,
                     "wall_clearance": {
                       "model_version": "finite-panel-skeleton-crossing-1",
                       "status": "pass",
@@ -20275,7 +20275,7 @@
                     ],
                     "joint_limits_pass": true,
                     "body_id": "A",
-                    "elapsed_ms": 6.17,
+                    "elapsed_ms": 5.95,
                     "wall_clearance": {
                       "model_version": "finite-panel-skeleton-crossing-1",
                       "status": "pass",
@@ -20329,7 +20329,7 @@
                     "upper_arm": 0.28,
                     "forearm": 0.25,
                     "endpoint_offset_sum_m": 0.0,
-                    "fingerprint": "sha256:f6e73e9596f1f7b8fd5acb2a3ae0342f9533f34a00eb2d9b9751f1dcdced5809"
+                    "fingerprint": "sha256:25a01a41f8fb62703525d96cd78f48900bb9cf834feca15d86135528c5c90b9b"
                   }
                 },
                 {
@@ -20355,7 +20355,7 @@
                     ],
                     "joint_limits_pass": true,
                     "body_id": "A",
-                    "elapsed_ms": 252.35,
+                    "elapsed_ms": 243.75,
                     "wall_clearance": {
                       "model_version": "finite-panel-skeleton-crossing-1",
                       "status": "pass",
@@ -20409,7 +20409,7 @@
                     "upper_arm": 0.28,
                     "forearm": 0.25,
                     "endpoint_offset_sum_m": 0.0,
-                    "fingerprint": "sha256:f6e73e9596f1f7b8fd5acb2a3ae0342f9533f34a00eb2d9b9751f1dcdced5809"
+                    "fingerprint": "sha256:25a01a41f8fb62703525d96cd78f48900bb9cf834feca15d86135528c5c90b9b"
                   }
                 },
                 {
@@ -20434,7 +20434,7 @@
                     ],
                     "joint_limits_pass": true,
                     "body_id": "A",
-                    "elapsed_ms": 6.27,
+                    "elapsed_ms": 5.95,
                     "wall_clearance": {
                       "model_version": "finite-panel-skeleton-crossing-1",
                       "status": "pass",
@@ -20488,7 +20488,7 @@
                     "upper_arm": 0.28,
                     "forearm": 0.25,
                     "endpoint_offset_sum_m": 0.0,
-                    "fingerprint": "sha256:f6e73e9596f1f7b8fd5acb2a3ae0342f9533f34a00eb2d9b9751f1dcdced5809"
+                    "fingerprint": "sha256:25a01a41f8fb62703525d96cd78f48900bb9cf834feca15d86135528c5c90b9b"
                   }
                 },
                 {
@@ -20514,7 +20514,7 @@
                     ],
                     "joint_limits_pass": true,
                     "body_id": "A",
-                    "elapsed_ms": 221.36,
+                    "elapsed_ms": 212.39,
                     "wall_clearance": {
                       "model_version": "finite-panel-skeleton-crossing-1",
                       "status": "pass",
@@ -20577,7 +20577,7 @@
                     ],
                     "joint_limits_pass": true,
                     "body_id": "A",
-                    "elapsed_ms": 6.22,
+                    "elapsed_ms": 6.02,
                     "wall_clearance": {
                       "model_version": "finite-panel-skeleton-crossing-1",
                       "status": "pass",
@@ -20631,7 +20631,7 @@
                     "upper_arm": 0.28,
                     "forearm": 0.25,
                     "endpoint_offset_sum_m": 0.0,
-                    "fingerprint": "sha256:f6e73e9596f1f7b8fd5acb2a3ae0342f9533f34a00eb2d9b9751f1dcdced5809"
+                    "fingerprint": "sha256:25a01a41f8fb62703525d96cd78f48900bb9cf834feca15d86135528c5c90b9b"
                   }
                 },
                 {
@@ -20657,7 +20657,7 @@
                     ],
                     "joint_limits_pass": true,
                     "body_id": "A",
-                    "elapsed_ms": 242.35,
+                    "elapsed_ms": 233.74,
                     "wall_clearance": {
                       "model_version": "finite-panel-skeleton-crossing-1",
                       "status": "pass",
@@ -20720,7 +20720,7 @@
                     ],
                     "joint_limits_pass": true,
                     "body_id": "A",
-                    "elapsed_ms": 6.15,
+                    "elapsed_ms": 6.25,
                     "wall_clearance": {
                       "model_version": "finite-panel-skeleton-crossing-1",
                       "status": "pass",
@@ -20774,7 +20774,7 @@
                     "upper_arm": 0.28,
                     "forearm": 0.25,
                     "endpoint_offset_sum_m": 0.0,
-                    "fingerprint": "sha256:f6e73e9596f1f7b8fd5acb2a3ae0342f9533f34a00eb2d9b9751f1dcdced5809"
+                    "fingerprint": "sha256:25a01a41f8fb62703525d96cd78f48900bb9cf834feca15d86135528c5c90b9b"
                   }
                 },
                 {
@@ -20800,7 +20800,7 @@
                     ],
                     "joint_limits_pass": true,
                     "body_id": "A",
-                    "elapsed_ms": 246.18,
+                    "elapsed_ms": 243.6,
                     "wall_clearance": {
                       "model_version": "finite-panel-skeleton-crossing-1",
                       "status": "pass",
@@ -20854,7 +20854,7 @@
                     "upper_arm": 0.28,
                     "forearm": 0.25,
                     "endpoint_offset_sum_m": 0.0,
-                    "fingerprint": "sha256:f6e73e9596f1f7b8fd5acb2a3ae0342f9533f34a00eb2d9b9751f1dcdced5809"
+                    "fingerprint": "sha256:25a01a41f8fb62703525d96cd78f48900bb9cf834feca15d86135528c5c90b9b"
                   }
                 },
                 {
@@ -20879,7 +20879,7 @@
                     ],
                     "joint_limits_pass": true,
                     "body_id": "A",
-                    "elapsed_ms": 6.16,
+                    "elapsed_ms": 6.05,
                     "wall_clearance": {
                       "model_version": "finite-panel-skeleton-crossing-1",
                       "status": "pass",
@@ -20933,7 +20933,7 @@
                     "upper_arm": 0.28,
                     "forearm": 0.25,
                     "endpoint_offset_sum_m": 0.0,
-                    "fingerprint": "sha256:f6e73e9596f1f7b8fd5acb2a3ae0342f9533f34a00eb2d9b9751f1dcdced5809"
+                    "fingerprint": "sha256:25a01a41f8fb62703525d96cd78f48900bb9cf834feca15d86135528c5c90b9b"
                   }
                 },
                 {
@@ -20959,7 +20959,7 @@
                     ],
                     "joint_limits_pass": true,
                     "body_id": "A",
-                    "elapsed_ms": 227.02,
+                    "elapsed_ms": 218.96,
                     "wall_clearance": {
                       "model_version": "finite-panel-skeleton-crossing-1",
                       "status": "pass",
@@ -21022,7 +21022,7 @@
                     ],
                     "joint_limits_pass": true,
                     "body_id": "A",
-                    "elapsed_ms": 6.23,
+                    "elapsed_ms": 6.11,
                     "wall_clearance": {
                       "model_version": "finite-panel-skeleton-crossing-1",
                       "status": "pass",
@@ -21076,7 +21076,7 @@
                     "upper_arm": 0.28,
                     "forearm": 0.25,
                     "endpoint_offset_sum_m": 0.0,
-                    "fingerprint": "sha256:f6e73e9596f1f7b8fd5acb2a3ae0342f9533f34a00eb2d9b9751f1dcdced5809"
+                    "fingerprint": "sha256:25a01a41f8fb62703525d96cd78f48900bb9cf834feca15d86135528c5c90b9b"
                   }
                 },
                 {
@@ -21102,7 +21102,7 @@
                     ],
                     "joint_limits_pass": true,
                     "body_id": "A",
-                    "elapsed_ms": 202.77,
+                    "elapsed_ms": 193.69,
                     "wall_clearance": {
                       "model_version": "finite-panel-skeleton-crossing-1",
                       "status": "pass",
@@ -21295,7 +21295,7 @@
                     ],
                     "joint_limits_pass": true,
                     "body_id": "A",
-                    "elapsed_ms": 151.04,
+                    "elapsed_ms": 146.15,
                     "wall_clearance": {
                       "model_version": "finite-panel-skeleton-crossing-1",
                       "status": "pass",
@@ -21428,7 +21428,7 @@
                     ],
                     "joint_limits_pass": true,
                     "body_id": "A",
-                    "elapsed_ms": 6.1,
+                    "elapsed_ms": 6.03,
                     "wall_clearance": {
                       "model_version": "finite-panel-skeleton-crossing-1",
                       "status": "pass",
@@ -21562,7 +21562,7 @@
                     ],
                     "joint_limits_pass": true,
                     "body_id": "A",
-                    "elapsed_ms": 230.76,
+                    "elapsed_ms": 231.15,
                     "wall_clearance": {
                       "model_version": "finite-panel-skeleton-crossing-1",
                       "status": "pass",
@@ -21695,7 +21695,7 @@
                     ],
                     "joint_limits_pass": true,
                     "body_id": "A",
-                    "elapsed_ms": 6.16,
+                    "elapsed_ms": 6.02,
                     "wall_clearance": {
                       "model_version": "finite-panel-skeleton-crossing-1",
                       "status": "pass",
@@ -21829,7 +21829,7 @@
                     ],
                     "joint_limits_pass": true,
                     "body_id": "A",
-                    "elapsed_ms": 206.32,
+                    "elapsed_ms": 205.82,
                     "wall_clearance": {
                       "model_version": "finite-panel-skeleton-crossing-1",
                       "status": "pass",
@@ -21962,7 +21962,7 @@
                     ],
                     "joint_limits_pass": true,
                     "body_id": "A",
-                    "elapsed_ms": 6.1,
+                    "elapsed_ms": 6.03,
                     "wall_clearance": {
                       "model_version": "finite-panel-skeleton-crossing-1",
                       "status": "pass",
@@ -22096,7 +22096,7 @@
                     ],
                     "joint_limits_pass": true,
                     "body_id": "A",
-                    "elapsed_ms": 259.41,
+                    "elapsed_ms": 253.91,
                     "wall_clearance": {
                       "model_version": "finite-panel-skeleton-crossing-1",
                       "status": "pass",
@@ -22229,7 +22229,7 @@
                     ],
                     "joint_limits_pass": true,
                     "body_id": "A",
-                    "elapsed_ms": 6.16,
+                    "elapsed_ms": 5.92,
                     "wall_clearance": {
                       "model_version": "finite-panel-skeleton-crossing-1",
                       "status": "pass",
@@ -22363,7 +22363,7 @@
                     ],
                     "joint_limits_pass": true,
                     "body_id": "A",
-                    "elapsed_ms": 242.6,
+                    "elapsed_ms": 234.32,
                     "wall_clearance": {
                       "model_version": "finite-panel-skeleton-crossing-1",
                       "status": "pass",
@@ -22496,7 +22496,7 @@
                     ],
                     "joint_limits_pass": true,
                     "body_id": "A",
-                    "elapsed_ms": 6.15,
+                    "elapsed_ms": 5.93,
                     "wall_clearance": {
                       "model_version": "finite-panel-skeleton-crossing-1",
                       "status": "pass",
@@ -22630,7 +22630,7 @@
                     ],
                     "joint_limits_pass": true,
                     "body_id": "A",
-                    "elapsed_ms": 156.19,
+                    "elapsed_ms": 150.85,
                     "wall_clearance": {
                       "model_version": "finite-panel-skeleton-crossing-1",
                       "status": "pass",
@@ -22763,7 +22763,7 @@
                     ],
                     "joint_limits_pass": true,
                     "body_id": "A",
-                    "elapsed_ms": 6.12,
+                    "elapsed_ms": 5.97,
                     "wall_clearance": {
                       "model_version": "finite-panel-skeleton-crossing-1",
                       "status": "pass",
@@ -22897,7 +22897,7 @@
                     ],
                     "joint_limits_pass": true,
                     "body_id": "A",
-                    "elapsed_ms": 222.67,
+                    "elapsed_ms": 215.15,
                     "wall_clearance": {
                       "model_version": "finite-panel-skeleton-crossing-1",
                       "status": "pass",
@@ -23030,7 +23030,7 @@
                     ],
                     "joint_limits_pass": true,
                     "body_id": "A",
-                    "elapsed_ms": 6.25,
+                    "elapsed_ms": 6.03,
                     "wall_clearance": {
                       "model_version": "finite-panel-skeleton-crossing-1",
                       "status": "pass",
@@ -23164,7 +23164,7 @@
                     ],
                     "joint_limits_pass": true,
                     "body_id": "A",
-                    "elapsed_ms": 226.17,
+                    "elapsed_ms": 218.44,
                     "wall_clearance": {
                       "model_version": "finite-panel-skeleton-crossing-1",
                       "status": "pass",
@@ -23297,7 +23297,7 @@
                     ],
                     "joint_limits_pass": true,
                     "body_id": "A",
-                    "elapsed_ms": 6.17,
+                    "elapsed_ms": 5.95,
                     "wall_clearance": {
                       "model_version": "finite-panel-skeleton-crossing-1",
                       "status": "pass",
@@ -23431,7 +23431,7 @@
                     ],
                     "joint_limits_pass": true,
                     "body_id": "A",
-                    "elapsed_ms": 252.35,
+                    "elapsed_ms": 243.75,
                     "wall_clearance": {
                       "model_version": "finite-panel-skeleton-crossing-1",
                       "status": "pass",
@@ -23564,7 +23564,7 @@
                     ],
                     "joint_limits_pass": true,
                     "body_id": "A",
-                    "elapsed_ms": 6.27,
+                    "elapsed_ms": 5.95,
                     "wall_clearance": {
                       "model_version": "finite-panel-skeleton-crossing-1",
                       "status": "pass",
@@ -23698,7 +23698,7 @@
                     ],
                     "joint_limits_pass": true,
                     "body_id": "A",
-                    "elapsed_ms": 221.36,
+                    "elapsed_ms": 212.39,
                     "wall_clearance": {
                       "model_version": "finite-panel-skeleton-crossing-1",
                       "status": "pass",
@@ -23831,7 +23831,7 @@
                     ],
                     "joint_limits_pass": true,
                     "body_id": "A",
-                    "elapsed_ms": 6.22,
+                    "elapsed_ms": 6.02,
                     "wall_clearance": {
                       "model_version": "finite-panel-skeleton-crossing-1",
                       "status": "pass",
@@ -23965,7 +23965,7 @@
                     ],
                     "joint_limits_pass": true,
                     "body_id": "A",
-                    "elapsed_ms": 242.35,
+                    "elapsed_ms": 233.74,
                     "wall_clearance": {
                       "model_version": "finite-panel-skeleton-crossing-1",
                       "status": "pass",
@@ -24098,7 +24098,7 @@
                     ],
                     "joint_limits_pass": true,
                     "body_id": "A",
-                    "elapsed_ms": 6.15,
+                    "elapsed_ms": 6.25,
                     "wall_clearance": {
                       "model_version": "finite-panel-skeleton-crossing-1",
                       "status": "pass",
@@ -24232,7 +24232,7 @@
                     ],
                     "joint_limits_pass": true,
                     "body_id": "A",
-                    "elapsed_ms": 246.18,
+                    "elapsed_ms": 243.6,
                     "wall_clearance": {
                       "model_version": "finite-panel-skeleton-crossing-1",
                       "status": "pass",
@@ -24365,7 +24365,7 @@
                     ],
                     "joint_limits_pass": true,
                     "body_id": "A",
-                    "elapsed_ms": 6.16,
+                    "elapsed_ms": 6.05,
                     "wall_clearance": {
                       "model_version": "finite-panel-skeleton-crossing-1",
                       "status": "pass",
@@ -24499,7 +24499,7 @@
                     ],
                     "joint_limits_pass": true,
                     "body_id": "A",
-                    "elapsed_ms": 227.02,
+                    "elapsed_ms": 218.96,
                     "wall_clearance": {
                       "model_version": "finite-panel-skeleton-crossing-1",
                       "status": "pass",
@@ -24632,7 +24632,7 @@
                     ],
                     "joint_limits_pass": true,
                     "body_id": "A",
-                    "elapsed_ms": 6.23,
+                    "elapsed_ms": 6.11,
                     "wall_clearance": {
                       "model_version": "finite-panel-skeleton-crossing-1",
                       "status": "pass",
@@ -24766,7 +24766,7 @@
                     ],
                     "joint_limits_pass": true,
                     "body_id": "A",
-                    "elapsed_ms": 202.77,
+                    "elapsed_ms": 193.69,
                     "wall_clearance": {
                       "model_version": "finite-panel-skeleton-crossing-1",
                       "status": "pass",
@@ -24791,7 +24791,7 @@
                 "passed": 80,
                 "total": 80
               },
-              "elapsed_ms": 3216.86,
+              "elapsed_ms": 3129.63,
               "design_analysis": {
                 "source": "synthetic_assumption",
                 "model_version": "independent-beta-proxy-3",
@@ -25416,7 +25416,7 @@
               },
               "mechanics_report": {
                 "model_version": "quasistatic-contact-lp-1",
-                "model_fingerprint": "sha256:4107af0d6d48f0ecec326d0578fc5caddd5bb5fdb1cba10e69e8657e8f27ee9a",
+                "model_fingerprint": "sha256:07fa37b5a9eabd1aec2f950db69669afdcf7a5c863ab0286b5faeacecf42eb07",
                 "parameters": {
                   "com_model": "synthetic_segments_v1",
                   "cone_sides": 8,
@@ -30901,9 +30901,9 @@
               "final_load": 210.67436
             },
             "evaluation": {
-              "id": "eval-setting-diagonal_balance-trial1-beta0-570d99f959",
+              "id": "eval-setting-diagonal_balance-trial1-beta0-35fef5cebe",
               "candidate_id": "setting-diagonal_balance-trial1-beta0",
-              "fingerprint": "sha256:e076ada3906494bc9a1d18683445acbe587df8bbc85739f93a65d0570d99f959",
+              "fingerprint": "sha256:f73b36aa5de5288eed2726a2ae220ec6177fbe9f24a8184349518b35fef5cebe",
               "version": "0.1.0",
               "checks": [
                 {
@@ -30972,7 +30972,7 @@
                     "upper_arm": 0.28,
                     "forearm": 0.25,
                     "endpoint_offset_sum_m": 0.0,
-                    "fingerprint": "sha256:e076ada3906494bc9a1d18683445acbe587df8bbc85739f93a65d0570d99f959"
+                    "fingerprint": "sha256:f73b36aa5de5288eed2726a2ae220ec6177fbe9f24a8184349518b35fef5cebe"
                   }
                 },
                 {
@@ -30998,7 +30998,7 @@
                     ],
                     "joint_limits_pass": true,
                     "body_id": "A",
-                    "elapsed_ms": 148.15,
+                    "elapsed_ms": 147.77,
                     "wall_clearance": {
                       "model_version": "finite-panel-skeleton-crossing-1",
                       "status": "pass",
@@ -31052,7 +31052,7 @@
                     "upper_arm": 0.28,
                     "forearm": 0.25,
                     "endpoint_offset_sum_m": 0.0,
-                    "fingerprint": "sha256:e076ada3906494bc9a1d18683445acbe587df8bbc85739f93a65d0570d99f959"
+                    "fingerprint": "sha256:f73b36aa5de5288eed2726a2ae220ec6177fbe9f24a8184349518b35fef5cebe"
                   }
                 },
                 {
@@ -31077,7 +31077,7 @@
                     ],
                     "joint_limits_pass": true,
                     "body_id": "A",
-                    "elapsed_ms": 6.11,
+                    "elapsed_ms": 5.98,
                     "wall_clearance": {
                       "model_version": "finite-panel-skeleton-crossing-1",
                       "status": "pass",
@@ -31131,7 +31131,7 @@
                     "upper_arm": 0.28,
                     "forearm": 0.25,
                     "endpoint_offset_sum_m": 0.0,
-                    "fingerprint": "sha256:e076ada3906494bc9a1d18683445acbe587df8bbc85739f93a65d0570d99f959"
+                    "fingerprint": "sha256:f73b36aa5de5288eed2726a2ae220ec6177fbe9f24a8184349518b35fef5cebe"
                   }
                 },
                 {
@@ -31157,7 +31157,7 @@
                     ],
                     "joint_limits_pass": true,
                     "body_id": "A",
-                    "elapsed_ms": 233.45,
+                    "elapsed_ms": 228.0,
                     "wall_clearance": {
                       "model_version": "finite-panel-skeleton-crossing-1",
                       "status": "pass",
@@ -31220,7 +31220,7 @@
                     ],
                     "joint_limits_pass": true,
                     "body_id": "A",
-                    "elapsed_ms": 6.29,
+                    "elapsed_ms": 6.03,
                     "wall_clearance": {
                       "model_version": "finite-panel-skeleton-crossing-1",
                       "status": "pass",
@@ -31274,7 +31274,7 @@
                     "upper_arm": 0.28,
                     "forearm": 0.25,
                     "endpoint_offset_sum_m": 0.0,
-                    "fingerprint": "sha256:e076ada3906494bc9a1d18683445acbe587df8bbc85739f93a65d0570d99f959"
+                    "fingerprint": "sha256:f73b36aa5de5288eed2726a2ae220ec6177fbe9f24a8184349518b35fef5cebe"
                   }
                 },
                 {
@@ -31300,7 +31300,7 @@
                     ],
                     "joint_limits_pass": true,
                     "body_id": "A",
-                    "elapsed_ms": 207.77,
+                    "elapsed_ms": 201.77,
                     "wall_clearance": {
                       "model_version": "finite-panel-skeleton-crossing-1",
                       "status": "pass",
@@ -31354,7 +31354,7 @@
                     "upper_arm": 0.28,
                     "forearm": 0.25,
                     "endpoint_offset_sum_m": 0.0,
-                    "fingerprint": "sha256:e076ada3906494bc9a1d18683445acbe587df8bbc85739f93a65d0570d99f959"
+                    "fingerprint": "sha256:f73b36aa5de5288eed2726a2ae220ec6177fbe9f24a8184349518b35fef5cebe"
                   }
                 },
                 {
@@ -31379,7 +31379,7 @@
                     ],
                     "joint_limits_pass": true,
                     "body_id": "A",
-                    "elapsed_ms": 6.29,
+                    "elapsed_ms": 6.17,
                     "wall_clearance": {
                       "model_version": "finite-panel-skeleton-crossing-1",
                       "status": "pass",
@@ -31433,7 +31433,7 @@
                     "upper_arm": 0.28,
                     "forearm": 0.25,
                     "endpoint_offset_sum_m": 0.0,
-                    "fingerprint": "sha256:e076ada3906494bc9a1d18683445acbe587df8bbc85739f93a65d0570d99f959"
+                    "fingerprint": "sha256:f73b36aa5de5288eed2726a2ae220ec6177fbe9f24a8184349518b35fef5cebe"
                   }
                 },
                 {
@@ -31459,7 +31459,7 @@
                     ],
                     "joint_limits_pass": true,
                     "body_id": "A",
-                    "elapsed_ms": 258.97,
+                    "elapsed_ms": 250.08,
                     "wall_clearance": {
                       "model_version": "finite-panel-skeleton-crossing-1",
                       "status": "pass",
@@ -31522,7 +31522,7 @@
                     ],
                     "joint_limits_pass": true,
                     "body_id": "A",
-                    "elapsed_ms": 6.15,
+                    "elapsed_ms": 6.06,
                     "wall_clearance": {
                       "model_version": "finite-panel-skeleton-crossing-1",
                       "status": "pass",
@@ -31576,7 +31576,7 @@
                     "upper_arm": 0.28,
                     "forearm": 0.25,
                     "endpoint_offset_sum_m": 0.0,
-                    "fingerprint": "sha256:e076ada3906494bc9a1d18683445acbe587df8bbc85739f93a65d0570d99f959"
+                    "fingerprint": "sha256:f73b36aa5de5288eed2726a2ae220ec6177fbe9f24a8184349518b35fef5cebe"
                   }
                 },
                 {
@@ -31602,7 +31602,7 @@
                     ],
                     "joint_limits_pass": true,
                     "body_id": "A",
-                    "elapsed_ms": 241.57,
+                    "elapsed_ms": 232.59,
                     "wall_clearance": {
                       "model_version": "finite-panel-skeleton-crossing-1",
                       "status": "pass",
@@ -31656,7 +31656,7 @@
                     "upper_arm": 0.28,
                     "forearm": 0.25,
                     "endpoint_offset_sum_m": 0.0,
-                    "fingerprint": "sha256:e076ada3906494bc9a1d18683445acbe587df8bbc85739f93a65d0570d99f959"
+                    "fingerprint": "sha256:f73b36aa5de5288eed2726a2ae220ec6177fbe9f24a8184349518b35fef5cebe"
                   }
                 },
                 {
@@ -31681,7 +31681,7 @@
                     ],
                     "joint_limits_pass": true,
                     "body_id": "A",
-                    "elapsed_ms": 6.14,
+                    "elapsed_ms": 6.12,
                     "wall_clearance": {
                       "model_version": "finite-panel-skeleton-crossing-1",
                       "status": "pass",
@@ -31735,7 +31735,7 @@
                     "upper_arm": 0.28,
                     "forearm": 0.25,
                     "endpoint_offset_sum_m": 0.0,
-                    "fingerprint": "sha256:e076ada3906494bc9a1d18683445acbe587df8bbc85739f93a65d0570d99f959"
+                    "fingerprint": "sha256:f73b36aa5de5288eed2726a2ae220ec6177fbe9f24a8184349518b35fef5cebe"
                   }
                 },
                 {
@@ -31761,7 +31761,7 @@
                     ],
                     "joint_limits_pass": true,
                     "body_id": "A",
-                    "elapsed_ms": 155.91,
+                    "elapsed_ms": 148.83,
                     "wall_clearance": {
                       "model_version": "finite-panel-skeleton-crossing-1",
                       "status": "pass",
@@ -31824,7 +31824,7 @@
                     ],
                     "joint_limits_pass": true,
                     "body_id": "A",
-                    "elapsed_ms": 6.15,
+                    "elapsed_ms": 5.87,
                     "wall_clearance": {
                       "model_version": "finite-panel-skeleton-crossing-1",
                       "status": "pass",
@@ -31878,7 +31878,7 @@
                     "upper_arm": 0.28,
                     "forearm": 0.25,
                     "endpoint_offset_sum_m": 0.0,
-                    "fingerprint": "sha256:e076ada3906494bc9a1d18683445acbe587df8bbc85739f93a65d0570d99f959"
+                    "fingerprint": "sha256:f73b36aa5de5288eed2726a2ae220ec6177fbe9f24a8184349518b35fef5cebe"
                   }
                 },
                 {
@@ -31904,7 +31904,7 @@
                     ],
                     "joint_limits_pass": true,
                     "body_id": "A",
-                    "elapsed_ms": 223.45,
+                    "elapsed_ms": 214.35,
                     "wall_clearance": {
                       "model_version": "finite-panel-skeleton-crossing-1",
                       "status": "pass",
@@ -31958,7 +31958,7 @@
                     "upper_arm": 0.28,
                     "forearm": 0.25,
                     "endpoint_offset_sum_m": 0.0,
-                    "fingerprint": "sha256:e076ada3906494bc9a1d18683445acbe587df8bbc85739f93a65d0570d99f959"
+                    "fingerprint": "sha256:f73b36aa5de5288eed2726a2ae220ec6177fbe9f24a8184349518b35fef5cebe"
                   }
                 },
                 {
@@ -31983,7 +31983,7 @@
                     ],
                     "joint_limits_pass": true,
                     "body_id": "A",
-                    "elapsed_ms": 6.21,
+                    "elapsed_ms": 5.9,
                     "wall_clearance": {
                       "model_version": "finite-panel-skeleton-crossing-1",
                       "status": "pass",
@@ -32037,7 +32037,7 @@
                     "upper_arm": 0.28,
                     "forearm": 0.25,
                     "endpoint_offset_sum_m": 0.0,
-                    "fingerprint": "sha256:e076ada3906494bc9a1d18683445acbe587df8bbc85739f93a65d0570d99f959"
+                    "fingerprint": "sha256:f73b36aa5de5288eed2726a2ae220ec6177fbe9f24a8184349518b35fef5cebe"
                   }
                 },
                 {
@@ -32063,7 +32063,7 @@
                     ],
                     "joint_limits_pass": true,
                     "body_id": "A",
-                    "elapsed_ms": 225.17,
+                    "elapsed_ms": 214.63,
                     "wall_clearance": {
                       "model_version": "finite-panel-skeleton-crossing-1",
                       "status": "pass",
@@ -32126,7 +32126,7 @@
                     ],
                     "joint_limits_pass": true,
                     "body_id": "A",
-                    "elapsed_ms": 6.21,
+                    "elapsed_ms": 5.93,
                     "wall_clearance": {
                       "model_version": "finite-panel-skeleton-crossing-1",
                       "status": "pass",
@@ -32180,7 +32180,7 @@
                     "upper_arm": 0.28,
                     "forearm": 0.25,
                     "endpoint_offset_sum_m": 0.0,
-                    "fingerprint": "sha256:e076ada3906494bc9a1d18683445acbe587df8bbc85739f93a65d0570d99f959"
+                    "fingerprint": "sha256:f73b36aa5de5288eed2726a2ae220ec6177fbe9f24a8184349518b35fef5cebe"
                   }
                 },
                 {
@@ -32206,7 +32206,7 @@
                     ],
                     "joint_limits_pass": true,
                     "body_id": "A",
-                    "elapsed_ms": 253.2,
+                    "elapsed_ms": 238.19,
                     "wall_clearance": {
                       "model_version": "finite-panel-skeleton-crossing-1",
                       "status": "pass",
@@ -32260,7 +32260,7 @@
                     "upper_arm": 0.28,
                     "forearm": 0.25,
                     "endpoint_offset_sum_m": 0.0,
-                    "fingerprint": "sha256:e076ada3906494bc9a1d18683445acbe587df8bbc85739f93a65d0570d99f959"
+                    "fingerprint": "sha256:f73b36aa5de5288eed2726a2ae220ec6177fbe9f24a8184349518b35fef5cebe"
                   }
                 },
                 {
@@ -32285,7 +32285,7 @@
                     ],
                     "joint_limits_pass": true,
                     "body_id": "A",
-                    "elapsed_ms": 6.28,
+                    "elapsed_ms": 5.98,
                     "wall_clearance": {
                       "model_version": "finite-panel-skeleton-crossing-1",
                       "status": "pass",
@@ -32339,7 +32339,7 @@
                     "upper_arm": 0.28,
                     "forearm": 0.25,
                     "endpoint_offset_sum_m": 0.0,
-                    "fingerprint": "sha256:e076ada3906494bc9a1d18683445acbe587df8bbc85739f93a65d0570d99f959"
+                    "fingerprint": "sha256:f73b36aa5de5288eed2726a2ae220ec6177fbe9f24a8184349518b35fef5cebe"
                   }
                 },
                 {
@@ -32365,7 +32365,7 @@
                     ],
                     "joint_limits_pass": true,
                     "body_id": "A",
-                    "elapsed_ms": 221.36,
+                    "elapsed_ms": 210.93,
                     "wall_clearance": {
                       "model_version": "finite-panel-skeleton-crossing-1",
                       "status": "pass",
@@ -32428,7 +32428,7 @@
                     ],
                     "joint_limits_pass": true,
                     "body_id": "A",
-                    "elapsed_ms": 6.16,
+                    "elapsed_ms": 5.85,
                     "wall_clearance": {
                       "model_version": "finite-panel-skeleton-crossing-1",
                       "status": "pass",
@@ -32482,7 +32482,7 @@
                     "upper_arm": 0.28,
                     "forearm": 0.25,
                     "endpoint_offset_sum_m": 0.0,
-                    "fingerprint": "sha256:e076ada3906494bc9a1d18683445acbe587df8bbc85739f93a65d0570d99f959"
+                    "fingerprint": "sha256:f73b36aa5de5288eed2726a2ae220ec6177fbe9f24a8184349518b35fef5cebe"
                   }
                 },
                 {
@@ -32508,7 +32508,7 @@
                     ],
                     "joint_limits_pass": true,
                     "body_id": "A",
-                    "elapsed_ms": 234.2,
+                    "elapsed_ms": 223.82,
                     "wall_clearance": {
                       "model_version": "finite-panel-skeleton-crossing-1",
                       "status": "pass",
@@ -32562,7 +32562,7 @@
                     "upper_arm": 0.28,
                     "forearm": 0.25,
                     "endpoint_offset_sum_m": 0.0,
-                    "fingerprint": "sha256:e076ada3906494bc9a1d18683445acbe587df8bbc85739f93a65d0570d99f959"
+                    "fingerprint": "sha256:f73b36aa5de5288eed2726a2ae220ec6177fbe9f24a8184349518b35fef5cebe"
                   }
                 },
                 {
@@ -32587,7 +32587,7 @@
                     ],
                     "joint_limits_pass": true,
                     "body_id": "A",
-                    "elapsed_ms": 6.2,
+                    "elapsed_ms": 5.87,
                     "wall_clearance": {
                       "model_version": "finite-panel-skeleton-crossing-1",
                       "status": "pass",
@@ -32641,7 +32641,7 @@
                     "upper_arm": 0.28,
                     "forearm": 0.25,
                     "endpoint_offset_sum_m": 0.0,
-                    "fingerprint": "sha256:e076ada3906494bc9a1d18683445acbe587df8bbc85739f93a65d0570d99f959"
+                    "fingerprint": "sha256:f73b36aa5de5288eed2726a2ae220ec6177fbe9f24a8184349518b35fef5cebe"
                   }
                 },
                 {
@@ -32667,7 +32667,7 @@
                     ],
                     "joint_limits_pass": true,
                     "body_id": "A",
-                    "elapsed_ms": 242.87,
+                    "elapsed_ms": 229.67,
                     "wall_clearance": {
                       "model_version": "finite-panel-skeleton-crossing-1",
                       "status": "pass",
@@ -32730,7 +32730,7 @@
                     ],
                     "joint_limits_pass": true,
                     "body_id": "A",
-                    "elapsed_ms": 6.06,
+                    "elapsed_ms": 5.94,
                     "wall_clearance": {
                       "model_version": "finite-panel-skeleton-crossing-1",
                       "status": "pass",
@@ -32784,7 +32784,7 @@
                     "upper_arm": 0.28,
                     "forearm": 0.25,
                     "endpoint_offset_sum_m": 0.0,
-                    "fingerprint": "sha256:e076ada3906494bc9a1d18683445acbe587df8bbc85739f93a65d0570d99f959"
+                    "fingerprint": "sha256:f73b36aa5de5288eed2726a2ae220ec6177fbe9f24a8184349518b35fef5cebe"
                   }
                 },
                 {
@@ -32810,7 +32810,7 @@
                     ],
                     "joint_limits_pass": true,
                     "body_id": "A",
-                    "elapsed_ms": 258.34,
+                    "elapsed_ms": 249.1,
                     "wall_clearance": {
                       "model_version": "finite-panel-skeleton-crossing-1",
                       "status": "pass",
@@ -33003,7 +33003,7 @@
                     ],
                     "joint_limits_pass": true,
                     "body_id": "A",
-                    "elapsed_ms": 148.15,
+                    "elapsed_ms": 147.77,
                     "wall_clearance": {
                       "model_version": "finite-panel-skeleton-crossing-1",
                       "status": "pass",
@@ -33136,7 +33136,7 @@
                     ],
                     "joint_limits_pass": true,
                     "body_id": "A",
-                    "elapsed_ms": 6.11,
+                    "elapsed_ms": 5.98,
                     "wall_clearance": {
                       "model_version": "finite-panel-skeleton-crossing-1",
                       "status": "pass",
@@ -33270,7 +33270,7 @@
                     ],
                     "joint_limits_pass": true,
                     "body_id": "A",
-                    "elapsed_ms": 233.45,
+                    "elapsed_ms": 228.0,
                     "wall_clearance": {
                       "model_version": "finite-panel-skeleton-crossing-1",
                       "status": "pass",
@@ -33403,7 +33403,7 @@
                     ],
                     "joint_limits_pass": true,
                     "body_id": "A",
-                    "elapsed_ms": 6.29,
+                    "elapsed_ms": 6.03,
                     "wall_clearance": {
                       "model_version": "finite-panel-skeleton-crossing-1",
                       "status": "pass",
@@ -33537,7 +33537,7 @@
                     ],
                     "joint_limits_pass": true,
                     "body_id": "A",
-                    "elapsed_ms": 207.77,
+                    "elapsed_ms": 201.77,
                     "wall_clearance": {
                       "model_version": "finite-panel-skeleton-crossing-1",
                       "status": "pass",
@@ -33670,7 +33670,7 @@
                     ],
                     "joint_limits_pass": true,
                     "body_id": "A",
-                    "elapsed_ms": 6.29,
+                    "elapsed_ms": 6.17,
                     "wall_clearance": {
                       "model_version": "finite-panel-skeleton-crossing-1",
                       "status": "pass",
@@ -33804,7 +33804,7 @@
                     ],
                     "joint_limits_pass": true,
                     "body_id": "A",
-                    "elapsed_ms": 258.97,
+                    "elapsed_ms": 250.08,
                     "wall_clearance": {
                       "model_version": "finite-panel-skeleton-crossing-1",
                       "status": "pass",
@@ -33937,7 +33937,7 @@
                     ],
                     "joint_limits_pass": true,
                     "body_id": "A",
-                    "elapsed_ms": 6.15,
+                    "elapsed_ms": 6.06,
                     "wall_clearance": {
                       "model_version": "finite-panel-skeleton-crossing-1",
                       "status": "pass",
@@ -34071,7 +34071,7 @@
                     ],
                     "joint_limits_pass": true,
                     "body_id": "A",
-                    "elapsed_ms": 241.57,
+                    "elapsed_ms": 232.59,
                     "wall_clearance": {
                       "model_version": "finite-panel-skeleton-crossing-1",
                       "status": "pass",
@@ -34204,7 +34204,7 @@
                     ],
                     "joint_limits_pass": true,
                     "body_id": "A",
-                    "elapsed_ms": 6.14,
+                    "elapsed_ms": 6.12,
                     "wall_clearance": {
                       "model_version": "finite-panel-skeleton-crossing-1",
                       "status": "pass",
@@ -34338,7 +34338,7 @@
                     ],
                     "joint_limits_pass": true,
                     "body_id": "A",
-                    "elapsed_ms": 155.91,
+                    "elapsed_ms": 148.83,
                     "wall_clearance": {
                       "model_version": "finite-panel-skeleton-crossing-1",
                       "status": "pass",
@@ -34471,7 +34471,7 @@
                     ],
                     "joint_limits_pass": true,
                     "body_id": "A",
-                    "elapsed_ms": 6.15,
+                    "elapsed_ms": 5.87,
                     "wall_clearance": {
                       "model_version": "finite-panel-skeleton-crossing-1",
                       "status": "pass",
@@ -34605,7 +34605,7 @@
                     ],
                     "joint_limits_pass": true,
                     "body_id": "A",
-                    "elapsed_ms": 223.45,
+                    "elapsed_ms": 214.35,
                     "wall_clearance": {
                       "model_version": "finite-panel-skeleton-crossing-1",
                       "status": "pass",
@@ -34738,7 +34738,7 @@
                     ],
                     "joint_limits_pass": true,
                     "body_id": "A",
-                    "elapsed_ms": 6.21,
+                    "elapsed_ms": 5.9,
                     "wall_clearance": {
                       "model_version": "finite-panel-skeleton-crossing-1",
                       "status": "pass",
@@ -34872,7 +34872,7 @@
                     ],
                     "joint_limits_pass": true,
                     "body_id": "A",
-                    "elapsed_ms": 225.17,
+                    "elapsed_ms": 214.63,
                     "wall_clearance": {
                       "model_version": "finite-panel-skeleton-crossing-1",
                       "status": "pass",
@@ -35005,7 +35005,7 @@
                     ],
                     "joint_limits_pass": true,
                     "body_id": "A",
-                    "elapsed_ms": 6.21,
+                    "elapsed_ms": 5.93,
                     "wall_clearance": {
                       "model_version": "finite-panel-skeleton-crossing-1",
                       "status": "pass",
@@ -35139,7 +35139,7 @@
                     ],
                     "joint_limits_pass": true,
                     "body_id": "A",
-                    "elapsed_ms": 253.2,
+                    "elapsed_ms": 238.19,
                     "wall_clearance": {
                       "model_version": "finite-panel-skeleton-crossing-1",
                       "status": "pass",
@@ -35272,7 +35272,7 @@
                     ],
                     "joint_limits_pass": true,
                     "body_id": "A",
-                    "elapsed_ms": 6.28,
+                    "elapsed_ms": 5.98,
                     "wall_clearance": {
                       "model_version": "finite-panel-skeleton-crossing-1",
                       "status": "pass",
@@ -35406,7 +35406,7 @@
                     ],
                     "joint_limits_pass": true,
                     "body_id": "A",
-                    "elapsed_ms": 221.36,
+                    "elapsed_ms": 210.93,
                     "wall_clearance": {
                       "model_version": "finite-panel-skeleton-crossing-1",
                       "status": "pass",
@@ -35539,7 +35539,7 @@
                     ],
                     "joint_limits_pass": true,
                     "body_id": "A",
-                    "elapsed_ms": 6.16,
+                    "elapsed_ms": 5.85,
                     "wall_clearance": {
                       "model_version": "finite-panel-skeleton-crossing-1",
                       "status": "pass",
@@ -35673,7 +35673,7 @@
                     ],
                     "joint_limits_pass": true,
                     "body_id": "A",
-                    "elapsed_ms": 234.2,
+                    "elapsed_ms": 223.82,
                     "wall_clearance": {
                       "model_version": "finite-panel-skeleton-crossing-1",
                       "status": "pass",
@@ -35806,7 +35806,7 @@
                     ],
                     "joint_limits_pass": true,
                     "body_id": "A",
-                    "elapsed_ms": 6.2,
+                    "elapsed_ms": 5.87,
                     "wall_clearance": {
                       "model_version": "finite-panel-skeleton-crossing-1",
                       "status": "pass",
@@ -35940,7 +35940,7 @@
                     ],
                     "joint_limits_pass": true,
                     "body_id": "A",
-                    "elapsed_ms": 242.87,
+                    "elapsed_ms": 229.67,
                     "wall_clearance": {
                       "model_version": "finite-panel-skeleton-crossing-1",
                       "status": "pass",
@@ -36073,7 +36073,7 @@
                     ],
                     "joint_limits_pass": true,
                     "body_id": "A",
-                    "elapsed_ms": 6.06,
+                    "elapsed_ms": 5.94,
                     "wall_clearance": {
                       "model_version": "finite-panel-skeleton-crossing-1",
                       "status": "pass",
@@ -36207,7 +36207,7 @@
                     ],
                     "joint_limits_pass": true,
                     "body_id": "A",
-                    "elapsed_ms": 258.34,
+                    "elapsed_ms": 249.1,
                     "wall_clearance": {
                       "model_version": "finite-panel-skeleton-crossing-1",
                       "status": "pass",
@@ -36232,7 +36232,7 @@
                 "passed": 75,
                 "total": 75
               },
-              "elapsed_ms": 3029.44,
+              "elapsed_ms": 2912.96,
               "design_analysis": {
                 "source": "synthetic_assumption",
                 "model_version": "independent-beta-proxy-3",
@@ -36813,7 +36813,7 @@
               },
               "mechanics_report": {
                 "model_version": "quasistatic-contact-lp-1",
-                "model_fingerprint": "sha256:4a55d8cd72c076651c7bb34b3d0d539aa393e1fa4bf0b28e52647b017ee314e0",
+                "model_fingerprint": "sha256:760157268af0de13d616bc9b74e34bb2c17d1b95443a19f31fcaa4003352bd43",
                 "parameters": {
                   "com_model": "synthetic_segments_v1",
                   "cone_sides": 8,
@@ -41935,9 +41935,9 @@
               "final_load": 211.89933
             },
             "evaluation": {
-              "id": "eval-setting-diagonal_balance-trial1-beta1-3c95258b67",
+              "id": "eval-setting-diagonal_balance-trial1-beta1-b232165efe",
               "candidate_id": "setting-diagonal_balance-trial1-beta1",
-              "fingerprint": "sha256:efdebe67d09941aec76e8929bf3dbd09ec3dd57f4482b42f3d71183c95258b67",
+              "fingerprint": "sha256:ff8b06fe1d32a4c6e4f2518f9cfc3b901da89daf90dfc812fded00b232165efe",
               "version": "0.1.0",
               "checks": [
                 {
@@ -42006,7 +42006,7 @@
                     "upper_arm": 0.28,
                     "forearm": 0.25,
                     "endpoint_offset_sum_m": 0.0,
-                    "fingerprint": "sha256:efdebe67d09941aec76e8929bf3dbd09ec3dd57f4482b42f3d71183c95258b67"
+                    "fingerprint": "sha256:ff8b06fe1d32a4c6e4f2518f9cfc3b901da89daf90dfc812fded00b232165efe"
                   }
                 },
                 {
@@ -42032,7 +42032,7 @@
                     ],
                     "joint_limits_pass": true,
                     "body_id": "A",
-                    "elapsed_ms": 148.44,
+                    "elapsed_ms": 144.95,
                     "wall_clearance": {
                       "model_version": "finite-panel-skeleton-crossing-1",
                       "status": "pass",
@@ -42086,7 +42086,7 @@
                     "upper_arm": 0.28,
                     "forearm": 0.25,
                     "endpoint_offset_sum_m": 0.0,
-                    "fingerprint": "sha256:efdebe67d09941aec76e8929bf3dbd09ec3dd57f4482b42f3d71183c95258b67"
+                    "fingerprint": "sha256:ff8b06fe1d32a4c6e4f2518f9cfc3b901da89daf90dfc812fded00b232165efe"
                   }
                 },
                 {
@@ -42111,7 +42111,7 @@
                     ],
                     "joint_limits_pass": true,
                     "body_id": "A",
-                    "elapsed_ms": 6.17,
+                    "elapsed_ms": 6.05,
                     "wall_clearance": {
                       "model_version": "finite-panel-skeleton-crossing-1",
                       "status": "pass",
@@ -42165,7 +42165,7 @@
                     "upper_arm": 0.28,
                     "forearm": 0.25,
                     "endpoint_offset_sum_m": 0.0,
-                    "fingerprint": "sha256:efdebe67d09941aec76e8929bf3dbd09ec3dd57f4482b42f3d71183c95258b67"
+                    "fingerprint": "sha256:ff8b06fe1d32a4c6e4f2518f9cfc3b901da89daf90dfc812fded00b232165efe"
                   }
                 },
                 {
@@ -42191,7 +42191,7 @@
                     ],
                     "joint_limits_pass": true,
                     "body_id": "A",
-                    "elapsed_ms": 232.47,
+                    "elapsed_ms": 230.24,
                     "wall_clearance": {
                       "model_version": "finite-panel-skeleton-crossing-1",
                       "status": "pass",
@@ -42254,7 +42254,7 @@
                     ],
                     "joint_limits_pass": true,
                     "body_id": "A",
-                    "elapsed_ms": 6.19,
+                    "elapsed_ms": 5.97,
                     "wall_clearance": {
                       "model_version": "finite-panel-skeleton-crossing-1",
                       "status": "pass",
@@ -42308,7 +42308,7 @@
                     "upper_arm": 0.28,
                     "forearm": 0.25,
                     "endpoint_offset_sum_m": 0.0,
-                    "fingerprint": "sha256:efdebe67d09941aec76e8929bf3dbd09ec3dd57f4482b42f3d71183c95258b67"
+                    "fingerprint": "sha256:ff8b06fe1d32a4c6e4f2518f9cfc3b901da89daf90dfc812fded00b232165efe"
                   }
                 },
                 {
@@ -42334,7 +42334,7 @@
                     ],
                     "joint_limits_pass": true,
                     "body_id": "A",
-                    "elapsed_ms": 208.5,
+                    "elapsed_ms": 203.32,
                     "wall_clearance": {
                       "model_version": "finite-panel-skeleton-crossing-1",
                       "status": "pass",
@@ -42388,7 +42388,7 @@
                     "upper_arm": 0.28,
                     "forearm": 0.25,
                     "endpoint_offset_sum_m": 0.0,
-                    "fingerprint": "sha256:efdebe67d09941aec76e8929bf3dbd09ec3dd57f4482b42f3d71183c95258b67"
+                    "fingerprint": "sha256:ff8b06fe1d32a4c6e4f2518f9cfc3b901da89daf90dfc812fded00b232165efe"
                   }
                 },
                 {
@@ -42413,7 +42413,7 @@
                     ],
                     "joint_limits_pass": true,
                     "body_id": "A",
-                    "elapsed_ms": 6.38,
+                    "elapsed_ms": 5.94,
                     "wall_clearance": {
                       "model_version": "finite-panel-skeleton-crossing-1",
                       "status": "pass",
@@ -42467,7 +42467,7 @@
                     "upper_arm": 0.28,
                     "forearm": 0.25,
                     "endpoint_offset_sum_m": 0.0,
-                    "fingerprint": "sha256:efdebe67d09941aec76e8929bf3dbd09ec3dd57f4482b42f3d71183c95258b67"
+                    "fingerprint": "sha256:ff8b06fe1d32a4c6e4f2518f9cfc3b901da89daf90dfc812fded00b232165efe"
                   }
                 },
                 {
@@ -42493,7 +42493,7 @@
                     ],
                     "joint_limits_pass": true,
                     "body_id": "A",
-                    "elapsed_ms": 260.57,
+                    "elapsed_ms": 254.07,
                     "wall_clearance": {
                       "model_version": "finite-panel-skeleton-crossing-1",
                       "status": "pass",
@@ -42556,7 +42556,7 @@
                     ],
                     "joint_limits_pass": true,
                     "body_id": "A",
-                    "elapsed_ms": 6.27,
+                    "elapsed_ms": 5.98,
                     "wall_clearance": {
                       "model_version": "finite-panel-skeleton-crossing-1",
                       "status": "pass",
@@ -42610,7 +42610,7 @@
                     "upper_arm": 0.28,
                     "forearm": 0.25,
                     "endpoint_offset_sum_m": 0.0,
-                    "fingerprint": "sha256:efdebe67d09941aec76e8929bf3dbd09ec3dd57f4482b42f3d71183c95258b67"
+                    "fingerprint": "sha256:ff8b06fe1d32a4c6e4f2518f9cfc3b901da89daf90dfc812fded00b232165efe"
                   }
                 },
                 {
@@ -42636,7 +42636,7 @@
                     ],
                     "joint_limits_pass": true,
                     "body_id": "A",
-                    "elapsed_ms": 248.68,
+                    "elapsed_ms": 234.93,
                     "wall_clearance": {
                       "model_version": "finite-panel-skeleton-crossing-1",
                       "status": "pass",
@@ -42690,7 +42690,7 @@
                     "upper_arm": 0.28,
                     "forearm": 0.25,
                     "endpoint_offset_sum_m": 0.0,
-                    "fingerprint": "sha256:efdebe67d09941aec76e8929bf3dbd09ec3dd57f4482b42f3d71183c95258b67"
+                    "fingerprint": "sha256:ff8b06fe1d32a4c6e4f2518f9cfc3b901da89daf90dfc812fded00b232165efe"
                   }
                 },
                 {
@@ -42715,7 +42715,7 @@
                     ],
                     "joint_limits_pass": true,
                     "body_id": "A",
-                    "elapsed_ms": 6.31,
+                    "elapsed_ms": 5.94,
                     "wall_clearance": {
                       "model_version": "finite-panel-skeleton-crossing-1",
                       "status": "pass",
@@ -42769,7 +42769,7 @@
                     "upper_arm": 0.28,
                     "forearm": 0.25,
                     "endpoint_offset_sum_m": 0.0,
-                    "fingerprint": "sha256:efdebe67d09941aec76e8929bf3dbd09ec3dd57f4482b42f3d71183c95258b67"
+                    "fingerprint": "sha256:ff8b06fe1d32a4c6e4f2518f9cfc3b901da89daf90dfc812fded00b232165efe"
                   }
                 },
                 {
@@ -42795,7 +42795,7 @@
                     ],
                     "joint_limits_pass": true,
                     "body_id": "A",
-                    "elapsed_ms": 159.98,
+                    "elapsed_ms": 151.51,
                     "wall_clearance": {
                       "model_version": "finite-panel-skeleton-crossing-1",
                       "status": "pass",
@@ -42858,7 +42858,7 @@
                     ],
                     "joint_limits_pass": true,
                     "body_id": "A",
-                    "elapsed_ms": 6.46,
+                    "elapsed_ms": 5.98,
                     "wall_clearance": {
                       "model_version": "finite-panel-skeleton-crossing-1",
                       "status": "pass",
@@ -42912,7 +42912,7 @@
                     "upper_arm": 0.28,
                     "forearm": 0.25,
                     "endpoint_offset_sum_m": 0.0,
-                    "fingerprint": "sha256:efdebe67d09941aec76e8929bf3dbd09ec3dd57f4482b42f3d71183c95258b67"
+                    "fingerprint": "sha256:ff8b06fe1d32a4c6e4f2518f9cfc3b901da89daf90dfc812fded00b232165efe"
                   }
                 },
                 {
@@ -42938,7 +42938,7 @@
                     ],
                     "joint_limits_pass": true,
                     "body_id": "A",
-                    "elapsed_ms": 241.01,
+                    "elapsed_ms": 220.66,
                     "wall_clearance": {
                       "model_version": "finite-panel-skeleton-crossing-1",
                       "status": "pass",
@@ -42992,7 +42992,7 @@
                     "upper_arm": 0.28,
                     "forearm": 0.25,
                     "endpoint_offset_sum_m": 0.0,
-                    "fingerprint": "sha256:efdebe67d09941aec76e8929bf3dbd09ec3dd57f4482b42f3d71183c95258b67"
+                    "fingerprint": "sha256:ff8b06fe1d32a4c6e4f2518f9cfc3b901da89daf90dfc812fded00b232165efe"
                   }
                 },
                 {
@@ -43017,7 +43017,7 @@
                     ],
                     "joint_limits_pass": true,
                     "body_id": "A",
-                    "elapsed_ms": 6.55,
+                    "elapsed_ms": 5.99,
                     "wall_clearance": {
                       "model_version": "finite-panel-skeleton-crossing-1",
                       "status": "pass",
@@ -43071,7 +43071,7 @@
                     "upper_arm": 0.28,
                     "forearm": 0.25,
                     "endpoint_offset_sum_m": 0.0,
-                    "fingerprint": "sha256:efdebe67d09941aec76e8929bf3dbd09ec3dd57f4482b42f3d71183c95258b67"
+                    "fingerprint": "sha256:ff8b06fe1d32a4c6e4f2518f9cfc3b901da89daf90dfc812fded00b232165efe"
                   }
                 },
                 {
@@ -43097,7 +43097,7 @@
                     ],
                     "joint_limits_pass": true,
                     "body_id": "A",
-                    "elapsed_ms": 231.7,
+                    "elapsed_ms": 218.25,
                     "wall_clearance": {
                       "model_version": "finite-panel-skeleton-crossing-1",
                       "status": "pass",
@@ -43160,7 +43160,7 @@
                     ],
                     "joint_limits_pass": true,
                     "body_id": "A",
-                    "elapsed_ms": 6.32,
+                    "elapsed_ms": 5.97,
                     "wall_clearance": {
                       "model_version": "finite-panel-skeleton-crossing-1",
                       "status": "pass",
@@ -43214,7 +43214,7 @@
                     "upper_arm": 0.28,
                     "forearm": 0.25,
                     "endpoint_offset_sum_m": 0.0,
-                    "fingerprint": "sha256:efdebe67d09941aec76e8929bf3dbd09ec3dd57f4482b42f3d71183c95258b67"
+                    "fingerprint": "sha256:ff8b06fe1d32a4c6e4f2518f9cfc3b901da89daf90dfc812fded00b232165efe"
                   }
                 },
                 {
@@ -43240,7 +43240,7 @@
                     ],
                     "joint_limits_pass": true,
                     "body_id": "A",
-                    "elapsed_ms": 252.34,
+                    "elapsed_ms": 243.95,
                     "wall_clearance": {
                       "model_version": "finite-panel-skeleton-crossing-1",
                       "status": "pass",
@@ -43294,7 +43294,7 @@
                     "upper_arm": 0.28,
                     "forearm": 0.25,
                     "endpoint_offset_sum_m": 0.0,
-                    "fingerprint": "sha256:efdebe67d09941aec76e8929bf3dbd09ec3dd57f4482b42f3d71183c95258b67"
+                    "fingerprint": "sha256:ff8b06fe1d32a4c6e4f2518f9cfc3b901da89daf90dfc812fded00b232165efe"
                   }
                 },
                 {
@@ -43319,7 +43319,7 @@
                     ],
                     "joint_limits_pass": true,
                     "body_id": "A",
-                    "elapsed_ms": 6.25,
+                    "elapsed_ms": 5.96,
                     "wall_clearance": {
                       "model_version": "finite-panel-skeleton-crossing-1",
                       "status": "pass",
@@ -43373,7 +43373,7 @@
                     "upper_arm": 0.28,
                     "forearm": 0.25,
                     "endpoint_offset_sum_m": 0.0,
-                    "fingerprint": "sha256:efdebe67d09941aec76e8929bf3dbd09ec3dd57f4482b42f3d71183c95258b67"
+                    "fingerprint": "sha256:ff8b06fe1d32a4c6e4f2518f9cfc3b901da89daf90dfc812fded00b232165efe"
                   }
                 },
                 {
@@ -43399,7 +43399,7 @@
                     ],
                     "joint_limits_pass": true,
                     "body_id": "A",
-                    "elapsed_ms": 265.08,
+                    "elapsed_ms": 213.51,
                     "wall_clearance": {
                       "model_version": "finite-panel-skeleton-crossing-1",
                       "status": "pass",
@@ -43462,7 +43462,7 @@
                     ],
                     "joint_limits_pass": true,
                     "body_id": "A",
-                    "elapsed_ms": 16.93,
+                    "elapsed_ms": 6.0,
                     "wall_clearance": {
                       "model_version": "finite-panel-skeleton-crossing-1",
                       "status": "pass",
@@ -43516,7 +43516,7 @@
                     "upper_arm": 0.28,
                     "forearm": 0.25,
                     "endpoint_offset_sum_m": 0.0,
-                    "fingerprint": "sha256:efdebe67d09941aec76e8929bf3dbd09ec3dd57f4482b42f3d71183c95258b67"
+                    "fingerprint": "sha256:ff8b06fe1d32a4c6e4f2518f9cfc3b901da89daf90dfc812fded00b232165efe"
                   }
                 },
                 {
@@ -43542,7 +43542,7 @@
                     ],
                     "joint_limits_pass": true,
                     "body_id": "A",
-                    "elapsed_ms": 317.36,
+                    "elapsed_ms": 230.28,
                     "wall_clearance": {
                       "model_version": "finite-panel-skeleton-crossing-1",
                       "status": "pass",
@@ -43596,7 +43596,7 @@
                     "upper_arm": 0.28,
                     "forearm": 0.25,
                     "endpoint_offset_sum_m": 0.0,
-                    "fingerprint": "sha256:efdebe67d09941aec76e8929bf3dbd09ec3dd57f4482b42f3d71183c95258b67"
+                    "fingerprint": "sha256:ff8b06fe1d32a4c6e4f2518f9cfc3b901da89daf90dfc812fded00b232165efe"
                   }
                 },
                 {
@@ -43621,7 +43621,7 @@
                     ],
                     "joint_limits_pass": true,
                     "body_id": "A",
-                    "elapsed_ms": 6.32,
+                    "elapsed_ms": 6.14,
                     "wall_clearance": {
                       "model_version": "finite-panel-skeleton-crossing-1",
                       "status": "pass",
@@ -43675,7 +43675,7 @@
                     "upper_arm": 0.28,
                     "forearm": 0.25,
                     "endpoint_offset_sum_m": 0.0,
-                    "fingerprint": "sha256:efdebe67d09941aec76e8929bf3dbd09ec3dd57f4482b42f3d71183c95258b67"
+                    "fingerprint": "sha256:ff8b06fe1d32a4c6e4f2518f9cfc3b901da89daf90dfc812fded00b232165efe"
                   }
                 },
                 {
@@ -43701,7 +43701,7 @@
                     ],
                     "joint_limits_pass": true,
                     "body_id": "A",
-                    "elapsed_ms": 218.99,
+                    "elapsed_ms": 210.1,
                     "wall_clearance": {
                       "model_version": "finite-panel-skeleton-crossing-1",
                       "status": "pass",
@@ -43764,7 +43764,7 @@
                     ],
                     "joint_limits_pass": true,
                     "body_id": "A",
-                    "elapsed_ms": 6.4,
+                    "elapsed_ms": 5.98,
                     "wall_clearance": {
                       "model_version": "finite-panel-skeleton-crossing-1",
                       "status": "pass",
@@ -43818,7 +43818,7 @@
                     "upper_arm": 0.28,
                     "forearm": 0.25,
                     "endpoint_offset_sum_m": 0.0,
-                    "fingerprint": "sha256:efdebe67d09941aec76e8929bf3dbd09ec3dd57f4482b42f3d71183c95258b67"
+                    "fingerprint": "sha256:ff8b06fe1d32a4c6e4f2518f9cfc3b901da89daf90dfc812fded00b232165efe"
                   }
                 },
                 {
@@ -43844,7 +43844,7 @@
                     ],
                     "joint_limits_pass": true,
                     "body_id": "A",
-                    "elapsed_ms": 250.24,
+                    "elapsed_ms": 238.2,
                     "wall_clearance": {
                       "model_version": "finite-panel-skeleton-crossing-1",
                       "status": "pass",
@@ -44037,7 +44037,7 @@
                     ],
                     "joint_limits_pass": true,
                     "body_id": "A",
-                    "elapsed_ms": 148.44,
+                    "elapsed_ms": 144.95,
                     "wall_clearance": {
                       "model_version": "finite-panel-skeleton-crossing-1",
                       "status": "pass",
@@ -44170,7 +44170,7 @@
                     ],
                     "joint_limits_pass": true,
                     "body_id": "A",
-                    "elapsed_ms": 6.17,
+                    "elapsed_ms": 6.05,
                     "wall_clearance": {
                       "model_version": "finite-panel-skeleton-crossing-1",
                       "status": "pass",
@@ -44304,7 +44304,7 @@
                     ],
                     "joint_limits_pass": true,
                     "body_id": "A",
-                    "elapsed_ms": 232.47,
+                    "elapsed_ms": 230.24,
                     "wall_clearance": {
                       "model_version": "finite-panel-skeleton-crossing-1",
                       "status": "pass",
@@ -44437,7 +44437,7 @@
                     ],
                     "joint_limits_pass": true,
                     "body_id": "A",
-                    "elapsed_ms": 6.19,
+                    "elapsed_ms": 5.97,
                     "wall_clearance": {
                       "model_version": "finite-panel-skeleton-crossing-1",
                       "status": "pass",
@@ -44571,7 +44571,7 @@
                     ],
                     "joint_limits_pass": true,
                     "body_id": "A",
-                    "elapsed_ms": 208.5,
+                    "elapsed_ms": 203.32,
                     "wall_clearance": {
                       "model_version": "finite-panel-skeleton-crossing-1",
                       "status": "pass",
@@ -44704,7 +44704,7 @@
                     ],
                     "joint_limits_pass": true,
                     "body_id": "A",
-                    "elapsed_ms": 6.38,
+                    "elapsed_ms": 5.94,
                     "wall_clearance": {
                       "model_version": "finite-panel-skeleton-crossing-1",
                       "status": "pass",
@@ -44838,7 +44838,7 @@
                     ],
                     "joint_limits_pass": true,
                     "body_id": "A",
-                    "elapsed_ms": 260.57,
+                    "elapsed_ms": 254.07,
                     "wall_clearance": {
                       "model_version": "finite-panel-skeleton-crossing-1",
                       "status": "pass",
@@ -44971,7 +44971,7 @@
                     ],
                     "joint_limits_pass": true,
                     "body_id": "A",
-                    "elapsed_ms": 6.27,
+                    "elapsed_ms": 5.98,
                     "wall_clearance": {
                       "model_version": "finite-panel-skeleton-crossing-1",
                       "status": "pass",
@@ -45105,7 +45105,7 @@
                     ],
                     "joint_limits_pass": true,
                     "body_id": "A",
-                    "elapsed_ms": 248.68,
+                    "elapsed_ms": 234.93,
                     "wall_clearance": {
                       "model_version": "finite-panel-skeleton-crossing-1",
                       "status": "pass",
@@ -45238,7 +45238,7 @@
                     ],
                     "joint_limits_pass": true,
                     "body_id": "A",
-                    "elapsed_ms": 6.31,
+                    "elapsed_ms": 5.94,
                     "wall_clearance": {
                       "model_version": "finite-panel-skeleton-crossing-1",
                       "status": "pass",
@@ -45372,7 +45372,7 @@
                     ],
                     "joint_limits_pass": true,
                     "body_id": "A",
-                    "elapsed_ms": 159.98,
+                    "elapsed_ms": 151.51,
                     "wall_clearance": {
                       "model_version": "finite-panel-skeleton-crossing-1",
                       "status": "pass",
@@ -45505,7 +45505,7 @@
                     ],
                     "joint_limits_pass": true,
                     "body_id": "A",
-                    "elapsed_ms": 6.46,
+                    "elapsed_ms": 5.98,
                     "wall_clearance": {
                       "model_version": "finite-panel-skeleton-crossing-1",
                       "status": "pass",
@@ -45639,7 +45639,7 @@
                     ],
                     "joint_limits_pass": true,
                     "body_id": "A",
-                    "elapsed_ms": 241.01,
+                    "elapsed_ms": 220.66,
                     "wall_clearance": {
                       "model_version": "finite-panel-skeleton-crossing-1",
                       "status": "pass",
@@ -45772,7 +45772,7 @@
                     ],
                     "joint_limits_pass": true,
                     "body_id": "A",
-                    "elapsed_ms": 6.55,
+                    "elapsed_ms": 5.99,
                     "wall_clearance": {
                       "model_version": "finite-panel-skeleton-crossing-1",
                       "status": "pass",
@@ -45906,7 +45906,7 @@
                     ],
                     "joint_limits_pass": true,
                     "body_id": "A",
-                    "elapsed_ms": 231.7,
+                    "elapsed_ms": 218.25,
                     "wall_clearance": {
                       "model_version": "finite-panel-skeleton-crossing-1",
                       "status": "pass",
@@ -46039,7 +46039,7 @@
                     ],
                     "joint_limits_pass": true,
                     "body_id": "A",
-                    "elapsed_ms": 6.32,
+                    "elapsed_ms": 5.97,
                     "wall_clearance": {
                       "model_version": "finite-panel-skeleton-crossing-1",
                       "status": "pass",
@@ -46173,7 +46173,7 @@
                     ],
                     "joint_limits_pass": true,
                     "body_id": "A",
-                    "elapsed_ms": 252.34,
+                    "elapsed_ms": 243.95,
                     "wall_clearance": {
                       "model_version": "finite-panel-skeleton-crossing-1",
                       "status": "pass",
@@ -46306,7 +46306,7 @@
                     ],
                     "joint_limits_pass": true,
                     "body_id": "A",
-                    "elapsed_ms": 6.25,
+                    "elapsed_ms": 5.96,
                     "wall_clearance": {
                       "model_version": "finite-panel-skeleton-crossing-1",
                       "status": "pass",
@@ -46440,7 +46440,7 @@
                     ],
                     "joint_limits_pass": true,
                     "body_id": "A",
-                    "elapsed_ms": 265.08,
+                    "elapsed_ms": 213.51,
                     "wall_clearance": {
                       "model_version": "finite-panel-skeleton-crossing-1",
                       "status": "pass",
@@ -46573,7 +46573,7 @@
                     ],
                     "joint_limits_pass": true,
                     "body_id": "A",
-                    "elapsed_ms": 16.93,
+                    "elapsed_ms": 6.0,
                     "wall_clearance": {
                       "model_version": "finite-panel-skeleton-crossing-1",
                       "status": "pass",
@@ -46707,7 +46707,7 @@
                     ],
                     "joint_limits_pass": true,
                     "body_id": "A",
-                    "elapsed_ms": 317.36,
+                    "elapsed_ms": 230.28,
                     "wall_clearance": {
                       "model_version": "finite-panel-skeleton-crossing-1",
                       "status": "pass",
@@ -46840,7 +46840,7 @@
                     ],
                     "joint_limits_pass": true,
                     "body_id": "A",
-                    "elapsed_ms": 6.32,
+                    "elapsed_ms": 6.14,
                     "wall_clearance": {
                       "model_version": "finite-panel-skeleton-crossing-1",
                       "status": "pass",
@@ -46974,7 +46974,7 @@
                     ],
                     "joint_limits_pass": true,
                     "body_id": "A",
-                    "elapsed_ms": 218.99,
+                    "elapsed_ms": 210.1,
                     "wall_clearance": {
                       "model_version": "finite-panel-skeleton-crossing-1",
                       "status": "pass",
@@ -47107,7 +47107,7 @@
                     ],
                     "joint_limits_pass": true,
                     "body_id": "A",
-                    "elapsed_ms": 6.4,
+                    "elapsed_ms": 5.98,
                     "wall_clearance": {
                       "model_version": "finite-panel-skeleton-crossing-1",
                       "status": "pass",
@@ -47241,7 +47241,7 @@
                     ],
                     "joint_limits_pass": true,
                     "body_id": "A",
-                    "elapsed_ms": 250.24,
+                    "elapsed_ms": 238.2,
                     "wall_clearance": {
                       "model_version": "finite-panel-skeleton-crossing-1",
                       "status": "pass",
@@ -47266,7 +47266,7 @@
                 "passed": 75,
                 "total": 75
               },
-              "elapsed_ms": 3171.71,
+              "elapsed_ms": 2915.18,
               "design_analysis": {
                 "source": "synthetic_assumption",
                 "model_version": "independent-beta-proxy-3",
@@ -47847,7 +47847,7 @@
               },
               "mechanics_report": {
                 "model_version": "quasistatic-contact-lp-1",
-                "model_fingerprint": "sha256:6c57c80815e97fb26e972cb39fedce1c615e32d1378f401fe337417b6aa706a5",
+                "model_fingerprint": "sha256:0acff4732bdfed5978e3c3dadd9c32a13082cf72740dbbd22298a3801e0284ae",
                 "parameters": {
                   "com_model": "synthetic_segments_v1",
                   "cone_sides": 8,
@@ -52167,7 +52167,7 @@
         ],
         "search": {
           "timeout_seconds": 60,
-          "elapsed_ms": 42224.26,
+          "elapsed_ms": 40302.72,
           "time_budget_exhausted": false,
           "geometry_trials": 3,
           "selected_trial": 1,
@@ -52674,9 +52674,9 @@
   ],
   "evaluations": [
     {
-      "id": "eval-setting-diagonal_balance-trial1-beta2-e6d265a9b3",
+      "id": "eval-setting-diagonal_balance-trial1-beta2-a267bcfbd7",
       "candidate_id": "setting-diagonal_balance-trial1-beta2",
-      "fingerprint": "sha256:d042d28ac117e2bf6a3b4c07fc933a1ad72e66ad415e85679ba096e6d265a9b3",
+      "fingerprint": "sha256:965fe713bef788aecbfa8b271ac9bb7836149053db7309c1c8dc41a267bcfbd7",
       "version": "0.1.0",
       "checks": [
         {
@@ -52745,7 +52745,7 @@
             "upper_arm": 0.28,
             "forearm": 0.25,
             "endpoint_offset_sum_m": 0.0,
-            "fingerprint": "sha256:d042d28ac117e2bf6a3b4c07fc933a1ad72e66ad415e85679ba096e6d265a9b3"
+            "fingerprint": "sha256:965fe713bef788aecbfa8b271ac9bb7836149053db7309c1c8dc41a267bcfbd7"
           }
         },
         {
@@ -52771,7 +52771,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 165.83,
+            "elapsed_ms": 155.92,
             "wall_clearance": {
               "model_version": "finite-panel-skeleton-crossing-1",
               "status": "pass",
@@ -52825,7 +52825,7 @@
             "upper_arm": 0.28,
             "forearm": 0.25,
             "endpoint_offset_sum_m": 0.0,
-            "fingerprint": "sha256:d042d28ac117e2bf6a3b4c07fc933a1ad72e66ad415e85679ba096e6d265a9b3"
+            "fingerprint": "sha256:965fe713bef788aecbfa8b271ac9bb7836149053db7309c1c8dc41a267bcfbd7"
           }
         },
         {
@@ -52850,7 +52850,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 6.45,
+            "elapsed_ms": 6.55,
             "wall_clearance": {
               "model_version": "finite-panel-skeleton-crossing-1",
               "status": "pass",
@@ -52904,7 +52904,7 @@
             "upper_arm": 0.28,
             "forearm": 0.25,
             "endpoint_offset_sum_m": 0.0,
-            "fingerprint": "sha256:d042d28ac117e2bf6a3b4c07fc933a1ad72e66ad415e85679ba096e6d265a9b3"
+            "fingerprint": "sha256:965fe713bef788aecbfa8b271ac9bb7836149053db7309c1c8dc41a267bcfbd7"
           }
         },
         {
@@ -52930,7 +52930,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 273.86,
+            "elapsed_ms": 244.72,
             "wall_clearance": {
               "model_version": "finite-panel-skeleton-crossing-1",
               "status": "pass",
@@ -52993,7 +52993,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 7.32,
+            "elapsed_ms": 6.45,
             "wall_clearance": {
               "model_version": "finite-panel-skeleton-crossing-1",
               "status": "pass",
@@ -53047,7 +53047,7 @@
             "upper_arm": 0.28,
             "forearm": 0.25,
             "endpoint_offset_sum_m": 0.0,
-            "fingerprint": "sha256:d042d28ac117e2bf6a3b4c07fc933a1ad72e66ad415e85679ba096e6d265a9b3"
+            "fingerprint": "sha256:965fe713bef788aecbfa8b271ac9bb7836149053db7309c1c8dc41a267bcfbd7"
           }
         },
         {
@@ -53073,7 +53073,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 271.16,
+            "elapsed_ms": 234.71,
             "wall_clearance": {
               "model_version": "finite-panel-skeleton-crossing-1",
               "status": "pass",
@@ -53127,7 +53127,7 @@
             "upper_arm": 0.28,
             "forearm": 0.25,
             "endpoint_offset_sum_m": 0.0,
-            "fingerprint": "sha256:d042d28ac117e2bf6a3b4c07fc933a1ad72e66ad415e85679ba096e6d265a9b3"
+            "fingerprint": "sha256:965fe713bef788aecbfa8b271ac9bb7836149053db7309c1c8dc41a267bcfbd7"
           }
         },
         {
@@ -53152,7 +53152,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 6.73,
+            "elapsed_ms": 6.52,
             "wall_clearance": {
               "model_version": "finite-panel-skeleton-crossing-1",
               "status": "pass",
@@ -53206,7 +53206,7 @@
             "upper_arm": 0.28,
             "forearm": 0.25,
             "endpoint_offset_sum_m": 0.0,
-            "fingerprint": "sha256:d042d28ac117e2bf6a3b4c07fc933a1ad72e66ad415e85679ba096e6d265a9b3"
+            "fingerprint": "sha256:965fe713bef788aecbfa8b271ac9bb7836149053db7309c1c8dc41a267bcfbd7"
           }
         },
         {
@@ -53232,7 +53232,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 404.41,
+            "elapsed_ms": 260.6,
             "wall_clearance": {
               "model_version": "finite-panel-skeleton-crossing-1",
               "status": "pass",
@@ -53295,7 +53295,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 6.85,
+            "elapsed_ms": 6.53,
             "wall_clearance": {
               "model_version": "finite-panel-skeleton-crossing-1",
               "status": "pass",
@@ -53349,7 +53349,7 @@
             "upper_arm": 0.28,
             "forearm": 0.25,
             "endpoint_offset_sum_m": 0.0,
-            "fingerprint": "sha256:d042d28ac117e2bf6a3b4c07fc933a1ad72e66ad415e85679ba096e6d265a9b3"
+            "fingerprint": "sha256:965fe713bef788aecbfa8b271ac9bb7836149053db7309c1c8dc41a267bcfbd7"
           }
         },
         {
@@ -53375,7 +53375,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 273.25,
+            "elapsed_ms": 253.98,
             "wall_clearance": {
               "model_version": "finite-panel-skeleton-crossing-1",
               "status": "pass",
@@ -53429,7 +53429,7 @@
             "upper_arm": 0.28,
             "forearm": 0.25,
             "endpoint_offset_sum_m": 0.0,
-            "fingerprint": "sha256:d042d28ac117e2bf6a3b4c07fc933a1ad72e66ad415e85679ba096e6d265a9b3"
+            "fingerprint": "sha256:965fe713bef788aecbfa8b271ac9bb7836149053db7309c1c8dc41a267bcfbd7"
           }
         },
         {
@@ -53454,7 +53454,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 6.8,
+            "elapsed_ms": 6.64,
             "wall_clearance": {
               "model_version": "finite-panel-skeleton-crossing-1",
               "status": "pass",
@@ -53508,7 +53508,7 @@
             "upper_arm": 0.28,
             "forearm": 0.25,
             "endpoint_offset_sum_m": 0.0,
-            "fingerprint": "sha256:d042d28ac117e2bf6a3b4c07fc933a1ad72e66ad415e85679ba096e6d265a9b3"
+            "fingerprint": "sha256:965fe713bef788aecbfa8b271ac9bb7836149053db7309c1c8dc41a267bcfbd7"
           }
         },
         {
@@ -53534,7 +53534,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 210.9,
+            "elapsed_ms": 199.36,
             "wall_clearance": {
               "model_version": "finite-panel-skeleton-crossing-1",
               "status": "pass",
@@ -53597,7 +53597,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 7.69,
+            "elapsed_ms": 6.52,
             "wall_clearance": {
               "model_version": "finite-panel-skeleton-crossing-1",
               "status": "pass",
@@ -53651,7 +53651,7 @@
             "upper_arm": 0.28,
             "forearm": 0.25,
             "endpoint_offset_sum_m": 0.0,
-            "fingerprint": "sha256:d042d28ac117e2bf6a3b4c07fc933a1ad72e66ad415e85679ba096e6d265a9b3"
+            "fingerprint": "sha256:965fe713bef788aecbfa8b271ac9bb7836149053db7309c1c8dc41a267bcfbd7"
           }
         },
         {
@@ -53677,7 +53677,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 250.67,
+            "elapsed_ms": 238.89,
             "wall_clearance": {
               "model_version": "finite-panel-skeleton-crossing-1",
               "status": "pass",
@@ -53731,7 +53731,7 @@
             "upper_arm": 0.28,
             "forearm": 0.25,
             "endpoint_offset_sum_m": 0.0,
-            "fingerprint": "sha256:d042d28ac117e2bf6a3b4c07fc933a1ad72e66ad415e85679ba096e6d265a9b3"
+            "fingerprint": "sha256:965fe713bef788aecbfa8b271ac9bb7836149053db7309c1c8dc41a267bcfbd7"
           }
         },
         {
@@ -53756,7 +53756,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 7.58,
+            "elapsed_ms": 6.56,
             "wall_clearance": {
               "model_version": "finite-panel-skeleton-crossing-1",
               "status": "pass",
@@ -53810,7 +53810,7 @@
             "upper_arm": 0.28,
             "forearm": 0.25,
             "endpoint_offset_sum_m": 0.0,
-            "fingerprint": "sha256:d042d28ac117e2bf6a3b4c07fc933a1ad72e66ad415e85679ba096e6d265a9b3"
+            "fingerprint": "sha256:965fe713bef788aecbfa8b271ac9bb7836149053db7309c1c8dc41a267bcfbd7"
           }
         },
         {
@@ -53836,7 +53836,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 266.65,
+            "elapsed_ms": 245.25,
             "wall_clearance": {
               "model_version": "finite-panel-skeleton-crossing-1",
               "status": "pass",
@@ -53899,7 +53899,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 6.63,
+            "elapsed_ms": 6.51,
             "wall_clearance": {
               "model_version": "finite-panel-skeleton-crossing-1",
               "status": "pass",
@@ -53953,7 +53953,7 @@
             "upper_arm": 0.28,
             "forearm": 0.25,
             "endpoint_offset_sum_m": 0.0,
-            "fingerprint": "sha256:d042d28ac117e2bf6a3b4c07fc933a1ad72e66ad415e85679ba096e6d265a9b3"
+            "fingerprint": "sha256:965fe713bef788aecbfa8b271ac9bb7836149053db7309c1c8dc41a267bcfbd7"
           }
         },
         {
@@ -53979,7 +53979,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 275.39,
+            "elapsed_ms": 255.33,
             "wall_clearance": {
               "model_version": "finite-panel-skeleton-crossing-1",
               "status": "pass",
@@ -54033,7 +54033,7 @@
             "upper_arm": 0.28,
             "forearm": 0.25,
             "endpoint_offset_sum_m": 0.0,
-            "fingerprint": "sha256:d042d28ac117e2bf6a3b4c07fc933a1ad72e66ad415e85679ba096e6d265a9b3"
+            "fingerprint": "sha256:965fe713bef788aecbfa8b271ac9bb7836149053db7309c1c8dc41a267bcfbd7"
           }
         },
         {
@@ -54058,7 +54058,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 6.66,
+            "elapsed_ms": 6.47,
             "wall_clearance": {
               "model_version": "finite-panel-skeleton-crossing-1",
               "status": "pass",
@@ -54112,7 +54112,7 @@
             "upper_arm": 0.28,
             "forearm": 0.25,
             "endpoint_offset_sum_m": 0.0,
-            "fingerprint": "sha256:d042d28ac117e2bf6a3b4c07fc933a1ad72e66ad415e85679ba096e6d265a9b3"
+            "fingerprint": "sha256:965fe713bef788aecbfa8b271ac9bb7836149053db7309c1c8dc41a267bcfbd7"
           }
         },
         {
@@ -54138,7 +54138,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 270.74,
+            "elapsed_ms": 254.77,
             "wall_clearance": {
               "model_version": "finite-panel-skeleton-crossing-1",
               "status": "pass",
@@ -54201,7 +54201,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 6.65,
+            "elapsed_ms": 6.56,
             "wall_clearance": {
               "model_version": "finite-panel-skeleton-crossing-1",
               "status": "pass",
@@ -54255,7 +54255,7 @@
             "upper_arm": 0.28,
             "forearm": 0.25,
             "endpoint_offset_sum_m": 0.0,
-            "fingerprint": "sha256:d042d28ac117e2bf6a3b4c07fc933a1ad72e66ad415e85679ba096e6d265a9b3"
+            "fingerprint": "sha256:965fe713bef788aecbfa8b271ac9bb7836149053db7309c1c8dc41a267bcfbd7"
           }
         },
         {
@@ -54281,7 +54281,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 269.86,
+            "elapsed_ms": 256.05,
             "wall_clearance": {
               "model_version": "finite-panel-skeleton-crossing-1",
               "status": "pass",
@@ -54335,7 +54335,7 @@
             "upper_arm": 0.28,
             "forearm": 0.25,
             "endpoint_offset_sum_m": 0.0,
-            "fingerprint": "sha256:d042d28ac117e2bf6a3b4c07fc933a1ad72e66ad415e85679ba096e6d265a9b3"
+            "fingerprint": "sha256:965fe713bef788aecbfa8b271ac9bb7836149053db7309c1c8dc41a267bcfbd7"
           }
         },
         {
@@ -54360,7 +54360,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 6.79,
+            "elapsed_ms": 6.42,
             "wall_clearance": {
               "model_version": "finite-panel-skeleton-crossing-1",
               "status": "pass",
@@ -54414,7 +54414,7 @@
             "upper_arm": 0.28,
             "forearm": 0.25,
             "endpoint_offset_sum_m": 0.0,
-            "fingerprint": "sha256:d042d28ac117e2bf6a3b4c07fc933a1ad72e66ad415e85679ba096e6d265a9b3"
+            "fingerprint": "sha256:965fe713bef788aecbfa8b271ac9bb7836149053db7309c1c8dc41a267bcfbd7"
           }
         },
         {
@@ -54440,7 +54440,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 236.74,
+            "elapsed_ms": 235.56,
             "wall_clearance": {
               "model_version": "finite-panel-skeleton-crossing-1",
               "status": "pass",
@@ -54503,7 +54503,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 6.47,
+            "elapsed_ms": 7.01,
             "wall_clearance": {
               "model_version": "finite-panel-skeleton-crossing-1",
               "status": "pass",
@@ -54557,7 +54557,7 @@
             "upper_arm": 0.28,
             "forearm": 0.25,
             "endpoint_offset_sum_m": 0.0,
-            "fingerprint": "sha256:d042d28ac117e2bf6a3b4c07fc933a1ad72e66ad415e85679ba096e6d265a9b3"
+            "fingerprint": "sha256:965fe713bef788aecbfa8b271ac9bb7836149053db7309c1c8dc41a267bcfbd7"
           }
         },
         {
@@ -54583,7 +54583,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 226.36,
+            "elapsed_ms": 230.39,
             "wall_clearance": {
               "model_version": "finite-panel-skeleton-crossing-1",
               "status": "pass",
@@ -54776,7 +54776,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 165.83,
+            "elapsed_ms": 155.92,
             "wall_clearance": {
               "model_version": "finite-panel-skeleton-crossing-1",
               "status": "pass",
@@ -54909,7 +54909,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 6.45,
+            "elapsed_ms": 6.55,
             "wall_clearance": {
               "model_version": "finite-panel-skeleton-crossing-1",
               "status": "pass",
@@ -55043,7 +55043,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 273.86,
+            "elapsed_ms": 244.72,
             "wall_clearance": {
               "model_version": "finite-panel-skeleton-crossing-1",
               "status": "pass",
@@ -55176,7 +55176,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 7.32,
+            "elapsed_ms": 6.45,
             "wall_clearance": {
               "model_version": "finite-panel-skeleton-crossing-1",
               "status": "pass",
@@ -55310,7 +55310,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 271.16,
+            "elapsed_ms": 234.71,
             "wall_clearance": {
               "model_version": "finite-panel-skeleton-crossing-1",
               "status": "pass",
@@ -55443,7 +55443,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 6.73,
+            "elapsed_ms": 6.52,
             "wall_clearance": {
               "model_version": "finite-panel-skeleton-crossing-1",
               "status": "pass",
@@ -55577,7 +55577,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 404.41,
+            "elapsed_ms": 260.6,
             "wall_clearance": {
               "model_version": "finite-panel-skeleton-crossing-1",
               "status": "pass",
@@ -55710,7 +55710,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 6.85,
+            "elapsed_ms": 6.53,
             "wall_clearance": {
               "model_version": "finite-panel-skeleton-crossing-1",
               "status": "pass",
@@ -55844,7 +55844,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 273.25,
+            "elapsed_ms": 253.98,
             "wall_clearance": {
               "model_version": "finite-panel-skeleton-crossing-1",
               "status": "pass",
@@ -55977,7 +55977,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 6.8,
+            "elapsed_ms": 6.64,
             "wall_clearance": {
               "model_version": "finite-panel-skeleton-crossing-1",
               "status": "pass",
@@ -56111,7 +56111,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 210.9,
+            "elapsed_ms": 199.36,
             "wall_clearance": {
               "model_version": "finite-panel-skeleton-crossing-1",
               "status": "pass",
@@ -56244,7 +56244,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 7.69,
+            "elapsed_ms": 6.52,
             "wall_clearance": {
               "model_version": "finite-panel-skeleton-crossing-1",
               "status": "pass",
@@ -56378,7 +56378,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 250.67,
+            "elapsed_ms": 238.89,
             "wall_clearance": {
               "model_version": "finite-panel-skeleton-crossing-1",
               "status": "pass",
@@ -56511,7 +56511,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 7.58,
+            "elapsed_ms": 6.56,
             "wall_clearance": {
               "model_version": "finite-panel-skeleton-crossing-1",
               "status": "pass",
@@ -56645,7 +56645,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 266.65,
+            "elapsed_ms": 245.25,
             "wall_clearance": {
               "model_version": "finite-panel-skeleton-crossing-1",
               "status": "pass",
@@ -56778,7 +56778,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 6.63,
+            "elapsed_ms": 6.51,
             "wall_clearance": {
               "model_version": "finite-panel-skeleton-crossing-1",
               "status": "pass",
@@ -56912,7 +56912,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 275.39,
+            "elapsed_ms": 255.33,
             "wall_clearance": {
               "model_version": "finite-panel-skeleton-crossing-1",
               "status": "pass",
@@ -57045,7 +57045,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 6.66,
+            "elapsed_ms": 6.47,
             "wall_clearance": {
               "model_version": "finite-panel-skeleton-crossing-1",
               "status": "pass",
@@ -57179,7 +57179,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 270.74,
+            "elapsed_ms": 254.77,
             "wall_clearance": {
               "model_version": "finite-panel-skeleton-crossing-1",
               "status": "pass",
@@ -57312,7 +57312,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 6.65,
+            "elapsed_ms": 6.56,
             "wall_clearance": {
               "model_version": "finite-panel-skeleton-crossing-1",
               "status": "pass",
@@ -57446,7 +57446,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 269.86,
+            "elapsed_ms": 256.05,
             "wall_clearance": {
               "model_version": "finite-panel-skeleton-crossing-1",
               "status": "pass",
@@ -57579,7 +57579,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 6.79,
+            "elapsed_ms": 6.42,
             "wall_clearance": {
               "model_version": "finite-panel-skeleton-crossing-1",
               "status": "pass",
@@ -57713,7 +57713,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 236.74,
+            "elapsed_ms": 235.56,
             "wall_clearance": {
               "model_version": "finite-panel-skeleton-crossing-1",
               "status": "pass",
@@ -57846,7 +57846,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 6.47,
+            "elapsed_ms": 7.01,
             "wall_clearance": {
               "model_version": "finite-panel-skeleton-crossing-1",
               "status": "pass",
@@ -57980,7 +57980,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 226.36,
+            "elapsed_ms": 230.39,
             "wall_clearance": {
               "model_version": "finite-panel-skeleton-crossing-1",
               "status": "pass",
@@ -58005,7 +58005,7 @@
         "passed": 75,
         "total": 75
       },
-      "elapsed_ms": 3542.13,
+      "elapsed_ms": 3205.25,
       "design_analysis": {
         "source": "synthetic_assumption",
         "model_version": "independent-beta-proxy-3",
@@ -58586,7 +58586,7 @@
       },
       "mechanics_report": {
         "model_version": "quasistatic-contact-lp-1",
-        "model_fingerprint": "sha256:8f3e52327ec265c2892bfeee1e7cd4df52ef65a263359b081a05654a2446de1f",
+        "model_fingerprint": "sha256:9f8048a29186825c0e8c135d5efcf7987751511611341d631891d975cbeb6d28",
         "parameters": {
           "com_model": "synthetic_segments_v1",
           "cone_sides": 8,
@@ -62430,7 +62430,7 @@
   ],
   "manifest": {
     "engine_version": "0.1.0",
-    "code_hash": "sha256:f79d7ece1320201c6f02fa7d47e68eedf95551990cdd7a2e3739bf7ab092ee59",
+    "code_hash": "sha256:17247b8606a4e1edaa0ce8766f69fccd0cdc7fbb63b3821fbb09de3cb5e8e062",
     "source": "synthetic_assumption",
     "python": "3.11.15",
     "numpy": "2.4.6",
@@ -62446,7 +62446,7 @@
       "连续动作转换",
       "真实难度与体验"
     ],
-    "bundle_digest": "sha256:ef050aa6e545f15569aa648d93a2e5e02b2ea0799bfee4cd2e1e982107b47e4e"
+    "bundle_digest": "sha256:54d7dc89730d9f08ecf75c31e71e0ec073db7f5f0bf13651aaadfb024bf6c34b"
   },
   "reviews": []
 }

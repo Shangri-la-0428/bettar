@@ -289,14 +289,17 @@ export class WallView {
   setRouteOnly(value: boolean) {
     this.routeOnly = value;
     const { used, visible } = this.usedPlacements();
+    const allowed = this.request?.route_constraints ? new Set(Object.values(this.request.route_constraints.allowed_contacts).flat()) : undefined;
     const layoutOnly = this.candidate?.layout_report?.status === 'no_sequence';
     const inventory = new Map(this.request?.scene.inventory.map(hold => [hold.id, hold]));
     const contacts = new Set(Object.values(this.candidate?.states[this.step]?.contacts || {}).flatMap(contact => contact ? [contact.placement_id] : []));
     this.holdGroups.forEach((group, id) => {
-      group.visible = layoutOnly || !value || visible.has(id);
+      // A selected route is a permission mask, never a change to the physical wall.
+      group.visible = !!allowed || layoutOnly || !value || visible.has(id);
       const placement = this.candidate?.placements.find(p => p.id === id);
       const structural = placement && inventory.get(placement.inventory_id)?.type === 'volume';
-      const tint = new THREE.Color(structural ? this.palette.volume : layoutOnly || used.has(id) ? this.palette.route : this.palette.unused);
+      const inRoute = allowed ? allowed.has(id) : layoutOnly || used.has(id);
+      const tint = new THREE.Color(structural ? this.palette.volume : inRoute ? this.palette.route : this.palette.unused);
       group.traverse(object => {
         if (!(object instanceof THREE.Mesh) || !(object.material instanceof THREE.MeshStandardMaterial) || (!object.userData.resin && !object.userData.gripSurface)) return;
         // Route colour is a display preference shared by hands and feet. Grip
@@ -307,7 +310,7 @@ export class WallView {
         object.material.emissiveIntensity = id === this.selected ? .13 : .05;
       });
     });
-    this.labels.forEach(label => { label.element.classList.toggle('background-hold', !layoutOnly && !used.has(label.element.dataset.placement || '')); label.element.classList.toggle('current-contact', contacts.has(label.element.dataset.placement || '')); });
+    this.labels.forEach(label => { const id = label.element.dataset.placement || ''; label.element.classList.toggle('background-hold', allowed ? !allowed.has(id) : !layoutOnly && !used.has(id)); label.element.classList.toggle('current-contact', contacts.has(id)); });
     this.refreshLabelVisibility();
   }
   private refreshLabelVisibility() {

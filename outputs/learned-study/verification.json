@@ -1,0 +1,253 @@
+{
+  "verified_at": "2026-10-14T18:52:05.104058+00:00",
+  "engine_code_hash": "sha256:17247b8606a4e1edaa0ce8766f69fccd0cdc7fbb63b3821fbb09de3cb5e8e062",
+  "experiment_index_digest": "sha256:ca03524ae57bd0ef354b82ee5bb45170ff1402ffd1e812211332db534fb9b6f3",
+  "experiment": {
+    "records": 61,
+    "unique_saved_bundles": 7,
+    "summary": {
+      "model": {
+        "total": 30,
+        "complete": 0,
+        "p0_pass": 0,
+        "unique": 3,
+        "search_unresolved": 30,
+        "generation_failed": 0,
+        "empty_proposals": 24,
+        "no_intermediate_holds": 24
+      },
+      "random": {
+        "total": 30,
+        "complete": 0,
+        "p0_pass": 0,
+        "unique": 5,
+        "search_unresolved": 30,
+        "generation_failed": 0
+      },
+      "baseline": {
+        "total": 1,
+        "complete": 1,
+        "p0_pass": 1,
+        "unique": 1,
+        "search_unresolved": 0,
+        "generation_failed": 0
+      }
+    },
+    "maximum_search_elapsed_ms": 10610.18,
+    "baseline_metrics": {
+      "hand_holds": 8,
+      "foot_holds": 10,
+      "selected_holds": 18,
+      "used_holds": 16,
+      "skipped_holds": [
+        "foot-8",
+        "hand-5"
+      ],
+      "transfers": 13,
+      "hand_transfers": 6,
+      "foot_transfers": 7,
+      "p0_status": "pass",
+      "static_release_pass": 2,
+      "static_release_total": 13,
+      "static_landed_pass": 7,
+      "static_landed_total": 14,
+      "peak_load": 291.89603,
+      "final_load": 291.89603,
+      "total_proxy_effort": 761.69071
+    }
+  },
+  "checks": {
+    "python_regression": {
+      "command": ".venv/bin/python -m pytest -q",
+      "passed": 367,
+      "skipped": 1,
+      "elapsed_seconds": 198.69,
+      "skip_reason": "Optional real-model test is opt-in; separately passed in the model environment."
+    },
+    "optional_generator_tests": {
+      "command": "BETTAR_TEST_MODEL=1 .venv/bin/python -m pytest -q tests/test_learned_generator.py",
+      "passed": 21,
+      "real_model_seed_reproducibility": true
+    },
+    "upstream_parity": {
+      "evidence": "assets/learned/upstream-parity.json",
+      "tested_seeds": [
+        0,
+        3
+      ],
+      "exact_tensor_match": true,
+      "max_absolute_difference": 0
+    },
+    "frontend_build": {
+      "command": "cd web && npm run build",
+      "status": "pass",
+      "modules": 31,
+      "javascript_kb": 1253.09,
+      "javascript_gzip_kb": 406.38,
+      "known_warning": "JavaScript chunk exceeds 500 kB; no build or type errors."
+    },
+    "placement_geometry": {
+      "status": "pass",
+      "comparisons": 1234,
+      "cases": [
+        "initial",
+        "parent-translate",
+        "parent-rotate",
+        "panel-initial",
+        "panel-parent-translate",
+        "panel-parent-rotate",
+        "wall-fixture/overhang/setting-diagonal_balance-trial1-beta0",
+        "wall-fixture/roof/setting-diagonal_balance-trial0-beta1",
+        "wall-fixture/roof/setting-diagonal_balance-trial2-beta2",
+        "wall-fixture/dihedral/setting-diagonal_balance-trial0-beta2",
+        "wall-fixture/arete/setting-diagonal_balance-trial0-beta0"
+      ],
+      "wall_fixtures": [
+        {
+          "profile": "overhang",
+          "placements": 18,
+          "panels": 1,
+          "layout_only": false
+        },
+        {
+          "profile": "roof",
+          "placements": 18,
+          "panels": 3,
+          "layout_only": false
+        },
+        {
+          "profile": "roof",
+          "placements": 18,
+          "panels": 3,
+          "layout_only": false
+        },
+        {
+          "profile": "dihedral",
+          "placements": 18,
+          "panels": 2,
+          "layout_only": false
+        },
+        {
+          "profile": "arete",
+          "placements": 18,
+          "panels": 2,
+          "layout_only": false
+        }
+      ],
+      "checks": [
+        "Python frame/contact/normal parity",
+        "wall and face inverse drag",
+        "selected-surface main alias",
+        "legacy contact preserved",
+        "parent translation and rotation inheritance",
+        "cancelled preview restoration",
+        "multi-axis panel rotation and translated origin",
+        "panel-mounted volume child inherits transform",
+        "invalid panel mount omitted",
+        "front corner elevation measured above y=0 separately from layout height",
+        "saved wall profile panel corners, placement axes and selected mesh contact frames"
+      ]
+    },
+    "roof_regression": {
+      "status": "pass",
+      "saved_paths": 11,
+      "saved_states": 265,
+      "complete_saved_roof": true,
+      "checks": [
+        "contact-derived phases can repeat",
+        "release and landing bind to actual states",
+        "mounted child inherits wall panel",
+        "verified IK only",
+        "exit frame invariant to global wall angle",
+        "fatigue numbers preserve existing analysis",
+        "missing or stale evaluation hides observations",
+        "old no_sequence remains a layout",
+        "IK pass does not imply skeleton collision pass",
+        "two primary variants show local support and whole-route costs",
+        "exit window includes the pre-transfer release",
+        "modified but unused exit hold is not assigned causal credit"
+      ],
+      "primary_candidates": [
+        {
+          "candidate_id": "setting-diagonal_balance-trial0-beta1",
+          "role": "whole_route_support",
+          "exit_feasible": 2,
+          "exit_states": 8,
+          "exit_release_feasible": 1,
+          "exit_release_states": 4,
+          "transfers": 11,
+          "total_proxy_effort": 541.09584,
+          "unused_changed_ids": []
+        },
+        {
+          "candidate_id": "setting-diagonal_balance-trial2-beta2",
+          "role": "exit_support_tradeoff",
+          "exit_feasible": 6,
+          "exit_states": 8,
+          "exit_release_feasible": 2,
+          "exit_release_states": 4,
+          "transfers": 13,
+          "total_proxy_effort": 752.36691,
+          "unused_changed_ids": [
+            "foot-8"
+          ]
+        }
+      ]
+    },
+    "saved_fixtures": {
+      "bundles": 24,
+      "candidates": 51,
+      "statuses": {
+        "pass": 45,
+        "unknown": 6
+      },
+      "evidence": "fixture-verification.json"
+    },
+    "browser": {
+      "evidence": "ui-verification.json",
+      "check_count": 12,
+      "screenshots": [
+        "ui-desktop.jpg",
+        "ui-mobile.jpg"
+      ],
+      "responsive_widths": [
+        390,
+        1440
+      ],
+      "viewport_override_reset": true
+    },
+    "browser_export_import": {
+      "evidence": "edited-roundtrip-bundle.json",
+      "candidates": 2,
+      "validated": true,
+      "all_four_contact_constraints_preserved": true
+    },
+    "live_read_only_api": {
+      "/api/learned-experiment": 200,
+      "/api/learned-experiment/runs/baseline-all": 200,
+      "fresh_server": true
+    },
+    "final_independent_review": {
+      "blocking_findings": 0,
+      "scope": [
+        "Saved results match README",
+        "Matched random limb and joint role counts",
+        "No failed output presented as complete",
+        "Search budget",
+        "Index and bundle integrity"
+      ]
+    }
+  },
+  "local_storage": {
+    "optional_runtime_approx_mib": 570,
+    "model_cache_approx_mib": 84,
+    "weights_committed": false
+  },
+  "limits": [
+    "Only one 25-degree wall with 18 installed holds; no generalization claim.",
+    "No learned route quality gain demonstrated: model and random both 0/30 complete.",
+    "Style is recorded UI intent, not conditioning for this frozen experiment.",
+    "Complete baseline passes discrete geometry; only 2/13 static release states pass.",
+    "Physical effort and V grades are not human-validated; routesetter forerunning remains necessary."
+  ]
+}

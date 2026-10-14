@@ -10,6 +10,8 @@ import { defaultPaletteId, getScenePalette, presentationHold, scenePalettes, wal
 import { holdAttributesHTML, rhythmNames, routeDesignHTML, styleExamplesHTML, styleNames, routeExamplesHTML, programNames } from './route-design';
 import { betaAuditHTML, betaPathCount } from './beta-audit';
 import { settingExamplesHTML, settingStudyHTML, settingNames, movementVocabularyHTML, gymReferencesHTML, settingWorkflowHTML } from './setting-design';
+import { learnedExperimentHTML, learnedRunHTML, learnedSourceNames } from './learned-experiment';
+import type { LearnedExperiment, LearnedRun } from './learned-experiment';
 import type { BetaAudit, Bundle, Candidate, Defaults, Evaluation, Placement, Request, Review, Status, StyleExample, SettingReport } from './types';
 import { escape as esc, holdDisplayName, holdFamily, holdRoleName, holdNames, limbNames, limbs, shortHoldName, statusLabels } from './types';
 
@@ -47,8 +49,19 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
     </div>
   </header>
   <main>
+    <section class="setter-brief" aria-labelledby="setter-brief-title">
+      <div class="setter-brief-heading"><h1 id="setter-brief-title">定线意图</h1><p>先选风格与目标，再在岩壁上查看草稿。</p></div>
+      <form id="draft-form" class="draft-form">
+        <label class="control">线路风格<select id="draft-style"><option value="mixed">混合</option><option value="power">力量</option><option value="balance">技巧与平衡</option><option value="sustained">持续输出</option><option value="coordination">动态协调</option></select></label>
+        <label class="control">目标难度<select id="draft-grade"><option value="V3">V3</option><option value="V4">V4</option><option value="V5">V5</option></select></label>
+        <label class="control draft-wall-control">墙形与区域<select id="draft-wall"><option value="learned-overhang">25° 单面墙 · 全墙</option><option value="roof">屋檐 · 转出区域</option><option value="dihedral">内角 · 两侧墙面</option><option value="arete">外角 · 两侧墙面</option></select></label>
+        <button id="draft-open" class="button primary" type="submit">查看草稿 ${icon('chevron')}</button>
+      </form>
+      <p id="draft-condition-note" class="draft-condition-note">风格作为意图记录，当前模型尚未按风格生成。目标难度用于选择保存的模型条件，仍待真人试攀定级。</p>
+    </section>
+    <details class="advanced-generation"><summary>高级生成与研究参数<span>人体、库存、摆点与搜索实验</span></summary>
     <section class="setup-strip" aria-labelledby="setup-title">
-      <div class="setup-title"><h1 id="setup-title">定线研究</h1><p>下一次生成的条件</p></div>
+      <div class="setup-title"><h2 id="setup-title">定线研究</h2><p>下一次生成的条件</p></div>
       <form id="generation-form" class="generation-form">
         <label class="control profile-control">工作场景<select id="profile" name="profile"><option value="setting">手脚协同摆点</option><option value="route">完整混合线路</option><option value="style">四手风格实验</option><option value="catalog">标准模板岩点库</option><option value="competition">竞赛风格研究</option><option value="basic">基础算法算例</option></select></label>
         <label class="control wall-profile-control" hidden>墙形<select id="wall-profile" name="wall_profile">${Object.entries(wallProfileNames).map(([id, label]) => `<option value="${id}">${label}</option>`).join('')}</select></label>
@@ -70,10 +83,15 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
       <div id="catalog-quantities" class="catalog-quantities"></div>
       <p>每件岩点有独立库存编号，同型号共享形状与接触面。数量不足时会提示；修改这里不会改变当前方案。</p>
     </details>
+    </details>
     <div id="notice" class="notice" role="alert" hidden></div>
+    <section id="learned-experiment" class="learned-experiment" aria-label="学习生成对照"></section>
+    <details class="saved-reference-drafts"><summary>其他规则草稿与墙形</summary>
     <section id="wall-examples" class="wall-examples" aria-label="查看已保存墙形实验" hidden></section>
     <section id="setting-examples" class="setting-examples" aria-label="手脚协同摆点实验" hidden></section>
     <section id="style-examples" class="style-examples" aria-label="同墙风格示例对照" hidden></section>
+    </details>
+    <div id="draft-context" class="draft-context" aria-live="polite" hidden></div>
     <div class="workspace">
       <section class="design-area" aria-label="候选与三维场景">
         <div class="candidates-bar">
@@ -96,7 +114,8 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
           <div id="canvas-hint" class="canvas-hint">拖动旋转 · 滚轮缩放 · 点击岩点近看</div>
         </div>
         <div id="route-inventory-summary" class="route-inventory-summary"></div>
-        <section id="mechanics-study" class="mechanics-study" aria-label="准静态受力与摩擦检查" hidden></section>
+        <section id="learned-study" class="learned-study" aria-label="当前学习生成实验与配对对照" hidden></section>
+        <details class="mechanics-disclosure"><summary>受力、摩擦与支撑检查<span>展开查看模型估计与具体状态</span></summary><section id="mechanics-study" class="mechanics-study" aria-label="准静态受力与摩擦检查" hidden></section></details>
         <section id="setting-study" class="setting-study" aria-label="摆点调整与备选走法" hidden></section>
         <section id="beta-audit" class="beta-audit" aria-label="线路合理性与替代走法检查" hidden></section>
         <section id="design-brief" class="design-brief" aria-label="线路设计意图" hidden></section>
@@ -164,6 +183,15 @@ let styleExamples: StyleExample[] = [];
 let routeExamples: StyleExample[] = [];
 let settingExamples: StyleExample[] = [];
 let wallExamples: StyleExample[] = [];
+let learnedExperiment: LearnedExperiment | undefined;
+let learnedOpen = false;
+let learnedError = '';
+let activeLearnedRunId = '';
+let learnedComparisonId = '';
+const learnedBundles = new Map<string, Bundle>();
+const draftStyleNames: Record<string, string> = { mixed: '混合', power: '力量', balance: '技巧与平衡', sustained: '持续输出', coordination: '动态协调' };
+let activeDraftIntent: { style: string; grade: string; wall: string; learned: boolean } | undefined;
+try { const saved = localStorage.getItem('bettar.draft-style'); if (saved && draftStyleNames[saved]) $<HTMLSelectElement>('#draft-style').value = saved; } catch { /* Intent storage is optional. */ }
 let palette = getScenePalette(defaultPaletteId);
 try { palette = getScenePalette(localStorage.getItem('betar.scene-palette') || defaultPaletteId); } catch { /* Storage is optional; rendering remains local. */ }
 $<HTMLSelectElement>('#scene-palette').value = palette.id;
@@ -206,6 +234,80 @@ function activeSettingReport(): SettingReport | undefined {
 function selectedSettingAlternative() { return activeSettingReport()?.allowed_alternatives?.find(item => item.candidate.id === settingAlternativeId); }
 function viewingAlternative() { return !!selectedBeta() || !!selectedSettingAlternative(); }
 function current(): Candidate | undefined { return selectedSettingAlternative()?.candidate || selectedBeta()?.candidate || sourceCandidate(); }
+function activeLearnedRun() { return learnedExperiment?.runs.find(run => run.id === activeLearnedRunId); }
+function clearLearnedExperiment() { activeLearnedRunId = ''; learnedComparisonId = ''; learnedOpen = false; learnedError = ''; }
+function syncDraftControls() {
+  const learning = $<HTMLSelectElement>('#draft-wall').value === 'learned-overhang';
+  $('#draft-form').querySelectorAll<HTMLInputElement | HTMLButtonElement | HTMLSelectElement>('input,button,select').forEach(el => { el.disabled = busy; });
+  $('#draft-open').innerHTML = busy ? '<span class="loading-spinner small"></span>处理中…' : `查看草稿 ${icon('chevron')}`;
+  $<HTMLSelectElement>('#draft-grade').disabled = busy || !learning;
+  $('#draft-condition-note').textContent = learning ? '风格作为意图记录，当前模型尚未按风格生成。目标难度用于选择保存的模型条件，仍待真人试攀定级。' : '该墙形仅有已有规则草稿；目标等级与风格未参与生成。风格只保留为定线意图，供人工调整参考。';
+}
+function renderDraftContext() {
+  const host = $('#draft-context'); host.hidden = !bundle;
+  if (!bundle) return;
+  const run = activeLearnedRun();
+  const wallName = bundle.request.setting_design?.wall_profile ? wallProfileNames[bundle.request.setting_design.wall_profile] : `${bundle.request.scene.angle_deg}° 单面墙`;
+  const source = run ? learnedSourceNames[run.source] : bundle.request.route_constraints ? '限定选点草稿' : '已有规则草稿';
+  host.innerHTML = `<strong>当前草稿</strong><span>${esc(wallName || '单面墙')} · ${esc(source)}${run?.condition ? ` · ${esc(run.condition)} 模型条件` : ''}</span>${activeDraftIntent ? `<span>意图：${esc(draftStyleNames[activeDraftIntent.style])}</span><small>${activeDraftIntent.learned ? '风格尚未参与生成；目标等级待试攀确认。' : '目标等级与风格未参与这份规则草稿的生成。'}</small>` : '<small>上方条件用于下一次查看草稿。</small>'}`;
+}
+async function viewIntentDraft(event: SubmitEvent) {
+  event.preventDefault(); if (busy) return;
+  const style = $<HTMLSelectElement>('#draft-style').value, grade = $<HTMLSelectElement>('#draft-grade').value, wall = $<HTMLSelectElement>('#draft-wall').value;
+  const previous = bundle;
+  if (wall === 'learned-overhang') await openLearnedExperiment(grade);
+  else await loadWallExample(wall);
+  if (bundle && bundle !== previous) {
+    activeDraftIntent = { style, grade, wall, learned: wall === 'learned-overhang' };
+    renderDraftContext();
+    $('#draft-context').scrollIntoView({ block: 'start', behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
+  }
+}
+function renderLearnedExperiment() {
+  const host = $('#learned-experiment'), recordsOpen = host.querySelector<HTMLDetailsElement>('.learned-records')?.open, batchOpen = host.querySelector<HTMLDetailsElement>('.learned-batch')?.open;
+  host.innerHTML = learnedExperimentHTML(learnedExperiment, activeLearnedRun(), learnedOpen, busy, learnedError);
+  const records = host.querySelector<HTMLDetailsElement>('.learned-records'); if (records && recordsOpen) records.open = true;
+  const batch = host.querySelector<HTMLDetailsElement>('.learned-batch'); if (batch && batchOpen) batch.open = true;
+  const study = $('#learned-study'), provenanceOpen = study.querySelector<HTMLDetailsElement>('.learned-provenance')?.open;
+  const run = activeLearnedRun(); study.hidden = !run || !learnedExperiment;
+  study.innerHTML = run && learnedExperiment ? learnedRunHTML(learnedExperiment, run, busy, learnedExperiment.runs.find(item => item.id === learnedComparisonId)) : '';
+  const provenance = study.querySelector<HTMLDetailsElement>('.learned-provenance'); if (provenance && provenanceOpen) provenance.open = true;
+}
+async function readLearnedRun(run: LearnedRun) {
+  if (!run.bundle_url) throw new Error(`${run.error || '该记录没有可加载的结果包。'} 当前场景保持不变；失败记录已保留在全部样本统计中。`);
+  if (!run.bundle_url.startsWith('/api/learned-experiment/runs/')) throw new Error('实验返回了无法识别的结果包路径。');
+  const loaded = learnedBundles.get(run.id) || await api<Bundle>(run.bundle_url);
+  learnedBundles.set(run.id, loaded);
+  const comparisonId = run.source === 'baseline' ? learnedComparisonId : run.id;
+  const draftIntent = activeDraftIntent;
+  // Cached saved evidence stays immutable when a displayed bundle receives edits.
+  acceptBundle(structuredClone(loaded), true, !activeLearnedRunId, run.id);
+  if (draftIntent?.learned) activeDraftIntent = { ...draftIntent, grade: run.condition || draftIntent.grade };
+  learnedComparisonId = comparisonId || run.id;
+  learnedOpen = true; learnedError = '';
+  renderAll();
+}
+async function openLearnedExperiment(condition?: string) {
+  if (busy) return;
+  setBusy(true, '读取学习生成对照…'); learnedError = '';
+  try {
+    const next = await api<LearnedExperiment>('/api/learned-experiment');
+    if (next.schema_version !== 'learned-experiment-v1' || !Array.isArray(next.runs) || !Array.isArray(next.conditions) || !next.summary) throw new Error('保存实验的格式无法识别。');
+    learnedExperiment = next; learnedBundles.clear(); learnedOpen = true;
+    const id = (next.conditions.find(item => item.label === condition && item.representative_run_id) || next.conditions.find(item => item.representative_run_id))?.representative_run_id;
+    const run = next.runs.find(item => item.id === id) || next.runs.find(item => item.bundle_url);
+    if (run) await readLearnedRun(run);
+    else learnedError = '尚无可展示的结果包。失败结果保留在下方记录中，当前场景保持不变。';
+  } catch (error) { learnedError = `实验未切换：${error instanceof Error ? error.message : String(error)} 可重新读取；其他工作台功能不受影响。`; }
+  finally { setBusy(false); renderLearnedExperiment(); }
+}
+async function selectLearnedRun(id: string) {
+  const run = learnedExperiment?.runs.find(item => item.id === id); if (!run || busy) return;
+  setBusy(true, '读取保存方案…'); learnedError = '';
+  try { await readLearnedRun(run); }
+  catch (error) { learnedError = `方案未切换：${error instanceof Error ? error.message : String(error)}`; }
+  finally { setBusy(false); renderLearnedExperiment(); }
+}
 function selectSettingExample(id: string, stage = 'after') {
   const example = [...settingExamples, ...wallExamples].find(item => item.id === id); if (!example || busy) return;
   const context = settingContext();
@@ -257,6 +359,7 @@ function selectSettingPath(id: string) {
   if (selectedBeta()) selectBeta('');
   if (!settingAlternativeId && id) { originalStep = step; originalRouteOnly = $<HTMLInputElement>('#route-only').checked; }
   settingAlternativeId = id; editMode = false; compareId = ''; step = id ? 0 : originalStep;
+  if (id) clearLearnedExperiment();
   $<HTMLInputElement>('#route-only').checked = id ? false : originalRouteOnly;
   renderAll();
 }
@@ -274,7 +377,7 @@ function renderSettingStudy() {
   wallHost.innerHTML = wallHost.hidden ? '' : `<span>查看墙形试案</span><div role="group" aria-label="读取已保存墙形">${Object.entries(wallProfileNames).filter(([id]) => id !== 'default').map(([id, label]) => `<button data-action="wall-example" data-wall-profile="${id}" class="${bundle?.request.setting_design?.wall_profile === id ? 'active' : ''}" aria-pressed="${bundle?.request.setting_design?.wall_profile === id}" ${busy ? 'disabled' : ''}>${label}</button>`).join('')}</div><small>读取真实布局与检查结果；未找到完整走法时保留布局试案。</small>`;
   list.hidden = bundle?.request.profile !== 'setting' || !settingExamples.length;
   list.innerHTML = list.hidden ? '' : settingExamplesHTML(settingExamples, context?.example.id || '', busy, bundle);
-  host.hidden = bundle?.request.profile !== 'setting' || !candidate || !!selectedBeta();
+  host.hidden = bundle?.request.profile !== 'setting' || !candidate || !!selectedBeta() || !!bundle?.request.route_constraints;
   const evidenceOpen = host.querySelector<HTMLDetailsElement>('.setting-evidence')?.open;
   host.innerHTML = !host.hidden && bundle && candidate ? settingStudyHTML(bundle, candidate, evaluation(), activeSettingReport(), context?.stage || 'after', selectedSettingAlternative(), step, !!context && !!activeSettingReport(), busy, context?.example.bundle.evaluations.find(item => item.candidate_id === context.originCandidate?.id)) : '';
   const evidence = host.querySelector<HTMLDetailsElement>('.setting-evidence'); if (evidence && evidenceOpen) evidence.open = true;
@@ -315,6 +418,7 @@ function selectBeta(id: string) {
   if (!betaSelectedId && id) { originalStep = step; originalRouteOnly = $<HTMLInputElement>('#route-only').checked; }
   settingAlternativeId = '';
   betaSelectedId = id; editMode = false; compareId = '';
+  if (id) clearLearnedExperiment();
   step = id ? 0 : originalStep;
   $<HTMLInputElement>('#route-only').checked = id ? false : originalRouteOnly;
   renderAll();
@@ -360,8 +464,9 @@ function setBusy(value: boolean, label?: string) {
   $<HTMLSelectElement>('#history').disabled = value || histories.length < 2;
   document.querySelectorAll<HTMLInputElement>('[form="generation-form"]').forEach(input => { input.disabled = value || !defaults; });
   syncProfileControls();
+  syncDraftControls();
   syncToolState();
-  renderEditor(); renderBetaAudit();
+  renderEditor(); renderBetaAudit(); renderLearnedExperiment();
 }
 
 function syncProfileControls() {
@@ -461,9 +566,12 @@ function populateControls(request: Request) {
   setBusy(false);
 }
 
-function acceptBundle(next: Bundle, addHistory = true, resetView = true) {
+function acceptBundle(next: Bundle, addHistory = true, resetView = true, learnedRunId = '') {
   clearBetaAudit();
   if (!next.request || !Array.isArray(next.candidates) || !Array.isArray(next.evaluations)) throw new Error('结果包缺少场景、候选或评价数据。');
+  if (!learnedRunId) clearLearnedExperiment();
+  else activeLearnedRunId = learnedRunId;
+  activeDraftIntent = undefined;
   bundle = next;
   if (addHistory) histories.push(next);
   activeId = next.candidates[0]?.id || ''; step = 0; selectedHold = ''; selectedInventory = ''; compareId = ''; editMode = false; holdFilter = !next.candidates[0]?.layout_report && ['route', 'setting'].includes(next.request.profile || '') ? 'route' : 'all';
@@ -482,7 +590,7 @@ function acceptBundle(next: Bundle, addHistory = true, resetView = true) {
 
 function renderAll() {
   ensureSelection();
-  renderCandidates(); renderSummary(); renderEditor(); renderLibrary(); renderChecks(); renderSteps(); renderComparison(); renderReviews(); renderBrief(); renderStyleStudy(); renderRouteInventory(); renderBetaAudit(); renderSettingStudy(); renderMechanics(); updateScene(); syncToolState();
+  renderCandidates(); renderSummary(); renderEditor(); renderLibrary(); renderChecks(); renderSteps(); renderComparison(); renderReviews(); renderBrief(); renderStyleStudy(); renderRouteInventory(); renderBetaAudit(); renderSettingStudy(); renderMechanics(); renderLearnedExperiment(); renderDraftContext(); updateScene(); syncToolState();
   document.querySelectorAll<HTMLButtonElement>('[data-action="export-bundle"], [data-action="export-review"], [data-action="save-review"]').forEach((button) => { button.disabled = busy || !bundle || (button.dataset.action === 'save-review' && viewingAlternative()); });
   const candidate = current();
   $('#revision-badge').textContent = candidate ? `修订 ${candidate.revision}${viewingAlternative() ? ' · 替代走法' : ''}` : '—';
@@ -491,6 +599,10 @@ function renderAll() {
     $('#scene-title').textContent = viewingAlternative() ? `同一岩壁 · ${selectedBeta()?.label || selectedSettingAlternative()?.label || '备选走法'}` : r.profile === 'setting' ? (r.setting_design?.wall_profile === 'roof' ? '水平屋檐 · 出檐手脚配合' : settingNames[r.setting_design?.program || ''] || '手脚协同摆点') : r.profile === 'route' ? '当前线路 · 同色岩点' : r.profile === 'style' ? '固定训练板 · 选点与动作搜索' : r.design_brief?.title || (r.profile === 'catalog' ? '标准模板 · 有限库存与组合安装' : '') || scenarioNames[r.scenario] || r.scenario;
     $('#canvas-legend').style.setProperty('--route-ink', `#${palette.route.toString(16).padStart(6, '0')}`);
     $('#canvas-legend').innerHTML = `<span><i class="dot jug"></i>${current()?.layout_report ? '布局试案' : viewingAlternative() ? '当前走法使用' : '当前线路'}</span>${viewingAlternative() ? '<span><i class="dot skipped"></i>已安装但未用</span>' : '<span>手 / 脚：实际用途</span>'}` + (r.profile === 'catalog' ? '<span><i class="dot normal"></i>面法向</span>' : current()?.layout_report ? '<span>仅起始接触，未生成移手序列</span>' : '<span>数字：移手次序</span>');
+    if (r.route_constraints) {
+      $('#canvas-legend').innerHTML = '<span><i class="dot jug"></i>允许使用</span><span><i class="dot skipped"></i>未选入，仍在墙上</span><span>数字：实际移手次序</span>';
+      $('#scene-title').textContent = activeLearnedRun() ? `固定岩壁 · ${learnedSourceNames[activeLearnedRun()!.source]}` : '固定岩壁 · 限定选点';
+    }
     const wallHeight = wallHeightMeasures(r.scene);
     $('#scene-subtitle').textContent = `${r.scene.wall_panels?.length ? `${r.scene.wall_panels.length} 个空间墙面` : r.scene.angle_deg === 0 ? '垂直墙' : `仰角 ${r.scene.angle_deg}°`} · 展开高度 ${wallHeight.unfolded.toFixed(1)} m · 几何垂直高 ${wallHeight.vertical.toFixed(2)} m · 人体 ${r.body.id}${r.setting_design?.wall_profile && r.setting_design.wall_profile !== 'default' ? ` · ${wallProfileNames[r.setting_design.wall_profile]}` : ''}`;
     const ev = evaluation();
@@ -556,6 +668,12 @@ function renderRouteInventory() {
   host.innerHTML = candidate.layout_report ? `<strong>布局试案 · ${candidate.placements.length} 个安装点</strong><span>仅声明 ${used.size} 个起始接触，尚未找到完整走法</span><small>全部点位按真实墙面显示；未声明后续动作，也未将起点当作终点。</small>` : `<strong>当前线路 ${used.size} 个接触点</strong><span>仅手用 ${hand.size - shared} · 仅脚用 ${foot.size - shared} · 手脚共用 ${shared}${parents.size ? ` · 支撑体积块 ${parents.size}` : ''}</span><span>${moves} 次移手 · ${candidate.events.length} 次接触转换</span>${viewingAlternative() || bundle.request.profile === 'setting' ? `<small>本走法跳过的 ${unused} 个已安装点保留为灰色；全部 ${candidate.placements.length} 个安装位置不变。</small>` : unused ? `<small>${unused} 个未用安装点默认隐藏；取消“仅显示当前线路”可查看。</small>` : '<small>已安装点来自原定走法；用替代走法检查判断哪些点可能被跳过。未选库存不计入当前岩壁。</small>'}`;
   const control = $<HTMLInputElement>('#route-only');
   control.disabled = viewingAlternative() || bundle.request.profile === 'setting' || unused === 0; control.closest('label')!.title = candidate.layout_report ? '布局试案显示全部已安装点；尚未找到完整走法' : viewingAlternative() || bundle.request.profile === 'setting' ? '审计视图始终保留全部已安装点，灰色表示本走法未用' : unused ? '取消后以灰色显示该方案的未用安装点' : '当前方案没有未用安装点';
+  if (bundle.request.route_constraints) {
+    const selected = new Set(Object.values(bundle.request.route_constraints.allowed_contacts).flat());
+    control.disabled = true; control.checked = false;
+    control.closest('label')!.title = '限定选点始终保留整墙，未选岩点继续参与碰撞检查';
+    host.innerHTML = `<strong>整墙 ${candidate.placements.length} 个安装点 · 允许 ${selected.size} 个</strong><span>${candidate.layout_report ? `起始接触 ${used.size} 个，尚无完整走法` : `实际使用 ${used.size} 个 · 跳过 ${[...selected].filter(id => !used.has(id)).length} 个候选点`}</span><small>亮色表示允许接触；灰色表示本方案未选入。所有安装位置与朝向保持不变。</small>`;
+  }
 }
 function renderLibrary() {
   if (!bundle) return;
@@ -784,6 +902,8 @@ function makeRevision(change: (candidate: Candidate) => void, note: string, inve
   delete updated.search_metadata;
   if (updated.layout_report) updated.layout_report = { ...updated.layout_report, reason: '当前修订仅保留起始接触，尚未为新点位搜索完整走法。', search: [] };
   change(updated); delete updated.setting_report; updated.design_notes = [...(updated.design_notes || []), note];
+  clearLearnedExperiment();
+  activeDraftIntent = undefined;
   clearBetaAudit();
   bundle.candidates.push(updated); activeId = updated.id; compareId = candidate.id;
   selectedInventory = inventoryId; selectedHold = updated.placements.find(p => p.inventory_id === inventoryId)?.id || '';
@@ -925,6 +1045,9 @@ $('#route-only').addEventListener('change', (e) => view?.setRouteOnly((e.target 
 $('#route-path').addEventListener('change', (e) => view?.setRoutePath((e.target as HTMLInputElement).checked));
 $('#compare').addEventListener('change', (e) => { compareId = (e.target as HTMLSelectElement).value; renderComparison(); updateScene(); });
 $('#history').addEventListener('change', (e) => { if (busy) return; const next = histories[Number((e.target as HTMLSelectElement).value)]; if (next) acceptBundle(next, false); });
+$('#draft-form').addEventListener('submit', event => { void viewIntentDraft(event as SubmitEvent); });
+$('#draft-wall').addEventListener('change', syncDraftControls);
+$('#draft-style').addEventListener('change', () => { try { localStorage.setItem('bettar.draft-style', $<HTMLSelectElement>('#draft-style').value); } catch { /* Optional storage. */ } });
 $('#import-file').addEventListener('change', async (event) => {
   const input = event.target as HTMLInputElement; const file = input.files?.[0]; if (!file || busy) return;
   setBusy(true, '校验导入中…');
@@ -942,6 +1065,8 @@ document.addEventListener('click', (event) => {
   if (busy && ['candidate', 'style-example', 'route-example', 'setting-example', 'setting-stage', 'setting-path', 'import', 'save-review', 'export-bundle', 'export-review'].includes(action || '')) return;
   if (action === 'board-study') { $<HTMLSelectElement>('#profile').value = 'style'; $<HTMLSelectElement>('#style-goal').value = 'compare'; syncProfileControls(); $('#generation-form').scrollIntoView({ block: 'center' }); $<HTMLSelectElement>('#style-goal').focus(); toast('已设置同墙风格对照；点击生成后搜索不同选点与动作序列。'); }
   else if (action === 'setting-example') selectSettingExample(button.dataset.id || '');
+  else if (action === 'learned-open') void openLearnedExperiment();
+  else if (action === 'learned-run') void selectLearnedRun(button.dataset.runId || '');
   else if (action === 'setting-stage') { const context = settingContext(); if (context) selectSettingExample(context.example.id, button.dataset.stage); }
   else if (action === 'wall-example') void loadWallExample(button.dataset.wallProfile || 'overhang');
   else if (action === 'setting-source') void loadSettingSource(button.dataset.source === 'templates' ? 'templates' : 'assets');
@@ -952,7 +1077,7 @@ document.addEventListener('click', (event) => {
   else if (action === 'beta-audit') void auditBeta();
   else if (action === 'beta-select') selectBeta(button.dataset.id || '');
   else if (action === 'beta-export' && betaReport && !busy) download(betaReport, `beta-audit-${betaReport.source.candidate_id}-r${betaReport.source.revision}.json`);
-  else if (action === 'candidate') { clearBetaAudit(); activeId = button.dataset.id!; step = 0; selectedHold = ''; selectedInventory = ''; renderAll(); }
+  else if (action === 'candidate') { clearBetaAudit(); if (activeId !== button.dataset.id) { clearLearnedExperiment(); activeDraftIntent = undefined; } activeId = button.dataset.id!; step = 0; selectedHold = ''; selectedInventory = ''; renderAll(); }
   else if (action === 'phase') { step = Number(button.dataset.step); renderSteps(); renderBrief(); view?.setStep(step); }
   else if (action === 'roof-step' || action === 'roof-view') {
     const nextStep = Number(button.dataset.step);
@@ -1010,10 +1135,22 @@ async function initialize() {
   if (results[1].status === 'fulfilled' || routeExamples.length || settingExamples.length) {
     try { acceptBundle(settingExamples[0]?.bundle || routeExamples[0]?.bundle || (results[1].status === 'fulfilled' ? results[1].value : undefined)!); $<HTMLSelectElement>('#route-program').value = 'compare'; syncProfileControls(); } catch (error) { showNotice(`示例数据不完整：${String(error)}`); }
   } else {
-    $('#canvas-empty').innerHTML = `<div class="empty-icon">${icon('cube')}</div><h2>等待本地计算服务</h2><p>请启动 Python 服务后重试。<br />工作台会加载真实生成、检查的示例。</p><button class="button outlined" data-action="retry">${icon('refresh')}重新连接</button>`;
-    if (results[1].status === 'rejected') showNotice(`无法读取示例：${results[1].reason instanceof Error ? results[1].reason.message : String(results[1].reason)}`);
+    // Saved studies are independent: stale legacy fixtures must not hide a valid new experiment.
+    let recovered = false;
+    try {
+      const saved = await api<LearnedExperiment>('/api/learned-experiment');
+      if (saved.schema_version === 'learned-experiment-v1' && Array.isArray(saved.runs)) {
+        const baseline = saved.runs.find(run => run.source === 'baseline' && run.bundle_url);
+        if (baseline) { learnedExperiment = saved; await readLearnedRun(baseline); recovered = true; }
+      }
+    } catch { /* The optional model experiment is not required to start the app. */ }
+    if (!recovered) {
+      $('#canvas-empty').innerHTML = `<div class="empty-icon">${icon('cube')}</div><h2>等待本地计算服务</h2><p>请启动 Python 服务后重试。<br />工作台会加载真实生成、检查的示例。</p><button class="button outlined" data-action="retry">${icon('refresh')}重新连接</button>`;
+      if (results[1].status === 'rejected') showNotice(`无法读取示例：${results[1].reason instanceof Error ? results[1].reason.message : String(results[1].reason)}`);
+    }
   }
   if (results[0].status === 'rejected') showNotice('默认配置加载失败，生成暂不可用。请确认本地服务已运行后重新连接。');
 }
 window.addEventListener('pagehide', () => preview?.dispose(), { once: true });
+renderLearnedExperiment();
 void initialize();

@@ -2,13 +2,38 @@
 
 **bettar = beta + better**：为定线员提供可修改的抱石线路初稿与动作灵感。
 
-仓库：<https://github.com/Shangri-la-0428/bettar> · [启动](#启动) · [当前验收](outputs/roof-study/verification.json) · [第三方素材](assets/holds/NOTICE.md)
+仓库：<https://github.com/Shangri-la-0428/bettar> · [启动](#启动) · [学习生成实验](outputs/learned-study/experiment.json) · [第三方素材](assets/holds/NOTICE.md)
 
 一个在本地运行的抱石定线研究原型。使用分面墙、外部岩点网格或参数模板、合成人体模型，探索混合阶段线路的选点、安装子集与手脚接触顺序。规则生成、程序检查与三维查看使用同一份数据。
 
 第一版的能力、验收和对照实验见 [交付报告](outputs/mvp-implementation/README.md)。
 
-## 当前：水平屋檐的完整接触走法 · 2026-10-15
+## 当前：学习生成对照与定线员工作流 · 2026-10-15
+
+网页主入口收拢为 **线路风格 → 目标难度 → 墙形与区域 → 查看草稿**。风格暂时是保存在本机的定线意图；V3/V4/V5 选择已保存的模型条件，不冒充实攀等级。25° 单面墙展示本轮学习实验，屋檐、内角、外角打开现有规则草稿。人体、库存、旧生成器、整批统计和受力明细放入展开区。
+
+实际接入了 [BetaZero](https://github.com/EvanMcCormick37/ml-homewall-climb-generator) 的生产预训练权重，在固定的 25°、18 点墙面上生成 V3/V4/V5 × 种子 0–9 共 30 个岩点集合。模型不输出人体动作顺序；bettar 保留全部已安装岩点，以每肢允许点集合约束独立走法搜索，并继续检查几何、离散姿态、静态支撑和前序负荷。每个样本配一个相同角色数量、相同起终点的随机选点对照，另保留全部岩点基线。
+
+**这轮模型没有提供可用的完整线路。** 30 次推理中，24 次原始选点为空，6 次只选出一个点；补入统一起终点后，模型和配对随机组均为 0/30 找到完整走法。全部岩点基线找到 13 次转换（6 手、7 脚），使用 16/18 个点并通过离散几何/姿态检查，但静态释放态仅 2/13 满足当前假设。模型组只有 3 种不同的有效允许点集合，随机组有 5 种；重复集合共用一次检查，仍全部计入分母。没有拿规则路线替代失败输出。
+
+两个代表种子与固定版本上游原始推理代码的最终 20×12 张量逐值一致，种子 2 重跑也完全一致。这支持“这批失败并非已检查的推理复现差异”，不证明模型在其他墙面也失败，也不能证明这些点绝对不可攀。小型稀疏墙面、中性属性和预训练分布的适配仍需独立研究；现阶段不替换现有规则生成器。
+
+来源、许可、权重摘要与上游对照见 [模型说明](assets/learned/README.md)和[原版复现证据](assets/learned/upstream-parity.json)。全部 61 条记录、原始输出、调整说明及检查摘要在 [experiment.json](outputs/learned-study/experiment.json)；对应完整结果包使用 gzip 保存，网页通过只读接口加载并复核。
+
+本轮 **367 项 Python 回归测试通过**，默认跳过的真实模型测试已在可选环境中通过；模型模块 21 项检查全部通过。TypeScript/Vite 构建、1,234 项安装几何比对、24 个示例包复验和桌面／手机浏览器流程通过。构建仍有既有大包提示。完整 [验收记录](outputs/learned-study/verification.json) 包含编辑失效、导入导出与 27 个接触状态回放证据。
+
+应用只读取保存的实验，不需要安装 PyTorch。可选的离线重跑步骤：
+
+```sh
+python3 -m venv .runtime/venv-ml
+.runtime/venv-ml/bin/python -m pip install --no-cache-dir -r requirements-ml.txt
+.runtime/venv-ml/bin/python scripts/prepare_learned_model.py --generate-proposals fixtures/learned-wall-request.json
+.venv/bin/python scripts/run_learned_experiment.py
+```
+
+本机实测独立环境约 570 MiB、模型缓存约 83 MiB，合计约 653 MiB；平台和依赖版本可能影响大小。权重固定来源且核验 Git blob 与 SHA-256，仅缓存在被忽略的 `.runtime/` 下；不随仓库分发、不在应用启动时下载。权重受限加载，归一化参数按已核验文件的固定数值片段提取，不执行 pickle。后端修改后需重新生成实验，旧结果不会冒充当前检查。
+
+## 历史：水平屋檐的完整接触走法 · 2026-10-15
 
 真实 90°、0.8 m 进深的屋檐已有两套完整接触序列。搜索依据三维手脚关系自由选点，再检查每次释放和落点的姿态；不要求固定动作顺序、用完岩点或完成规定移手数。姿态求解加入有限墙板避让，并独立复核骨架中心线穿墙；屋檐脚面朝下不再获得站立恢复，没有缓和条件时也不再自动消除前序负担。
 

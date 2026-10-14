@@ -17,6 +17,7 @@ import scipy
 
 from .kinematics import LIMBS, contact_distance_bound, contact_endpoints, forward_kinematics, joint_bounds, solve_pose
 from .catalog import catalog_metadata, make_inventory, validate_catalog
+from .route_constraints import constraint_errors
 from .setting import PROGRAMS as SETTING_PROGRAMS, make_request as make_setting_request, search_settings, analyze_setting
 from .full_route import PROGRAMS, make_request as make_full_request, search_routes as search_full_routes, analyze_route as analyze_full_route
 from .route_design import STYLE_GOALS, RHYTHMS, make_request as make_style_request, search_routes, analyze_route
@@ -83,6 +84,8 @@ def _canonical(value, path=()):
         } or (len(path) == 3 and path[0] == "candidates" and isinstance(path[1], int) and path[2] == "placements")
         if id_collection and all(isinstance(v, dict) and isinstance(v.get("id"), str) for v in values):
             values.sort(key=lambda v: v["id"])
+        if len(path) >= 3 and path[-3:-1] == ("route_constraints", "allowed_contacts") and path[-1] in LIMBS:
+            values.sort()
         return values
     # Normalize integral floats so equivalent JSON roundtrips have the same digest.
     return int(value) if isinstance(value, float) and value.is_integer() else value
@@ -97,7 +100,7 @@ def canonical_hash(value):
 def code_hash():
     paths = [Path(__file__), Path(__file__).with_name("kinematics.py"),
              Path(__file__).with_name("geometry.py"), Path(__file__).with_name("catalog.py"), Path(__file__).with_name("route_design.py"), Path(__file__).with_name("full_route.py"),
-             Path(__file__).with_name("statics.py"), Path(__file__).with_name("setting.py"), Path(__file__).with_name("hold_assets.py"), Path(__file__).with_name("wall_profiles.py"), Path(__file__).with_name("wall_clearance.py"), Path(__file__).with_name("beta_audit.py"), ROOT / "schemas/request.schema.json", ROOT / "schemas/candidate.schema.json"]
+             Path(__file__).with_name("statics.py"), Path(__file__).with_name("setting.py"), Path(__file__).with_name("hold_assets.py"), Path(__file__).with_name("wall_profiles.py"), Path(__file__).with_name("wall_clearance.py"), Path(__file__).with_name("beta_audit.py"), Path(__file__).with_name("route_constraints.py"), ROOT / "schemas/request.schema.json", ROOT / "schemas/candidate.schema.json"]
     return "sha256:" + hashlib.sha256(b"".join(p.read_bytes() for p in paths)).hexdigest()
 
 
@@ -128,6 +131,9 @@ def validate_request(request):
         validate_parameters(request["mechanics_parameters"])
     if not any(request["start_contacts"].values()) or not any(request["end_contacts"].values()):
         raise ValueError("request start_contacts/end_contacts must not be empty")
+    restrictions = constraint_errors(request, request["reference_layout"] or None)
+    if restrictions:
+        raise ValueError("; ".join(restrictions))
     if request.get("profile") == "catalog":
         validate_catalog(request)
     for item in request["scene"]["inventory"]:
@@ -410,7 +416,7 @@ def _polygon_distance(a, b):
 
 
 def _sequence_errors(request, candidate, placements, inventory, *, sequence_policy="request"):
-    errors = []
+    errors = constraint_errors(request, candidate["placements"], states=candidate["states"])
     states = candidate["states"]
     ids = [s["id"] for s in states]
     if len(set(ids)) != len(ids):
@@ -735,6 +741,9 @@ def _number(value):
 
 
 def _validate_evaluation(request, candidate, evaluation):
+    restrictions = constraint_errors(request, candidate["placements"], states=candidate["states"])
+    if restrictions:
+        raise ValueError("; ".join(restrictions))
     if "layout_report" in candidate:
         report = candidate["layout_report"]
         if request.get("profile") != "setting" or request["setting_design"].get("wall_profile", "default") == "default" or report["wall_profile"] != request["setting_design"]["wall_profile"]:
@@ -900,6 +909,9 @@ def validate_bundle(bundle):
             raise ValueError("evaluation references unknown candidate")
         for candidate in candidates:
             _schema(candidate, "candidate")
+            restrictions = constraint_errors(bundle["request"], candidate["placements"], states=candidate["states"])
+            if restrictions:
+                raise ValueError("; ".join(restrictions))
             if candidate["id"] not in evaluation_map:
                 continue
             evaluation = evaluation_map[candidate["id"]]

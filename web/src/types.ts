@@ -29,6 +29,7 @@ export interface Request {
   schema_version: string; id: string; revision: number; source: string;
   profile?: 'basic' | 'competition' | 'catalog' | 'style' | 'route' | 'setting';
   route_design?: RouteDesign;
+  route_constraints?: { allowed_contacts: Record<Limb, string[]> };
   setting_design?: { program: string; source: string; intent: string; search: Record<string, unknown>; hold_source?: 'assets' | 'templates'; wall_profile?: 'default' | 'overhang' | 'roof' | 'dihedral' | 'arete'; wall_application?: Record<string, unknown>; asset_application?: Record<string, unknown> };
   design_brief?: { title: string; intent: string; source: string; disclaimer: string; phases: { id: string; label: string; event_start: number; event_end: number; intent: string }[]; zone_placement_ids: string[]; top_placement_ids: string[] };
   scene: { width: number; height: number; angle_deg: number; margin: number; inventory: Hold[]; wall_panels?: WallPanel[]; catalog_stock?: { template_id: string; template_name: string; type: string; count: number }[] };

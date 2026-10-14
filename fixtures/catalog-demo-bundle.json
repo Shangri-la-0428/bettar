@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
-  "id": "bundle-8e273a183b-1791997532844567000",
-  "created_at": "2026-10-14T17:05:32.844569+00:00",
+  "id": "bundle-8e273a183b-1792002610686557000",
+  "created_at": "2026-10-14T18:30:10.686559+00:00",
   "request": {
     "schema_version": "1.0",
     "id": "request-catalog-foot_first-A",
@@ -5523,9 +5523,9 @@
   ],
   "evaluations": [
     {
-      "id": "eval-candidate-42-1-33875c260f",
+      "id": "eval-candidate-42-1-297c9f5670",
       "candidate_id": "candidate-42-1",
-      "fingerprint": "sha256:8a1f8ea9d201cd77abef9ec1ff83f18f7d7a6f300706b0118dd37533875c260f",
+      "fingerprint": "sha256:49fb81dbd670c45e1ad3d17403b81164568d39c24ee904aa59d414297c9f5670",
       "version": "0.1.0",
       "checks": [
         {
@@ -5630,7 +5630,7 @@
             "upper_arm": 0.28,
             "forearm": 0.25,
             "endpoint_offset_sum_m": 0.0,
-            "fingerprint": "sha256:8a1f8ea9d201cd77abef9ec1ff83f18f7d7a6f300706b0118dd37533875c260f"
+            "fingerprint": "sha256:49fb81dbd670c45e1ad3d17403b81164568d39c24ee904aa59d414297c9f5670"
           }
         },
         {
@@ -5656,7 +5656,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 71.1
+            "elapsed_ms": 67.46
           }
         },
         {
@@ -5672,7 +5672,7 @@
             "upper_arm": 0.28,
             "forearm": 0.25,
             "endpoint_offset_sum_m": 0.0,
-            "fingerprint": "sha256:8a1f8ea9d201cd77abef9ec1ff83f18f7d7a6f300706b0118dd37533875c260f"
+            "fingerprint": "sha256:49fb81dbd670c45e1ad3d17403b81164568d39c24ee904aa59d414297c9f5670"
           }
         },
         {
@@ -5697,7 +5697,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 3.44
+            "elapsed_ms": 3.25
           }
         },
         {
@@ -5713,7 +5713,7 @@
             "upper_arm": 0.28,
             "forearm": 0.25,
             "endpoint_offset_sum_m": 0.0,
-            "fingerprint": "sha256:8a1f8ea9d201cd77abef9ec1ff83f18f7d7a6f300706b0118dd37533875c260f"
+            "fingerprint": "sha256:49fb81dbd670c45e1ad3d17403b81164568d39c24ee904aa59d414297c9f5670"
           }
         },
         {
@@ -5739,7 +5739,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 122.88
+            "elapsed_ms": 116.27
           }
         },
         {
@@ -5764,7 +5764,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 3.37
+            "elapsed_ms": 3.27
           }
         },
         {
@@ -5780,7 +5780,7 @@
             "upper_arm": 0.28,
             "forearm": 0.25,
             "endpoint_offset_sum_m": 0.0,
-            "fingerprint": "sha256:8a1f8ea9d201cd77abef9ec1ff83f18f7d7a6f300706b0118dd37533875c260f"
+            "fingerprint": "sha256:49fb81dbd670c45e1ad3d17403b81164568d39c24ee904aa59d414297c9f5670"
           }
         },
         {
@@ -5806,7 +5806,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 78.46
+            "elapsed_ms": 75.17
           }
         },
         {
@@ -5822,7 +5822,7 @@
             "upper_arm": 0.28,
             "forearm": 0.25,
             "endpoint_offset_sum_m": 0.0,
-            "fingerprint": "sha256:8a1f8ea9d201cd77abef9ec1ff83f18f7d7a6f300706b0118dd37533875c260f"
+            "fingerprint": "sha256:49fb81dbd670c45e1ad3d17403b81164568d39c24ee904aa59d414297c9f5670"
           }
         },
         {
@@ -5847,7 +5847,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 3.42
+            "elapsed_ms": 3.2
           }
         },
         {
@@ -5863,7 +5863,7 @@
             "upper_arm": 0.28,
             "forearm": 0.25,
             "endpoint_offset_sum_m": 0.0,
-            "fingerprint": "sha256:8a1f8ea9d201cd77abef9ec1ff83f18f7d7a6f300706b0118dd37533875c260f"
+            "fingerprint": "sha256:49fb81dbd670c45e1ad3d17403b81164568d39c24ee904aa59d414297c9f5670"
           }
         },
         {
@@ -5889,7 +5889,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 118.24
+            "elapsed_ms": 106.77
           }
         },
         {
@@ -5914,7 +5914,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 3.56
+            "elapsed_ms": 3.15
           }
         },
         {
@@ -5930,7 +5930,7 @@
             "upper_arm": 0.28,
             "forearm": 0.25,
             "endpoint_offset_sum_m": 0.0,
-            "fingerprint": "sha256:8a1f8ea9d201cd77abef9ec1ff83f18f7d7a6f300706b0118dd37533875c260f"
+            "fingerprint": "sha256:49fb81dbd670c45e1ad3d17403b81164568d39c24ee904aa59d414297c9f5670"
           }
         },
         {
@@ -5956,7 +5956,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 97.68
+            "elapsed_ms": 88.37
           }
         },
         {
@@ -6111,7 +6111,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 71.1
+            "elapsed_ms": 67.46
           },
           "state_id": "s0"
         },
@@ -6229,7 +6229,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 3.44
+            "elapsed_ms": 3.25
           },
           "state_id": "s1"
         },
@@ -6348,7 +6348,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 122.88
+            "elapsed_ms": 116.27
           },
           "state_id": "s2"
         },
@@ -6466,7 +6466,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 3.37
+            "elapsed_ms": 3.27
           },
           "state_id": "s3"
         },
@@ -6585,7 +6585,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 78.46
+            "elapsed_ms": 75.17
           },
           "state_id": "s4"
         },
@@ -6703,7 +6703,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 3.42
+            "elapsed_ms": 3.2
           },
           "state_id": "s5"
         },
@@ -6822,7 +6822,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 118.24
+            "elapsed_ms": 106.77
           },
           "state_id": "s6"
         },
@@ -6940,7 +6940,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 3.56
+            "elapsed_ms": 3.15
           },
           "state_id": "s7"
         },
@@ -7059,7 +7059,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 97.68
+            "elapsed_ms": 88.37
           },
           "state_id": "s8"
         }
@@ -7069,12 +7069,12 @@
         "passed": 23,
         "total": 23
       },
-      "elapsed_ms": 519.43
+      "elapsed_ms": 483.71
     },
     {
-      "id": "eval-candidate-42-2-bcd4d29f37",
+      "id": "eval-candidate-42-2-e52bbf8ac1",
       "candidate_id": "candidate-42-2",
-      "fingerprint": "sha256:ffdcc8a09b55e548bca7f23eabb7b715bf89d4ae0429e86f8ced65bcd4d29f37",
+      "fingerprint": "sha256:1901db45cb924cc4e03f1f9bcdfadee2f9f0fe42e5d1c668a2b85be52bbf8ac1",
       "version": "0.1.0",
       "checks": [
         {
@@ -7179,7 +7179,7 @@
             "upper_arm": 0.28,
             "forearm": 0.25,
             "endpoint_offset_sum_m": 0.0,
-            "fingerprint": "sha256:ffdcc8a09b55e548bca7f23eabb7b715bf89d4ae0429e86f8ced65bcd4d29f37"
+            "fingerprint": "sha256:1901db45cb924cc4e03f1f9bcdfadee2f9f0fe42e5d1c668a2b85be52bbf8ac1"
           }
         },
         {
@@ -7205,7 +7205,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 78.55
+            "elapsed_ms": 71.59
           }
         },
         {
@@ -7221,7 +7221,7 @@
             "upper_arm": 0.28,
             "forearm": 0.25,
             "endpoint_offset_sum_m": 0.0,
-            "fingerprint": "sha256:ffdcc8a09b55e548bca7f23eabb7b715bf89d4ae0429e86f8ced65bcd4d29f37"
+            "fingerprint": "sha256:1901db45cb924cc4e03f1f9bcdfadee2f9f0fe42e5d1c668a2b85be52bbf8ac1"
           }
         },
         {
@@ -7246,7 +7246,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 3.5
+            "elapsed_ms": 3.3
           }
         },
         {
@@ -7262,7 +7262,7 @@
             "upper_arm": 0.28,
             "forearm": 0.25,
             "endpoint_offset_sum_m": 0.0,
-            "fingerprint": "sha256:ffdcc8a09b55e548bca7f23eabb7b715bf89d4ae0429e86f8ced65bcd4d29f37"
+            "fingerprint": "sha256:1901db45cb924cc4e03f1f9bcdfadee2f9f0fe42e5d1c668a2b85be52bbf8ac1"
           }
         },
         {
@@ -7288,7 +7288,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 134.13
+            "elapsed_ms": 125.16
           }
         },
         {
@@ -7313,7 +7313,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 3.53
+            "elapsed_ms": 3.31
           }
         },
         {
@@ -7329,7 +7329,7 @@
             "upper_arm": 0.28,
             "forearm": 0.25,
             "endpoint_offset_sum_m": 0.0,
-            "fingerprint": "sha256:ffdcc8a09b55e548bca7f23eabb7b715bf89d4ae0429e86f8ced65bcd4d29f37"
+            "fingerprint": "sha256:1901db45cb924cc4e03f1f9bcdfadee2f9f0fe42e5d1c668a2b85be52bbf8ac1"
           }
         },
         {
@@ -7355,7 +7355,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 100.45
+            "elapsed_ms": 94.47
           }
         },
         {
@@ -7371,7 +7371,7 @@
             "upper_arm": 0.28,
             "forearm": 0.25,
             "endpoint_offset_sum_m": 0.0,
-            "fingerprint": "sha256:ffdcc8a09b55e548bca7f23eabb7b715bf89d4ae0429e86f8ced65bcd4d29f37"
+            "fingerprint": "sha256:1901db45cb924cc4e03f1f9bcdfadee2f9f0fe42e5d1c668a2b85be52bbf8ac1"
           }
         },
         {
@@ -7396,7 +7396,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 3.39
+            "elapsed_ms": 3.15
           }
         },
         {
@@ -7412,7 +7412,7 @@
             "upper_arm": 0.28,
             "forearm": 0.25,
             "endpoint_offset_sum_m": 0.0,
-            "fingerprint": "sha256:ffdcc8a09b55e548bca7f23eabb7b715bf89d4ae0429e86f8ced65bcd4d29f37"
+            "fingerprint": "sha256:1901db45cb924cc4e03f1f9bcdfadee2f9f0fe42e5d1c668a2b85be52bbf8ac1"
           }
         },
         {
@@ -7438,7 +7438,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 112.74
+            "elapsed_ms": 106.11
           }
         },
         {
@@ -7463,7 +7463,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 3.45
+            "elapsed_ms": 3.2
           }
         },
         {
@@ -7479,7 +7479,7 @@
             "upper_arm": 0.28,
             "forearm": 0.25,
             "endpoint_offset_sum_m": 0.0,
-            "fingerprint": "sha256:ffdcc8a09b55e548bca7f23eabb7b715bf89d4ae0429e86f8ced65bcd4d29f37"
+            "fingerprint": "sha256:1901db45cb924cc4e03f1f9bcdfadee2f9f0fe42e5d1c668a2b85be52bbf8ac1"
           }
         },
         {
@@ -7505,7 +7505,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 119.54
+            "elapsed_ms": 116.0
           }
         },
         {
@@ -7660,7 +7660,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 78.55
+            "elapsed_ms": 71.59
           },
           "state_id": "s0"
         },
@@ -7778,7 +7778,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 3.5
+            "elapsed_ms": 3.3
           },
           "state_id": "s1"
         },
@@ -7897,7 +7897,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 134.13
+            "elapsed_ms": 125.16
           },
           "state_id": "s2"
         },
@@ -8015,7 +8015,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 3.53
+            "elapsed_ms": 3.31
           },
           "state_id": "s3"
         },
@@ -8134,7 +8134,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 100.45
+            "elapsed_ms": 94.47
           },
           "state_id": "s4"
         },
@@ -8252,7 +8252,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 3.39
+            "elapsed_ms": 3.15
           },
           "state_id": "s5"
         },
@@ -8371,7 +8371,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 112.74
+            "elapsed_ms": 106.11
           },
           "state_id": "s6"
         },
@@ -8489,7 +8489,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 3.45
+            "elapsed_ms": 3.2
           },
           "state_id": "s7"
         },
@@ -8608,7 +8608,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 119.54
+            "elapsed_ms": 116.0
           },
           "state_id": "s8"
         }
@@ -8618,12 +8618,12 @@
         "passed": 23,
         "total": 23
       },
-      "elapsed_ms": 578.23
+      "elapsed_ms": 543.77
     },
     {
-      "id": "eval-candidate-42-3-aeb9030f54",
+      "id": "eval-candidate-42-3-5b88e7fa00",
       "candidate_id": "candidate-42-3",
-      "fingerprint": "sha256:acbbf93c22a6a5dfb217908399a38baf37012fd9f939ebc1782655aeb9030f54",
+      "fingerprint": "sha256:8408d0dd344a9aa3f5a4f7fb0b5cb6834bf3b30e936f1b2f6a2b025b88e7fa00",
       "version": "0.1.0",
       "checks": [
         {
@@ -8728,7 +8728,7 @@
             "upper_arm": 0.28,
             "forearm": 0.25,
             "endpoint_offset_sum_m": 0.0,
-            "fingerprint": "sha256:acbbf93c22a6a5dfb217908399a38baf37012fd9f939ebc1782655aeb9030f54"
+            "fingerprint": "sha256:8408d0dd344a9aa3f5a4f7fb0b5cb6834bf3b30e936f1b2f6a2b025b88e7fa00"
           }
         },
         {
@@ -8754,7 +8754,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 73.06
+            "elapsed_ms": 71.64
           }
         },
         {
@@ -8770,7 +8770,7 @@
             "upper_arm": 0.28,
             "forearm": 0.25,
             "endpoint_offset_sum_m": 0.0,
-            "fingerprint": "sha256:acbbf93c22a6a5dfb217908399a38baf37012fd9f939ebc1782655aeb9030f54"
+            "fingerprint": "sha256:8408d0dd344a9aa3f5a4f7fb0b5cb6834bf3b30e936f1b2f6a2b025b88e7fa00"
           }
         },
         {
@@ -8795,7 +8795,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 3.43
+            "elapsed_ms": 3.63
           }
         },
         {
@@ -8811,7 +8811,7 @@
             "upper_arm": 0.28,
             "forearm": 0.25,
             "endpoint_offset_sum_m": 0.0,
-            "fingerprint": "sha256:acbbf93c22a6a5dfb217908399a38baf37012fd9f939ebc1782655aeb9030f54"
+            "fingerprint": "sha256:8408d0dd344a9aa3f5a4f7fb0b5cb6834bf3b30e936f1b2f6a2b025b88e7fa00"
           }
         },
         {
@@ -8837,7 +8837,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 109.15
+            "elapsed_ms": 105.96
           }
         },
         {
@@ -8862,7 +8862,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 3.44
+            "elapsed_ms": 3.29
           }
         },
         {
@@ -8878,7 +8878,7 @@
             "upper_arm": 0.28,
             "forearm": 0.25,
             "endpoint_offset_sum_m": 0.0,
-            "fingerprint": "sha256:acbbf93c22a6a5dfb217908399a38baf37012fd9f939ebc1782655aeb9030f54"
+            "fingerprint": "sha256:8408d0dd344a9aa3f5a4f7fb0b5cb6834bf3b30e936f1b2f6a2b025b88e7fa00"
           }
         },
         {
@@ -8904,7 +8904,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 71.84
+            "elapsed_ms": 68.13
           }
         },
         {
@@ -8920,7 +8920,7 @@
             "upper_arm": 0.28,
             "forearm": 0.25,
             "endpoint_offset_sum_m": 0.0,
-            "fingerprint": "sha256:acbbf93c22a6a5dfb217908399a38baf37012fd9f939ebc1782655aeb9030f54"
+            "fingerprint": "sha256:8408d0dd344a9aa3f5a4f7fb0b5cb6834bf3b30e936f1b2f6a2b025b88e7fa00"
           }
         },
         {
@@ -8945,7 +8945,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 3.43
+            "elapsed_ms": 3.25
           }
         },
         {
@@ -8961,7 +8961,7 @@
             "upper_arm": 0.28,
             "forearm": 0.25,
             "endpoint_offset_sum_m": 0.0,
-            "fingerprint": "sha256:acbbf93c22a6a5dfb217908399a38baf37012fd9f939ebc1782655aeb9030f54"
+            "fingerprint": "sha256:8408d0dd344a9aa3f5a4f7fb0b5cb6834bf3b30e936f1b2f6a2b025b88e7fa00"
           }
         },
         {
@@ -8987,7 +8987,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 115.72
+            "elapsed_ms": 109.57
           }
         },
         {
@@ -9012,7 +9012,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 3.49
+            "elapsed_ms": 3.25
           }
         },
         {
@@ -9028,7 +9028,7 @@
             "upper_arm": 0.28,
             "forearm": 0.25,
             "endpoint_offset_sum_m": 0.0,
-            "fingerprint": "sha256:acbbf93c22a6a5dfb217908399a38baf37012fd9f939ebc1782655aeb9030f54"
+            "fingerprint": "sha256:8408d0dd344a9aa3f5a4f7fb0b5cb6834bf3b30e936f1b2f6a2b025b88e7fa00"
           }
         },
         {
@@ -9054,7 +9054,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 90.0
+            "elapsed_ms": 82.82
           }
         },
         {
@@ -9209,7 +9209,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 73.06
+            "elapsed_ms": 71.64
           },
           "state_id": "s0"
         },
@@ -9327,7 +9327,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 3.43
+            "elapsed_ms": 3.63
           },
           "state_id": "s1"
         },
@@ -9446,7 +9446,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 109.15
+            "elapsed_ms": 105.96
           },
           "state_id": "s2"
         },
@@ -9564,7 +9564,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 3.44
+            "elapsed_ms": 3.29
           },
           "state_id": "s3"
         },
@@ -9683,7 +9683,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 71.84
+            "elapsed_ms": 68.13
           },
           "state_id": "s4"
         },
@@ -9801,7 +9801,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 3.43
+            "elapsed_ms": 3.25
           },
           "state_id": "s5"
         },
@@ -9920,7 +9920,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 115.72
+            "elapsed_ms": 109.57
           },
           "state_id": "s6"
         },
@@ -10038,7 +10038,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 3.49
+            "elapsed_ms": 3.25
           },
           "state_id": "s7"
         },
@@ -10157,7 +10157,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 90.0
+            "elapsed_ms": 82.82
           },
           "state_id": "s8"
         }
@@ -10167,12 +10167,12 @@
         "passed": 23,
         "total": 23
       },
-      "elapsed_ms": 491.45
+      "elapsed_ms": 468.92
     }
   ],
   "manifest": {
     "engine_version": "0.1.0",
-    "code_hash": "sha256:f79d7ece1320201c6f02fa7d47e68eedf95551990cdd7a2e3739bf7ab092ee59",
+    "code_hash": "sha256:17247b8606a4e1edaa0ce8766f69fccd0cdc7fbb63b3821fbb09de3cb5e8e062",
     "source": "synthetic_assumption",
     "python": "3.11.15",
     "numpy": "2.4.6",
@@ -10188,7 +10188,7 @@
       "连续动作转换",
       "真实难度与体验"
     ],
-    "bundle_digest": "sha256:db4ce4743ce798c1872ea2138254f00bd097314b1f126f3c6514dd5a26248913"
+    "bundle_digest": "sha256:99da6596b59716d3570d4f81924aa73a6a31a8c5e8ad6f9107049f8341d24628"
   },
   "reviews": []
 }

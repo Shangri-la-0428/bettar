@@ -17,6 +17,7 @@ import numpy as np
 
 from .full_route import _history
 from .geometry import selected_contact, wall_basis
+from .route_constraints import allowed_contact_ids, constraint_errors
 from .route_design import DIMS, _context, _metrics, _ref, _valid_contact_geometry
 
 MODEL_VERSION = "independent-beta-proxy-3"
@@ -259,6 +260,9 @@ def _deletion_challenges(request, original, *, deadline=None):
 
 
 def _search(request, original, objective, options, *, deadline=None):
+    restrictions = constraint_errors(request, original["placements"], states=original["states"][:1])
+    if restrictions:
+        raise ValueError("; ".join(restrictions))
     context = _audit_context(request, original["placements"])
     start = _key(original["states"][0]["contacts"])
     goal = request["end_contacts"]["LH"]["placement_id"]
@@ -266,7 +270,8 @@ def _search(request, original, objective, options, *, deadline=None):
     arm = request["body"]["upper_arm"]+request["body"]["forearm"]
     leg = request["body"]["thigh"]+request["body"]["shin"]
     ordered = sorted(context, key=lambda p: (context[p]["key"], p))
-    targets = {limb: [p for p in ordered if limb in context[p]["limbs"]] for limb in LIMBS}
+    allowed = allowed_contact_ids(request, original["placements"])
+    targets = {limb: [p for p in ordered if p in allowed[limb]] for limb in LIMBS}
     rejected = Counter()
     def remaining(key):
         # Ranking only, not an admissible optimality proof. Both hands must

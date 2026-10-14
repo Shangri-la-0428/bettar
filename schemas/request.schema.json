@@ -1391,6 +1391,24 @@
         }
       }
     },
+    "route_constraints": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["allowed_contacts"],
+      "properties": {
+        "allowed_contacts": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["LH", "RH", "LF", "RF"],
+          "properties": {
+            "LH": {"$ref": "#/$defs/contactPlacementIds"},
+            "RH": {"$ref": "#/$defs/contactPlacementIds"},
+            "LF": {"$ref": "#/$defs/contactPlacementIds"},
+            "RF": {"$ref": "#/$defs/contactPlacementIds"}
+          }
+        }
+      }
+    },
     "mechanics_parameters": {
       "type": "object"
     }
@@ -1413,6 +1431,13 @@
     "end_contacts"
   ],
   "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$defs": {
+    "contactPlacementIds": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {"type": "string", "minLength": 1, "maxLength": 120}
+    }
+  },
   "allOf": [
     {
       "if": {

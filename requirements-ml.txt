@@ -1,0 +1,4 @@
+# Optional, isolated CPU inference. The normal application does not need this.
+# Match upstream production torch 2.10.0; no pandas/sklearn/joblib is needed.
+torch==2.10.0
+numpy==2.4.6

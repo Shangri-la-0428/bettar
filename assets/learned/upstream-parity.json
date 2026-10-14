@@ -1,0 +1,22 @@
+{
+  "method": "AST selected pinned upstream Noiser/ClimbDDPM/ClimbDDPMGenerator classes, original generate method, same features/condition/seed, captured final tensor before indices",
+  "cases": [
+    {
+      "grade": 16,
+      "seed": 0,
+      "exact_tensor_match": true,
+      "max_absolute_difference": 0.0
+    },
+    {
+      "grade": 16,
+      "seed": 3,
+      "exact_tensor_match": true,
+      "max_absolute_difference": 0.0
+    }
+  ],
+  "upstream_commit": "6f0acb414a5f1ab070aa62d02ac98f2602011821",
+  "weight_sha256": "b8bf14a7e5a82a78b4516ab3e382c3fa0d6edab83378f5f3b038301fca0de5aa",
+  "torch": "2.10.0",
+  "numpy": "2.4.6",
+  "platform": "macOS arm64 CPU"
+}
