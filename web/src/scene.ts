@@ -161,7 +161,34 @@ export class WallView {
       this.cancelDrag(); if (moved && this.editMode && this.request?.mode !== 'fixed') this.onMove?.(drag.id, drag.u, drag.v); return;
     }
     if (Math.hypot(event.clientX - this.clickStart.x, event.clientY - this.clickStart.y) > 5) return;
-    this.setRay(event); const hit = this.raycaster.intersectObjects(this.pickables.filter(object => this.holdGroups.get(String(object.userData.id))?.visible), false)[0]; if (hit?.object.userData.id) this.onSelect(String(hit.object.userData.id));
+    this.setRay(event); const hit = this.raycaster.intersectObjects(this.pickables.filter(object => this.holdGroups.get(String(object.userData.id))?.visible), false)[0];
+    const id = hit?.object.userData.id || this.nearestVisibleHold(event); if (id) this.onSelect(String(id));
+  }
+  private nearestVisibleHold(event: PointerEvent): string | undefined {
+    // A small click allowance helps tiny footholds without changing drag geometry.
+    const bounds = this.renderer.domElement.getBoundingClientRect();
+    const nearby: { id: string; point: THREE.Vector3; distance: number; depth: number }[] = [];
+    this.scene.updateMatrixWorld(true); this.camera.updateMatrixWorld(true);
+    for (const object of this.pickables) {
+      const id = String(object.userData.id);
+      if (!(object instanceof THREE.Mesh) || !object.userData.resin || !object.visible || !this.holdGroups.get(id)?.visible) continue;
+      const point = new THREE.Box3().setFromObject(object).getCenter(new THREE.Vector3()), projected = point.clone().project(this.camera);
+      if (Math.abs(projected.x) > 1 || Math.abs(projected.y) > 1 || Math.abs(projected.z) > 1) continue;
+      const x = bounds.left + (projected.x + 1) * bounds.width / 2, y = bounds.top + (1 - projected.y) * bounds.height / 2;
+      const distance = Math.hypot(event.clientX - x, event.clientY - y);
+      if (distance <= 12) nearby.push({ id, point: projected, distance, depth: this.camera.position.distanceTo(point) });
+    }
+    if (!nearby.length) return;
+    const occluders: THREE.Object3D[] = [];
+    this.wallGroup.traverseVisible(object => {
+      if (object instanceof THREE.Mesh && !object.userData.surfaceOverlay) occluders.push(object);
+    });
+    for (const candidate of nearby.sort((a, b) => a.distance - b.distance || a.depth - b.depth)) {
+      // Never promote a nearby hold whose centre is hidden behind the wall or another hold.
+      this.raycaster.setFromCamera(new THREE.Vector2(candidate.point.x, candidate.point.y), this.camera);
+      const hit = this.raycaster.intersectObjects(occluders, false)[0];
+      if (hit?.object.userData.id === candidate.id) return candidate.id;
+    }
   }
   private cancelDrag() {
     const drag = this.drag; if (!drag) return; this.drag = undefined;
@@ -355,11 +382,15 @@ export class WallView {
       const text = top ? '终点 TOP' : zone ? 'ZONE' : start!.some(limb => limb.endsWith('H')) ? '起手 START' : '起脚';
       const markerOffset: Vec3 = top && ['route', 'setting'].includes(this.request.profile || '') ? [0, hold.height / 2 + .33, .015] : [0, -hold.height / 2 - .07, .015];
       const marker = this.label(text, new THREE.Vector3(...transformPoint(frame, markerOffset)), `route-marker ${top ? 'top' : zone ? 'zone' : 'start'}`);
+      if (!top && !zone) { marker.center.set(1, .5); marker.element.style.marginLeft = '-16px'; }
       this.markerGroup.add(marker);
     }
     for (const kind of ['hand', 'foot'] as const) {
       const points = startGroups[kind];
-      if (points.length) this.markerGroup.add(this.label(kind === 'hand' ? '起手 START' : '起脚', points.reduce((sum, p) => sum.add(p), new THREE.Vector3()).divideScalar(points.length), 'route-marker start'));
+      if (points.length) {
+        const marker = this.label(kind === 'hand' ? '起手 START' : '起脚', points.reduce((sum, p) => sum.add(p), new THREE.Vector3()).divideScalar(points.length), 'route-marker start');
+        marker.center.set(1, .5); marker.element.style.marginLeft = '-16px'; this.markerGroup.add(marker);
+      }
     }
   }
   private drawRoute() {
@@ -484,12 +515,41 @@ export class WallView {
     });
   }
 
-  private wallTarget() { return this.panelBounds()?.getCenter(new THREE.Vector3()) || this.wallPosition(0, (this.request?.scene.height || 3) / 2, .08); }
-  front() {
-    this.cancelDrag(); const target = this.wallTarget();
-    this.controls.target.copy(target); this.camera.position.copy(target).add(this.wallPosition(0, 0, this.fitDistance())); this.controls.update();
+  private portraitRouteBounds(): THREE.Box3 | undefined {
+    if (this.camera.aspect >= .85 || !this.candidate) return;
+    const route = this.usedPlacements().visible;
+    Object.values(this.request?.route_constraints?.allowed_contacts || {}).flat().forEach(id => route.add(id));
+    // Include structural parents so fitted children remain visually attached to their volumes.
+    for (const placement of this.candidate.placements) if (route.has(placement.id) && placement.mount) route.add(placement.mount.parent_id);
+    const bounds = new THREE.Box3();
+    for (const [id, group] of this.holdGroups) {
+      if (!route.size || this.candidate.layout_report || route.has(id)) bounds.expandByObject(group);
+    }
+    if (bounds.isEmpty()) return;
+    // Keep surrounding wall and room for start/top labels, even on a very short route.
+    const centre = bounds.getCenter(new THREE.Vector3()), size = bounds.getSize(new THREE.Vector3());
+    size.set(Math.max(size.x + .7, 1.35), Math.max(size.y + .9, 1.8), size.z + .3);
+    return bounds.setFromCenterAndSize(centre, size);
   }
-  private fitDistance() {
+  private wallTarget() { return this.portraitRouteBounds()?.getCenter(new THREE.Vector3()) || this.panelBounds()?.getCenter(new THREE.Vector3()) || this.wallPosition(0, (this.request?.scene.height || 3) / 2, .08); }
+  front() {
+    this.cancelDrag(); const target = this.wallTarget(), direction = this.wallPosition(0, 0, 1).normalize();
+    const distance = this.fitDistance(direction);
+    this.controls.target.copy(target); this.camera.position.copy(target).addScaledVector(direction, distance); this.controls.update();
+  }
+  private fitDistance(direction = this.camera.position.clone().sub(this.controls.target).normalize()) {
+    const routeBounds = this.portraitRouteBounds();
+    if (routeBounds) {
+      const target = routeBounds.getCenter(new THREE.Vector3()), right = new THREE.Vector3().crossVectors(this.camera.up, direction).normalize();
+      const up = new THREE.Vector3().crossVectors(direction, right).normalize();
+      const vertical = Math.tan(THREE.MathUtils.degToRad(this.camera.getEffectiveFOV() / 2)), horizontal = vertical * this.camera.aspect;
+      let distance = this.controls.minDistance;
+      for (const x of [routeBounds.min.x, routeBounds.max.x]) for (const y of [routeBounds.min.y, routeBounds.max.y]) for (const z of [routeBounds.min.z, routeBounds.max.z]) {
+        const point = new THREE.Vector3(x, y, z).sub(target), depth = point.dot(direction);
+        distance = Math.max(distance, depth + Math.abs(point.dot(right)) * 1.08 / horizontal, depth + Math.abs(point.dot(up)) * 1.08 / vertical);
+      }
+      return distance;
+    }
     const dimensions = this.panelBounds()?.getSize(new THREE.Vector3());
     const width = dimensions?.x || this.request?.scene.width || 3, height = dimensions?.y || this.request?.scene.height || 3;
     return (dimensions?.z || 0) * .6 + Math.max(height + .75, (width + .6) / Math.max(this.camera.aspect, .4)) / (2 * Math.tan(THREE.MathUtils.degToRad(this.camera.fov / 2))) * 1.08;
@@ -497,12 +557,12 @@ export class WallView {
   perspective() {
     this.cancelDrag();
     const target = this.wallTarget();
-    const distance = this.fitDistance();
     const profile = this.request?.setting_design?.wall_profile;
     const direction = profile === 'roof' ? new THREE.Vector3(.5, -.1, .86)
       : profile === 'dihedral' || profile === 'arete' ? new THREE.Vector3(.42, .1, .9)
       : new THREE.Vector3(.28, .1, .955);
-    this.camera.position.copy(target).add(direction.normalize().multiplyScalar(distance));
+    direction.normalize(); const distance = this.fitDistance(direction);
+    this.camera.position.copy(target).addScaledVector(direction, distance);
     this.controls.target.copy(target); this.controls.update();
   }
 }

@@ -29,6 +29,14 @@ assert.equal(study.routes.length, 3);
 const choices = ownRouteChoicesHTML(study, study.routes[0].id, false);
 assert.equal((choices.match(/data-action="own-route"/g) || []).length, 3);
 assert.equal((choices.match(/aria-pressed="true"/g) || []).length, 1);
+assert.ok(!choices.includes('<table') && !choices.includes('<small') && !choices.includes('own-route-number'), 'route switching has no statistics, descriptions, or decorative numbering');
+for (const route of study.routes) {
+  assert.ok(choices.includes(route.label), 'route switch keeps the actual route name');
+  assert.ok(!choices.includes(route.intent), 'route intent belongs in optional details');
+}
+assert.equal((ownRouteChoicesHTML(study, '', true).match(/disabled/g) || []).length, 3, 'busy state disables every route switch');
+const failedChoices = ownRouteChoicesHTML(undefined, '', false, '读取失败');
+assert.ok(failedChoices.includes('读取失败') && failedChoices.includes('data-action="own-route-reload"'), 'loading errors retain an actionable retry');
 let contacts = 0, standingContacts = 0, handToFootMoments = 0;
 const routes = [];
 for (const route of study.routes) {
@@ -59,14 +67,32 @@ for (const route of study.routes) {
     }
     contacts++;
   }
-  const html = ownRouteDetailHTML(route, bundle, candidate, evaluation, false);
+  const html = ownRouteDetailHTML(route, bundle, candidate, evaluation, false, study);
+  const disclosure = html.indexOf('<details class="own-route-disclosure">');
+  assert.ok(disclosure > 0 && !html.includes('<details class="own-route-disclosure" open'), 'advanced route information is collapsed by default');
+  assert.equal((html.match(/<details /g) || []).length, 1, 'route details do not create nested accordions');
+  const compact = html.slice(0, disclosure);
+  assert.ok(compact.includes(route.label) && compact.includes(`移手 ${metrics.handTransfers} · 换脚 ${metrics.footTransfers}`), 'compact summary shows the actual route and movement count');
+  assert.ok(!compact.includes(route.intent) && !compact.includes('<table') && !compact.includes('data-action="phase"'), 'long copy, statistics, and contact navigation are optional');
+  assert.ok(compact.includes('支撑需调整'), 'known support gaps remain visible without opening details');
+  assert.ok(html.indexOf('<table') > disclosure && html.includes('三条线路对照'), 'the full comparison remains reachable inside route details');
   const mislabeledStage = { ...route, completion: { ...route.completion, before: { ...route.completion.before, status: 'complete' } } };
   assert.ok(ownRouteDetailHTML(mislabeledStage, bundle, candidate, evaluation, false).includes('补全前预算内未找到完整走法'), 'stage label cannot overrule validated incomplete evidence');
   assert.ok(html.includes(route.label), 'actual route label shown');
   assert.ok(html.includes('几何通过不代表静态支撑全部通过'), 'geometric and mechanical checks remain distinct');
   assert.equal((html.match(/data-action="phase"/g) || []).length, metrics.handToFoot.length, 'every hand-to-foot moment is locatable');
   const stale = ownRouteDetailHTML(route, bundle, candidate, undefined, true);
-  assert.ok(stale.includes('修订待检查') && stale.includes('待重算'), 'stale detail cannot show previous check status');
+  assert.ok(stale.slice(0, stale.indexOf('<details')).includes('修改后待检查') && stale.includes('待重算') && !stale.includes('支撑需调整'), 'stale detail cannot show previous check status');
+  const incomplete = ownRouteDetailHTML(route, bundle, { ...candidate, layout_report: {} }, evaluation, false);
+  assert.ok(incomplete.slice(0, incomplete.indexOf('<details')).includes('预算内未找到完整走法'), 'incomplete search remains visible without opening details');
+  const geometryFailed = ownRouteDetailHTML(route, bundle, candidate, { ...evaluation, summary: { ...evaluation.summary, status: 'fail' } }, false);
+  assert.ok(geometryFailed.slice(0, geometryFailed.indexOf('<details')).includes('几何需调整'), 'failed geometric checks remain visible without opening details');
+  const unchecked = ownRouteDetailHTML(route, bundle, candidate, undefined, false);
+  assert.ok(unchecked.slice(0, unchecked.indexOf('<details')).includes('待检查'), 'missing checks are not labeled ready for climbing');
+  const unknown = ownRouteDetailHTML(route, bundle, candidate, { ...evaluation, mechanics_report: { ...evaluation.mechanics_report, summary: { ...evaluation.mechanics_report.summary, status: 'unknown' } } }, false);
+  assert.ok(unknown.slice(0, unknown.indexOf('<details')).includes('支撑待核查'), 'unknown mechanics are not labeled passed');
+  const escapedDetail = ownRouteDetailHTML({ ...route, intent: '<script>unsafe</script>' }, bundle, candidate, evaluation, false);
+  assert.ok(!escapedDetail.includes('<script>') && escapedDetail.includes('&lt;script&gt;'), 'optional route description is escaped');
   routes.push({ id: route.id, movements: candidate.events.length, stepped_handholds: metrics.steppedHandholds, hand_to_foot: uiHandToFoot });
 }
 assert.ok(standingContacts > 0 && handToFootMoments > 0, 'saved examples exercise concrete foot surfaces and hand-to-foot transitions');

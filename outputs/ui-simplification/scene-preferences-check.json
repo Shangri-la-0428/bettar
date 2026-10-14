@@ -1,0 +1,14 @@
+{
+  "status": "pass",
+  "palettes": 3,
+  "inventory_instances": 18,
+  "geometry_comparisons": 54,
+  "checks": [
+    "view-only copy",
+    "one route colour across hand and foot types",
+    "coordinated volumes",
+    "identical vertices and topology",
+    "original bundle and calculation fingerprints unmodified",
+    "saved preference fallback"
+  ]
+}

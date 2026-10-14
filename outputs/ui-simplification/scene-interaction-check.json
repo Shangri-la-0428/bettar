@@ -1,0 +1,137 @@
+{
+  "status": "pass",
+  "scope": "Scene presentation and click-selection changes in web/src/scene.ts. Records completed non-browser checks; does not claim browser interaction coverage.",
+  "runtime": {
+    "node": "v24.14.1"
+  },
+  "checks": [
+    {
+      "name": "TypeScript",
+      "status": "pass",
+      "cwd": "/Users/wutongcheng/Desktop/Betar/web",
+      "command": "npx tsc --noEmit",
+      "exit_code": 0
+    },
+    {
+      "name": "scene presentation preferences",
+      "status": "pass",
+      "cwd": "/Users/wutongcheng/Desktop/Betar",
+      "command": "node --experimental-strip-types web/scripts/verify-scene-preferences.mjs",
+      "exit_code": 0,
+      "palettes": 3,
+      "inventory_instances": 18,
+      "geometry_comparisons": 54,
+      "assertions": [
+        "view-only display copy",
+        "shared route colour across hand and foot types",
+        "coordinated volumes",
+        "identical vertices and topology",
+        "original bundle and calculation fingerprints unmodified",
+        "saved preference fallback"
+      ]
+    },
+    {
+      "name": "hold display models",
+      "status": "pass",
+      "cwd": "/Users/wutongcheng/Desktop/Betar",
+      "command": "node --experimental-strip-types web/scripts/verify-hold-models.mjs",
+      "exit_code": 0,
+      "holds": 22,
+      "assertions": [
+        "declared envelope",
+        "finite geometry",
+        "picking IDs",
+        "default contact alignment",
+        "deterministic geometry",
+        "comparison geometry parity",
+        "explicit route colors",
+        "metric fastenings",
+        "distinct competition silhouettes",
+        "pocket recessed geometry",
+        "crimp narrow edge"
+      ]
+    },
+    {
+      "name": "placement geometry parity",
+      "status": "pass",
+      "cwd": "/Users/wutongcheng/Desktop/Betar",
+      "command": "BETAR_PYTHON=.venv/bin/python node --experimental-strip-types web/scripts/verify-placement-geometry.mjs",
+      "exit_code": 0,
+      "comparisons": 1748,
+      "own_route_contacts": 257,
+      "explicit_foot_contacts": 40,
+      "assertions": [
+        "Python frame/contact/normal parity",
+        "wall and face inverse drag",
+        "selected-surface main alias",
+        "legacy contact preserved",
+        "parent translation and rotation inheritance",
+        "cancelled preview restoration",
+        "multi-axis panel rotation and translated origin",
+        "panel-mounted volume child inherits transform",
+        "invalid panel mount omitted",
+        "front corner elevation measured above y=0 separately from layout height",
+        "saved wall profile panel corners, placement axes and selected mesh contact frames"
+      ]
+    },
+    {
+      "name": "scene camera and near-pick in-memory harness",
+      "status": "pass",
+      "kind": "Node algorithm check; not a browser interaction test",
+      "cwd": "/Users/wutongcheng/Desktop/Betar/web",
+      "execution": "Run the source below with node through stdin (node <<'NODE' ... NODE) from web/. esbuild bundles the current scene.ts in memory with write:false. Module._compile receives a virtual absolute filename; no __scene-check.cjs or test script is written.",
+      "method": "Calls WallView prototype methods on explicit fixtures without invoking its browser constructor. Uses real Three.js cameras, model geometry, projection and raycasting; substitutes only canvas bounds and the minimal controls state. The picking case uses synthetic 3 cm geometry and a separate opaque blocker.",
+      "source": "const fs = require('node:fs'), path = require('node:path'), assert = require('node:assert/strict');\nconst { buildSync } = require('esbuild'), Module = require('node:module');\nconst result = buildSync({ entryPoints: ['src/scene.ts'], bundle: true, platform: 'node', format: 'cjs', packages: 'external', write: false, logLevel: 'silent' });\nconst filename = path.join(process.cwd(), '__scene-check.cjs'), compiled = new Module(filename);\ncompiled.paths = Module._nodeModulePaths(process.cwd());\ncompiled._compile(result.outputFiles[0].text, filename);\nconst { WallView } = compiled.exports, THREE = require('three');\nconst { createHoldModel } = require('./src/hold-models.ts');\nconst { tryPlacementFrame } = require('./src/placement-geometry.ts');\nconst { registerHoldAssetLibrary } = require('./src/hold-assets.ts');\nregisterHoldAssetLibrary(JSON.parse(fs.readFileSync('../assets/holds/library.json', 'utf8')));\nconst bundle = JSON.parse(fs.readFileSync('../fixtures/setting-diagonal_balance-bundle.json', 'utf8'));\nconst view = Object.create(WallView.prototype);\nObject.assign(view, { request: bundle.request, candidate: bundle.candidates[0], camera: new THREE.PerspectiveCamera(34, .53, .01, 100), controls: { minDistance: .35, target: new THREE.Vector3(0, 1.5, 0) }, holdGroups: new Map() });\nview.camera.position.set(2.9, 2.25, 5.25);\nconst context = { angleDeg: bundle.request.scene.angle_deg, inventory: bundle.request.scene.inventory, wallPanels: bundle.request.scene.wall_panels, placements: view.candidate.placements };\nconst holds = new Map(bundle.request.scene.inventory.map(h => [h.id, h]));\nfor (const p of view.candidate.placements) {\n  const h = holds.get(p.inventory_id), frame = tryPlacementFrame(p, context);\n  if (!h || !frame) continue;\n  const group = createHoldModel(h, { id: p.id });\n  view.applyFrame(group, frame); view.holdGroups.set(p.id, group);\n}\nconst direction = new THREE.Vector3(.28, .1, .955).normalize();\nconst route = view.portraitRouteBounds(), target = view.wallTarget(), distance = view.fitDistance(direction);\nview.camera.position.copy(target).addScaledVector(direction, distance);\nview.camera.lookAt(target); view.camera.updateMatrixWorld(); view.camera.updateProjectionMatrix();\nlet maximum = 0;\nfor (const x of [route.min.x, route.max.x]) for (const y of [route.min.y, route.max.y]) for (const z of [route.min.z, route.max.z]) {\n  const screen = new THREE.Vector3(x, y, z).project(view.camera);\n  maximum = Math.max(maximum, Math.abs(screen.x), Math.abs(screen.y));\n  assert.ok(Math.abs(screen.x) <= 1 && Math.abs(screen.y) <= 1, 'route envelope inside portrait viewport');\n}\nview.camera.aspect = 1.2;\nconst desktop = view.fitDistance(direction);\nassert.equal(view.portraitRouteBounds(), undefined, 'desktop whole-wall fit unchanged');\nconst pick = Object.create(WallView.prototype), scene = new THREE.Scene(), wallGroup = new THREE.Group(), camera = new THREE.PerspectiveCamera(34, 1, .01, 100);\ncamera.position.set(0, 0, 5); camera.lookAt(0, 0, 0); camera.updateProjectionMatrix(); scene.add(wallGroup);\nconst hold = new THREE.Mesh(new THREE.BoxGeometry(.03, .03, .03), new THREE.MeshBasicMaterial()), group = new THREE.Group();\nhold.userData = { id: 'tiny', resin: true }; group.add(hold); wallGroup.add(group);\nObject.assign(pick, { scene, wallGroup, camera, pickables: [hold], holdGroups: new Map([['tiny', group]]), raycaster: new THREE.Raycaster(), renderer: { domElement: { getBoundingClientRect: () => ({ left: 0, top: 0, width: 400, height: 400 }) } } });\nassert.equal(pick.nearestVisibleHold({ clientX: 210, clientY: 200 }), 'tiny', 'near miss selects tiny visible hold');\nassert.equal(pick.nearestVisibleHold({ clientX: 213, clientY: 200 }), undefined, 'outside 12px does not select');\ngroup.visible = false;\nassert.equal(pick.nearestVisibleHold({ clientX: 200, clientY: 200 }), undefined, 'hidden hold never selected');\ngroup.visible = true;\nconst blocker = new THREE.Mesh(new THREE.BoxGeometry(.2, .2, .03), new THREE.MeshBasicMaterial());\nblocker.position.z = .5; wallGroup.add(blocker);\nassert.equal(pick.nearestVisibleHold({ clientX: 210, clientY: 200 }), undefined, 'occluded hold never selected');\nconsole.log(JSON.stringify({ status: 'pass', portrait_distance_m: distance, desktop_distance_m: desktop, max_route_ndc: maximum, checks: ['padded route envelope inside portrait view', 'desktop whole-wall fit unchanged', '12px near miss selects visible hold', 'outside radius ignored', 'hidden hold ignored', 'occluded hold ignored'] }, null, 2));",
+      "exit_code": 0,
+      "results": {
+        "portrait_aspect": 0.53,
+        "desktop_aspect": 1.2,
+        "portrait_distance_m": 9.330407808889758,
+        "desktop_distance_m": 8.814989049208108,
+        "max_route_ndc": 0.9259259259259258,
+        "assertions": [
+          "all padded route-envelope corners fit within portrait NDC [-1,1]",
+          "desktop returns no portrait route bounds",
+          "visible hold selected at 10 px centre offset",
+          "hold ignored at 13 px centre offset",
+          "hidden hold ignored",
+          "hold behind an opaque blocker ignored"
+        ]
+      },
+      "limitations": [
+        "No DOM event dispatch, WebGL render, touch input or browser click sequence is exercised.",
+        "This harness does not verify marker layout, controls damping or preservation of gestures in a browser.",
+        "The camera fixture is setting-diagonal_balance-bundle.json, not the compact-strength browser screenshot."
+      ]
+    },
+    {
+      "name": "diff whitespace",
+      "status": "pass",
+      "cwd": "/Users/wutongcheng/Desktop/Betar",
+      "command": "git diff --check -- web/src/scene.ts",
+      "exit_code": 0
+    }
+  ],
+  "browser_visual_validation": {
+    "owner": "root agent",
+    "separate_from_checks_above": true,
+    "note": "Browser visuals and end-to-end interactions are owned and evidenced by the root task. This file records only this subagent's Node, TypeScript and geometry checks.",
+    "reported_by_root": {
+      "mobile_viewport": [
+        390,
+        844
+      ],
+      "desktop_viewport": [
+        1440,
+        1000
+      ],
+      "observations": [
+        "mobile route holds visibly enlarged",
+        "start and finish remain visible",
+        "left-offset start labels reduce obstruction",
+        "desktop route has no clipping"
+      ]
+    },
+    "reported_observation_source": "Root agent handoff message, not a browser execution by this subagent."
+  }
+}

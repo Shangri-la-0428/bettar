@@ -1,0 +1,175 @@
+{
+  "status": "pass",
+  "date": "2026-10-15",
+  "scope": "Interaction simplification and scene presentation; no changes to route search, force assumptions, backend or saved route studies.",
+  "workflow": [
+    "One draft selector combines the three own-route examples and wall shapes.",
+    "Default workbench contains the wall, optional replay and one check-status entry.",
+    "A selected hold opens its editor; moving hides the editor and keeps canvas bounds stable.",
+    "Reports and research/import tools are separate views.",
+    "Saving preserves the current revision first, with the complete server integrity digest."
+  ],
+  "layout": {
+    "before": {
+      "viewport": [
+        561,
+        692
+      ],
+      "default_page_height_px": 5641,
+      "wall_visible_in_first_viewport": false
+    },
+    "after": [
+      {
+        "viewport": [
+          561,
+          692
+        ],
+        "page_height_px": 692,
+        "wall_top_px": 71,
+        "horizontal_overflow": false
+      },
+      {
+        "viewport": [
+          390,
+          844
+        ],
+        "page_height_px": 844,
+        "wall_top_px": 71,
+        "horizontal_overflow": false
+      },
+      {
+        "viewport": [
+          1440,
+          1000
+        ],
+        "page_height_px": 1000,
+        "horizontal_overflow": false
+      }
+    ],
+    "default_editor_hidden": true,
+    "default_reports_hidden": true,
+    "duplicate_dom_ids": []
+  },
+  "browser_checks": [
+    {
+      "test": "Three saved routes and roof switch through new selector",
+      "status": "pass"
+    },
+    {
+      "test": "Replay begins at start, next follows actual event landing; release/landing inspection remains available",
+      "status": "pass"
+    },
+    {
+      "test": "Check locating a release-state IK result returns to the wall, opens replay and body at 1/13 left foot",
+      "status": "pass"
+    },
+    {
+      "test": "Changing candidate revision hides previous body/replay",
+      "status": "pass"
+    },
+    {
+      "test": "Mobile canvas click opens hold editor only on selection",
+      "status": "pass"
+    },
+    {
+      "test": "Mobile drag produces revision 2 and pending-check state",
+      "status": "pass",
+      "canvas_before_after": {
+        "x": 11,
+        "y": 71,
+        "width": 368,
+        "height": 702
+      },
+      "scroll_y_before_after": 0
+    },
+    {
+      "test": "Rotation adjustment, evaluation and restored navigation",
+      "status": "pass",
+      "geometry": "pass",
+      "static_support": "still needs adjustment"
+    },
+    {
+      "test": "Tools view and import return to workbench; validated export/import preserves current revision 2",
+      "status": "pass",
+      "evidence": "save-roundtrip.json"
+    },
+    {
+      "test": "Wall-load failure preserves previous wall and shows shared notice",
+      "status": "pass"
+    },
+    {
+      "test": "Initial service failure keeps alternative wall choices enabled; service restart recovers",
+      "status": "pass"
+    },
+    {
+      "test": "Fresh reload of final build",
+      "status": "pass",
+      "new_console_errors": []
+    },
+    {
+      "test": "Portrait framing includes start and top in lateral, compact and roof examples",
+      "status": "pass"
+    }
+  ],
+  "automated_checks": [
+    {
+      "command": "npm --prefix web run build",
+      "status": "pass",
+      "warning": "Existing large JavaScript chunk warning remains."
+    },
+    {
+      "command": "node web/scripts/verify-timeline-navigation.mjs",
+      "status": "pass",
+      "evidence": "timeline-check.json"
+    },
+    {
+      "command": "node web/scripts/verify-own-route-ui.mjs",
+      "status": "pass",
+      "evidence": "route-summary-check.json"
+    },
+    {
+      "command": "node web/scripts/verify-scene-preferences.mjs",
+      "status": "pass",
+      "evidence": "scene-preferences-check.json"
+    },
+    {
+      "command": "Scene presentation geometry and pick/fit harness",
+      "status": "pass",
+      "evidence": "scene-interaction-check.json"
+    },
+    {
+      "command": "git diff --check",
+      "status": "pass"
+    }
+  ],
+  "review_fixes": [
+    "Restore action controls when asynchronous work finishes.",
+    "Roll back failed selector changes to the actual displayed draft.",
+    "Keep dragging independent of editor layout and page scrolling.",
+    "Keep current, imported and alternative draft provenance distinct.",
+    "Do not disable the only draft selector on initial load failure.",
+    "Locate state-level checks with visible replay and body.",
+    "Canonicalize saved candidate order before sealing integrity."
+  ],
+  "limitations": [
+    "The three existing examples still contain approximate static-support failures.",
+    "No continuous physical animation or real-climber validation was added.",
+    "Advanced research tools retain their existing technical detail in the secondary view.",
+    "No backend regression suite rerun: backend and saved numerical evidence were unchanged."
+  ],
+  "screenshots": [
+    "browser/compact-mobile-390.jpg",
+    "browser/desktop-1440.jpg",
+    "browser/mobile-390.jpg",
+    "browser/replay-mobile-390.jpg",
+    "browser/roof-mobile-390.jpg",
+    "browser/workbench-561.jpg"
+  ],
+  "source_sha256": {
+    "web/src/main.ts": "98a89750d6dc1d96312fd7bffc4da2ca3eccbdc86995808d5a5375894b136449",
+    "web/src/own-route-study.ts": "23eb8c5ba1acfeceb8780b3a872cc0ad3888fb3bb03690bdc89b70fe0340d079",
+    "web/src/timeline-navigation.ts": "f016335021c7c1d882097d5468cead5904cb206f204fb01b957ea6f98f9d4214",
+    "web/src/workbench.css": "3821cdb2bab8ff2b8816930a44d03250af7d629e822e324766880aa2745fab1e",
+    "web/src/scene.ts": "d035f52013804c375c6fc0d88cf4ee024bce26c3f3ef32fb37be07262e221e20"
+  }
+}

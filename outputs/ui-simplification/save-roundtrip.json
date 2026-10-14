@@ -1,0 +1,25 @@
+{
+  "status": "pass",
+  "sha256": "b41f30ca87c92db5278a522b3e80aa06a2c6c6988ee722163c1ef9bb1d153987",
+  "bytes": 919698,
+  "candidate_order": [
+    {
+      "id": "manual-0e7290ad-34da-46ca-9412-734afc91b752",
+      "revision": 2,
+      "parent_id": "own-lateral-balance"
+    },
+    {
+      "id": "own-lateral-balance",
+      "revision": 1,
+      "parent_id": null
+    }
+  ],
+  "evaluation_count": 2,
+  "browser_import": {
+    "status": "pass",
+    "selected_value": "current",
+    "label": "斜向移重 · 修订 2",
+    "notice_visible": false
+  },
+  "implementation_note": "Current revision is ordered before canonicalization; the server integrity digest covers candidate order. Reordering an already sealed bundle was rejected during development and fixed before final verification."
+}
