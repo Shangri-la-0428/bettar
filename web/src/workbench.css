@@ -3,7 +3,7 @@
 .distilled [hidden] { display: none !important; }
 .distilled .app-header { position: relative; z-index: 60; height: 64px; padding-inline: 24px; gap: 20px; }
 .distilled .brand-caption { display: none; }
-.distilled .draft-switcher { flex: 0 1 320px; min-width: 0; margin-left: 12px; }
+.distilled .draft-switcher { min-width: 0; }
 .distilled #draft-picker { width: 100%; height: 40px; padding: 8px 12px; border: 1px solid var(--line); border-radius: 6px; background-color: var(--surface); text-overflow: ellipsis; }
 .distilled .header-actions { flex: none; gap: 6px; margin-left: auto; }
 .distilled .header-actions .button { min-height: 40px; }
@@ -19,14 +19,43 @@
 .quick-menu > summary::-webkit-details-marker { display: none; }
 .quick-menu > summary:hover,
 .quick-menu[open] > summary { background: #eae8e0; }
-.quick-menu-actions { position: absolute; z-index: 80; top: calc(100% + 8px); right: 0; display: grid; gap: 2px; width: 180px; max-width: calc(100vw - 28px); padding: 6px; border: 1px solid var(--line); border-radius: 8px; background: var(--surface); box-shadow: 0 8px 24px #292b2017; }
+.quick-menu-actions { position: absolute; z-index: 80; top: calc(100% + 8px); right: 0; display: grid; gap: 2px; width: 240px; max-width: calc(100vw - 28px); padding: 6px; border: 1px solid var(--line); border-radius: 8px; background: var(--surface); box-shadow: 0 8px 24px #292b2017; }
 .distilled .header-actions .quick-menu-actions > button { display: flex; align-items: center; justify-content: flex-start; gap: 10px; width: 100%; min-height: 44px; padding: 10px 12px; border: 0; border-radius: 5px; background: transparent; font-size: 13px; font-weight: 400; text-align: left; white-space: nowrap; }
 .distilled .header-actions .quick-menu-actions > button:hover:not(:disabled) { background: #eeebe3; }
 .quick-menu-actions .icon { width: 16px; height: 16px; color: var(--muted); }
+.distilled .saved-draft-picker { display: grid; gap: 8px; margin: 5px 6px 2px; padding-top: 12px; border-top: 1px solid var(--line); color: var(--muted); font-size: 11px; }
+.distilled .saved-draft-picker #draft-picker { width: 100%; font-size: 12px; }
+
+/* Start with the setting brief; generated alternatives stay beside the wall. */
+.generation-panel { margin-bottom: 18px; }
+.generation-heading { display: flex; align-items: baseline; flex-wrap: wrap; gap: 6px 16px; margin: 2px 0 14px; }
+.generation-heading h1 { margin: 0; color: var(--ink); font-size: 21px; font-weight: 550; line-height: 1.3; letter-spacing: -.025em; }
+.generation-heading p { margin: 0; color: var(--muted); font-size: 12px; line-height: 1.6; }
+.quick-generation-form { display: grid; grid-template-columns: minmax(180px, 1.5fr) repeat(2, minmax(140px, 1fr)) auto; align-items: end; gap: 12px; }
+.quick-generation-form > label { display: grid; gap: 7px; min-width: 0; max-width: none; color: var(--muted); font-size: 12px; line-height: 1.4; }
+.quick-generation-form select { width: 100%; min-width: 0; height: 44px; padding: 10px 12px; border: 1px solid var(--line); border-radius: 6px; background-color: var(--surface); color: var(--ink); font-size: 13px; text-overflow: ellipsis; }
+.quick-generation-form > .button { min-width: 144px; min-height: 44px; margin: 0; padding-inline: 20px; font-size: 13px; }
+.quick-generation-form :is(button, select):disabled { cursor: wait; }
+#generation-progress { margin: 12px 0 0; color: var(--muted); font-size: 12px; line-height: 1.6; }
+.generated-options { margin-top: 16px; }
+.generated-heading { display: flex; align-items: baseline; gap: 10px; margin-bottom: 8px; }
+.generated-heading h2 { margin: 0; font-size: 12px; font-weight: 550; line-height: 1.5; }
+.generated-heading small { color: var(--muted); font-size: 11px; }
+.generated-option-list { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
+.generated-option { display: grid; align-content: start; gap: 5px; min-width: 0; min-height: 63px; padding: 10px 12px; border: 1px solid var(--line); border-radius: 6px; background: transparent; color: var(--ink); text-align: left; }
+.generated-option:not(:disabled):hover { border-color: #baa38f; background: #f1ece2; }
+.generated-option[aria-pressed="true"] { border-color: #a98168; background: #eee5d9; }
+.generated-option .option-label { display: flex; align-items: center; justify-content: space-between; gap: 8px; min-width: 0; font-size: 12px; line-height: 1.5; }
+.generated-option .option-label strong { font-size: 12px; font-weight: 550; }
+.generated-option .option-label > span { color: var(--clay); font-size: 10px; }
+.generated-option .option-stats,
+.generated-option .option-state { color: var(--muted); font-size: 11px; line-height: 1.5; overflow-wrap: anywhere; }
+.generated-option:disabled { opacity: .75; cursor: default; }
 
 #workbench-view .workspace { display: block; position: relative; overflow: visible; }
 #workbench-view .design-area { min-width: 0; border-radius: inherit; }
-#workbench-view .canvas-shell { height: max(420px, calc(100dvh - 158px)); border-radius: 10px 10px 0 0; }
+#workbench-view .canvas-shell { height: max(350px, calc(100dvh - 280px)); border-radius: 10px 10px 0 0; }
+#workbench-view:has(#generated-options:not([hidden])) .canvas-shell { height: max(350px, calc(100dvh - 386px)); }
 #workbench-view .canvas-top { top: 16px; left: 18px; right: 18px; align-items: start; }
 #workbench-view .scene-meta { min-width: 0; max-width: 55%; font-size: 12px; line-height: 1.6; }
 #workbench-view .scene-meta span:last-child { display: none; }
@@ -145,11 +174,22 @@
   .distilled .app-header { height: 60px; padding-inline: 14px; gap: 10px; }
   .distilled .brand { gap: 0; }
   .distilled .brand-mark { display: none; }
-  .distilled .draft-switcher { flex: 1; margin: 0; }
   .distilled #draft-picker { height: 38px; padding-left: 9px; font-size: 12px; }
   .distilled .header-actions { gap: 2px; }
   .distilled .header-actions .quick-menu > summary { min-height: 44px; padding: 10px 9px; }
   .quick-menu-actions { right: -4px; }
+  .generation-panel { margin: 4px 0 14px; }
+  .generation-heading { display: block; margin-bottom: 12px; }
+  .generation-heading h1 { font-size: 20px; }
+  .generation-heading p { margin-top: 5px; font-size: 11px; }
+  .quick-generation-form { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
+  .quick-generation-form > label { font-size: 11px; gap: 6px; }
+  .quick-generation-form select { padding-inline: 9px; font-size: 12px; }
+  .quick-generation-form > .button { grid-column: 1 / -1; width: 100%; }
+  .generated-options { margin-top: 14px; }
+  .generated-option-list { gap: 6px; }
+  .generated-option { padding: 9px 10px; }
+  .generated-option .option-stats, .generated-option .option-state { font-size: 10px; }
   #library-view .library-heading { margin-bottom: 16px; }
   #library-view .library-toolbar { margin-bottom: 14px; padding-bottom: 14px; }
   #library-view .hold-library-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px 6px; }
@@ -162,7 +202,8 @@
   .distilled .header-actions .button { min-height: 38px; padding: 8px 9px; font-size: 12px; }
   .distilled .header-actions [data-action="export-bundle"] .icon { display: none; }
   .distilled main { padding: 10px; }
-  #workbench-view .canvas-shell { height: max(360px, calc(100dvh - 142px)); }
+  #workbench-view .canvas-shell { height: max(330px, calc(100dvh - 354px)); }
+  #workbench-view:has(#generated-options:not([hidden])) .canvas-shell { height: max(330px, calc(100dvh - 458px)); }
   #workbench-view .canvas-top { top: 12px; left: 12px; right: 12px; gap: 10px; }
   #workbench-view .scene-meta { max-width: 48%; font-size: 11px; }
   #workbench-view .canvas-bottom { bottom: 12px; left: 12px; right: auto; flex-wrap: nowrap; }
@@ -180,6 +221,14 @@
   .tools-heading, .checks-heading, .library-heading { gap: 12px; margin-bottom: 20px; }
   .tools-heading h1, .checks-heading h1, .library-heading h1 { font-size: 21px; }
   .file-tools .history-control { flex-basis: 100%; margin-left: 0; }
+}
+@media (max-width: 480px) {
+  .quick-generation-form { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .quick-generation-form > label:first-child { grid-column: 1 / -1; }
+  .generated-option { padding-inline: 8px; }
+  .generated-option .option-label { flex-wrap: wrap; gap: 2px 6px; }
+  #workbench-view .canvas-shell { height: max(330px, calc(100dvh - 420px)); }
+  #workbench-view:has(#generated-options:not([hidden])) .canvas-shell { height: max(330px, calc(100dvh - 524px)); }
 }
 @media (max-width: 400px) {
   .distilled .brand-name { font-size: 20px; }

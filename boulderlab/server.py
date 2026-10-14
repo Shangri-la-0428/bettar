@@ -259,6 +259,11 @@ class Handler(BaseHTTPRequestHandler):
                 self.respond(200, generate_route_comparison(payload))
             elif path == "/api/setting-comparison":
                 self.respond(200, generate_setting_comparison(payload))
+            elif path == "/api/draft-option":
+                from .draft_generation import generate_option
+                result = generate_option(payload)
+                save_run(result["bundle"])
+                self.respond(200, result)
             elif path == "/api/generate":
                 request = payload["request"]
                 bundle = generate(request)

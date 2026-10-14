@@ -1,0 +1,842 @@
+{
+  "cases": [
+    {
+      "id": "draft-42-0",
+      "label": "方案 A",
+      "status": "complete",
+      "metrics": {
+        "complete": true,
+        "p0_status": "pass",
+        "hand_moves": 6,
+        "foot_moves": 5,
+        "transfers": 11,
+        "used_hold_ids": [
+          "foot-2",
+          "foot-3",
+          "foot-5",
+          "foot-6",
+          "foot-7",
+          "hand-1",
+          "hand-2",
+          "hand-3",
+          "hand-4",
+          "start-foot-left",
+          "start-foot-right",
+          "start-left",
+          "start-right",
+          "top"
+        ],
+        "hand_used_ids": [
+          "hand-1",
+          "hand-2",
+          "hand-3",
+          "hand-4",
+          "start-left",
+          "start-right",
+          "top"
+        ],
+        "foot_used_ids": [
+          "foot-2",
+          "foot-3",
+          "foot-5",
+          "foot-6",
+          "foot-7",
+          "start-foot-left",
+          "start-foot-right"
+        ],
+        "skipped_hold_ids": [
+          "foot-1",
+          "foot-4",
+          "foot-8",
+          "hand-5"
+        ],
+        "unselected_hold_ids": [],
+        "hand_then_foot_ids": [],
+        "peak_load": 269.20794,
+        "final_load": 269.20794,
+        "total_proxy_effort": 661.41655,
+        "static_release_pass": 2,
+        "static_release_total": 11,
+        "static_landed_pass": 6,
+        "static_landed_total": 12,
+        "mean_technical": 46.56956,
+        "peak_strength": 57.6282,
+        "hand_lateral_travel_m": 2.8237
+      },
+      "elapsed_ms": 3852.33,
+      "geometry_digest": "sha256:96c7264404802f9d7a339ee85c658ef596f3c5a7e99392c9db6da55eac202d6c",
+      "sequence_digest": "sha256:26dbebc8d43195a39e4779b866d2c45f7d3939099d308ddd2f5d2cd57c4805ec",
+      "wall_profile": "overhang",
+      "style": "balance",
+      "difficulty": "medium",
+      "search": {
+        "timeout_seconds": 20,
+        "elapsed_ms": 3685.98,
+        "budget_exhausted": false,
+        "attempts": [
+          {
+            "search": {
+              "objective": "fewer_transfers",
+              "expanded": 811,
+              "complete_sequences": 0,
+              "budget_exhausted": false,
+              "termination_reason": "frontier_empty",
+              "rejected": {
+                "hand_match_not_supported_by_selected_patch": 55,
+                "local_contact_corridor_search_assumption": 188,
+                "necessary_contact_span": 121,
+                "simultaneous_feet_same_point": 196,
+                "simultaneous_hand_foot_same_point": 102,
+                "beam_pruned": 0,
+                "dominated_contacts_and_load": 101
+              },
+              "depth_reached": 5
+            },
+            "checked": 0,
+            "statuses": [],
+            "enabled_foot_ids": []
+          },
+          {
+            "search": {
+              "objective": "fewer_transfers",
+              "expanded": 2716,
+              "complete_sequences": 0,
+              "budget_exhausted": false,
+              "termination_reason": "frontier_empty",
+              "rejected": {
+                "hand_match_not_supported_by_selected_patch": 231,
+                "local_contact_corridor_search_assumption": 673,
+                "necessary_contact_span": 456,
+                "simultaneous_feet_same_point": 279,
+                "simultaneous_hand_foot_same_point": 174,
+                "beam_pruned": 269,
+                "dominated_contacts_and_load": 501
+              },
+              "depth_reached": 8
+            },
+            "checked": 0,
+            "statuses": [],
+            "enabled_foot_ids": [
+              "foot-1",
+              "foot-2",
+              "foot-3"
+            ]
+          },
+          {
+            "search": {
+              "objective": "fewer_transfers",
+              "expanded": 5454,
+              "complete_sequences": 6,
+              "budget_exhausted": false,
+              "termination_reason": "first_complete_beam_depth",
+              "rejected": {
+                "hand_match_not_supported_by_selected_patch": 272,
+                "local_contact_corridor_search_assumption": 1917,
+                "necessary_contact_span": 540,
+                "simultaneous_feet_same_point": 416,
+                "simultaneous_hand_foot_same_point": 402,
+                "beam_pruned": 535,
+                "dominated_contacts_and_load": 1138
+              },
+              "depth_reached": 11
+            },
+            "checked": 1,
+            "statuses": [
+              "pass"
+            ],
+            "enabled_foot_ids": [
+              "foot-1",
+              "foot-2",
+              "foot-3",
+              "foot-4",
+              "foot-5",
+              "foot-6",
+              "foot-7",
+              "foot-8"
+            ]
+          }
+        ],
+        "budget_scope": "contact search and pose checks; geometry preparation, bundle validation and serialization recorded in total elapsed_ms"
+      },
+      "wall_digest": "sha256:8e1a7c6ec00169652224c2bd0f66d8e9afdbf986e1d2877734b9e94b4bd10b63",
+      "bundle_digest": "sha256:adb49a4a1b82674f114261516c09dec99b69db1ba100b59294741668594a042a"
+    },
+    {
+      "id": "draft-42-1",
+      "label": "方案 B",
+      "status": "complete",
+      "metrics": {
+        "complete": true,
+        "p0_status": "pass",
+        "hand_moves": 6,
+        "foot_moves": 5,
+        "transfers": 11,
+        "used_hold_ids": [
+          "foot-2",
+          "foot-4",
+          "foot-5",
+          "hand-1",
+          "hand-2",
+          "hand-3",
+          "hand-4",
+          "hand-5",
+          "start-foot-left",
+          "start-foot-right",
+          "start-left",
+          "start-right",
+          "top"
+        ],
+        "hand_used_ids": [
+          "hand-1",
+          "hand-2",
+          "hand-4",
+          "hand-5",
+          "start-left",
+          "start-right",
+          "top"
+        ],
+        "foot_used_ids": [
+          "foot-2",
+          "foot-4",
+          "foot-5",
+          "hand-3",
+          "start-foot-left",
+          "start-foot-right",
+          "start-right"
+        ],
+        "skipped_hold_ids": [
+          "foot-1",
+          "foot-3",
+          "foot-6",
+          "foot-7",
+          "foot-8"
+        ],
+        "unselected_hold_ids": [],
+        "hand_then_foot_ids": [
+          "start-right"
+        ],
+        "peak_load": 260.11357,
+        "final_load": 260.11357,
+        "total_proxy_effort": 657.33515,
+        "static_release_pass": 2,
+        "static_release_total": 11,
+        "static_landed_pass": 5,
+        "static_landed_total": 12,
+        "mean_technical": 47.55308,
+        "peak_strength": 57.84684,
+        "hand_lateral_travel_m": 3.1763
+      },
+      "elapsed_ms": 3678.96,
+      "geometry_digest": "sha256:0daa1e45204e7c2cec91dc3b27d04981d6b6735bd543f16bd4ff9c5e94c47b57",
+      "sequence_digest": "sha256:9b765d5b20f89a4c16b3b1c4d1a9ec1dddf1f692799daeaa2052c6da7c8c22c8",
+      "wall_profile": "overhang",
+      "style": "balance",
+      "difficulty": "medium",
+      "search": {
+        "timeout_seconds": 20,
+        "elapsed_ms": 3511.66,
+        "budget_exhausted": false,
+        "attempts": [
+          {
+            "search": {
+              "objective": "fewer_transfers",
+              "expanded": 793,
+              "complete_sequences": 0,
+              "budget_exhausted": false,
+              "termination_reason": "frontier_empty",
+              "rejected": {
+                "hand_match_not_supported_by_selected_patch": 53,
+                "necessary_contact_span": 162,
+                "local_contact_corridor_search_assumption": 137,
+                "simultaneous_feet_same_point": 192,
+                "simultaneous_hand_foot_same_point": 102,
+                "beam_pruned": 0,
+                "dominated_contacts_and_load": 100
+              },
+              "depth_reached": 5
+            },
+            "checked": 0,
+            "statuses": [],
+            "enabled_foot_ids": []
+          },
+          {
+            "search": {
+              "objective": "fewer_transfers",
+              "expanded": 2861,
+              "complete_sequences": 0,
+              "budget_exhausted": false,
+              "termination_reason": "frontier_empty",
+              "rejected": {
+                "hand_match_not_supported_by_selected_patch": 239,
+                "necessary_contact_span": 598,
+                "local_contact_corridor_search_assumption": 616,
+                "simultaneous_feet_same_point": 325,
+                "simultaneous_hand_foot_same_point": 204,
+                "beam_pruned": 254,
+                "dominated_contacts_and_load": 472
+              },
+              "depth_reached": 10
+            },
+            "checked": 0,
+            "statuses": [],
+            "enabled_foot_ids": [
+              "foot-1",
+              "foot-2",
+              "foot-3"
+            ]
+          },
+          {
+            "search": {
+              "objective": "fewer_transfers",
+              "expanded": 5160,
+              "complete_sequences": 4,
+              "budget_exhausted": false,
+              "termination_reason": "first_complete_beam_depth",
+              "rejected": {
+                "hand_match_not_supported_by_selected_patch": 312,
+                "necessary_contact_span": 630,
+                "local_contact_corridor_search_assumption": 1667,
+                "simultaneous_feet_same_point": 471,
+                "simultaneous_hand_foot_same_point": 326,
+                "beam_pruned": 575,
+                "dominated_contacts_and_load": 947
+              },
+              "depth_reached": 11
+            },
+            "checked": 1,
+            "statuses": [
+              "pass"
+            ],
+            "enabled_foot_ids": [
+              "foot-1",
+              "foot-2",
+              "foot-3",
+              "foot-4",
+              "foot-5",
+              "foot-6",
+              "foot-7",
+              "foot-8"
+            ]
+          }
+        ],
+        "budget_scope": "contact search and pose checks; geometry preparation, bundle validation and serialization recorded in total elapsed_ms"
+      },
+      "wall_digest": "sha256:8e1a7c6ec00169652224c2bd0f66d8e9afdbf986e1d2877734b9e94b4bd10b63",
+      "bundle_digest": "sha256:aaa4af6b62e9fc3a85b89f25ae126ff26278d62f1352a56d27a010f2ec89696d"
+    },
+    {
+      "id": "draft-42-2",
+      "label": "方案 C",
+      "status": "complete",
+      "metrics": {
+        "complete": true,
+        "p0_status": "pass",
+        "hand_moves": 7,
+        "foot_moves": 6,
+        "transfers": 13,
+        "used_hold_ids": [
+          "foot-1",
+          "foot-2",
+          "foot-3",
+          "foot-4",
+          "foot-5",
+          "foot-6",
+          "hand-1",
+          "hand-2",
+          "hand-3",
+          "hand-4",
+          "hand-5",
+          "start-foot-left",
+          "start-foot-right",
+          "start-left",
+          "start-right",
+          "top"
+        ],
+        "hand_used_ids": [
+          "hand-1",
+          "hand-2",
+          "hand-3",
+          "hand-4",
+          "hand-5",
+          "start-left",
+          "start-right",
+          "top"
+        ],
+        "foot_used_ids": [
+          "foot-1",
+          "foot-2",
+          "foot-3",
+          "foot-4",
+          "foot-5",
+          "foot-6",
+          "start-foot-left",
+          "start-foot-right"
+        ],
+        "skipped_hold_ids": [
+          "foot-7",
+          "foot-8"
+        ],
+        "unselected_hold_ids": [],
+        "hand_then_foot_ids": [],
+        "peak_load": 299.06444,
+        "final_load": 299.06444,
+        "total_proxy_effort": 804.76617,
+        "static_release_pass": 2,
+        "static_release_total": 13,
+        "static_landed_pass": 5,
+        "static_landed_total": 14,
+        "mean_technical": 47.62353,
+        "peak_strength": 58.17524,
+        "hand_lateral_travel_m": 3.1345
+      },
+      "elapsed_ms": 4314.5,
+      "geometry_digest": "sha256:6673ea627d25314aaff8bb9d94aab88dd4639d12be19be93ddb0b67a25cfbc0d",
+      "sequence_digest": "sha256:bb43e9345ae5b55b78109d7ad9b824eaf6fd5d81dfb21b5c7a32fd38e402e940",
+      "wall_profile": "overhang",
+      "style": "balance",
+      "difficulty": "medium",
+      "search": {
+        "timeout_seconds": 20,
+        "elapsed_ms": 4130.81,
+        "budget_exhausted": false,
+        "attempts": [
+          {
+            "search": {
+              "objective": "fewer_transfers",
+              "expanded": 752,
+              "complete_sequences": 0,
+              "budget_exhausted": false,
+              "termination_reason": "frontier_empty",
+              "rejected": {
+                "hand_match_not_supported_by_selected_patch": 51,
+                "necessary_contact_span": 133,
+                "local_contact_corridor_search_assumption": 133,
+                "simultaneous_feet_same_point": 188,
+                "simultaneous_hand_foot_same_point": 102,
+                "beam_pruned": 0,
+                "dominated_contacts_and_load": 99
+              },
+              "depth_reached": 5
+            },
+            "checked": 0,
+            "statuses": [],
+            "enabled_foot_ids": []
+          },
+          {
+            "search": {
+              "objective": "fewer_transfers",
+              "expanded": 2844,
+              "complete_sequences": 0,
+              "budget_exhausted": false,
+              "termination_reason": "frontier_empty",
+              "rejected": {
+                "hand_match_not_supported_by_selected_patch": 218,
+                "necessary_contact_span": 472,
+                "local_contact_corridor_search_assumption": 770,
+                "simultaneous_feet_same_point": 357,
+                "simultaneous_hand_foot_same_point": 283,
+                "beam_pruned": 153,
+                "dominated_contacts_and_load": 443
+              },
+              "depth_reached": 9
+            },
+            "checked": 0,
+            "statuses": [],
+            "enabled_foot_ids": [
+              "foot-1",
+              "foot-2",
+              "foot-3"
+            ]
+          },
+          {
+            "search": {
+              "objective": "fewer_transfers",
+              "expanded": 5822,
+              "complete_sequences": 15,
+              "budget_exhausted": false,
+              "termination_reason": "first_complete_beam_depth",
+              "rejected": {
+                "hand_match_not_supported_by_selected_patch": 350,
+                "necessary_contact_span": 685,
+                "local_contact_corridor_search_assumption": 1900,
+                "simultaneous_feet_same_point": 602,
+                "simultaneous_hand_foot_same_point": 450,
+                "beam_pruned": 538,
+                "dominated_contacts_and_load": 1014
+              },
+              "depth_reached": 13
+            },
+            "checked": 1,
+            "statuses": [
+              "pass"
+            ],
+            "enabled_foot_ids": [
+              "foot-1",
+              "foot-2",
+              "foot-3",
+              "foot-4",
+              "foot-5",
+              "foot-6",
+              "foot-7",
+              "foot-8"
+            ]
+          }
+        ],
+        "budget_scope": "contact search and pose checks; geometry preparation, bundle validation and serialization recorded in total elapsed_ms"
+      },
+      "wall_digest": "sha256:8e1a7c6ec00169652224c2bd0f66d8e9afdbf986e1d2877734b9e94b4bd10b63",
+      "bundle_digest": "sha256:51840cbc20324c6b3cd8a46c362fe5f3d087a88d84588f1f5de0c48bd14c41d9"
+    },
+    {
+      "id": "draft-42-0",
+      "label": "方案 A",
+      "status": "unverified",
+      "metrics": {
+        "complete": true,
+        "p0_status": "unknown",
+        "hand_moves": 6,
+        "foot_moves": 4,
+        "transfers": 10,
+        "used_hold_ids": [
+          "foot-2",
+          "foot-6",
+          "hand-2",
+          "hand-3",
+          "hand-4",
+          "hand-5",
+          "start-foot-left",
+          "start-foot-right",
+          "start-left",
+          "start-right",
+          "top"
+        ],
+        "hand_used_ids": [
+          "hand-2",
+          "hand-3",
+          "hand-4",
+          "hand-5",
+          "start-left",
+          "start-right",
+          "top"
+        ],
+        "foot_used_ids": [
+          "foot-2",
+          "foot-6",
+          "hand-2",
+          "start-foot-left",
+          "start-foot-right",
+          "start-right"
+        ],
+        "skipped_hold_ids": [
+          "foot-1",
+          "foot-3",
+          "foot-4",
+          "foot-5",
+          "foot-7",
+          "foot-8",
+          "hand-1"
+        ],
+        "unselected_hold_ids": [],
+        "hand_then_foot_ids": [
+          "hand-2",
+          "start-right"
+        ],
+        "peak_load": 253.63331,
+        "final_load": 253.63331,
+        "total_proxy_effort": 595.18314,
+        "static_release_pass": 1,
+        "static_release_total": 10,
+        "static_landed_pass": 3,
+        "static_landed_total": 11,
+        "mean_technical": 45.1551,
+        "peak_strength": 59.0294,
+        "hand_lateral_travel_m": 1.9959
+      },
+      "elapsed_ms": 7556.58,
+      "geometry_digest": "sha256:41b6db5877f434ecfdacc6b5a06a2199f3bf2e3fea1df9987a25d1ed8362b3fb",
+      "sequence_digest": "sha256:f237fbff51a04e27c85f45dffc04a2fa2cb67391f7dd045f0059429301eadb2a",
+      "wall_profile": "overhang",
+      "style": "power",
+      "difficulty": "hard",
+      "search": {
+        "timeout_seconds": 20,
+        "elapsed_ms": 7395.55,
+        "budget_exhausted": false,
+        "attempts": [
+          {
+            "search": {
+              "objective": "fewer_transfers",
+              "expanded": 1373,
+              "complete_sequences": 0,
+              "budget_exhausted": false,
+              "termination_reason": "frontier_empty",
+              "rejected": {
+                "hand_match_not_supported_by_selected_patch": 74,
+                "local_contact_corridor_search_assumption": 249,
+                "necessary_contact_span": 385,
+                "simultaneous_feet_same_point": 280,
+                "simultaneous_hand_foot_same_point": 148,
+                "beam_pruned": 0,
+                "dominated_contacts_and_load": 168
+              },
+              "depth_reached": 6
+            },
+            "checked": 0,
+            "statuses": [],
+            "enabled_foot_ids": []
+          },
+          {
+            "search": {
+              "objective": "fewer_transfers",
+              "expanded": 3411,
+              "complete_sequences": 0,
+              "budget_exhausted": false,
+              "termination_reason": "frontier_empty",
+              "rejected": {
+                "hand_match_not_supported_by_selected_patch": 249,
+                "local_contact_corridor_search_assumption": 590,
+                "necessary_contact_span": 674,
+                "simultaneous_feet_same_point": 416,
+                "simultaneous_hand_foot_same_point": 280,
+                "beam_pruned": 300,
+                "dominated_contacts_and_load": 721
+              },
+              "depth_reached": 11
+            },
+            "checked": 0,
+            "statuses": [],
+            "enabled_foot_ids": [
+              "foot-1",
+              "foot-2",
+              "foot-3"
+            ]
+          },
+          {
+            "search": {
+              "objective": "fewer_transfers",
+              "expanded": 5174,
+              "complete_sequences": 6,
+              "budget_exhausted": false,
+              "termination_reason": "first_complete_beam_depth",
+              "rejected": {
+                "hand_match_not_supported_by_selected_patch": 241,
+                "local_contact_corridor_search_assumption": 1640,
+                "necessary_contact_span": 521,
+                "simultaneous_feet_same_point": 531,
+                "simultaneous_hand_foot_same_point": 322,
+                "beam_pruned": 630,
+                "dominated_contacts_and_load": 1076
+              },
+              "depth_reached": 10
+            },
+            "checked": 2,
+            "statuses": [
+              "unknown",
+              "unknown"
+            ],
+            "enabled_foot_ids": [
+              "foot-1",
+              "foot-2",
+              "foot-3",
+              "foot-4",
+              "foot-5",
+              "foot-6",
+              "foot-7",
+              "foot-8"
+            ]
+          }
+        ],
+        "budget_scope": "contact search and pose checks; geometry preparation, bundle validation and serialization recorded in total elapsed_ms"
+      },
+      "wall_digest": "sha256:8e1a7c6ec00169652224c2bd0f66d8e9afdbf986e1d2877734b9e94b4bd10b63",
+      "bundle_digest": "sha256:25b250e0ea29173c5a31d0d2d012bea7ae0ee3891fc1fdc1bb60cd7656e4d9df"
+    },
+    {
+      "id": "draft-42-0",
+      "label": "方案 A",
+      "status": "complete",
+      "metrics": {
+        "complete": true,
+        "p0_status": "pass",
+        "hand_moves": 5,
+        "foot_moves": 4,
+        "transfers": 9,
+        "used_hold_ids": [
+          "foot-2",
+          "foot-4",
+          "foot-6",
+          "hand-1",
+          "hand-3",
+          "hand-4",
+          "start-foot-left",
+          "start-foot-right",
+          "start-left",
+          "start-right",
+          "top"
+        ],
+        "hand_used_ids": [
+          "hand-1",
+          "hand-3",
+          "hand-4",
+          "start-left",
+          "start-right",
+          "top"
+        ],
+        "foot_used_ids": [
+          "foot-2",
+          "foot-4",
+          "foot-6",
+          "start-foot-left",
+          "start-foot-right",
+          "start-right"
+        ],
+        "skipped_hold_ids": [
+          "foot-1",
+          "foot-3",
+          "foot-5",
+          "foot-7",
+          "foot-8",
+          "hand-2",
+          "hand-5"
+        ],
+        "unselected_hold_ids": [],
+        "hand_then_foot_ids": [
+          "start-right"
+        ],
+        "peak_load": 204.12612,
+        "final_load": 204.12612,
+        "total_proxy_effort": 512.47119,
+        "static_release_pass": 2,
+        "static_release_total": 9,
+        "static_landed_pass": 3,
+        "static_landed_total": 10,
+        "mean_technical": 45.03598,
+        "peak_strength": 66.05909,
+        "hand_lateral_travel_m": 2.8027
+      },
+      "elapsed_ms": 3618.68,
+      "geometry_digest": "sha256:3080681f45a572c4867b71c249e9f0e86772e17d4fbd9f13a7ea3aec320f37b7",
+      "sequence_digest": "sha256:eaad91b6753c68fc829e768d9189797f82a28aa4b71a8177186923737ddbc48e",
+      "wall_profile": "roof",
+      "style": "sustained",
+      "difficulty": "medium",
+      "search": {
+        "timeout_seconds": 20,
+        "elapsed_ms": 3455.84,
+        "budget_exhausted": false,
+        "attempts": [
+          {
+            "search": {
+              "objective": "fewer_transfers",
+              "expanded": 668,
+              "complete_sequences": 0,
+              "budget_exhausted": false,
+              "termination_reason": "frontier_empty",
+              "rejected": {
+                "local_contact_corridor_search_assumption": 190,
+                "necessary_contact_span": 132,
+                "hand_match_not_supported_by_selected_patch": 37,
+                "simultaneous_feet_same_point": 132,
+                "simultaneous_hand_foot_same_point": 74,
+                "beam_pruned": 0,
+                "dominated_contacts_and_load": 71
+              },
+              "depth_reached": 5
+            },
+            "checked": 0,
+            "statuses": [],
+            "enabled_foot_ids": []
+          },
+          {
+            "search": {
+              "objective": "fewer_transfers",
+              "expanded": 1738,
+              "complete_sequences": 0,
+              "budget_exhausted": false,
+              "termination_reason": "frontier_empty",
+              "rejected": {
+                "local_contact_corridor_search_assumption": 527,
+                "necessary_contact_span": 299,
+                "hand_match_not_supported_by_selected_patch": 91,
+                "simultaneous_feet_same_point": 190,
+                "simultaneous_hand_foot_same_point": 182,
+                "beam_pruned": 58,
+                "dominated_contacts_and_load": 308
+              },
+              "depth_reached": 6
+            },
+            "checked": 0,
+            "statuses": [],
+            "enabled_foot_ids": [
+              "foot-7",
+              "foot-8",
+              "foot-1"
+            ]
+          },
+          {
+            "search": {
+              "objective": "fewer_transfers",
+              "expanded": 5461,
+              "complete_sequences": 15,
+              "budget_exhausted": false,
+              "termination_reason": "first_complete_beam_depth",
+              "rejected": {
+                "local_contact_corridor_search_assumption": 2219,
+                "necessary_contact_span": 292,
+                "hand_match_not_supported_by_selected_patch": 204,
+                "simultaneous_feet_same_point": 328,
+                "simultaneous_hand_foot_same_point": 381,
+                "beam_pruned": 665,
+                "dominated_contacts_and_load": 1172
+              },
+              "depth_reached": 9
+            },
+            "checked": 1,
+            "statuses": [
+              "pass"
+            ],
+            "enabled_foot_ids": [
+              "foot-7",
+              "foot-8",
+              "foot-1",
+              "foot-2",
+              "foot-3",
+              "foot-4",
+              "foot-5",
+              "foot-6"
+            ]
+          }
+        ],
+        "budget_scope": "contact search and pose checks; geometry preparation, bundle validation and serialization recorded in total elapsed_ms"
+      },
+      "wall_digest": "sha256:6ae1f8b9c5377bbc32d0702c268bbae6a1688d96b187eb1432d2236d47720021",
+      "bundle_digest": "sha256:6461968bc3556000c828163e41ed7bcc56d65d7f9f8d70a228c0e226a03259bf"
+    }
+  ],
+  "note": "Real generation with independent beta search. Difficulty is a design target, static checks remain approximations.",
+  "comparison": {
+    "same_wall": true,
+    "distinct_geometries": 3,
+    "distinct_sequences": 3,
+    "geometrically_verified": 3,
+    "seed": 42,
+    "variants": [
+      0,
+      1,
+      2
+    ]
+  },
+  "method": {
+    "difficulty": "changes real horizontal spacing and support heights; does not change meshes, friction, capacity, body or validation thresholds",
+    "calibrated_grade": false,
+    "feet": "declared hand-hold standing surfaces plus progressively enabled installed footholds",
+    "sequence": "independently searched; no required coverage or prescribed order",
+    "unresolved_case": "covered by forced-budget-expiry test; no saved fixture substitution"
+  },
+  "verification": {
+    "focused_pytest": "18 passed in 7.73s",
+    "adjacent_pytest": "48 passed in 21.43s",
+    "full_pytest": "412 passed, 2 skipped in 210.39s",
+    "command": ".venv/bin/python -m pytest -q"
+  }
+}

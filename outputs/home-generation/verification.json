@@ -1,0 +1,106 @@
+{
+  "date": "2026-10-15",
+  "scope": "Homepage wall/style/relative-difficulty brief, live rules generation, compare/replay/edit/save",
+  "ui_runs": [
+    {
+      "brief": {
+        "wall_profile": "overhang",
+        "style": "balance",
+        "difficulty": "medium",
+        "seed": 661506075
+      },
+      "complete": 3,
+      "event_counts": [
+        11,
+        11,
+        13
+      ],
+      "geometry": "all pass",
+      "static_support": "needs adjustment",
+      "interaction": [
+        "selected B",
+        "rotated unused foothold F10 by 15 degrees",
+        "applied revision 2",
+        "switched C then B; revision retained",
+        "saved and imported B revision 2",
+        "import restored conditions and cleared unrelated comparison cards"
+      ]
+    },
+    {
+      "brief": {
+        "wall_profile": "roof",
+        "style": "sustained",
+        "difficulty": "medium",
+        "seed": 690569798
+      },
+      "complete": 3,
+      "event_counts": [
+        9,
+        9,
+        8
+      ],
+      "geometry": "all pass",
+      "static_support": "needs adjustment",
+      "interaction": [
+        "selected C",
+        "opened replay",
+        "advanced to first left-foot transfer",
+        "closed replay",
+        "saved validated C bundle with generation_brief"
+      ]
+    }
+  ],
+  "responsive": [
+    {
+      "viewport": [
+        1440,
+        1000
+      ],
+      "capture": "desktop.jpg",
+      "top_of_document": true,
+      "horizontal_page_overflow": false
+    },
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "capture": "mobile.jpg",
+      "top_of_document": true,
+      "horizontal_page_overflow": false,
+      "comparison_cards": "all three fully visible with no horizontal card overflow; A/C switching verified"
+    },
+    {
+      "viewport": [
+        561,
+        692
+      ],
+      "capture": "user-561.jpg",
+      "top_of_document": true,
+      "horizontal_page_overflow": false
+    }
+  ],
+  "checks": {
+    "python_regression": {
+      "passed": 412,
+      "skipped": 2
+    },
+    "frontend_batch": "pass: three conditioned calls, partial failure continuation, unresolved retained, no saved fallback, provenance mismatch, duplicates, independent bundles",
+    "timeline_navigation": "pass",
+    "own_route_ui": "pass",
+    "typescript_and_production_build": "pass",
+    "browser_console_errors": [],
+    "design_file_detector": [],
+    "independent_ui_review": {
+      "disposition": "ship",
+      "scope": "homepage generation extension at desktop, mobile and user viewport",
+      "fix": "mobile third-option clipping removed; all three cards visible"
+    }
+  },
+  "limits": [
+    "Relative difficulty changes point geometry; it is not calibrated to a V grade or guaranteed to monotonically change load.",
+    "A complete geometric search is not a physically validated climb. These live examples retain failed static-support checks.",
+    "Each option has 20 seconds for search and pose checks; geometry preparation and final validation are additional.",
+    "The three options are shown one by one; each holds an independent request and bundle."
+  ]
+}

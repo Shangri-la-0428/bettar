@@ -1,6 +1,8 @@
 import './style.css';
 import './workbench.css';
 import { timelineNavigation } from './timeline-navigation';
+import { generateDraftBatch } from './draft-generation';
+import type { DraftBrief, DraftOption, DraftEntry } from './draft-generation';
 import { scanWorkbenchHTML, mountScanWorkbench } from './scan-model';
 import { mechanicsHTML } from './mechanics';
 import { WallView } from './scene';
@@ -47,9 +49,8 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
       <span class="brand-mark">${icon('cube')}</span>
       <span><span class="brand-name">bettar</span><span class="brand-caption">定线工作台</span></span>
     </a>
-    <label class="draft-switcher"><span class="sr-only">切换草稿</span><select id="draft-picker" aria-label="切换草稿"><option>读取草稿…</option></select></label>
     <div class="header-actions">
-      <details id="quick-menu" class="quick-menu"><summary>更多</summary><div class="quick-menu-actions"><button data-action="import">${icon('import')}打开草稿</button><button data-action="open-inventory" disabled>${icon('cube')}岩点库</button></div></details>
+      <details id="quick-menu" class="quick-menu"><summary>更多</summary><div class="quick-menu-actions"><button data-action="import">${icon('import')}打开草稿</button><button data-action="open-inventory" disabled>${icon('cube')}岩点库</button><label class="saved-draft-picker">示例草稿<select id="draft-picker" aria-label="切换草稿"><option>读取草稿…</option></select></label></div></details>
       ${researchMode ? '<button class="button quiet" data-action="research">研究</button>' : ''}
       <button class="button outlined" data-action="export-bundle" disabled>${icon('export')}<span>保存</span></button>
     </div>
@@ -57,7 +58,17 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
   <main>
     <div id="notice" class="notice" role="alert" hidden></div>
     <section id="workbench-view" aria-label="定线工作台">
-      <h1 class="sr-only">定线工作台</h1>
+      <section class="generation-panel" aria-labelledby="generation-title">
+        <div class="generation-heading"><h1 id="generation-title">生成线路</h1><p id="generation-hint">难度是设计目标，需试攀确认。</p></div>
+        <form id="quick-generation-form" class="quick-generation-form">
+          <label>墙面<select id="quick-wall" name="wall_profile"><option value="overhang">25° 仰角</option><option value="roof">屋檐</option><option value="dihedral">内角</option><option value="arete">外角</option></select></label>
+          <label>风格<select id="quick-style" name="style"><option value="balance">技巧与平衡</option><option value="power">力量</option><option value="sustained">持续输出</option></select></label>
+          <label>大致难度<select id="quick-difficulty" name="difficulty"><option value="easy">轻松</option><option value="medium" selected>适中</option><option value="hard">挑战</option></select></label>
+          <button id="quick-generate" class="button primary" type="submit" disabled>生成 3 条线路</button>
+        </form>
+        <p id="generation-progress" role="status" aria-live="polite" hidden></p>
+        <section id="generated-options" class="generated-options" aria-label="对比生成方案" hidden></section>
+      </section>
     <div class="workspace">
       <section class="design-area" aria-label="候选与三维场景">
         <div class="canvas-toolbar" aria-label="移动岩点" hidden><span id="tool-status" class="tool-status">拖动岩点调整位置</span><button class="button outlined" data-action="browse-mode">完成移动</button></div>
@@ -188,7 +199,7 @@ function showScreen(screen: 'workbench' | 'library' | 'checks' | 'research', foc
   researchRoot.hidden = screen !== 'research';
   document.body.classList.toggle('at-workbench', screen === 'workbench');
   document.body.classList.toggle('at-library', screen === 'library');
-  if (focus) (screen === 'workbench' ? $('#draft-picker') : $(`#${screen}-title`)).focus({ preventScroll: true });
+  if (focus) (screen === 'workbench' ? $('#quick-wall') : $(`#${screen}-title`)).focus({ preventScroll: true });
   if (focus) window.scrollTo({ top: 0, behavior: 'auto' });
 }
 if (researchMode) mountScanWorkbench($('#scan-workbench'));
@@ -206,6 +217,10 @@ let previewKey = '';
 const thumbnailCache = new Map<string, string>();
 let compareId = '';
 let busy = false;
+let initializing = true;
+let generatingDrafts = false;
+let generatedEntries: DraftEntry[] = [];
+let generatedBrief: DraftBrief | undefined;
 let view: WallView | undefined;
 let toastTimer = 0;
 const histories: Bundle[] = [];
@@ -299,7 +314,75 @@ async function chooseDraft() {
 function syncDraftControls() {
   $<HTMLSelectElement>('#draft-wall').disabled = busy;
   syncDraftPicker();
+  syncQuickGeneration();
   $('#draft-condition-note').textContent = '难度由定线员试攀后确认。';
+}
+function syncQuickGeneration() {
+  $('#quick-generation-form').querySelectorAll<HTMLSelectElement | HTMLButtonElement>('select,button').forEach(control => { control.disabled = busy || initializing; });
+  $('#quick-generate').textContent = generatingDrafts ? '正在生成…' : '生成 3 条线路';
+}
+function renderGeneratedOptions() {
+  const host = $('#generated-options');
+  host.hidden = !generatedEntries.length;
+  if (host.hidden) return;
+  const brief = generatedBrief;
+  const difficultyLabels = { easy: '轻松', medium: '适中', hard: '挑战' };
+  const caption = brief ? `${wallProfileNames[brief.wall_profile]} · ${draftStyleNames[brief.style]} · ${difficultyLabels[brief.difficulty]}` : '';
+  host.innerHTML = `<div class="generated-heading"><h2>对比方案</h2><small>${esc(caption)}</small></div><div class="generated-option-list" role="group" aria-label="本次生成的三条方案">${generatedEntries.map(entry => {
+    const result = entry.result;
+    const selected = !!result && result.bundle === bundle;
+    if (selected) entry.selectedCandidateId = activeId;
+    const candidate = result?.bundle.candidates.find(item => item.id === entry.selectedCandidateId) || result?.bundle.candidates[0];
+    const ev = result?.bundle.evaluations.find(item => item.candidate_id === candidate?.id);
+    const stale = !!candidate && !ev;
+    const name = result?.label || `方案 ${String.fromCharCode(65 + entry.variant)}`;
+    const hands = candidate?.events.filter(item => item.limb.endsWith('H')).length || 0;
+    const feet = candidate?.events.filter(item => item.limb.endsWith('F')).length || 0;
+    const status = entry.state === 'waiting' ? '等待生成' : entry.state === 'running' ? '正在搜索…' : entry.state === 'error' ? '生成失败，可重试' : candidate?.layout_report ? '预算内未找到完整走法' : stale ? '调整后待检查' : ev?.summary.status !== 'pass' ? '姿态需调整' : ev?.mechanics_report?.summary.status === 'infeasible' ? '支撑需调整' : '待试攀';
+    const count = candidate?.events.length ? `${hands} 次移手 · ${feet} 次换脚` : '';
+    return `<button class="generated-option ${selected ? 'active' : ''}" data-action="generated-option" data-variant="${entry.variant}" aria-pressed="${selected}" ${busy || !result ? 'disabled' : ''}><span class="option-label"><strong>${esc(name)}${candidate && candidate.revision > 1 ? ' · 已调整' : ''}</strong>${selected ? '<span>当前</span>' : ''}</span>${count ? `<span class="option-stats">${count}</span>` : ''}<span class="option-state">${esc(status)}</span>${entry.duplicateOf !== undefined ? `<span class="option-state">与方案 ${String.fromCharCode(65 + entry.duplicateOf)} 相同</span>` : ''}</button>`;
+  }).join('')}</div>`;
+}
+function selectGeneratedOption(variant: number) {
+  if (busy) return;
+  const entry = generatedEntries.find(item => item.variant === variant);
+  if (!entry?.result) return;
+  if (bundle === entry.result.bundle) { showScreen('workbench', false); return; }
+  const selectedId = entry.selectedCandidateId;
+  acceptBundle(entry.result.bundle, !histories.includes(entry.result.bundle), false);
+  if (selectedId && bundle?.candidates.some(item => item.id === selectedId)) activeId = selectedId;
+  renderAll();
+  $(`.generated-option[data-variant="${variant}"]`).focus({ preventScroll: true });
+}
+async function generateNewDrafts(event: SubmitEvent) {
+  event.preventDefault();
+  if (busy || initializing) return;
+  const brief: DraftBrief = {
+    wall_profile: $<HTMLSelectElement>('#quick-wall').value as DraftBrief['wall_profile'],
+    style: $<HTMLSelectElement>('#quick-style').value as DraftBrief['style'],
+    difficulty: $<HTMLSelectElement>('#quick-difficulty').value as DraftBrief['difficulty'],
+  };
+  const seed = crypto.getRandomValues(new Uint32Array(1))[0] % 1000000000;
+  generatedBrief = brief; generatingDrafts = true;
+  setBusy(true); $('#notice').hidden = true;
+  let displayed = false;
+  try {
+    await generateDraftBatch(brief, seed, input => api<DraftOption>('/api/draft-option', input), entries => {
+      generatedEntries = entries;
+      const running = entries.find(entry => entry.state === 'running');
+      $('#generation-progress').hidden = false;
+      $('#generation-progress').textContent = running ? `正在生成 ${running.variant + 1} / 3 · 搜索手脚走法` : '准备生成…';
+      const first = entries.find(entry => entry.result);
+      if (!displayed && first?.result) { displayed = true; acceptBundle(first.result.bundle); }
+      renderGeneratedOptions();
+    });
+    const complete = generatedEntries.filter(entry => entry.result?.status === 'complete').length;
+    const failed = generatedEntries.filter(entry => entry.state === 'error').length;
+    $('#generation-progress').textContent = `${complete} / 3 条找到完整走法${failed ? ` · ${failed} 条生成失败` : ''}${complete < 3 ? '，可调整条件再试' : '，点击方案对比'}。`;
+    if (failed === 3) showNotice(`生成未完成：${generatedEntries[0].error || '请确认本地服务已连接'}。当前草稿已保留，可重新生成。`);
+  } finally {
+    generatingDrafts = false; setBusy(false); renderGeneratedOptions();
+  }
 }
 function renderDraftContext() {
   const host = $('#draft-context'); host.hidden = !bundle;
@@ -563,7 +646,7 @@ function setBusy(value: boolean, label?: string) {
   syncProfileControls();
   syncDraftControls();
   syncToolState();
-  renderEditor(); renderBetaAudit(); renderLearnedExperiment(); renderOwnRouteStudy(); renderSteps();
+  renderEditor(); renderBetaAudit(); renderLearnedExperiment(); renderOwnRouteStudy(); renderSteps(); renderGeneratedOptions();
 }
 
 function syncProfileControls() {
@@ -639,6 +722,7 @@ function renderStyleStudy() {
 }
 
 function populateControls(request: Request) {
+  const pending = busy;
   const scenarios = defaults?.scenarios?.length ? defaults.scenarios : Object.entries(scenarioNames).map(([id, label]) => ({ id, label, description: '' }));
   $('#scenario').innerHTML = scenarios.map((item) => `<option value="${esc(item.id)}">${esc(item.label || scenarioNames[item.id])}</option>`).join('');
   $('#body').innerHTML = (defaults?.body_profiles || [request.body]).map((body) => `<option value="${esc(body.id)}">样例 ${esc(body.id)}</option>`).join('');
@@ -660,7 +744,7 @@ function populateControls(request: Request) {
   $<HTMLInputElement>('#seed').value = String(request.seed);
   $<HTMLSelectElement>('#hold-source').value = request.setting_design?.hold_source === 'templates' ? 'templates' : 'assets';
   $<HTMLSelectElement>('#wall-profile').value = request.setting_design?.wall_profile || 'default';
-  setBusy(false);
+  setBusy(pending);
 }
 
 function acceptBundle(next: Bundle, addHistory = true, resetView = true, learnedRunId = '') {
@@ -691,7 +775,7 @@ function acceptBundle(next: Bundle, addHistory = true, resetView = true, learned
 
 function renderAll() {
   ensureSelection();
-  renderCandidates(); renderSummary(); renderEditor(); renderLibrary(); renderChecks(); renderSteps(); renderComparison(); renderReviews(); renderBrief(); renderStyleStudy(); renderRouteInventory(); renderBetaAudit(); renderSettingStudy(); renderMechanics(); renderLearnedExperiment(); renderOwnRouteStudy(); renderDraftContext(); updateScene(); syncToolState();
+  renderCandidates(); renderSummary(); renderEditor(); renderLibrary(); renderChecks(); renderSteps(); renderComparison(); renderReviews(); renderBrief(); renderStyleStudy(); renderRouteInventory(); renderBetaAudit(); renderSettingStudy(); renderMechanics(); renderLearnedExperiment(); renderOwnRouteStudy(); renderDraftContext(); renderGeneratedOptions(); updateScene(); syncToolState();
   document.querySelectorAll<HTMLButtonElement>('[data-action="export-bundle"], [data-action="export-review"], [data-action="save-review"], [data-action="open-inventory"]').forEach((button) => { button.disabled = busy || !bundle || (button.dataset.action === 'save-review' && viewingAlternative()); });
   const candidate = current();
   $('#revision-badge').textContent = candidate ? `修订 ${candidate.revision}${viewingAlternative() ? ' · 替代走法' : ''}` : '—';
@@ -704,7 +788,7 @@ function renderAll() {
       $('#canvas-legend').innerHTML = '<span><i class="dot jug"></i>允许使用</span><span><i class="dot skipped"></i>未选入，仍在墙上</span><span>数字：实际移手次序</span>';
       $('#scene-title').textContent = activeLearnedRun() ? `固定岩壁 · ${learnedSourceNames[activeLearnedRun()!.source]}` : '固定岩壁 · 限定选点';
     }
-    $('#scene-title').textContent = activeOwnRoute()?.label || wallProfileNames[r.setting_design?.wall_profile || ''] || '当前草稿';
+    $('#scene-title').textContent = r.generation_brief ? `${current()?.name || '生成草稿'} · ${wallProfileNames[r.setting_design?.wall_profile || ''] || '当前墙面'}` : activeOwnRoute() ? `示例 · ${activeOwnRoute()!.label}` : wallProfileNames[r.setting_design?.wall_profile || ''] || '当前草稿';
     $('#canvas-legend').innerHTML = '<span><i class="dot jug"></i>本线路</span><span><i class="dot skipped"></i>其他岩点</span>';
     const wallHeight = wallHeightMeasures(r.scene);
     $('#scene-subtitle').textContent = `${r.scene.wall_panels?.length ? `${r.scene.wall_panels.length} 个空间墙面` : r.scene.angle_deg === 0 ? '垂直墙' : `仰角 ${r.scene.angle_deg}°`} · 展开高度 ${wallHeight.unfolded.toFixed(1)} m · 几何垂直高 ${wallHeight.vertical.toFixed(2)} m · 人体 ${r.body.id}${r.setting_design?.wall_profile && r.setting_design.wall_profile !== 'default' ? ` · ${wallProfileNames[r.setting_design.wall_profile]}` : ''}`;
@@ -1191,6 +1275,7 @@ $('#route-path').addEventListener('change', (e) => view?.setRoutePath((e.target 
 $('#compare').addEventListener('change', (e) => { compareId = (e.target as HTMLSelectElement).value; renderComparison(); updateScene(); });
 $('#history').addEventListener('change', (e) => { if (busy) return; const next = histories[Number((e.target as HTMLSelectElement).value)]; if (next) acceptBundle(next, false); });
 $('#library-filter').addEventListener('change', event => { holdFilter = (event.target as HTMLSelectElement).value; renderLibrary(); });
+$('#quick-generation-form').addEventListener('submit', event => { void generateNewDrafts(event as SubmitEvent); });
 $('#draft-picker').addEventListener('change', () => { void chooseDraft(); });
 $('#draft-form').addEventListener('submit', event => { void viewIntentDraft(event as SubmitEvent); });
 $('#draft-wall').addEventListener('change', event => { void viewIntentDraft(event); });
@@ -1201,6 +1286,12 @@ $('#import-file').addEventListener('change', async (event) => {
   try {
     const parsed = JSON.parse(await file.text());
     const result = await api<Bundle>('/api/validate', { bundle: parsed });
+    generatedEntries = []; generatedBrief = undefined; $('#generation-progress').hidden = true;
+    const savedBrief = result.request.generation_brief as Partial<DraftBrief> | undefined;
+    for (const [field, selector] of [['wall_profile', '#quick-wall'], ['style', '#quick-style'], ['difficulty', '#quick-difficulty']] as const) {
+      const value = savedBrief?.[field], control = $<HTMLSelectElement>(selector);
+      if (value && [...control.options].some(option => option.value === value)) control.value = value;
+    }
     acceptBundle(result); toast('已完成校验并导入结果包。');
   } catch (error) { showNotice(`导入失败：${error instanceof Error ? error.message : error}。当前方案未改变。`); }
   finally { input.value = ''; setBusy(false); }
@@ -1212,7 +1303,8 @@ document.addEventListener('click', (event) => {
   if (!button || button.hasAttribute('disabled')) return;
   const action = button.dataset.action;
   if (busy && ['candidate', 'style-example', 'route-example', 'setting-example', 'setting-stage', 'setting-path', 'import', 'save-review', 'export-bundle', 'export-review'].includes(action || '')) return;
-  if (action === 'research') showScreen('research');
+  if (action === 'generated-option') selectGeneratedOption(Number(button.dataset.variant));
+  else if (action === 'research') showScreen('research');
   else if (action === 'workbench') showScreen('workbench');
   else if (action === 'checks') showScreen('checks');
   else if (action === 'open-replay') { showStep(0); }
@@ -1319,7 +1411,7 @@ async function initialize() {
   if (!ownLoaded) {
     $('#canvas-empty').innerHTML = `<div class="empty-icon">${icon('cube')}</div><h2>草稿未能载入</h2><p>重新连接，或从顶部菜单选择其他草稿。</p><button class="button outlined" data-action="retry">${icon('refresh')}重新连接</button>`;
   }
-  syncDraftControls(); renderOwnRouteStudy();
+  initializing = false; syncDraftControls(); renderOwnRouteStudy();
   if (results[0].status === 'rejected') showNotice('默认配置加载失败，生成暂不可用。请确认本地服务已运行后重新连接。');
 }
 window.addEventListener('pagehide', () => preview?.dispose(), { once: true });

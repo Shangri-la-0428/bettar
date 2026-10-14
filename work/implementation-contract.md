@@ -1,5 +1,15 @@
 # Implementation contract · 2026-10-14
 
+## Current addendum · live homepage generation · 2026-10-15
+
+The homepage's primary workflow is wall → style → approximate difficulty → generate three alternatives. It calls the live rule generator; saved examples remain a separate menu choice. A batch keeps the wall geometry, body, style, difficulty and seed fixed, varying only the proposal index. Each proposal changes hold positions/orientations and independently searches legal hand/foot contacts; its output order is not a prescribed movement sequence. Results appear one by one and select their own request, constraints, candidates and checks in the existing wall, replay and editor.
+
+`POST /api/draft-option` accepts exactly `{wall_profile, style, difficulty, seed, variant}`. Supported values are `wall_profile: "overhang" | "roof" | "dihedral" | "arete"`, `style: "balance" | "power" | "sustained"`, `difficulty: "easy" | "medium" | "hard"`, integer `seed` from 0 through 2147483647, and `variant: 0 | 1 | 2`. The frontend sends three serial requests with the same brief and seed. Each option has a 20-second budget for contact search and pose checks; geometry preparation, bundle validation and serialization are recorded separately in total elapsed time. The endpoint does not run or require BetaZero.
+
+The response includes an ordinary validated `bundle`, `brief`, `status`, metrics, geometry/sequence digests and search timing. Status is `complete`, `unverified` or `search_unresolved`; unresolved search retains the proposed layout without fabricated moves. The UI also preserves request failures and identifies duplicate geometry/sequence results. Neither completion nor a passed discrete geometry check proves physical climbability.
+
+`request.generation_brief` travels with the normal bundle export/import. It records the chosen conditions and seed/index, labels, generator version and code hash, difficulty and variation policies, placement adjustments, wall-fit/spacing repairs and limitations. “Easy / medium / hard” changes actual spacing and support geometry while retaining the same physical wall within a batch; it does not alter friction, body capacities or check thresholds, and is not a calibrated V grade. Editing continues to invalidate previous checks. Evidence for this addendum belongs under `outputs/home-generation/`; historical studies and their acceptance counts remain distinct.
+
 ## Current addendum · explicit hand/foot surfaces and own route drafts · 2026-10-15
 
 The primary workflow returns to our own rule-based spatial proposals and independent four-limb search. No model training or machine-learning runtime is required. BetaZero remains a historical offline experiment, not a dependency of the default screen. Saved studies whose engine/asset provenance is obsolete remain historical; the app must not silently accept their checks under current rules.
