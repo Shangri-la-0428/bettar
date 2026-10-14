@@ -1,0 +1,6 @@
+# Optional reproducible preparation/inspection of downloaded meshes.
+# The application runtime consumes the checked-in normalized library only.
+trimesh==5.1.1
+fast-simplification==0.2.0
+pillow==12.3.0
+matplotlib==3.11.2

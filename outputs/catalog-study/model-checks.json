@@ -1,0 +1,137 @@
+{
+  "status": "pass",
+  "holds": 20,
+  "checks": [
+    "declared envelope",
+    "finite geometry",
+    "picking IDs",
+    "default contact alignment",
+    "deterministic geometry",
+    "comparison geometry parity",
+    "explicit route colors",
+    "metric fastenings",
+    "distinct competition silhouettes"
+  ],
+  "results": [
+    {
+      "id": "jug_01",
+      "type": "jug",
+      "triangles": 4078,
+      "contact_error_m": 3.576278745365258e-9
+    },
+    {
+      "id": "jug_02",
+      "type": "jug",
+      "triangles": 4078,
+      "contact_error_m": 3.576278745365258e-9
+    },
+    {
+      "id": "jug_03",
+      "type": "jug",
+      "triangles": 4078,
+      "contact_error_m": 3.576278745365258e-9
+    },
+    {
+      "id": "jug_04",
+      "type": "jug",
+      "triangles": 4078,
+      "contact_error_m": 3.576278745365258e-9
+    },
+    {
+      "id": "jug_05",
+      "type": "jug",
+      "triangles": 4078,
+      "contact_error_m": 3.576278745365258e-9
+    },
+    {
+      "id": "jug_06",
+      "type": "jug",
+      "triangles": 4078,
+      "contact_error_m": 3.576278745365258e-9
+    },
+    {
+      "id": "directional_edge_01",
+      "type": "directional_edge",
+      "triangles": 4078,
+      "contact_error_m": 2.980232727267662e-10
+    },
+    {
+      "id": "directional_edge_02",
+      "type": "directional_edge",
+      "triangles": 4078,
+      "contact_error_m": 2.980232727267662e-10
+    },
+    {
+      "id": "directional_edge_03",
+      "type": "directional_edge",
+      "triangles": 4078,
+      "contact_error_m": 2.980232727267662e-10
+    },
+    {
+      "id": "directional_edge_04",
+      "type": "directional_edge",
+      "triangles": 4078,
+      "contact_error_m": 2.980232727267662e-10
+    },
+    {
+      "id": "foothold_01",
+      "type": "foothold",
+      "triangles": 4078,
+      "contact_error_m": 1.7881394004382045e-9
+    },
+    {
+      "id": "foothold_02",
+      "type": "foothold",
+      "triangles": 4078,
+      "contact_error_m": 1.7881394004382045e-9
+    },
+    {
+      "id": "foothold_03",
+      "type": "foothold",
+      "triangles": 4078,
+      "contact_error_m": 1.7881394004382045e-9
+    },
+    {
+      "id": "foothold_04",
+      "type": "foothold",
+      "triangles": 4078,
+      "contact_error_m": 1.7881394004382045e-9
+    },
+    {
+      "id": "foothold_05",
+      "type": "foothold",
+      "triangles": 4078,
+      "contact_error_m": 1.7881394004382045e-9
+    },
+    {
+      "id": "foothold_06",
+      "type": "foothold",
+      "triangles": 4078,
+      "contact_error_m": 1.7881394004382045e-9
+    },
+    {
+      "id": "verification-sloper",
+      "type": "sloper",
+      "triangles": 4156,
+      "contact_error_m": 1.1920928966180355e-9
+    },
+    {
+      "id": "verification-pinch",
+      "type": "pinch",
+      "triangles": 4156,
+      "contact_error_m": 5.960464538601329e-9
+    },
+    {
+      "id": "verification-rail",
+      "type": "rail",
+      "triangles": 4156,
+      "contact_error_m": 3.576278745365258e-9
+    },
+    {
+      "id": "verification-volume",
+      "type": "volume",
+      "triangles": 244,
+      "contact_error_m": 2.384185793236071e-9
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "verified_at": "2026-10-14T11:17:06.225064+00:00",
+  "scope": "Fixed synthetic wall, style and phase contact-sequence search connected to local prototype",
+  "engine_code_hash": "sha256:f3fa1aa55f85513543371fb2c6ace089439c47cf5a0ab2faf1308abadeddd5d9",
+  "python_tests": {
+    "command": ".venv/bin/python -m pytest tests -q",
+    "passed": 176,
+    "seconds": 32.87
+  },
+  "frontend_build": {
+    "command": "npm --prefix web run build",
+    "status": "pass",
+    "js_kb": 611.02,
+    "gzip_kb": 163.9,
+    "remaining_warning": "Single output chunk exceeds 500 kB"
+  },
+  "browser": {
+    "url": "http://127.0.0.1:5174/",
+    "desktop": {
+      "width": 1440,
+      "height": 1000,
+      "horizontal_overflow": false
+    },
+    "mobile": {
+      "width": 390,
+      "height": 844,
+      "document_scroll_width": 385,
+      "horizontal_overflow": false,
+      "comparison_table": "Local horizontal scrolling; page remains within viewport"
+    },
+    "final_console_errors": [],
+    "checks": [
+      "Default 0-degree comparison: three objectives with real distinct selected contacts and sequences; each has three candidates passing all36P0 checks",
+      "Technical late vs freshly generated early: computed peak at one-based event6 vs event4; stage/move click selects the correct contact state",
+      "Actual UI comparison generation at10degrees produced3 independent bundles, each3 candidates36/36P0",
+      "Actual UI technical40degrees generation produced3 candidates36/36P0; unimplemented physics remains not_checked",
+      "Hold inspector shows synthetic0–1affordances, while fixed-wall mount/surface/position controls stay locked",
+      "UI export and import of technical early bundle preserve3 candidates,3 reports and computed peak; independent validation also passes",
+      "High power target70 imported as33/36,32/36,33/36 unknown; never promoted to pass",
+      "Switching from style40degrees to catalogue clamps next-generation angle to10degrees without changing current result",
+      "Catalogue generation, mounted edge surface change, new revision/stale report and recalculation23/23 still work"
+    ]
+  },
+  "evidence": [
+    "algorithm-verification.json",
+    "browser-exported-technical-early.json",
+    "browser-exported-technical-40deg.json",
+    "browser-generated-10deg-comparison.json",
+    "power-high-target-bundle.json",
+    "technical-early-crux-bundle.json"
+  ],
+  "screenshots": [
+    "workbench.png",
+    "technical-late-desktop.png",
+    "comparison-10deg-desktop.png",
+    "high-target-unknown.png",
+    "mobile-top.png",
+    "mobile-phases.png"
+  ],
+  "limitations": [
+    "Indices and targets are uncalibrated synthetic assumptions, not V grades or measured physical capacities",
+    "Four hand transfers, four preceding foot transfers, upward-only grammar; finite nonoptimal search",
+    "No solved contact forces, friction, balance, continuous dynamics, actual fatigue/recovery or cognitive difficulty",
+    "Default power objective60 chosen for a useful bounded demonstration; higher70 example retained unknown under unchanged evaluator",
+    "Same-wall examples demonstrate this implementation, not learned generalization or validation against real climbing"
+  ]
+}

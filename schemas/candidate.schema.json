@@ -1,0 +1,490 @@
+{
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 120
+    },
+    "name": {
+      "type": "string",
+      "maxLength": 300
+    },
+    "revision": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 1000000
+    },
+    "parent_id": {
+      "anyOf": [
+        {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 120
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "generator": {
+      "enum": [
+        "rules",
+        "codex",
+        "manual"
+      ]
+    },
+    "placements": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 120
+          },
+          "inventory_id": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 120
+          },
+          "u": {
+            "type": "number"
+          },
+          "v": {
+            "type": "number"
+          },
+          "rotation_deg": {
+            "type": "number"
+          },
+          "contact_surface_id": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 120
+          },
+          "mount": {
+            "type": "object",
+            "properties": {
+              "parent_id": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 120
+              },
+              "face_id": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 120
+              }
+            },
+            "required": [
+              "parent_id",
+              "face_id"
+            ],
+            "additionalProperties": false
+          },
+          "wall_panel_id": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 120
+          }
+        },
+        "required": [
+          "id",
+          "inventory_id",
+          "u",
+          "v",
+          "rotation_deg"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 1,
+      "maxItems": 180
+    },
+    "states": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 120
+          },
+          "label": {
+            "type": "string"
+          },
+          "contacts": {
+            "type": "object",
+            "properties": {
+              "LH": {
+                "anyOf": [
+                  {
+                    "type": "object",
+                    "properties": {
+                      "placement_id": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 120
+                      },
+                      "contact_id": {
+                        "const": "main"
+                      }
+                    },
+                    "required": [
+                      "placement_id",
+                      "contact_id"
+                    ],
+                    "additionalProperties": false
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "RH": {
+                "anyOf": [
+                  {
+                    "type": "object",
+                    "properties": {
+                      "placement_id": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 120
+                      },
+                      "contact_id": {
+                        "const": "main"
+                      }
+                    },
+                    "required": [
+                      "placement_id",
+                      "contact_id"
+                    ],
+                    "additionalProperties": false
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "LF": {
+                "anyOf": [
+                  {
+                    "type": "object",
+                    "properties": {
+                      "placement_id": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 120
+                      },
+                      "contact_id": {
+                        "const": "main"
+                      }
+                    },
+                    "required": [
+                      "placement_id",
+                      "contact_id"
+                    ],
+                    "additionalProperties": false
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "RF": {
+                "anyOf": [
+                  {
+                    "type": "object",
+                    "properties": {
+                      "placement_id": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 120
+                      },
+                      "contact_id": {
+                        "const": "main"
+                      }
+                    },
+                    "required": [
+                      "placement_id",
+                      "contact_id"
+                    ],
+                    "additionalProperties": false
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              }
+            },
+            "required": [
+              "LH",
+              "RH",
+              "LF",
+              "RF"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "required": [
+          "id",
+          "label",
+          "contacts"
+        ]
+      },
+      "minItems": 1,
+      "maxItems": 73
+    },
+    "events": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "limb": {
+            "enum": [
+              "LH",
+              "RH",
+              "LF",
+              "RF"
+            ]
+          },
+          "from_state": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 120
+          },
+          "release_state": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 120
+          },
+          "to_state": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 120
+          }
+        },
+        "required": [
+          "limb",
+          "from_state",
+          "release_state",
+          "to_state"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 0,
+      "maxItems": 36
+    },
+    "design_notes": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "maxLength": 2000
+      },
+      "minItems": 0,
+      "maxItems": 30
+    },
+    "search_metadata": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "algorithm",
+        "expanded",
+        "expansion_limit",
+        "beam_width",
+        "complete_sequences",
+        "returned_candidates",
+        "distinct_hand_sequences",
+        "rejected",
+        "budget_exhausted",
+        "scope",
+        "seed_policy"
+      ],
+      "properties": {
+        "algorithm": {
+          "enum": [
+            "bounded_contact_beam_v1",
+            "history_contact_beam_v1"
+          ]
+        },
+        "expanded": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 60000
+        },
+        "expansion_limit": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 60000
+        },
+        "beam_width": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 128
+        },
+        "complete_sequences": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 60000
+        },
+        "returned_candidates": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 12
+        },
+        "distinct_hand_sequences": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 12
+        },
+        "rejected": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 1000000
+          }
+        },
+        "budget_exhausted": {
+          "type": "boolean"
+        },
+        "scope": {
+          "type": "string",
+          "maxLength": 300
+        },
+        "seed_policy": {
+          "type": "string",
+          "maxLength": 300
+        },
+        "history_state": {
+          "type": "string",
+          "maxLength": 150
+        },
+        "pool_count": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 180
+        }
+      }
+    },
+    "setting_report": {
+      "type": "object",
+      "required": [
+        "model_version",
+        "program",
+        "baseline",
+        "result",
+        "changes",
+        "limitations",
+        "search"
+      ],
+      "properties": {
+        "model_version": {
+          "type": "string"
+        },
+        "program": {
+          "type": "string"
+        },
+        "baseline": {
+          "type": "object"
+        },
+        "result": {
+          "type": "object"
+        },
+        "changes": {
+          "type": "array"
+        },
+        "limitations": {
+          "type": "array"
+        },
+        "search": {
+          "type": "object"
+        }
+      },
+      "additionalProperties": true
+    },
+    "layout_report": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status",
+        "wall_profile",
+        "reason",
+        "search",
+        "limitations"
+      ],
+      "properties": {
+        "status": {
+          "const": "no_sequence"
+        },
+        "wall_profile": {
+          "enum": [
+            "overhang",
+            "roof",
+            "dihedral",
+            "arete"
+          ]
+        },
+        "reason": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 500
+        },
+        "search": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
+        },
+        "limitations": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  },
+  "required": [
+    "id",
+    "name",
+    "revision",
+    "parent_id",
+    "generator",
+    "placements",
+    "states",
+    "events",
+    "design_notes"
+  ],
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "allOf": [
+    {
+      "if": {
+        "required": [
+          "layout_report"
+        ]
+      },
+      "then": {
+        "properties": {
+          "states": {
+            "maxItems": 1
+          },
+          "events": {
+            "maxItems": 0
+          }
+        }
+      },
+      "else": {
+        "properties": {
+          "states": {
+            "minItems": 3
+          },
+          "events": {
+            "minItems": 1
+          }
+        }
+      }
+    }
+  ]
+}

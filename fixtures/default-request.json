@@ -1,0 +1,691 @@
+{
+  "schema_version": "1.0",
+  "id": "request-foot_first-A",
+  "revision": 1,
+  "source": "synthetic_assumption",
+  "scene": {
+    "width": 3,
+    "height": 3,
+    "angle_deg": 0,
+    "margin": 0.2,
+    "inventory": [
+      {
+        "id": "jug_01",
+        "type": "jug",
+        "width": 0.17,
+        "height": 0.12,
+        "depth": 0.09,
+        "source": "synthetic_assumption",
+        "pull_direction": [
+          0,
+          -1,
+          0
+        ],
+        "contact": {
+          "id": "main",
+          "position": [
+            0,
+            0,
+            0.09
+          ],
+          "radius": 0.015,
+          "limbs": [
+            "LH",
+            "RH"
+          ]
+        }
+      },
+      {
+        "id": "jug_02",
+        "type": "jug",
+        "width": 0.17,
+        "height": 0.12,
+        "depth": 0.09,
+        "source": "synthetic_assumption",
+        "pull_direction": [
+          0,
+          -1,
+          0
+        ],
+        "contact": {
+          "id": "main",
+          "position": [
+            0,
+            0,
+            0.09
+          ],
+          "radius": 0.015,
+          "limbs": [
+            "LH",
+            "RH"
+          ]
+        }
+      },
+      {
+        "id": "jug_03",
+        "type": "jug",
+        "width": 0.17,
+        "height": 0.12,
+        "depth": 0.09,
+        "source": "synthetic_assumption",
+        "pull_direction": [
+          0,
+          -1,
+          0
+        ],
+        "contact": {
+          "id": "main",
+          "position": [
+            0,
+            0,
+            0.09
+          ],
+          "radius": 0.015,
+          "limbs": [
+            "LH",
+            "RH"
+          ]
+        }
+      },
+      {
+        "id": "jug_04",
+        "type": "jug",
+        "width": 0.17,
+        "height": 0.12,
+        "depth": 0.09,
+        "source": "synthetic_assumption",
+        "pull_direction": [
+          0,
+          -1,
+          0
+        ],
+        "contact": {
+          "id": "main",
+          "position": [
+            0,
+            0,
+            0.09
+          ],
+          "radius": 0.015,
+          "limbs": [
+            "LH",
+            "RH"
+          ]
+        }
+      },
+      {
+        "id": "jug_05",
+        "type": "jug",
+        "width": 0.17,
+        "height": 0.12,
+        "depth": 0.09,
+        "source": "synthetic_assumption",
+        "pull_direction": [
+          0,
+          -1,
+          0
+        ],
+        "contact": {
+          "id": "main",
+          "position": [
+            0,
+            0,
+            0.09
+          ],
+          "radius": 0.015,
+          "limbs": [
+            "LH",
+            "RH"
+          ]
+        }
+      },
+      {
+        "id": "jug_06",
+        "type": "jug",
+        "width": 0.17,
+        "height": 0.12,
+        "depth": 0.09,
+        "source": "synthetic_assumption",
+        "pull_direction": [
+          0,
+          -1,
+          0
+        ],
+        "contact": {
+          "id": "main",
+          "position": [
+            0,
+            0,
+            0.09
+          ],
+          "radius": 0.015,
+          "limbs": [
+            "LH",
+            "RH"
+          ]
+        }
+      },
+      {
+        "id": "directional_edge_01",
+        "type": "directional_edge",
+        "width": 0.16,
+        "height": 0.1,
+        "depth": 0.07,
+        "source": "synthetic_assumption",
+        "pull_direction": [
+          0,
+          -1,
+          0
+        ],
+        "contact": {
+          "id": "main",
+          "position": [
+            0,
+            0,
+            0.07
+          ],
+          "radius": 0.015,
+          "limbs": [
+            "LH",
+            "RH"
+          ]
+        }
+      },
+      {
+        "id": "directional_edge_02",
+        "type": "directional_edge",
+        "width": 0.16,
+        "height": 0.1,
+        "depth": 0.07,
+        "source": "synthetic_assumption",
+        "pull_direction": [
+          0,
+          -1,
+          0
+        ],
+        "contact": {
+          "id": "main",
+          "position": [
+            0,
+            0,
+            0.07
+          ],
+          "radius": 0.015,
+          "limbs": [
+            "LH",
+            "RH"
+          ]
+        }
+      },
+      {
+        "id": "directional_edge_03",
+        "type": "directional_edge",
+        "width": 0.16,
+        "height": 0.1,
+        "depth": 0.07,
+        "source": "synthetic_assumption",
+        "pull_direction": [
+          0,
+          -1,
+          0
+        ],
+        "contact": {
+          "id": "main",
+          "position": [
+            0,
+            0,
+            0.07
+          ],
+          "radius": 0.015,
+          "limbs": [
+            "LH",
+            "RH"
+          ]
+        }
+      },
+      {
+        "id": "directional_edge_04",
+        "type": "directional_edge",
+        "width": 0.16,
+        "height": 0.1,
+        "depth": 0.07,
+        "source": "synthetic_assumption",
+        "pull_direction": [
+          0,
+          -1,
+          0
+        ],
+        "contact": {
+          "id": "main",
+          "position": [
+            0,
+            0,
+            0.07
+          ],
+          "radius": 0.015,
+          "limbs": [
+            "LH",
+            "RH"
+          ]
+        }
+      },
+      {
+        "id": "foothold_01",
+        "type": "foothold",
+        "width": 0.1,
+        "height": 0.07,
+        "depth": 0.045,
+        "source": "synthetic_assumption",
+        "pull_direction": [
+          0,
+          -1,
+          0
+        ],
+        "contact": {
+          "id": "main",
+          "position": [
+            0,
+            0,
+            0.045
+          ],
+          "radius": 0.015,
+          "limbs": [
+            "LF",
+            "RF"
+          ]
+        }
+      },
+      {
+        "id": "foothold_02",
+        "type": "foothold",
+        "width": 0.1,
+        "height": 0.07,
+        "depth": 0.045,
+        "source": "synthetic_assumption",
+        "pull_direction": [
+          0,
+          -1,
+          0
+        ],
+        "contact": {
+          "id": "main",
+          "position": [
+            0,
+            0,
+            0.045
+          ],
+          "radius": 0.015,
+          "limbs": [
+            "LF",
+            "RF"
+          ]
+        }
+      },
+      {
+        "id": "foothold_03",
+        "type": "foothold",
+        "width": 0.1,
+        "height": 0.07,
+        "depth": 0.045,
+        "source": "synthetic_assumption",
+        "pull_direction": [
+          0,
+          -1,
+          0
+        ],
+        "contact": {
+          "id": "main",
+          "position": [
+            0,
+            0,
+            0.045
+          ],
+          "radius": 0.015,
+          "limbs": [
+            "LF",
+            "RF"
+          ]
+        }
+      },
+      {
+        "id": "foothold_04",
+        "type": "foothold",
+        "width": 0.1,
+        "height": 0.07,
+        "depth": 0.045,
+        "source": "synthetic_assumption",
+        "pull_direction": [
+          0,
+          -1,
+          0
+        ],
+        "contact": {
+          "id": "main",
+          "position": [
+            0,
+            0,
+            0.045
+          ],
+          "radius": 0.015,
+          "limbs": [
+            "LF",
+            "RF"
+          ]
+        }
+      },
+      {
+        "id": "foothold_05",
+        "type": "foothold",
+        "width": 0.1,
+        "height": 0.07,
+        "depth": 0.045,
+        "source": "synthetic_assumption",
+        "pull_direction": [
+          0,
+          -1,
+          0
+        ],
+        "contact": {
+          "id": "main",
+          "position": [
+            0,
+            0,
+            0.045
+          ],
+          "radius": 0.015,
+          "limbs": [
+            "LF",
+            "RF"
+          ]
+        }
+      },
+      {
+        "id": "foothold_06",
+        "type": "foothold",
+        "width": 0.1,
+        "height": 0.07,
+        "depth": 0.045,
+        "source": "synthetic_assumption",
+        "pull_direction": [
+          0,
+          -1,
+          0
+        ],
+        "contact": {
+          "id": "main",
+          "position": [
+            0,
+            0,
+            0.045
+          ],
+          "radius": 0.015,
+          "limbs": [
+            "LF",
+            "RF"
+          ]
+        }
+      }
+    ]
+  },
+  "body": {
+    "upper_arm": 0.28,
+    "forearm": 0.25,
+    "thigh": 0.4,
+    "shin": 0.38,
+    "shoulder_width": 0.34,
+    "hip_width": 0.26,
+    "torso": 0.43,
+    "id": "A",
+    "source": "synthetic_assumption",
+    "endpoint_offsets": {
+      "LH": [
+        0,
+        0,
+        0
+      ],
+      "RH": [
+        0,
+        0,
+        0
+      ],
+      "LF": [
+        0,
+        0,
+        0
+      ],
+      "RF": [
+        0,
+        0,
+        0
+      ]
+    },
+    "joint_limits_deg": {
+      "shoulder": [
+        [
+          -170,
+          170
+        ],
+        [
+          -170,
+          170
+        ],
+        [
+          -170,
+          170
+        ]
+      ],
+      "hip": [
+        [
+          -110,
+          110
+        ],
+        [
+          -90,
+          90
+        ],
+        [
+          -70,
+          70
+        ]
+      ],
+      "elbow": [
+        0,
+        140
+      ],
+      "knee": [
+        0,
+        140
+      ]
+    }
+  },
+  "scenario": "foot_first",
+  "mode": "free",
+  "hand_moves": 2,
+  "seed": 42,
+  "budget": 3,
+  "reference_layout": [
+    {
+      "id": "jug_01",
+      "inventory_id": "jug_01",
+      "u": -0.28,
+      "v": 1.55,
+      "rotation_deg": 0
+    },
+    {
+      "id": "jug_02",
+      "inventory_id": "jug_02",
+      "u": 0.28,
+      "v": 1.55,
+      "rotation_deg": 0
+    },
+    {
+      "id": "jug_03",
+      "inventory_id": "jug_03",
+      "u": 0.45,
+      "v": 1.8,
+      "rotation_deg": 0
+    },
+    {
+      "id": "jug_04",
+      "inventory_id": "jug_04",
+      "u": -0.12,
+      "v": 1.88,
+      "rotation_deg": 0
+    },
+    {
+      "id": "jug_05",
+      "inventory_id": "jug_05",
+      "u": 0.28,
+      "v": 2.1,
+      "rotation_deg": 0
+    },
+    {
+      "id": "jug_06",
+      "inventory_id": "jug_06",
+      "u": -0.34,
+      "v": 2.17,
+      "rotation_deg": 0
+    },
+    {
+      "id": "directional_edge_01",
+      "inventory_id": "directional_edge_01",
+      "u": -0.62,
+      "v": 1.63,
+      "rotation_deg": 65
+    },
+    {
+      "id": "directional_edge_02",
+      "inventory_id": "directional_edge_02",
+      "u": -0.46,
+      "v": 1.92,
+      "rotation_deg": 65
+    },
+    {
+      "id": "directional_edge_03",
+      "inventory_id": "directional_edge_03",
+      "u": -0.9,
+      "v": 2.1,
+      "rotation_deg": 65
+    },
+    {
+      "id": "directional_edge_04",
+      "inventory_id": "directional_edge_04",
+      "u": 0.9,
+      "v": 1.4,
+      "rotation_deg": 65
+    },
+    {
+      "id": "foothold_01",
+      "inventory_id": "foothold_01",
+      "u": -0.22,
+      "v": 0.6,
+      "rotation_deg": 0
+    },
+    {
+      "id": "foothold_02",
+      "inventory_id": "foothold_02",
+      "u": 0.22,
+      "v": 0.6,
+      "rotation_deg": 0
+    },
+    {
+      "id": "foothold_03",
+      "inventory_id": "foothold_03",
+      "u": -0.35,
+      "v": 0.86,
+      "rotation_deg": 0
+    },
+    {
+      "id": "foothold_04",
+      "inventory_id": "foothold_04",
+      "u": 0.12,
+      "v": 0.93,
+      "rotation_deg": 0
+    },
+    {
+      "id": "foothold_05",
+      "inventory_id": "foothold_05",
+      "u": 0.46,
+      "v": 0.84,
+      "rotation_deg": 0
+    },
+    {
+      "id": "foothold_06",
+      "inventory_id": "foothold_06",
+      "u": -0.06,
+      "v": 1.05,
+      "rotation_deg": 0
+    }
+  ],
+  "solver": {
+    "max_nfev": 100,
+    "restarts": 3,
+    "contact_tolerance_m": 0.015,
+    "epsilon_geometry_m": 1e-06,
+    "root_bounds": [
+      [
+        -1.6,
+        1.6
+      ],
+      [
+        0.35,
+        2.6
+      ],
+      [
+        0.08,
+        1.0
+      ]
+    ],
+    "root_rotation_deg": [
+      [
+        -35,
+        35
+      ],
+      [
+        -65,
+        65
+      ],
+      [
+        -35,
+        35
+      ]
+    ],
+    "timeout_seconds": 12
+  },
+  "start_contacts": {
+    "LH": {
+      "placement_id": "jug_01",
+      "contact_id": "main"
+    },
+    "RH": {
+      "placement_id": "jug_02",
+      "contact_id": "main"
+    },
+    "LF": {
+      "placement_id": "foothold_01",
+      "contact_id": "main"
+    },
+    "RF": {
+      "placement_id": "foothold_02",
+      "contact_id": "main"
+    }
+  },
+  "end_contacts": {
+    "LH": {
+      "placement_id": "jug_04",
+      "contact_id": "main"
+    },
+    "RH": {
+      "placement_id": "jug_03",
+      "contact_id": "main"
+    },
+    "LF": {
+      "placement_id": "foothold_03",
+      "contact_id": "main"
+    },
+    "RF": {
+      "placement_id": "foothold_04",
+      "contact_id": "main"
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "schema_version": "1.0",
+  "source": "synthetic_assumption",
+  "purpose": "Local engineering comparison, not real-world routesetting validation",
+  "seeds": [11, 29, 47],
+  "candidate_budget": 5,
+  "development": [
+    {"id":"dev-foot-fixed","scenario":"foot_first","mode":"fixed","body_id":"A","angle_deg":0,"hand_moves":2},
+    {"id":"dev-foot-free","scenario":"foot_first","mode":"free","body_id":"A","angle_deg":0,"hand_moves":2},
+    {"id":"dev-side-fixed","scenario":"sidepull","mode":"fixed","body_id":"B","angle_deg":10,"hand_moves":2},
+    {"id":"dev-side-free","scenario":"sidepull","mode":"free","body_id":"B","angle_deg":10,"hand_moves":2},
+    {"id":"dev-reposition-fixed","scenario":"foot_reposition","mode":"fixed","body_id":"A","angle_deg":10,"hand_moves":2},
+    {"id":"dev-reposition-free","scenario":"foot_reposition","mode":"free","body_id":"A","angle_deg":10,"hand_moves":2}
+  ],
+  "holdout": [
+    {"id":"hold-foot-fixed","scenario":"foot_first","mode":"fixed","body_id":"B","angle_deg":10,"hand_moves":3},
+    {"id":"hold-foot-free","scenario":"foot_first","mode":"free","body_id":"B","angle_deg":10,"hand_moves":3},
+    {"id":"hold-side-fixed","scenario":"sidepull","mode":"fixed","body_id":"A","angle_deg":0,"hand_moves":3},
+    {"id":"hold-side-free","scenario":"sidepull","mode":"free","body_id":"A","angle_deg":0,"hand_moves":3},
+    {"id":"hold-reposition-fixed","scenario":"foot_reposition","mode":"fixed","body_id":"B","angle_deg":0,"hand_moves":3},
+    {"id":"hold-reposition-free","scenario":"foot_reposition","mode":"free","body_id":"B","angle_deg":0,"hand_moves":3}
+  ],
+  "expectation": "Every candidate uses the same frozen checks. Any arm may produce pass, fail or unknown. Fixed mode never edits placements. Failed attempts remain in the denominator. Holdout is synthetic and not independent external evidence."
+}

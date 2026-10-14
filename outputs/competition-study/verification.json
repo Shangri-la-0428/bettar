@@ -1,0 +1,90 @@
+{
+  "date": "2026-10-14",
+  "workspace": ".",
+  "preview": "http://127.0.0.1:5174/",
+  "engine_code_hash": "sha256:51acfefbd5dbf69d12d0451e3315606c525b106a7a92df8e0f054bd3c769bc38",
+  "automated": {
+    "pytest": {
+      "passed": 103,
+      "duration_seconds": 6.77
+    },
+    "hold_geometry": {
+      "passed": true,
+      "instances": 20
+    },
+    "frontend_build": {
+      "passed": true,
+      "js_gzip_kb": 153.66,
+      "warning": "main chunk exceeds 500 kB"
+    }
+  },
+  "browser_checks": [
+    {
+      "case": "competition default",
+      "result": "12 holds, 3 free layout variants; 33/36 P0 pass, 3 unknown"
+    },
+    {
+      "case": "phase navigation",
+      "result": "phase 2 opens state 05 with matching intent; phase 3 matching intent"
+    },
+    {
+      "case": "unknown pose",
+      "result": "state 08 shows contact targets only and explicit unknown message"
+    },
+    {
+      "case": "fixed mode from board study",
+      "result": "one synthetic candidate; move and numeric position controls disabled"
+    },
+    {
+      "case": "basic profile",
+      "result": "16 holds, 3x3m, 28/28 implemented checks pass for chosen four-hand-move case"
+    },
+    {
+      "case": "10 degree actual canvas drag",
+      "result": "P1 drag creates revision 2 and marks report stale"
+    },
+    {
+      "case": "collision recheck",
+      "result": "32/36 pass, 1 collision fail, 3 unknown; no serialization error"
+    },
+    {
+      "case": "export and import",
+      "result": "4 candidates and collision report preserved; roundtrip bundle saved"
+    },
+    {
+      "case": "repair",
+      "result": "restored P1 position creates revision 3; 33/36 pass, 0 fail, 3 unknown"
+    },
+    {
+      "case": "camera mode",
+      "result": "import resets camera and selected view control together"
+    },
+    {
+      "case": "responsive",
+      "result": "1440px scrollWidth1435; 390px scrollWidth385; wall reframe, phase layout and hold library visually checked"
+    },
+    {
+      "case": "reference photos",
+      "result": "all 3 remote reference images loaded; credits and primary links present"
+    },
+    {
+      "case": "browser errors",
+      "result": "no captured JS error logs in final post-restart session"
+    }
+  ],
+  "artifacts": [
+    "workbench.png",
+    "mobile-design.png",
+    "references.png",
+    "edited-10deg-bundle.json"
+  ],
+  "remaining": [
+    "A board identity not confirmed",
+    "fixed-board selection and multiple route search not implemented",
+    "volume-on-volume installation and multi-plane walls not implemented",
+    "contact surfaces, force, friction, balance, whole-body collision, continuous dynamics and real grades not verified",
+    "competition synthetic case retains 3 unknown IK poses"
+  ],
+  "scope": "Local prototype only; no publication, real brand layouts, borrowed meshes or community-route dataset.",
+  "public_repository_note": "The references.png screenshot of third-party competition photos is excluded; original source links and attribution remain in README and research documents."
+}

@@ -1,0 +1,6295 @@
+{
+  "schema_version": "1.0",
+  "id": "bundle-b49fa55d5b-1791994450973659000",
+  "created_at": "2026-10-14T16:14:10.973664+00:00",
+  "request": {
+    "schema_version": "1.0",
+    "id": "request-foot_first-A",
+    "revision": 1,
+    "source": "synthetic_assumption",
+    "scene": {
+      "width": 3,
+      "height": 3,
+      "angle_deg": 0,
+      "margin": 0.2,
+      "inventory": [
+        {
+          "id": "jug_01",
+          "type": "jug",
+          "width": 0.17,
+          "height": 0.12,
+          "depth": 0.09,
+          "source": "synthetic_assumption",
+          "pull_direction": [
+            0,
+            -1,
+            0
+          ],
+          "contact": {
+            "id": "main",
+            "position": [
+              0,
+              0,
+              0.09
+            ],
+            "radius": 0.015,
+            "limbs": [
+              "LH",
+              "RH"
+            ]
+          }
+        },
+        {
+          "id": "jug_02",
+          "type": "jug",
+          "width": 0.17,
+          "height": 0.12,
+          "depth": 0.09,
+          "source": "synthetic_assumption",
+          "pull_direction": [
+            0,
+            -1,
+            0
+          ],
+          "contact": {
+            "id": "main",
+            "position": [
+              0,
+              0,
+              0.09
+            ],
+            "radius": 0.015,
+            "limbs": [
+              "LH",
+              "RH"
+            ]
+          }
+        },
+        {
+          "id": "jug_03",
+          "type": "jug",
+          "width": 0.17,
+          "height": 0.12,
+          "depth": 0.09,
+          "source": "synthetic_assumption",
+          "pull_direction": [
+            0,
+            -1,
+            0
+          ],
+          "contact": {
+            "id": "main",
+            "position": [
+              0,
+              0,
+              0.09
+            ],
+            "radius": 0.015,
+            "limbs": [
+              "LH",
+              "RH"
+            ]
+          }
+        },
+        {
+          "id": "jug_04",
+          "type": "jug",
+          "width": 0.17,
+          "height": 0.12,
+          "depth": 0.09,
+          "source": "synthetic_assumption",
+          "pull_direction": [
+            0,
+            -1,
+            0
+          ],
+          "contact": {
+            "id": "main",
+            "position": [
+              0,
+              0,
+              0.09
+            ],
+            "radius": 0.015,
+            "limbs": [
+              "LH",
+              "RH"
+            ]
+          }
+        },
+        {
+          "id": "jug_05",
+          "type": "jug",
+          "width": 0.17,
+          "height": 0.12,
+          "depth": 0.09,
+          "source": "synthetic_assumption",
+          "pull_direction": [
+            0,
+            -1,
+            0
+          ],
+          "contact": {
+            "id": "main",
+            "position": [
+              0,
+              0,
+              0.09
+            ],
+            "radius": 0.015,
+            "limbs": [
+              "LH",
+              "RH"
+            ]
+          }
+        },
+        {
+          "id": "jug_06",
+          "type": "jug",
+          "width": 0.17,
+          "height": 0.12,
+          "depth": 0.09,
+          "source": "synthetic_assumption",
+          "pull_direction": [
+            0,
+            -1,
+            0
+          ],
+          "contact": {
+            "id": "main",
+            "position": [
+              0,
+              0,
+              0.09
+            ],
+            "radius": 0.015,
+            "limbs": [
+              "LH",
+              "RH"
+            ]
+          }
+        },
+        {
+          "id": "directional_edge_01",
+          "type": "directional_edge",
+          "width": 0.16,
+          "height": 0.1,
+          "depth": 0.07,
+          "source": "synthetic_assumption",
+          "pull_direction": [
+            0,
+            -1,
+            0
+          ],
+          "contact": {
+            "id": "main",
+            "position": [
+              0,
+              0,
+              0.07
+            ],
+            "radius": 0.015,
+            "limbs": [
+              "LH",
+              "RH"
+            ]
+          }
+        },
+        {
+          "id": "directional_edge_02",
+          "type": "directional_edge",
+          "width": 0.16,
+          "height": 0.1,
+          "depth": 0.07,
+          "source": "synthetic_assumption",
+          "pull_direction": [
+            0,
+            -1,
+            0
+          ],
+          "contact": {
+            "id": "main",
+            "position": [
+              0,
+              0,
+              0.07
+            ],
+            "radius": 0.015,
+            "limbs": [
+              "LH",
+              "RH"
+            ]
+          }
+        },
+        {
+          "id": "directional_edge_03",
+          "type": "directional_edge",
+          "width": 0.16,
+          "height": 0.1,
+          "depth": 0.07,
+          "source": "synthetic_assumption",
+          "pull_direction": [
+            0,
+            -1,
+            0
+          ],
+          "contact": {
+            "id": "main",
+            "position": [
+              0,
+              0,
+              0.07
+            ],
+            "radius": 0.015,
+            "limbs": [
+              "LH",
+              "RH"
+            ]
+          }
+        },
+        {
+          "id": "directional_edge_04",
+          "type": "directional_edge",
+          "width": 0.16,
+          "height": 0.1,
+          "depth": 0.07,
+          "source": "synthetic_assumption",
+          "pull_direction": [
+            0,
+            -1,
+            0
+          ],
+          "contact": {
+            "id": "main",
+            "position": [
+              0,
+              0,
+              0.07
+            ],
+            "radius": 0.015,
+            "limbs": [
+              "LH",
+              "RH"
+            ]
+          }
+        },
+        {
+          "id": "foothold_01",
+          "type": "foothold",
+          "width": 0.1,
+          "height": 0.07,
+          "depth": 0.045,
+          "source": "synthetic_assumption",
+          "pull_direction": [
+            0,
+            -1,
+            0
+          ],
+          "contact": {
+            "id": "main",
+            "position": [
+              0,
+              0,
+              0.045
+            ],
+            "radius": 0.015,
+            "limbs": [
+              "LF",
+              "RF"
+            ]
+          }
+        },
+        {
+          "id": "foothold_02",
+          "type": "foothold",
+          "width": 0.1,
+          "height": 0.07,
+          "depth": 0.045,
+          "source": "synthetic_assumption",
+          "pull_direction": [
+            0,
+            -1,
+            0
+          ],
+          "contact": {
+            "id": "main",
+            "position": [
+              0,
+              0,
+              0.045
+            ],
+            "radius": 0.015,
+            "limbs": [
+              "LF",
+              "RF"
+            ]
+          }
+        },
+        {
+          "id": "foothold_03",
+          "type": "foothold",
+          "width": 0.1,
+          "height": 0.07,
+          "depth": 0.045,
+          "source": "synthetic_assumption",
+          "pull_direction": [
+            0,
+            -1,
+            0
+          ],
+          "contact": {
+            "id": "main",
+            "position": [
+              0,
+              0,
+              0.045
+            ],
+            "radius": 0.015,
+            "limbs": [
+              "LF",
+              "RF"
+            ]
+          }
+        },
+        {
+          "id": "foothold_04",
+          "type": "foothold",
+          "width": 0.1,
+          "height": 0.07,
+          "depth": 0.045,
+          "source": "synthetic_assumption",
+          "pull_direction": [
+            0,
+            -1,
+            0
+          ],
+          "contact": {
+            "id": "main",
+            "position": [
+              0,
+              0,
+              0.045
+            ],
+            "radius": 0.015,
+            "limbs": [
+              "LF",
+              "RF"
+            ]
+          }
+        },
+        {
+          "id": "foothold_05",
+          "type": "foothold",
+          "width": 0.1,
+          "height": 0.07,
+          "depth": 0.045,
+          "source": "synthetic_assumption",
+          "pull_direction": [
+            0,
+            -1,
+            0
+          ],
+          "contact": {
+            "id": "main",
+            "position": [
+              0,
+              0,
+              0.045
+            ],
+            "radius": 0.015,
+            "limbs": [
+              "LF",
+              "RF"
+            ]
+          }
+        },
+        {
+          "id": "foothold_06",
+          "type": "foothold",
+          "width": 0.1,
+          "height": 0.07,
+          "depth": 0.045,
+          "source": "synthetic_assumption",
+          "pull_direction": [
+            0,
+            -1,
+            0
+          ],
+          "contact": {
+            "id": "main",
+            "position": [
+              0,
+              0,
+              0.045
+            ],
+            "radius": 0.015,
+            "limbs": [
+              "LF",
+              "RF"
+            ]
+          }
+        }
+      ]
+    },
+    "body": {
+      "upper_arm": 0.28,
+      "forearm": 0.25,
+      "thigh": 0.4,
+      "shin": 0.38,
+      "shoulder_width": 0.34,
+      "hip_width": 0.26,
+      "torso": 0.43,
+      "id": "A",
+      "source": "synthetic_assumption",
+      "endpoint_offsets": {
+        "LH": [
+          0,
+          0,
+          0
+        ],
+        "RH": [
+          0,
+          0,
+          0
+        ],
+        "LF": [
+          0,
+          0,
+          0
+        ],
+        "RF": [
+          0,
+          0,
+          0
+        ]
+      },
+      "joint_limits_deg": {
+        "shoulder": [
+          [
+            -170,
+            170
+          ],
+          [
+            -170,
+            170
+          ],
+          [
+            -170,
+            170
+          ]
+        ],
+        "hip": [
+          [
+            -110,
+            110
+          ],
+          [
+            -90,
+            90
+          ],
+          [
+            -70,
+            70
+          ]
+        ],
+        "elbow": [
+          0,
+          140
+        ],
+        "knee": [
+          0,
+          140
+        ]
+      }
+    },
+    "scenario": "foot_first",
+    "mode": "free",
+    "hand_moves": 2,
+    "seed": 42,
+    "budget": 3,
+    "reference_layout": [
+      {
+        "id": "jug_01",
+        "inventory_id": "jug_01",
+        "u": -0.28,
+        "v": 1.55,
+        "rotation_deg": 0
+      },
+      {
+        "id": "jug_02",
+        "inventory_id": "jug_02",
+        "u": 0.28,
+        "v": 1.55,
+        "rotation_deg": 0
+      },
+      {
+        "id": "jug_03",
+        "inventory_id": "jug_03",
+        "u": 0.45,
+        "v": 1.8,
+        "rotation_deg": 0
+      },
+      {
+        "id": "jug_04",
+        "inventory_id": "jug_04",
+        "u": -0.12,
+        "v": 1.88,
+        "rotation_deg": 0
+      },
+      {
+        "id": "jug_05",
+        "inventory_id": "jug_05",
+        "u": 0.28,
+        "v": 2.1,
+        "rotation_deg": 0
+      },
+      {
+        "id": "jug_06",
+        "inventory_id": "jug_06",
+        "u": -0.34,
+        "v": 2.17,
+        "rotation_deg": 0
+      },
+      {
+        "id": "directional_edge_01",
+        "inventory_id": "directional_edge_01",
+        "u": -0.62,
+        "v": 1.63,
+        "rotation_deg": 65
+      },
+      {
+        "id": "directional_edge_02",
+        "inventory_id": "directional_edge_02",
+        "u": -0.46,
+        "v": 1.92,
+        "rotation_deg": 65
+      },
+      {
+        "id": "directional_edge_03",
+        "inventory_id": "directional_edge_03",
+        "u": -0.9,
+        "v": 2.1,
+        "rotation_deg": 65
+      },
+      {
+        "id": "directional_edge_04",
+        "inventory_id": "directional_edge_04",
+        "u": 0.9,
+        "v": 1.4,
+        "rotation_deg": 65
+      },
+      {
+        "id": "foothold_01",
+        "inventory_id": "foothold_01",
+        "u": -0.22,
+        "v": 0.6,
+        "rotation_deg": 0
+      },
+      {
+        "id": "foothold_02",
+        "inventory_id": "foothold_02",
+        "u": 0.22,
+        "v": 0.6,
+        "rotation_deg": 0
+      },
+      {
+        "id": "foothold_03",
+        "inventory_id": "foothold_03",
+        "u": -0.35,
+        "v": 0.86,
+        "rotation_deg": 0
+      },
+      {
+        "id": "foothold_04",
+        "inventory_id": "foothold_04",
+        "u": 0.12,
+        "v": 0.93,
+        "rotation_deg": 0
+      },
+      {
+        "id": "foothold_05",
+        "inventory_id": "foothold_05",
+        "u": 0.46,
+        "v": 0.84,
+        "rotation_deg": 0
+      },
+      {
+        "id": "foothold_06",
+        "inventory_id": "foothold_06",
+        "u": -0.06,
+        "v": 1.05,
+        "rotation_deg": 0
+      }
+    ],
+    "solver": {
+      "max_nfev": 100,
+      "restarts": 3,
+      "contact_tolerance_m": 0.015,
+      "epsilon_geometry_m": 1e-06,
+      "root_bounds": [
+        [
+          -1.6,
+          1.6
+        ],
+        [
+          0.35,
+          2.6
+        ],
+        [
+          0.08,
+          1.0
+        ]
+      ],
+      "root_rotation_deg": [
+        [
+          -35,
+          35
+        ],
+        [
+          -65,
+          65
+        ],
+        [
+          -35,
+          35
+        ]
+      ],
+      "timeout_seconds": 12
+    },
+    "start_contacts": {
+      "LH": {
+        "placement_id": "jug_01",
+        "contact_id": "main"
+      },
+      "RH": {
+        "placement_id": "jug_02",
+        "contact_id": "main"
+      },
+      "LF": {
+        "placement_id": "foothold_01",
+        "contact_id": "main"
+      },
+      "RF": {
+        "placement_id": "foothold_02",
+        "contact_id": "main"
+      }
+    },
+    "end_contacts": {
+      "LH": {
+        "placement_id": "jug_04",
+        "contact_id": "main"
+      },
+      "RH": {
+        "placement_id": "jug_03",
+        "contact_id": "main"
+      },
+      "LF": {
+        "placement_id": "foothold_03",
+        "contact_id": "main"
+      },
+      "RF": {
+        "placement_id": "foothold_04",
+        "contact_id": "main"
+      }
+    }
+  },
+  "candidates": [
+    {
+      "id": "candidate-42-1",
+      "name": "方案 1 · 自由布局",
+      "revision": 1,
+      "parent_id": null,
+      "generator": "rules",
+      "placements": [
+        {
+          "id": "jug_01",
+          "inventory_id": "jug_01",
+          "u": -0.28,
+          "v": 1.55,
+          "rotation_deg": 0
+        },
+        {
+          "id": "jug_02",
+          "inventory_id": "jug_02",
+          "u": 0.28,
+          "v": 1.55,
+          "rotation_deg": 0
+        },
+        {
+          "id": "jug_03",
+          "inventory_id": "jug_03",
+          "u": 0.45,
+          "v": 1.8,
+          "rotation_deg": 0
+        },
+        {
+          "id": "jug_04",
+          "inventory_id": "jug_04",
+          "u": -0.12,
+          "v": 1.88,
+          "rotation_deg": 0
+        },
+        {
+          "id": "jug_05",
+          "inventory_id": "jug_05",
+          "u": 0.28,
+          "v": 2.1,
+          "rotation_deg": 0
+        },
+        {
+          "id": "jug_06",
+          "inventory_id": "jug_06",
+          "u": -0.34,
+          "v": 2.17,
+          "rotation_deg": 0
+        },
+        {
+          "id": "directional_edge_01",
+          "inventory_id": "directional_edge_01",
+          "u": -0.62,
+          "v": 1.63,
+          "rotation_deg": 65
+        },
+        {
+          "id": "directional_edge_02",
+          "inventory_id": "directional_edge_02",
+          "u": -0.46,
+          "v": 1.92,
+          "rotation_deg": 65
+        },
+        {
+          "id": "directional_edge_03",
+          "inventory_id": "directional_edge_03",
+          "u": -0.9,
+          "v": 2.1,
+          "rotation_deg": 65
+        },
+        {
+          "id": "directional_edge_04",
+          "inventory_id": "directional_edge_04",
+          "u": 0.9,
+          "v": 1.4,
+          "rotation_deg": 65
+        },
+        {
+          "id": "foothold_01",
+          "inventory_id": "foothold_01",
+          "u": -0.22,
+          "v": 0.6,
+          "rotation_deg": 0
+        },
+        {
+          "id": "foothold_02",
+          "inventory_id": "foothold_02",
+          "u": 0.22,
+          "v": 0.6,
+          "rotation_deg": 0
+        },
+        {
+          "id": "foothold_03",
+          "inventory_id": "foothold_03",
+          "u": -0.35,
+          "v": 0.86,
+          "rotation_deg": 0
+        },
+        {
+          "id": "foothold_04",
+          "inventory_id": "foothold_04",
+          "u": 0.12,
+          "v": 0.93,
+          "rotation_deg": 0
+        },
+        {
+          "id": "foothold_05",
+          "inventory_id": "foothold_05",
+          "u": 0.46,
+          "v": 0.84,
+          "rotation_deg": 0
+        },
+        {
+          "id": "foothold_06",
+          "inventory_id": "foothold_06",
+          "u": -0.06,
+          "v": 1.05,
+          "rotation_deg": 0
+        }
+      ],
+      "states": [
+        {
+          "id": "s0",
+          "label": "起始接触",
+          "contacts": {
+            "LH": {
+              "placement_id": "jug_01",
+              "contact_id": "main"
+            },
+            "RH": {
+              "placement_id": "jug_02",
+              "contact_id": "main"
+            },
+            "LF": {
+              "placement_id": "foothold_01",
+              "contact_id": "main"
+            },
+            "RF": {
+              "placement_id": "foothold_02",
+              "contact_id": "main"
+            }
+          }
+        },
+        {
+          "id": "s1",
+          "label": "LF 释放",
+          "contacts": {
+            "LH": {
+              "placement_id": "jug_01",
+              "contact_id": "main"
+            },
+            "RH": {
+              "placement_id": "jug_02",
+              "contact_id": "main"
+            },
+            "LF": null,
+            "RF": {
+              "placement_id": "foothold_02",
+              "contact_id": "main"
+            }
+          }
+        },
+        {
+          "id": "s2",
+          "label": "LF → foothold_03",
+          "contacts": {
+            "LH": {
+              "placement_id": "jug_01",
+              "contact_id": "main"
+            },
+            "RH": {
+              "placement_id": "jug_02",
+              "contact_id": "main"
+            },
+            "LF": {
+              "placement_id": "foothold_03",
+              "contact_id": "main"
+            },
+            "RF": {
+              "placement_id": "foothold_02",
+              "contact_id": "main"
+            }
+          }
+        },
+        {
+          "id": "s3",
+          "label": "RH 释放",
+          "contacts": {
+            "LH": {
+              "placement_id": "jug_01",
+              "contact_id": "main"
+            },
+            "RH": null,
+            "LF": {
+              "placement_id": "foothold_03",
+              "contact_id": "main"
+            },
+            "RF": {
+              "placement_id": "foothold_02",
+              "contact_id": "main"
+            }
+          }
+        },
+        {
+          "id": "s4",
+          "label": "RH → jug_03",
+          "contacts": {
+            "LH": {
+              "placement_id": "jug_01",
+              "contact_id": "main"
+            },
+            "RH": {
+              "placement_id": "jug_03",
+              "contact_id": "main"
+            },
+            "LF": {
+              "placement_id": "foothold_03",
+              "contact_id": "main"
+            },
+            "RF": {
+              "placement_id": "foothold_02",
+              "contact_id": "main"
+            }
+          }
+        },
+        {
+          "id": "s5",
+          "label": "RF 释放",
+          "contacts": {
+            "LH": {
+              "placement_id": "jug_01",
+              "contact_id": "main"
+            },
+            "RH": {
+              "placement_id": "jug_03",
+              "contact_id": "main"
+            },
+            "LF": {
+              "placement_id": "foothold_03",
+              "contact_id": "main"
+            },
+            "RF": null
+          }
+        },
+        {
+          "id": "s6",
+          "label": "RF → foothold_04",
+          "contacts": {
+            "LH": {
+              "placement_id": "jug_01",
+              "contact_id": "main"
+            },
+            "RH": {
+              "placement_id": "jug_03",
+              "contact_id": "main"
+            },
+            "LF": {
+              "placement_id": "foothold_03",
+              "contact_id": "main"
+            },
+            "RF": {
+              "placement_id": "foothold_04",
+              "contact_id": "main"
+            }
+          }
+        },
+        {
+          "id": "s7",
+          "label": "LH 释放",
+          "contacts": {
+            "LH": null,
+            "RH": {
+              "placement_id": "jug_03",
+              "contact_id": "main"
+            },
+            "LF": {
+              "placement_id": "foothold_03",
+              "contact_id": "main"
+            },
+            "RF": {
+              "placement_id": "foothold_04",
+              "contact_id": "main"
+            }
+          }
+        },
+        {
+          "id": "s8",
+          "label": "LH → jug_04",
+          "contacts": {
+            "LH": {
+              "placement_id": "jug_04",
+              "contact_id": "main"
+            },
+            "RH": {
+              "placement_id": "jug_03",
+              "contact_id": "main"
+            },
+            "LF": {
+              "placement_id": "foothold_03",
+              "contact_id": "main"
+            },
+            "RF": {
+              "placement_id": "foothold_04",
+              "contact_id": "main"
+            }
+          }
+        }
+      ],
+      "events": [
+        {
+          "limb": "LF",
+          "from_state": "s0",
+          "release_state": "s1",
+          "to_state": "s2"
+        },
+        {
+          "limb": "RH",
+          "from_state": "s2",
+          "release_state": "s3",
+          "to_state": "s4"
+        },
+        {
+          "limb": "RF",
+          "from_state": "s4",
+          "release_state": "s5",
+          "to_state": "s6"
+        },
+        {
+          "limb": "LH",
+          "from_state": "s6",
+          "release_state": "s7",
+          "to_state": "s8"
+        }
+      ],
+      "design_notes": [
+        "合成模板：有限点位与接触序列变化。",
+        "侧向箭头仅表示设计意图；受力、稳定性和连续动作仍未验证。"
+      ]
+    },
+    {
+      "id": "candidate-42-2",
+      "name": "方案 2 · 自由布局",
+      "revision": 1,
+      "parent_id": null,
+      "generator": "rules",
+      "placements": [
+        {
+          "id": "jug_01",
+          "inventory_id": "jug_01",
+          "u": -0.2733,
+          "v": 1.53358,
+          "rotation_deg": -6.72
+        },
+        {
+          "id": "jug_02",
+          "inventory_id": "jug_02",
+          "u": 0.29493,
+          "v": 1.55314,
+          "rotation_deg": -3.854
+        },
+        {
+          "id": "jug_03",
+          "inventory_id": "jug_03",
+          "u": 0.46108,
+          "v": 1.79149,
+          "rotation_deg": -1.12
+        },
+        {
+          "id": "jug_04",
+          "inventory_id": "jug_04",
+          "u": -0.12215,
+          "v": 1.89639,
+          "rotation_deg": 5.487
+        },
+        {
+          "id": "jug_05",
+          "inventory_id": "jug_05",
+          "u": 0.27026,
+          "v": 2.09203,
+          "rotation_deg": -1.092
+        },
+        {
+          "id": "jug_06",
+          "inventory_id": "jug_06",
+          "u": -0.36182,
+          "v": 2.16312,
+          "rotation_deg": 6.325
+        },
+        {
+          "id": "directional_edge_01",
+          "inventory_id": "directional_edge_01",
+          "u": -0.60512,
+          "v": 1.63126,
+          "rotation_deg": 64.797
+        },
+        {
+          "id": "directional_edge_02",
+          "inventory_id": "directional_edge_02",
+          "u": -0.44041,
+          "v": 1.92335,
+          "rotation_deg": 71.2
+        },
+        {
+          "id": "directional_edge_03",
+          "inventory_id": "directional_edge_03",
+          "u": -0.87809,
+          "v": 2.08322,
+          "rotation_deg": 59.66
+        },
+        {
+          "id": "directional_edge_04",
+          "inventory_id": "directional_edge_04",
+          "u": 0.91149,
+          "v": 1.38654,
+          "rotation_deg": 62.786
+        },
+        {
+          "id": "foothold_01",
+          "inventory_id": "foothold_01",
+          "u": -0.2288,
+          "v": 0.60184,
+          "rotation_deg": -6.291
+        },
+        {
+          "id": "foothold_02",
+          "inventory_id": "foothold_02",
+          "u": 0.21784,
+          "v": 0.60199,
+          "rotation_deg": -5.332
+        },
+        {
+          "id": "foothold_03",
+          "inventory_id": "foothold_03",
+          "u": -0.35698,
+          "v": 0.86016,
+          "rotation_deg": -2.744
+        },
+        {
+          "id": "foothold_04",
+          "inventory_id": "foothold_04",
+          "u": 0.11638,
+          "v": 0.92692,
+          "rotation_deg": -5.694
+        },
+        {
+          "id": "foothold_05",
+          "inventory_id": "foothold_05",
+          "u": 0.46387,
+          "v": 0.82467,
+          "rotation_deg": 1.127
+        },
+        {
+          "id": "foothold_06",
+          "inventory_id": "foothold_06",
+          "u": -0.07835,
+          "v": 1.05141,
+          "rotation_deg": 4.911
+        }
+      ],
+      "states": [
+        {
+          "id": "s0",
+          "label": "起始接触",
+          "contacts": {
+            "LH": {
+              "placement_id": "jug_01",
+              "contact_id": "main"
+            },
+            "RH": {
+              "placement_id": "jug_02",
+              "contact_id": "main"
+            },
+            "LF": {
+              "placement_id": "foothold_01",
+              "contact_id": "main"
+            },
+            "RF": {
+              "placement_id": "foothold_02",
+              "contact_id": "main"
+            }
+          }
+        },
+        {
+          "id": "s1",
+          "label": "RF 释放",
+          "contacts": {
+            "LH": {
+              "placement_id": "jug_01",
+              "contact_id": "main"
+            },
+            "RH": {
+              "placement_id": "jug_02",
+              "contact_id": "main"
+            },
+            "LF": {
+              "placement_id": "foothold_01",
+              "contact_id": "main"
+            },
+            "RF": null
+          }
+        },
+        {
+          "id": "s2",
+          "label": "RF → foothold_04",
+          "contacts": {
+            "LH": {
+              "placement_id": "jug_01",
+              "contact_id": "main"
+            },
+            "RH": {
+              "placement_id": "jug_02",
+              "contact_id": "main"
+            },
+            "LF": {
+              "placement_id": "foothold_01",
+              "contact_id": "main"
+            },
+            "RF": {
+              "placement_id": "foothold_04",
+              "contact_id": "main"
+            }
+          }
+        },
+        {
+          "id": "s3",
+          "label": "RH 释放",
+          "contacts": {
+            "LH": {
+              "placement_id": "jug_01",
+              "contact_id": "main"
+            },
+            "RH": null,
+            "LF": {
+              "placement_id": "foothold_01",
+              "contact_id": "main"
+            },
+            "RF": {
+              "placement_id": "foothold_04",
+              "contact_id": "main"
+            }
+          }
+        },
+        {
+          "id": "s4",
+          "label": "RH → jug_03",
+          "contacts": {
+            "LH": {
+              "placement_id": "jug_01",
+              "contact_id": "main"
+            },
+            "RH": {
+              "placement_id": "jug_03",
+              "contact_id": "main"
+            },
+            "LF": {
+              "placement_id": "foothold_01",
+              "contact_id": "main"
+            },
+            "RF": {
+              "placement_id": "foothold_04",
+              "contact_id": "main"
+            }
+          }
+        },
+        {
+          "id": "s5",
+          "label": "LF 释放",
+          "contacts": {
+            "LH": {
+              "placement_id": "jug_01",
+              "contact_id": "main"
+            },
+            "RH": {
+              "placement_id": "jug_03",
+              "contact_id": "main"
+            },
+            "LF": null,
+            "RF": {
+              "placement_id": "foothold_04",
+              "contact_id": "main"
+            }
+          }
+        },
+        {
+          "id": "s6",
+          "label": "LF → foothold_03",
+          "contacts": {
+            "LH": {
+              "placement_id": "jug_01",
+              "contact_id": "main"
+            },
+            "RH": {
+              "placement_id": "jug_03",
+              "contact_id": "main"
+            },
+            "LF": {
+              "placement_id": "foothold_03",
+              "contact_id": "main"
+            },
+            "RF": {
+              "placement_id": "foothold_04",
+              "contact_id": "main"
+            }
+          }
+        },
+        {
+          "id": "s7",
+          "label": "LH 释放",
+          "contacts": {
+            "LH": null,
+            "RH": {
+              "placement_id": "jug_03",
+              "contact_id": "main"
+            },
+            "LF": {
+              "placement_id": "foothold_03",
+              "contact_id": "main"
+            },
+            "RF": {
+              "placement_id": "foothold_04",
+              "contact_id": "main"
+            }
+          }
+        },
+        {
+          "id": "s8",
+          "label": "LH → jug_04",
+          "contacts": {
+            "LH": {
+              "placement_id": "jug_04",
+              "contact_id": "main"
+            },
+            "RH": {
+              "placement_id": "jug_03",
+              "contact_id": "main"
+            },
+            "LF": {
+              "placement_id": "foothold_03",
+              "contact_id": "main"
+            },
+            "RF": {
+              "placement_id": "foothold_04",
+              "contact_id": "main"
+            }
+          }
+        }
+      ],
+      "events": [
+        {
+          "limb": "RF",
+          "from_state": "s0",
+          "release_state": "s1",
+          "to_state": "s2"
+        },
+        {
+          "limb": "RH",
+          "from_state": "s2",
+          "release_state": "s3",
+          "to_state": "s4"
+        },
+        {
+          "limb": "LF",
+          "from_state": "s4",
+          "release_state": "s5",
+          "to_state": "s6"
+        },
+        {
+          "limb": "LH",
+          "from_state": "s6",
+          "release_state": "s7",
+          "to_state": "s8"
+        }
+      ],
+      "design_notes": [
+        "合成模板：有限点位与接触序列变化。",
+        "侧向箭头仅表示设计意图；受力、稳定性和连续动作仍未验证。"
+      ]
+    },
+    {
+      "id": "candidate-42-3",
+      "name": "方案 3 · 自由布局",
+      "revision": 1,
+      "parent_id": null,
+      "generator": "rules",
+      "placements": [
+        {
+          "id": "jug_01",
+          "inventory_id": "jug_01",
+          "u": -0.29661,
+          "v": 1.54129,
+          "rotation_deg": -1.319
+        },
+        {
+          "id": "jug_02",
+          "inventory_id": "jug_02",
+          "u": 0.30064,
+          "v": 1.53784,
+          "rotation_deg": 5.002
+        },
+        {
+          "id": "jug_03",
+          "inventory_id": "jug_03",
+          "u": 0.43517,
+          "v": 1.79417,
+          "rotation_deg": 2.488
+        },
+        {
+          "id": "jug_04",
+          "inventory_id": "jug_04",
+          "u": -0.11487,
+          "v": 1.89638,
+          "rotation_deg": -1.24
+        },
+        {
+          "id": "jug_05",
+          "inventory_id": "jug_05",
+          "u": 0.29934,
+          "v": 2.11536,
+          "rotation_deg": 3.018
+        },
+        {
+          "id": "jug_06",
+          "inventory_id": "jug_06",
+          "u": -0.36114,
+          "v": 2.18071,
+          "rotation_deg": 5.611
+        },
+        {
+          "id": "directional_edge_01",
+          "inventory_id": "directional_edge_01",
+          "u": -0.61895,
+          "v": 1.6191,
+          "rotation_deg": 60.531
+        },
+        {
+          "id": "directional_edge_02",
+          "inventory_id": "directional_edge_02",
+          "u": -0.4448,
+          "v": 1.90514,
+          "rotation_deg": 65.647
+        },
+        {
+          "id": "directional_edge_03",
+          "inventory_id": "directional_edge_03",
+          "u": -0.91305,
+          "v": 2.09285,
+          "rotation_deg": 71.68
+        },
+        {
+          "id": "directional_edge_04",
+          "inventory_id": "directional_edge_04",
+          "u": 0.89017,
+          "v": 1.40661,
+          "rotation_deg": 68.743
+        },
+        {
+          "id": "foothold_01",
+          "inventory_id": "foothold_01",
+          "u": -0.22932,
+          "v": 0.58728,
+          "rotation_deg": 3.81
+        },
+        {
+          "id": "foothold_02",
+          "inventory_id": "foothold_02",
+          "u": 0.21796,
+          "v": 0.59236,
+          "rotation_deg": -4.037
+        },
+        {
+          "id": "foothold_03",
+          "inventory_id": "foothold_03",
+          "u": -0.32872,
+          "v": 0.86527,
+          "rotation_deg": 0.323
+        },
+        {
+          "id": "foothold_04",
+          "inventory_id": "foothold_04",
+          "u": 0.10302,
+          "v": 0.94485,
+          "rotation_deg": -2.341
+        },
+        {
+          "id": "foothold_05",
+          "inventory_id": "foothold_05",
+          "u": 0.47279,
+          "v": 0.85459,
+          "rotation_deg": -4.118
+        },
+        {
+          "id": "foothold_06",
+          "inventory_id": "foothold_06",
+          "u": -0.03897,
+          "v": 1.06419,
+          "rotation_deg": 0.926
+        }
+      ],
+      "states": [
+        {
+          "id": "s0",
+          "label": "起始接触",
+          "contacts": {
+            "LH": {
+              "placement_id": "jug_01",
+              "contact_id": "main"
+            },
+            "RH": {
+              "placement_id": "jug_02",
+              "contact_id": "main"
+            },
+            "LF": {
+              "placement_id": "foothold_01",
+              "contact_id": "main"
+            },
+            "RF": {
+              "placement_id": "foothold_02",
+              "contact_id": "main"
+            }
+          }
+        },
+        {
+          "id": "s1",
+          "label": "LF 释放",
+          "contacts": {
+            "LH": {
+              "placement_id": "jug_01",
+              "contact_id": "main"
+            },
+            "RH": {
+              "placement_id": "jug_02",
+              "contact_id": "main"
+            },
+            "LF": null,
+            "RF": {
+              "placement_id": "foothold_02",
+              "contact_id": "main"
+            }
+          }
+        },
+        {
+          "id": "s2",
+          "label": "LF → foothold_03",
+          "contacts": {
+            "LH": {
+              "placement_id": "jug_01",
+              "contact_id": "main"
+            },
+            "RH": {
+              "placement_id": "jug_02",
+              "contact_id": "main"
+            },
+            "LF": {
+              "placement_id": "foothold_03",
+              "contact_id": "main"
+            },
+            "RF": {
+              "placement_id": "foothold_02",
+              "contact_id": "main"
+            }
+          }
+        },
+        {
+          "id": "s3",
+          "label": "RH 释放",
+          "contacts": {
+            "LH": {
+              "placement_id": "jug_01",
+              "contact_id": "main"
+            },
+            "RH": null,
+            "LF": {
+              "placement_id": "foothold_03",
+              "contact_id": "main"
+            },
+            "RF": {
+              "placement_id": "foothold_02",
+              "contact_id": "main"
+            }
+          }
+        },
+        {
+          "id": "s4",
+          "label": "RH → jug_03",
+          "contacts": {
+            "LH": {
+              "placement_id": "jug_01",
+              "contact_id": "main"
+            },
+            "RH": {
+              "placement_id": "jug_03",
+              "contact_id": "main"
+            },
+            "LF": {
+              "placement_id": "foothold_03",
+              "contact_id": "main"
+            },
+            "RF": {
+              "placement_id": "foothold_02",
+              "contact_id": "main"
+            }
+          }
+        },
+        {
+          "id": "s5",
+          "label": "RF 释放",
+          "contacts": {
+            "LH": {
+              "placement_id": "jug_01",
+              "contact_id": "main"
+            },
+            "RH": {
+              "placement_id": "jug_03",
+              "contact_id": "main"
+            },
+            "LF": {
+              "placement_id": "foothold_03",
+              "contact_id": "main"
+            },
+            "RF": null
+          }
+        },
+        {
+          "id": "s6",
+          "label": "RF → foothold_04",
+          "contacts": {
+            "LH": {
+              "placement_id": "jug_01",
+              "contact_id": "main"
+            },
+            "RH": {
+              "placement_id": "jug_03",
+              "contact_id": "main"
+            },
+            "LF": {
+              "placement_id": "foothold_03",
+              "contact_id": "main"
+            },
+            "RF": {
+              "placement_id": "foothold_04",
+              "contact_id": "main"
+            }
+          }
+        },
+        {
+          "id": "s7",
+          "label": "LH 释放",
+          "contacts": {
+            "LH": null,
+            "RH": {
+              "placement_id": "jug_03",
+              "contact_id": "main"
+            },
+            "LF": {
+              "placement_id": "foothold_03",
+              "contact_id": "main"
+            },
+            "RF": {
+              "placement_id": "foothold_04",
+              "contact_id": "main"
+            }
+          }
+        },
+        {
+          "id": "s8",
+          "label": "LH → jug_04",
+          "contacts": {
+            "LH": {
+              "placement_id": "jug_04",
+              "contact_id": "main"
+            },
+            "RH": {
+              "placement_id": "jug_03",
+              "contact_id": "main"
+            },
+            "LF": {
+              "placement_id": "foothold_03",
+              "contact_id": "main"
+            },
+            "RF": {
+              "placement_id": "foothold_04",
+              "contact_id": "main"
+            }
+          }
+        }
+      ],
+      "events": [
+        {
+          "limb": "LF",
+          "from_state": "s0",
+          "release_state": "s1",
+          "to_state": "s2"
+        },
+        {
+          "limb": "RH",
+          "from_state": "s2",
+          "release_state": "s3",
+          "to_state": "s4"
+        },
+        {
+          "limb": "RF",
+          "from_state": "s4",
+          "release_state": "s5",
+          "to_state": "s6"
+        },
+        {
+          "limb": "LH",
+          "from_state": "s6",
+          "release_state": "s7",
+          "to_state": "s8"
+        }
+      ],
+      "design_notes": [
+        "合成模板：有限点位与接触序列变化。",
+        "侧向箭头仅表示设计意图；受力、稳定性和连续动作仍未验证。"
+      ]
+    }
+  ],
+  "evaluations": [
+    {
+      "id": "eval-candidate-42-1-c7492486a9",
+      "candidate_id": "candidate-42-1",
+      "fingerprint": "sha256:453677efe090dbd3f0070cd5648bc65592f4ffe4042c8648774df3c7492486a9",
+      "version": "0.1.0",
+      "checks": [
+        {
+          "id": "schema",
+          "status": "pass",
+          "label": "数据结构",
+          "detail": "版本、有限数和必要字段符合契约。"
+        },
+        {
+          "id": "inventory",
+          "status": "pass",
+          "label": "库存与引用",
+          "detail": "每个实例最多安装一次。"
+        },
+        {
+          "id": "request_conformance",
+          "status": "pass",
+          "label": "接触顺序与目标",
+          "detail": "释放、换点和起终点符合请求。",
+          "evidence": {
+            "hand_moves": 2,
+            "foot_moves": 2
+          }
+        },
+        {
+          "id": "fixed_layout",
+          "status": "pass",
+          "label": "布局模式",
+          "detail": "自由变量允许修改。"
+        },
+        {
+          "id": "boundary",
+          "status": "pass",
+          "label": "安装边界",
+          "detail": "完整投影须在留出 0.2 m 边距的区域内。",
+          "placement_ids": [],
+          "evidence": {
+            "lower_uv": [
+              -1.3,
+              0.2
+            ],
+            "upper_uv": [
+              1.3,
+              2.8
+            ],
+            "epsilon_m": 1e-06
+          }
+        },
+        {
+          "id": "hold_collision",
+          "status": "pass",
+          "label": "岩点包围体",
+          "detail": "接触或间距不大于容差按冲突处理。",
+          "placement_ids": [],
+          "evidence": {
+            "conflicts": [],
+            "epsilon_m": 1e-06,
+            "proxy": "full_3D_OBB_15_axis_SAT",
+            "parent_child_exemptions": []
+          }
+        },
+        {
+          "id": "hand_span",
+          "status": "pass",
+          "label": "双手距离必要上界",
+          "detail": "仅检查声明骨架的保守必要条件。",
+          "state_id": "s0",
+          "evidence": {
+            "distance_m": 0.56,
+            "bound_m": 1.4300000000000002,
+            "shoulder_width": 0.34,
+            "upper_arm": 0.28,
+            "forearm": 0.25,
+            "endpoint_offset_sum_m": 0.0,
+            "fingerprint": "sha256:453677efe090dbd3f0070cd5648bc65592f4ffe4042c8648774df3c7492486a9"
+          }
+        },
+        {
+          "id": "ik",
+          "status": "pass",
+          "label": "接触姿态 IK",
+          "detail": "同一骨架的离散接触姿态；动态转换未检查。",
+          "state_id": "s0",
+          "evidence": {
+            "residual_m": 2.5856276243220663e-07,
+            "contact_errors_m": {
+              "LH": 2.5856276243220663e-07,
+              "RH": 2.585563370881665e-07,
+              "LF": 2.0027865039109763e-07,
+              "RF": 2.002716375265438e-07
+            },
+            "attempts": [
+              {
+                "nfev": 53,
+                "solver_success": true,
+                "residual_m": 2.5856276243220663e-07
+              }
+            ],
+            "joint_limits_pass": true,
+            "body_id": "A",
+            "elapsed_ms": 65.48
+          }
+        },
+        {
+          "id": "hand_span",
+          "status": "pass",
+          "label": "双手距离必要上界",
+          "detail": "仅检查声明骨架的保守必要条件。",
+          "state_id": "s1",
+          "evidence": {
+            "distance_m": 0.56,
+            "bound_m": 1.4300000000000002,
+            "shoulder_width": 0.34,
+            "upper_arm": 0.28,
+            "forearm": 0.25,
+            "endpoint_offset_sum_m": 0.0,
+            "fingerprint": "sha256:453677efe090dbd3f0070cd5648bc65592f4ffe4042c8648774df3c7492486a9"
+          }
+        },
+        {
+          "id": "ik",
+          "status": "pass",
+          "label": "接触姿态 IK",
+          "detail": "同一骨架的离散接触姿态；动态转换未检查。",
+          "state_id": "s1",
+          "evidence": {
+            "residual_m": 4.401177041391702e-13,
+            "contact_errors_m": {
+              "LH": 3.327409726234975e-13,
+              "RH": 4.401177041391702e-13,
+              "RF": 3.943286323525097e-13
+            },
+            "attempts": [
+              {
+                "nfev": 2,
+                "solver_success": true,
+                "residual_m": 4.401177041391702e-13
+              }
+            ],
+            "joint_limits_pass": true,
+            "body_id": "A",
+            "elapsed_ms": 3.32
+          }
+        },
+        {
+          "id": "hand_span",
+          "status": "pass",
+          "label": "双手距离必要上界",
+          "detail": "仅检查声明骨架的保守必要条件。",
+          "state_id": "s2",
+          "evidence": {
+            "distance_m": 0.56,
+            "bound_m": 1.4300000000000002,
+            "shoulder_width": 0.34,
+            "upper_arm": 0.28,
+            "forearm": 0.25,
+            "endpoint_offset_sum_m": 0.0,
+            "fingerprint": "sha256:453677efe090dbd3f0070cd5648bc65592f4ffe4042c8648774df3c7492486a9"
+          }
+        },
+        {
+          "id": "ik",
+          "status": "pass",
+          "label": "接触姿态 IK",
+          "detail": "同一骨架的离散接触姿态；动态转换未检查。",
+          "state_id": "s2",
+          "evidence": {
+            "residual_m": 3.030450841107888e-07,
+            "contact_errors_m": {
+              "LH": 2.1853147947211714e-07,
+              "RH": 1.2420332010627745e-07,
+              "LF": 3.030450841107888e-07,
+              "RF": 2.017319681078869e-07
+            },
+            "attempts": [
+              {
+                "nfev": 74,
+                "solver_success": true,
+                "residual_m": 3.030450841107888e-07
+              }
+            ],
+            "joint_limits_pass": true,
+            "body_id": "A",
+            "elapsed_ms": 95.98
+          }
+        },
+        {
+          "id": "ik",
+          "status": "pass",
+          "label": "接触姿态 IK",
+          "detail": "同一骨架的离散接触姿态；动态转换未检查。",
+          "state_id": "s3",
+          "evidence": {
+            "residual_m": 3.030450841107888e-07,
+            "contact_errors_m": {
+              "LH": 2.1853147947211714e-07,
+              "LF": 3.030450841107888e-07,
+              "RF": 2.017319681078869e-07
+            },
+            "attempts": [
+              {
+                "nfev": 1,
+                "solver_success": true,
+                "residual_m": 3.030450841107888e-07
+              }
+            ],
+            "joint_limits_pass": true,
+            "body_id": "A",
+            "elapsed_ms": 1.82
+          }
+        },
+        {
+          "id": "hand_span",
+          "status": "pass",
+          "label": "双手距离必要上界",
+          "detail": "仅检查声明骨架的保守必要条件。",
+          "state_id": "s4",
+          "evidence": {
+            "distance_m": 0.771621668954417,
+            "bound_m": 1.4300000000000002,
+            "shoulder_width": 0.34,
+            "upper_arm": 0.28,
+            "forearm": 0.25,
+            "endpoint_offset_sum_m": 0.0,
+            "fingerprint": "sha256:453677efe090dbd3f0070cd5648bc65592f4ffe4042c8648774df3c7492486a9"
+          }
+        },
+        {
+          "id": "ik",
+          "status": "pass",
+          "label": "接触姿态 IK",
+          "detail": "同一骨架的离散接触姿态；动态转换未检查。",
+          "state_id": "s4",
+          "evidence": {
+            "residual_m": 2.996481377885943e-07,
+            "contact_errors_m": {
+              "LH": 1.502361367675358e-07,
+              "RH": 2.996481377885943e-07,
+              "LF": 8.280789753908918e-08,
+              "RF": 8.239895338108021e-08
+            },
+            "attempts": [
+              {
+                "nfev": 59,
+                "solver_success": true,
+                "residual_m": 2.996481377885943e-07
+              }
+            ],
+            "joint_limits_pass": true,
+            "body_id": "A",
+            "elapsed_ms": 69.63
+          }
+        },
+        {
+          "id": "hand_span",
+          "status": "pass",
+          "label": "双手距离必要上界",
+          "detail": "仅检查声明骨架的保守必要条件。",
+          "state_id": "s5",
+          "evidence": {
+            "distance_m": 0.771621668954417,
+            "bound_m": 1.4300000000000002,
+            "shoulder_width": 0.34,
+            "upper_arm": 0.28,
+            "forearm": 0.25,
+            "endpoint_offset_sum_m": 0.0,
+            "fingerprint": "sha256:453677efe090dbd3f0070cd5648bc65592f4ffe4042c8648774df3c7492486a9"
+          }
+        },
+        {
+          "id": "ik",
+          "status": "pass",
+          "label": "接触姿态 IK",
+          "detail": "同一骨架的离散接触姿态；动态转换未检查。",
+          "state_id": "s5",
+          "evidence": {
+            "residual_m": 6.278135121984949e-13,
+            "contact_errors_m": {
+              "LH": 4.1785031270452087e-13,
+              "RH": 6.278135121984949e-13,
+              "LF": 1.9939522504565615e-13
+            },
+            "attempts": [
+              {
+                "nfev": 2,
+                "solver_success": true,
+                "residual_m": 6.278135121984949e-13
+              }
+            ],
+            "joint_limits_pass": true,
+            "body_id": "A",
+            "elapsed_ms": 3.14
+          }
+        },
+        {
+          "id": "hand_span",
+          "status": "pass",
+          "label": "双手距离必要上界",
+          "detail": "仅检查声明骨架的保守必要条件。",
+          "state_id": "s6",
+          "evidence": {
+            "distance_m": 0.771621668954417,
+            "bound_m": 1.4300000000000002,
+            "shoulder_width": 0.34,
+            "upper_arm": 0.28,
+            "forearm": 0.25,
+            "endpoint_offset_sum_m": 0.0,
+            "fingerprint": "sha256:453677efe090dbd3f0070cd5648bc65592f4ffe4042c8648774df3c7492486a9"
+          }
+        },
+        {
+          "id": "ik",
+          "status": "pass",
+          "label": "接触姿态 IK",
+          "detail": "同一骨架的离散接触姿态；动态转换未检查。",
+          "state_id": "s6",
+          "evidence": {
+            "residual_m": 1.090309625771158e-05,
+            "contact_errors_m": {
+              "LH": 1.090309625771158e-05,
+              "RH": 1.0442800984862056e-05,
+              "LF": 4.090287701278733e-06,
+              "RF": 2.9545172754783025e-06
+            },
+            "attempts": [
+              {
+                "nfev": 100,
+                "solver_success": false,
+                "residual_m": 1.090309625771158e-05
+              }
+            ],
+            "joint_limits_pass": true,
+            "body_id": "A",
+            "elapsed_ms": 117.69
+          }
+        },
+        {
+          "id": "ik",
+          "status": "pass",
+          "label": "接触姿态 IK",
+          "detail": "同一骨架的离散接触姿态；动态转换未检查。",
+          "state_id": "s7",
+          "evidence": {
+            "residual_m": 9.492324191448484e-11,
+            "contact_errors_m": {
+              "RH": 9.492324191448484e-11,
+              "LF": 5.880249186201416e-11,
+              "RF": 8.327986950160337e-12
+            },
+            "attempts": [
+              {
+                "nfev": 2,
+                "solver_success": true,
+                "residual_m": 9.492324191448484e-11
+              }
+            ],
+            "joint_limits_pass": true,
+            "body_id": "A",
+            "elapsed_ms": 3.42
+          }
+        },
+        {
+          "id": "hand_span",
+          "status": "pass",
+          "label": "双手距离必要上界",
+          "detail": "仅检查声明骨架的保守必要条件。",
+          "state_id": "s8",
+          "evidence": {
+            "distance_m": 0.5755866572463264,
+            "bound_m": 1.4300000000000002,
+            "shoulder_width": 0.34,
+            "upper_arm": 0.28,
+            "forearm": 0.25,
+            "endpoint_offset_sum_m": 0.0,
+            "fingerprint": "sha256:453677efe090dbd3f0070cd5648bc65592f4ffe4042c8648774df3c7492486a9"
+          }
+        },
+        {
+          "id": "ik",
+          "status": "pass",
+          "label": "接触姿态 IK",
+          "detail": "同一骨架的离散接触姿态；动态转换未检查。",
+          "state_id": "s8",
+          "evidence": {
+            "residual_m": 3.254231926289241e-07,
+            "contact_errors_m": {
+              "LH": 3.254231926289241e-07,
+              "RH": 1.75129247243521e-07,
+              "LF": 2.6414723971605935e-07,
+              "RF": 1.079890184005845e-07
+            },
+            "attempts": [
+              {
+                "nfev": 87,
+                "solver_success": true,
+                "residual_m": 3.254231926289241e-07
+              }
+            ],
+            "joint_limits_pass": true,
+            "body_id": "A",
+            "elapsed_ms": 113.89
+          }
+        },
+        {
+          "id": "force",
+          "status": "not_checked",
+          "label": "抓握、摩擦与受力",
+          "detail": "P0 未验证，不得据此判断真人可攀、难度或安全。",
+          "scope": "P1"
+        },
+        {
+          "id": "balance",
+          "status": "not_checked",
+          "label": "平衡与稳定性",
+          "detail": "P0 未验证，不得据此判断真人可攀、难度或安全。",
+          "scope": "P1"
+        },
+        {
+          "id": "body_collision",
+          "status": "not_checked",
+          "label": "完整人体碰撞",
+          "detail": "P0 未验证，不得据此判断真人可攀、难度或安全。",
+          "scope": "P1"
+        },
+        {
+          "id": "transition",
+          "status": "not_checked",
+          "label": "连续动作转换",
+          "detail": "P0 未验证，不得据此判断真人可攀、难度或安全。",
+          "scope": "P1"
+        },
+        {
+          "id": "grade_experience",
+          "status": "not_checked",
+          "label": "真实难度与体验",
+          "detail": "P0 未验证，不得据此判断真人可攀、难度或安全。",
+          "scope": "P1"
+        }
+      ],
+      "poses": [
+        {
+          "status": "pass",
+          "joints": {
+            "pelvis": [
+              2.093124032529642e-09,
+              1.0926089963279702,
+              0.45560301309201573
+            ],
+            "neck": [
+              1.4825274272300453e-09,
+              1.5222433421065076,
+              0.47333233703423294
+            ],
+            "left_shoulder": [
+              -0.16999999851747258,
+              1.522243341881415,
+              0.47333233663411023
+            ],
+            "left_elbow": [
+              -0.2454522893547892,
+              1.7095369671227352,
+              0.27935282804785544
+            ],
+            "left_wrist": [
+              -0.27999985403798344,
+              1.5500002132165938,
+              0.09000000940616798
+            ],
+            "right_shoulder": [
+              0.17000000148252745,
+              1.5222433423316002,
+              0.4733323374343556
+            ],
+            "right_elbow": [
+              0.24545228983305276,
+              1.7095369675003242,
+              0.2793528278107186
+            ],
+            "right_wrist": [
+              0.2799998540412803,
+              1.5500002132111046,
+              0.09000000940513064
+            ],
+            "left_hip": [
+              -0.12999999790687597,
+              1.0926089961558405,
+              0.4556030127860396
+            ],
+            "left_knee": [
+              -0.1799106257805362,
+              0.6983814130265995,
+              0.4098477734649035
+            ],
+            "left_ankle": [
+              -0.21999999347560872,
+              0.5999997998695404,
+              0.044999995904968115
+            ],
+            "right_hip": [
+              0.13000000209312404,
+              1.0926089965000998,
+              0.45560301339799186
+            ],
+            "right_knee": [
+              0.1799106262054511,
+              0.6983814129579573,
+              0.40984777353149043
+            ],
+            "right_ankle": [
+              0.21999999348018665,
+              0.5999997998764085,
+              0.044999995905007195
+            ]
+          },
+          "q": [
+            2.093124032529642e-09,
+            1.0926089963279702,
+            0.45560301309201573,
+            0.041242676930755374,
+            -2.3536627139386567e-09,
+            1.3240742091105835e-09,
+            -0.844718227391006,
+            0.27456497846142397,
+            0.10227530967058317,
+            1.4352813253980856,
+            -0.8447182313830425,
+            -0.27456496673298314,
+            -0.10227530594494418,
+            1.4352813258491282,
+            0.07391678226780167,
+            0.07262008768708783,
+            -0.12007230208012817,
+            1.1829954842294017,
+            0.07391678415719743,
+            -0.07262008513711511,
+            0.12007228946270147,
+            1.1829954839372807
+          ],
+          "residual_m": 2.5856276243220663e-07,
+          "evidence": {
+            "contact_errors_m": {
+              "LH": 2.5856276243220663e-07,
+              "RH": 2.585563370881665e-07,
+              "LF": 2.0027865039109763e-07,
+              "RF": 2.002716375265438e-07
+            },
+            "attempts": [
+              {
+                "nfev": 53,
+                "solver_success": true,
+                "residual_m": 2.5856276243220663e-07
+              }
+            ],
+            "joint_limits_pass": true,
+            "body_id": "A",
+            "elapsed_ms": 65.48
+          },
+          "state_id": "s0"
+        },
+        {
+          "status": "pass",
+          "joints": {
+            "pelvis": [
+              6.40505856758092e-09,
+              1.092609010494796,
+              0.4556030873139949
+            ],
+            "neck": [
+              -1.0721104364601675e-08,
+              1.522243361020777,
+              0.4733322962111273
+            ],
+            "left_shoulder": [
+              -0.17000001072110424,
+              1.522243354283075,
+              0.4733322952692171
+            ],
+            "left_elbow": [
+              -0.24545240463688917,
+              1.7095368667937432,
+              0.2793527179323403
+            ],
+            "left_wrist": [
+              -0.27999999999971736,
+              1.550000000000149,
+              0.09000000000009284
+            ],
+            "right_shoulder": [
+              0.1699999892788955,
+              1.5222433677584795,
+              0.47333229715303754
+            ],
+            "right_elbow": [
+              0.24545238551165233,
+              1.7095368705196072,
+              0.27935271130390116
+            ],
+            "right_wrist": [
+              0.27999999999966435,
+              1.5500000000001957,
+              0.09000000000020678
+            ],
+            "left_hip": [
+              -0.12999999359494133,
+              1.0926090053424355,
+              0.4556030865937106
+            ],
+            "left_knee": [
+              -0.17991060622013094,
+              0.6983814080490771,
+              0.4098479526775708
+            ],
+            "left_ankle": [
+              -0.21999996898348775,
+              0.5999996956593204,
+              0.045000201333962875
+            ],
+            "right_hip": [
+              0.13000000640505846,
+              1.0926090156471566,
+              0.4556030880342792
+            ],
+            "right_knee": [
+              0.1799106571694946,
+              0.6983814378713251,
+              0.409847827557791
+            ],
+            "right_ankle": [
+              0.22000000000004039,
+              0.5999999999996201,
+              0.044999999999902396
+            ]
+          },
+          "q": [
+            6.40505856758092e-09,
+            1.092609010494796,
+            0.4556030873139949,
+            0.04124240915634377,
+            -5.5406482637958566e-09,
+            3.963354326962387e-08,
+            -0.8447184357375976,
+            0.27456535413741456,
+            0.10227539458856497,
+            1.4352813801845734,
+            -0.8447185000259396,
+            -0.27456540367051213,
+            -0.10227541264134243,
+            1.4352813411597611,
+            0.07391678226780167,
+            0.07262008768708783,
+            -0.12007230208012817,
+            1.1829954842294017,
+            0.07391710302332995,
+            -0.07262007261378979,
+            0.12007229890141992,
+            1.1829959102469014
+          ],
+          "residual_m": 4.401177041391702e-13,
+          "evidence": {
+            "contact_errors_m": {
+              "LH": 3.327409726234975e-13,
+              "RH": 4.401177041391702e-13,
+              "RF": 3.943286323525097e-13
+            },
+            "attempts": [
+              {
+                "nfev": 2,
+                "solver_success": true,
+                "residual_m": 4.401177041391702e-13
+              }
+            ],
+            "joint_limits_pass": true,
+            "body_id": "A",
+            "elapsed_ms": 3.32
+          },
+          "state_id": "s1"
+        },
+        {
+          "status": "pass",
+          "joints": {
+            "pelvis": [
+              0.001580270671478758,
+              1.1263557451686836,
+              0.46965896875543944
+            ],
+            "neck": [
+              0.02148531155039239,
+              1.5558791280124906,
+              0.4733267934542513
+            ],
+            "left_shoulder": [
+              -0.148102618449962,
+              1.563662127734003,
+              0.48223515545463286
+            ],
+            "left_elbow": [
+              -0.23557925728994716,
+              1.7204703886785029,
+              0.2673886824632885
+            ],
+            "left_wrist": [
+              -0.2799999393092099,
+              1.5500000746974718,
+              0.09000019619613459
+            ],
+            "right_shoulder": [
+              0.19107324155074676,
+              1.548096128290978,
+              0.46441843145386974
+            ],
+            "right_elbow": [
+              0.2650332046742489,
+              1.7289856079001575,
+              0.26389681161827583
+            ],
+            "right_wrist": [
+              0.2800000226189864,
+              1.5499999914410014,
+              0.08999987817393659
+            ],
+            "left_hip": [
+              -0.12810461697585107,
+              1.1323074508380755,
+              0.4764712455792606
+            ],
+            "left_knee": [
+              -0.2685592828752621,
+              0.7648996464184374,
+              0.4037801726842629
+            ],
+            "left_ankle": [
+              -0.3500000376437772,
+              0.8599997893382778,
+              0.04499978542854838
+            ],
+            "right_hip": [
+              0.13126515831880858,
+              1.1204040394992918,
+              0.46284669193161826
+            ],
+            "right_knee": [
+              0.18362654804288925,
+              0.7287508773177218,
+              0.40066883880576826
+            ],
+            "right_ankle": [
+              0.21999995562346228,
+              0.600000136259615,
+              0.045000141985306163
+            ]
+          },
+          "q": [
+            0.001580270671478758,
+            1.1263557451686836,
+            0.46965896875543944,
+            0.008541664299789477,
+            0.05242614165848977,
+            -0.04586141463391875,
+            -0.9603926567056097,
+            0.27520500562110645,
+            0.13369466120876913,
+            1.3509451179385947,
+            -0.8298891105276849,
+            -0.2831278040821592,
+            -0.0984212328601008,
+            1.5193389774093344,
+            0.19633317828030636,
+            0.23592870034480393,
+            -0.2626757269767259,
+            1.5538328120845073,
+            0.1389547657136542,
+            -0.10687163463724218,
+            0.17148514525201372,
+            1.058971357856027
+          ],
+          "residual_m": 3.030450841107888e-07,
+          "evidence": {
+            "contact_errors_m": {
+              "LH": 2.1853147947211714e-07,
+              "RH": 1.2420332010627745e-07,
+              "LF": 3.030450841107888e-07,
+              "RF": 2.017319681078869e-07
+            },
+            "attempts": [
+              {
+                "nfev": 74,
+                "solver_success": true,
+                "residual_m": 3.030450841107888e-07
+              }
+            ],
+            "joint_limits_pass": true,
+            "body_id": "A",
+            "elapsed_ms": 95.98
+          },
+          "state_id": "s2"
+        },
+        {
+          "status": "pass",
+          "joints": {
+            "pelvis": [
+              0.001580270671478758,
+              1.1263557451686836,
+              0.46965896875543944
+            ],
+            "neck": [
+              0.02148531155039239,
+              1.5558791280124906,
+              0.4733267934542513
+            ],
+            "left_shoulder": [
+              -0.148102618449962,
+              1.563662127734003,
+              0.48223515545463286
+            ],
+            "left_elbow": [
+              -0.23557925728994716,
+              1.7204703886785029,
+              0.2673886824632885
+            ],
+            "left_wrist": [
+              -0.2799999393092099,
+              1.5500000746974718,
+              0.09000019619613459
+            ],
+            "right_shoulder": [
+              0.19107324155074676,
+              1.548096128290978,
+              0.46441843145386974
+            ],
+            "right_elbow": [
+              0.2650332046742489,
+              1.7289856079001575,
+              0.26389681161827583
+            ],
+            "right_wrist": [
+              0.2800000226189864,
+              1.5499999914410014,
+              0.08999987817393659
+            ],
+            "left_hip": [
+              -0.12810461697585107,
+              1.1323074508380755,
+              0.4764712455792606
+            ],
+            "left_knee": [
+              -0.2685592828752621,
+              0.7648996464184374,
+              0.4037801726842629
+            ],
+            "left_ankle": [
+              -0.3500000376437772,
+              0.8599997893382778,
+              0.04499978542854838
+            ],
+            "right_hip": [
+              0.13126515831880858,
+              1.1204040394992918,
+              0.46284669193161826
+            ],
+            "right_knee": [
+              0.18362654804288925,
+              0.7287508773177218,
+              0.40066883880576826
+            ],
+            "right_ankle": [
+              0.21999995562346228,
+              0.600000136259615,
+              0.045000141985306163
+            ]
+          },
+          "q": [
+            0.001580270671478758,
+            1.1263557451686836,
+            0.46965896875543944,
+            0.008541664299789477,
+            0.05242614165848977,
+            -0.04586141463391875,
+            -0.9603926567056097,
+            0.27520500562110645,
+            0.13369466120876913,
+            1.3509451179385947,
+            -0.8298891105276849,
+            -0.2831278040821592,
+            -0.0984212328601008,
+            1.5193389774093344,
+            0.19633317828030636,
+            0.23592870034480393,
+            -0.2626757269767259,
+            1.5538328120845073,
+            0.1389547657136542,
+            -0.10687163463724218,
+            0.17148514525201372,
+            1.058971357856027
+          ],
+          "residual_m": 3.030450841107888e-07,
+          "evidence": {
+            "contact_errors_m": {
+              "LH": 2.1853147947211714e-07,
+              "LF": 3.030450841107888e-07,
+              "RF": 2.017319681078869e-07
+            },
+            "attempts": [
+              {
+                "nfev": 1,
+                "solver_success": true,
+                "residual_m": 3.030450841107888e-07
+              }
+            ],
+            "joint_limits_pass": true,
+            "body_id": "A",
+            "elapsed_ms": 1.82
+          },
+          "state_id": "s3"
+        },
+        {
+          "status": "pass",
+          "joints": {
+            "pelvis": [
+              0.06543436786223096,
+              1.186814557729603,
+              0.42427192983793444
+            ],
+            "neck": [
+              0.08378974037498418,
+              1.6162884614785398,
+              0.43500721272042203
+            ],
+            "left_shoulder": [
+              -0.08567306992021066,
+              1.6232418057604154,
+              0.44658334895633855
+            ],
+            "left_elbow": [
+              -0.22413267143962312,
+              1.7451403588416743,
+              0.23594222879272708
+            ],
+            "left_wrist": [
+              -0.2799998860452042,
+              1.5500000978041493,
+              0.09000000442150366
+            ],
+            "right_shoulder": [
+              0.25325255067017904,
+              1.609335117196664,
+              0.42343107648450556
+            ],
+            "right_elbow": [
+              0.33920137198541817,
+              1.8497644271165616,
+              0.30851133472547226
+            ],
+            "right_wrist": [
+              0.449999804023505,
+              1.7999997764519446,
+              0.09000003752981217
+            ],
+            "left_hip": [
+              -0.06415484001056511,
+              1.1921318210039786,
+              0.43312426931245884
+            ],
+            "left_knee": [
+              -0.21198330422051304,
+              0.8222078452228552,
+              0.39702721525516954
+            ],
+            "left_ankle": [
+              -0.34999993312140865,
+              0.8600000488175739,
+              0.04500000111642177
+            ],
+            "right_hip": [
+              0.19502357573502704,
+              1.1814972944552273,
+              0.41541959036341003
+            ],
+            "right_knee": [
+              0.2132311192119056,
+              0.7837081479065977,
+              0.377574111787358
+            ],
+            "right_ankle": [
+              0.22000002876123073,
+              0.6000000741495588,
+              0.04500002154581284
+            ]
+          },
+          "q": [
+            0.06543436786223096,
+            1.186814557729603,
+            0.42427192983793444,
+            0.02502647071176652,
+            0.06814765423966013,
+            -0.04100867908665596,
+            -1.0871396224843253,
+            0.4542170800870702,
+            0.16494235790845316,
+            1.3593752177140876,
+            -0.5070106534586939,
+            -0.5551319624759027,
+            -0.04944713621841649,
+            1.24100223183676,
+            0.09373125037947362,
+            0.31257770053520656,
+            -0.302879307510129,
+            1.444608483889511,
+            0.06383517016428915,
+            -0.06048566526411371,
+            0.08895098329074796,
+            0.9711064329697602
+          ],
+          "residual_m": 2.996481377885943e-07,
+          "evidence": {
+            "contact_errors_m": {
+              "LH": 1.502361367675358e-07,
+              "RH": 2.996481377885943e-07,
+              "LF": 8.280789753908918e-08,
+              "RF": 8.239895338108021e-08
+            },
+            "attempts": [
+              {
+                "nfev": 59,
+                "solver_success": true,
+                "residual_m": 2.996481377885943e-07
+              }
+            ],
+            "joint_limits_pass": true,
+            "body_id": "A",
+            "elapsed_ms": 69.63
+          },
+          "state_id": "s4"
+        },
+        {
+          "status": "pass",
+          "joints": {
+            "pelvis": [
+              0.065434430451648,
+              1.1868146117262248,
+              0.4242718108284706
+            ],
+            "neck": [
+              0.08378979057891271,
+              1.6162885165077576,
+              0.43500707357799234
+            ],
+            "left_shoulder": [
+              -0.08567301903628989,
+              1.6232418560798902,
+              0.4465832225972567
+            ],
+            "left_elbow": [
+              -0.22413275245259456,
+              1.7451403175922917,
+              0.235942136141657
+            ],
+            "left_wrist": [
+              -0.2799999999996437,
+              1.5500000000002159,
+              0.09000000000003239
+            ],
+            "right_shoulder": [
+              0.25325260019411533,
+              1.609335176935625,
+              0.42343092455872794
+            ],
+            "right_elbow": [
+              0.3392014485883564,
+              1.8497645174261617,
+              0.3085112670105547
+            ],
+            "right_wrist": [
+              0.4499999999994696,
+              1.7999999999996836,
+              0.09000000000011268
+            ],
+            "left_hip": [
+              -0.064154776901154,
+              1.192131871399032,
+              0.4331241600784963
+            ],
+            "left_knee": [
+              -0.21198326006007734,
+              0.8222078958465304,
+              0.397027181280207
+            ],
+            "left_ankle": [
+              -0.3499999999998341,
+              0.8600000000000949,
+              0.04500000000005688
+            ],
+            "right_hip": [
+              0.19502363780444998,
+              1.1814973520534175,
+              0.4154194615784449
+            ],
+            "right_knee": [
+              0.2132311905983879,
+              0.783708204415795,
+              0.3775739989311242
+            ],
+            "right_ankle": [
+              0.22000008011799588,
+              0.6000001163741902,
+              0.044999916172456245
+            ]
+          },
+          "q": [
+            0.065434430451648,
+            1.1868146117262248,
+            0.4242718108284706,
+            0.025026423896055118,
+            0.068147729610772,
+            -0.04100865150554267,
+            -1.0871398578032292,
+            0.4542175440653164,
+            0.16494239976178085,
+            1.3593752264743453,
+            -0.5070103333839824,
+            -0.5551324713673272,
+            -0.04944719985675508,
+            1.2410019011076243,
+            0.0937311345105511,
+            0.3125778453626901,
+            -0.30287940916532197,
+            1.4446082972411338,
+            0.06383517016428915,
+            -0.06048566526411371,
+            0.08895098329074796,
+            0.9711064329697602
+          ],
+          "residual_m": 6.278135121984949e-13,
+          "evidence": {
+            "contact_errors_m": {
+              "LH": 4.1785031270452087e-13,
+              "RH": 6.278135121984949e-13,
+              "LF": 1.9939522504565615e-13
+            },
+            "attempts": [
+              {
+                "nfev": 2,
+                "solver_success": true,
+                "residual_m": 6.278135121984949e-13
+              }
+            ],
+            "joint_limits_pass": true,
+            "body_id": "A",
+            "elapsed_ms": 3.14
+          },
+          "state_id": "s5"
+        },
+        {
+          "status": "pass",
+          "joints": {
+            "pelvis": [
+              0.008520634311097038,
+              1.2941486499528505,
+              0.4641543703073252
+            ],
+            "neck": [
+              0.02642220739706653,
+              1.7222903382927972,
+              0.42845803455044984
+            ],
+            "left_shoulder": [
+              -0.14325322978296517,
+              1.7286908885345824,
+              0.4201346353429447
+            ],
+            "left_elbow": [
+              -0.2685571434656514,
+              1.7844640305654806,
+              0.1760275157339436
+            ],
+            "left_wrist": [
+              -0.27999546000030157,
+              1.5500092292279488,
+              0.09000361763212786
+            ],
+            "right_shoulder": [
+              0.19609764457709822,
+              1.7158897880510122,
+              0.43678143375795503
+            ],
+            "right_elbow": [
+              0.32802384493948467,
+              1.9069213856052685,
+              0.28024898857864994
+            ],
+            "right_wrist": [
+              0.4499927234167326,
+              1.8000034675272398,
+              0.09000663925321123
+            ],
+            "left_hip": [
+              -0.12123117059128014,
+              1.2990431883730391,
+              0.4577894179721742
+            ],
+            "left_knee": [
+              -0.25679227095450874,
+              0.9261012666440301,
+              0.4074157037415911
+            ],
+            "left_ankle": [
+              -0.3500009103311035,
+              0.8600028954090513,
+              0.04500274196228765
+            ],
+            "right_hip": [
+              0.1382724392134742,
+              1.289254111532662,
+              0.4705193226424762
+            ],
+            "right_knee": [
+              0.12080840500733016,
+              0.8924539518579289,
+              0.4231416824379146
+            ],
+            "right_ankle": [
+              0.11999842424403086,
+              0.9300013419000179,
+              0.0450021084282769
+            ]
+          },
+          "q": [
+            0.008520634311097038,
+            1.2941486499528505,
+            0.4641543703073252,
+            -0.08321040605614863,
+            -0.048980754531201515,
+            -0.037704437370113836,
+            -1.2115845766166897,
+            0.47989955633993386,
+            0.2133056587683552,
+            1.4367375583320487,
+            -0.6578620650771393,
+            -0.5538598485670098,
+            -0.12428388784975301,
+            1.198769724774544,
+            0.19653539871019193,
+            0.25337777735614103,
+            -0.2705846977485036,
+            1.1967224927642122,
+            0.20179353786591736,
+            0.05567675219290978,
+            -0.0008915299637473817,
+            1.5508562169285733
+          ],
+          "residual_m": 1.090309625771158e-05,
+          "evidence": {
+            "contact_errors_m": {
+              "LH": 1.090309625771158e-05,
+              "RH": 1.0442800984862056e-05,
+              "LF": 4.090287701278733e-06,
+              "RF": 2.9545172754783025e-06
+            },
+            "attempts": [
+              {
+                "nfev": 100,
+                "solver_success": false,
+                "residual_m": 1.090309625771158e-05
+              }
+            ],
+            "joint_limits_pass": true,
+            "body_id": "A",
+            "elapsed_ms": 117.69
+          },
+          "state_id": "s6"
+        },
+        {
+          "status": "pass",
+          "joints": {
+            "pelvis": [
+              0.008524980993159188,
+              1.2941465884128787,
+              0.46415164615434584
+            ],
+            "neck": [
+              0.02642780262004232,
+              1.722288111483203,
+              0.4284539543407442
+            ],
+            "left_shoulder": [
+              -0.143247633998009,
+              1.7286891638564457,
+              0.4201309298310687
+            ],
+            "left_elbow": [
+              -0.26855194156716045,
+              1.7844619461388962,
+              0.1760239302159616
+            ],
+            "left_wrist": [
+              -0.2799911871790815,
+              1.5500069162723442,
+              0.09000077850606214
+            ],
+            "right_shoulder": [
+              0.19610323923809364,
+              1.7158870591099604,
+              0.43677697885041966
+            ],
+            "right_elbow": [
+              0.32803099955935333,
+              1.9069164168214017,
+              0.28024311494560683
+            ],
+            "right_wrist": [
+              0.44999999994194884,
+              1.7999999999838865,
+              0.09000000007335418
+            ],
+            "left_hip": [
+              -0.12122682347946831,
+              1.2990415108159465,
+              0.45778698035282933
+            ],
+            "left_knee": [
+              -0.25678983116860143,
+              0.9261004272744354,
+              0.40741219347328306
+            ],
+            "left_ankle": [
+              -0.3499999999873729,
+              0.8600000000399213,
+              0.04500000004128657
+            ],
+            "right_hip": [
+              0.13827678546578667,
+              1.2892516660098108,
+              0.47051631195586235
+            ],
+            "right_knee": [
+              0.12081098979053384,
+              0.8924514896773875,
+              0.4231394606042987
+            ],
+            "right_ankle": [
+              0.12000000000788404,
+              0.9300000000006685,
+              0.04499999999740184
+            ]
+          },
+          "q": [
+            0.008524980993159188,
+            1.2941465884128787,
+            0.46415164615434584,
+            -0.08321356540386868,
+            -0.048978547779845,
+            -0.03770739265389848,
+            -1.2115845766166897,
+            0.47989955633993386,
+            0.2133056587683552,
+            1.4367375583320487,
+            -0.6578663001711108,
+            -0.553860955792214,
+            -0.12428768460045471,
+            1.1987525138646393,
+            0.19654184359704915,
+            0.25337797933925904,
+            -0.27058545912167425,
+            1.1967122692003485,
+            0.2017946809052315,
+            0.055677834644658704,
+            -0.0008923742238832627,
+            1.5508610190168466
+          ],
+          "residual_m": 9.492324191448484e-11,
+          "evidence": {
+            "contact_errors_m": {
+              "RH": 9.492324191448484e-11,
+              "LF": 5.880249186201416e-11,
+              "RF": 8.327986950160337e-12
+            },
+            "attempts": [
+              {
+                "nfev": 2,
+                "solver_success": true,
+                "residual_m": 9.492324191448484e-11
+              }
+            ],
+            "joint_limits_pass": true,
+            "body_id": "A",
+            "elapsed_ms": 3.42
+          },
+          "state_id": "s7"
+        },
+        {
+          "status": "pass",
+          "joints": {
+            "pelvis": [
+              0.054788874502402815,
+              1.3117894181509338,
+              0.46090934618740986
+            ],
+            "neck": [
+              0.1302778961856847,
+              1.734311023034107,
+              0.4869266675762185
+            ],
+            "left_shoulder": [
+              -0.0370612931840673,
+              1.764259439347176,
+              0.48609717290269844
+            ],
+            "left_elbow": [
+              -0.057103566530027475,
+              1.9809427038926621,
+              0.30989651982491695
+            ],
+            "left_wrist": [
+              -0.12000020451434656,
+              1.879999788858886,
+              0.08999986038063759
+            ],
+            "right_shoulder": [
+              0.29761708555543664,
+              1.704362606721038,
+              0.48775616224973856
+            ],
+            "right_elbow": [
+              0.40738129760577557,
+              1.896798980842489,
+              0.31652514967328615
+            ],
+            "right_wrist": [
+              0.45000013118459004,
+              1.7999999929543433,
+              0.09000011580680162
+            ],
+            "left_hip": [
+              -0.07317638795681929,
+              1.3346911482726924,
+              0.46027502673118864
+            ],
+            "left_knee": [
+              -0.226866035515208,
+              0.9728767689666642,
+              0.38631661165371556
+            ],
+            "left_ankle": [
+              -0.3499999118909911,
+              0.8600002007880911,
+              0.04500014729123958
+            ],
+            "right_hip": [
+              0.1827541369616249,
+              1.288887688029175,
+              0.4615436656436311
+            ],
+            "right_knee": [
+              0.12387986572414794,
+              0.8950897428300102,
+              0.42337301535874017
+            ],
+            "right_ankle": [
+              0.11999999265487238,
+              0.9300000045940936,
+              0.044999892359062155
+            ]
+          },
+          "q": [
+            0.054788874502402815,
+            1.3117894181509338,
+            0.46090934618740986,
+            0.06054309853314173,
+            -0.004879399794347324,
+            -0.17709347194482733,
+            -0.7652752577396653,
+            0.24260610655349066,
+            0.06069849783548751,
+            1.308752116316378,
+            -0.7560078762040122,
+            -0.29285583551940625,
+            -0.08884293488132987,
+            1.2080581785556357,
+            0.12872113378297995,
+            0.2109807825102609,
+            -0.19626778723222954,
+            0.9772996979688329,
+            0.03520791485109441,
+            0.0302738521937417,
+            0.029175342851573253,
+            1.5647200821313032
+          ],
+          "residual_m": 3.254231926289241e-07,
+          "evidence": {
+            "contact_errors_m": {
+              "LH": 3.254231926289241e-07,
+              "RH": 1.75129247243521e-07,
+              "LF": 2.6414723971605935e-07,
+              "RF": 1.079890184005845e-07
+            },
+            "attempts": [
+              {
+                "nfev": 87,
+                "solver_success": true,
+                "residual_m": 3.254231926289241e-07
+              }
+            ],
+            "joint_limits_pass": true,
+            "body_id": "A",
+            "elapsed_ms": 113.89
+          },
+          "state_id": "s8"
+        }
+      ],
+      "summary": {
+        "status": "pass",
+        "passed": 22,
+        "total": 22
+      },
+      "elapsed_ms": 491.1
+    },
+    {
+      "id": "eval-candidate-42-2-52406c588b",
+      "candidate_id": "candidate-42-2",
+      "fingerprint": "sha256:f06ad8fd9e3a9bb1813cf0e22cee806628497783004ac5342a5e9252406c588b",
+      "version": "0.1.0",
+      "checks": [
+        {
+          "id": "schema",
+          "status": "pass",
+          "label": "数据结构",
+          "detail": "版本、有限数和必要字段符合契约。"
+        },
+        {
+          "id": "inventory",
+          "status": "pass",
+          "label": "库存与引用",
+          "detail": "每个实例最多安装一次。"
+        },
+        {
+          "id": "request_conformance",
+          "status": "pass",
+          "label": "接触顺序与目标",
+          "detail": "释放、换点和起终点符合请求。",
+          "evidence": {
+            "hand_moves": 2,
+            "foot_moves": 2
+          }
+        },
+        {
+          "id": "fixed_layout",
+          "status": "pass",
+          "label": "布局模式",
+          "detail": "自由变量允许修改。"
+        },
+        {
+          "id": "boundary",
+          "status": "pass",
+          "label": "安装边界",
+          "detail": "完整投影须在留出 0.2 m 边距的区域内。",
+          "placement_ids": [],
+          "evidence": {
+            "lower_uv": [
+              -1.3,
+              0.2
+            ],
+            "upper_uv": [
+              1.3,
+              2.8
+            ],
+            "epsilon_m": 1e-06
+          }
+        },
+        {
+          "id": "hold_collision",
+          "status": "pass",
+          "label": "岩点包围体",
+          "detail": "接触或间距不大于容差按冲突处理。",
+          "placement_ids": [],
+          "evidence": {
+            "conflicts": [],
+            "epsilon_m": 1e-06,
+            "proxy": "full_3D_OBB_15_axis_SAT",
+            "parent_child_exemptions": []
+          }
+        },
+        {
+          "id": "hand_span",
+          "status": "pass",
+          "label": "双手距离必要上界",
+          "detail": "仅检查声明骨架的保守必要条件。",
+          "state_id": "s0",
+          "evidence": {
+            "distance_m": 0.5685665541517545,
+            "bound_m": 1.4300000000000002,
+            "shoulder_width": 0.34,
+            "upper_arm": 0.28,
+            "forearm": 0.25,
+            "endpoint_offset_sum_m": 0.0,
+            "fingerprint": "sha256:f06ad8fd9e3a9bb1813cf0e22cee806628497783004ac5342a5e9252406c588b"
+          }
+        },
+        {
+          "id": "ik",
+          "status": "pass",
+          "label": "接触姿态 IK",
+          "detail": "同一骨架的离散接触姿态；动态转换未检查。",
+          "state_id": "s0",
+          "evidence": {
+            "residual_m": 2.746984611248193e-07,
+            "contact_errors_m": {
+              "LH": 2.746984611248193e-07,
+              "RH": 2.5965280742372833e-07,
+              "LF": 2.139963867841209e-07,
+              "RF": 2.259476081595882e-07
+            },
+            "attempts": [
+              {
+                "nfev": 61,
+                "solver_success": true,
+                "residual_m": 2.746984611248193e-07
+              }
+            ],
+            "joint_limits_pass": true,
+            "body_id": "A",
+            "elapsed_ms": 71.77
+          }
+        },
+        {
+          "id": "hand_span",
+          "status": "pass",
+          "label": "双手距离必要上界",
+          "detail": "仅检查声明骨架的保守必要条件。",
+          "state_id": "s1",
+          "evidence": {
+            "distance_m": 0.5685665541517545,
+            "bound_m": 1.4300000000000002,
+            "shoulder_width": 0.34,
+            "upper_arm": 0.28,
+            "forearm": 0.25,
+            "endpoint_offset_sum_m": 0.0,
+            "fingerprint": "sha256:f06ad8fd9e3a9bb1813cf0e22cee806628497783004ac5342a5e9252406c588b"
+          }
+        },
+        {
+          "id": "ik",
+          "status": "pass",
+          "label": "接触姿态 IK",
+          "detail": "同一骨架的离散接触姿态；动态转换未检查。",
+          "state_id": "s1",
+          "evidence": {
+            "residual_m": 4.957885017882411e-13,
+            "contact_errors_m": {
+              "LH": 4.957885017882411e-13,
+              "RH": 3.415486477501382e-13,
+              "LF": 4.1037915938443244e-13
+            },
+            "attempts": [
+              {
+                "nfev": 2,
+                "solver_success": true,
+                "residual_m": 4.957885017882411e-13
+              }
+            ],
+            "joint_limits_pass": true,
+            "body_id": "A",
+            "elapsed_ms": 3.26
+          }
+        },
+        {
+          "id": "hand_span",
+          "status": "pass",
+          "label": "双手距离必要上界",
+          "detail": "仅检查声明骨架的保守必要条件。",
+          "state_id": "s2",
+          "evidence": {
+            "distance_m": 0.5685665541517545,
+            "bound_m": 1.4300000000000002,
+            "shoulder_width": 0.34,
+            "upper_arm": 0.28,
+            "forearm": 0.25,
+            "endpoint_offset_sum_m": 0.0,
+            "fingerprint": "sha256:f06ad8fd9e3a9bb1813cf0e22cee806628497783004ac5342a5e9252406c588b"
+          }
+        },
+        {
+          "id": "ik",
+          "status": "pass",
+          "label": "接触姿态 IK",
+          "detail": "同一骨架的离散接触姿态；动态转换未检查。",
+          "state_id": "s2",
+          "evidence": {
+            "residual_m": 3.91099936913809e-07,
+            "contact_errors_m": {
+              "LH": 7.361891275664168e-08,
+              "RH": 2.0792732652296224e-07,
+              "LF": 3.223271348444749e-07,
+              "RF": 3.91099936913809e-07
+            },
+            "attempts": [
+              {
+                "nfev": 89,
+                "solver_success": true,
+                "residual_m": 3.91099936913809e-07
+              }
+            ],
+            "joint_limits_pass": true,
+            "body_id": "A",
+            "elapsed_ms": 110.86
+          }
+        },
+        {
+          "id": "ik",
+          "status": "pass",
+          "label": "接触姿态 IK",
+          "detail": "同一骨架的离散接触姿态；动态转换未检查。",
+          "state_id": "s3",
+          "evidence": {
+            "residual_m": 1.242208198969271e-12,
+            "contact_errors_m": {
+              "LH": 4.0388159610191935e-13,
+              "LF": 1.242208198969271e-12,
+              "RF": 7.313961530549009e-13
+            },
+            "attempts": [
+              {
+                "nfev": 2,
+                "solver_success": true,
+                "residual_m": 1.242208198969271e-12
+              }
+            ],
+            "joint_limits_pass": true,
+            "body_id": "A",
+            "elapsed_ms": 3.16
+          }
+        },
+        {
+          "id": "hand_span",
+          "status": "pass",
+          "label": "双手距离必要上界",
+          "detail": "仅检查声明骨架的保守必要条件。",
+          "state_id": "s4",
+          "evidence": {
+            "distance_m": 0.7783518179461009,
+            "bound_m": 1.4300000000000002,
+            "shoulder_width": 0.34,
+            "upper_arm": 0.28,
+            "forearm": 0.25,
+            "endpoint_offset_sum_m": 0.0,
+            "fingerprint": "sha256:f06ad8fd9e3a9bb1813cf0e22cee806628497783004ac5342a5e9252406c588b"
+          }
+        },
+        {
+          "id": "ik",
+          "status": "pass",
+          "label": "接触姿态 IK",
+          "detail": "同一骨架的离散接触姿态；动态转换未检查。",
+          "state_id": "s4",
+          "evidence": {
+            "residual_m": 3.550728414429417e-07,
+            "contact_errors_m": {
+              "LH": 1.3147515053072103e-07,
+              "RH": 3.550728414429417e-07,
+              "LF": 2.1563466195973672e-07,
+              "RF": 1.360585603212106e-07
+            },
+            "attempts": [
+              {
+                "nfev": 55,
+                "solver_success": true,
+                "residual_m": 3.550728414429417e-07
+              }
+            ],
+            "joint_limits_pass": true,
+            "body_id": "A",
+            "elapsed_ms": 65.0
+          }
+        },
+        {
+          "id": "hand_span",
+          "status": "pass",
+          "label": "双手距离必要上界",
+          "detail": "仅检查声明骨架的保守必要条件。",
+          "state_id": "s5",
+          "evidence": {
+            "distance_m": 0.7783518179461009,
+            "bound_m": 1.4300000000000002,
+            "shoulder_width": 0.34,
+            "upper_arm": 0.28,
+            "forearm": 0.25,
+            "endpoint_offset_sum_m": 0.0,
+            "fingerprint": "sha256:f06ad8fd9e3a9bb1813cf0e22cee806628497783004ac5342a5e9252406c588b"
+          }
+        },
+        {
+          "id": "ik",
+          "status": "pass",
+          "label": "接触姿态 IK",
+          "detail": "同一骨架的离散接触姿态；动态转换未检查。",
+          "state_id": "s5",
+          "evidence": {
+            "residual_m": 7.28525200237046e-13,
+            "contact_errors_m": {
+              "LH": 5.055127375828706e-13,
+              "RH": 7.28525200237046e-13,
+              "RF": 1.8239359050434487e-13
+            },
+            "attempts": [
+              {
+                "nfev": 2,
+                "solver_success": true,
+                "residual_m": 7.28525200237046e-13
+              }
+            ],
+            "joint_limits_pass": true,
+            "body_id": "A",
+            "elapsed_ms": 3.13
+          }
+        },
+        {
+          "id": "hand_span",
+          "status": "pass",
+          "label": "双手距离必要上界",
+          "detail": "仅检查声明骨架的保守必要条件。",
+          "state_id": "s6",
+          "evidence": {
+            "distance_m": 0.7783518179461009,
+            "bound_m": 1.4300000000000002,
+            "shoulder_width": 0.34,
+            "upper_arm": 0.28,
+            "forearm": 0.25,
+            "endpoint_offset_sum_m": 0.0,
+            "fingerprint": "sha256:f06ad8fd9e3a9bb1813cf0e22cee806628497783004ac5342a5e9252406c588b"
+          }
+        },
+        {
+          "id": "ik",
+          "status": "pass",
+          "label": "接触姿态 IK",
+          "detail": "同一骨架的离散接触姿态；动态转换未检查。",
+          "state_id": "s6",
+          "evidence": {
+            "residual_m": 3.995357344048587e-07,
+            "contact_errors_m": {
+              "LH": 2.783208298502203e-07,
+              "RH": 1.3489773186511223e-07,
+              "LF": 3.995357344048587e-07,
+              "RF": 2.2880654666102227e-07
+            },
+            "attempts": [
+              {
+                "nfev": 90,
+                "solver_success": true,
+                "residual_m": 3.995357344048587e-07
+              }
+            ],
+            "joint_limits_pass": true,
+            "body_id": "A",
+            "elapsed_ms": 109.81
+          }
+        },
+        {
+          "id": "ik",
+          "status": "pass",
+          "label": "接触姿态 IK",
+          "detail": "同一骨架的离散接触姿态；动态转换未检查。",
+          "state_id": "s7",
+          "evidence": {
+            "residual_m": 1.2023086958714646e-12,
+            "contact_errors_m": {
+              "RH": 4.562999115111478e-13,
+              "LF": 9.052673479460227e-13,
+              "RF": 1.2023086958714646e-12
+            },
+            "attempts": [
+              {
+                "nfev": 2,
+                "solver_success": true,
+                "residual_m": 1.2023086958714646e-12
+              }
+            ],
+            "joint_limits_pass": true,
+            "body_id": "A",
+            "elapsed_ms": 3.46
+          }
+        },
+        {
+          "id": "hand_span",
+          "status": "pass",
+          "label": "双手距离必要上界",
+          "detail": "仅检查声明骨架的保守必要条件。",
+          "state_id": "s8",
+          "evidence": {
+            "distance_m": 0.5925885949796874,
+            "bound_m": 1.4300000000000002,
+            "shoulder_width": 0.34,
+            "upper_arm": 0.28,
+            "forearm": 0.25,
+            "endpoint_offset_sum_m": 0.0,
+            "fingerprint": "sha256:f06ad8fd9e3a9bb1813cf0e22cee806628497783004ac5342a5e9252406c588b"
+          }
+        },
+        {
+          "id": "ik",
+          "status": "pass",
+          "label": "接触姿态 IK",
+          "detail": "同一骨架的离散接触姿态；动态转换未检查。",
+          "state_id": "s8",
+          "evidence": {
+            "residual_m": 2.8016260477001644e-07,
+            "contact_errors_m": {
+              "LH": 2.8016260477001644e-07,
+              "RH": 1.4722004846257656e-07,
+              "LF": 1.7603333072382754e-07,
+              "RF": 7.753515548219027e-08
+            },
+            "attempts": [
+              {
+                "nfev": 78,
+                "solver_success": true,
+                "residual_m": 2.8016260477001644e-07
+              }
+            ],
+            "joint_limits_pass": true,
+            "body_id": "A",
+            "elapsed_ms": 106.91
+          }
+        },
+        {
+          "id": "force",
+          "status": "not_checked",
+          "label": "抓握、摩擦与受力",
+          "detail": "P0 未验证，不得据此判断真人可攀、难度或安全。",
+          "scope": "P1"
+        },
+        {
+          "id": "balance",
+          "status": "not_checked",
+          "label": "平衡与稳定性",
+          "detail": "P0 未验证，不得据此判断真人可攀、难度或安全。",
+          "scope": "P1"
+        },
+        {
+          "id": "body_collision",
+          "status": "not_checked",
+          "label": "完整人体碰撞",
+          "detail": "P0 未验证，不得据此判断真人可攀、难度或安全。",
+          "scope": "P1"
+        },
+        {
+          "id": "transition",
+          "status": "not_checked",
+          "label": "连续动作转换",
+          "detail": "P0 未验证，不得据此判断真人可攀、难度或安全。",
+          "scope": "P1"
+        },
+        {
+          "id": "grade_experience",
+          "status": "not_checked",
+          "label": "真实难度与体验",
+          "detail": "P0 未验证，不得据此判断真人可攀、难度或安全。",
+          "scope": "P1"
+        }
+      ],
+      "poses": [
+        {
+          "status": "pass",
+          "joints": {
+            "pelvis": [
+              0.004933283307826885,
+              1.0905330134390425,
+              0.4571725270277923
+            ],
+            "neck": [
+              0.0076030111460982566,
+              1.5202449431893008,
+              0.4726815561263118
+            ],
+            "left_shoulder": [
+              -0.16239321919938837,
+              1.5213144953125164,
+              0.47231044080733436
+            ],
+            "left_elbow": [
+              -0.23940335781371658,
+              1.7013784011914102,
+              0.2721944035933247
+            ],
+            "left_wrist": [
+              -0.27329984772587473,
+              1.5335802286252844,
+              0.08999999847861306
+            ],
+            "right_shoulder": [
+              0.1775992414915849,
+              1.519175391066085,
+              0.47305267144528923
+            ],
+            "right_elbow": [
+              0.25760019307761534,
+              1.7081501540520903,
+              0.2825575620600014
+            ],
+            "right_wrist": [
+              0.2949298384518918,
+              1.5531402032119477,
+              0.09000000516656934
+            ],
+            "left_hip": [
+              -0.1250638340151923,
+              1.0913509062391487,
+              0.456888732960339
+            ],
+            "left_knee": [
+              -0.18388639356820397,
+              0.6985188972765874,
+              0.4097408886610434
+            ],
+            "left_ankle": [
+              -0.22879998147762606,
+              0.6018397868567261,
+              0.0449999953826411
+            ],
+            "right_hip": [
+              0.13493040063084608,
+              1.0897151206389364,
+              0.45745632109524564
+            ],
+            "right_knee": [
+              0.1799401148020049,
+              0.6949204952063055,
+              0.4115071169700457
+            ],
+            "right_ankle": [
+              0.21783998435257254,
+              0.6019897754555319,
+              0.04499998032103969
+            ]
+          },
+          "q": [
+            0.004933283307826885,
+            1.0905330134390425,
+            0.4571725270277923,
+            0.036075419939281046,
+            -0.0021830330220245523,
+            -0.006291539575964993,
+            -0.8748188867808913,
+            0.2836733243991221,
+            0.10472837074525901,
+            1.4439420717186076,
+            -0.825569577782214,
+            -0.2867945712392537,
+            -0.10830228622374188,
+            1.4220381270808216,
+            0.08240462963657591,
+            0.08251055355517317,
+            -0.13527972601676214,
+            1.1805922503927742,
+            0.07976464619270998,
+            -0.0699868146719598,
+            0.11354860506250039,
+            1.1988933622604536
+          ],
+          "residual_m": 2.746984611248193e-07,
+          "evidence": {
+            "contact_errors_m": {
+              "LH": 2.746984611248193e-07,
+              "RH": 2.5965280742372833e-07,
+              "LF": 2.139963867841209e-07,
+              "RF": 2.259476081595882e-07
+            },
+            "attempts": [
+              {
+                "nfev": 61,
+                "solver_success": true,
+                "residual_m": 2.746984611248193e-07
+              }
+            ],
+            "joint_limits_pass": true,
+            "body_id": "A",
+            "elapsed_ms": 71.77
+          },
+          "state_id": "s0"
+        },
+        {
+          "status": "pass",
+          "joints": {
+            "pelvis": [
+              0.0049332777773132275,
+              1.0905330301512195,
+              0.4571726070187118
+            ],
+            "neck": [
+              0.007603022081765963,
+              1.5202449641140234,
+              0.47268151656437785
+            ],
+            "left_shoulder": [
+              -0.16239320822116882,
+              1.521314522671557,
+              0.4723104002974636
+            ],
+            "left_elbow": [
+              -0.23940346187371608,
+              1.7013782929132026,
+              0.2721942853073554
+            ],
+            "left_wrist": [
+              -0.2732999999996326,
+              1.5335800000002386,
+              0.09000000000023209
+            ],
+            "right_shoulder": [
+              0.17759925238470076,
+              1.5191754055564899,
+              0.4730526328312922
+            ],
+            "right_elbow": [
+              0.25760031301594405,
+              1.7081500596593777,
+              0.2825574612269439
+            ],
+            "right_wrist": [
+              0.294929999999698,
+              1.5531400000001336,
+              0.09000000000008695
+            ],
+            "left_hip": [
+              -0.1250638395131663,
+              1.0913509278716862,
+              0.45688881222636557
+            ],
+            "left_knee": [
+              -0.1838864367968822,
+              0.6985189273285022,
+              0.4097409448510788
+            ],
+            "left_ankle": [
+              -0.22880000000003384,
+              0.6018399999996032,
+              0.0449999999999009
+            ],
+            "right_hip": [
+              0.13493039506779275,
+              1.0897151324307528,
+              0.45745640181105807
+            ],
+            "right_knee": [
+              0.17994009423204443,
+              0.6949204924822818,
+              0.4115073077057249
+            ],
+            "right_ankle": [
+              0.2178399616108788,
+              0.6019896692970276,
+              0.04500019705877195
+            ]
+          },
+          "q": [
+            0.0049332777773132275,
+            1.0905330301512195,
+            0.4571726070187118,
+            0.036075141728149934,
+            -0.0021830385981370898,
+            -0.006291577425809756,
+            -0.8748191891484856,
+            0.2836737905246157,
+            0.10472847708044888,
+            1.4439420876053555,
+            -0.8255697530022491,
+            -0.28679497723711106,
+            -0.10830237518619257,
+            1.422038163626353,
+            0.08240496369845639,
+            0.08251055797123154,
+            -0.13527976067574593,
+            1.1805926889387073,
+            0.07976464619270998,
+            -0.0699868146719598,
+            0.11354860506250039,
+            1.1988933622604536
+          ],
+          "residual_m": 4.957885017882411e-13,
+          "evidence": {
+            "contact_errors_m": {
+              "LH": 4.957885017882411e-13,
+              "RH": 3.415486477501382e-13,
+              "LF": 4.1037915938443244e-13
+            },
+            "attempts": [
+              {
+                "nfev": 2,
+                "solver_success": true,
+                "residual_m": 4.957885017882411e-13
+              }
+            ],
+            "joint_limits_pass": true,
+            "body_id": "A",
+            "elapsed_ms": 3.26
+          },
+          "state_id": "s1"
+        },
+        {
+          "status": "pass",
+          "joints": {
+            "pelvis": [
+              -0.020198510748921466,
+              1.1258335796802044,
+              0.4782269282516034
+            ],
+            "neck": [
+              -0.01683150176923876,
+              1.5558120920420349,
+              0.47555444670108166
+            ],
+            "left_shoulder": [
+              -0.18666901457675744,
+              1.5570965381609694,
+              0.4682353318964433
+            ],
+            "left_elbow": [
+              -0.2542594938426988,
+              1.7224821005501647,
+              0.2526451121140748
+            ],
+            "left_wrist": [
+              -0.27329995837184645,
+              1.5335799856156485,
+              0.08999994100905509
+            ],
+            "right_shoulder": [
+              0.15300601103827993,
+              1.5545276459231006,
+              0.48287356150572003
+            ],
+            "right_elbow": [
+              0.25075423529171953,
+              1.715033088072494,
+              0.27530842065657113
+            ],
+            "right_wrist": [
+              0.2949299005749821,
+              1.5531400144100522,
+              0.09000018204611865
+            ],
+            "left_hip": [
+              -0.150074255837024,
+              1.126815803182919,
+              0.47262995810687997
+            ],
+            "left_knee": [
+              -0.20283981226612186,
+              0.7371830904832686,
+              0.39913067070190267
+            ],
+            "left_ankle": [
+              -0.22879991764385862,
+              0.6018402300737805,
+              0.04500021018635392
+            ],
+            "right_hip": [
+              0.10967723433918107,
+              1.1248513561774898,
+              0.48382389839632683
+            ],
+            "right_knee": [
+              0.12625771963638657,
+              0.7400852449346287,
+              0.3757492614718595
+            ],
+            "right_ankle": [
+              0.11637998911358788,
+              0.9269197790356845,
+              0.04499967748578643
+            ]
+          },
+          "q": [
+            -0.020198510748921466,
+            1.1258335796802044,
+            0.4782269282516034,
+            -0.006220881690680945,
+            -0.04306692840162444,
+            -0.007562649795160788,
+            -0.9008166878267302,
+            0.272135184311723,
+            0.11201238819520483,
+            1.4977316240952665,
+            -0.90612801327862,
+            -0.300442709853808,
+            -0.13272741022430531,
+            1.3284760339671844,
+            0.18575290049846865,
+            0.06652746068899008,
+            -0.122563274258964,
+            1.0155117473303337,
+            0.2820482851944302,
+            0.047445920475365694,
+            0.05231939986603233,
+            1.8119813423185553
+          ],
+          "residual_m": 3.91099936913809e-07,
+          "evidence": {
+            "contact_errors_m": {
+              "LH": 7.361891275664168e-08,
+              "RH": 2.0792732652296224e-07,
+              "LF": 3.223271348444749e-07,
+              "RF": 3.91099936913809e-07
+            },
+            "attempts": [
+              {
+                "nfev": 89,
+                "solver_success": true,
+                "residual_m": 3.91099936913809e-07
+              }
+            ],
+            "joint_limits_pass": true,
+            "body_id": "A",
+            "elapsed_ms": 110.86
+          },
+          "state_id": "s2"
+        },
+        {
+          "status": "pass",
+          "joints": {
+            "pelvis": [
+              -0.020198878043746767,
+              1.1258333248232901,
+              0.4782271036369798
+            ],
+            "neck": [
+              -0.01683191894512575,
+              1.5558118385642363,
+              0.47555478113489846
+            ],
+            "left_shoulder": [
+              -0.18666942569103367,
+              1.557096266742613,
+              0.46823552252570305
+            ],
+            "left_elbow": [
+              -0.2542596846896795,
+              1.7224819778582343,
+              0.25264534777908754
+            ],
+            "left_wrist": [
+              -0.27330000000009297,
+              1.5335799999998339,
+              0.09000000000035621
+            ],
+            "right_shoulder": [
+              0.15300558780078216,
+              1.5545274103858597,
+              0.4828740397440938
+            ],
+            "right_elbow": [
+              0.25075396890624424,
+              1.715032939788276,
+              0.27530904023186514
+            ],
+            "right_wrist": [
+              0.2949298112381533,
+              1.5531399387964389,
+              0.0900007803400747
+            ],
+            "left_hip": [
+              -0.15007461849649986,
+              1.1268155346067545,
+              0.4726300235240657
+            ],
+            "left_knee": [
+              -0.20284013285927616,
+              0.7371828652541826,
+              0.3991304761293978
+            ],
+            "left_ankle": [
+              -0.22879999999957648,
+              0.6018400000008689,
+              0.04500000000078025
+            ],
+            "right_hip": [
+              0.10967686240900634,
+              1.1248511150398257,
+              0.4838241837498939
+            ],
+            "right_knee": [
+              0.12625748247460364,
+              0.7400850612847625,
+              0.37574936283402954
+            ],
+            "right_ankle": [
+              0.11637999999989192,
+              0.9269199999994618,
+              0.04499999999951659
+            ]
+          },
+          "q": [
+            -0.020198878043746767,
+            1.1258333248232901,
+            0.4782271036369798,
+            -0.006220511687112333,
+            -0.04306777509588493,
+            -0.00756254443744525,
+            -0.9008163817049664,
+            0.2721349999399414,
+            0.1120123104060447,
+            1.497731465669171,
+            -0.90612801327862,
+            -0.300442709853808,
+            -0.13272741022430531,
+            1.3284760339671844,
+            0.1857530817237595,
+            0.0665275787875204,
+            -0.12256342622837542,
+            1.0155111622075863,
+            0.28204843629229137,
+            0.047445919609212565,
+            0.052319392569780056,
+            1.8119820550883885
+          ],
+          "residual_m": 1.242208198969271e-12,
+          "evidence": {
+            "contact_errors_m": {
+              "LH": 4.0388159610191935e-13,
+              "LF": 1.242208198969271e-12,
+              "RF": 7.313961530549009e-13
+            },
+            "attempts": [
+              {
+                "nfev": 2,
+                "solver_success": true,
+                "residual_m": 1.242208198969271e-12
+              }
+            ],
+            "joint_limits_pass": true,
+            "body_id": "A",
+            "elapsed_ms": 3.16
+          },
+          "state_id": "s3"
+        },
+        {
+          "status": "pass",
+          "joints": {
+            "pelvis": [
+              0.05186573673997829,
+              1.1703644944949103,
+              0.43816163188251644
+            ],
+            "neck": [
+              0.05504441579582712,
+              1.6003372131103397,
+              0.43450687526725884
+            ],
+            "left_shoulder": [
+              -0.11494069946173605,
+              1.6015779197078888,
+              0.43263037906108875
+            ],
+            "left_elbow": [
+              -0.23355054800060943,
+              1.742357995029352,
+              0.22165010931515083
+            ],
+            "left_wrist": [
+              -0.2732998955580835,
+              1.5335800626527825,
+              0.08999995048000275
+            ],
+            "right_shoulder": [
+              0.22502953105339027,
+              1.5990965065127907,
+              0.4363833714734289
+            ],
+            "right_elbow": [
+              0.33015620890062086,
+              1.8204957355142777,
+              0.3009922233050506
+            ],
+            "right_wrist": [
+              0.4610797653189487,
+              1.791489753696407,
+              0.09000010166644934
+            ],
+            "left_hip": [
+              -0.07812288080992294,
+              1.1713132701283302,
+              0.4367266641954452
+            ],
+            "left_knee": [
+              -0.16027458041103698,
+              0.7854742313606142,
+              0.3705501244290496
+            ],
+            "left_ankle": [
+              -0.22879992808784516,
+              0.60184016537207,
+              0.0450001182329392
+            ],
+            "right_hip": [
+              0.18185435428987953,
+              1.1694157188614904,
+              0.4395965995695877
+            ],
+            "right_knee": [
+              0.17135886809579987,
+              0.7728954308000189,
+              0.38800681448380214
+            ],
+            "right_ankle": [
+              0.11638005928516579,
+              0.9269200144783964,
+              0.04499987839581837
+            ]
+          },
+          "q": [
+            0.05186573673997829,
+            1.1703644944949103,
+            0.43816163188251644,
+            -0.008500054186684708,
+            -0.011038437143021137,
+            -0.007298783566139755,
+            -0.979826665117427,
+            0.4589632910928669,
+            0.12712990968079357,
+            1.5265179014977615,
+            -0.5994841174518428,
+            -0.5506079469567728,
+            -0.08510290968663728,
+            1.0321515032507087,
+            0.1733632376048577,
+            0.11031163484660404,
+            -0.1853033221019011,
+            0.8698897929956022,
+            0.1396944650841438,
+            0.17226751356097234,
+            0.003476611677594253,
+            1.8562437194437476
+          ],
+          "residual_m": 3.550728414429417e-07,
+          "evidence": {
+            "contact_errors_m": {
+              "LH": 1.3147515053072103e-07,
+              "RH": 3.550728414429417e-07,
+              "LF": 2.1563466195973672e-07,
+              "RF": 1.360585603212106e-07
+            },
+            "attempts": [
+              {
+                "nfev": 55,
+                "solver_success": true,
+                "residual_m": 3.550728414429417e-07
+              }
+            ],
+            "joint_limits_pass": true,
+            "body_id": "A",
+            "elapsed_ms": 65.0
+          },
+          "state_id": "s4"
+        },
+        {
+          "status": "pass",
+          "joints": {
+            "pelvis": [
+              0.05186585325129716,
+              1.1703646692141993,
+              0.43816163723803425
+            ],
+            "neck": [
+              0.05504453419418991,
+              1.600337386659313,
+              0.4345067445819141
+            ],
+            "left_shoulder": [
+              -0.11494058140759758,
+              1.6015780936825452,
+              0.43263027983952235
+            ],
+            "left_elbow": [
+              -0.23355059694945074,
+              1.7423580193643424,
+              0.2216500041306566
+            ],
+            "left_wrist": [
+              -0.27329999999958576,
+              1.5335800000002633,
+              0.09000000000012087
+            ],
+            "right_shoulder": [
+              0.22502964979597742,
+              1.5990966796360808,
+              0.4363832093243058
+            ],
+            "right_elbow": [
+              0.33015635542395527,
+              1.8204959054050491,
+              0.30099207744075174
+            ],
+            "right_wrist": [
+              0.46107999999938276,
+              1.7914899999996443,
+              0.09000000000015246
+            ],
+            "left_hip": [
+              -0.07812276456183445,
+              1.1713134451731417,
+              0.4367266936114994
+            ],
+            "left_knee": [
+              -0.16027447887213928,
+              0.7854743860506577,
+              0.3705502907827394
+            ],
+            "left_ankle": [
+              -0.2287998886542999,
+              0.601840217920903,
+              0.045000355274406156
+            ],
+            "right_hip": [
+              0.18185447106442879,
+              1.169415893255257,
+              0.4395965808645691
+            ],
+            "right_knee": [
+              0.17135893294673032,
+              0.7728955812653105,
+              0.38800699025739804
+            ],
+            "right_ankle": [
+              0.1163800000001502,
+              0.9269200000000947,
+              0.044999999999958296
+            ]
+          },
+          "q": [
+            0.05186585325129716,
+            1.1703646692141993,
+            0.43816163723803425,
+            -0.008500370574121546,
+            -0.011038252050695743,
+            -0.007298786055464522,
+            -0.979826930649483,
+            0.45896381514834256,
+            0.1271299715947589,
+            1.526517896335439,
+            -0.5994838003270619,
+            -0.5506084673752334,
+            -0.08510298512647754,
+            1.0321511621485409,
+            0.1733632376048577,
+            0.11031163484660404,
+            -0.1853033221019011,
+            0.8698897929956022,
+            0.13969429602668154,
+            0.17226772263668305,
+            0.0034765129307324292,
+            1.8562437059877452
+          ],
+          "residual_m": 7.28525200237046e-13,
+          "evidence": {
+            "contact_errors_m": {
+              "LH": 5.055127375828706e-13,
+              "RH": 7.28525200237046e-13,
+              "RF": 1.8239359050434487e-13
+            },
+            "attempts": [
+              {
+                "nfev": 2,
+                "solver_success": true,
+                "residual_m": 7.28525200237046e-13
+              }
+            ],
+            "joint_limits_pass": true,
+            "body_id": "A",
+            "elapsed_ms": 3.13
+          },
+          "state_id": "s5"
+        },
+        {
+          "status": "pass",
+          "joints": {
+            "pelvis": [
+              0.03568766905233231,
+              1.2293068403679601,
+              0.4740261923834905
+            ],
+            "neck": [
+              0.045965748740583616,
+              1.6579348455869047,
+              0.44127876164533497
+            ],
+            "left_shoulder": [
+              -0.12398359259295974,
+              1.6620506200578598,
+              0.44180959193744235
+            ],
+            "left_elbow": [
+              -0.24606236910647206,
+              1.752940679577133,
+              0.20678667942560466
+            ],
+            "left_wrist": [
+              -0.27329993749605713,
+              1.5335801600838546,
+              0.09000021892670222
+            ],
+            "right_shoulder": [
+              0.215915090074127,
+              1.65381907111595,
+              0.44074793135322765
+            ],
+            "right_elbow": [
+              0.3310426912241692,
+              1.8611204832058592,
+              0.2918460844910532
+            ],
+            "right_wrist": [
+              0.46108005145403463,
+              1.7914900507074512,
+              0.0899998860761887
+            ],
+            "left_hip": [
+              -0.09427359196743612,
+              1.2324541973163374,
+              0.4744321214303961
+            ],
+            "left_knee": [
+              -0.25422820994037526,
+              0.8714153905200416,
+              0.4106708465353778
+            ],
+            "left_ankle": [
+              -0.35698010160470334,
+              0.8601597146127241,
+              0.04499973950165054
+            ],
+            "right_hip": [
+              0.16564893007210074,
+              1.2261594834195828,
+              0.47362026333658486
+            ],
+            "right_knee": [
+              0.15768319137213377,
+              0.8312616120610126,
+              0.4104362605872019
+            ],
+            "right_ankle": [
+              0.11637999449233433,
+              0.9269200789374232,
+              0.04500021468811011
+            ]
+          },
+          "q": [
+            0.03568766905233231,
+            1.2293068403679601,
+            0.4740261923834905,
+            -0.07623099731211502,
+            0.003122536204283058,
+            -0.02421292189141058,
+            -1.1024693519134772,
+            0.42102825605576694,
+            0.18394373084377927,
+            1.4153867538349598,
+            -0.6022604750336004,
+            -0.5863017872780095,
+            -0.10081391436466586,
+            1.1185091064195174,
+            0.24035653496371487,
+            0.26766088166518476,
+            -0.3334844723803597,
+            1.278390477973794,
+            0.23624177734343565,
+            0.10793163861912593,
+            0.030540003853569322,
+            1.665388659026137
+          ],
+          "residual_m": 3.995357344048587e-07,
+          "evidence": {
+            "contact_errors_m": {
+              "LH": 2.783208298502203e-07,
+              "RH": 1.3489773186511223e-07,
+              "LF": 3.995357344048587e-07,
+              "RF": 2.2880654666102227e-07
+            },
+            "attempts": [
+              {
+                "nfev": 90,
+                "solver_success": true,
+                "residual_m": 3.995357344048587e-07
+              }
+            ],
+            "joint_limits_pass": true,
+            "body_id": "A",
+            "elapsed_ms": 109.81
+          },
+          "state_id": "s6"
+        },
+        {
+          "status": "pass",
+          "joints": {
+            "pelvis": [
+              0.03568792950732469,
+              1.2293067370105684,
+              0.47402636729542685
+            ],
+            "neck": [
+              0.04596599225782299,
+              1.657934756971757,
+              0.4412791242015779
+            ],
+            "left_shoulder": [
+              -0.12398334868359193,
+              1.6620505330073454,
+              0.441810067893125
+            ],
+            "left_elbow": [
+              -0.24606227847031142,
+              1.752940700410022,
+              0.2067872767182207
+            ],
+            "left_wrist": [
+              -0.2732999258338244,
+              1.5335802341705984,
+              0.09000073461116266
+            ],
+            "right_shoulder": [
+              0.21591533319923792,
+              1.6538189809361687,
+              0.4407481805100308
+            ],
+            "right_elbow": [
+              0.3310428282409553,
+              1.8611204401395949,
+              0.2918463171988229
+            ],
+            "right_wrist": [
+              0.46108000000038585,
+              1.79149000000017,
+              0.08999999999982544
+            ],
+            "left_hip": [
+              -0.09427333121258083,
+              1.23245409515543,
+              0.4744323830595511
+            ],
+            "left_knee": [
+              -0.2542279645149933,
+              0.871415300446676,
+              0.4106710781768796
+            ],
+            "left_ankle": [
+              -0.3569800000004876,
+              0.8601599999994531,
+              0.0449999999994683
+            ],
+            "right_hip": [
+              0.1656491902272302,
+              1.2261593788657068,
+              0.4736203515313026
+            ],
+            "right_knee": [
+              0.15768340690804117,
+              0.8312615595596391,
+              0.4104360290816309
+            ],
+            "right_ankle": [
+              0.11637999999984272,
+              0.9269200000005685,
+              0.045000000001047646
+            ]
+          },
+          "q": [
+            0.03568792950732469,
+            1.2293067370105684,
+            0.47402636729542685,
+            -0.07623055981596655,
+            0.003123203263063602,
+            -0.024212931148328575,
+            -1.1024693519134772,
+            0.42102825605576694,
+            0.18394373084377927,
+            1.4153867538349598,
+            -0.6022605883363618,
+            -0.586301621577591,
+            -0.100813910681501,
+            1.1185094138034182,
+            0.2403564583025657,
+            0.2676608304602036,
+            -0.3334844132930283,
+            1.2783911786770106,
+            0.23624214612676323,
+            0.10793153435048806,
+            0.030540023719814142,
+            1.6653877688500651
+          ],
+          "residual_m": 1.2023086958714646e-12,
+          "evidence": {
+            "contact_errors_m": {
+              "RH": 4.562999115111478e-13,
+              "LF": 9.052673479460227e-13,
+              "RF": 1.2023086958714646e-12
+            },
+            "attempts": [
+              {
+                "nfev": 2,
+                "solver_success": true,
+                "residual_m": 1.2023086958714646e-12
+              }
+            ],
+            "joint_limits_pass": true,
+            "body_id": "A",
+            "elapsed_ms": 3.46
+          },
+          "state_id": "s7"
+        },
+        {
+          "status": "pass",
+          "joints": {
+            "pelvis": [
+              0.053923629129724766,
+              1.2708101088365742,
+              0.4661941645130552
+            ],
+            "neck": [
+              0.12111691025808502,
+              1.6952906050597312,
+              0.4803846999979348
+            ],
+            "left_shoulder": [
+              -0.04679453716823751,
+              1.7218323854296835,
+              0.48151594620921273
+            ],
+            "left_elbow": [
+              -0.05510038102492458,
+              1.9532052398671214,
+              0.3240433606989069
+            ],
+            "left_wrist": [
+              -0.12215016352396339,
+              1.8963897860505834,
+              0.08999992269123186
+            ],
+            "right_shoulder": [
+              0.28902835768440754,
+              1.6687488246897786,
+              0.47925345378665685
+            ],
+            "right_elbow": [
+              0.39540711760877,
+              1.8711762677409665,
+              0.3176778066837815
+            ],
+            "right_wrist": [
+              0.461080133500989,
+              1.791490020705977,
+              0.09000005850206089
+            ],
+            "left_hip": [
+              -0.07447924243158069,
+              1.2911067644135967,
+              0.4670592351452089
+            ],
+            "left_knee": [
+              -0.2395433543614141,
+              0.9331761145566688,
+              0.3989454417857675
+            ],
+            "left_ankle": [
+              -0.3569799562365005,
+              0.8601601454698217,
+              0.04500008894391844
+            ],
+            "right_hip": [
+              0.1823265006910302,
+              1.2505134532595517,
+              0.46532909388090143
+            ],
+            "right_knee": [
+              0.14246295695312558,
+              0.8554134729786533,
+              0.41729885900025565
+            ],
+            "right_ankle": [
+              0.1163799827488485,
+              0.9269200360148324,
+              0.04499993353926007
+            ]
+          },
+          "q": [
+            0.053923629129724766,
+            1.2708101088365742,
+            0.4661941645130552,
+            0.033007969514285716,
+            0.006654438589475948,
+            -0.15677297622492836,
+            -0.6526615542774922,
+            0.23984083173779153,
+            0.012988866880998453,
+            1.2167795973329092,
+            -0.6947968616190122,
+            -0.35410554984284986,
+            -0.05808746687331724,
+            1.164841830343048,
+            0.1443186787548256,
+            0.20947318789061417,
+            -0.2425888431061001,
+            1.0949650752488551,
+            0.08733157218547026,
+            0.08234118074143987,
+            0.06402669201213247,
+            1.6322222965994304
+          ],
+          "residual_m": 2.8016260477001644e-07,
+          "evidence": {
+            "contact_errors_m": {
+              "LH": 2.8016260477001644e-07,
+              "RH": 1.4722004846257656e-07,
+              "LF": 1.7603333072382754e-07,
+              "RF": 7.753515548219027e-08
+            },
+            "attempts": [
+              {
+                "nfev": 78,
+                "solver_success": true,
+                "residual_m": 2.8016260477001644e-07
+              }
+            ],
+            "joint_limits_pass": true,
+            "body_id": "A",
+            "elapsed_ms": 106.91
+          },
+          "state_id": "s8"
+        }
+      ],
+      "summary": {
+        "status": "pass",
+        "passed": 22,
+        "total": 22
+      },
+      "elapsed_ms": 493.04
+    },
+    {
+      "id": "eval-candidate-42-3-3ceee4c459",
+      "candidate_id": "candidate-42-3",
+      "fingerprint": "sha256:9fc970f4969f7b93dccedf54e3d84a0584e7a4bd232a1911f4bc173ceee4c459",
+      "version": "0.1.0",
+      "checks": [
+        {
+          "id": "schema",
+          "status": "pass",
+          "label": "数据结构",
+          "detail": "版本、有限数和必要字段符合契约。"
+        },
+        {
+          "id": "inventory",
+          "status": "pass",
+          "label": "库存与引用",
+          "detail": "每个实例最多安装一次。"
+        },
+        {
+          "id": "request_conformance",
+          "status": "pass",
+          "label": "接触顺序与目标",
+          "detail": "释放、换点和起终点符合请求。",
+          "evidence": {
+            "hand_moves": 2,
+            "foot_moves": 2
+          }
+        },
+        {
+          "id": "fixed_layout",
+          "status": "pass",
+          "label": "布局模式",
+          "detail": "自由变量允许修改。"
+        },
+        {
+          "id": "boundary",
+          "status": "pass",
+          "label": "安装边界",
+          "detail": "完整投影须在留出 0.2 m 边距的区域内。",
+          "placement_ids": [],
+          "evidence": {
+            "lower_uv": [
+              -1.3,
+              0.2
+            ],
+            "upper_uv": [
+              1.3,
+              2.8
+            ],
+            "epsilon_m": 1e-06
+          }
+        },
+        {
+          "id": "hold_collision",
+          "status": "pass",
+          "label": "岩点包围体",
+          "detail": "接触或间距不大于容差按冲突处理。",
+          "placement_ids": [],
+          "evidence": {
+            "conflicts": [],
+            "epsilon_m": 1e-06,
+            "proxy": "full_3D_OBB_15_axis_SAT",
+            "parent_child_exemptions": []
+          }
+        },
+        {
+          "id": "hand_span",
+          "status": "pass",
+          "label": "双手距离必要上界",
+          "detail": "仅检查声明骨架的保守必要条件。",
+          "state_id": "s0",
+          "evidence": {
+            "distance_m": 0.5972599643371386,
+            "bound_m": 1.4300000000000002,
+            "shoulder_width": 0.34,
+            "upper_arm": 0.28,
+            "forearm": 0.25,
+            "endpoint_offset_sum_m": 0.0,
+            "fingerprint": "sha256:9fc970f4969f7b93dccedf54e3d84a0584e7a4bd232a1911f4bc173ceee4c459"
+          }
+        },
+        {
+          "id": "ik",
+          "status": "pass",
+          "label": "接触姿态 IK",
+          "detail": "同一骨架的离散接触姿态；动态转换未检查。",
+          "state_id": "s0",
+          "evidence": {
+            "residual_m": 2.897237280088082e-07,
+            "contact_errors_m": {
+              "LH": 2.897237280088082e-07,
+              "RH": 2.896104014273685e-07,
+              "LF": 1.5449132027648892e-07,
+              "RF": 1.6406163412466996e-07
+            },
+            "attempts": [
+              {
+                "nfev": 52,
+                "solver_success": true,
+                "residual_m": 2.897237280088082e-07
+              }
+            ],
+            "joint_limits_pass": true,
+            "body_id": "A",
+            "elapsed_ms": 63.1
+          }
+        },
+        {
+          "id": "hand_span",
+          "status": "pass",
+          "label": "双手距离必要上界",
+          "detail": "仅检查声明骨架的保守必要条件。",
+          "state_id": "s1",
+          "evidence": {
+            "distance_m": 0.5972599643371386,
+            "bound_m": 1.4300000000000002,
+            "shoulder_width": 0.34,
+            "upper_arm": 0.28,
+            "forearm": 0.25,
+            "endpoint_offset_sum_m": 0.0,
+            "fingerprint": "sha256:9fc970f4969f7b93dccedf54e3d84a0584e7a4bd232a1911f4bc173ceee4c459"
+          }
+        },
+        {
+          "id": "ik",
+          "status": "pass",
+          "label": "接触姿态 IK",
+          "detail": "同一骨架的离散接触姿态；动态转换未检查。",
+          "state_id": "s1",
+          "evidence": {
+            "residual_m": 5.354468911110076e-13,
+            "contact_errors_m": {
+              "LH": 4.241578005854517e-13,
+              "RH": 5.354468911110076e-13,
+              "RF": 3.8596270258108876e-13
+            },
+            "attempts": [
+              {
+                "nfev": 2,
+                "solver_success": true,
+                "residual_m": 5.354468911110076e-13
+              }
+            ],
+            "joint_limits_pass": true,
+            "body_id": "A",
+            "elapsed_ms": 3.31
+          }
+        },
+        {
+          "id": "hand_span",
+          "status": "pass",
+          "label": "双手距离必要上界",
+          "detail": "仅检查声明骨架的保守必要条件。",
+          "state_id": "s2",
+          "evidence": {
+            "distance_m": 0.5972599643371386,
+            "bound_m": 1.4300000000000002,
+            "shoulder_width": 0.34,
+            "upper_arm": 0.28,
+            "forearm": 0.25,
+            "endpoint_offset_sum_m": 0.0,
+            "fingerprint": "sha256:9fc970f4969f7b93dccedf54e3d84a0584e7a4bd232a1911f4bc173ceee4c459"
+          }
+        },
+        {
+          "id": "ik",
+          "status": "pass",
+          "label": "接触姿态 IK",
+          "detail": "同一骨架的离散接触姿态；动态转换未检查。",
+          "state_id": "s2",
+          "evidence": {
+            "residual_m": 3.2860909505302863e-07,
+            "contact_errors_m": {
+              "LH": 2.304572029306575e-07,
+              "RH": 1.1107572453285116e-07,
+              "LF": 3.2860909505302863e-07,
+              "RF": 2.5262369878028343e-07
+            },
+            "attempts": [
+              {
+                "nfev": 76,
+                "solver_success": true,
+                "residual_m": 3.2860909505302863e-07
+              }
+            ],
+            "joint_limits_pass": true,
+            "body_id": "A",
+            "elapsed_ms": 97.38
+          }
+        },
+        {
+          "id": "ik",
+          "status": "pass",
+          "label": "接触姿态 IK",
+          "detail": "同一骨架的离散接触姿态；动态转换未检查。",
+          "state_id": "s3",
+          "evidence": {
+            "residual_m": 3.2860909505302863e-07,
+            "contact_errors_m": {
+              "LH": 2.304572029306575e-07,
+              "LF": 3.2860909505302863e-07,
+              "RF": 2.5262369878028343e-07
+            },
+            "attempts": [
+              {
+                "nfev": 1,
+                "solver_success": true,
+                "residual_m": 3.2860909505302863e-07
+              }
+            ],
+            "joint_limits_pass": true,
+            "body_id": "A",
+            "elapsed_ms": 1.65
+          }
+        },
+        {
+          "id": "hand_span",
+          "status": "pass",
+          "label": "双手距离必要上界",
+          "detail": "仅检查声明骨架的保守必要条件。",
+          "state_id": "s4",
+          "evidence": {
+            "distance_m": 0.7742417340856795,
+            "bound_m": 1.4300000000000002,
+            "shoulder_width": 0.34,
+            "upper_arm": 0.28,
+            "forearm": 0.25,
+            "endpoint_offset_sum_m": 0.0,
+            "fingerprint": "sha256:9fc970f4969f7b93dccedf54e3d84a0584e7a4bd232a1911f4bc173ceee4c459"
+          }
+        },
+        {
+          "id": "ik",
+          "status": "pass",
+          "label": "接触姿态 IK",
+          "detail": "同一骨架的离散接触姿态；动态转换未检查。",
+          "state_id": "s4",
+          "evidence": {
+            "residual_m": 2.9389706395415476e-07,
+            "contact_errors_m": {
+              "LH": 1.2718312825623644e-07,
+              "RH": 2.9389706395415476e-07,
+              "LF": 7.298010224278281e-08,
+              "RF": 9.8817614251048e-08
+            },
+            "attempts": [
+              {
+                "nfev": 45,
+                "solver_success": true,
+                "residual_m": 2.9389706395415476e-07
+              }
+            ],
+            "joint_limits_pass": true,
+            "body_id": "A",
+            "elapsed_ms": 60.97
+          }
+        },
+        {
+          "id": "hand_span",
+          "status": "pass",
+          "label": "双手距离必要上界",
+          "detail": "仅检查声明骨架的保守必要条件。",
+          "state_id": "s5",
+          "evidence": {
+            "distance_m": 0.7742417340856795,
+            "bound_m": 1.4300000000000002,
+            "shoulder_width": 0.34,
+            "upper_arm": 0.28,
+            "forearm": 0.25,
+            "endpoint_offset_sum_m": 0.0,
+            "fingerprint": "sha256:9fc970f4969f7b93dccedf54e3d84a0584e7a4bd232a1911f4bc173ceee4c459"
+          }
+        },
+        {
+          "id": "ik",
+          "status": "pass",
+          "label": "接触姿态 IK",
+          "detail": "同一骨架的离散接触姿态；动态转换未检查。",
+          "state_id": "s5",
+          "evidence": {
+            "residual_m": 5.683779862100391e-13,
+            "contact_errors_m": {
+              "LH": 3.7359976417355643e-13,
+              "RH": 5.683779862100391e-13,
+              "LF": 1.6461588373527443e-13
+            },
+            "attempts": [
+              {
+                "nfev": 2,
+                "solver_success": true,
+                "residual_m": 5.683779862100391e-13
+              }
+            ],
+            "joint_limits_pass": true,
+            "body_id": "A",
+            "elapsed_ms": 3.19
+          }
+        },
+        {
+          "id": "hand_span",
+          "status": "pass",
+          "label": "双手距离必要上界",
+          "detail": "仅检查声明骨架的保守必要条件。",
+          "state_id": "s6",
+          "evidence": {
+            "distance_m": 0.7742417340856795,
+            "bound_m": 1.4300000000000002,
+            "shoulder_width": 0.34,
+            "upper_arm": 0.28,
+            "forearm": 0.25,
+            "endpoint_offset_sum_m": 0.0,
+            "fingerprint": "sha256:9fc970f4969f7b93dccedf54e3d84a0584e7a4bd232a1911f4bc173ceee4c459"
+          }
+        },
+        {
+          "id": "ik",
+          "status": "pass",
+          "label": "接触姿态 IK",
+          "detail": "同一骨架的离散接触姿态；动态转换未检查。",
+          "state_id": "s6",
+          "evidence": {
+            "residual_m": 4.6270367877708606e-07,
+            "contact_errors_m": {
+              "LH": 1.8652793463064828e-07,
+              "RH": 2.1554137456979217e-07,
+              "LF": 4.6270367877708606e-07,
+              "RF": 4.4520669220081226e-07
+            },
+            "attempts": [
+              {
+                "nfev": 100,
+                "solver_success": false,
+                "residual_m": 4.6270367877708606e-07
+              }
+            ],
+            "joint_limits_pass": true,
+            "body_id": "A",
+            "elapsed_ms": 129.75
+          }
+        },
+        {
+          "id": "ik",
+          "status": "pass",
+          "label": "接触姿态 IK",
+          "detail": "同一骨架的离散接触姿态；动态转换未检查。",
+          "state_id": "s7",
+          "evidence": {
+            "residual_m": 2.1980992177134694e-12,
+            "contact_errors_m": {
+              "RH": 1.0318553109517753e-12,
+              "LF": 2.1980992177134694e-12,
+              "RF": 1.8386234425041507e-12
+            },
+            "attempts": [
+              {
+                "nfev": 2,
+                "solver_success": true,
+                "residual_m": 2.1980992177134694e-12
+              }
+            ],
+            "joint_limits_pass": true,
+            "body_id": "A",
+            "elapsed_ms": 3.52
+          }
+        },
+        {
+          "id": "hand_span",
+          "status": "pass",
+          "label": "双手距离必要上界",
+          "detail": "仅检查声明骨架的保守必要条件。",
+          "state_id": "s8",
+          "evidence": {
+            "distance_m": 0.5594558836047754,
+            "bound_m": 1.4300000000000002,
+            "shoulder_width": 0.34,
+            "upper_arm": 0.28,
+            "forearm": 0.25,
+            "endpoint_offset_sum_m": 0.0,
+            "fingerprint": "sha256:9fc970f4969f7b93dccedf54e3d84a0584e7a4bd232a1911f4bc173ceee4c459"
+          }
+        },
+        {
+          "id": "ik",
+          "status": "pass",
+          "label": "接触姿态 IK",
+          "detail": "同一骨架的离散接触姿态；动态转换未检查。",
+          "state_id": "s8",
+          "evidence": {
+            "residual_m": 3.29350952187607e-07,
+            "contact_errors_m": {
+              "LH": 3.29350952187607e-07,
+              "RH": 1.8625799837032457e-07,
+              "LF": 2.6584339510311783e-07,
+              "RF": 9.956703704150052e-08
+            },
+            "attempts": [
+              {
+                "nfev": 98,
+                "solver_success": true,
+                "residual_m": 3.29350952187607e-07
+              }
+            ],
+            "joint_limits_pass": true,
+            "body_id": "A",
+            "elapsed_ms": 137.85
+          }
+        },
+        {
+          "id": "force",
+          "status": "not_checked",
+          "label": "抓握、摩擦与受力",
+          "detail": "P0 未验证，不得据此判断真人可攀、难度或安全。",
+          "scope": "P1"
+        },
+        {
+          "id": "balance",
+          "status": "not_checked",
+          "label": "平衡与稳定性",
+          "detail": "P0 未验证，不得据此判断真人可攀、难度或安全。",
+          "scope": "P1"
+        },
+        {
+          "id": "body_collision",
+          "status": "not_checked",
+          "label": "完整人体碰撞",
+          "detail": "P0 未验证，不得据此判断真人可攀、难度或安全。",
+          "scope": "P1"
+        },
+        {
+          "id": "transition",
+          "status": "not_checked",
+          "label": "连续动作转换",
+          "detail": "P0 未验证，不得据此判断真人可攀、难度或安全。",
+          "scope": "P1"
+        },
+        {
+          "id": "grade_experience",
+          "status": "not_checked",
+          "label": "真实难度与体验",
+          "detail": "P0 未验证，不得据此判断真人可攀、难度或安全。",
+          "scope": "P1"
+        }
+      ],
+      "poses": [
+        {
+          "status": "pass",
+          "joints": {
+            "pelvis": [
+              -0.0015984857641764437,
+              1.0831522376035232,
+              0.45361366756696436
+            ],
+            "neck": [
+              0.000562018965186315,
+              1.5128331111141358,
+              0.4700355784932655
+            ],
+            "left_shoulder": [
+              -0.16943547319377986,
+              1.5137000379282395,
+              0.4697176200663821
+            ],
+            "left_elbow": [
+              -0.25525962467599805,
+              1.6997582253920656,
+              0.2788863702668983
+            ],
+            "left_wrist": [
+              -0.29660979940614435,
+              1.5412902071480392,
+              0.09000002813598268
+            ],
+            "right_shoulder": [
+              0.1705595111241525,
+              1.5119661843000323,
+              0.4703535369201489
+            ],
+            "right_elbow": [
+              0.2598430749949097,
+              1.696065523592252,
+              0.279209929926076
+            ],
+            "right_wrist": [
+              0.3006398131640179,
+              1.537840215085943,
+              0.09000005200516889
+            ],
+            "left_hip": [
+              -0.13159656800338587,
+              1.0838151816378376,
+              0.45337052288758295
+            ],
+            "left_knee": [
+              -0.1866559053847425,
+              0.6901944200538999,
+              0.40830207031589216
+            ],
+            "left_ankle": [
+              -0.22932005232388317,
+              0.5872798607288688,
+              0.045000041633295684
+            ],
+            "right_hip": [
+              0.12839959647503296,
+              1.0824892935692088,
+              0.4538568122463458
+            ],
+            "right_knee": [
+              0.17718077233571916,
+              0.6878450642803897,
+              0.410540196835133
+            ],
+            "right_ankle": [
+              0.21795999719582876,
+              0.5923598364683915,
+              0.04500001287514832
+            ]
+          },
+          "q": [
+            -0.0015984857641764437,
+            1.0831522376035232,
+            0.45361366756696436,
+            0.03819984703040873,
+            -0.0018703447780192893,
+            -0.005099600517646826,
+            -0.8380023782746032,
+            0.3191204613115753,
+            0.11932431702833494,
+            1.4258610330467099,
+            -0.842113234414788,
+            -0.32110922125603397,
+            -0.12117820035154553,
+            1.4176330148263412,
+            0.07502327145448197,
+            0.07661337336736102,
+            -0.12785558000146052,
+            1.1705088898065312,
+            0.07105110428079442,
+            -0.07444525172455589,
+            0.12215010221981652,
+            1.1969803804885524
+          ],
+          "residual_m": 2.897237280088082e-07,
+          "evidence": {
+            "contact_errors_m": {
+              "LH": 2.897237280088082e-07,
+              "RH": 2.896104014273685e-07,
+              "LF": 1.5449132027648892e-07,
+              "RF": 1.6406163412466996e-07
+            },
+            "attempts": [
+              {
+                "nfev": 52,
+                "solver_success": true,
+                "residual_m": 2.897237280088082e-07
+              }
+            ],
+            "joint_limits_pass": true,
+            "body_id": "A",
+            "elapsed_ms": 63.1
+          },
+          "state_id": "s0"
+        },
+        {
+          "status": "pass",
+          "joints": {
+            "pelvis": [
+              -0.0015984744495397044,
+              1.0831522476709567,
+              0.45361369872350454
+            ],
+            "neck": [
+              0.0005620176945813631,
+              1.5128331257729295,
+              0.47003549117173316
+            ],
+            "left_shoulder": [
+              -0.16943547450127908,
+              1.5137000473073754,
+              0.4697175380753681
+            ],
+            "left_elbow": [
+              -0.25525976074044665,
+              1.699758123117339,
+              0.2788862400201715
+            ],
+            "left_wrist": [
+              -0.29660999999960913,
+              1.5412900000001266,
+              0.09000000000010547
+            ],
+            "right_shoulder": [
+              0.1705595098904418,
+              1.5119662042384836,
+              0.4703534442680982
+            ],
+            "right_elbow": [
+              0.259843199182383,
+              1.69606541683066,
+              0.2792097738278747
+            ],
+            "right_wrist": [
+              0.30063999999955704,
+              1.537840000000171,
+              0.09000000000024747
+            ],
+            "left_hip": [
+              -0.13159655671696238,
+              1.0838151876678859,
+              0.45337055812040183
+            ],
+            "left_knee": [
+              -0.18665588355293106,
+              0.6901944119828218,
+              0.40830221582274767
+            ],
+            "left_ankle": [
+              -0.22932003925128183,
+              0.5872797512395012,
+              0.045000216898114564
+            ],
+            "right_hip": [
+              0.12839960781788298,
+              1.0824893076740276,
+              0.45385683932660725
+            ],
+            "right_knee": [
+              0.17718080722739318,
+              0.6878450810817358,
+              0.4105402258677796
+            ],
+            "right_ankle": [
+              0.21796000000003743,
+              0.5923599999996356,
+              0.04499999999987836
+            ]
+          },
+          "q": [
+            -0.0015984744495397044,
+            1.0831522476709567,
+            0.45361369872350454,
+            0.03819957129613215,
+            -0.0018703134219742483,
+            -0.005099569460079598,
+            -0.8380025503151225,
+            0.3191209699239152,
+            0.1193244122045842,
+            1.4258610486338177,
+            -0.8421134788262201,
+            -0.3211097688932238,
+            -0.12117832353146729,
+            1.4176329725767471,
+            0.07502327145448197,
+            0.07661337336736102,
+            -0.12785558000146052,
+            1.1705088898065312,
+            0.07105136978907926,
+            -0.07444524637766349,
+            0.12215011712621808,
+            1.1969807880199668
+          ],
+          "residual_m": 5.354468911110076e-13,
+          "evidence": {
+            "contact_errors_m": {
+              "LH": 4.241578005854517e-13,
+              "RH": 5.354468911110076e-13,
+              "RF": 3.8596270258108876e-13
+            },
+            "attempts": [
+              {
+                "nfev": 2,
+                "solver_success": true,
+                "residual_m": 5.354468911110076e-13
+              }
+            ],
+            "joint_limits_pass": true,
+            "body_id": "A",
+            "elapsed_ms": 3.31
+          },
+          "state_id": "s1"
+        },
+        {
+          "status": "pass",
+          "joints": {
+            "pelvis": [
+              0.004418442583376406,
+              1.1185990806132033,
+              0.4701207684290181
+            ],
+            "neck": [
+              0.021857405777558687,
+              1.5482448351989662,
+              0.4707596182881318
+            ],
+            "left_shoulder": [
+              -0.14778095258684176,
+              1.5551173866827046,
+              0.4794541802399853
+            ],
+            "left_elbow": [
+              -0.24753457474320034,
+              1.7095515858824728,
+              0.26826873333558143
+            ],
+            "left_wrist": [
+              -0.2966099252190722,
+              1.5412900504702798,
+              0.09000021206387265
+            ],
+            "right_shoulder": [
+              0.19149576414195912,
+              1.5413722837152277,
+              0.46206505633627826
+            ],
+            "right_elbow": [
+              0.27832253561103265,
+              1.717469798947071,
+              0.2624384627034959
+            ],
+            "right_wrist": [
+              0.3006400357375172,
+              1.5378399856113132,
+              0.08999989581932935
+            ],
+            "left_hip": [
+              -0.1253050079305769,
+              1.1238545611595916,
+              0.4767695510980826
+            ],
+            "left_knee": [
+              -0.2588906164307183,
+              0.7543718944666896,
+              0.4016866354970692
+            ],
+            "left_ankle": [
+              -0.3287200499550371,
+              0.8652697615833851,
+              0.0449997794417325
+            ],
+            "right_hip": [
+              0.13414189309732968,
+              1.113343600066815,
+              0.46347198575995363
+            ],
+            "right_knee": [
+              0.18468115217101622,
+              0.7215264725090098,
+              0.40082119291075424
+            ],
+            "right_ankle": [
+              0.21795996546666735,
+              0.592360159728039,
+              0.045000192647698334
+            ]
+          },
+          "q": [
+            0.004418442583376406,
+            1.1185990806132033,
+            0.4701207684290181,
+            0.00148764482824746,
+            0.05116680528793287,
+            -0.040490813965762026,
+            -0.950475078388157,
+            0.3160422557335572,
+            0.15428565364253788,
+            1.3319927050836518,
+            -0.8321377848737683,
+            -0.33435665497426564,
+            -0.11841131189047091,
+            1.5031917505525356,
+            0.2077153550253001,
+            0.22071061884395013,
+            -0.25051356069090663,
+            1.602811948449282,
+            0.1477531101879098,
+            -0.09944600661211492,
+            0.16172295534119918,
+            1.0579220492718857
+          ],
+          "residual_m": 3.2860909505302863e-07,
+          "evidence": {
+            "contact_errors_m": {
+              "LH": 2.304572029306575e-07,
+              "RH": 1.1107572453285116e-07,
+              "LF": 3.2860909505302863e-07,
+              "RF": 2.5262369878028343e-07
+            },
+            "attempts": [
+              {
+                "nfev": 76,
+                "solver_success": true,
+                "residual_m": 3.2860909505302863e-07
+              }
+            ],
+            "joint_limits_pass": true,
+            "body_id": "A",
+            "elapsed_ms": 97.38
+          },
+          "state_id": "s2"
+        },
+        {
+          "status": "pass",
+          "joints": {
+            "pelvis": [
+              0.004418442583376406,
+              1.1185990806132033,
+              0.4701207684290181
+            ],
+            "neck": [
+              0.021857405777558687,
+              1.5482448351989662,
+              0.4707596182881318
+            ],
+            "left_shoulder": [
+              -0.14778095258684176,
+              1.5551173866827046,
+              0.4794541802399853
+            ],
+            "left_elbow": [
+              -0.24753457474320034,
+              1.7095515858824728,
+              0.26826873333558143
+            ],
+            "left_wrist": [
+              -0.2966099252190722,
+              1.5412900504702798,
+              0.09000021206387265
+            ],
+            "right_shoulder": [
+              0.19149576414195912,
+              1.5413722837152277,
+              0.46206505633627826
+            ],
+            "right_elbow": [
+              0.27832253561103265,
+              1.717469798947071,
+              0.2624384627034959
+            ],
+            "right_wrist": [
+              0.3006400357375172,
+              1.5378399856113132,
+              0.08999989581932935
+            ],
+            "left_hip": [
+              -0.1253050079305769,
+              1.1238545611595916,
+              0.4767695510980826
+            ],
+            "left_knee": [
+              -0.2588906164307183,
+              0.7543718944666896,
+              0.4016866354970692
+            ],
+            "left_ankle": [
+              -0.3287200499550371,
+              0.8652697615833851,
+              0.0449997794417325
+            ],
+            "right_hip": [
+              0.13414189309732968,
+              1.113343600066815,
+              0.46347198575995363
+            ],
+            "right_knee": [
+              0.18468115217101622,
+              0.7215264725090098,
+              0.40082119291075424
+            ],
+            "right_ankle": [
+              0.21795996546666735,
+              0.592360159728039,
+              0.045000192647698334
+            ]
+          },
+          "q": [
+            0.004418442583376406,
+            1.1185990806132033,
+            0.4701207684290181,
+            0.00148764482824746,
+            0.05116680528793287,
+            -0.040490813965762026,
+            -0.950475078388157,
+            0.3160422557335572,
+            0.15428565364253788,
+            1.3319927050836518,
+            -0.8321377848737683,
+            -0.33435665497426564,
+            -0.11841131189047091,
+            1.5031917505525356,
+            0.2077153550253001,
+            0.22071061884395013,
+            -0.25051356069090663,
+            1.602811948449282,
+            0.1477531101879098,
+            -0.09944600661211492,
+            0.16172295534119918,
+            1.0579220492718857
+          ],
+          "residual_m": 3.2860909505302863e-07,
+          "evidence": {
+            "contact_errors_m": {
+              "LH": 2.304572029306575e-07,
+              "LF": 3.2860909505302863e-07,
+              "RF": 2.5262369878028343e-07
+            },
+            "attempts": [
+              {
+                "nfev": 1,
+                "solver_success": true,
+                "residual_m": 3.2860909505302863e-07
+              }
+            ],
+            "joint_limits_pass": true,
+            "body_id": "A",
+            "elapsed_ms": 1.65
+          },
+          "state_id": "s3"
+        },
+        {
+          "status": "pass",
+          "joints": {
+            "pelvis": [
+              0.06187980588623676,
+              1.1772426357888475,
+              0.4275187995438349
+            ],
+            "neck": [
+              0.07109256947199996,
+              1.6070432640678245,
+              0.43682175166181597
+            ],
+            "left_shoulder": [
+              -0.09841570511893452,
+              1.6104066438897018,
+              0.44929702806669564
+            ],
+            "left_elbow": [
+              -0.2429750985780947,
+              1.7319319451936053,
+              0.2425745500781731
+            ],
+            "left_wrist": [
+              -0.29660991028353734,
+              1.5412900893977663,
+              0.09000001159930271
+            ],
+            "right_shoulder": [
+              0.24060084406293444,
+              1.6036798842459472,
+              0.42434647525693625
+            ],
+            "right_elbow": [
+              0.32250368221047926,
+              1.8445499019152536,
+              0.30741247809885963
+            ],
+            "right_wrist": [
+              0.4351698192888553,
+              1.794169768269573,
+              0.09000000446940118
+            ],
+            "left_hip": [
+              -0.06774416880094844,
+              1.1798146321232243,
+              0.43705871679462527
+            ],
+            "left_knee": [
+              -0.2023516924213627,
+              0.8051440689666696,
+              0.39829296272315445
+            ],
+            "left_ankle": [
+              -0.3287199439799693,
+              0.8652700417630804,
+              0.04499997893589325
+            ],
+            "right_hip": [
+              0.19150378057342196,
+              1.1746706394544706,
+              0.4179788822930446
+            ],
+            "right_knee": [
+              0.21375503169978222,
+              0.7774112410555218,
+              0.37687107029803474
+            ],
+            "right_ankle": [
+              0.2179600284565528,
+              0.592360090895938,
+              0.04500002632629757
+            ]
+          },
+          "q": [
+            0.06187980588623676,
+            1.1772426357888475,
+            0.4275187995438349,
+            0.021694964415433685,
+            0.07345000364779218,
+            -0.01983937682099864,
+            -1.0615094766918216,
+            0.45614727087593276,
+            0.18864518995386534,
+            1.3383341245684441,
+            -0.5138837690994927,
+            -0.5657274776133036,
+            -0.04837052044385585,
+            1.2433244135453603,
+            0.10424577011588414,
+            0.2973360704085783,
+            -0.28607251018779106,
+            1.5169653701292827,
+            0.0755994840413248,
+            -0.05186383557273665,
+            0.07906266781804905,
+            0.9594029321645714
+          ],
+          "residual_m": 2.9389706395415476e-07,
+          "evidence": {
+            "contact_errors_m": {
+              "LH": 1.2718312825623644e-07,
+              "RH": 2.9389706395415476e-07,
+              "LF": 7.298010224278281e-08,
+              "RF": 9.8817614251048e-08
+            },
+            "attempts": [
+              {
+                "nfev": 45,
+                "solver_success": true,
+                "residual_m": 2.9389706395415476e-07
+              }
+            ],
+            "joint_limits_pass": true,
+            "body_id": "A",
+            "elapsed_ms": 60.97
+          },
+          "state_id": "s4"
+        },
+        {
+          "status": "pass",
+          "joints": {
+            "pelvis": [
+              0.06187985967243731,
+              1.1772427068540616,
+              0.42751871635184807
+            ],
+            "neck": [
+              0.071092605718486,
+              1.6070433361473082,
+              0.43682163897972676
+            ],
+            "left_shoulder": [
+              -0.09841566867638712,
+              1.6104067098019117,
+              0.44929691971131436
+            ],
+            "left_elbow": [
+              -0.24297516939463037,
+              1.73193191370951,
+              0.242574459472208
+            ],
+            "left_wrist": [
+              -0.296609999999687,
+              1.541290000000193,
+              0.09000000000006628
+            ],
+            "right_shoulder": [
+              0.24060088011335912,
+              1.6036799624927047,
+              0.42434635824813915
+            ],
+            "right_elbow": [
+              0.32250374202929877,
+              1.8445500101889003,
+              0.30741243958973197
+            ],
+            "right_wrist": [
+              0.4351699999995178,
+              1.7941699999997094,
+              0.09000000000007766
+            ],
+            "left_hip": [
+              -0.0677441148648186,
+              1.1798146984722877,
+              0.4370586369112974
+            ],
+            "left_knee": [
+              -0.20235165211437742,
+              0.805144131496089,
+              0.398292967081634
+            ],
+            "left_ankle": [
+              -0.32871999999985535,
+              0.8652700000000776,
+              0.0450000000000122
+            ],
+            "right_hip": [
+              0.19150383420969322,
+              1.1746707152358355,
+              0.4179787957923987
+            ],
+            "right_knee": [
+              0.21375510067410783,
+              0.7774113149610142,
+              0.3768710102278743
+            ],
+            "right_ankle": [
+              0.21796009617121742,
+              0.5923601423958418,
+              0.044999978733524015
+            ]
+          },
+          "q": [
+            0.06187985967243731,
+            1.1772427068540616,
+            0.42751871635184807,
+            0.021694895672947058,
+            0.07345002916782334,
+            -0.019839340474937368,
+            -1.0615096947774278,
+            0.4561476751677099,
+            0.1886452465639294,
+            1.338334110266167,
+            -0.5138834617190101,
+            -0.5657279577054407,
+            -0.048370567653882826,
+            1.2433241154727879,
+            0.1042456364893595,
+            0.29733623383628494,
+            -0.2860726140409084,
+            1.516965217772993,
+            0.0755994840413248,
+            -0.05186383557273665,
+            0.07906266781804905,
+            0.9594029321645714
+          ],
+          "residual_m": 5.683779862100391e-13,
+          "evidence": {
+            "contact_errors_m": {
+              "LH": 3.7359976417355643e-13,
+              "RH": 5.683779862100391e-13,
+              "LF": 1.6461588373527443e-13
+            },
+            "attempts": [
+              {
+                "nfev": 2,
+                "solver_success": true,
+                "residual_m": 5.683779862100391e-13
+              }
+            ],
+            "joint_limits_pass": true,
+            "body_id": "A",
+            "elapsed_ms": 3.19
+          },
+          "state_id": "s5"
+        },
+        {
+          "status": "pass",
+          "joints": {
+            "pelvis": [
+              0.002855954150327829,
+              1.2940620820319988,
+              0.4689176541038662
+            ],
+            "neck": [
+              0.011883605993418346,
+              1.721868879109804,
+              0.4264930636376104
+            ],
+            "left_shoulder": [
+              -0.15789815926366915,
+              1.7246432277789565,
+              0.4183410592430329
+            ],
+            "left_elbow": [
+              -0.290661570067089,
+              1.7755404579578327,
+              0.17712881098030284
+            ],
+            "left_wrist": [
+              -0.29661003755912585,
+              1.5412901758817599,
+              0.09000004947311414
+            ],
+            "right_shoulder": [
+              0.18166537125050583,
+              1.7190945304406515,
+              0.4346450680321879
+            ],
+            "right_elbow": [
+              0.31199418920776356,
+              1.9086397943636388,
+              0.27499860820852295
+            ],
+            "right_wrist": [
+              0.43516990694422597,
+              1.7941700208906846,
+              0.0900001932932652
+            ],
+            "left_hip": [
+              -0.1269771604580332,
+              1.296183642778998,
+              0.4626837683903658
+            ],
+            "left_knee": [
+              -0.24899244601817297,
+              0.9185405925581587,
+              0.41270380530936457
+            ],
+            "left_ankle": [
+              -0.32871995486509764,
+              0.8652702227231269,
+              0.04500040305327646
+            ],
+            "right_hip": [
+              0.13268906875868886,
+              1.2919405212849997,
+              0.47515153981736663
+            ],
+            "right_knee": [
+              0.11272522979198564,
+              0.896027531351312,
+              0.4217254269559648
+            ],
+            "right_ankle": [
+              0.1030200471890402,
+              0.9448496161353495,
+              0.04499977947761258
+            ]
+          },
+          "q": [
+            0.002855954150327829,
+            1.2940620820319988,
+            0.4689176541038662,
+            -0.09893679811066938,
+            -0.04797136394093893,
+            -0.01633922094719132,
+            -1.1902164727010651,
+            0.496551260432624,
+            0.2395858037113712,
+            1.4291290374038161,
+            -0.6636059330861679,
+            -0.5632901927535918,
+            -0.1275925745427319,
+            1.2225045681421602,
+            0.21154554992764074,
+            0.23678607737591206,
+            -0.2560137166795942,
+            1.247961374429608,
+            0.23183026925552713,
+            0.0822052612064377,
+            -0.021821225734181354,
+            1.5642736351421613
+          ],
+          "residual_m": 4.6270367877708606e-07,
+          "evidence": {
+            "contact_errors_m": {
+              "LH": 1.8652793463064828e-07,
+              "RH": 2.1554137456979217e-07,
+              "LF": 4.6270367877708606e-07,
+              "RF": 4.4520669220081226e-07
+            },
+            "attempts": [
+              {
+                "nfev": 100,
+                "solver_success": false,
+                "residual_m": 4.6270367877708606e-07
+              }
+            ],
+            "joint_limits_pass": true,
+            "body_id": "A",
+            "elapsed_ms": 129.75
+          },
+          "state_id": "s6"
+        },
+        {
+          "status": "pass",
+          "joints": {
+            "pelvis": [
+              0.002855606426628601,
+              1.2940623684689565,
+              0.46891740725887415
+            ],
+            "neck": [
+              0.011883300500554504,
+              1.7218691360499443,
+              0.4264925283360726
+            ],
+            "left_shoulder": [
+              -0.15789845678417533,
+              1.7246434793588052,
+              0.41834035607871234
+            ],
+            "left_elbow": [
+              -0.2906616317492686,
+              1.7755405421592043,
+              0.17712794269275023
+            ],
+            "left_wrist": [
+              -0.29661001450691865,
+              1.5412901995487431,
+              0.08999933815067064
+            ],
+            "right_shoulder": [
+              0.18166505778528433,
+              1.7190947927410833,
+              0.43464470059343285
+            ],
+            "right_elbow": [
+              0.3119940888404278,
+              1.9086398884338514,
+              0.2749982149977679
+            ],
+            "right_wrist": [
+              0.4351699999996873,
+              1.794169999999876,
+              0.09000000000097547
+            ],
+            "left_hip": [
+              -0.12697750208522363,
+              1.296183925116909,
+              0.4626833931797163
+            ],
+            "left_knee": [
+              -0.24899279188402082,
+              0.9185408811236189,
+              0.41270339339182505
+            ],
+            "left_ankle": [
+              -0.3287199999994431,
+              0.8652700000011715,
+              0.045000000001774565
+            ],
+            "right_hip": [
+              0.13268871493848083,
+              1.291940811821004,
+              0.475151421338032
+            ],
+            "right_knee": [
+              0.11272486282618069,
+              0.8960277780906496,
+              0.4217256379440054
+            ],
+            "right_ankle": [
+              0.10301999999970377,
+              0.9448499999989872,
+              0.0449999999984943
+            ]
+          },
+          "q": [
+            0.002855606426628601,
+            1.2940623684689565,
+            0.46891740725887415,
+            -0.09893747772385299,
+            -0.04797235250634704,
+            -0.01633919015105711,
+            -1.1902164727010651,
+            0.496551260432624,
+            0.2395858037113712,
+            1.4291290374038161,
+            -0.6636061292003413,
+            -0.5632902684916915,
+            -0.1275927049244113,
+            1.2225042371913675,
+            0.21154600143879243,
+            0.2367860434025135,
+            -0.2560138073369577,
+            1.2479601988943727,
+            0.23183007820494994,
+            0.08220547378648481,
+            -0.02182134698823594,
+            1.5642748674844356
+          ],
+          "residual_m": 2.1980992177134694e-12,
+          "evidence": {
+            "contact_errors_m": {
+              "RH": 1.0318553109517753e-12,
+              "LF": 2.1980992177134694e-12,
+              "RF": 1.8386234425041507e-12
+            },
+            "attempts": [
+              {
+                "nfev": 2,
+                "solver_success": true,
+                "residual_m": 2.1980992177134694e-12
+              }
+            ],
+            "joint_limits_pass": true,
+            "body_id": "A",
+            "elapsed_ms": 3.52
+          },
+          "state_id": "s7"
+        },
+        {
+          "status": "pass",
+          "joints": {
+            "pelvis": [
+              0.054719221162262584,
+              1.3130716516142342,
+              0.46644492489827033
+            ],
+            "neck": [
+              0.1271847170726366,
+              1.7363421279831655,
+              0.48860018921358783
+            ],
+            "left_shoulder": [
+              -0.04036751834187311,
+              1.765073401581887,
+              0.48772707696643
+            ],
+            "left_elbow": [
+              -0.05810846792250054,
+              1.9858538453503718,
+              0.31643418640360316
+            ],
+            "left_wrist": [
+              -0.11487021837915176,
+              1.8963797862885146,
+              0.08999987707727308
+            ],
+            "right_shoulder": [
+              0.29473695248714626,
+              1.707610854384444,
+              0.4894733014607457
+            ],
+            "right_elbow": [
+              0.3993559943334946,
+              1.899136960404315,
+              0.31405207470634977
+            ],
+            "right_wrist": [
+              0.43517014868715026,
+              1.7941699926160974,
+              0.09000011193592491
+            ],
+            "left_hip": [
+              -0.07340895886059778,
+              1.3350426255426682,
+              0.46577725082691435
+            ],
+            "left_knee": [
+              -0.21832207847242488,
+              0.9693063278706322,
+              0.3934091063880788
+            ],
+            "left_ankle": [
+              -0.32871991804556566,
+              0.8652702049133933,
+              0.045000148211614355
+            ],
+            "right_hip": [
+              0.18284740118512294,
+              1.2911006776858003,
+              0.4671125989696263
+            ],
+            "right_knee": [
+              0.11728517973741748,
+              0.8991014484044879,
+              0.42196617760869165
+            ],
+            "right_ankle": [
+              0.10301999248972431,
+              0.9448500110270619,
+              0.04499990133088361
+            ]
+          },
+          "q": [
+            0.054719221162262584,
+            1.3130716516142342,
+            0.46644492489827033,
+            0.05154737505945289,
+            -0.0051359769747053325,
+            -0.16982484953583654,
+            -0.7283559757433566,
+            0.22118853630953658,
+            0.07133382393395048,
+            1.2804561560717491,
+            -0.7622064942642985,
+            -0.27297950791604264,
+            -0.08860032461903015,
+            1.2368163412691568,
+            0.1328852277198812,
+            0.19235976444789094,
+            -0.18112671741994288,
+            1.0222377481564686,
+            0.061698876590265454,
+            0.062148784415114074,
+            0.007345351296783517,
+            1.5706612318981052
+          ],
+          "residual_m": 3.29350952187607e-07,
+          "evidence": {
+            "contact_errors_m": {
+              "LH": 3.29350952187607e-07,
+              "RH": 1.8625799837032457e-07,
+              "LF": 2.6584339510311783e-07,
+              "RF": 9.956703704150052e-08
+            },
+            "attempts": [
+              {
+                "nfev": 98,
+                "solver_success": true,
+                "residual_m": 3.29350952187607e-07
+              }
+            ],
+            "joint_limits_pass": true,
+            "body_id": "A",
+            "elapsed_ms": 137.85
+          },
+          "state_id": "s8"
+        }
+      ],
+      "summary": {
+        "status": "pass",
+        "passed": 22,
+        "total": 22
+      },
+      "elapsed_ms": 516.56
+    }
+  ],
+  "manifest": {
+    "engine_version": "0.1.0",
+    "code_hash": "sha256:ee1b70881fc44f8e1a9669d973458c2917435592f32cc786176760164b75fb08",
+    "source": "synthetic_assumption",
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "attempted_candidates": 3,
+    "candidate_budget": 3,
+    "evaluation_count": 3,
+    "seed": 42,
+    "limitations": [
+      "抓握、摩擦与受力",
+      "平衡与稳定性",
+      "完整人体碰撞",
+      "连续动作转换",
+      "真实难度与体验"
+    ],
+    "bundle_digest": "sha256:b6a537600e9f9bed0bdef6512cb67c2f9ccbbdf0ea012ae41a9ce074e07fdc4e"
+  },
+  "reviews": []
+}

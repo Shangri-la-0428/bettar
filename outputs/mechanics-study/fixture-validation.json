@@ -1,0 +1,1009 @@
+{
+  "schema_version": "fixture-validation-index/1",
+  "created_at": "2026-10-14T13:41:04.102909+00:00",
+  "current_code_hash": "sha256:6e13125711cd01dd5972c499f679ccc4c0f7bbcf1f3ff7cbd8a98922c9882e2b",
+  "fixture_count": 17,
+  "validation_provenance": {
+    "method": "scripts/prepare_demo.py:save_bundle calls boulderlab.engine.validate_bundle before writing each fixture",
+    "source_file": "scripts/prepare_demo.py",
+    "source_function": "save_bundle",
+    "source_line": 13,
+    "reported_result": "The parent generation run completed all 17 save_bundle calls successfully.",
+    "independently_revalidated_during_extraction": false,
+    "extraction_checks": [
+      "17 top-level bundle files found",
+      "all manifest code hashes match current code_hash()",
+      "before/after mechanics summaries match the embedded evaluations",
+      "file byte SHA-256 recorded"
+    ]
+  },
+  "aggregate_p0_status_counts": {
+    "pass": 37,
+    "unknown": 6
+  },
+  "fixtures": [
+    {
+      "fixture": "fixtures/catalog-10deg-bundle.json",
+      "file_sha256": "sha256:7f3736489923f7a2cf31d0ff35a98a03dddf952a20e5c921c400acf2f04e63b6",
+      "bundle_id": "bundle-da5f7719a9-1791984852149572000",
+      "created_at": "2026-10-14T13:34:12.149574+00:00",
+      "manifest": {
+        "engine_version": "0.1.0",
+        "code_hash": "sha256:6e13125711cd01dd5972c499f679ccc4c0f7bbcf1f3ff7cbd8a98922c9882e2b",
+        "source": "synthetic_assumption",
+        "python": "3.11.15",
+        "numpy": "2.4.6",
+        "scipy": "1.17.1",
+        "attempted_candidates": 3,
+        "candidate_budget": 3,
+        "evaluation_count": 3,
+        "seed": 42,
+        "limitations": [
+          "抓握、摩擦与受力",
+          "平衡与稳定性",
+          "完整人体碰撞",
+          "连续动作转换",
+          "真实难度与体验"
+        ],
+        "bundle_digest": "sha256:b9529d33d1ef89ddae4c4817c4cc83646a3cb96d80037f7aee0a657a6d5bd584"
+      },
+      "code_hash_matches_current": true,
+      "candidate_count": 3,
+      "evaluation_count": 3,
+      "p0_status_counts": {
+        "pass": 3
+      },
+      "evaluations": [
+        {
+          "candidate_id": "candidate-42-1",
+          "p0": {
+            "status": "pass",
+            "passed": 23,
+            "total": 23
+          }
+        },
+        {
+          "candidate_id": "candidate-42-2",
+          "p0": {
+            "status": "pass",
+            "passed": 23,
+            "total": 23
+          }
+        },
+        {
+          "candidate_id": "candidate-42-3",
+          "p0": {
+            "status": "pass",
+            "passed": 23,
+            "total": 23
+          }
+        }
+      ],
+      "validation_status": "passed_during_generation"
+    },
+    {
+      "fixture": "fixtures/catalog-demo-bundle.json",
+      "file_sha256": "sha256:c51c37490a6e44e7140957bd248c6d8ce4dda7fdc8217ef25e2985a9babf106e",
+      "bundle_id": "bundle-8e273a183b-1791984720327313000",
+      "created_at": "2026-10-14T13:32:00.327314+00:00",
+      "manifest": {
+        "engine_version": "0.1.0",
+        "code_hash": "sha256:6e13125711cd01dd5972c499f679ccc4c0f7bbcf1f3ff7cbd8a98922c9882e2b",
+        "source": "synthetic_assumption",
+        "python": "3.11.15",
+        "numpy": "2.4.6",
+        "scipy": "1.17.1",
+        "attempted_candidates": 3,
+        "candidate_budget": 3,
+        "evaluation_count": 3,
+        "seed": 42,
+        "limitations": [
+          "抓握、摩擦与受力",
+          "平衡与稳定性",
+          "完整人体碰撞",
+          "连续动作转换",
+          "真实难度与体验"
+        ],
+        "bundle_digest": "sha256:6e9d83eefe9871cfe4b03592ce0cea4ddfea625379a00d7678d0226f26e3cb8d"
+      },
+      "code_hash_matches_current": true,
+      "candidate_count": 3,
+      "evaluation_count": 3,
+      "p0_status_counts": {
+        "pass": 3
+      },
+      "evaluations": [
+        {
+          "candidate_id": "candidate-42-1",
+          "p0": {
+            "status": "pass",
+            "passed": 23,
+            "total": 23
+          }
+        },
+        {
+          "candidate_id": "candidate-42-2",
+          "p0": {
+            "status": "pass",
+            "passed": 23,
+            "total": 23
+          }
+        },
+        {
+          "candidate_id": "candidate-42-3",
+          "p0": {
+            "status": "pass",
+            "passed": 23,
+            "total": 23
+          }
+        }
+      ],
+      "validation_status": "passed_during_generation"
+    },
+    {
+      "fixture": "fixtures/competition-10deg-bundle.json",
+      "file_sha256": "sha256:fe88c29272604496e1981cac11c180800a0981aefcd0a2d11d172588592bb7c6",
+      "bundle_id": "bundle-808eb50256-1791984850482365000",
+      "created_at": "2026-10-14T13:34:10.482369+00:00",
+      "manifest": {
+        "engine_version": "0.1.0",
+        "code_hash": "sha256:6e13125711cd01dd5972c499f679ccc4c0f7bbcf1f3ff7cbd8a98922c9882e2b",
+        "source": "synthetic_assumption",
+        "python": "3.11.15",
+        "numpy": "2.4.6",
+        "scipy": "1.17.1",
+        "attempted_candidates": 3,
+        "candidate_budget": 3,
+        "evaluation_count": 3,
+        "seed": 42,
+        "limitations": [
+          "抓握、摩擦与受力",
+          "平衡与稳定性",
+          "完整人体碰撞",
+          "连续动作转换",
+          "真实难度与体验"
+        ],
+        "bundle_digest": "sha256:fc039896198e391e67dda69888a2688acec4f910f4b73e4be9193121b2d466f6"
+      },
+      "code_hash_matches_current": true,
+      "candidate_count": 3,
+      "evaluation_count": 3,
+      "p0_status_counts": {
+        "unknown": 3
+      },
+      "evaluations": [
+        {
+          "candidate_id": "candidate-42-1",
+          "p0": {
+            "status": "unknown",
+            "passed": 33,
+            "total": 36
+          }
+        },
+        {
+          "candidate_id": "candidate-42-2",
+          "p0": {
+            "status": "unknown",
+            "passed": 33,
+            "total": 36
+          }
+        },
+        {
+          "candidate_id": "candidate-42-3",
+          "p0": {
+            "status": "unknown",
+            "passed": 33,
+            "total": 36
+          }
+        }
+      ],
+      "validation_status": "passed_during_generation"
+    },
+    {
+      "fixture": "fixtures/competition-demo-bundle.json",
+      "file_sha256": "sha256:287333b62022ea0c31684b1c3f396e698dc84693ba3addf603f5b58414f45833",
+      "bundle_id": "bundle-2d88e5f2f7-1791984718635745000",
+      "created_at": "2026-10-14T13:31:58.635747+00:00",
+      "manifest": {
+        "engine_version": "0.1.0",
+        "code_hash": "sha256:6e13125711cd01dd5972c499f679ccc4c0f7bbcf1f3ff7cbd8a98922c9882e2b",
+        "source": "synthetic_assumption",
+        "python": "3.11.15",
+        "numpy": "2.4.6",
+        "scipy": "1.17.1",
+        "attempted_candidates": 3,
+        "candidate_budget": 3,
+        "evaluation_count": 3,
+        "seed": 42,
+        "limitations": [
+          "抓握、摩擦与受力",
+          "平衡与稳定性",
+          "完整人体碰撞",
+          "连续动作转换",
+          "真实难度与体验"
+        ],
+        "bundle_digest": "sha256:dbb4c9fe32e311139041146cbf11664673b6f7034cc20c94caaf0d76a28e5b4f"
+      },
+      "code_hash_matches_current": true,
+      "candidate_count": 3,
+      "evaluation_count": 3,
+      "p0_status_counts": {
+        "unknown": 3
+      },
+      "evaluations": [
+        {
+          "candidate_id": "candidate-42-1",
+          "p0": {
+            "status": "unknown",
+            "passed": 33,
+            "total": 36
+          }
+        },
+        {
+          "candidate_id": "candidate-42-2",
+          "p0": {
+            "status": "unknown",
+            "passed": 33,
+            "total": 36
+          }
+        },
+        {
+          "candidate_id": "candidate-42-3",
+          "p0": {
+            "status": "unknown",
+            "passed": 33,
+            "total": 36
+          }
+        }
+      ],
+      "validation_status": "passed_during_generation"
+    },
+    {
+      "fixture": "fixtures/demo-bundle.json",
+      "file_sha256": "sha256:c5d0fd5c2da9df7998a45b6afb16cbff739ca991c142551784ad36298916f5d5",
+      "bundle_id": "bundle-b49fa55d5b-1791984712009892000",
+      "created_at": "2026-10-14T13:31:52.009894+00:00",
+      "manifest": {
+        "engine_version": "0.1.0",
+        "code_hash": "sha256:6e13125711cd01dd5972c499f679ccc4c0f7bbcf1f3ff7cbd8a98922c9882e2b",
+        "source": "synthetic_assumption",
+        "python": "3.11.15",
+        "numpy": "2.4.6",
+        "scipy": "1.17.1",
+        "attempted_candidates": 3,
+        "candidate_budget": 3,
+        "evaluation_count": 3,
+        "seed": 42,
+        "limitations": [
+          "抓握、摩擦与受力",
+          "平衡与稳定性",
+          "完整人体碰撞",
+          "连续动作转换",
+          "真实难度与体验"
+        ],
+        "bundle_digest": "sha256:6f3421840c8b437c6abb05cb340ee8fcacb1704f08dbc455fc08d463014d3899"
+      },
+      "code_hash_matches_current": true,
+      "candidate_count": 3,
+      "evaluation_count": 3,
+      "p0_status_counts": {
+        "pass": 3
+      },
+      "evaluations": [
+        {
+          "candidate_id": "candidate-42-1",
+          "p0": {
+            "status": "pass",
+            "passed": 22,
+            "total": 22
+          }
+        },
+        {
+          "candidate_id": "candidate-42-2",
+          "p0": {
+            "status": "pass",
+            "passed": 22,
+            "total": 22
+          }
+        },
+        {
+          "candidate_id": "candidate-42-3",
+          "p0": {
+            "status": "pass",
+            "passed": 22,
+            "total": 22
+          }
+        }
+      ],
+      "validation_status": "passed_during_generation"
+    },
+    {
+      "fixture": "fixtures/route-demo-bundle.json",
+      "file_sha256": "sha256:54665542b2cd884a57536860f5f356fb5edf9a3aabb960d9bee2aefdf7187d3a",
+      "bundle_id": "bundle-8af66c31b6-1791984760100201000",
+      "created_at": "2026-10-14T13:32:40.100203+00:00",
+      "manifest": {
+        "engine_version": "0.1.0",
+        "code_hash": "sha256:6e13125711cd01dd5972c499f679ccc4c0f7bbcf1f3ff7cbd8a98922c9882e2b",
+        "source": "synthetic_assumption",
+        "python": "3.11.15",
+        "numpy": "2.4.6",
+        "scipy": "1.17.1",
+        "attempted_candidates": 3,
+        "candidate_budget": 3,
+        "evaluation_count": 3,
+        "seed": 42,
+        "limitations": [
+          "抓握、摩擦与受力",
+          "平衡与稳定性",
+          "完整人体碰撞",
+          "连续动作转换",
+          "真实难度与体验"
+        ],
+        "bundle_digest": "sha256:fe70ef7c5fa206c541912d2a3ba4fb1c1cdf211113cd5377771a868c30440678"
+      },
+      "code_hash_matches_current": true,
+      "candidate_count": 3,
+      "evaluation_count": 3,
+      "p0_status_counts": {
+        "pass": 3
+      },
+      "evaluations": [
+        {
+          "candidate_id": "candidate-route-42-1",
+          "p0": {
+            "status": "pass",
+            "passed": 66,
+            "total": 66
+          }
+        },
+        {
+          "candidate_id": "candidate-route-42-2",
+          "p0": {
+            "status": "pass",
+            "passed": 66,
+            "total": 66
+          }
+        },
+        {
+          "candidate_id": "candidate-route-42-3",
+          "p0": {
+            "status": "pass",
+            "passed": 70,
+            "total": 70
+          }
+        }
+      ],
+      "validation_status": "passed_during_generation"
+    },
+    {
+      "fixture": "fixtures/route-mixed_flow-bundle.json",
+      "file_sha256": "sha256:54665542b2cd884a57536860f5f356fb5edf9a3aabb960d9bee2aefdf7187d3a",
+      "bundle_id": "bundle-8af66c31b6-1791984760100201000",
+      "created_at": "2026-10-14T13:32:40.100203+00:00",
+      "manifest": {
+        "engine_version": "0.1.0",
+        "code_hash": "sha256:6e13125711cd01dd5972c499f679ccc4c0f7bbcf1f3ff7cbd8a98922c9882e2b",
+        "source": "synthetic_assumption",
+        "python": "3.11.15",
+        "numpy": "2.4.6",
+        "scipy": "1.17.1",
+        "attempted_candidates": 3,
+        "candidate_budget": 3,
+        "evaluation_count": 3,
+        "seed": 42,
+        "limitations": [
+          "抓握、摩擦与受力",
+          "平衡与稳定性",
+          "完整人体碰撞",
+          "连续动作转换",
+          "真实难度与体验"
+        ],
+        "bundle_digest": "sha256:fe70ef7c5fa206c541912d2a3ba4fb1c1cdf211113cd5377771a868c30440678"
+      },
+      "code_hash_matches_current": true,
+      "candidate_count": 3,
+      "evaluation_count": 3,
+      "p0_status_counts": {
+        "pass": 3
+      },
+      "evaluations": [
+        {
+          "candidate_id": "candidate-route-42-1",
+          "p0": {
+            "status": "pass",
+            "passed": 66,
+            "total": 66
+          }
+        },
+        {
+          "candidate_id": "candidate-route-42-2",
+          "p0": {
+            "status": "pass",
+            "passed": 66,
+            "total": 66
+          }
+        },
+        {
+          "candidate_id": "candidate-route-42-3",
+          "p0": {
+            "status": "pass",
+            "passed": 70,
+            "total": 70
+          }
+        }
+      ],
+      "validation_status": "passed_during_generation"
+    },
+    {
+      "fixture": "fixtures/route-power_finish-bundle.json",
+      "file_sha256": "sha256:fde869e7c374e56ec4b5ad82c430e09fabcd0754cb5067d981fde8da3d7a8dd8",
+      "bundle_id": "bundle-9764945213-1791984769799923000",
+      "created_at": "2026-10-14T13:32:49.799925+00:00",
+      "manifest": {
+        "engine_version": "0.1.0",
+        "code_hash": "sha256:6e13125711cd01dd5972c499f679ccc4c0f7bbcf1f3ff7cbd8a98922c9882e2b",
+        "source": "synthetic_assumption",
+        "python": "3.11.15",
+        "numpy": "2.4.6",
+        "scipy": "1.17.1",
+        "attempted_candidates": 3,
+        "candidate_budget": 3,
+        "evaluation_count": 3,
+        "seed": 42,
+        "limitations": [
+          "抓握、摩擦与受力",
+          "平衡与稳定性",
+          "完整人体碰撞",
+          "连续动作转换",
+          "真实难度与体验"
+        ],
+        "bundle_digest": "sha256:034db7ccd4d058279cc954947719dca3fead9adaef7adcf4783a360e0c73ced3"
+      },
+      "code_hash_matches_current": true,
+      "candidate_count": 3,
+      "evaluation_count": 3,
+      "p0_status_counts": {
+        "pass": 3
+      },
+      "evaluations": [
+        {
+          "candidate_id": "candidate-route-42-1",
+          "p0": {
+            "status": "pass",
+            "passed": 70,
+            "total": 70
+          }
+        },
+        {
+          "candidate_id": "candidate-route-42-2",
+          "p0": {
+            "status": "pass",
+            "passed": 70,
+            "total": 70
+          }
+        },
+        {
+          "candidate_id": "candidate-route-42-3",
+          "p0": {
+            "status": "pass",
+            "passed": 70,
+            "total": 70
+          }
+        }
+      ],
+      "validation_status": "passed_during_generation"
+    },
+    {
+      "fixture": "fixtures/route-sustained_finish-bundle.json",
+      "file_sha256": "sha256:e8f1762d4753eb1cc411c370adde83dc76c750732eecdd126aa03927a356b0da",
+      "bundle_id": "bundle-b523f817cf-1791984779329750000",
+      "created_at": "2026-10-14T13:32:59.329760+00:00",
+      "manifest": {
+        "engine_version": "0.1.0",
+        "code_hash": "sha256:6e13125711cd01dd5972c499f679ccc4c0f7bbcf1f3ff7cbd8a98922c9882e2b",
+        "source": "synthetic_assumption",
+        "python": "3.11.15",
+        "numpy": "2.4.6",
+        "scipy": "1.17.1",
+        "attempted_candidates": 3,
+        "candidate_budget": 3,
+        "evaluation_count": 3,
+        "seed": 42,
+        "limitations": [
+          "抓握、摩擦与受力",
+          "平衡与稳定性",
+          "完整人体碰撞",
+          "连续动作转换",
+          "真实难度与体验"
+        ],
+        "bundle_digest": "sha256:e42bb10318e0e0f87bbb306059db30b3ad5aaf61d8a7319e49c5119d154f748b"
+      },
+      "code_hash_matches_current": true,
+      "candidate_count": 3,
+      "evaluation_count": 3,
+      "p0_status_counts": {
+        "pass": 3
+      },
+      "evaluations": [
+        {
+          "candidate_id": "candidate-route-42-1",
+          "p0": {
+            "status": "pass",
+            "passed": 70,
+            "total": 70
+          }
+        },
+        {
+          "candidate_id": "candidate-route-42-2",
+          "p0": {
+            "status": "pass",
+            "passed": 70,
+            "total": 70
+          }
+        },
+        {
+          "candidate_id": "candidate-route-42-3",
+          "p0": {
+            "status": "pass",
+            "passed": 70,
+            "total": 70
+          }
+        }
+      ],
+      "validation_status": "passed_during_generation"
+    },
+    {
+      "fixture": "fixtures/setting-demo-bundle.json",
+      "file_sha256": "sha256:a4cd3048c4682013ddb3ead48ebe139b38acbe768ace0f6ed4b88fde89b5fa96",
+      "bundle_id": "bundle-b9e9e34576-1791984795453188000",
+      "created_at": "2026-10-14T13:33:15.453190+00:00",
+      "manifest": {
+        "engine_version": "0.1.0",
+        "code_hash": "sha256:6e13125711cd01dd5972c499f679ccc4c0f7bbcf1f3ff7cbd8a98922c9882e2b",
+        "source": "synthetic_assumption",
+        "python": "3.11.15",
+        "numpy": "2.4.6",
+        "scipy": "1.17.1",
+        "attempted_candidates": 1,
+        "candidate_budget": 3,
+        "evaluation_count": 1,
+        "seed": 42,
+        "limitations": [
+          "抓握、摩擦与受力",
+          "平衡与稳定性",
+          "完整人体碰撞",
+          "连续动作转换",
+          "真实难度与体验"
+        ],
+        "bundle_digest": "sha256:0811d2c965a2fad045d669ba3f6f67358cea1deca3f46d28509ea13bd7a58310"
+      },
+      "code_hash_matches_current": true,
+      "candidate_count": 1,
+      "evaluation_count": 1,
+      "p0_status_counts": {
+        "pass": 1
+      },
+      "evaluations": [
+        {
+          "candidate_id": "setting-diagonal_balance-trial1-beta2",
+          "p0": {
+            "status": "pass",
+            "passed": 53,
+            "total": 53
+          },
+          "mechanics_summary": {
+            "status": "infeasible",
+            "feasible_states": 16,
+            "infeasible_states": 11,
+            "unknown_states": 0,
+            "release_states": 13,
+            "release_infeasible_states": 7,
+            "release_unknown_states": 0,
+            "max_capacity_utilization": 0.8001079,
+            "worst_state_id": "b3"
+          }
+        }
+      ],
+      "validation_status": "passed_during_generation"
+    },
+    {
+      "fixture": "fixtures/setting-diagonal_balance-bundle.json",
+      "file_sha256": "sha256:a4cd3048c4682013ddb3ead48ebe139b38acbe768ace0f6ed4b88fde89b5fa96",
+      "bundle_id": "bundle-b9e9e34576-1791984795453188000",
+      "created_at": "2026-10-14T13:33:15.453190+00:00",
+      "manifest": {
+        "engine_version": "0.1.0",
+        "code_hash": "sha256:6e13125711cd01dd5972c499f679ccc4c0f7bbcf1f3ff7cbd8a98922c9882e2b",
+        "source": "synthetic_assumption",
+        "python": "3.11.15",
+        "numpy": "2.4.6",
+        "scipy": "1.17.1",
+        "attempted_candidates": 1,
+        "candidate_budget": 3,
+        "evaluation_count": 1,
+        "seed": 42,
+        "limitations": [
+          "抓握、摩擦与受力",
+          "平衡与稳定性",
+          "完整人体碰撞",
+          "连续动作转换",
+          "真实难度与体验"
+        ],
+        "bundle_digest": "sha256:0811d2c965a2fad045d669ba3f6f67358cea1deca3f46d28509ea13bd7a58310"
+      },
+      "code_hash_matches_current": true,
+      "candidate_count": 1,
+      "evaluation_count": 1,
+      "p0_status_counts": {
+        "pass": 1
+      },
+      "evaluations": [
+        {
+          "candidate_id": "setting-diagonal_balance-trial1-beta2",
+          "p0": {
+            "status": "pass",
+            "passed": 53,
+            "total": 53
+          },
+          "mechanics_summary": {
+            "status": "infeasible",
+            "feasible_states": 16,
+            "infeasible_states": 11,
+            "unknown_states": 0,
+            "release_states": 13,
+            "release_infeasible_states": 7,
+            "release_unknown_states": 0,
+            "max_capacity_utilization": 0.8001079,
+            "worst_state_id": "b3"
+          }
+        }
+      ],
+      "validation_status": "passed_during_generation"
+    },
+    {
+      "fixture": "fixtures/setting-opposing_sidepulls-bundle.json",
+      "file_sha256": "sha256:cc5078c63409b89e8165b5df8618f79459ed8794537f34d4b4b0158df0c5b62c",
+      "bundle_id": "bundle-6afac10b9f-1791984820180148000",
+      "created_at": "2026-10-14T13:33:40.180150+00:00",
+      "manifest": {
+        "engine_version": "0.1.0",
+        "code_hash": "sha256:6e13125711cd01dd5972c499f679ccc4c0f7bbcf1f3ff7cbd8a98922c9882e2b",
+        "source": "synthetic_assumption",
+        "python": "3.11.15",
+        "numpy": "2.4.6",
+        "scipy": "1.17.1",
+        "attempted_candidates": 1,
+        "candidate_budget": 3,
+        "evaluation_count": 1,
+        "seed": 42,
+        "limitations": [
+          "抓握、摩擦与受力",
+          "平衡与稳定性",
+          "完整人体碰撞",
+          "连续动作转换",
+          "真实难度与体验"
+        ],
+        "bundle_digest": "sha256:27070d2836b6aff48595b1153b16a51f46a4fffd59a14589be60e48f2b94f95e"
+      },
+      "code_hash_matches_current": true,
+      "candidate_count": 1,
+      "evaluation_count": 1,
+      "p0_status_counts": {
+        "pass": 1
+      },
+      "evaluations": [
+        {
+          "candidate_id": "setting-opposing_sidepulls-trial0-beta5",
+          "p0": {
+            "status": "pass",
+            "passed": 51,
+            "total": 51
+          },
+          "mechanics_summary": {
+            "status": "infeasible",
+            "feasible_states": 15,
+            "infeasible_states": 10,
+            "unknown_states": 0,
+            "release_states": 12,
+            "release_infeasible_states": 6,
+            "release_unknown_states": 0,
+            "max_capacity_utilization": 0.9244707,
+            "worst_state_id": "b3"
+          }
+        }
+      ],
+      "validation_status": "passed_during_generation"
+    },
+    {
+      "fixture": "fixtures/setting-roof_exit-bundle.json",
+      "file_sha256": "sha256:f77f511109a8aa5598ab93d074c4680868c86b66858e1ace7661bab6f5cfecf3",
+      "bundle_id": "bundle-ee3fccd00b-1791984842682823000",
+      "created_at": "2026-10-14T13:34:02.682825+00:00",
+      "manifest": {
+        "engine_version": "0.1.0",
+        "code_hash": "sha256:6e13125711cd01dd5972c499f679ccc4c0f7bbcf1f3ff7cbd8a98922c9882e2b",
+        "source": "synthetic_assumption",
+        "python": "3.11.15",
+        "numpy": "2.4.6",
+        "scipy": "1.17.1",
+        "attempted_candidates": 1,
+        "candidate_budget": 3,
+        "evaluation_count": 1,
+        "seed": 42,
+        "limitations": [
+          "抓握、摩擦与受力",
+          "平衡与稳定性",
+          "完整人体碰撞",
+          "连续动作转换",
+          "真实难度与体验"
+        ],
+        "bundle_digest": "sha256:ba1200792727f60349ac42430f4a71f2cd9a6ec1fb79d56d50c4bf85d2e1ec9e"
+      },
+      "code_hash_matches_current": true,
+      "candidate_count": 1,
+      "evaluation_count": 1,
+      "p0_status_counts": {
+        "pass": 1
+      },
+      "evaluations": [
+        {
+          "candidate_id": "setting-roof_exit-trial0-beta4",
+          "p0": {
+            "status": "pass",
+            "passed": 57,
+            "total": 57
+          },
+          "mechanics_summary": {
+            "status": "infeasible",
+            "feasible_states": 14,
+            "infeasible_states": 14,
+            "unknown_states": 1,
+            "release_states": 14,
+            "release_infeasible_states": 9,
+            "release_unknown_states": 0,
+            "max_capacity_utilization": 1.4957259,
+            "worst_state_id": "b3"
+          }
+        }
+      ],
+      "validation_status": "passed_during_generation"
+    },
+    {
+      "fixture": "fixtures/style-demo-bundle.json",
+      "file_sha256": "sha256:815561835cdd729f7a322a0e55ee0509be4c76f681ff32d67b749eaffc615c9b",
+      "bundle_id": "bundle-e0421119d8-1791984726335605000",
+      "created_at": "2026-10-14T13:32:06.335606+00:00",
+      "manifest": {
+        "engine_version": "0.1.0",
+        "code_hash": "sha256:6e13125711cd01dd5972c499f679ccc4c0f7bbcf1f3ff7cbd8a98922c9882e2b",
+        "source": "synthetic_assumption",
+        "python": "3.11.15",
+        "numpy": "2.4.6",
+        "scipy": "1.17.1",
+        "attempted_candidates": 3,
+        "candidate_budget": 3,
+        "evaluation_count": 3,
+        "seed": 42,
+        "limitations": [
+          "抓握、摩擦与受力",
+          "平衡与稳定性",
+          "完整人体碰撞",
+          "连续动作转换",
+          "真实难度与体验"
+        ],
+        "bundle_digest": "sha256:51880b9a187676f38ea1e58cd864c9e21e51205e3c97233766e79bedd11c9a8a"
+      },
+      "code_hash_matches_current": true,
+      "candidate_count": 3,
+      "evaluation_count": 3,
+      "p0_status_counts": {
+        "pass": 3
+      },
+      "evaluations": [
+        {
+          "candidate_id": "candidate-style-42-1",
+          "p0": {
+            "status": "pass",
+            "passed": 36,
+            "total": 36
+          }
+        },
+        {
+          "candidate_id": "candidate-style-42-2",
+          "p0": {
+            "status": "pass",
+            "passed": 36,
+            "total": 36
+          }
+        },
+        {
+          "candidate_id": "candidate-style-42-3",
+          "p0": {
+            "status": "pass",
+            "passed": 36,
+            "total": 36
+          }
+        }
+      ],
+      "validation_status": "passed_during_generation"
+    },
+    {
+      "fixture": "fixtures/style-power-bundle.json",
+      "file_sha256": "sha256:815561835cdd729f7a322a0e55ee0509be4c76f681ff32d67b749eaffc615c9b",
+      "bundle_id": "bundle-e0421119d8-1791984726335605000",
+      "created_at": "2026-10-14T13:32:06.335606+00:00",
+      "manifest": {
+        "engine_version": "0.1.0",
+        "code_hash": "sha256:6e13125711cd01dd5972c499f679ccc4c0f7bbcf1f3ff7cbd8a98922c9882e2b",
+        "source": "synthetic_assumption",
+        "python": "3.11.15",
+        "numpy": "2.4.6",
+        "scipy": "1.17.1",
+        "attempted_candidates": 3,
+        "candidate_budget": 3,
+        "evaluation_count": 3,
+        "seed": 42,
+        "limitations": [
+          "抓握、摩擦与受力",
+          "平衡与稳定性",
+          "完整人体碰撞",
+          "连续动作转换",
+          "真实难度与体验"
+        ],
+        "bundle_digest": "sha256:51880b9a187676f38ea1e58cd864c9e21e51205e3c97233766e79bedd11c9a8a"
+      },
+      "code_hash_matches_current": true,
+      "candidate_count": 3,
+      "evaluation_count": 3,
+      "p0_status_counts": {
+        "pass": 3
+      },
+      "evaluations": [
+        {
+          "candidate_id": "candidate-style-42-1",
+          "p0": {
+            "status": "pass",
+            "passed": 36,
+            "total": 36
+          }
+        },
+        {
+          "candidate_id": "candidate-style-42-2",
+          "p0": {
+            "status": "pass",
+            "passed": 36,
+            "total": 36
+          }
+        },
+        {
+          "candidate_id": "candidate-style-42-3",
+          "p0": {
+            "status": "pass",
+            "passed": 36,
+            "total": 36
+          }
+        }
+      ],
+      "validation_status": "passed_during_generation"
+    },
+    {
+      "fixture": "fixtures/style-sustained-bundle.json",
+      "file_sha256": "sha256:65947f057b4665780537deeb6049148b0e4890196a096c3ffc38a26d923025b5",
+      "bundle_id": "bundle-03265afb40-1791984737721040000",
+      "created_at": "2026-10-14T13:32:17.721042+00:00",
+      "manifest": {
+        "engine_version": "0.1.0",
+        "code_hash": "sha256:6e13125711cd01dd5972c499f679ccc4c0f7bbcf1f3ff7cbd8a98922c9882e2b",
+        "source": "synthetic_assumption",
+        "python": "3.11.15",
+        "numpy": "2.4.6",
+        "scipy": "1.17.1",
+        "attempted_candidates": 3,
+        "candidate_budget": 3,
+        "evaluation_count": 3,
+        "seed": 42,
+        "limitations": [
+          "抓握、摩擦与受力",
+          "平衡与稳定性",
+          "完整人体碰撞",
+          "连续动作转换",
+          "真实难度与体验"
+        ],
+        "bundle_digest": "sha256:899c7f45e28e615f07d63bcd791baabd09fff85f6b6d5c5678d193ba81527607"
+      },
+      "code_hash_matches_current": true,
+      "candidate_count": 3,
+      "evaluation_count": 3,
+      "p0_status_counts": {
+        "pass": 3
+      },
+      "evaluations": [
+        {
+          "candidate_id": "candidate-style-42-1",
+          "p0": {
+            "status": "pass",
+            "passed": 36,
+            "total": 36
+          }
+        },
+        {
+          "candidate_id": "candidate-style-42-2",
+          "p0": {
+            "status": "pass",
+            "passed": 36,
+            "total": 36
+          }
+        },
+        {
+          "candidate_id": "candidate-style-42-3",
+          "p0": {
+            "status": "pass",
+            "passed": 36,
+            "total": 36
+          }
+        }
+      ],
+      "validation_status": "passed_during_generation"
+    },
+    {
+      "fixture": "fixtures/style-technical-bundle.json",
+      "file_sha256": "sha256:21064df9c90bd5544ad0b83f1d328befb60ea6a6f832ae5f5c36a0d674d69bcc",
+      "bundle_id": "bundle-a83e22454c-1791984747349059000",
+      "created_at": "2026-10-14T13:32:27.349060+00:00",
+      "manifest": {
+        "engine_version": "0.1.0",
+        "code_hash": "sha256:6e13125711cd01dd5972c499f679ccc4c0f7bbcf1f3ff7cbd8a98922c9882e2b",
+        "source": "synthetic_assumption",
+        "python": "3.11.15",
+        "numpy": "2.4.6",
+        "scipy": "1.17.1",
+        "attempted_candidates": 3,
+        "candidate_budget": 3,
+        "evaluation_count": 3,
+        "seed": 42,
+        "limitations": [
+          "抓握、摩擦与受力",
+          "平衡与稳定性",
+          "完整人体碰撞",
+          "连续动作转换",
+          "真实难度与体验"
+        ],
+        "bundle_digest": "sha256:6d1f3db8d83ffa835f1f79258f54def693206ae55a7a98804ab994885dae3e33"
+      },
+      "code_hash_matches_current": true,
+      "candidate_count": 3,
+      "evaluation_count": 3,
+      "p0_status_counts": {
+        "pass": 3
+      },
+      "evaluations": [
+        {
+          "candidate_id": "candidate-style-42-1",
+          "p0": {
+            "status": "pass",
+            "passed": 36,
+            "total": 36
+          }
+        },
+        {
+          "candidate_id": "candidate-style-42-2",
+          "p0": {
+            "status": "pass",
+            "passed": 36,
+            "total": 36
+          }
+        },
+        {
+          "candidate_id": "candidate-style-42-3",
+          "p0": {
+            "status": "pass",
+            "passed": 36,
+            "total": 36
+          }
+        }
+      ],
+      "validation_status": "passed_during_generation"
+    }
+  ]
+}

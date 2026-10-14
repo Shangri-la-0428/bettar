@@ -1,0 +1,9 @@
+{
+  "status": "pass",
+  "checks": 14,
+  "source": "synthetic_reference",
+  "triangle_counts": {
+    "wall": 18,
+    "jug": 256
+  }
+}

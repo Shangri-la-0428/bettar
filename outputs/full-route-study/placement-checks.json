@@ -1,0 +1,17 @@
+{
+  "status": "pass",
+  "comparisons": 118,
+  "cases": [
+    "initial",
+    "parent-translate",
+    "parent-rotate"
+  ],
+  "checks": [
+    "Python frame/contact/normal parity",
+    "wall and face inverse drag",
+    "selected-surface main alias",
+    "legacy contact preserved",
+    "parent translation and rotation inheritance",
+    "cancelled preview restoration"
+  ]
+}

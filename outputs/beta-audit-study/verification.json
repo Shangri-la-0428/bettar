@@ -1,0 +1,85 @@
+{
+  "status": "passed",
+  "date": "2026-10-14",
+  "code_hash": "sha256:3cafccd9c2df6f058a33f4ccc0e55ddc5e4c239b593ecaa5cac809c0e79e4dd2",
+  "audit_code_hash": "sha256:a34c08c321982636dcc7aab98b37e72b2327caf68cfb8b37a8d6fbd1fed29ffa",
+  "model": "independent-beta-proxy-2",
+  "python": {
+    "command": ".venv/bin/python -m pytest tests -q",
+    "passed": 220,
+    "elapsed_seconds": 63.28
+  },
+  "frontend": {
+    "command": "npm --prefix web run build",
+    "status": "passed",
+    "js_kb": 638.77,
+    "gzip_kb": 172.71,
+    "warning": "Existing single bundle exceeds 500 kB"
+  },
+  "fixtures": {
+    "validated_current_bundles": 13,
+    "evidence": "fixture-validation.json"
+  },
+  "comparison": "comparison.json",
+  "full_reports": [
+    "mixed_flow.json",
+    "power_finish.json",
+    "sustained_finish.json",
+    "sensitivity-body_b.json",
+    "sensitivity-start_hand_rotated_90.json"
+  ],
+  "browser": {
+    "url": "http://127.0.0.1:5174/",
+    "audit_endpoint_exercised": true,
+    "verified_original_transfers": 17,
+    "verified_alternative_transfers": 16,
+    "skipped_hold": "hand-06-3 / O4",
+    "original_crux_transfer_absent": true,
+    "all_20_installed_placements_retained": true,
+    "alternative_view_readonly": true,
+    "step_selection_and_support_explanation": true,
+    "return_to_original": true,
+    "editing_invalidates_report": true,
+    "audit_export_source_matches_reproduced_report": true,
+    "export": "browser-export.json",
+    "desktop": {
+      "viewport": [
+        1440,
+        1000
+      ],
+      "document_width": 1435
+    },
+    "mobile": {
+      "viewport": [
+        390,
+        844
+      ],
+      "document_width": 385,
+      "table_client_width": 331,
+      "table_scroll_width": 620
+    },
+    "console_errors_or_warnings": [],
+    "viewport_reset": true,
+    "screenshots": [
+      "desktop-comparison.png",
+      "mobile-comparison.png"
+    ]
+  },
+  "research": {
+    "actually_viewed": [
+      "USA Climbing Prague 2024 photograph",
+      "Innsbruck 2025 organizer photograph",
+      "previous prototype screenshot"
+    ],
+    "documentation": "../../work/ai-bouldering-strategy-v0.2-draft.md",
+    "full_competition_video_watched": false
+  },
+  "rejected_historical_evidence": "history-unrestricted-matching/ contains invalid small-pocket hand-matching counterexamples, not current accepted routes",
+  "limits": [
+    "Conservative synthetic hand-matching thresholds are not human hand capacity measurements",
+    "Each selected surface still has one representative contact point",
+    "Bounded search is not a proof of optimal beta or impossibility",
+    "Unknown candidates retained; no synthetic pass poses",
+    "No force, friction, torque, dynamic transition, full-body collision, or real difficulty validation"
+  ]
+}

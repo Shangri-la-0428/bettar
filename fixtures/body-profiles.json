@@ -1,0 +1,144 @@
+[
+  {
+    "upper_arm": 0.28,
+    "forearm": 0.25,
+    "thigh": 0.4,
+    "shin": 0.38,
+    "shoulder_width": 0.34,
+    "hip_width": 0.26,
+    "torso": 0.43,
+    "id": "A",
+    "source": "synthetic_assumption",
+    "endpoint_offsets": {
+      "LH": [
+        0,
+        0,
+        0
+      ],
+      "RH": [
+        0,
+        0,
+        0
+      ],
+      "LF": [
+        0,
+        0,
+        0
+      ],
+      "RF": [
+        0,
+        0,
+        0
+      ]
+    },
+    "joint_limits_deg": {
+      "shoulder": [
+        [
+          -170,
+          170
+        ],
+        [
+          -170,
+          170
+        ],
+        [
+          -170,
+          170
+        ]
+      ],
+      "hip": [
+        [
+          -110,
+          110
+        ],
+        [
+          -90,
+          90
+        ],
+        [
+          -70,
+          70
+        ]
+      ],
+      "elbow": [
+        0,
+        140
+      ],
+      "knee": [
+        0,
+        140
+      ]
+    }
+  },
+  {
+    "upper_arm": 0.32,
+    "forearm": 0.28,
+    "thigh": 0.45,
+    "shin": 0.43,
+    "shoulder_width": 0.4,
+    "hip_width": 0.3,
+    "torso": 0.49,
+    "id": "B",
+    "source": "synthetic_assumption",
+    "endpoint_offsets": {
+      "LH": [
+        0,
+        0,
+        0
+      ],
+      "RH": [
+        0,
+        0,
+        0
+      ],
+      "LF": [
+        0,
+        0,
+        0
+      ],
+      "RF": [
+        0,
+        0,
+        0
+      ]
+    },
+    "joint_limits_deg": {
+      "shoulder": [
+        [
+          -170,
+          170
+        ],
+        [
+          -170,
+          170
+        ],
+        [
+          -170,
+          170
+        ]
+      ],
+      "hip": [
+        [
+          -110,
+          110
+        ],
+        [
+          -90,
+          90
+        ],
+        [
+          -70,
+          70
+        ]
+      ],
+      "elbow": [
+        0,
+        140
+      ],
+      "knee": [
+        0,
+        140
+      ]
+    }
+  }
+]

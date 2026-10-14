@@ -1,0 +1,605 @@
+{
+  "code_hash": "sha256:3cafccd9c2df6f058a33f4ccc0e55ddc5e4c239b593ecaa5cac809c0e79e4dd2",
+  "cases": [
+    {
+      "program": "mixed_flow",
+      "original": {
+        "hand_moves": 10,
+        "foot_moves": 7,
+        "transfers": 17,
+        "total_proxy_effort": 814.66465,
+        "peak_proxy_burden": 67.00083,
+        "final_load": 139.45409
+      },
+      "alternatives": [
+        {
+          "objective": "fewer_transfers",
+          "summary": {
+            "hand_moves": 9,
+            "foot_moves": 7,
+            "transfers": 16,
+            "total_proxy_effort": 737.36859,
+            "peak_proxy_burden": 65.00738,
+            "final_load": 133.29784
+          },
+          "skipped_hold_ids": [
+            "hand-06-3"
+          ],
+          "crux_bypass": {
+            "original_hold_id": "hand-06-3",
+            "contacted": false,
+            "contacted_as_hand": false,
+            "original_transition_used": false,
+            "peak_reduced": true,
+            "peak_delta": -1.99345
+          },
+          "evaluation": {
+            "status": "pass",
+            "passed": 63,
+            "total": 63
+          }
+        }
+      ],
+      "search": {
+        "algorithm": "independent_installed_contact_beam_v1",
+        "max_expansions": 26000,
+        "beam_width": 48,
+        "max_transfers": 30,
+        "max_ik_candidates": 2,
+        "timeout_seconds": 45,
+        "expansion_limit": 52000,
+        "expanded": 13454,
+        "complete_sequences": 21,
+        "ik_checked": 5,
+        "verified_alternatives": 1,
+        "distinct_sequences": 1,
+        "unverified_count": 4,
+        "budget_exhausted": false,
+        "objectives": [
+          {
+            "objective": "fewer_transfers",
+            "expanded": 6654,
+            "complete_sequences": 8,
+            "budget_exhausted": false,
+            "termination_reason": "first_complete_beam_depth",
+            "rejected": {
+              "hand_match_not_supported_by_selected_patch": 555,
+              "simultaneous_feet_same_point": 541,
+              "beam_pruned": 1838,
+              "dominated_contacts_and_load": 1846,
+              "necessary_contact_span": 925,
+              "simultaneous_hand_foot_same_point": 404
+            },
+            "depth_reached": 12
+          },
+          {
+            "objective": "lower_proxy_effort",
+            "expanded": 6800,
+            "complete_sequences": 13,
+            "budget_exhausted": false,
+            "termination_reason": "retained_frontier_cost_bound",
+            "rejected": {
+              "hand_match_not_supported_by_selected_patch": 651,
+              "simultaneous_feet_same_point": 638,
+              "beam_pruned": 1795,
+              "dominated_contacts_and_load": 2084,
+              "necessary_contact_span": 771,
+              "simultaneous_hand_foot_same_point": 263
+            },
+            "depth_reached": 13
+          }
+        ],
+        "scope": "fixed_installed_geometry; no_phase_or_transfer_count_requirement; selected_surface_permissions",
+        "matching_policy": {
+          "source": "conservative_synthetic_search_assumption",
+          "allowed_types": [
+            "jug",
+            "sloper",
+            "rail"
+          ],
+          "min_hold_width_m": 0.24,
+          "min_hold_height_m": 0.1,
+          "min_selected_patch_major_diameter_m": 0.08,
+          "min_selected_patch_minor_diameter_m": 0.03,
+          "simultaneous_hand_foot_same_point": false,
+          "simultaneous_feet_same_point": false,
+          "meaning": "wide-hold matching permission only; independent hand contact locations and collision are not modeled",
+          "allowed_hold_ids": [
+            "top"
+          ]
+        },
+        "deletion_challenge": {
+          "source": "bounded_single_transfer_deletion",
+          "generated": 8,
+          "ordering": "original_crux_first_then_temporal",
+          "challenged_crux_event_index": 8,
+          "max_ik_candidates": 2,
+          "ik_checked": 1,
+          "rejected": {
+            "necessary_contact_span": 7,
+            "required_finish_contact": 2
+          },
+          "time_budget_exhausted": false
+        },
+        "elapsed_ms": 14156.81,
+        "time_budget_exhausted": false
+      },
+      "status": "alternatives_found"
+    },
+    {
+      "program": "power_finish",
+      "original": {
+        "hand_moves": 10,
+        "foot_moves": 8,
+        "transfers": 18,
+        "total_proxy_effort": 852.8021,
+        "peak_proxy_burden": 65.50907,
+        "final_load": 142.002
+      },
+      "alternatives": [
+        {
+          "objective": "fewer_transfers",
+          "summary": {
+            "hand_moves": 9,
+            "foot_moves": 8,
+            "transfers": 17,
+            "total_proxy_effort": 781.10903,
+            "peak_proxy_burden": 62.3893,
+            "final_load": 135.01144
+          },
+          "skipped_hold_ids": [
+            "hand-10-3"
+          ],
+          "crux_bypass": {
+            "original_hold_id": "hand-10-3",
+            "contacted": false,
+            "contacted_as_hand": false,
+            "original_transition_used": false,
+            "peak_reduced": true,
+            "peak_delta": -3.11977
+          },
+          "evaluation": {
+            "status": "pass",
+            "passed": 67,
+            "total": 67
+          }
+        }
+      ],
+      "search": {
+        "algorithm": "independent_installed_contact_beam_v1",
+        "max_expansions": 26000,
+        "beam_width": 48,
+        "max_transfers": 30,
+        "max_ik_candidates": 2,
+        "timeout_seconds": 45,
+        "expansion_limit": 52000,
+        "expanded": 13963,
+        "complete_sequences": 64,
+        "ik_checked": 5,
+        "verified_alternatives": 1,
+        "distinct_sequences": 1,
+        "unverified_count": 4,
+        "budget_exhausted": false,
+        "objectives": [
+          {
+            "objective": "fewer_transfers",
+            "expanded": 6893,
+            "complete_sequences": 20,
+            "budget_exhausted": false,
+            "termination_reason": "first_complete_beam_depth",
+            "rejected": {
+              "hand_match_not_supported_by_selected_patch": 503,
+              "simultaneous_feet_same_point": 588,
+              "beam_pruned": 2258,
+              "necessary_contact_span": 863,
+              "dominated_contacts_and_load": 1831,
+              "simultaneous_hand_foot_same_point": 243
+            },
+            "depth_reached": 13
+          },
+          {
+            "objective": "lower_proxy_effort",
+            "expanded": 7070,
+            "complete_sequences": 44,
+            "budget_exhausted": false,
+            "termination_reason": "retained_frontier_cost_bound",
+            "rejected": {
+              "hand_match_not_supported_by_selected_patch": 534,
+              "simultaneous_feet_same_point": 726,
+              "beam_pruned": 2430,
+              "necessary_contact_span": 613,
+              "dominated_contacts_and_load": 1999,
+              "simultaneous_hand_foot_same_point": 89
+            },
+            "depth_reached": 14
+          }
+        ],
+        "scope": "fixed_installed_geometry; no_phase_or_transfer_count_requirement; selected_surface_permissions",
+        "matching_policy": {
+          "source": "conservative_synthetic_search_assumption",
+          "allowed_types": [
+            "jug",
+            "sloper",
+            "rail"
+          ],
+          "min_hold_width_m": 0.24,
+          "min_hold_height_m": 0.1,
+          "min_selected_patch_major_diameter_m": 0.08,
+          "min_selected_patch_minor_diameter_m": 0.03,
+          "simultaneous_hand_foot_same_point": false,
+          "simultaneous_feet_same_point": false,
+          "meaning": "wide-hold matching permission only; independent hand contact locations and collision are not modeled",
+          "allowed_hold_ids": [
+            "top"
+          ]
+        },
+        "deletion_challenge": {
+          "source": "bounded_single_transfer_deletion",
+          "generated": 11,
+          "ordering": "original_crux_first_then_temporal",
+          "challenged_crux_event_index": 14,
+          "max_ik_candidates": 2,
+          "ik_checked": 1,
+          "rejected": {
+            "necessary_contact_span": 5,
+            "required_finish_contact": 2
+          },
+          "time_budget_exhausted": false
+        },
+        "elapsed_ms": 24966.47,
+        "time_budget_exhausted": false
+      },
+      "status": "alternatives_found"
+    },
+    {
+      "program": "sustained_finish",
+      "original": {
+        "hand_moves": 10,
+        "foot_moves": 8,
+        "transfers": 18,
+        "total_proxy_effort": 823.97838,
+        "peak_proxy_burden": 65.39605,
+        "final_load": 145.25519
+      },
+      "alternatives": [
+        {
+          "objective": "fewer_transfers",
+          "summary": {
+            "hand_moves": 9,
+            "foot_moves": 8,
+            "transfers": 17,
+            "total_proxy_effort": 760.96249,
+            "peak_proxy_burden": 61.24998,
+            "final_load": 140.18787
+          },
+          "skipped_hold_ids": [
+            "hand-10-3"
+          ],
+          "crux_bypass": {
+            "original_hold_id": "hand-10-3",
+            "contacted": false,
+            "contacted_as_hand": false,
+            "original_transition_used": false,
+            "peak_reduced": true,
+            "peak_delta": -4.14607
+          },
+          "evaluation": {
+            "status": "pass",
+            "passed": 67,
+            "total": 67
+          }
+        }
+      ],
+      "search": {
+        "algorithm": "independent_installed_contact_beam_v1",
+        "max_expansions": 26000,
+        "beam_width": 48,
+        "max_transfers": 30,
+        "max_ik_candidates": 2,
+        "timeout_seconds": 45,
+        "expansion_limit": 52000,
+        "expanded": 12321,
+        "complete_sequences": 18,
+        "ik_checked": 5,
+        "verified_alternatives": 1,
+        "distinct_sequences": 1,
+        "unverified_count": 4,
+        "budget_exhausted": false,
+        "objectives": [
+          {
+            "objective": "fewer_transfers",
+            "expanded": 5985,
+            "complete_sequences": 4,
+            "budget_exhausted": false,
+            "termination_reason": "first_complete_beam_depth",
+            "rejected": {
+              "hand_match_not_supported_by_selected_patch": 439,
+              "necessary_contact_span": 1067,
+              "simultaneous_feet_same_point": 358,
+              "beam_pruned": 1180,
+              "dominated_contacts_and_load": 2234,
+              "simultaneous_hand_foot_same_point": 260
+            },
+            "depth_reached": 10
+          },
+          {
+            "objective": "lower_proxy_effort",
+            "expanded": 6336,
+            "complete_sequences": 14,
+            "budget_exhausted": false,
+            "termination_reason": "retained_frontier_cost_bound",
+            "rejected": {
+              "hand_match_not_supported_by_selected_patch": 376,
+              "necessary_contact_span": 1008,
+              "simultaneous_feet_same_point": 529,
+              "beam_pruned": 1628,
+              "dominated_contacts_and_load": 2097,
+              "simultaneous_hand_foot_same_point": 193
+            },
+            "depth_reached": 11
+          }
+        ],
+        "scope": "fixed_installed_geometry; no_phase_or_transfer_count_requirement; selected_surface_permissions",
+        "matching_policy": {
+          "source": "conservative_synthetic_search_assumption",
+          "allowed_types": [
+            "jug",
+            "sloper",
+            "rail"
+          ],
+          "min_hold_width_m": 0.24,
+          "min_hold_height_m": 0.1,
+          "min_selected_patch_major_diameter_m": 0.08,
+          "min_selected_patch_minor_diameter_m": 0.03,
+          "simultaneous_hand_foot_same_point": false,
+          "simultaneous_feet_same_point": false,
+          "meaning": "wide-hold matching permission only; independent hand contact locations and collision are not modeled",
+          "allowed_hold_ids": [
+            "top"
+          ]
+        },
+        "deletion_challenge": {
+          "source": "bounded_single_transfer_deletion",
+          "generated": 10,
+          "ordering": "original_crux_first_then_temporal",
+          "challenged_crux_event_index": 13,
+          "max_ik_candidates": 2,
+          "ik_checked": 1,
+          "rejected": {
+            "necessary_contact_span": 6,
+            "required_finish_contact": 2
+          },
+          "time_budget_exhausted": false
+        },
+        "elapsed_ms": 14276.05,
+        "time_budget_exhausted": false
+      },
+      "status": "alternatives_found"
+    },
+    {
+      "change": "body_b",
+      "original": {
+        "hand_moves": 10,
+        "foot_moves": 7,
+        "transfers": 17,
+        "total_proxy_effort": 794.02457,
+        "peak_proxy_burden": 65.20045,
+        "final_load": 135.37125
+      },
+      "alternatives": [
+        {
+          "objective": "fewer_transfers",
+          "summary": {
+            "hand_moves": 9,
+            "foot_moves": 7,
+            "transfers": 16,
+            "total_proxy_effort": 717.96482,
+            "peak_proxy_burden": 63.25911,
+            "final_load": 129.24818
+          },
+          "skipped_hold_ids": [
+            "hand-06-3"
+          ],
+          "evaluation": {
+            "status": "pass",
+            "passed": 63,
+            "total": 63
+          }
+        }
+      ],
+      "search": {
+        "algorithm": "independent_installed_contact_beam_v1",
+        "max_expansions": 26000,
+        "beam_width": 48,
+        "max_transfers": 30,
+        "max_ik_candidates": 2,
+        "timeout_seconds": 45,
+        "expansion_limit": 52000,
+        "expanded": 11968,
+        "complete_sequences": 56,
+        "ik_checked": 5,
+        "verified_alternatives": 1,
+        "distinct_sequences": 1,
+        "unverified_count": 4,
+        "budget_exhausted": false,
+        "objectives": [
+          {
+            "objective": "fewer_transfers",
+            "expanded": 5908,
+            "complete_sequences": 20,
+            "budget_exhausted": false,
+            "termination_reason": "first_complete_beam_depth",
+            "rejected": {
+              "hand_match_not_supported_by_selected_patch": 347,
+              "simultaneous_feet_same_point": 455,
+              "beam_pruned": 1575,
+              "necessary_contact_span": 919,
+              "dominated_contacts_and_load": 1784,
+              "simultaneous_hand_foot_same_point": 364
+            },
+            "depth_reached": 10
+          },
+          {
+            "objective": "lower_proxy_effort",
+            "expanded": 6060,
+            "complete_sequences": 36,
+            "budget_exhausted": false,
+            "termination_reason": "retained_frontier_cost_bound",
+            "rejected": {
+              "hand_match_not_supported_by_selected_patch": 423,
+              "simultaneous_feet_same_point": 522,
+              "beam_pruned": 1958,
+              "necessary_contact_span": 617,
+              "dominated_contacts_and_load": 1716,
+              "simultaneous_hand_foot_same_point": 296
+            },
+            "depth_reached": 11
+          }
+        ],
+        "scope": "fixed_installed_geometry; no_phase_or_transfer_count_requirement; selected_surface_permissions",
+        "matching_policy": {
+          "source": "conservative_synthetic_search_assumption",
+          "allowed_types": [
+            "jug",
+            "sloper",
+            "rail"
+          ],
+          "min_hold_width_m": 0.24,
+          "min_hold_height_m": 0.1,
+          "min_selected_patch_major_diameter_m": 0.08,
+          "min_selected_patch_minor_diameter_m": 0.03,
+          "simultaneous_hand_foot_same_point": false,
+          "simultaneous_feet_same_point": false,
+          "meaning": "wide-hold matching permission only; independent hand contact locations and collision are not modeled",
+          "allowed_hold_ids": [
+            "top"
+          ]
+        },
+        "deletion_challenge": {
+          "source": "bounded_single_transfer_deletion",
+          "generated": 14,
+          "ordering": "original_crux_first_then_temporal",
+          "challenged_crux_event_index": 8,
+          "max_ik_candidates": 2,
+          "ik_checked": 1,
+          "rejected": {
+            "necessary_contact_span": 1,
+            "required_finish_contact": 2
+          },
+          "time_budget_exhausted": false
+        },
+        "elapsed_ms": 13326.5,
+        "time_budget_exhausted": false
+      },
+      "status": "alternatives_found"
+    },
+    {
+      "change": "start_hand_rotated_90",
+      "original": {
+        "hand_moves": 10,
+        "foot_moves": 7,
+        "transfers": 17,
+        "total_proxy_effort": 814.47441,
+        "peak_proxy_burden": 66.99515,
+        "final_load": 139.44162
+      },
+      "alternatives": [
+        {
+          "objective": "fewer_transfers",
+          "summary": {
+            "hand_moves": 7,
+            "foot_moves": 5,
+            "transfers": 12,
+            "total_proxy_effort": 532.61823,
+            "peak_proxy_burden": 68.76488,
+            "final_load": 119.43523
+          },
+          "skipped_hold_ids": [
+            "foot-05-2",
+            "foot-11-1",
+            "hand-01-2",
+            "hand-06-3",
+            "hand-10-3"
+          ],
+          "evaluation": {
+            "status": "pass",
+            "passed": 49,
+            "total": 49
+          }
+        }
+      ],
+      "search": {
+        "algorithm": "independent_installed_contact_beam_v1",
+        "max_expansions": 26000,
+        "beam_width": 48,
+        "max_transfers": 30,
+        "max_ik_candidates": 2,
+        "timeout_seconds": 45,
+        "expansion_limit": 52000,
+        "expanded": 13337,
+        "complete_sequences": 46,
+        "ik_checked": 3,
+        "verified_alternatives": 1,
+        "distinct_sequences": 1,
+        "unverified_count": 2,
+        "budget_exhausted": false,
+        "objectives": [
+          {
+            "objective": "fewer_transfers",
+            "expanded": 6644,
+            "complete_sequences": 8,
+            "budget_exhausted": false,
+            "termination_reason": "first_complete_beam_depth",
+            "rejected": {
+              "hand_match_not_supported_by_selected_patch": 594,
+              "simultaneous_feet_same_point": 518,
+              "beam_pruned": 1969,
+              "dominated_contacts_and_load": 1675,
+              "necessary_contact_span": 934,
+              "simultaneous_hand_foot_same_point": 409
+            },
+            "depth_reached": 12
+          },
+          {
+            "objective": "lower_proxy_effort",
+            "expanded": 6693,
+            "complete_sequences": 38,
+            "budget_exhausted": false,
+            "termination_reason": "retained_frontier_cost_bound",
+            "rejected": {
+              "hand_match_not_supported_by_selected_patch": 607,
+              "simultaneous_feet_same_point": 626,
+              "beam_pruned": 2118,
+              "dominated_contacts_and_load": 1719,
+              "necessary_contact_span": 737,
+              "simultaneous_hand_foot_same_point": 263
+            },
+            "depth_reached": 13
+          }
+        ],
+        "scope": "fixed_installed_geometry; no_phase_or_transfer_count_requirement; selected_surface_permissions",
+        "matching_policy": {
+          "source": "conservative_synthetic_search_assumption",
+          "allowed_types": [
+            "jug",
+            "sloper",
+            "rail"
+          ],
+          "min_hold_width_m": 0.24,
+          "min_hold_height_m": 0.1,
+          "min_selected_patch_major_diameter_m": 0.08,
+          "min_selected_patch_minor_diameter_m": 0.03,
+          "simultaneous_hand_foot_same_point": false,
+          "simultaneous_feet_same_point": false,
+          "meaning": "wide-hold matching permission only; independent hand contact locations and collision are not modeled",
+          "allowed_hold_ids": [
+            "top"
+          ]
+        },
+        "elapsed_ms": 10580.78,
+        "time_budget_exhausted": false
+      },
+      "status": "alternatives_found"
+    }
+  ]
+}

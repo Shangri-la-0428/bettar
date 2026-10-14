@@ -1,0 +1,18 @@
+{
+  "desktop": {
+    "width": 1440,
+    "scrollWidth": 1440,
+    "text": "Beta Atelier\n定线工作台\n本地实验\n·\n合成场景\n导入\n导出反馈\n保存结果包\n设计一段移动\n\n下一次生成的条件\n\n动作情境\n脚先行\n侧拉横移\n脚点重定位\n人体样例\n样例 A\n样例 B\n墙面角度\n垂直 · 0°\n仰角 · 10°\n布局方式\n自由摆点\n固定点位\n手部移动\n2 次\n3 次\n4 次\n随机种子\n生成 3 个候选\n方案\n3\n方案 1 · 自由布局\nr1\n方案 2 · 自由布局\nr1\n方案 3 · 自由布局\nr1\n结果包历史\n实验 01 · 种子 42\n3.0 m\n3.0 m\nJ1\nJ2\nJ3\nJ4\nJ5\nJ6\nE1\nE2\nE3\nE4\nF1\nF2\nF3\nF4\nF5\nF6\nLH\nRH\nLF\nRF\n脚先移动，再抬手\n3 × 3 m · 垂直墙 · 人体 A · 自由摆点\n计算姿态 · 残差 0.0 mm\n大把手\n方向边缘点\n脚点\n编号\n计算姿态\n拖动旋转 · 滚轮缩放 · 点击岩点编辑\n接触步骤\n2 次手移动 · 2 次脚移动\n00\n起始接触\n01\n左脚释放\n02\n左脚接触\n03\n右手释放\n04\n右手接触\n05\n右脚释放\n06\n右脚接触\n07\n左手释放\n08\n左手接触\nLH\n左手\njug_01\nRH\n右手\njug_02\nLF\n左脚\nfoothold_01\nRF\n右脚\nfoothold_02\n\n离散接触状态；状态之间的运动过程尚未验证。\n\n方案检查\n修订 1\n几何与姿态检查通过\n22 / 22\n已实现检查\n22 通过\n0 违反条件\n0 无法判断\n\n受力与连续动作尚未验证\n\n重新检查\n岩点编辑\n米 / 度\n选择岩点\n选择岩点…\nJ1 · jug_01\nJ2 · jug_02\nJ3 · jug_03\nJ4 · jug_04\nJ5 · jug_05\nJ6 · jug_06\nE1 · directional_edge_01\nE2 · directional_edge_02\nE3 · directional_edge_03\nE4 · directional_edge_04\nF1 · foothold_01\nF2 · foothold_02\nF3 · foothold_03\nF4 · foothold_04\nF5 · foothold_05\nF6 · foothold_06\n\n也可点击画布中的岩点。修改位置或朝向后，再运行检查。\n\n检查明细\n22 项\n数据结构\n通过\n库存与引用\n通过\n接触顺序与目标\n通过\n布局模式\n通过\n安装边界\n通过\n岩点包围体\n通过\n双手距离必要上界\n通过\n接触姿态 IK\n通过\n双手距离必要上界\n通过\n接触姿态 IK\n通过\n双手距离必要上界\n通过\n接触姿态 IK\n通过\n接触姿态 IK\n通过\n双手距离必要上界\n通过\n接触姿态 IK\n通过\n双手距离必要上界\n通过\n接触姿态 IK\n通过\n双手距离必要上界\n通过\n接触姿态 IK\n通过\n接触姿态 IK\n通过\n双手距离必要上界\n通过\n接触姿态 IK\n通过\n方案对照\n保留同一视角\n选择对照方案\n不叠加对照\n方案 2 · 自由布局 · r1\n方案 3 · 自由布局 · r1\n\n选择另一方案，以浅色轮廓叠加它的点位。\n\n目前未验证\n抓握、摩擦与受力\n未检查\n平衡与稳定性\n未检查\n完整人体碰撞\n未检查\n连续动作转换\n未检查\n真实难度与体验\n未检查\n\n几何与姿态结果不等于真人能够完成，也不代表攀爬等级。\n\n设计反馈\n不是试爬记录\n反馈内容\n保存这条反馈\n合成岩点与人体参数 · 研究原型\n种子 42 · rules · 检查器 0.1.0 · 0.49 s",
+    "canvas": [
+      {
+        "width": 1070,
+        "height": 590
+      }
+    ]
+  },
+  "mobile": {
+    "width": 390,
+    "scrollWidth": 390
+  },
+  "errors": []
+}

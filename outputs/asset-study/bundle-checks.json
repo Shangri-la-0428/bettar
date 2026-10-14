@@ -1,0 +1,278 @@
+{
+  "status": "pass",
+  "code_hash": "sha256:ee1b70881fc44f8e1a9669d973458c2917435592f32cc786176760164b75fb08",
+  "bundles": 24,
+  "candidate_statuses": {
+    "pass": 43,
+    "unknown": 6,
+    "fail": 1
+  },
+  "results": [
+    {
+      "file": "fixtures/catalog-10deg-bundle.json",
+      "digest": "sha256:076fc010a83836dda90c0586b7fac28f415d60f1d50b28c51a2308e1549977c2",
+      "candidates": 3,
+      "statuses": [
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "wall_profile": null,
+      "layout_only": false
+    },
+    {
+      "file": "fixtures/catalog-demo-bundle.json",
+      "digest": "sha256:69361b33a0453c86752a838808a9acde5fb834e5fc7cc666da99026b84e0598f",
+      "candidates": 3,
+      "statuses": [
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "wall_profile": null,
+      "layout_only": false
+    },
+    {
+      "file": "fixtures/competition-10deg-bundle.json",
+      "digest": "sha256:fdd2565aefbfd8f69b1b7715333e657de52a56f5738bc440f53551fe75c1820d",
+      "candidates": 3,
+      "statuses": [
+        "unknown",
+        "unknown",
+        "unknown"
+      ],
+      "wall_profile": null,
+      "layout_only": false
+    },
+    {
+      "file": "fixtures/competition-demo-bundle.json",
+      "digest": "sha256:3051259e73104b0a621211bdfbfd1d0d1079168db6c3672295963f6784b037d4",
+      "candidates": 3,
+      "statuses": [
+        "unknown",
+        "unknown",
+        "unknown"
+      ],
+      "wall_profile": null,
+      "layout_only": false
+    },
+    {
+      "file": "fixtures/demo-bundle.json",
+      "digest": "sha256:b6a537600e9f9bed0bdef6512cb67c2f9ccbbdf0ea012ae41a9ce074e07fdc4e",
+      "candidates": 3,
+      "statuses": [
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "wall_profile": null,
+      "layout_only": false
+    },
+    {
+      "file": "fixtures/route-demo-bundle.json",
+      "digest": "sha256:f769a0b920ca7691dd514a6af5fa13f8969699994816951251dda16969f3e035",
+      "candidates": 3,
+      "statuses": [
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "wall_profile": null,
+      "layout_only": false
+    },
+    {
+      "file": "fixtures/route-mixed_flow-bundle.json",
+      "digest": "sha256:f769a0b920ca7691dd514a6af5fa13f8969699994816951251dda16969f3e035",
+      "candidates": 3,
+      "statuses": [
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "wall_profile": null,
+      "layout_only": false
+    },
+    {
+      "file": "fixtures/route-power_finish-bundle.json",
+      "digest": "sha256:6ae4a828d9885345245109821c749d18ac88db706d4f95edeb76af40ebefd108",
+      "candidates": 3,
+      "statuses": [
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "wall_profile": null,
+      "layout_only": false
+    },
+    {
+      "file": "fixtures/route-sustained_finish-bundle.json",
+      "digest": "sha256:e5c1998de8b3a30528d2efd37394d75caafcee14f22eedbc0097b6457acbc916",
+      "candidates": 3,
+      "statuses": [
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "wall_profile": null,
+      "layout_only": false
+    },
+    {
+      "file": "fixtures/setting-demo-bundle.json",
+      "digest": "sha256:43eca325fbc27d560471e607771abedc3ab750a3dbfc03ef29a628c7c38a39de",
+      "candidates": 1,
+      "statuses": [
+        "pass"
+      ],
+      "wall_profile": "default",
+      "layout_only": false
+    },
+    {
+      "file": "fixtures/setting-diagonal_balance-bundle.json",
+      "digest": "sha256:43eca325fbc27d560471e607771abedc3ab750a3dbfc03ef29a628c7c38a39de",
+      "candidates": 1,
+      "statuses": [
+        "pass"
+      ],
+      "wall_profile": "default",
+      "layout_only": false
+    },
+    {
+      "file": "fixtures/setting-opposing_sidepulls-bundle.json",
+      "digest": "sha256:e5c3b32f64d0f0bb24f2cc783746f04619512c6483675d3e4a876126da6de70c",
+      "candidates": 1,
+      "statuses": [
+        "pass"
+      ],
+      "wall_profile": "default",
+      "layout_only": false
+    },
+    {
+      "file": "fixtures/setting-roof_exit-bundle.json",
+      "digest": "sha256:cb37650818d56651aa14dae9277bb79fec49363c7db2e54cd066287ad0a27a4f",
+      "candidates": 1,
+      "statuses": [
+        "pass"
+      ],
+      "wall_profile": "default",
+      "layout_only": false
+    },
+    {
+      "file": "fixtures/setting-templates-diagonal_balance-bundle.json",
+      "digest": "sha256:b26129c50577c3e5a1c75aa6032dc3dd97af35e708de802d966303acec379682",
+      "candidates": 1,
+      "statuses": [
+        "pass"
+      ],
+      "wall_profile": "default",
+      "layout_only": false
+    },
+    {
+      "file": "fixtures/setting-templates-opposing_sidepulls-bundle.json",
+      "digest": "sha256:c3a55a4bf3e26965c4f374b5418337ff5fe3e9a5770fa55549cb5addadfca5ca",
+      "candidates": 1,
+      "statuses": [
+        "pass"
+      ],
+      "wall_profile": "default",
+      "layout_only": false
+    },
+    {
+      "file": "fixtures/setting-templates-roof_exit-bundle.json",
+      "digest": "sha256:b911b10119e1f20393ca7296f760a770636c960fb3253e14d7ed9160714d9033",
+      "candidates": 1,
+      "statuses": [
+        "pass"
+      ],
+      "wall_profile": "default",
+      "layout_only": false
+    },
+    {
+      "file": "fixtures/style-demo-bundle.json",
+      "digest": "sha256:3cb532722cc0b8b8315dcc0e6dd55a1baa6060bcc633fa584c3eb74ad46ce464",
+      "candidates": 3,
+      "statuses": [
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "wall_profile": null,
+      "layout_only": false
+    },
+    {
+      "file": "fixtures/style-power-bundle.json",
+      "digest": "sha256:3cb532722cc0b8b8315dcc0e6dd55a1baa6060bcc633fa584c3eb74ad46ce464",
+      "candidates": 3,
+      "statuses": [
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "wall_profile": null,
+      "layout_only": false
+    },
+    {
+      "file": "fixtures/style-sustained-bundle.json",
+      "digest": "sha256:60178be4fd3372bf1ec16cf3b28f1e023b94dbd45ef56f61d33850ccb046b66d",
+      "candidates": 3,
+      "statuses": [
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "wall_profile": null,
+      "layout_only": false
+    },
+    {
+      "file": "fixtures/style-technical-bundle.json",
+      "digest": "sha256:9389bec61180a95c6060171e6a97b98fdf63f0108b5c558ed56ddca1e918b391",
+      "candidates": 3,
+      "statuses": [
+        "pass",
+        "pass",
+        "pass"
+      ],
+      "wall_profile": null,
+      "layout_only": false
+    },
+    {
+      "file": "fixtures/wall-arete-bundle.json",
+      "digest": "sha256:4b128815a0d7160d4e758cda9f11a2ca42d4a289b3d97797db83dd33723a5ae3",
+      "candidates": 1,
+      "statuses": [
+        "pass"
+      ],
+      "wall_profile": "arete",
+      "layout_only": false
+    },
+    {
+      "file": "fixtures/wall-dihedral-bundle.json",
+      "digest": "sha256:125abc0205017da5a3ad34d5cb06d6664c847ddd45421c27842e3804ed14489d",
+      "candidates": 1,
+      "statuses": [
+        "pass"
+      ],
+      "wall_profile": "dihedral",
+      "layout_only": false
+    },
+    {
+      "file": "fixtures/wall-overhang-bundle.json",
+      "digest": "sha256:41cd37b6a477b8e54b06d52cb97d1c844e264286776401db1d7f50c1e3e4823d",
+      "candidates": 1,
+      "statuses": [
+        "pass"
+      ],
+      "wall_profile": "overhang",
+      "layout_only": false
+    },
+    {
+      "file": "fixtures/wall-roof-bundle.json",
+      "digest": "sha256:46390cc093d1f7e79584d4c53b45668830743ef7f6a9fd60c730ae3630fa6199",
+      "candidates": 1,
+      "statuses": [
+        "fail"
+      ],
+      "wall_profile": "roof",
+      "layout_only": true
+    }
+  ]
+}

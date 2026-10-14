@@ -1,0 +1,49 @@
+{
+  "surfaceRevision": "comparison records 更换接触面; mounted face_2 preserved; reevaluation 23/23 pass",
+  "installation": "F5 face_3 installed; installed11/available15; evaluation23/23 pass",
+  "faceBoundary": "u=0.5 fails child footprint extends beyond parent face polygon",
+  "inventoryReturn": "uninstall returns installed10/available16",
+  "parentGuard": "cannot uninstall V1 while children present",
+  "parentRotation": "15deg rotation changes V1, F3 (4.8cm), E3 (2.3cm)",
+  "stockQuantity": "sloper 2→3 generates27 inventory, installed10/available17, angle10°,23/23pass",
+  "shortage": "jug0 shows库存不足 required jug01–04; current bundle preserved",
+  "fixed": "installation,grip surface,rotation,position,drag disabled; browsing and focus remain available",
+  "mobile": {
+    "width": 390,
+    "scrollWidth": 385,
+    "editor": "no horizontal overflow; surface,mount,u/v,rotation,save,uninstall visible"
+  },
+  "drag": {
+    "parent": "actual canvas drag moves V1,F3,E3 all4.6cm;23/23 recheckpass",
+    "child": "actual canvas drag E3 changes face-localu=-0.003444882273050601,v=-0.023162857894196365;parent volume_01/face_2 preserved",
+    "childRecheck": "几何与姿态检查通过\n23 / 23\n已实现检查\n23 通过\n0 违反条件\n0 无法判断\n\n受力与连续动作尚未验证\n\n重新检查"
+  },
+  "exportImport": "8 candidates and7 reports exported and validated; browser import restored all revisions including alternate surface and parent rotation",
+  "consoleErrors": [],
+  "desktop": {
+    "scrollWidth": 1435,
+    "width": 1440
+  },
+  "date": "2026-10-14",
+  "backend_tests": 146,
+  "engine_code_hash": "sha256:b77e26594095f87a3fcfe47fa61e31e02fa164791a519009514e0a71645c57c4",
+  "build": {
+    "status": "pass",
+    "javascript_kb": 597.62,
+    "gzip_kb": 159.1,
+    "warning": "chunk exceeds500KB"
+  },
+  "geometry": {
+    "models": 20,
+    "templates": 7,
+    "grip_surfaces": 15,
+    "coordinate_comparisons": 118,
+    "status": "pass"
+  },
+  "limits": [
+    "synthetic template geometry",
+    "one-level volume mounting",
+    "one selected representative contact point per placement",
+    "no force,friction,continuous movement,real climbability or grade validation"
+  ]
+}

@@ -1,0 +1,121 @@
+{
+  "recorded_at": "2026-10-15T00:34:24.190263+08:00",
+  "implementation_status": "verified_with_explicit_partial_asset_coverage",
+  "code_hash": "sha256:ee1b70881fc44f8e1a9669d973458c2917435592f32cc786176760164b75fb08",
+  "asset_coverage": {
+    "external_mesh_families": [
+      "jug",
+      "crimp",
+      "pinch",
+      "sloper"
+    ],
+    "missing_external_mesh_families": [
+      "pocket"
+    ],
+    "pocket_rendering": "explicit_parametric_fallback",
+    "external_instances_per_default_route": 7,
+    "default_comparison_routes": 3,
+    "classification": "AI provisional geometry classification",
+    "source_dimensions_verified": false,
+    "grip_surface_annotations": "AI draft anchored to real triangles; not measured contact properties"
+  },
+  "wall_profiles": [
+    "default",
+    "overhang",
+    "roof",
+    "dihedral",
+    "arete"
+  ],
+  "wall_examples": {
+    "overhang": "complete_contact_sequence_geometry_pass",
+    "dihedral": "complete_contact_sequence_geometry_pass",
+    "arete": "complete_contact_sequence_geometry_pass",
+    "roof": "layout_only_no_complete_sequence; 18 placements, 1 initial state, 0 events; no fake TOP"
+  },
+  "verification": {
+    "python": {
+      "status": "pass",
+      "tests": 289,
+      "seconds": 145.49,
+      "evidence": "pytest.log"
+    },
+    "web_build": {
+      "status": "pass",
+      "evidence": "build.log",
+      "remaining_warning": "main JS chunk exceeds 500 kB; 1,225.21 kB / gzip 397.38 kB"
+    },
+    "bundle_content_validation": {
+      "status": "pass",
+      "bundles": 24,
+      "candidate_geometry_statuses": {
+        "pass": 43,
+        "unknown": 6,
+        "fail": 1
+      },
+      "evidence": "bundle-checks.json",
+      "note": "content integrity pass does not mean all candidate geometry or mechanics pass"
+    },
+    "external_mesh": {
+      "status": "pass",
+      "evidence": "external-models-checks.json"
+    },
+    "placement_geometry": {
+      "status": "pass",
+      "comparisons": 1029,
+      "evidence": "placement-geometry-checks.json"
+    },
+    "mechanics_render": {
+      "status": "pass",
+      "evidence": "mechanics-render-checks.json"
+    },
+    "palette_isolation": {
+      "status": "pass",
+      "palettes": 3,
+      "geometry_comparisons": 54,
+      "evidence": "palette-checks.json"
+    },
+    "browser": {
+      "status": "pass",
+      "evidence": "browser-qa.json",
+      "interactions": [
+        "three saved route examples",
+        "four wall profiles",
+        "three palettes",
+        "four external families plus explicit template pocket",
+        "template/assets groups",
+        "contact edit creates stale revision",
+        "revision re-evaluation",
+        "export and reimport"
+      ],
+      "mobile": {
+        "documentWidth": 385,
+        "scrollY": 787.5,
+        "selectedPalette": "chalk-yellow",
+        "viewportHeight": 844,
+        "viewportWidth": 390
+      },
+      "console_errors_after_clean_reload": [],
+      "temporary_viewport_reset": true
+    }
+  },
+  "screenshots": [
+    "final-desktop.png",
+    "final-mobile.png",
+    "roof-desktop.png",
+    "crimp-desktop.png",
+    "hand-2-preview.png",
+    "hand-3-preview.png",
+    "hand-4-preview.png"
+  ],
+  "comparison_evidence": "comparison.json",
+  "sources": "sources.md",
+  "limitations": [
+    "Pocket external asset remains unavailable under a verified redistributable source.",
+    "Source scale, category and grip annotations need routesetter review.",
+    "Friction and force capacities remain synthetic assumptions, not measurements.",
+    "Static checks evaluate selected discrete postures; several states require review. They do not prove or disprove the whole route.",
+    "Roof profile is supported geometrically, but the saved bounded search did not find a complete route.",
+    "Template/assets comparisons include family substitutions and mounting adjustments, not a controlled mesh-only experiment.",
+    "Human forerunning and onsite safety validation have not been performed."
+  ]
+}

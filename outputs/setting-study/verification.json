@@ -1,0 +1,64 @@
+{
+  "date": "2026-10-14",
+  "python_tests": {
+    "passed": 241,
+    "seconds": 92.83
+  },
+  "geometry_parity_checks": 241,
+  "fixtures_validated": 17,
+  "frontend_build": {
+    "status": "pass",
+    "js_kb": 664.7,
+    "gzip_kb": 181.27,
+    "warning": "existing chunk exceeds 500 kB"
+  },
+  "browser": {
+    "status": "pass",
+    "checks": [
+      "Three setting examples load from the actual API",
+      "Opposing sidepull before 5 hand / 7 foot versus after 6 hand / 6 foot",
+      "Alternative switches to its own actual contact sequence and burden",
+      "Editing creates r2, removes setting report and marks evaluation stale",
+      "Roof exit uses two panels; baseline retained and failed modifications disclosed",
+      "Mobile before sequence uses actual 5 hand / 7 foot states",
+      "Professional workflow shows human stages pending",
+      "All three ordinary-gym images loaded at native widths 1200/1920/1200",
+      "Five-layer movement vocabulary opens",
+      "Roof caption distinguishes 4.2 m unfolded from 4.06 m geometric vertical height"
+    ],
+    "desktop": {
+      "width": 1440,
+      "document_scroll_width": 1435
+    },
+    "mobile": {
+      "width": 390,
+      "document_scroll_width": 385,
+      "comparison_region_width": 331,
+      "table_content_width": 550
+    },
+    "console_errors": [],
+    "export": "browser-export.json validated by backend",
+    "screenshots": [
+      "desktop-comparison.png",
+      "mobile-comparison.png",
+      "workflow-height.png"
+    ]
+  },
+  "limitations": [
+    "Synthetic geometry and load heuristics; no force/friction/dynamics validation",
+    "Narrow contact-corridor pruning can miss high feet and other real beta",
+    "Roof exit retained baseline; no claimed improvement",
+    "Planar facets, not continuous curved walls"
+  ],
+  "height_reference": {
+    "standard": "EN 12572-2:2017 sections 3.6/4.1",
+    "definition": "highest possible holding point above top of impact area",
+    "maximum_m": 4.5,
+    "stand_on_top_maximum_m": 4.0,
+    "minimum_3m": "Walltopia planning recommendation only",
+    "compliance": "not assessed; impact area and all holdable wall edges unmodelled"
+  },
+  "notes": [
+    "The final shipped roof fixture retained the baseline with both geometry revisions rejected; its recorded search did not exhaust the time budget. An earlier parallel probe reached the shared budget."
+  ]
+}

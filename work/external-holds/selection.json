@@ -1,0 +1,28 @@
+{
+  "assets": [
+    {
+      "id": "setrsoft-12-jug",
+      "upstream_id": "0000000012",
+      "family": "jug",
+      "rotation_deg": 0
+    },
+    {
+      "id": "setrsoft-25-crimp",
+      "upstream_id": "0000000025",
+      "family": "crimp",
+      "rotation_deg": 180
+    },
+    {
+      "id": "setrsoft-17-pinch",
+      "upstream_id": "0000000017",
+      "family": "pinch",
+      "rotation_deg": 90
+    },
+    {
+      "id": "setrsoft-11-sloper",
+      "upstream_id": "0000000011",
+      "family": "sloper",
+      "rotation_deg": 0
+    }
+  ]
+}

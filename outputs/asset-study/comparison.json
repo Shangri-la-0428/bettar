@@ -1,0 +1,4304 @@
+{
+  "code_hash": "sha256:ee1b70881fc44f8e1a9669d973458c2917435592f32cc786176760164b75fb08",
+  "coverage": {
+    "external_families": [
+      "crimp",
+      "jug",
+      "pinch",
+      "sloper"
+    ],
+    "missing_external_families": [
+      "pocket"
+    ],
+    "assets": 4,
+    "scale_verified": false,
+    "annotation_review": "AI draft; human routesetter review pending"
+  },
+  "comparison_basis": "Three shared spatial briefs, independently searched. Assets preserve proportions at unmeasured demo widths; family substitutions, footprint repairs and contact surfaces also differ. This is not a controlled test of mesh fidelity alone.",
+  "limits": [
+    "P0 passes only implemented geometry and discrete pose checks.",
+    "Static diagnostics use synthetic force/friction assumptions; failures do not rule out dynamic climbing.",
+    "Mesh realism does not establish route quality, real grade or forerun success."
+  ],
+  "programs": {
+    "diagonal_balance": {
+      "assets": {
+        "file": "fixtures/setting-diagonal_balance-bundle.json",
+        "bundle_digest": "sha256:43eca325fbc27d560471e607771abedc3ab750a3dbfc03ef29a628c7c38a39de",
+        "candidate_id": "setting-diagonal_balance-trial1-beta0",
+        "hold_source": "assets",
+        "wall_profile": "default",
+        "p0": {
+          "status": "pass",
+          "passed": 54,
+          "total": 54
+        },
+        "mechanics": {
+          "status": "infeasible",
+          "feasible_states": 16,
+          "infeasible_states": 11,
+          "unknown_states": 0,
+          "release_states": 13,
+          "release_infeasible_states": 7,
+          "release_unknown_states": 0,
+          "max_capacity_utilization": 0.839401,
+          "worst_state_id": "b3"
+        },
+        "baseline_mechanics": {
+          "status": "infeasible",
+          "feasible_states": 16,
+          "infeasible_states": 11,
+          "unknown_states": 0,
+          "release_states": 13,
+          "release_infeasible_states": 7,
+          "release_unknown_states": 0,
+          "max_capacity_utilization": 0.8505761,
+          "worst_state_id": "b3"
+        },
+        "moves": 13,
+        "states": 27,
+        "installed": 18,
+        "used": 16,
+        "unused": [
+          "foot-8",
+          "hand-5"
+        ],
+        "imported_instances": [
+          {
+            "id": "start-left",
+            "asset_id": "setrsoft-12-jug",
+            "family": "jug",
+            "scale": 0.872403282148042,
+            "dimensions_m": [
+              0.23,
+              0.2153974346943558,
+              0.053606119552476836
+            ]
+          },
+          {
+            "id": "start-right",
+            "asset_id": "setrsoft-12-jug",
+            "family": "jug",
+            "scale": 0.872403282148042,
+            "dimensions_m": [
+              0.23,
+              0.2153974346943558,
+              0.053606119552476836
+            ]
+          },
+          {
+            "id": "hand-1",
+            "asset_id": "setrsoft-25-crimp",
+            "family": "crimp",
+            "scale": 0.892823768254377,
+            "dimensions_m": [
+              0.15,
+              0.06480947021742281,
+              0.013771913764175957
+            ]
+          },
+          {
+            "id": "hand-2",
+            "asset_id": "setrsoft-17-pinch",
+            "family": "pinch",
+            "scale": 0.799089226303009,
+            "dimensions_m": [
+              0.17,
+              0.2968335995397246,
+              0.06976633878938922
+            ]
+          },
+          {
+            "id": "hand-3",
+            "asset_id": "setrsoft-11-sloper",
+            "family": "sloper",
+            "scale": 0.3909316064372675,
+            "dimensions_m": [
+              0.3,
+              0.14691593664750036,
+              0.06380748150834863
+            ]
+          },
+          {
+            "id": "hand-5",
+            "asset_id": "setrsoft-12-jug",
+            "family": "jug",
+            "scale": 0.872403282148042,
+            "dimensions_m": [
+              0.23,
+              0.2153974346943558,
+              0.053606119552476836
+            ]
+          },
+          {
+            "id": "top",
+            "asset_id": "setrsoft-12-jug",
+            "family": "jug",
+            "scale": 1.3655007894491091,
+            "dimensions_m": [
+              0.36,
+              0.3371438108259482,
+              0.0839052306038768
+            ]
+          }
+        ],
+        "fallbacks": [
+          {
+            "id": "hand-4",
+            "family": "pocket",
+            "reason": "no registered external mesh for this family"
+          }
+        ],
+        "asset_application": {
+          "mapped_instances": [
+            "start-left",
+            "start-right",
+            "hand-1",
+            "hand-2",
+            "hand-3",
+            "hand-5",
+            "top"
+          ],
+          "fallbacks": [
+            {
+              "inventory_id": "hand-4",
+              "reason": "no registered external mesh for this family"
+            }
+          ],
+          "scale_policy": "uniform_to_template_width_unmeasured_demo_size",
+          "placement_policy": "preserve selected contact XY in local mounting plane; depth follows mesh",
+          "footprint_adjustment": {
+            "method": "bounded_axis_translation_of_nonanchor_feet",
+            "max_displacement_m": 0.07,
+            "grid_step_m": 0.005,
+            "clearance_m": 0.005,
+            "changes": [],
+            "unresolved_collisions": []
+          },
+          "limitations": [
+            "外部三角网格来自列明来源；演示尺寸未经实测，使用同比缩放。",
+            "抓握面及椭圆范围为AI草稿标注，代表点和法向绑定三角面；抓握能力、摩擦及可抓握范围未经实测。",
+            "碰撞仍用覆盖网格的保守包围盒；安装背板不属于可安装子岩点的体积块斜面。"
+          ]
+        },
+        "wall_application": null,
+        "geometry_changes": 11,
+        "verified_alternatives": 4,
+        "search": {
+          "timeout_seconds": 60,
+          "elapsed_ms": 33763.72,
+          "time_budget_exhausted": false,
+          "geometry_trials": 3,
+          "selected_trial": 1,
+          "hand_count_policy": "free; only start/TOP required",
+          "coverage_policy": "unused installed holds allowed",
+          "ranking": "P0 first; maximize current-pose release equilibrium fraction, then all-state equilibrium fraction, then lower required axial capacity utilization; geometry character does not select layouts",
+          "trials": [
+            {
+              "index": 0,
+              "search": [
+                {
+                  "objective": "fewer_transfers",
+                  "expanded": 2321,
+                  "complete_sequences": 4,
+                  "budget_exhausted": false,
+                  "termination_reason": "first_complete_beam_depth",
+                  "rejected": {
+                    "hand_match_not_supported_by_selected_patch": 214,
+                    "local_contact_corridor_search_assumption": 881,
+                    "necessary_contact_span": 419,
+                    "simultaneous_feet_same_point": 252,
+                    "beam_pruned": 196,
+                    "dominated_contacts_and_load": 127
+                  },
+                  "depth_reached": 13
+                },
+                {
+                  "objective": "lower_proxy_effort",
+                  "expanded": 2472,
+                  "complete_sequences": 9,
+                  "budget_exhausted": false,
+                  "termination_reason": "retained_frontier_cost_bound",
+                  "rejected": {
+                    "hand_match_not_supported_by_selected_patch": 220,
+                    "local_contact_corridor_search_assumption": 901,
+                    "necessary_contact_span": 432,
+                    "simultaneous_feet_same_point": 286,
+                    "beam_pruned": 213,
+                    "dominated_contacts_and_load": 161
+                  },
+                  "depth_reached": 14
+                }
+              ],
+              "status": "pass",
+              "character_score": 0.81048,
+              "mechanical_rank": [
+                false,
+                -0.46153846153846156,
+                -0.5925925925925926,
+                0.8505761,
+                542.71548
+              ],
+              "evaluations": [
+                {
+                  "summary": {
+                    "hand_moves": 6,
+                    "foot_moves": 7,
+                    "transfers": 13,
+                    "total_proxy_effort": 542.71548,
+                    "peak_proxy_burden": 62.32181,
+                    "final_load": 129.94242
+                  },
+                  "status": "pass",
+                  "character": {
+                    "score": 0.81048,
+                    "hand_lateral_travel_m": 3.18,
+                    "mean_directional_demand": 0.1105,
+                    "foot_hand_transfer_ratio": 1.1667,
+                    "basis": "observed_contact_geometry_not_force_or_technique_proof"
+                  },
+                  "mechanics_summary": {
+                    "status": "infeasible",
+                    "feasible_states": 16,
+                    "infeasible_states": 11,
+                    "unknown_states": 0,
+                    "release_states": 13,
+                    "release_infeasible_states": 7,
+                    "release_unknown_states": 0,
+                    "max_capacity_utilization": 0.8505761,
+                    "worst_state_id": "b3"
+                  }
+                },
+                {
+                  "summary": {
+                    "hand_moves": 6,
+                    "foot_moves": 7,
+                    "transfers": 13,
+                    "total_proxy_effort": 557.14772,
+                    "peak_proxy_burden": 64.56566,
+                    "final_load": 130.01441
+                  },
+                  "status": "pass",
+                  "character": {
+                    "score": 0.81048,
+                    "hand_lateral_travel_m": 3.18,
+                    "mean_directional_demand": 0.1105,
+                    "foot_hand_transfer_ratio": 1.1667,
+                    "basis": "observed_contact_geometry_not_force_or_technique_proof"
+                  },
+                  "mechanics_summary": {
+                    "status": "infeasible",
+                    "feasible_states": 16,
+                    "infeasible_states": 10,
+                    "unknown_states": 1,
+                    "release_states": 13,
+                    "release_infeasible_states": 7,
+                    "release_unknown_states": 0,
+                    "max_capacity_utilization": 0.8505761,
+                    "worst_state_id": "b3"
+                  }
+                },
+                {
+                  "summary": {
+                    "hand_moves": 6,
+                    "foot_moves": 7,
+                    "transfers": 13,
+                    "total_proxy_effort": 557.33221,
+                    "peak_proxy_burden": 64.56566,
+                    "final_load": 129.83163
+                  },
+                  "status": "pass",
+                  "character": {
+                    "score": 0.81048,
+                    "hand_lateral_travel_m": 3.18,
+                    "mean_directional_demand": 0.1105,
+                    "foot_hand_transfer_ratio": 1.1667,
+                    "basis": "observed_contact_geometry_not_force_or_technique_proof"
+                  },
+                  "mechanics_summary": {
+                    "status": "infeasible",
+                    "feasible_states": 16,
+                    "infeasible_states": 11,
+                    "unknown_states": 0,
+                    "release_states": 13,
+                    "release_infeasible_states": 7,
+                    "release_unknown_states": 0,
+                    "max_capacity_utilization": 0.8505761,
+                    "worst_state_id": "b3"
+                  }
+                },
+                {
+                  "summary": {
+                    "hand_moves": 6,
+                    "foot_moves": 7,
+                    "transfers": 13,
+                    "total_proxy_effort": 543.81375,
+                    "peak_proxy_burden": 62.32181,
+                    "final_load": 131.05387
+                  },
+                  "status": "pass",
+                  "character": {
+                    "score": 0.81048,
+                    "hand_lateral_travel_m": 3.18,
+                    "mean_directional_demand": 0.1105,
+                    "foot_hand_transfer_ratio": 1.1667,
+                    "basis": "observed_contact_geometry_not_force_or_technique_proof"
+                  },
+                  "mechanics_summary": {
+                    "status": "infeasible",
+                    "feasible_states": 13,
+                    "infeasible_states": 14,
+                    "unknown_states": 0,
+                    "release_states": 13,
+                    "release_infeasible_states": 8,
+                    "release_unknown_states": 0,
+                    "max_capacity_utilization": 0.8505761,
+                    "worst_state_id": "b3"
+                  }
+                },
+                {
+                  "summary": {
+                    "hand_moves": 6,
+                    "foot_moves": 7,
+                    "transfers": 13,
+                    "total_proxy_effort": 558.24597,
+                    "peak_proxy_burden": 64.56566,
+                    "final_load": 131.12614
+                  },
+                  "status": "pass",
+                  "character": {
+                    "score": 0.81048,
+                    "hand_lateral_travel_m": 3.18,
+                    "mean_directional_demand": 0.1105,
+                    "foot_hand_transfer_ratio": 1.1667,
+                    "basis": "observed_contact_geometry_not_force_or_technique_proof"
+                  },
+                  "mechanics_summary": {
+                    "status": "infeasible",
+                    "feasible_states": 13,
+                    "infeasible_states": 13,
+                    "unknown_states": 1,
+                    "release_states": 13,
+                    "release_infeasible_states": 8,
+                    "release_unknown_states": 0,
+                    "max_capacity_utilization": 0.8505761,
+                    "worst_state_id": "b3"
+                  }
+                },
+                {
+                  "summary": {
+                    "hand_moves": 6,
+                    "foot_moves": 7,
+                    "transfers": 13,
+                    "total_proxy_effort": 558.4305,
+                    "peak_proxy_burden": 64.56566,
+                    "final_load": 130.94265
+                  },
+                  "status": "pass",
+                  "character": {
+                    "score": 0.81048,
+                    "hand_lateral_travel_m": 3.18,
+                    "mean_directional_demand": 0.1105,
+                    "foot_hand_transfer_ratio": 1.1667,
+                    "basis": "observed_contact_geometry_not_force_or_technique_proof"
+                  },
+                  "mechanics_summary": {
+                    "status": "infeasible",
+                    "feasible_states": 13,
+                    "infeasible_states": 14,
+                    "unknown_states": 0,
+                    "release_states": 13,
+                    "release_infeasible_states": 8,
+                    "release_unknown_states": 0,
+                    "max_capacity_utilization": 0.8505761,
+                    "worst_state_id": "b3"
+                  }
+                }
+              ]
+            },
+            {
+              "index": 1,
+              "search": [
+                {
+                  "objective": "fewer_transfers",
+                  "expanded": 2429,
+                  "complete_sequences": 4,
+                  "budget_exhausted": false,
+                  "termination_reason": "first_complete_beam_depth",
+                  "rejected": {
+                    "hand_match_not_supported_by_selected_patch": 234,
+                    "necessary_contact_span": 477,
+                    "local_contact_corridor_search_assumption": 867,
+                    "simultaneous_feet_same_point": 262,
+                    "beam_pruned": 205,
+                    "dominated_contacts_and_load": 142
+                  },
+                  "depth_reached": 13
+                },
+                {
+                  "objective": "lower_proxy_effort",
+                  "expanded": 2581,
+                  "complete_sequences": 11,
+                  "budget_exhausted": false,
+                  "termination_reason": "retained_frontier_cost_bound",
+                  "rejected": {
+                    "hand_match_not_supported_by_selected_patch": 241,
+                    "necessary_contact_span": 491,
+                    "local_contact_corridor_search_assumption": 888,
+                    "simultaneous_feet_same_point": 294,
+                    "beam_pruned": 212,
+                    "dominated_contacts_and_load": 184
+                  },
+                  "depth_reached": 14
+                }
+              ],
+              "status": "pass",
+              "character_score": 0.82054,
+              "mechanical_rank": [
+                false,
+                -0.46153846153846156,
+                -0.5925925925925926,
+                0.839401,
+                553.34681
+              ],
+              "evaluations": [
+                {
+                  "summary": {
+                    "hand_moves": 6,
+                    "foot_moves": 7,
+                    "transfers": 13,
+                    "total_proxy_effort": 553.34681,
+                    "peak_proxy_burden": 64.56011,
+                    "final_load": 129.93339
+                  },
+                  "status": "pass",
+                  "character": {
+                    "score": 0.82054,
+                    "hand_lateral_travel_m": 3.1595,
+                    "mean_directional_demand": 0.1205,
+                    "foot_hand_transfer_ratio": 1.1667,
+                    "basis": "observed_contact_geometry_not_force_or_technique_proof"
+                  },
+                  "mechanics_summary": {
+                    "status": "infeasible",
+                    "feasible_states": 16,
+                    "infeasible_states": 11,
+                    "unknown_states": 0,
+                    "release_states": 13,
+                    "release_infeasible_states": 7,
+                    "release_unknown_states": 0,
+                    "max_capacity_utilization": 0.839401,
+                    "worst_state_id": "b3"
+                  }
+                },
+                {
+                  "summary": {
+                    "hand_moves": 6,
+                    "foot_moves": 7,
+                    "transfers": 13,
+                    "total_proxy_effort": 553.46022,
+                    "peak_proxy_burden": 64.56011,
+                    "final_load": 130.12289
+                  },
+                  "status": "pass",
+                  "character": {
+                    "score": 0.82054,
+                    "hand_lateral_travel_m": 3.1595,
+                    "mean_directional_demand": 0.1205,
+                    "foot_hand_transfer_ratio": 1.1667,
+                    "basis": "observed_contact_geometry_not_force_or_technique_proof"
+                  },
+                  "mechanics_summary": {
+                    "status": "infeasible",
+                    "feasible_states": 16,
+                    "infeasible_states": 11,
+                    "unknown_states": 0,
+                    "release_states": 13,
+                    "release_infeasible_states": 7,
+                    "release_unknown_states": 0,
+                    "max_capacity_utilization": 0.839401,
+                    "worst_state_id": "b3"
+                  }
+                },
+                {
+                  "summary": {
+                    "hand_moves": 6,
+                    "foot_moves": 7,
+                    "transfers": 13,
+                    "total_proxy_effort": 538.94592,
+                    "peak_proxy_burden": 62.07111,
+                    "final_load": 129.91463
+                  },
+                  "status": "pass",
+                  "character": {
+                    "score": 0.82054,
+                    "hand_lateral_travel_m": 3.1595,
+                    "mean_directional_demand": 0.1205,
+                    "foot_hand_transfer_ratio": 1.1667,
+                    "basis": "observed_contact_geometry_not_force_or_technique_proof"
+                  },
+                  "mechanics_summary": {
+                    "status": "infeasible",
+                    "feasible_states": 15,
+                    "infeasible_states": 12,
+                    "unknown_states": 0,
+                    "release_states": 13,
+                    "release_infeasible_states": 8,
+                    "release_unknown_states": 0,
+                    "max_capacity_utilization": 0.839401,
+                    "worst_state_id": "b3"
+                  }
+                },
+                {
+                  "summary": {
+                    "hand_moves": 6,
+                    "foot_moves": 7,
+                    "transfers": 13,
+                    "total_proxy_effort": 539.95774,
+                    "peak_proxy_burden": 62.07111,
+                    "final_load": 130.98143
+                  },
+                  "status": "pass",
+                  "character": {
+                    "score": 0.82054,
+                    "hand_lateral_travel_m": 3.1595,
+                    "mean_directional_demand": 0.1205,
+                    "foot_hand_transfer_ratio": 1.1667,
+                    "basis": "observed_contact_geometry_not_force_or_technique_proof"
+                  },
+                  "mechanics_summary": {
+                    "status": "infeasible",
+                    "feasible_states": 14,
+                    "infeasible_states": 13,
+                    "unknown_states": 0,
+                    "release_states": 13,
+                    "release_infeasible_states": 8,
+                    "release_unknown_states": 0,
+                    "max_capacity_utilization": 0.839401,
+                    "worst_state_id": "b3"
+                  }
+                },
+                {
+                  "summary": {
+                    "hand_moves": 6,
+                    "foot_moves": 7,
+                    "transfers": 13,
+                    "total_proxy_effort": 554.35862,
+                    "peak_proxy_burden": 64.56011,
+                    "final_load": 131.00027
+                  },
+                  "status": "pass",
+                  "character": {
+                    "score": 0.82054,
+                    "hand_lateral_travel_m": 3.1595,
+                    "mean_directional_demand": 0.1205,
+                    "foot_hand_transfer_ratio": 1.1667,
+                    "basis": "observed_contact_geometry_not_force_or_technique_proof"
+                  },
+                  "mechanics_summary": {
+                    "status": "infeasible",
+                    "feasible_states": 13,
+                    "infeasible_states": 14,
+                    "unknown_states": 0,
+                    "release_states": 13,
+                    "release_infeasible_states": 8,
+                    "release_unknown_states": 0,
+                    "max_capacity_utilization": 0.839401,
+                    "worst_state_id": "b3"
+                  }
+                }
+              ]
+            },
+            {
+              "index": 2,
+              "search": [
+                {
+                  "objective": "fewer_transfers",
+                  "expanded": 2321,
+                  "complete_sequences": 6,
+                  "budget_exhausted": false,
+                  "termination_reason": "first_complete_beam_depth",
+                  "rejected": {
+                    "hand_match_not_supported_by_selected_patch": 214,
+                    "local_contact_corridor_search_assumption": 881,
+                    "necessary_contact_span": 419,
+                    "simultaneous_feet_same_point": 253,
+                    "beam_pruned": 192,
+                    "dominated_contacts_and_load": 128
+                  },
+                  "depth_reached": 13
+                },
+                {
+                  "objective": "lower_proxy_effort",
+                  "expanded": 2473,
+                  "complete_sequences": 11,
+                  "budget_exhausted": false,
+                  "termination_reason": "retained_frontier_cost_bound",
+                  "rejected": {
+                    "hand_match_not_supported_by_selected_patch": 214,
+                    "local_contact_corridor_search_assumption": 911,
+                    "necessary_contact_span": 439,
+                    "simultaneous_feet_same_point": 281,
+                    "beam_pruned": 229,
+                    "dominated_contacts_and_load": 138
+                  },
+                  "depth_reached": 14
+                }
+              ],
+              "status": "pass",
+              "character_score": 0.80332,
+              "mechanical_rank": [
+                false,
+                -0.42857142857142855,
+                -0.6206896551724138,
+                0.8357895,
+                585.62099
+              ],
+              "evaluations": [
+                {
+                  "summary": {
+                    "hand_moves": 7,
+                    "foot_moves": 7,
+                    "transfers": 14,
+                    "total_proxy_effort": 585.62099,
+                    "peak_proxy_burden": 62.73176,
+                    "final_load": 117.98416
+                  },
+                  "status": "pass",
+                  "character": {
+                    "score": 0.80332,
+                    "hand_lateral_travel_m": 2.9739,
+                    "mean_directional_demand": 0.1033,
+                    "foot_hand_transfer_ratio": 1.0,
+                    "basis": "observed_contact_geometry_not_force_or_technique_proof"
+                  },
+                  "mechanics_summary": {
+                    "status": "infeasible",
+                    "feasible_states": 18,
+                    "infeasible_states": 11,
+                    "unknown_states": 0,
+                    "release_states": 14,
+                    "release_infeasible_states": 8,
+                    "release_unknown_states": 0,
+                    "max_capacity_utilization": 0.8357895,
+                    "worst_state_id": "b5"
+                  }
+                },
+                {
+                  "summary": {
+                    "hand_moves": 6,
+                    "foot_moves": 7,
+                    "transfers": 13,
+                    "total_proxy_effort": 549.30359,
+                    "peak_proxy_burden": 62.73176,
+                    "final_load": 130.48382
+                  },
+                  "status": "pass",
+                  "character": {
+                    "score": 0.82054,
+                    "hand_lateral_travel_m": 2.9739,
+                    "mean_directional_demand": 0.1205,
+                    "foot_hand_transfer_ratio": 1.1667,
+                    "basis": "observed_contact_geometry_not_force_or_technique_proof"
+                  },
+                  "mechanics_summary": {
+                    "status": "infeasible",
+                    "feasible_states": 17,
+                    "infeasible_states": 10,
+                    "unknown_states": 0,
+                    "release_states": 13,
+                    "release_infeasible_states": 8,
+                    "release_unknown_states": 0,
+                    "max_capacity_utilization": 0.8357895,
+                    "worst_state_id": "b5"
+                  }
+                },
+                {
+                  "summary": {
+                    "hand_moves": 6,
+                    "foot_moves": 7,
+                    "transfers": 13,
+                    "total_proxy_effort": 564.0433,
+                    "peak_proxy_burden": 64.74557,
+                    "final_load": 130.24257
+                  },
+                  "status": "pass",
+                  "character": {
+                    "score": 0.82054,
+                    "hand_lateral_travel_m": 2.9739,
+                    "mean_directional_demand": 0.1205,
+                    "foot_hand_transfer_ratio": 1.1667,
+                    "basis": "observed_contact_geometry_not_force_or_technique_proof"
+                  },
+                  "mechanics_summary": {
+                    "status": "infeasible",
+                    "feasible_states": 16,
+                    "infeasible_states": 11,
+                    "unknown_states": 0,
+                    "release_states": 13,
+                    "release_infeasible_states": 8,
+                    "release_unknown_states": 0,
+                    "max_capacity_utilization": 0.8357895,
+                    "worst_state_id": "b5"
+                  }
+                },
+                {
+                  "summary": {
+                    "hand_moves": 6,
+                    "foot_moves": 7,
+                    "transfers": 13,
+                    "total_proxy_effort": 563.55161,
+                    "peak_proxy_burden": 64.74557,
+                    "final_load": 130.41928
+                  },
+                  "status": "pass",
+                  "character": {
+                    "score": 0.82054,
+                    "hand_lateral_travel_m": 2.9739,
+                    "mean_directional_demand": 0.1205,
+                    "foot_hand_transfer_ratio": 1.1667,
+                    "basis": "observed_contact_geometry_not_force_or_technique_proof"
+                  },
+                  "mechanics_summary": {
+                    "status": "infeasible",
+                    "feasible_states": 15,
+                    "infeasible_states": 12,
+                    "unknown_states": 0,
+                    "release_states": 13,
+                    "release_infeasible_states": 8,
+                    "release_unknown_states": 0,
+                    "max_capacity_utilization": 0.8357895,
+                    "worst_state_id": "b5"
+                  }
+                },
+                {
+                  "summary": {
+                    "hand_moves": 6,
+                    "foot_moves": 7,
+                    "transfers": 13,
+                    "total_proxy_effort": 550.48926,
+                    "peak_proxy_burden": 62.73176,
+                    "final_load": 131.64252
+                  },
+                  "status": "pass",
+                  "character": {
+                    "score": 0.82054,
+                    "hand_lateral_travel_m": 2.9739,
+                    "mean_directional_demand": 0.1205,
+                    "foot_hand_transfer_ratio": 1.1667,
+                    "basis": "observed_contact_geometry_not_force_or_technique_proof"
+                  },
+                  "mechanics_summary": {
+                    "status": "infeasible",
+                    "feasible_states": 14,
+                    "infeasible_states": 13,
+                    "unknown_states": 0,
+                    "release_states": 13,
+                    "release_infeasible_states": 9,
+                    "release_unknown_states": 0,
+                    "max_capacity_utilization": 0.8357895,
+                    "worst_state_id": "b5"
+                  }
+                },
+                {
+                  "summary": {
+                    "hand_moves": 6,
+                    "foot_moves": 7,
+                    "transfers": 13,
+                    "total_proxy_effort": 564.7373,
+                    "peak_proxy_burden": 64.74557,
+                    "final_load": 131.57772
+                  },
+                  "status": "pass",
+                  "character": {
+                    "score": 0.82054,
+                    "hand_lateral_travel_m": 2.9739,
+                    "mean_directional_demand": 0.1205,
+                    "foot_hand_transfer_ratio": 1.1667,
+                    "basis": "observed_contact_geometry_not_force_or_technique_proof"
+                  },
+                  "mechanics_summary": {
+                    "status": "infeasible",
+                    "feasible_states": 12,
+                    "infeasible_states": 15,
+                    "unknown_states": 0,
+                    "release_states": 13,
+                    "release_infeasible_states": 9,
+                    "release_unknown_states": 0,
+                    "max_capacity_utilization": 0.8357895,
+                    "worst_state_id": "b5"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "templates": {
+        "file": "fixtures/setting-templates-diagonal_balance-bundle.json",
+        "bundle_digest": "sha256:b26129c50577c3e5a1c75aa6032dc3dd97af35e708de802d966303acec379682",
+        "candidate_id": "setting-diagonal_balance-trial1-beta2",
+        "hold_source": "templates",
+        "wall_profile": "default",
+        "p0": {
+          "status": "pass",
+          "passed": 53,
+          "total": 53
+        },
+        "mechanics": {
+          "status": "infeasible",
+          "feasible_states": 16,
+          "infeasible_states": 11,
+          "unknown_states": 0,
+          "release_states": 13,
+          "release_infeasible_states": 7,
+          "release_unknown_states": 0,
+          "max_capacity_utilization": 0.8001079,
+          "worst_state_id": "b3"
+        },
+        "baseline_mechanics": {
+          "status": "infeasible",
+          "feasible_states": 16,
+          "infeasible_states": 11,
+          "unknown_states": 0,
+          "release_states": 13,
+          "release_infeasible_states": 7,
+          "release_unknown_states": 0,
+          "max_capacity_utilization": 0.998055,
+          "worst_state_id": "b11"
+        },
+        "moves": 13,
+        "states": 27,
+        "installed": 18,
+        "used": 16,
+        "unused": [
+          "foot-4",
+          "foot-8"
+        ],
+        "imported_instances": [],
+        "fallbacks": [],
+        "asset_application": null,
+        "wall_application": null,
+        "geometry_changes": 9,
+        "verified_alternatives": 2,
+        "search": {
+          "timeout_seconds": 60,
+          "elapsed_ms": 14104.47,
+          "time_budget_exhausted": false,
+          "geometry_trials": 3,
+          "selected_trial": 1,
+          "hand_count_policy": "free; only start/TOP required",
+          "coverage_policy": "unused installed holds allowed",
+          "ranking": "P0 first; maximize current-pose release equilibrium fraction, then all-state equilibrium fraction, then lower required axial capacity utilization; geometry character does not select layouts",
+          "trials": [
+            {
+              "index": 0,
+              "search": [
+                {
+                  "objective": "fewer_transfers",
+                  "expanded": 2681,
+                  "complete_sequences": 5,
+                  "budget_exhausted": false,
+                  "termination_reason": "first_complete_beam_depth",
+                  "rejected": {
+                    "hand_match_not_supported_by_selected_patch": 180,
+                    "necessary_contact_span": 474,
+                    "local_contact_corridor_search_assumption": 1030,
+                    "simultaneous_feet_same_point": 260,
+                    "beam_pruned": 194,
+                    "simultaneous_hand_foot_same_point": 110,
+                    "dominated_contacts_and_load": 194
+                  },
+                  "depth_reached": 13
+                },
+                {
+                  "objective": "lower_proxy_effort",
+                  "expanded": 2860,
+                  "complete_sequences": 11,
+                  "budget_exhausted": false,
+                  "termination_reason": "retained_frontier_cost_bound",
+                  "rejected": {
+                    "hand_match_not_supported_by_selected_patch": 178,
+                    "necessary_contact_span": 499,
+                    "local_contact_corridor_search_assumption": 1084,
+                    "simultaneous_feet_same_point": 286,
+                    "beam_pruned": 197,
+                    "simultaneous_hand_foot_same_point": 108,
+                    "dominated_contacts_and_load": 241
+                  },
+                  "depth_reached": 14
+                }
+              ],
+              "status": "pass",
+              "character_score": 0.911,
+              "mechanical_rank": [
+                false,
+                -0.46153846153846156,
+                -0.5925925925925926,
+                0.998055,
+                553.86272
+              ],
+              "evaluations": [
+                {
+                  "summary": {
+                    "hand_moves": 6,
+                    "foot_moves": 7,
+                    "transfers": 13,
+                    "total_proxy_effort": 553.86272,
+                    "peak_proxy_burden": 58.11185,
+                    "final_load": 125.07776
+                  },
+                  "status": "pass",
+                  "character": {
+                    "score": 0.911,
+                    "hand_lateral_travel_m": 3.18,
+                    "mean_directional_demand": 0.211,
+                    "foot_hand_transfer_ratio": 1.1667,
+                    "basis": "observed_contact_geometry_not_force_or_technique_proof"
+                  },
+                  "mechanics_summary": {
+                    "status": "infeasible",
+                    "feasible_states": 16,
+                    "infeasible_states": 11,
+                    "unknown_states": 0,
+                    "release_states": 13,
+                    "release_infeasible_states": 7,
+                    "release_unknown_states": 0,
+                    "max_capacity_utilization": 0.998055,
+                    "worst_state_id": "b11"
+                  }
+                },
+                {
+                  "summary": {
+                    "hand_moves": 6,
+                    "foot_moves": 7,
+                    "transfers": 13,
+                    "total_proxy_effort": 562.56874,
+                    "peak_proxy_burden": 57.8365,
+                    "final_load": 124.53408
+                  },
+                  "status": "pass",
+                  "character": {
+                    "score": 0.911,
+                    "hand_lateral_travel_m": 3.18,
+                    "mean_directional_demand": 0.211,
+                    "foot_hand_transfer_ratio": 1.1667,
+                    "basis": "observed_contact_geometry_not_force_or_technique_proof"
+                  },
+                  "mechanics_summary": {
+                    "status": "infeasible",
+                    "feasible_states": 15,
+                    "infeasible_states": 12,
+                    "unknown_states": 0,
+                    "release_states": 13,
+                    "release_infeasible_states": 8,
+                    "release_unknown_states": 0,
+                    "max_capacity_utilization": 0.9275305,
+                    "worst_state_id": "b3"
+                  }
+                },
+                {
+                  "summary": {
+                    "hand_moves": 6,
+                    "foot_moves": 7,
+                    "transfers": 13,
+                    "total_proxy_effort": 549.77095,
+                    "peak_proxy_burden": 57.8365,
+                    "final_load": 124.42212
+                  },
+                  "status": "pass",
+                  "character": {
+                    "score": 0.911,
+                    "hand_lateral_travel_m": 3.18,
+                    "mean_directional_demand": 0.211,
+                    "foot_hand_transfer_ratio": 1.1667,
+                    "basis": "observed_contact_geometry_not_force_or_technique_proof"
+                  },
+                  "mechanics_summary": {
+                    "status": "infeasible",
+                    "feasible_states": 13,
+                    "infeasible_states": 13,
+                    "unknown_states": 1,
+                    "release_states": 13,
+                    "release_infeasible_states": 8,
+                    "release_unknown_states": 1,
+                    "max_capacity_utilization": 0.9275305,
+                    "worst_state_id": "b3"
+                  }
+                },
+                {
+                  "summary": {
+                    "hand_moves": 6,
+                    "foot_moves": 7,
+                    "transfers": 13,
+                    "total_proxy_effort": 550.83771,
+                    "peak_proxy_burden": 57.8365,
+                    "final_load": 125.37395
+                  },
+                  "status": "pass",
+                  "character": {
+                    "score": 0.911,
+                    "hand_lateral_travel_m": 3.18,
+                    "mean_directional_demand": 0.211,
+                    "foot_hand_transfer_ratio": 1.1667,
+                    "basis": "observed_contact_geometry_not_force_or_technique_proof"
+                  },
+                  "mechanics_summary": {
+                    "status": "infeasible",
+                    "feasible_states": 12,
+                    "infeasible_states": 15,
+                    "unknown_states": 0,
+                    "release_states": 13,
+                    "release_infeasible_states": 9,
+                    "release_unknown_states": 0,
+                    "max_capacity_utilization": 0.9275305,
+                    "worst_state_id": "b3"
+                  }
+                }
+              ]
+            },
+            {
+              "index": 1,
+              "search": [
+                {
+                  "objective": "fewer_transfers",
+                  "expanded": 2897,
+                  "complete_sequences": 2,
+                  "budget_exhausted": false,
+                  "termination_reason": "first_complete_beam_depth",
+                  "rejected": {
+                    "hand_match_not_supported_by_selected_patch": 182,
+                    "necessary_contact_span": 501,
+                    "local_contact_corridor_search_assumption": 1147,
+                    "simultaneous_feet_same_point": 246,
+                    "beam_pruned": 267,
+                    "simultaneous_hand_foot_same_point": 130,
+                    "dominated_contacts_and_load": 192
+                  },
+                  "depth_reached": 12
+                },
+                {
+                  "objective": "lower_proxy_effort",
+                  "expanded": 3030,
+                  "complete_sequences": 8,
+                  "budget_exhausted": false,
+                  "termination_reason": "retained_frontier_cost_bound",
+                  "rejected": {
+                    "hand_match_not_supported_by_selected_patch": 186,
+                    "necessary_contact_span": 510,
+                    "local_contact_corridor_search_assumption": 1150,
+                    "simultaneous_feet_same_point": 273,
+                    "beam_pruned": 284,
+                    "simultaneous_hand_foot_same_point": 126,
+                    "dominated_contacts_and_load": 241
+                  },
+                  "depth_reached": 13
+                }
+              ],
+              "status": "pass",
+              "character_score": 0.87956,
+              "mechanical_rank": [
+                false,
+                -0.46153846153846156,
+                -0.5925925925925926,
+                0.8001079,
+                550.58683
+              ],
+              "evaluations": [
+                {
+                  "summary": {
+                    "hand_moves": 7,
+                    "foot_moves": 6,
+                    "transfers": 13,
+                    "total_proxy_effort": 550.58683,
+                    "peak_proxy_burden": 58.60561,
+                    "final_load": 113.95591
+                  },
+                  "status": "pass",
+                  "character": {
+                    "score": 0.87956,
+                    "hand_lateral_travel_m": 3.1757,
+                    "mean_directional_demand": 0.1915,
+                    "foot_hand_transfer_ratio": 0.8571,
+                    "basis": "observed_contact_geometry_not_force_or_technique_proof"
+                  },
+                  "mechanics_summary": {
+                    "status": "infeasible",
+                    "feasible_states": 16,
+                    "infeasible_states": 11,
+                    "unknown_states": 0,
+                    "release_states": 13,
+                    "release_infeasible_states": 7,
+                    "release_unknown_states": 0,
+                    "max_capacity_utilization": 0.8001079,
+                    "worst_state_id": "b3"
+                  }
+                },
+                {
+                  "summary": {
+                    "hand_moves": 6,
+                    "foot_moves": 6,
+                    "transfers": 12,
+                    "total_proxy_effort": 515.48386,
+                    "peak_proxy_burden": 58.60561,
+                    "final_load": 124.14978
+                  },
+                  "status": "pass",
+                  "character": {
+                    "score": 0.92338,
+                    "hand_lateral_travel_m": 3.1757,
+                    "mean_directional_demand": 0.2234,
+                    "foot_hand_transfer_ratio": 1.0,
+                    "basis": "observed_contact_geometry_not_force_or_technique_proof"
+                  },
+                  "mechanics_summary": {
+                    "status": "infeasible",
+                    "feasible_states": 14,
+                    "infeasible_states": 11,
+                    "unknown_states": 0,
+                    "release_states": 12,
+                    "release_infeasible_states": 7,
+                    "release_unknown_states": 0,
+                    "max_capacity_utilization": 0.8001079,
+                    "worst_state_id": "b3"
+                  }
+                },
+                {
+                  "summary": {
+                    "hand_moves": 6,
+                    "foot_moves": 6,
+                    "transfers": 12,
+                    "total_proxy_effort": 516.4792,
+                    "peak_proxy_burden": 58.60561,
+                    "final_load": 125.0645
+                  },
+                  "status": "pass",
+                  "character": {
+                    "score": 0.92338,
+                    "hand_lateral_travel_m": 3.1757,
+                    "mean_directional_demand": 0.2234,
+                    "foot_hand_transfer_ratio": 1.0,
+                    "basis": "observed_contact_geometry_not_force_or_technique_proof"
+                  },
+                  "mechanics_summary": {
+                    "status": "infeasible",
+                    "feasible_states": 13,
+                    "infeasible_states": 12,
+                    "unknown_states": 0,
+                    "release_states": 12,
+                    "release_infeasible_states": 7,
+                    "release_unknown_states": 0,
+                    "max_capacity_utilization": 0.8001079,
+                    "worst_state_id": "b3"
+                  }
+                }
+              ]
+            },
+            {
+              "index": 2,
+              "search": [
+                {
+                  "objective": "fewer_transfers",
+                  "expanded": 2672,
+                  "complete_sequences": 5,
+                  "budget_exhausted": false,
+                  "termination_reason": "first_complete_beam_depth",
+                  "rejected": {
+                    "hand_match_not_supported_by_selected_patch": 178,
+                    "local_contact_corridor_search_assumption": 1037,
+                    "necessary_contact_span": 459,
+                    "simultaneous_feet_same_point": 260,
+                    "beam_pruned": 201,
+                    "simultaneous_hand_foot_same_point": 110,
+                    "dominated_contacts_and_load": 188
+                  },
+                  "depth_reached": 13
+                },
+                {
+                  "objective": "lower_proxy_effort",
+                  "expanded": 2860,
+                  "complete_sequences": 11,
+                  "budget_exhausted": false,
+                  "termination_reason": "retained_frontier_cost_bound",
+                  "rejected": {
+                    "hand_match_not_supported_by_selected_patch": 176,
+                    "local_contact_corridor_search_assumption": 1100,
+                    "necessary_contact_span": 483,
+                    "simultaneous_feet_same_point": 288,
+                    "beam_pruned": 221,
+                    "simultaneous_hand_foot_same_point": 108,
+                    "dominated_contacts_and_load": 217
+                  },
+                  "depth_reached": 14
+                }
+              ],
+              "status": "fail",
+              "character_score": 0,
+              "mechanical_rank": [
+                true,
+                -0.0,
+                -0.0,
+                1000000.0,
+                554.96741
+              ],
+              "evaluations": [
+                {
+                  "summary": {
+                    "hand_moves": 6,
+                    "foot_moves": 7,
+                    "transfers": 13,
+                    "total_proxy_effort": 554.96741,
+                    "peak_proxy_burden": 57.96248,
+                    "final_load": 124.87288
+                  },
+                  "status": "fail",
+                  "character": {
+                    "score": 0.91931,
+                    "hand_lateral_travel_m": 3.1843,
+                    "mean_directional_demand": 0.2193,
+                    "foot_hand_transfer_ratio": 1.1667,
+                    "basis": "observed_contact_geometry_not_force_or_technique_proof"
+                  },
+                  "mechanics_summary": {
+                    "status": "unknown",
+                    "feasible_states": 0,
+                    "infeasible_states": 0,
+                    "unknown_states": 27,
+                    "release_states": 13,
+                    "release_infeasible_states": 0,
+                    "release_unknown_states": 13,
+                    "max_capacity_utilization": null,
+                    "worst_state_id": "b0"
+                  }
+                },
+                {
+                  "summary": {
+                    "hand_moves": 6,
+                    "foot_moves": 7,
+                    "transfers": 13,
+                    "total_proxy_effort": 556.10632,
+                    "peak_proxy_burden": 57.96248,
+                    "final_load": 125.86273
+                  },
+                  "status": "fail",
+                  "character": {
+                    "score": 0.91931,
+                    "hand_lateral_travel_m": 3.1843,
+                    "mean_directional_demand": 0.2193,
+                    "foot_hand_transfer_ratio": 1.1667,
+                    "basis": "observed_contact_geometry_not_force_or_technique_proof"
+                  },
+                  "mechanics_summary": {
+                    "status": "unknown",
+                    "feasible_states": 0,
+                    "infeasible_states": 0,
+                    "unknown_states": 27,
+                    "release_states": 13,
+                    "release_infeasible_states": 0,
+                    "release_unknown_states": 13,
+                    "max_capacity_utilization": null,
+                    "worst_state_id": "b0"
+                  }
+                },
+                {
+                  "summary": {
+                    "hand_moves": 6,
+                    "foot_moves": 7,
+                    "transfers": 13,
+                    "total_proxy_effort": 558.9342,
+                    "peak_proxy_burden": 58.24054,
+                    "final_load": 125.53524
+                  },
+                  "status": "fail",
+                  "character": {
+                    "score": 0.91931,
+                    "hand_lateral_travel_m": 3.1843,
+                    "mean_directional_demand": 0.2193,
+                    "foot_hand_transfer_ratio": 1.1667,
+                    "basis": "observed_contact_geometry_not_force_or_technique_proof"
+                  },
+                  "mechanics_summary": {
+                    "status": "unknown",
+                    "feasible_states": 0,
+                    "infeasible_states": 0,
+                    "unknown_states": 27,
+                    "release_states": 13,
+                    "release_infeasible_states": 0,
+                    "release_unknown_states": 13,
+                    "max_capacity_utilization": null,
+                    "worst_state_id": "b0"
+                  }
+                },
+                {
+                  "summary": {
+                    "hand_moves": 6,
+                    "foot_moves": 7,
+                    "transfers": 13,
+                    "total_proxy_effort": 567.97003,
+                    "peak_proxy_burden": 57.96248,
+                    "final_load": 124.85844
+                  },
+                  "status": "fail",
+                  "character": {
+                    "score": 0.91931,
+                    "hand_lateral_travel_m": 3.1843,
+                    "mean_directional_demand": 0.2193,
+                    "foot_hand_transfer_ratio": 1.1667,
+                    "basis": "observed_contact_geometry_not_force_or_technique_proof"
+                  },
+                  "mechanics_summary": {
+                    "status": "unknown",
+                    "feasible_states": 0,
+                    "infeasible_states": 0,
+                    "unknown_states": 27,
+                    "release_states": 13,
+                    "release_infeasible_states": 0,
+                    "release_unknown_states": 13,
+                    "max_capacity_utilization": null,
+                    "worst_state_id": "b0"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "opposing_sidepulls": {
+      "assets": {
+        "file": "fixtures/setting-opposing_sidepulls-bundle.json",
+        "bundle_digest": "sha256:e5c3b32f64d0f0bb24f2cc783746f04619512c6483675d3e4a876126da6de70c",
+        "candidate_id": "setting-opposing_sidepulls-trial0-beta5",
+        "hold_source": "assets",
+        "wall_profile": "default",
+        "p0": {
+          "status": "pass",
+          "passed": 50,
+          "total": 50
+        },
+        "mechanics": {
+          "status": "infeasible",
+          "feasible_states": 13,
+          "infeasible_states": 12,
+          "unknown_states": 0,
+          "release_states": 12,
+          "release_infeasible_states": 7,
+          "release_unknown_states": 0,
+          "max_capacity_utilization": 0.6795688,
+          "worst_state_id": "b1"
+        },
+        "baseline_mechanics": {
+          "status": "infeasible",
+          "feasible_states": 13,
+          "infeasible_states": 12,
+          "unknown_states": 0,
+          "release_states": 12,
+          "release_infeasible_states": 7,
+          "release_unknown_states": 0,
+          "max_capacity_utilization": 0.6795688,
+          "worst_state_id": "b1"
+        },
+        "moves": 12,
+        "states": 25,
+        "installed": 18,
+        "used": 15,
+        "unused": [
+          "foot-5",
+          "foot-8",
+          "hand-2"
+        ],
+        "imported_instances": [
+          {
+            "id": "start-left",
+            "asset_id": "setrsoft-12-jug",
+            "family": "jug",
+            "scale": 0.872403282148042,
+            "dimensions_m": [
+              0.23,
+              0.2153974346943558,
+              0.053606119552476836
+            ]
+          },
+          {
+            "id": "start-right",
+            "asset_id": "setrsoft-12-jug",
+            "family": "jug",
+            "scale": 0.872403282148042,
+            "dimensions_m": [
+              0.23,
+              0.2153974346943558,
+              0.053606119552476836
+            ]
+          },
+          {
+            "id": "hand-1",
+            "asset_id": "setrsoft-17-pinch",
+            "family": "pinch",
+            "scale": 0.799089226303009,
+            "dimensions_m": [
+              0.17,
+              0.2968335995397246,
+              0.06976633878938922
+            ]
+          },
+          {
+            "id": "hand-2",
+            "asset_id": "setrsoft-25-crimp",
+            "family": "crimp",
+            "scale": 0.892823768254377,
+            "dimensions_m": [
+              0.15,
+              0.06480947021742281,
+              0.013771913764175957
+            ]
+          },
+          {
+            "id": "hand-3",
+            "asset_id": "setrsoft-17-pinch",
+            "family": "pinch",
+            "scale": 0.799089226303009,
+            "dimensions_m": [
+              0.17,
+              0.2968335995397246,
+              0.06976633878938922
+            ]
+          },
+          {
+            "id": "hand-4",
+            "asset_id": "setrsoft-11-sloper",
+            "family": "sloper",
+            "scale": 0.3909316064372675,
+            "dimensions_m": [
+              0.3,
+              0.14691593664750036,
+              0.06380748150834863
+            ]
+          },
+          {
+            "id": "top",
+            "asset_id": "setrsoft-12-jug",
+            "family": "jug",
+            "scale": 1.3655007894491091,
+            "dimensions_m": [
+              0.36,
+              0.3371438108259482,
+              0.0839052306038768
+            ]
+          }
+        ],
+        "fallbacks": [
+          {
+            "id": "hand-5",
+            "family": "pocket",
+            "reason": "no registered external mesh for this family"
+          }
+        ],
+        "asset_application": {
+          "mapped_instances": [
+            "start-left",
+            "start-right",
+            "hand-1",
+            "hand-2",
+            "hand-3",
+            "hand-4",
+            "top"
+          ],
+          "fallbacks": [
+            {
+              "inventory_id": "hand-5",
+              "reason": "no registered external mesh for this family"
+            }
+          ],
+          "scale_policy": "uniform_to_template_width_unmeasured_demo_size",
+          "placement_policy": "preserve selected contact XY in local mounting plane; depth follows mesh",
+          "footprint_adjustment": {
+            "method": "bounded_axis_translation_of_nonanchor_feet",
+            "max_displacement_m": 0.07,
+            "grid_step_m": 0.005,
+            "clearance_m": 0.005,
+            "changes": [
+              {
+                "placement_id": "foot-3",
+                "before": {
+                  "u": -0.77,
+                  "v": 1.25
+                },
+                "after": {
+                  "u": -0.77,
+                  "v": 1.29
+                },
+                "collided_with": [
+                  "start-left"
+                ],
+                "reason": "smallest tested axis translation separating conservative mesh OBBs; beta/IK still required"
+              },
+              {
+                "placement_id": "foot-5",
+                "before": {
+                  "u": -0.64,
+                  "v": 1.78
+                },
+                "after": {
+                  "u": -0.63,
+                  "v": 1.78
+                },
+                "collided_with": [
+                  "hand-1"
+                ],
+                "reason": "smallest tested axis translation separating conservative mesh OBBs; beta/IK still required"
+              },
+              {
+                "placement_id": "foot-7",
+                "before": {
+                  "u": -0.46,
+                  "v": 2.26
+                },
+                "after": {
+                  "u": -0.44,
+                  "v": 2.26
+                },
+                "collided_with": [
+                  "hand-3"
+                ],
+                "reason": "smallest tested axis translation separating conservative mesh OBBs; beta/IK still required"
+              }
+            ],
+            "unresolved_collisions": []
+          },
+          "limitations": [
+            "外部三角网格来自列明来源；演示尺寸未经实测，使用同比缩放。",
+            "抓握面及椭圆范围为AI草稿标注，代表点和法向绑定三角面；抓握能力、摩擦及可抓握范围未经实测。",
+            "碰撞仍用覆盖网格的保守包围盒；安装背板不属于可安装子岩点的体积块斜面。"
+          ]
+        },
+        "wall_application": null,
+        "geometry_changes": 0,
+        "verified_alternatives": 5,
+        "search": {
+          "timeout_seconds": 60,
+          "elapsed_ms": 23267.71,
+          "time_budget_exhausted": false,
+          "geometry_trials": 3,
+          "selected_trial": 0,
+          "hand_count_policy": "free; only start/TOP required",
+          "coverage_policy": "unused installed holds allowed",
+          "ranking": "P0 first; maximize current-pose release equilibrium fraction, then all-state equilibrium fraction, then lower required axial capacity utilization; geometry character does not select layouts",
+          "trials": [
+            {
+              "index": 0,
+              "search": [
+                {
+                  "objective": "fewer_transfers",
+                  "expanded": 2657,
+                  "complete_sequences": 8,
+                  "budget_exhausted": false,
+                  "termination_reason": "first_complete_beam_depth",
+                  "rejected": {
+                    "hand_match_not_supported_by_selected_patch": 234,
+                    "local_contact_corridor_search_assumption": 1016,
+                    "necessary_contact_span": 444,
+                    "simultaneous_feet_same_point": 276,
+                    "beam_pruned": 235,
+                    "dominated_contacts_and_load": 208
+                  },
+                  "depth_reached": 12
+                },
+                {
+                  "objective": "lower_proxy_effort",
+                  "expanded": 2817,
+                  "complete_sequences": 18,
+                  "budget_exhausted": false,
+                  "termination_reason": "retained_frontier_cost_bound",
+                  "rejected": {
+                    "hand_match_not_supported_by_selected_patch": 255,
+                    "local_contact_corridor_search_assumption": 1153,
+                    "necessary_contact_span": 384,
+                    "simultaneous_feet_same_point": 312,
+                    "beam_pruned": 211,
+                    "dominated_contacts_and_load": 228
+                  },
+                  "depth_reached": 13
+                }
+              ],
+              "status": "pass",
+              "character_score": 0.75535,
+              "mechanical_rank": [
+                false,
+                -0.4166666666666667,
+                -0.52,
+                0.6795688,
+                533.50378
+              ],
+              "evaluations": [
+                {
+                  "summary": {
+                    "hand_moves": 6,
+                    "foot_moves": 6,
+                    "transfers": 12,
+                    "total_proxy_effort": 533.50378,
+                    "peak_proxy_burden": 70.75376,
+                    "final_load": 140.84212
+                  },
+                  "status": "pass",
+                  "character": {
+                    "score": 0.82923,
+                    "hand_lateral_travel_m": 2.0924,
+                    "mean_directional_demand": 0.1512,
+                    "foot_hand_transfer_ratio": 1.0,
+                    "basis": "observed_contact_geometry_not_force_or_technique_proof"
+                  },
+                  "mechanics_summary": {
+                    "status": "infeasible",
+                    "feasible_states": 13,
+                    "infeasible_states": 12,
+                    "unknown_states": 0,
+                    "release_states": 12,
+                    "release_infeasible_states": 7,
+                    "release_unknown_states": 0,
+                    "max_capacity_utilization": 0.6795688,
+                    "worst_state_id": "b1"
+                  }
+                },
+                {
+                  "summary": {
+                    "hand_moves": 6,
+                    "foot_moves": 6,
+                    "transfers": 12,
+                    "total_proxy_effort": 530.82647,
+                    "peak_proxy_burden": 70.84865,
+                    "final_load": 141.19195
+                  },
+                  "status": "pass",
+                  "character": {
+                    "score": 0.82923,
+                    "hand_lateral_travel_m": 2.0924,
+                    "mean_directional_demand": 0.1512,
+                    "foot_hand_transfer_ratio": 1.0,
+                    "basis": "observed_contact_geometry_not_force_or_technique_proof"
+                  },
+                  "mechanics_summary": {
+                    "status": "infeasible",
+                    "feasible_states": 13,
+                    "infeasible_states": 12,
+                    "unknown_states": 0,
+                    "release_states": 12,
+                    "release_infeasible_states": 7,
+                    "release_unknown_states": 0,
+                    "max_capacity_utilization": 0.6885209,
+                    "worst_state_id": "b3"
+                  }
+                },
+                {
+                  "summary": {
+                    "hand_moves": 6,
+                    "foot_moves": 6,
+                    "transfers": 12,
+                    "total_proxy_effort": 528.43508,
+                    "peak_proxy_burden": 70.72969,
+                    "final_load": 140.7534
+                  },
+                  "status": "pass",
+                  "character": {
+                    "score": 0.82923,
+                    "hand_lateral_travel_m": 2.0924,
+                    "mean_directional_demand": 0.1512,
+                    "foot_hand_transfer_ratio": 1.0,
+                    "basis": "observed_contact_geometry_not_force_or_technique_proof"
+                  },
+                  "mechanics_summary": {
+                    "status": "infeasible",
+                    "feasible_states": 13,
+                    "infeasible_states": 12,
+                    "unknown_states": 0,
+                    "release_states": 12,
+                    "release_infeasible_states": 7,
+                    "release_unknown_states": 0,
+                    "max_capacity_utilization": 0.7447173,
+                    "worst_state_id": "b3"
+                  }
+                },
+                {
+                  "summary": {
+                    "hand_moves": 6,
+                    "foot_moves": 6,
+                    "transfers": 12,
+                    "total_proxy_effort": 547.1368,
+                    "peak_proxy_burden": 71.31385,
+                    "final_load": 136.87216
+                  },
+                  "status": "pass",
+                  "character": {
+                    "score": 0.75535,
+                    "hand_lateral_travel_m": 1.7312,
+                    "mean_directional_demand": 0.1512,
+                    "foot_hand_transfer_ratio": 1.0,
+                    "basis": "observed_contact_geometry_not_force_or_technique_proof"
+                  },
+                  "mechanics_summary": {
+                    "status": "infeasible",
+                    "feasible_states": 11,
+                    "infeasible_states": 14,
+                    "unknown_states": 0,
+                    "release_states": 12,
+                    "release_infeasible_states": 9,
+                    "release_unknown_states": 0,
+                    "max_capacity_utilization": 0.942371,
+                    "worst_state_id": "b3"
+                  }
+                },
+                {
+                  "summary": {
+                    "hand_moves": 6,
+                    "foot_moves": 6,
+                    "transfers": 12,
+                    "total_proxy_effort": 546.78118,
+                    "peak_proxy_burden": 71.31385,
+                    "final_load": 138.55273
+                  },
+                  "status": "pass",
+                  "character": {
+                    "score": 0.75535,
+                    "hand_lateral_travel_m": 1.7312,
+                    "mean_directional_demand": 0.1512,
+                    "foot_hand_transfer_ratio": 1.0,
+                    "basis": "observed_contact_geometry_not_force_or_technique_proof"
+                  },
+                  "mechanics_summary": {
+                    "status": "infeasible",
+                    "feasible_states": 10,
+                    "infeasible_states": 15,
+                    "unknown_states": 0,
+                    "release_states": 12,
+                    "release_infeasible_states": 9,
+                    "release_unknown_states": 0,
+                    "max_capacity_utilization": 0.942371,
+                    "worst_state_id": "b3"
+                  }
+                },
+                {
+                  "summary": {
+                    "hand_moves": 6,
+                    "foot_moves": 6,
+                    "transfers": 12,
+                    "total_proxy_effort": 546.91349,
+                    "peak_proxy_burden": 71.31385,
+                    "final_load": 138.32451
+                  },
+                  "status": "pass",
+                  "character": {
+                    "score": 0.75535,
+                    "hand_lateral_travel_m": 1.7312,
+                    "mean_directional_demand": 0.1512,
+                    "foot_hand_transfer_ratio": 1.0,
+                    "basis": "observed_contact_geometry_not_force_or_technique_proof"
+                  },
+                  "mechanics_summary": {
+                    "status": "infeasible",
+                    "feasible_states": 10,
+                    "infeasible_states": 15,
+                    "unknown_states": 0,
+                    "release_states": 12,
+                    "release_infeasible_states": 9,
+                    "release_unknown_states": 0,
+                    "max_capacity_utilization": 0.942371,
+                    "worst_state_id": "b3"
+                  }
+                }
+              ]
+            },
+            {
+              "index": 1,
+              "search": [
+                {
+                  "objective": "fewer_transfers",
+                  "expanded": 2718,
+                  "complete_sequences": 8,
+                  "budget_exhausted": false,
+                  "termination_reason": "first_complete_beam_depth",
+                  "rejected": {
+                    "hand_match_not_supported_by_selected_patch": 254,
+                    "local_contact_corridor_search_assumption": 1046,
+                    "necessary_contact_span": 431,
+                    "simultaneous_feet_same_point": 293,
+                    "beam_pruned": 204,
+                    "dominated_contacts_and_load": 246
+                  },
+                  "depth_reached": 12
+                },
+                {
+                  "objective": "lower_proxy_effort",
+                  "expanded": 2803,
+                  "complete_sequences": 28,
+                  "budget_exhausted": false,
+                  "termination_reason": "retained_frontier_cost_bound",
+                  "rejected": {
+                    "hand_match_not_supported_by_selected_patch": 252,
+                    "local_contact_corridor_search_assumption": 1158,
+                    "necessary_contact_span": 368,
+                    "simultaneous_feet_same_point": 324,
+                    "beam_pruned": 197,
+                    "dominated_contacts_and_load": 222
+                  },
+                  "depth_reached": 13
+                }
+              ],
+              "status": "pass",
+              "character_score": 0.84467,
+              "mechanical_rank": [
+                false,
+                -0.3333333333333333,
+                -0.48,
+                0.7023162,
+                524.75506
+              ],
+              "evaluations": [
+                {
+                  "summary": {
+                    "hand_moves": 6,
+                    "foot_moves": 6,
+                    "transfers": 12,
+                    "total_proxy_effort": 524.75506,
+                    "peak_proxy_burden": 70.85322,
+                    "final_load": 141.18754
+                  },
+                  "status": "pass",
+                  "character": {
+                    "score": 0.84467,
+                    "hand_lateral_travel_m": 2.071,
+                    "mean_directional_demand": 0.1711,
+                    "foot_hand_transfer_ratio": 1.0,
+                    "basis": "observed_contact_geometry_not_force_or_technique_proof"
+                  },
+                  "mechanics_summary": {
+                    "status": "infeasible",
+                    "feasible_states": 12,
+                    "infeasible_states": 12,
+                    "unknown_states": 1,
+                    "release_states": 12,
+                    "release_infeasible_states": 7,
+                    "release_unknown_states": 1,
+                    "max_capacity_utilization": 0.7023162,
+                    "worst_state_id": "b3"
+                  }
+                },
+                {
+                  "summary": {
+                    "hand_moves": 6,
+                    "foot_moves": 6,
+                    "transfers": 12,
+                    "total_proxy_effort": 528.34937,
+                    "peak_proxy_burden": 70.22101,
+                    "final_load": 139.65437
+                  },
+                  "status": "pass",
+                  "character": {
+                    "score": 0.84467,
+                    "hand_lateral_travel_m": 2.071,
+                    "mean_directional_demand": 0.1711,
+                    "foot_hand_transfer_ratio": 1.0,
+                    "basis": "observed_contact_geometry_not_force_or_technique_proof"
+                  },
+                  "mechanics_summary": {
+                    "status": "infeasible",
+                    "feasible_states": 12,
+                    "infeasible_states": 12,
+                    "unknown_states": 1,
+                    "release_states": 12,
+                    "release_infeasible_states": 7,
+                    "release_unknown_states": 1,
+                    "max_capacity_utilization": 0.7023162,
+                    "worst_state_id": "b3"
+                  }
+                },
+                {
+                  "summary": {
+                    "hand_moves": 6,
+                    "foot_moves": 6,
+                    "transfers": 12,
+                    "total_proxy_effort": 522.10648,
+                    "peak_proxy_burden": 70.74107,
+                    "final_load": 140.77419
+                  },
+                  "status": "pass",
+                  "character": {
+                    "score": 0.84467,
+                    "hand_lateral_travel_m": 2.071,
+                    "mean_directional_demand": 0.1711,
+                    "foot_hand_transfer_ratio": 1.0,
+                    "basis": "observed_contact_geometry_not_force_or_technique_proof"
+                  },
+                  "mechanics_summary": {
+                    "status": "infeasible",
+                    "feasible_states": 12,
+                    "infeasible_states": 13,
+                    "unknown_states": 0,
+                    "release_states": 12,
+                    "release_infeasible_states": 8,
+                    "release_unknown_states": 0,
+                    "max_capacity_utilization": 0.7992482,
+                    "worst_state_id": "b3"
+                  }
+                },
+                {
+                  "summary": {
+                    "hand_moves": 6,
+                    "foot_moves": 6,
+                    "transfers": 12,
+                    "total_proxy_effort": 525.70079,
+                    "peak_proxy_burden": 70.09777,
+                    "final_load": 139.24102
+                  },
+                  "status": "pass",
+                  "character": {
+                    "score": 0.84467,
+                    "hand_lateral_travel_m": 2.071,
+                    "mean_directional_demand": 0.1711,
+                    "foot_hand_transfer_ratio": 1.0,
+                    "basis": "observed_contact_geometry_not_force_or_technique_proof"
+                  },
+                  "mechanics_summary": {
+                    "status": "infeasible",
+                    "feasible_states": 12,
+                    "infeasible_states": 13,
+                    "unknown_states": 0,
+                    "release_states": 12,
+                    "release_infeasible_states": 8,
+                    "release_unknown_states": 0,
+                    "max_capacity_utilization": 0.7992482,
+                    "worst_state_id": "b3"
+                  }
+                },
+                {
+                  "summary": {
+                    "hand_moves": 6,
+                    "foot_moves": 6,
+                    "transfers": 12,
+                    "total_proxy_effort": 524.73399,
+                    "peak_proxy_burden": 69.9751,
+                    "final_load": 137.9509
+                  },
+                  "status": "pass",
+                  "character": {
+                    "score": 0.84467,
+                    "hand_lateral_travel_m": 2.071,
+                    "mean_directional_demand": 0.1711,
+                    "foot_hand_transfer_ratio": 1.0,
+                    "basis": "observed_contact_geometry_not_force_or_technique_proof"
+                  },
+                  "mechanics_summary": {
+                    "status": "infeasible",
+                    "feasible_states": 7,
+                    "infeasible_states": 18,
+                    "unknown_states": 0,
+                    "release_states": 12,
+                    "release_infeasible_states": 10,
+                    "release_unknown_states": 0,
+                    "max_capacity_utilization": 0.4780068,
+                    "worst_state_id": "b3"
+                  }
+                },
+                {
+                  "summary": {
+                    "hand_moves": 6,
+                    "foot_moves": 6,
+                    "transfers": 12,
+                    "total_proxy_effort": 527.119,
+                    "peak_proxy_burden": 68.82037,
+                    "final_load": 135.99321
+                  },
+                  "status": "pass",
+                  "character": {
+                    "score": 0.84467,
+                    "hand_lateral_travel_m": 2.071,
+                    "mean_directional_demand": 0.1711,
+                    "foot_hand_transfer_ratio": 1.0,
+                    "basis": "observed_contact_geometry_not_force_or_technique_proof"
+                  },
+                  "mechanics_summary": {
+                    "status": "infeasible",
+                    "feasible_states": 7,
+                    "infeasible_states": 18,
+                    "unknown_states": 0,
+                    "release_states": 12,
+                    "release_infeasible_states": 10,
+                    "release_unknown_states": 0,
+                    "max_capacity_utilization": 0.4780068,
+                    "worst_state_id": "b3"
+                  }
+                }
+              ]
+            },
+            {
+              "index": 2,
+              "search": [
+                {
+                  "objective": "fewer_transfers",
+                  "expanded": 2654,
+                  "complete_sequences": 5,
+                  "budget_exhausted": false,
+                  "termination_reason": "first_complete_beam_depth",
+                  "rejected": {
+                    "hand_match_not_supported_by_selected_patch": 231,
+                    "local_contact_corridor_search_assumption": 1009,
+                    "necessary_contact_span": 449,
+                    "simultaneous_feet_same_point": 277,
+                    "beam_pruned": 241,
+                    "dominated_contacts_and_load": 206
+                  },
+                  "depth_reached": 12
+                },
+                {
+                  "objective": "lower_proxy_effort",
+                  "expanded": 2823,
+                  "complete_sequences": 19,
+                  "budget_exhausted": false,
+                  "termination_reason": "retained_frontier_cost_bound",
+                  "rejected": {
+                    "hand_match_not_supported_by_selected_patch": 254,
+                    "local_contact_corridor_search_assumption": 1160,
+                    "necessary_contact_span": 384,
+                    "simultaneous_feet_same_point": 313,
+                    "beam_pruned": 207,
+                    "dominated_contacts_and_load": 230
+                  },
+                  "depth_reached": 13
+                }
+              ],
+              "status": "fail",
+              "character_score": 0,
+              "mechanical_rank": [
+                true,
+                -0.0,
+                -0.0,
+                1000000.0,
+                540.31479
+              ],
+              "evaluations": [
+                {
+                  "summary": {
+                    "hand_moves": 6,
+                    "foot_moves": 6,
+                    "transfers": 12,
+                    "total_proxy_effort": 540.31479,
+                    "peak_proxy_burden": 71.12648,
+                    "final_load": 142.28514
+                  },
+                  "status": "fail",
+                  "character": {
+                    "score": 0.85875,
+                    "hand_lateral_travel_m": 2.1399,
+                    "mean_directional_demand": 0.1711,
+                    "foot_hand_transfer_ratio": 1.0,
+                    "basis": "observed_contact_geometry_not_force_or_technique_proof"
+                  },
+                  "mechanics_summary": {
+                    "status": "unknown",
+                    "feasible_states": 0,
+                    "infeasible_states": 0,
+                    "unknown_states": 25,
+                    "release_states": 12,
+                    "release_infeasible_states": 0,
+                    "release_unknown_states": 12,
+                    "max_capacity_utilization": null,
+                    "worst_state_id": "b0"
+                  }
+                },
+                {
+                  "summary": {
+                    "hand_moves": 6,
+                    "foot_moves": 6,
+                    "transfers": 12,
+                    "total_proxy_effort": 541.90267,
+                    "peak_proxy_burden": 69.80506,
+                    "final_load": 140.43269
+                  },
+                  "status": "fail",
+                  "character": {
+                    "score": 0.85875,
+                    "hand_lateral_travel_m": 2.1399,
+                    "mean_directional_demand": 0.1711,
+                    "foot_hand_transfer_ratio": 1.0,
+                    "basis": "observed_contact_geometry_not_force_or_technique_proof"
+                  },
+                  "mechanics_summary": {
+                    "status": "unknown",
+                    "feasible_states": 0,
+                    "infeasible_states": 0,
+                    "unknown_states": 25,
+                    "release_states": 12,
+                    "release_infeasible_states": 0,
+                    "release_unknown_states": 12,
+                    "max_capacity_utilization": null,
+                    "worst_state_id": "b0"
+                  }
+                },
+                {
+                  "summary": {
+                    "hand_moves": 6,
+                    "foot_moves": 6,
+                    "transfers": 12,
+                    "total_proxy_effort": 544.10944,
+                    "peak_proxy_burden": 71.24748,
+                    "final_load": 142.73129
+                  },
+                  "status": "fail",
+                  "character": {
+                    "score": 0.85875,
+                    "hand_lateral_travel_m": 2.1399,
+                    "mean_directional_demand": 0.1711,
+                    "foot_hand_transfer_ratio": 1.0,
+                    "basis": "observed_contact_geometry_not_force_or_technique_proof"
+                  },
+                  "mechanics_summary": {
+                    "status": "unknown",
+                    "feasible_states": 0,
+                    "infeasible_states": 0,
+                    "unknown_states": 25,
+                    "release_states": 12,
+                    "release_infeasible_states": 0,
+                    "release_unknown_states": 12,
+                    "max_capacity_utilization": null,
+                    "worst_state_id": "b0"
+                  }
+                },
+                {
+                  "summary": {
+                    "hand_moves": 6,
+                    "foot_moves": 6,
+                    "transfers": 12,
+                    "total_proxy_effort": 557.05924,
+                    "peak_proxy_burden": 71.30566,
+                    "final_load": 137.24748
+                  },
+                  "status": "fail",
+                  "character": {
+                    "score": 0.7639,
+                    "hand_lateral_travel_m": 1.7082,
+                    "mean_directional_demand": 0.1645,
+                    "foot_hand_transfer_ratio": 1.0,
+                    "basis": "observed_contact_geometry_not_force_or_technique_proof"
+                  },
+                  "mechanics_summary": {
+                    "status": "unknown",
+                    "feasible_states": 0,
+                    "infeasible_states": 0,
+                    "unknown_states": 25,
+                    "release_states": 12,
+                    "release_infeasible_states": 0,
+                    "release_unknown_states": 12,
+                    "max_capacity_utilization": null,
+                    "worst_state_id": "b0"
+                  }
+                },
+                {
+                  "summary": {
+                    "hand_moves": 6,
+                    "foot_moves": 6,
+                    "transfers": 12,
+                    "total_proxy_effort": 559.23313,
+                    "peak_proxy_burden": 71.43863,
+                    "final_load": 137.69013
+                  },
+                  "status": "fail",
+                  "character": {
+                    "score": 0.7639,
+                    "hand_lateral_travel_m": 1.7082,
+                    "mean_directional_demand": 0.1645,
+                    "foot_hand_transfer_ratio": 1.0,
+                    "basis": "observed_contact_geometry_not_force_or_technique_proof"
+                  },
+                  "mechanics_summary": {
+                    "status": "unknown",
+                    "feasible_states": 0,
+                    "infeasible_states": 0,
+                    "unknown_states": 25,
+                    "release_states": 12,
+                    "release_infeasible_states": 0,
+                    "release_unknown_states": 12,
+                    "max_capacity_utilization": null,
+                    "worst_state_id": "b0"
+                  }
+                },
+                {
+                  "summary": {
+                    "hand_moves": 6,
+                    "foot_moves": 6,
+                    "transfers": 12,
+                    "total_proxy_effort": 561.21201,
+                    "peak_proxy_burden": 71.33184,
+                    "final_load": 137.33464
+                  },
+                  "status": "fail",
+                  "character": {
+                    "score": 0.7639,
+                    "hand_lateral_travel_m": 1.7082,
+                    "mean_directional_demand": 0.1645,
+                    "foot_hand_transfer_ratio": 1.0,
+                    "basis": "observed_contact_geometry_not_force_or_technique_proof"
+                  },
+                  "mechanics_summary": {
+                    "status": "unknown",
+                    "feasible_states": 0,
+                    "infeasible_states": 0,
+                    "unknown_states": 25,
+                    "release_states": 12,
+                    "release_infeasible_states": 0,
+                    "release_unknown_states": 12,
+                    "max_capacity_utilization": null,
+                    "worst_state_id": "b0"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "templates": {
+        "file": "fixtures/setting-templates-opposing_sidepulls-bundle.json",
+        "bundle_digest": "sha256:c3a55a4bf3e26965c4f374b5418337ff5fe3e9a5770fa55549cb5addadfca5ca",
+        "candidate_id": "setting-opposing_sidepulls-trial0-beta5",
+        "hold_source": "templates",
+        "wall_profile": "default",
+        "p0": {
+          "status": "pass",
+          "passed": 51,
+          "total": 51
+        },
+        "mechanics": {
+          "status": "infeasible",
+          "feasible_states": 15,
+          "infeasible_states": 10,
+          "unknown_states": 0,
+          "release_states": 12,
+          "release_infeasible_states": 6,
+          "release_unknown_states": 0,
+          "max_capacity_utilization": 0.9244707,
+          "worst_state_id": "b3"
+        },
+        "baseline_mechanics": {
+          "status": "infeasible",
+          "feasible_states": 15,
+          "infeasible_states": 10,
+          "unknown_states": 0,
+          "release_states": 12,
+          "release_infeasible_states": 6,
+          "release_unknown_states": 0,
+          "max_capacity_utilization": 0.9244707,
+          "worst_state_id": "b3"
+        },
+        "moves": 12,
+        "states": 25,
+        "installed": 18,
+        "used": 15,
+        "unused": [
+          "foot-8",
+          "hand-2",
+          "hand-4"
+        ],
+        "imported_instances": [],
+        "fallbacks": [],
+        "asset_application": null,
+        "wall_application": null,
+        "geometry_changes": 0,
+        "verified_alternatives": 5,
+        "search": {
+          "timeout_seconds": 60,
+          "elapsed_ms": 22422.3,
+          "time_budget_exhausted": false,
+          "geometry_trials": 3,
+          "selected_trial": 0,
+          "hand_count_policy": "free; only start/TOP required",
+          "coverage_policy": "unused installed holds allowed",
+          "ranking": "P0 first; maximize current-pose release equilibrium fraction, then all-state equilibrium fraction, then lower required axial capacity utilization; geometry character does not select layouts",
+          "trials": [
+            {
+              "index": 0,
+              "search": [
+                {
+                  "objective": "fewer_transfers",
+                  "expanded": 2595,
+                  "complete_sequences": 6,
+                  "budget_exhausted": false,
+                  "termination_reason": "first_complete_beam_depth",
+                  "rejected": {
+                    "hand_match_not_supported_by_selected_patch": 230,
+                    "local_contact_corridor_search_assumption": 956,
+                    "necessary_contact_span": 425,
+                    "simultaneous_feet_same_point": 261,
+                    "beam_pruned": 206,
+                    "dominated_contacts_and_load": 275
+                  },
+                  "depth_reached": 12
+                },
+                {
+                  "objective": "lower_proxy_effort",
+                  "expanded": 2634,
+                  "complete_sequences": 17,
+                  "budget_exhausted": false,
+                  "termination_reason": "retained_frontier_cost_bound",
+                  "rejected": {
+                    "hand_match_not_supported_by_selected_patch": 207,
+                    "local_contact_corridor_search_assumption": 996,
+                    "necessary_contact_span": 404,
+                    "simultaneous_feet_same_point": 282,
+                    "beam_pruned": 217,
+                    "dominated_contacts_and_load": 256
+                  },
+                  "depth_reached": 13
+                }
+              ],
+              "status": "pass",
+              "character_score": 0.79512,
+              "mechanical_rank": [
+                false,
+                -0.5,
+                -0.6,
+                0.9244707,
+                481.21201
+              ],
+              "evaluations": [
+                {
+                  "summary": {
+                    "hand_moves": 5,
+                    "foot_moves": 7,
+                    "transfers": 12,
+                    "total_proxy_effort": 481.21201,
+                    "peak_proxy_burden": 58.87705,
+                    "final_load": 119.2727
+                  },
+                  "status": "pass",
+                  "character": {
+                    "score": 0.81821,
+                    "hand_lateral_travel_m": 2.0924,
+                    "mean_directional_demand": 0.1402,
+                    "foot_hand_transfer_ratio": 1.4,
+                    "basis": "observed_contact_geometry_not_force_or_technique_proof"
+                  },
+                  "mechanics_summary": {
+                    "status": "infeasible",
+                    "feasible_states": 15,
+                    "infeasible_states": 10,
+                    "unknown_states": 0,
+                    "release_states": 12,
+                    "release_infeasible_states": 6,
+                    "release_unknown_states": 0,
+                    "max_capacity_utilization": 0.9244707,
+                    "worst_state_id": "b3"
+                  }
+                },
+                {
+                  "summary": {
+                    "hand_moves": 5,
+                    "foot_moves": 7,
+                    "transfers": 12,
+                    "total_proxy_effort": 478.81375,
+                    "peak_proxy_burden": 58.73339,
+                    "final_load": 118.85055
+                  },
+                  "status": "pass",
+                  "character": {
+                    "score": 0.81821,
+                    "hand_lateral_travel_m": 2.0924,
+                    "mean_directional_demand": 0.1402,
+                    "foot_hand_transfer_ratio": 1.4,
+                    "basis": "observed_contact_geometry_not_force_or_technique_proof"
+                  },
+                  "mechanics_summary": {
+                    "status": "infeasible",
+                    "feasible_states": 14,
+                    "infeasible_states": 11,
+                    "unknown_states": 0,
+                    "release_states": 12,
+                    "release_infeasible_states": 7,
+                    "release_unknown_states": 0,
+                    "max_capacity_utilization": 1.0811765,
+                    "worst_state_id": "b3"
+                  }
+                },
+                {
+                  "summary": {
+                    "hand_moves": 6,
+                    "foot_moves": 6,
+                    "transfers": 12,
+                    "total_proxy_effort": 510.49057,
+                    "peak_proxy_burden": 58.87705,
+                    "final_load": 131.14537
+                  },
+                  "status": "pass",
+                  "character": {
+                    "score": 0.79512,
+                    "hand_lateral_travel_m": 2.0924,
+                    "mean_directional_demand": 0.1171,
+                    "foot_hand_transfer_ratio": 1.0,
+                    "basis": "observed_contact_geometry_not_force_or_technique_proof"
+                  },
+                  "mechanics_summary": {
+                    "status": "infeasible",
+                    "feasible_states": 13,
+                    "infeasible_states": 12,
+                    "unknown_states": 0,
+                    "release_states": 12,
+                    "release_infeasible_states": 7,
+                    "release_unknown_states": 0,
+                    "max_capacity_utilization": 0.6660986,
+                    "worst_state_id": "b3"
+                  }
+                },
+                {
+                  "summary": {
+                    "hand_moves": 6,
+                    "foot_moves": 6,
+                    "transfers": 12,
+                    "total_proxy_effort": 513.16208,
+                    "peak_proxy_burden": 58.76241,
+                    "final_load": 130.80259
+                  },
+                  "status": "pass",
+                  "character": {
+                    "score": 0.79512,
+                    "hand_lateral_travel_m": 2.0924,
+                    "mean_directional_demand": 0.1171,
+                    "foot_hand_transfer_ratio": 1.0,
+                    "basis": "observed_contact_geometry_not_force_or_technique_proof"
+                  },
+                  "mechanics_summary": {
+                    "status": "infeasible",
+                    "feasible_states": 13,
+                    "infeasible_states": 11,
+                    "unknown_states": 1,
+                    "release_states": 12,
+                    "release_infeasible_states": 7,
+                    "release_unknown_states": 0,
+                    "max_capacity_utilization": 0.6864902,
+                    "worst_state_id": "b1"
+                  }
+                },
+                {
+                  "summary": {
+                    "hand_moves": 5,
+                    "foot_moves": 7,
+                    "transfers": 12,
+                    "total_proxy_effort": 481.09032,
+                    "peak_proxy_burden": 58.73339,
+                    "final_load": 118.33985
+                  },
+                  "status": "pass",
+                  "character": {
+                    "score": 0.81821,
+                    "hand_lateral_travel_m": 2.0924,
+                    "mean_directional_demand": 0.1402,
+                    "foot_hand_transfer_ratio": 1.4,
+                    "basis": "observed_contact_geometry_not_force_or_technique_proof"
+                  },
+                  "mechanics_summary": {
+                    "status": "infeasible",
+                    "feasible_states": 12,
+                    "infeasible_states": 13,
+                    "unknown_states": 0,
+                    "release_states": 12,
+                    "release_infeasible_states": 8,
+                    "release_unknown_states": 0,
+                    "max_capacity_utilization": 0.7012479,
+                    "worst_state_id": "b3"
+                  }
+                },
+                {
+                  "summary": {
+                    "hand_moves": 6,
+                    "foot_moves": 6,
+                    "transfers": 12,
+                    "total_proxy_effort": 508.08725,
+                    "peak_proxy_burden": 58.73339,
+                    "final_load": 130.71581
+                  },
+                  "status": "pass",
+                  "character": {
+                    "score": 0.79512,
+                    "hand_lateral_travel_m": 2.0924,
+                    "mean_directional_demand": 0.1171,
+                    "foot_hand_transfer_ratio": 1.0,
+                    "basis": "observed_contact_geometry_not_force_or_technique_proof"
+                  },
+                  "mechanics_summary": {
+                    "status": "infeasible",
+                    "feasible_states": 12,
+                    "infeasible_states": 13,
+                    "unknown_states": 0,
+                    "release_states": 12,
+                    "release_infeasible_states": 8,
+                    "release_unknown_states": 0,
+                    "max_capacity_utilization": 0.7012479,
+                    "worst_state_id": "b3"
+                  }
+                }
+              ]
+            },
+            {
+              "index": 1,
+              "search": [
+                {
+                  "objective": "fewer_transfers",
+                  "expanded": 2559,
+                  "complete_sequences": 7,
+                  "budget_exhausted": false,
+                  "termination_reason": "first_complete_beam_depth",
+                  "rejected": {
+                    "hand_match_not_supported_by_selected_patch": 220,
+                    "local_contact_corridor_search_assumption": 943,
+                    "necessary_contact_span": 424,
+                    "simultaneous_feet_same_point": 261,
+                    "beam_pruned": 204,
+                    "dominated_contacts_and_load": 264
+                  },
+                  "depth_reached": 12
+                },
+                {
+                  "objective": "lower_proxy_effort",
+                  "expanded": 2638,
+                  "complete_sequences": 19,
+                  "budget_exhausted": false,
+                  "termination_reason": "retained_frontier_cost_bound",
+                  "rejected": {
+                    "hand_match_not_supported_by_selected_patch": 208,
+                    "local_contact_corridor_search_assumption": 1027,
+                    "necessary_contact_span": 372,
+                    "simultaneous_feet_same_point": 284,
+                    "beam_pruned": 222,
+                    "dominated_contacts_and_load": 250
+                  },
+                  "depth_reached": 13
+                }
+              ],
+              "status": "pass",
+              "character_score": 0.80541,
+              "mechanical_rank": [
+                false,
+                -0.3333333333333333,
+                -0.48,
+                0.6769918,
+                506.2414
+              ],
+              "evaluations": [
+                {
+                  "summary": {
+                    "hand_moves": 6,
+                    "foot_moves": 6,
+                    "transfers": 12,
+                    "total_proxy_effort": 506.2414,
+                    "peak_proxy_burden": 58.96245,
+                    "final_load": 131.31248
+                  },
+                  "status": "pass",
+                  "character": {
+                    "score": 0.80541,
+                    "hand_lateral_travel_m": 2.0873,
+                    "mean_directional_demand": 0.1285,
+                    "foot_hand_transfer_ratio": 1.0,
+                    "basis": "observed_contact_geometry_not_force_or_technique_proof"
+                  },
+                  "mechanics_summary": {
+                    "status": "infeasible",
+                    "feasible_states": 12,
+                    "infeasible_states": 12,
+                    "unknown_states": 1,
+                    "release_states": 12,
+                    "release_infeasible_states": 7,
+                    "release_unknown_states": 1,
+                    "max_capacity_utilization": 0.6769918,
+                    "worst_state_id": "b3"
+                  }
+                },
+                {
+                  "summary": {
+                    "hand_moves": 5,
+                    "foot_moves": 7,
+                    "transfers": 12,
+                    "total_proxy_effort": 480.38689,
+                    "peak_proxy_burden": 58.72442,
+                    "final_load": 118.12955
+                  },
+                  "status": "pass",
+                  "character": {
+                    "score": 0.83077,
+                    "hand_lateral_travel_m": 2.0873,
+                    "mean_directional_demand": 0.1538,
+                    "foot_hand_transfer_ratio": 1.4,
+                    "basis": "observed_contact_geometry_not_force_or_technique_proof"
+                  },
+                  "mechanics_summary": {
+                    "status": "infeasible",
+                    "feasible_states": 12,
+                    "infeasible_states": 13,
+                    "unknown_states": 0,
+                    "release_states": 12,
+                    "release_infeasible_states": 8,
+                    "release_unknown_states": 0,
+                    "max_capacity_utilization": 0.6828948,
+                    "worst_state_id": "b3"
+                  }
+                },
+                {
+                  "summary": {
+                    "hand_moves": 5,
+                    "foot_moves": 7,
+                    "transfers": 12,
+                    "total_proxy_effort": 475.81145,
+                    "peak_proxy_burden": 58.82797,
+                    "final_load": 118.43395
+                  },
+                  "status": "pass",
+                  "character": {
+                    "score": 0.83077,
+                    "hand_lateral_travel_m": 2.0873,
+                    "mean_directional_demand": 0.1538,
+                    "foot_hand_transfer_ratio": 1.4,
+                    "basis": "observed_contact_geometry_not_force_or_technique_proof"
+                  },
+                  "mechanics_summary": {
+                    "status": "infeasible",
+                    "feasible_states": 12,
+                    "infeasible_states": 13,
+                    "unknown_states": 0,
+                    "release_states": 12,
+                    "release_infeasible_states": 8,
+                    "release_unknown_states": 0,
+                    "max_capacity_utilization": 0.763276,
+                    "worst_state_id": "b3"
+                  }
+                },
+                {
+                  "summary": {
+                    "hand_moves": 5,
+                    "foot_moves": 7,
+                    "transfers": 12,
+                    "total_proxy_effort": 478.19799,
+                    "peak_proxy_burden": 58.82797,
+                    "final_load": 118.73805
+                  },
+                  "status": "pass",
+                  "character": {
+                    "score": 0.83077,
+                    "hand_lateral_travel_m": 2.0873,
+                    "mean_directional_demand": 0.1538,
+                    "foot_hand_transfer_ratio": 1.4,
+                    "basis": "observed_contact_geometry_not_force_or_technique_proof"
+                  },
+                  "mechanics_summary": {
+                    "status": "infeasible",
+                    "feasible_states": 12,
+                    "infeasible_states": 13,
+                    "unknown_states": 0,
+                    "release_states": 12,
+                    "release_infeasible_states": 8,
+                    "release_unknown_states": 0,
+                    "max_capacity_utilization": 0.763276,
+                    "worst_state_id": "b3"
+                  }
+                },
+                {
+                  "summary": {
+                    "hand_moves": 6,
+                    "foot_moves": 6,
+                    "transfers": 12,
+                    "total_proxy_effort": 503.7631,
+                    "peak_proxy_burden": 58.82797,
+                    "final_load": 130.91012
+                  },
+                  "status": "pass",
+                  "character": {
+                    "score": 0.80541,
+                    "hand_lateral_travel_m": 2.0873,
+                    "mean_directional_demand": 0.1285,
+                    "foot_hand_transfer_ratio": 1.0,
+                    "basis": "observed_contact_geometry_not_force_or_technique_proof"
+                  },
+                  "mechanics_summary": {
+                    "status": "infeasible",
+                    "feasible_states": 12,
+                    "infeasible_states": 13,
+                    "unknown_states": 0,
+                    "release_states": 12,
+                    "release_infeasible_states": 8,
+                    "release_unknown_states": 0,
+                    "max_capacity_utilization": 0.763276,
+                    "worst_state_id": "b3"
+                  }
+                },
+                {
+                  "summary": {
+                    "hand_moves": 6,
+                    "foot_moves": 6,
+                    "transfers": 12,
+                    "total_proxy_effort": 513.53968,
+                    "peak_proxy_burden": 59.94388,
+                    "final_load": 129.68614
+                  },
+                  "status": "pass",
+                  "character": {
+                    "score": 0.80541,
+                    "hand_lateral_travel_m": 2.0873,
+                    "mean_directional_demand": 0.1285,
+                    "foot_hand_transfer_ratio": 1.0,
+                    "basis": "observed_contact_geometry_not_force_or_technique_proof"
+                  },
+                  "mechanics_summary": {
+                    "status": "infeasible",
+                    "feasible_states": 7,
+                    "infeasible_states": 18,
+                    "unknown_states": 0,
+                    "release_states": 12,
+                    "release_infeasible_states": 10,
+                    "release_unknown_states": 0,
+                    "max_capacity_utilization": 0.4948978,
+                    "worst_state_id": "b3"
+                  }
+                }
+              ]
+            },
+            {
+              "index": 2,
+              "search": [
+                {
+                  "objective": "fewer_transfers",
+                  "expanded": 2572,
+                  "complete_sequences": 10,
+                  "budget_exhausted": false,
+                  "termination_reason": "first_complete_beam_depth",
+                  "rejected": {
+                    "hand_match_not_supported_by_selected_patch": 200,
+                    "local_contact_corridor_search_assumption": 973,
+                    "necessary_contact_span": 433,
+                    "simultaneous_feet_same_point": 257,
+                    "beam_pruned": 212,
+                    "dominated_contacts_and_load": 251
+                  },
+                  "depth_reached": 12
+                },
+                {
+                  "objective": "lower_proxy_effort",
+                  "expanded": 2606,
+                  "complete_sequences": 19,
+                  "budget_exhausted": false,
+                  "termination_reason": "retained_frontier_cost_bound",
+                  "rejected": {
+                    "hand_match_not_supported_by_selected_patch": 205,
+                    "local_contact_corridor_search_assumption": 991,
+                    "necessary_contact_span": 405,
+                    "simultaneous_feet_same_point": 281,
+                    "beam_pruned": 240,
+                    "dominated_contacts_and_load": 209
+                  },
+                  "depth_reached": 13
+                }
+              ],
+              "status": "fail",
+              "character_score": 0,
+              "mechanical_rank": [
+                true,
+                -0.0,
+                -0.0,
+                1000000.0,
+                486.74748
+              ],
+              "evaluations": [
+                {
+                  "summary": {
+                    "hand_moves": 5,
+                    "foot_moves": 7,
+                    "transfers": 12,
+                    "total_proxy_effort": 486.74748,
+                    "peak_proxy_burden": 59.22134,
+                    "final_load": 119.89521
+                  },
+                  "status": "fail",
+                  "character": {
+                    "score": 0.83958,
+                    "hand_lateral_travel_m": 2.1303,
+                    "mean_directional_demand": 0.1538,
+                    "foot_hand_transfer_ratio": 1.4,
+                    "basis": "observed_contact_geometry_not_force_or_technique_proof"
+                  },
+                  "mechanics_summary": {
+                    "status": "unknown",
+                    "feasible_states": 0,
+                    "infeasible_states": 0,
+                    "unknown_states": 25,
+                    "release_states": 12,
+                    "release_infeasible_states": 0,
+                    "release_unknown_states": 12,
+                    "max_capacity_utilization": null,
+                    "worst_state_id": "b0"
+                  }
+                },
+                {
+                  "summary": {
+                    "hand_moves": 5,
+                    "foot_moves": 7,
+                    "transfers": 12,
+                    "total_proxy_effort": 487.52544,
+                    "peak_proxy_burden": 59.22134,
+                    "final_load": 120.8627
+                  },
+                  "status": "fail",
+                  "character": {
+                    "score": 0.83958,
+                    "hand_lateral_travel_m": 2.1303,
+                    "mean_directional_demand": 0.1538,
+                    "foot_hand_transfer_ratio": 1.4,
+                    "basis": "observed_contact_geometry_not_force_or_technique_proof"
+                  },
+                  "mechanics_summary": {
+                    "status": "unknown",
+                    "feasible_states": 0,
+                    "infeasible_states": 0,
+                    "unknown_states": 25,
+                    "release_states": 12,
+                    "release_infeasible_states": 0,
+                    "release_unknown_states": 12,
+                    "max_capacity_utilization": null,
+                    "worst_state_id": "b0"
+                  }
+                },
+                {
+                  "summary": {
+                    "hand_moves": 5,
+                    "foot_moves": 7,
+                    "transfers": 12,
+                    "total_proxy_effort": 488.71136,
+                    "peak_proxy_burden": 58.98174,
+                    "final_load": 119.19133
+                  },
+                  "status": "fail",
+                  "character": {
+                    "score": 0.83141,
+                    "hand_lateral_travel_m": 2.0904,
+                    "mean_directional_demand": 0.1538,
+                    "foot_hand_transfer_ratio": 1.4,
+                    "basis": "observed_contact_geometry_not_force_or_technique_proof"
+                  },
+                  "mechanics_summary": {
+                    "status": "unknown",
+                    "feasible_states": 0,
+                    "infeasible_states": 0,
+                    "unknown_states": 25,
+                    "release_states": 12,
+                    "release_infeasible_states": 0,
+                    "release_unknown_states": 12,
+                    "max_capacity_utilization": null,
+                    "worst_state_id": "b0"
+                  }
+                },
+                {
+                  "summary": {
+                    "hand_moves": 6,
+                    "foot_moves": 6,
+                    "transfers": 12,
+                    "total_proxy_effort": 538.23254,
+                    "peak_proxy_burden": 63.13211,
+                    "final_load": 132.87077
+                  },
+                  "status": "fail",
+                  "character": {
+                    "score": 0.81422,
+                    "hand_lateral_travel_m": 2.1303,
+                    "mean_directional_demand": 0.1285,
+                    "foot_hand_transfer_ratio": 1.0,
+                    "basis": "observed_contact_geometry_not_force_or_technique_proof"
+                  },
+                  "mechanics_summary": {
+                    "status": "unknown",
+                    "feasible_states": 0,
+                    "infeasible_states": 0,
+                    "unknown_states": 25,
+                    "release_states": 12,
+                    "release_infeasible_states": 0,
+                    "release_unknown_states": 12,
+                    "max_capacity_utilization": null,
+                    "worst_state_id": "b0"
+                  }
+                },
+                {
+                  "summary": {
+                    "hand_moves": 6,
+                    "foot_moves": 6,
+                    "transfers": 12,
+                    "total_proxy_effort": 539.52577,
+                    "peak_proxy_burden": 63.13211,
+                    "final_load": 131.0871
+                  },
+                  "status": "fail",
+                  "character": {
+                    "score": 0.81422,
+                    "hand_lateral_travel_m": 2.1303,
+                    "mean_directional_demand": 0.1285,
+                    "foot_hand_transfer_ratio": 1.0,
+                    "basis": "observed_contact_geometry_not_force_or_technique_proof"
+                  },
+                  "mechanics_summary": {
+                    "status": "unknown",
+                    "feasible_states": 0,
+                    "infeasible_states": 0,
+                    "unknown_states": 25,
+                    "release_states": 12,
+                    "release_infeasible_states": 0,
+                    "release_unknown_states": 12,
+                    "max_capacity_utilization": null,
+                    "worst_state_id": "b0"
+                  }
+                },
+                {
+                  "summary": {
+                    "hand_moves": 6,
+                    "foot_moves": 6,
+                    "transfers": 12,
+                    "total_proxy_effort": 540.18797,
+                    "peak_proxy_burden": 62.91408,
+                    "final_load": 132.15474
+                  },
+                  "status": "fail",
+                  "character": {
+                    "score": 0.80605,
+                    "hand_lateral_travel_m": 2.0904,
+                    "mean_directional_demand": 0.1285,
+                    "foot_hand_transfer_ratio": 1.0,
+                    "basis": "observed_contact_geometry_not_force_or_technique_proof"
+                  },
+                  "mechanics_summary": {
+                    "status": "unknown",
+                    "feasible_states": 0,
+                    "infeasible_states": 0,
+                    "unknown_states": 25,
+                    "release_states": 12,
+                    "release_infeasible_states": 0,
+                    "release_unknown_states": 12,
+                    "max_capacity_utilization": null,
+                    "worst_state_id": "b0"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "roof_exit": {
+      "assets": {
+        "file": "fixtures/setting-roof_exit-bundle.json",
+        "bundle_digest": "sha256:cb37650818d56651aa14dae9277bb79fec49363c7db2e54cd066287ad0a27a4f",
+        "candidate_id": "setting-roof_exit-trial0-beta4",
+        "hold_source": "assets",
+        "wall_profile": "default",
+        "p0": {
+          "status": "pass",
+          "passed": 57,
+          "total": 57
+        },
+        "mechanics": {
+          "status": "infeasible",
+          "feasible_states": 12,
+          "infeasible_states": 17,
+          "unknown_states": 0,
+          "release_states": 14,
+          "release_infeasible_states": 10,
+          "release_unknown_states": 0,
+          "max_capacity_utilization": 0.7376108,
+          "worst_state_id": "b3"
+        },
+        "baseline_mechanics": {
+          "status": "infeasible",
+          "feasible_states": 12,
+          "infeasible_states": 17,
+          "unknown_states": 0,
+          "release_states": 14,
+          "release_infeasible_states": 10,
+          "release_unknown_states": 0,
+          "max_capacity_utilization": 0.7376108,
+          "worst_state_id": "b3"
+        },
+        "moves": 14,
+        "states": 29,
+        "installed": 18,
+        "used": 17,
+        "unused": [
+          "foot-3"
+        ],
+        "imported_instances": [
+          {
+            "id": "start-left",
+            "asset_id": "setrsoft-12-jug",
+            "family": "jug",
+            "scale": 0.872403282148042,
+            "dimensions_m": [
+              0.23,
+              0.2153974346943558,
+              0.053606119552476836
+            ]
+          },
+          {
+            "id": "start-right",
+            "asset_id": "setrsoft-12-jug",
+            "family": "jug",
+            "scale": 0.872403282148042,
+            "dimensions_m": [
+              0.23,
+              0.2153974346943558,
+              0.053606119552476836
+            ]
+          },
+          {
+            "id": "hand-1",
+            "asset_id": "setrsoft-17-pinch",
+            "family": "pinch",
+            "scale": 0.799089226303009,
+            "dimensions_m": [
+              0.17,
+              0.2968335995397246,
+              0.06976633878938922
+            ]
+          },
+          {
+            "id": "hand-2",
+            "asset_id": "setrsoft-25-crimp",
+            "family": "crimp",
+            "scale": 0.892823768254377,
+            "dimensions_m": [
+              0.15,
+              0.06480947021742281,
+              0.013771913764175957
+            ]
+          },
+          {
+            "id": "hand-3",
+            "asset_id": "setrsoft-11-sloper",
+            "family": "sloper",
+            "scale": 0.3909316064372675,
+            "dimensions_m": [
+              0.3,
+              0.14691593664750036,
+              0.06380748150834863
+            ]
+          },
+          {
+            "id": "hand-5",
+            "asset_id": "setrsoft-12-jug",
+            "family": "jug",
+            "scale": 0.872403282148042,
+            "dimensions_m": [
+              0.23,
+              0.2153974346943558,
+              0.053606119552476836
+            ]
+          },
+          {
+            "id": "top",
+            "asset_id": "setrsoft-12-jug",
+            "family": "jug",
+            "scale": 1.3655007894491091,
+            "dimensions_m": [
+              0.36,
+              0.3371438108259482,
+              0.0839052306038768
+            ]
+          }
+        ],
+        "fallbacks": [
+          {
+            "id": "hand-4",
+            "family": "pocket",
+            "reason": "no registered external mesh for this family"
+          }
+        ],
+        "asset_application": {
+          "mapped_instances": [
+            "start-left",
+            "start-right",
+            "hand-1",
+            "hand-2",
+            "hand-3",
+            "hand-5",
+            "top"
+          ],
+          "fallbacks": [
+            {
+              "inventory_id": "hand-4",
+              "reason": "no registered external mesh for this family"
+            }
+          ],
+          "scale_policy": "uniform_to_template_width_unmeasured_demo_size",
+          "placement_policy": "preserve selected contact XY in local mounting plane; depth follows mesh",
+          "footprint_adjustment": {
+            "method": "bounded_axis_translation_of_nonanchor_feet",
+            "max_displacement_m": 0.07,
+            "grid_step_m": 0.005,
+            "clearance_m": 0.005,
+            "changes": [
+              {
+                "placement_id": "foot-3",
+                "before": {
+                  "u": -0.74,
+                  "v": 1.2550000000000001
+                },
+                "after": {
+                  "u": -0.74,
+                  "v": 1.29
+                },
+                "collided_with": [
+                  "start-left"
+                ],
+                "reason": "smallest tested axis translation separating conservative mesh OBBs; beta/IK still required"
+              }
+            ],
+            "unresolved_collisions": []
+          },
+          "limitations": [
+            "外部三角网格来自列明来源；演示尺寸未经实测，使用同比缩放。",
+            "抓握面及椭圆范围为AI草稿标注，代表点和法向绑定三角面；抓握能力、摩擦及可抓握范围未经实测。",
+            "碰撞仍用覆盖网格的保守包围盒；安装背板不属于可安装子岩点的体积块斜面。"
+          ]
+        },
+        "wall_application": null,
+        "geometry_changes": 0,
+        "verified_alternatives": 5,
+        "search": {
+          "timeout_seconds": 60,
+          "elapsed_ms": 14378.67,
+          "time_budget_exhausted": false,
+          "geometry_trials": 3,
+          "selected_trial": 0,
+          "hand_count_policy": "free; only start/TOP required",
+          "coverage_policy": "unused installed holds allowed",
+          "ranking": "P0 first; maximize current-pose release equilibrium fraction, then all-state equilibrium fraction, then lower required axial capacity utilization; geometry character does not select layouts",
+          "trials": [
+            {
+              "index": 0,
+              "search": [
+                {
+                  "objective": "fewer_transfers",
+                  "expanded": 2992,
+                  "complete_sequences": 10,
+                  "budget_exhausted": false,
+                  "termination_reason": "first_complete_beam_depth",
+                  "rejected": {
+                    "hand_match_not_supported_by_selected_patch": 370,
+                    "local_contact_corridor_search_assumption": 985,
+                    "necessary_contact_span": 519,
+                    "simultaneous_feet_same_point": 360,
+                    "beam_pruned": 202,
+                    "dominated_contacts_and_load": 266
+                  },
+                  "depth_reached": 14
+                },
+                {
+                  "objective": "lower_proxy_effort",
+                  "expanded": 3031,
+                  "complete_sequences": 26,
+                  "budget_exhausted": false,
+                  "termination_reason": "retained_frontier_cost_bound",
+                  "rejected": {
+                    "hand_match_not_supported_by_selected_patch": 361,
+                    "local_contact_corridor_search_assumption": 997,
+                    "necessary_contact_span": 506,
+                    "simultaneous_feet_same_point": 376,
+                    "beam_pruned": 182,
+                    "dominated_contacts_and_load": 287
+                  },
+                  "depth_reached": 15
+                }
+              ],
+              "status": "pass",
+              "character_score": 0.86063,
+              "mechanical_rank": [
+                false,
+                -0.2857142857142857,
+                -0.41379310344827586,
+                0.7376108,
+                678.44498
+              ],
+              "evaluations": [
+                {
+                  "summary": {
+                    "hand_moves": 7,
+                    "foot_moves": 7,
+                    "transfers": 14,
+                    "total_proxy_effort": 678.44498,
+                    "peak_proxy_burden": 74.57654,
+                    "final_load": 126.70301
+                  },
+                  "status": "pass",
+                  "character": {
+                    "score": 0.86063,
+                    "hand_lateral_travel_m": 3.0512,
+                    "mean_directional_demand": 0.1606,
+                    "foot_hand_transfer_ratio": 1.0,
+                    "basis": "observed_contact_geometry_not_force_or_technique_proof"
+                  },
+                  "mechanics_summary": {
+                    "status": "infeasible",
+                    "feasible_states": 12,
+                    "infeasible_states": 17,
+                    "unknown_states": 0,
+                    "release_states": 14,
+                    "release_infeasible_states": 10,
+                    "release_unknown_states": 0,
+                    "max_capacity_utilization": 0.7376108,
+                    "worst_state_id": "b3"
+                  }
+                },
+                {
+                  "summary": {
+                    "hand_moves": 7,
+                    "foot_moves": 7,
+                    "transfers": 14,
+                    "total_proxy_effort": 677.20575,
+                    "peak_proxy_burden": 74.57654,
+                    "final_load": 128.19534
+                  },
+                  "status": "pass",
+                  "character": {
+                    "score": 0.86063,
+                    "hand_lateral_travel_m": 3.0512,
+                    "mean_directional_demand": 0.1606,
+                    "foot_hand_transfer_ratio": 1.0,
+                    "basis": "observed_contact_geometry_not_force_or_technique_proof"
+                  },
+                  "mechanics_summary": {
+                    "status": "infeasible",
+                    "feasible_states": 11,
+                    "infeasible_states": 18,
+                    "unknown_states": 0,
+                    "release_states": 14,
+                    "release_infeasible_states": 10,
+                    "release_unknown_states": 0,
+                    "max_capacity_utilization": 0.7376108,
+                    "worst_state_id": "b3"
+                  }
+                },
+                {
+                  "summary": {
+                    "hand_moves": 7,
+                    "foot_moves": 7,
+                    "transfers": 14,
+                    "total_proxy_effort": 678.61732,
+                    "peak_proxy_burden": 74.65202,
+                    "final_load": 128.34822
+                  },
+                  "status": "pass",
+                  "character": {
+                    "score": 0.86063,
+                    "hand_lateral_travel_m": 3.0512,
+                    "mean_directional_demand": 0.1606,
+                    "foot_hand_transfer_ratio": 1.0,
+                    "basis": "observed_contact_geometry_not_force_or_technique_proof"
+                  },
+                  "mechanics_summary": {
+                    "status": "infeasible",
+                    "feasible_states": 11,
+                    "infeasible_states": 18,
+                    "unknown_states": 0,
+                    "release_states": 14,
+                    "release_infeasible_states": 10,
+                    "release_unknown_states": 0,
+                    "max_capacity_utilization": 0.7698527,
+                    "worst_state_id": "b3"
+                  }
+                },
+                {
+                  "summary": {
+                    "hand_moves": 7,
+                    "foot_moves": 7,
+                    "transfers": 14,
+                    "total_proxy_effort": 673.79093,
+                    "peak_proxy_burden": 74.52041,
+                    "final_load": 125.45834
+                  },
+                  "status": "pass",
+                  "character": {
+                    "score": 0.86063,
+                    "hand_lateral_travel_m": 2.3112,
+                    "mean_directional_demand": 0.1606,
+                    "foot_hand_transfer_ratio": 1.0,
+                    "basis": "observed_contact_geometry_not_force_or_technique_proof"
+                  },
+                  "mechanics_summary": {
+                    "status": "infeasible",
+                    "feasible_states": 10,
+                    "infeasible_states": 19,
+                    "unknown_states": 0,
+                    "release_states": 14,
+                    "release_infeasible_states": 11,
+                    "release_unknown_states": 0,
+                    "max_capacity_utilization": 0.4748882,
+                    "worst_state_id": "b3"
+                  }
+                },
+                {
+                  "summary": {
+                    "hand_moves": 7,
+                    "foot_moves": 7,
+                    "transfers": 14,
+                    "total_proxy_effort": 673.93626,
+                    "peak_proxy_burden": 74.5891,
+                    "final_load": 127.07932
+                  },
+                  "status": "pass",
+                  "character": {
+                    "score": 0.86063,
+                    "hand_lateral_travel_m": 2.3112,
+                    "mean_directional_demand": 0.1606,
+                    "foot_hand_transfer_ratio": 1.0,
+                    "basis": "observed_contact_geometry_not_force_or_technique_proof"
+                  },
+                  "mechanics_summary": {
+                    "status": "infeasible",
+                    "feasible_states": 10,
+                    "infeasible_states": 19,
+                    "unknown_states": 0,
+                    "release_states": 14,
+                    "release_infeasible_states": 11,
+                    "release_unknown_states": 0,
+                    "max_capacity_utilization": 0.5194148,
+                    "worst_state_id": "b3"
+                  }
+                },
+                {
+                  "summary": {
+                    "hand_moves": 7,
+                    "foot_moves": 7,
+                    "transfers": 14,
+                    "total_proxy_effort": 672.52469,
+                    "peak_proxy_burden": 74.52041,
+                    "final_load": 126.92644
+                  },
+                  "status": "pass",
+                  "character": {
+                    "score": 0.86063,
+                    "hand_lateral_travel_m": 2.3112,
+                    "mean_directional_demand": 0.1606,
+                    "foot_hand_transfer_ratio": 1.0,
+                    "basis": "observed_contact_geometry_not_force_or_technique_proof"
+                  },
+                  "mechanics_summary": {
+                    "status": "infeasible",
+                    "feasible_states": 8,
+                    "infeasible_states": 21,
+                    "unknown_states": 0,
+                    "release_states": 14,
+                    "release_infeasible_states": 12,
+                    "release_unknown_states": 0,
+                    "max_capacity_utilization": 0.4866851,
+                    "worst_state_id": "b3"
+                  }
+                }
+              ]
+            },
+            {
+              "index": 1,
+              "search": [
+                {
+                  "objective": "fewer_transfers",
+                  "expanded": 2958,
+                  "complete_sequences": 12,
+                  "budget_exhausted": false,
+                  "termination_reason": "first_complete_beam_depth",
+                  "rejected": {
+                    "hand_match_not_supported_by_selected_patch": 366,
+                    "local_contact_corridor_search_assumption": 924,
+                    "necessary_contact_span": 515,
+                    "simultaneous_feet_same_point": 370,
+                    "beam_pruned": 269,
+                    "dominated_contacts_and_load": 222
+                  },
+                  "depth_reached": 14
+                },
+                {
+                  "objective": "lower_proxy_effort",
+                  "expanded": 3049,
+                  "complete_sequences": 28,
+                  "budget_exhausted": false,
+                  "termination_reason": "retained_frontier_cost_bound",
+                  "rejected": {
+                    "hand_match_not_supported_by_selected_patch": 352,
+                    "local_contact_corridor_search_assumption": 991,
+                    "necessary_contact_span": 498,
+                    "simultaneous_feet_same_point": 382,
+                    "beam_pruned": 241,
+                    "dominated_contacts_and_load": 258
+                  },
+                  "depth_reached": 15
+                }
+              ],
+              "status": "fail",
+              "character_score": 0,
+              "mechanical_rank": [
+                true,
+                -0.0,
+                -0.0,
+                1000000.0,
+                667.21694
+              ],
+              "evaluations": [
+                {
+                  "summary": {
+                    "hand_moves": 7,
+                    "foot_moves": 7,
+                    "transfers": 14,
+                    "total_proxy_effort": 667.21694,
+                    "peak_proxy_burden": 74.89007,
+                    "final_load": 126.91448
+                  },
+                  "status": "fail",
+                  "character": {
+                    "score": 0.87717,
+                    "hand_lateral_travel_m": 2.2962,
+                    "mean_directional_demand": 0.1772,
+                    "foot_hand_transfer_ratio": 1.0,
+                    "basis": "observed_contact_geometry_not_force_or_technique_proof"
+                  },
+                  "mechanics_summary": {
+                    "status": "unknown",
+                    "feasible_states": 0,
+                    "infeasible_states": 0,
+                    "unknown_states": 29,
+                    "release_states": 14,
+                    "release_infeasible_states": 0,
+                    "release_unknown_states": 14,
+                    "max_capacity_utilization": null,
+                    "worst_state_id": "b0"
+                  }
+                },
+                {
+                  "summary": {
+                    "hand_moves": 7,
+                    "foot_moves": 7,
+                    "transfers": 14,
+                    "total_proxy_effort": 667.9218,
+                    "peak_proxy_burden": 74.89007,
+                    "final_load": 125.30595
+                  },
+                  "status": "fail",
+                  "character": {
+                    "score": 0.87717,
+                    "hand_lateral_travel_m": 2.2962,
+                    "mean_directional_demand": 0.1772,
+                    "foot_hand_transfer_ratio": 1.0,
+                    "basis": "observed_contact_geometry_not_force_or_technique_proof"
+                  },
+                  "mechanics_summary": {
+                    "status": "unknown",
+                    "feasible_states": 0,
+                    "infeasible_states": 0,
+                    "unknown_states": 29,
+                    "release_states": 14,
+                    "release_infeasible_states": 0,
+                    "release_unknown_states": 14,
+                    "max_capacity_utilization": null,
+                    "worst_state_id": "b0"
+                  }
+                },
+                {
+                  "summary": {
+                    "hand_moves": 7,
+                    "foot_moves": 7,
+                    "transfers": 14,
+                    "total_proxy_effort": 668.21019,
+                    "peak_proxy_burden": 74.95774,
+                    "final_load": 127.06509
+                  },
+                  "status": "fail",
+                  "character": {
+                    "score": 0.87717,
+                    "hand_lateral_travel_m": 2.2962,
+                    "mean_directional_demand": 0.1772,
+                    "foot_hand_transfer_ratio": 1.0,
+                    "basis": "observed_contact_geometry_not_force_or_technique_proof"
+                  },
+                  "mechanics_summary": {
+                    "status": "unknown",
+                    "feasible_states": 0,
+                    "infeasible_states": 0,
+                    "unknown_states": 29,
+                    "release_states": 14,
+                    "release_infeasible_states": 0,
+                    "release_unknown_states": 14,
+                    "max_capacity_utilization": null,
+                    "worst_state_id": "b0"
+                  }
+                },
+                {
+                  "summary": {
+                    "hand_moves": 7,
+                    "foot_moves": 7,
+                    "transfers": 14,
+                    "total_proxy_effort": 672.03858,
+                    "peak_proxy_burden": 74.84699,
+                    "final_load": 128.262
+                  },
+                  "status": "fail",
+                  "character": {
+                    "score": 0.87717,
+                    "hand_lateral_travel_m": 3.0551,
+                    "mean_directional_demand": 0.1772,
+                    "foot_hand_transfer_ratio": 1.0,
+                    "basis": "observed_contact_geometry_not_force_or_technique_proof"
+                  },
+                  "mechanics_summary": {
+                    "status": "unknown",
+                    "feasible_states": 0,
+                    "infeasible_states": 0,
+                    "unknown_states": 29,
+                    "release_states": 14,
+                    "release_infeasible_states": 0,
+                    "release_unknown_states": 14,
+                    "max_capacity_utilization": null,
+                    "worst_state_id": "b0"
+                  }
+                },
+                {
+                  "summary": {
+                    "hand_moves": 7,
+                    "foot_moves": 7,
+                    "transfers": 14,
+                    "total_proxy_effort": 672.7145,
+                    "peak_proxy_burden": 74.84699,
+                    "final_load": 126.6271
+                  },
+                  "status": "fail",
+                  "character": {
+                    "score": 0.87717,
+                    "hand_lateral_travel_m": 3.0551,
+                    "mean_directional_demand": 0.1772,
+                    "foot_hand_transfer_ratio": 1.0,
+                    "basis": "observed_contact_geometry_not_force_or_technique_proof"
+                  },
+                  "mechanics_summary": {
+                    "status": "unknown",
+                    "feasible_states": 0,
+                    "infeasible_states": 0,
+                    "unknown_states": 29,
+                    "release_states": 14,
+                    "release_infeasible_states": 0,
+                    "release_unknown_states": 14,
+                    "max_capacity_utilization": null,
+                    "worst_state_id": "b0"
+                  }
+                },
+                {
+                  "summary": {
+                    "hand_moves": 7,
+                    "foot_moves": 7,
+                    "transfers": 14,
+                    "total_proxy_effort": 673.03183,
+                    "peak_proxy_burden": 74.92135,
+                    "final_load": 128.41261
+                  },
+                  "status": "fail",
+                  "character": {
+                    "score": 0.87717,
+                    "hand_lateral_travel_m": 3.0551,
+                    "mean_directional_demand": 0.1772,
+                    "foot_hand_transfer_ratio": 1.0,
+                    "basis": "observed_contact_geometry_not_force_or_technique_proof"
+                  },
+                  "mechanics_summary": {
+                    "status": "unknown",
+                    "feasible_states": 0,
+                    "infeasible_states": 0,
+                    "unknown_states": 29,
+                    "release_states": 14,
+                    "release_infeasible_states": 0,
+                    "release_unknown_states": 14,
+                    "max_capacity_utilization": null,
+                    "worst_state_id": "b0"
+                  }
+                }
+              ]
+            },
+            {
+              "index": 2,
+              "search": [
+                {
+                  "objective": "fewer_transfers",
+                  "expanded": 2370,
+                  "complete_sequences": 17,
+                  "budget_exhausted": false,
+                  "termination_reason": "first_complete_beam_depth",
+                  "rejected": {
+                    "hand_match_not_supported_by_selected_patch": 276,
+                    "local_contact_corridor_search_assumption": 785,
+                    "necessary_contact_span": 402,
+                    "simultaneous_feet_same_point": 286,
+                    "beam_pruned": 150,
+                    "dominated_contacts_and_load": 228
+                  },
+                  "depth_reached": 14
+                },
+                {
+                  "objective": "lower_proxy_effort",
+                  "expanded": 2865,
+                  "complete_sequences": 34,
+                  "budget_exhausted": false,
+                  "termination_reason": "retained_frontier_cost_bound",
+                  "rejected": {
+                    "hand_match_not_supported_by_selected_patch": 302,
+                    "local_contact_corridor_search_assumption": 978,
+                    "necessary_contact_span": 430,
+                    "simultaneous_feet_same_point": 405,
+                    "beam_pruned": 204,
+                    "dominated_contacts_and_load": 225
+                  },
+                  "depth_reached": 15
+                }
+              ],
+              "status": "fail",
+              "character_score": 0,
+              "mechanical_rank": [
+                true,
+                -0.0,
+                -0.0,
+                1000000.0,
+                629.12993
+              ],
+              "evaluations": [
+                {
+                  "summary": {
+                    "hand_moves": 6,
+                    "foot_moves": 8,
+                    "transfers": 14,
+                    "total_proxy_effort": 629.12993,
+                    "peak_proxy_burden": 77.10801,
+                    "final_load": 121.42819
+                  },
+                  "status": "fail",
+                  "character": {
+                    "score": 0.89854,
+                    "hand_lateral_travel_m": 3.0849,
+                    "mean_directional_demand": 0.1985,
+                    "foot_hand_transfer_ratio": 1.3333,
+                    "basis": "observed_contact_geometry_not_force_or_technique_proof"
+                  },
+                  "mechanics_summary": {
+                    "status": "unknown",
+                    "feasible_states": 0,
+                    "infeasible_states": 0,
+                    "unknown_states": 29,
+                    "release_states": 14,
+                    "release_infeasible_states": 0,
+                    "release_unknown_states": 14,
+                    "max_capacity_utilization": null,
+                    "worst_state_id": "b0"
+                  }
+                },
+                {
+                  "summary": {
+                    "hand_moves": 6,
+                    "foot_moves": 8,
+                    "transfers": 14,
+                    "total_proxy_effort": 630.66623,
+                    "peak_proxy_burden": 76.88023,
+                    "final_load": 120.92123
+                  },
+                  "status": "fail",
+                  "character": {
+                    "score": 0.89854,
+                    "hand_lateral_travel_m": 2.7298,
+                    "mean_directional_demand": 0.1985,
+                    "foot_hand_transfer_ratio": 1.3333,
+                    "basis": "observed_contact_geometry_not_force_or_technique_proof"
+                  },
+                  "mechanics_summary": {
+                    "status": "unknown",
+                    "feasible_states": 0,
+                    "infeasible_states": 0,
+                    "unknown_states": 29,
+                    "release_states": 14,
+                    "release_infeasible_states": 0,
+                    "release_unknown_states": 14,
+                    "max_capacity_utilization": null,
+                    "worst_state_id": "b0"
+                  }
+                },
+                {
+                  "summary": {
+                    "hand_moves": 6,
+                    "foot_moves": 8,
+                    "transfers": 14,
+                    "total_proxy_effort": 631.02001,
+                    "peak_proxy_burden": 77.10801,
+                    "final_load": 120.20259
+                  },
+                  "status": "fail",
+                  "character": {
+                    "score": 0.89854,
+                    "hand_lateral_travel_m": 3.0849,
+                    "mean_directional_demand": 0.1985,
+                    "foot_hand_transfer_ratio": 1.3333,
+                    "basis": "observed_contact_geometry_not_force_or_technique_proof"
+                  },
+                  "mechanics_summary": {
+                    "status": "unknown",
+                    "feasible_states": 0,
+                    "infeasible_states": 0,
+                    "unknown_states": 29,
+                    "release_states": 14,
+                    "release_infeasible_states": 0,
+                    "release_unknown_states": 14,
+                    "max_capacity_utilization": null,
+                    "worst_state_id": "b0"
+                  }
+                },
+                {
+                  "summary": {
+                    "hand_moves": 6,
+                    "foot_moves": 8,
+                    "transfers": 14,
+                    "total_proxy_effort": 638.44717,
+                    "peak_proxy_burden": 76.4228,
+                    "final_load": 120.31078
+                  },
+                  "status": "fail",
+                  "character": {
+                    "score": 0.89854,
+                    "hand_lateral_travel_m": 3.0849,
+                    "mean_directional_demand": 0.1985,
+                    "foot_hand_transfer_ratio": 1.3333,
+                    "basis": "observed_contact_geometry_not_force_or_technique_proof"
+                  },
+                  "mechanics_summary": {
+                    "status": "unknown",
+                    "feasible_states": 0,
+                    "infeasible_states": 0,
+                    "unknown_states": 29,
+                    "release_states": 14,
+                    "release_infeasible_states": 0,
+                    "release_unknown_states": 14,
+                    "max_capacity_utilization": null,
+                    "worst_state_id": "b0"
+                  }
+                },
+                {
+                  "summary": {
+                    "hand_moves": 6,
+                    "foot_moves": 8,
+                    "transfers": 14,
+                    "total_proxy_effort": 638.96662,
+                    "peak_proxy_burden": 76.4228,
+                    "final_load": 120.07879
+                  },
+                  "status": "fail",
+                  "character": {
+                    "score": 0.89854,
+                    "hand_lateral_travel_m": 3.0849,
+                    "mean_directional_demand": 0.1985,
+                    "foot_hand_transfer_ratio": 1.3333,
+                    "basis": "observed_contact_geometry_not_force_or_technique_proof"
+                  },
+                  "mechanics_summary": {
+                    "status": "unknown",
+                    "feasible_states": 0,
+                    "infeasible_states": 0,
+                    "unknown_states": 29,
+                    "release_states": 14,
+                    "release_infeasible_states": 0,
+                    "release_unknown_states": 14,
+                    "max_capacity_utilization": null,
+                    "worst_state_id": "b0"
+                  }
+                },
+                {
+                  "summary": {
+                    "hand_moves": 6,
+                    "foot_moves": 8,
+                    "transfers": 14,
+                    "total_proxy_effort": 639.98347,
+                    "peak_proxy_burden": 76.1725,
+                    "final_load": 119.80381
+                  },
+                  "status": "fail",
+                  "character": {
+                    "score": 0.89854,
+                    "hand_lateral_travel_m": 2.7298,
+                    "mean_directional_demand": 0.1985,
+                    "foot_hand_transfer_ratio": 1.3333,
+                    "basis": "observed_contact_geometry_not_force_or_technique_proof"
+                  },
+                  "mechanics_summary": {
+                    "status": "unknown",
+                    "feasible_states": 0,
+                    "infeasible_states": 0,
+                    "unknown_states": 29,
+                    "release_states": 14,
+                    "release_infeasible_states": 0,
+                    "release_unknown_states": 14,
+                    "max_capacity_utilization": null,
+                    "worst_state_id": "b0"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "templates": {
+        "file": "fixtures/setting-templates-roof_exit-bundle.json",
+        "bundle_digest": "sha256:b911b10119e1f20393ca7296f760a770636c960fb3253e14d7ed9160714d9033",
+        "candidate_id": "setting-roof_exit-trial0-beta4",
+        "hold_source": "templates",
+        "wall_profile": "default",
+        "p0": {
+          "status": "pass",
+          "passed": 57,
+          "total": 57
+        },
+        "mechanics": {
+          "status": "infeasible",
+          "feasible_states": 14,
+          "infeasible_states": 14,
+          "unknown_states": 1,
+          "release_states": 14,
+          "release_infeasible_states": 9,
+          "release_unknown_states": 0,
+          "max_capacity_utilization": 1.4957259,
+          "worst_state_id": "b3"
+        },
+        "baseline_mechanics": {
+          "status": "infeasible",
+          "feasible_states": 14,
+          "infeasible_states": 14,
+          "unknown_states": 1,
+          "release_states": 14,
+          "release_infeasible_states": 9,
+          "release_unknown_states": 0,
+          "max_capacity_utilization": 1.4957259,
+          "worst_state_id": "b3"
+        },
+        "moves": 14,
+        "states": 29,
+        "installed": 18,
+        "used": 17,
+        "unused": [
+          "foot-3"
+        ],
+        "imported_instances": [],
+        "fallbacks": [],
+        "asset_application": null,
+        "wall_application": null,
+        "geometry_changes": 0,
+        "verified_alternatives": 5,
+        "search": {
+          "timeout_seconds": 60,
+          "elapsed_ms": 19863.34,
+          "time_budget_exhausted": false,
+          "geometry_trials": 3,
+          "selected_trial": 0,
+          "hand_count_policy": "free; only start/TOP required",
+          "coverage_policy": "unused installed holds allowed",
+          "ranking": "P0 first; maximize current-pose release equilibrium fraction, then all-state equilibrium fraction, then lower required axial capacity utilization; geometry character does not select layouts",
+          "trials": [
+            {
+              "index": 0,
+              "search": [
+                {
+                  "objective": "fewer_transfers",
+                  "expanded": 3148,
+                  "complete_sequences": 11,
+                  "budget_exhausted": false,
+                  "termination_reason": "first_complete_beam_depth",
+                  "rejected": {
+                    "hand_match_not_supported_by_selected_patch": 255,
+                    "local_contact_corridor_search_assumption": 1063,
+                    "necessary_contact_span": 482,
+                    "simultaneous_feet_same_point": 350,
+                    "beam_pruned": 272,
+                    "dominated_contacts_and_load": 317,
+                    "simultaneous_hand_foot_same_point": 132
+                  },
+                  "depth_reached": 14
+                },
+                {
+                  "objective": "lower_proxy_effort",
+                  "expanded": 3334,
+                  "complete_sequences": 28,
+                  "budget_exhausted": false,
+                  "termination_reason": "retained_frontier_cost_bound",
+                  "rejected": {
+                    "hand_match_not_supported_by_selected_patch": 272,
+                    "local_contact_corridor_search_assumption": 1090,
+                    "necessary_contact_span": 500,
+                    "simultaneous_feet_same_point": 389,
+                    "beam_pruned": 263,
+                    "dominated_contacts_and_load": 326,
+                    "simultaneous_hand_foot_same_point": 170
+                  },
+                  "depth_reached": 15
+                }
+              ],
+              "status": "pass",
+              "character_score": 0.88669,
+              "mechanical_rank": [
+                false,
+                -0.35714285714285715,
+                -0.4827586206896552,
+                1.4957259,
+                670.2197
+              ],
+              "evaluations": [
+                {
+                  "summary": {
+                    "hand_moves": 7,
+                    "foot_moves": 7,
+                    "transfers": 14,
+                    "total_proxy_effort": 670.2197,
+                    "peak_proxy_burden": 66.70473,
+                    "final_load": 122.71901
+                  },
+                  "status": "pass",
+                  "character": {
+                    "score": 0.88669,
+                    "hand_lateral_travel_m": 3.0512,
+                    "mean_directional_demand": 0.1867,
+                    "foot_hand_transfer_ratio": 1.0,
+                    "basis": "observed_contact_geometry_not_force_or_technique_proof"
+                  },
+                  "mechanics_summary": {
+                    "status": "infeasible",
+                    "feasible_states": 14,
+                    "infeasible_states": 14,
+                    "unknown_states": 1,
+                    "release_states": 14,
+                    "release_infeasible_states": 9,
+                    "release_unknown_states": 0,
+                    "max_capacity_utilization": 1.4957259,
+                    "worst_state_id": "b3"
+                  }
+                },
+                {
+                  "summary": {
+                    "hand_moves": 7,
+                    "foot_moves": 7,
+                    "transfers": 14,
+                    "total_proxy_effort": 668.91888,
+                    "peak_proxy_burden": 66.62925,
+                    "final_load": 122.57193
+                  },
+                  "status": "pass",
+                  "character": {
+                    "score": 0.88669,
+                    "hand_lateral_travel_m": 3.0512,
+                    "mean_directional_demand": 0.1867,
+                    "foot_hand_transfer_ratio": 1.0,
+                    "basis": "observed_contact_geometry_not_force_or_technique_proof"
+                  },
+                  "mechanics_summary": {
+                    "status": "infeasible",
+                    "feasible_states": 11,
+                    "infeasible_states": 18,
+                    "unknown_states": 0,
+                    "release_states": 14,
+                    "release_infeasible_states": 10,
+                    "release_unknown_states": 0,
+                    "max_capacity_utilization": 1.5287428,
+                    "worst_state_id": "b3"
+                  }
+                },
+                {
+                  "summary": {
+                    "hand_moves": 7,
+                    "foot_moves": 7,
+                    "transfers": 14,
+                    "total_proxy_effort": 667.10975,
+                    "peak_proxy_burden": 66.18432,
+                    "final_load": 121.52561
+                  },
+                  "status": "pass",
+                  "character": {
+                    "score": 0.88669,
+                    "hand_lateral_travel_m": 2.3112,
+                    "mean_directional_demand": 0.1867,
+                    "foot_hand_transfer_ratio": 1.0,
+                    "basis": "observed_contact_geometry_not_force_or_technique_proof"
+                  },
+                  "mechanics_summary": {
+                    "status": "infeasible",
+                    "feasible_states": 10,
+                    "infeasible_states": 18,
+                    "unknown_states": 1,
+                    "release_states": 14,
+                    "release_infeasible_states": 10,
+                    "release_unknown_states": 1,
+                    "max_capacity_utilization": 0.50677,
+                    "worst_state_id": "b3"
+                  }
+                },
+                {
+                  "summary": {
+                    "hand_moves": 7,
+                    "foot_moves": 7,
+                    "transfers": 14,
+                    "total_proxy_effort": 665.80893,
+                    "peak_proxy_burden": 66.11563,
+                    "final_load": 121.37853
+                  },
+                  "status": "pass",
+                  "character": {
+                    "score": 0.88669,
+                    "hand_lateral_travel_m": 2.3112,
+                    "mean_directional_demand": 0.1867,
+                    "foot_hand_transfer_ratio": 1.0,
+                    "basis": "observed_contact_geometry_not_force_or_technique_proof"
+                  },
+                  "mechanics_summary": {
+                    "status": "infeasible",
+                    "feasible_states": 8,
+                    "infeasible_states": 21,
+                    "unknown_states": 0,
+                    "release_states": 14,
+                    "release_infeasible_states": 12,
+                    "release_unknown_states": 0,
+                    "max_capacity_utilization": 0.4899451,
+                    "worst_state_id": "b3"
+                  }
+                },
+                {
+                  "summary": {
+                    "hand_moves": 7,
+                    "foot_moves": 7,
+                    "transfers": 14,
+                    "total_proxy_effort": 668.25977,
+                    "peak_proxy_burden": 65.97363,
+                    "final_load": 121.07448
+                  },
+                  "status": "pass",
+                  "character": {
+                    "score": 0.88669,
+                    "hand_lateral_travel_m": 2.3112,
+                    "mean_directional_demand": 0.1867,
+                    "foot_hand_transfer_ratio": 1.0,
+                    "basis": "observed_contact_geometry_not_force_or_technique_proof"
+                  },
+                  "mechanics_summary": {
+                    "status": "infeasible",
+                    "feasible_states": 8,
+                    "infeasible_states": 21,
+                    "unknown_states": 0,
+                    "release_states": 14,
+                    "release_infeasible_states": 12,
+                    "release_unknown_states": 0,
+                    "max_capacity_utilization": 0.5004321,
+                    "worst_state_id": "b1"
+                  }
+                },
+                {
+                  "summary": {
+                    "hand_moves": 7,
+                    "foot_moves": 7,
+                    "transfers": 14,
+                    "total_proxy_effort": 671.33286,
+                    "peak_proxy_burden": 68.72046,
+                    "final_load": 122.05101
+                  },
+                  "status": "pass",
+                  "character": {
+                    "score": 0.88669,
+                    "hand_lateral_travel_m": 2.3112,
+                    "mean_directional_demand": 0.1867,
+                    "foot_hand_transfer_ratio": 1.0,
+                    "basis": "observed_contact_geometry_not_force_or_technique_proof"
+                  },
+                  "mechanics_summary": {
+                    "status": "infeasible",
+                    "feasible_states": 8,
+                    "infeasible_states": 21,
+                    "unknown_states": 0,
+                    "release_states": 14,
+                    "release_infeasible_states": 12,
+                    "release_unknown_states": 0,
+                    "max_capacity_utilization": 1.689144,
+                    "worst_state_id": "b3"
+                  }
+                }
+              ]
+            },
+            {
+              "index": 1,
+              "search": [
+                {
+                  "objective": "fewer_transfers",
+                  "expanded": 6903,
+                  "complete_sequences": 0,
+                  "budget_exhausted": true,
+                  "termination_reason": "transfer_depth_limit",
+                  "rejected": {
+                    "hand_match_not_supported_by_selected_patch": 508,
+                    "local_contact_corridor_search_assumption": 3270,
+                    "necessary_contact_span": 743,
+                    "simultaneous_feet_same_point": 638,
+                    "beam_pruned": 356,
+                    "dominated_contacts_and_load": 544,
+                    "simultaneous_hand_foot_same_point": 340
+                  },
+                  "depth_reached": 26
+                },
+                {
+                  "objective": "lower_proxy_effort",
+                  "expanded": 6250,
+                  "complete_sequences": 0,
+                  "budget_exhausted": true,
+                  "termination_reason": "transfer_depth_limit",
+                  "rejected": {
+                    "hand_match_not_supported_by_selected_patch": 455,
+                    "local_contact_corridor_search_assumption": 2948,
+                    "necessary_contact_span": 671,
+                    "simultaneous_feet_same_point": 565,
+                    "beam_pruned": 346,
+                    "dominated_contacts_and_load": 457,
+                    "simultaneous_hand_foot_same_point": 349
+                  },
+                  "depth_reached": 26
+                }
+              ],
+              "status": "no_sequence",
+              "evaluations": []
+            },
+            {
+              "index": 2,
+              "search": [
+                {
+                  "objective": "fewer_transfers",
+                  "expanded": 3062,
+                  "complete_sequences": 18,
+                  "budget_exhausted": false,
+                  "termination_reason": "first_complete_beam_depth",
+                  "rejected": {
+                    "hand_match_not_supported_by_selected_patch": 249,
+                    "local_contact_corridor_search_assumption": 1082,
+                    "necessary_contact_span": 467,
+                    "simultaneous_feet_same_point": 348,
+                    "beam_pruned": 268,
+                    "dominated_contacts_and_load": 245,
+                    "simultaneous_hand_foot_same_point": 125
+                  },
+                  "depth_reached": 14
+                },
+                {
+                  "objective": "lower_proxy_effort",
+                  "expanded": 3141,
+                  "complete_sequences": 32,
+                  "budget_exhausted": false,
+                  "termination_reason": "retained_frontier_cost_bound",
+                  "rejected": {
+                    "hand_match_not_supported_by_selected_patch": 252,
+                    "local_contact_corridor_search_assumption": 1095,
+                    "necessary_contact_span": 446,
+                    "simultaneous_feet_same_point": 381,
+                    "beam_pruned": 243,
+                    "dominated_contacts_and_load": 276,
+                    "simultaneous_hand_foot_same_point": 136
+                  },
+                  "depth_reached": 15
+                }
+              ],
+              "status": "pass",
+              "character_score": 0.89721,
+              "mechanical_rank": [
+                false,
+                -0.2857142857142857,
+                -0.41379310344827586,
+                1.5207836,
+                679.64566
+              ],
+              "evaluations": [
+                {
+                  "summary": {
+                    "hand_moves": 7,
+                    "foot_moves": 7,
+                    "transfers": 14,
+                    "total_proxy_effort": 679.64566,
+                    "peak_proxy_burden": 66.69631,
+                    "final_load": 123.03742
+                  },
+                  "status": "pass",
+                  "character": {
+                    "score": 0.89721,
+                    "hand_lateral_travel_m": 3.047,
+                    "mean_directional_demand": 0.1972,
+                    "foot_hand_transfer_ratio": 1.0,
+                    "basis": "observed_contact_geometry_not_force_or_technique_proof"
+                  },
+                  "mechanics_summary": {
+                    "status": "infeasible",
+                    "feasible_states": 12,
+                    "infeasible_states": 17,
+                    "unknown_states": 0,
+                    "release_states": 14,
+                    "release_infeasible_states": 10,
+                    "release_unknown_states": 0,
+                    "max_capacity_utilization": 1.5207836,
+                    "worst_state_id": "b3"
+                  }
+                },
+                {
+                  "summary": {
+                    "hand_moves": 7,
+                    "foot_moves": 7,
+                    "transfers": 14,
+                    "total_proxy_effort": 677.94607,
+                    "peak_proxy_burden": 66.60605,
+                    "final_load": 122.86159
+                  },
+                  "status": "pass",
+                  "character": {
+                    "score": 0.89721,
+                    "hand_lateral_travel_m": 3.047,
+                    "mean_directional_demand": 0.1972,
+                    "foot_hand_transfer_ratio": 1.0,
+                    "basis": "observed_contact_geometry_not_force_or_technique_proof"
+                  },
+                  "mechanics_summary": {
+                    "status": "infeasible",
+                    "feasible_states": 10,
+                    "infeasible_states": 19,
+                    "unknown_states": 0,
+                    "release_states": 14,
+                    "release_infeasible_states": 11,
+                    "release_unknown_states": 0,
+                    "max_capacity_utilization": 1.7316199,
+                    "worst_state_id": "b3"
+                  }
+                },
+                {
+                  "summary": {
+                    "hand_moves": 7,
+                    "foot_moves": 7,
+                    "transfers": 14,
+                    "total_proxy_effort": 679.20145,
+                    "peak_proxy_burden": 70.47844,
+                    "final_load": 122.60165
+                  },
+                  "status": "pass",
+                  "character": {
+                    "score": 0.89721,
+                    "hand_lateral_travel_m": 2.3106,
+                    "mean_directional_demand": 0.1972,
+                    "foot_hand_transfer_ratio": 1.0,
+                    "basis": "observed_contact_geometry_not_force_or_technique_proof"
+                  },
+                  "mechanics_summary": {
+                    "status": "infeasible",
+                    "feasible_states": 6,
+                    "infeasible_states": 23,
+                    "unknown_states": 0,
+                    "release_states": 14,
+                    "release_infeasible_states": 13,
+                    "release_unknown_states": 0,
+                    "max_capacity_utilization": 0.5164826,
+                    "worst_state_id": "b3"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      }
+    }
+  }
+}

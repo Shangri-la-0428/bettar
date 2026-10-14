@@ -1,0 +1,70 @@
+{
+  "code_hash": "sha256:3cafccd9c2df6f058a33f4ccc0e55ddc5e4c239b593ecaa5cac809c0e79e4dd2",
+  "files": [
+    {
+      "file": "fixtures/catalog-10deg-bundle.json",
+      "candidates": 3,
+      "valid": true
+    },
+    {
+      "file": "fixtures/catalog-demo-bundle.json",
+      "candidates": 3,
+      "valid": true
+    },
+    {
+      "file": "fixtures/competition-10deg-bundle.json",
+      "candidates": 3,
+      "valid": true
+    },
+    {
+      "file": "fixtures/competition-demo-bundle.json",
+      "candidates": 3,
+      "valid": true
+    },
+    {
+      "file": "fixtures/demo-bundle.json",
+      "candidates": 3,
+      "valid": true
+    },
+    {
+      "file": "fixtures/route-demo-bundle.json",
+      "candidates": 3,
+      "valid": true
+    },
+    {
+      "file": "fixtures/route-mixed_flow-bundle.json",
+      "candidates": 3,
+      "valid": true
+    },
+    {
+      "file": "fixtures/route-power_finish-bundle.json",
+      "candidates": 3,
+      "valid": true
+    },
+    {
+      "file": "fixtures/route-sustained_finish-bundle.json",
+      "candidates": 3,
+      "valid": true
+    },
+    {
+      "file": "fixtures/style-demo-bundle.json",
+      "candidates": 3,
+      "valid": true
+    },
+    {
+      "file": "fixtures/style-power-bundle.json",
+      "candidates": 3,
+      "valid": true
+    },
+    {
+      "file": "fixtures/style-sustained-bundle.json",
+      "candidates": 3,
+      "valid": true
+    },
+    {
+      "file": "fixtures/style-technical-bundle.json",
+      "candidates": 3,
+      "valid": true
+    }
+  ]
+}

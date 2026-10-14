@@ -1,0 +1,2657 @@
+{
+  "source": "synthetic_assumption",
+  "code_hash": "sha256:1fde4021beb1e690be1ef15587f32fd1cf04af82fffdf2622d837d1ecb499edd",
+  "comparison": "same wall/pool, same body, same 10 hand transfers; phase program varies",
+  "programs": [
+    {
+      "program": "mixed_flow",
+      "source_bundle": "fixtures/route-mixed_flow-bundle.json",
+      "candidates": [
+        {
+          "candidate_id": "candidate-route-42-1",
+          "status": {
+            "status": "pass",
+            "passed": 66,
+            "total": 66
+          },
+          "hand_moves": 10,
+          "foot_moves": 7,
+          "installed_holds": 20,
+          "unused_installed_holds": 0,
+          "phases": [
+            {
+              "id": "segment-1",
+              "label": "建立",
+              "phase_kind": "establish",
+              "event_start": 0,
+              "event_end": 0,
+              "hand_move_start": 0,
+              "hand_move_end": 0,
+              "target": {
+                "strength": 26.0,
+                "power": 31.0,
+                "technical": 29.0,
+                "load": 37.0
+              },
+              "estimate": {
+                "strength": 32.94715,
+                "power": 30.43296,
+                "technical": 38.69587,
+                "load": 30.02631
+              },
+              "entry_load": 0.0,
+              "exit_load": 21.01842,
+              "rest_opportunity": 0.08758,
+              "load_basis": "contextual_burden"
+            },
+            {
+              "id": "segment-2",
+              "label": "技术转换",
+              "phase_kind": "technical",
+              "event_start": 1,
+              "event_end": 3,
+              "hand_move_start": 1,
+              "hand_move_end": 2,
+              "target": {
+                "strength": 36.0,
+                "power": 37.0,
+                "technical": 62.0,
+                "load": 51.0
+              },
+              "estimate": {
+                "strength": 50.0308,
+                "power": 40.49235,
+                "technical": 61.95031,
+                "load": 51.44539
+              },
+              "entry_load": 21.01842,
+              "exit_load": 82.29897,
+              "rest_opportunity": 0.0,
+              "load_basis": "contextual_burden"
+            },
+            {
+              "id": "segment-3",
+              "label": "力量难点",
+              "phase_kind": "power",
+              "event_start": 4,
+              "event_end": 8,
+              "hand_move_start": 3,
+              "hand_move_end": 4,
+              "target": {
+                "strength": 47.0,
+                "power": 57.0,
+                "technical": 42.0,
+                "load": 61.0
+              },
+              "estimate": {
+                "strength": 49.9026,
+                "power": 57.9841,
+                "technical": 62.62509,
+                "load": 66.10586
+              },
+              "entry_load": 82.29897,
+              "exit_load": 137.62444,
+              "rest_opportunity": 0.0,
+              "load_basis": "contextual_burden"
+            },
+            {
+              "id": "segment-4",
+              "label": "缓和",
+              "phase_kind": "relief",
+              "event_start": 9,
+              "event_end": 9,
+              "hand_move_start": 5,
+              "hand_move_end": 5,
+              "target": {
+                "strength": 23.0,
+                "power": 27.0,
+                "technical": 28.0,
+                "load": 38.0
+              },
+              "estimate": {
+                "strength": 24.07315,
+                "power": 16.50153,
+                "technical": 24.8355,
+                "load": 43.3744
+              },
+              "entry_load": 137.62444,
+              "exit_load": 139.22301,
+              "rest_opportunity": 0.0,
+              "load_basis": "contextual_burden"
+            },
+            {
+              "id": "segment-5",
+              "label": "持续输出",
+              "phase_kind": "sustained",
+              "event_start": 10,
+              "event_end": 13,
+              "hand_move_start": 6,
+              "hand_move_end": 7,
+              "target": {
+                "strength": 39.0,
+                "power": 43.0,
+                "technical": 44.0,
+                "load": 64.0
+              },
+              "estimate": {
+                "strength": 39.06627,
+                "power": 51.47292,
+                "technical": 37.23114,
+                "load": 61.51249
+              },
+              "entry_load": 139.22301,
+              "exit_load": 155.73933,
+              "rest_opportunity": 0.03424,
+              "load_basis": "contextual_burden"
+            },
+            {
+              "id": "segment-6",
+              "label": "终点匹配",
+              "phase_kind": "finish",
+              "event_start": 14,
+              "event_end": 16,
+              "hand_move_start": 8,
+              "hand_move_end": 9,
+              "target": {
+                "strength": 20.0,
+                "power": 32.0,
+                "technical": 27.0,
+                "load": 45.0
+              },
+              "estimate": {
+                "strength": 18.92054,
+                "power": 27.27884,
+                "technical": 23.48538,
+                "load": 46.00694
+              },
+              "entry_load": 155.73933,
+              "exit_load": 139.74491,
+              "rest_opportunity": 0.12179,
+              "load_basis": "contextual_burden"
+            }
+          ],
+          "summary": {
+            "peak_strength": 53.87469,
+            "peak_power": 59.1481,
+            "mean_technical": 43.41152,
+            "total_load": 458.23283,
+            "peak_burden": 67.17825,
+            "crux_event_index": 8,
+            "objective": 0.03404,
+            "load_variability": 11.58832,
+            "hand_moves": 10,
+            "foot_moves": 7,
+            "installed_holds": 20
+          },
+          "history_comparison": {
+            "fresh_peak": 50.32267,
+            "with_history_peak": 67.17825,
+            "delta": 16.85558,
+            "late_move_delta": 24.94183,
+            "initial_load": 0.0,
+            "source": "same_sequence_counterfactual_zero_prior_load",
+            "description": "同一动作序列：每次动作前负荷清零，对比保留真实前序模型状态；非真人实验。"
+          },
+          "sequence": [
+            {
+              "limb": "LH",
+              "to": "hand-01-2"
+            },
+            {
+              "limb": "RH",
+              "to": "hand-02-1"
+            },
+            {
+              "limb": "LF",
+              "to": "foot-02-2"
+            },
+            {
+              "limb": "LH",
+              "to": "hand-03-2"
+            },
+            {
+              "limb": "RF",
+              "to": "foot-03-3"
+            },
+            {
+              "limb": "RH",
+              "to": "hand-05-2"
+            },
+            {
+              "limb": "LF",
+              "to": "foot-05-2"
+            },
+            {
+              "limb": "RF",
+              "to": "foot-06-3"
+            },
+            {
+              "limb": "LH",
+              "to": "hand-06-3"
+            },
+            {
+              "limb": "LH",
+              "to": "hand-07-3"
+            },
+            {
+              "limb": "LF",
+              "to": "foot-08-3"
+            },
+            {
+              "limb": "RH",
+              "to": "hand-09-3"
+            },
+            {
+              "limb": "RF",
+              "to": "foot-09-3"
+            },
+            {
+              "limb": "LH",
+              "to": "hand-10-3"
+            },
+            {
+              "limb": "LF",
+              "to": "foot-11-1"
+            },
+            {
+              "limb": "RH",
+              "to": "top"
+            },
+            {
+              "limb": "LH",
+              "to": "top"
+            }
+          ],
+          "search": {
+            "algorithm": "history_contact_beam_v1",
+            "expanded": 20172,
+            "expansion_limit": 60000,
+            "beam_width": 24,
+            "complete_sequences": 100,
+            "returned_candidates": 3,
+            "distinct_hand_sequences": 2,
+            "rejected": {
+              "beam_pruned": 5093,
+              "contact_geometry_or_overlap": 11950,
+              "lagging_hand_progress": 1895,
+              "same_contacts_inventory_load_bin": 1001
+            },
+            "budget_exhausted": false,
+            "history_state": "relative_load_bin_2_and_installed_inventory",
+            "scope": "synthetic_phase_and_history_search; candidates_get_independent_P0_checks",
+            "pool_count": 70,
+            "seed_policy": "deterministic_design_search; seed_used_for_IK",
+            "reproduced_for_current_route": true
+          }
+        },
+        {
+          "candidate_id": "candidate-route-42-2",
+          "status": {
+            "status": "pass",
+            "passed": 66,
+            "total": 66
+          },
+          "hand_moves": 10,
+          "foot_moves": 7,
+          "installed_holds": 20,
+          "unused_installed_holds": 0,
+          "phases": [
+            {
+              "id": "segment-1",
+              "label": "建立",
+              "phase_kind": "establish",
+              "event_start": 0,
+              "event_end": 0,
+              "hand_move_start": 0,
+              "hand_move_end": 0,
+              "target": {
+                "strength": 26.0,
+                "power": 31.0,
+                "technical": 29.0,
+                "load": 37.0
+              },
+              "estimate": {
+                "strength": 32.94715,
+                "power": 30.43296,
+                "technical": 38.69587,
+                "load": 30.02631
+              },
+              "entry_load": 0.0,
+              "exit_load": 21.01842,
+              "rest_opportunity": 0.08758,
+              "load_basis": "contextual_burden"
+            },
+            {
+              "id": "segment-2",
+              "label": "技术转换",
+              "phase_kind": "technical",
+              "event_start": 1,
+              "event_end": 3,
+              "hand_move_start": 1,
+              "hand_move_end": 2,
+              "target": {
+                "strength": 36.0,
+                "power": 37.0,
+                "technical": 62.0,
+                "load": 51.0
+              },
+              "estimate": {
+                "strength": 50.0308,
+                "power": 40.49235,
+                "technical": 61.95031,
+                "load": 51.44539
+              },
+              "entry_load": 21.01842,
+              "exit_load": 82.29897,
+              "rest_opportunity": 0.0,
+              "load_basis": "contextual_burden"
+            },
+            {
+              "id": "segment-3",
+              "label": "力量难点",
+              "phase_kind": "power",
+              "event_start": 4,
+              "event_end": 8,
+              "hand_move_start": 3,
+              "hand_move_end": 4,
+              "target": {
+                "strength": 47.0,
+                "power": 57.0,
+                "technical": 42.0,
+                "load": 61.0
+              },
+              "estimate": {
+                "strength": 49.9026,
+                "power": 57.9841,
+                "technical": 62.62509,
+                "load": 66.10586
+              },
+              "entry_load": 82.29897,
+              "exit_load": 137.62444,
+              "rest_opportunity": 0.0,
+              "load_basis": "contextual_burden"
+            },
+            {
+              "id": "segment-4",
+              "label": "缓和",
+              "phase_kind": "relief",
+              "event_start": 9,
+              "event_end": 9,
+              "hand_move_start": 5,
+              "hand_move_end": 5,
+              "target": {
+                "strength": 23.0,
+                "power": 27.0,
+                "technical": 28.0,
+                "load": 38.0
+              },
+              "estimate": {
+                "strength": 24.07315,
+                "power": 16.50153,
+                "technical": 24.8355,
+                "load": 43.3744
+              },
+              "entry_load": 137.62444,
+              "exit_load": 139.22301,
+              "rest_opportunity": 0.0,
+              "load_basis": "contextual_burden"
+            },
+            {
+              "id": "segment-5",
+              "label": "持续输出",
+              "phase_kind": "sustained",
+              "event_start": 10,
+              "event_end": 13,
+              "hand_move_start": 6,
+              "hand_move_end": 7,
+              "target": {
+                "strength": 39.0,
+                "power": 43.0,
+                "technical": 44.0,
+                "load": 64.0
+              },
+              "estimate": {
+                "strength": 39.06627,
+                "power": 51.47292,
+                "technical": 37.23114,
+                "load": 61.51249
+              },
+              "entry_load": 139.22301,
+              "exit_load": 155.73933,
+              "rest_opportunity": 0.03424,
+              "load_basis": "contextual_burden"
+            },
+            {
+              "id": "segment-6",
+              "label": "终点匹配",
+              "phase_kind": "finish",
+              "event_start": 14,
+              "event_end": 16,
+              "hand_move_start": 8,
+              "hand_move_end": 9,
+              "target": {
+                "strength": 20.0,
+                "power": 32.0,
+                "technical": 27.0,
+                "load": 45.0
+              },
+              "estimate": {
+                "strength": 17.83334,
+                "power": 24.19759,
+                "technical": 20.23883,
+                "load": 43.44637
+              },
+              "entry_load": 155.73933,
+              "exit_load": 133.78995,
+              "rest_opportunity": 0.15334,
+              "load_basis": "contextual_burden"
+            }
+          ],
+          "summary": {
+            "peak_strength": 53.87469,
+            "peak_power": 59.1481,
+            "mean_technical": 42.76221,
+            "total_load": 452.63813,
+            "peak_burden": 67.17825,
+            "crux_event_index": 8,
+            "objective": 0.03545,
+            "load_variability": 12.00273,
+            "hand_moves": 10,
+            "foot_moves": 7,
+            "installed_holds": 20
+          },
+          "history_comparison": {
+            "fresh_peak": 50.32267,
+            "with_history_peak": 67.17825,
+            "delta": 16.85558,
+            "late_move_delta": 24.57362,
+            "initial_load": 0.0,
+            "source": "same_sequence_counterfactual_zero_prior_load",
+            "description": "同一动作序列：每次动作前负荷清零，对比保留真实前序模型状态；非真人实验。"
+          },
+          "sequence": [
+            {
+              "limb": "LH",
+              "to": "hand-01-2"
+            },
+            {
+              "limb": "RH",
+              "to": "hand-02-1"
+            },
+            {
+              "limb": "LF",
+              "to": "foot-02-2"
+            },
+            {
+              "limb": "LH",
+              "to": "hand-03-2"
+            },
+            {
+              "limb": "RF",
+              "to": "foot-03-3"
+            },
+            {
+              "limb": "RH",
+              "to": "hand-05-2"
+            },
+            {
+              "limb": "LF",
+              "to": "foot-05-2"
+            },
+            {
+              "limb": "RF",
+              "to": "foot-06-3"
+            },
+            {
+              "limb": "LH",
+              "to": "hand-06-3"
+            },
+            {
+              "limb": "LH",
+              "to": "hand-07-3"
+            },
+            {
+              "limb": "LF",
+              "to": "foot-08-3"
+            },
+            {
+              "limb": "RH",
+              "to": "hand-09-3"
+            },
+            {
+              "limb": "RF",
+              "to": "foot-09-3"
+            },
+            {
+              "limb": "LH",
+              "to": "hand-10-3"
+            },
+            {
+              "limb": "LF",
+              "to": "foot-11-2"
+            },
+            {
+              "limb": "LH",
+              "to": "top"
+            },
+            {
+              "limb": "RH",
+              "to": "top"
+            }
+          ],
+          "search": {
+            "algorithm": "history_contact_beam_v1",
+            "expanded": 20172,
+            "expansion_limit": 60000,
+            "beam_width": 24,
+            "complete_sequences": 100,
+            "returned_candidates": 3,
+            "distinct_hand_sequences": 2,
+            "rejected": {
+              "beam_pruned": 5093,
+              "contact_geometry_or_overlap": 11950,
+              "lagging_hand_progress": 1895,
+              "same_contacts_inventory_load_bin": 1001
+            },
+            "budget_exhausted": false,
+            "history_state": "relative_load_bin_2_and_installed_inventory",
+            "scope": "synthetic_phase_and_history_search; candidates_get_independent_P0_checks",
+            "pool_count": 70,
+            "seed_policy": "deterministic_design_search; seed_used_for_IK",
+            "reproduced_for_current_route": true
+          }
+        },
+        {
+          "candidate_id": "candidate-route-42-3",
+          "status": {
+            "status": "pass",
+            "passed": 70,
+            "total": 70
+          },
+          "hand_moves": 10,
+          "foot_moves": 8,
+          "installed_holds": 21,
+          "unused_installed_holds": 0,
+          "phases": [
+            {
+              "id": "segment-1",
+              "label": "建立",
+              "phase_kind": "establish",
+              "event_start": 0,
+              "event_end": 0,
+              "hand_move_start": 0,
+              "hand_move_end": 0,
+              "target": {
+                "strength": 26.0,
+                "power": 31.0,
+                "technical": 29.0,
+                "load": 37.0
+              },
+              "estimate": {
+                "strength": 32.94715,
+                "power": 30.43296,
+                "technical": 38.69587,
+                "load": 30.02631
+              },
+              "entry_load": 0.0,
+              "exit_load": 21.01842,
+              "rest_opportunity": 0.08758,
+              "load_basis": "contextual_burden"
+            },
+            {
+              "id": "segment-2",
+              "label": "技术转换",
+              "phase_kind": "technical",
+              "event_start": 1,
+              "event_end": 3,
+              "hand_move_start": 1,
+              "hand_move_end": 2,
+              "target": {
+                "strength": 36.0,
+                "power": 37.0,
+                "technical": 62.0,
+                "load": 51.0
+              },
+              "estimate": {
+                "strength": 50.0308,
+                "power": 40.49235,
+                "technical": 61.95031,
+                "load": 51.44539
+              },
+              "entry_load": 21.01842,
+              "exit_load": 82.29897,
+              "rest_opportunity": 0.0,
+              "load_basis": "contextual_burden"
+            },
+            {
+              "id": "segment-3",
+              "label": "力量难点",
+              "phase_kind": "power",
+              "event_start": 4,
+              "event_end": 8,
+              "hand_move_start": 3,
+              "hand_move_end": 4,
+              "target": {
+                "strength": 47.0,
+                "power": 57.0,
+                "technical": 42.0,
+                "load": 61.0
+              },
+              "estimate": {
+                "strength": 49.9026,
+                "power": 57.9841,
+                "technical": 62.62509,
+                "load": 66.10586
+              },
+              "entry_load": 82.29897,
+              "exit_load": 137.62444,
+              "rest_opportunity": 0.0,
+              "load_basis": "contextual_burden"
+            },
+            {
+              "id": "segment-4",
+              "label": "缓和",
+              "phase_kind": "relief",
+              "event_start": 9,
+              "event_end": 9,
+              "hand_move_start": 5,
+              "hand_move_end": 5,
+              "target": {
+                "strength": 23.0,
+                "power": 27.0,
+                "technical": 28.0,
+                "load": 38.0
+              },
+              "estimate": {
+                "strength": 24.07315,
+                "power": 16.50153,
+                "technical": 24.8355,
+                "load": 43.3744
+              },
+              "entry_load": 137.62444,
+              "exit_load": 139.22301,
+              "rest_opportunity": 0.0,
+              "load_basis": "contextual_burden"
+            },
+            {
+              "id": "segment-5",
+              "label": "持续输出",
+              "phase_kind": "sustained",
+              "event_start": 10,
+              "event_end": 13,
+              "hand_move_start": 6,
+              "hand_move_end": 7,
+              "target": {
+                "strength": 39.0,
+                "power": 43.0,
+                "technical": 44.0,
+                "load": 64.0
+              },
+              "estimate": {
+                "strength": 39.06627,
+                "power": 51.47292,
+                "technical": 37.23114,
+                "load": 61.51249
+              },
+              "entry_load": 139.22301,
+              "exit_load": 155.73933,
+              "rest_opportunity": 0.03424,
+              "load_basis": "contextual_burden"
+            },
+            {
+              "id": "segment-6",
+              "label": "终点匹配",
+              "phase_kind": "finish",
+              "event_start": 14,
+              "event_end": 17,
+              "hand_move_start": 8,
+              "hand_move_end": 9,
+              "target": {
+                "strength": 20.0,
+                "power": 32.0,
+                "technical": 27.0,
+                "load": 45.0
+              },
+              "estimate": {
+                "strength": 19.06284,
+                "power": 28.17877,
+                "technical": 24.4336,
+                "load": 46.03312
+              },
+              "entry_load": 155.73933,
+              "exit_load": 136.72457,
+              "rest_opportunity": 0.09066,
+              "load_basis": "contextual_burden"
+            }
+          ],
+          "summary": {
+            "peak_strength": 53.87469,
+            "peak_power": 59.1481,
+            "mean_technical": 43.60116,
+            "total_load": 472.4843,
+            "peak_burden": 67.17825,
+            "crux_event_index": 8,
+            "objective": 0.0332,
+            "load_variability": 11.4465,
+            "hand_moves": 10,
+            "foot_moves": 8,
+            "installed_holds": 21
+          },
+          "history_comparison": {
+            "fresh_peak": 50.32267,
+            "with_history_peak": 67.17825,
+            "delta": 16.85558,
+            "late_move_delta": 24.73147,
+            "initial_load": 0.0,
+            "source": "same_sequence_counterfactual_zero_prior_load",
+            "description": "同一动作序列：每次动作前负荷清零，对比保留真实前序模型状态；非真人实验。"
+          },
+          "sequence": [
+            {
+              "limb": "LH",
+              "to": "hand-01-2"
+            },
+            {
+              "limb": "RH",
+              "to": "hand-02-1"
+            },
+            {
+              "limb": "LF",
+              "to": "foot-02-2"
+            },
+            {
+              "limb": "LH",
+              "to": "hand-03-2"
+            },
+            {
+              "limb": "RF",
+              "to": "foot-03-3"
+            },
+            {
+              "limb": "RH",
+              "to": "hand-05-2"
+            },
+            {
+              "limb": "LF",
+              "to": "foot-05-2"
+            },
+            {
+              "limb": "RF",
+              "to": "foot-06-3"
+            },
+            {
+              "limb": "LH",
+              "to": "hand-06-3"
+            },
+            {
+              "limb": "LH",
+              "to": "hand-07-3"
+            },
+            {
+              "limb": "LF",
+              "to": "foot-08-3"
+            },
+            {
+              "limb": "RH",
+              "to": "hand-09-3"
+            },
+            {
+              "limb": "RF",
+              "to": "foot-09-3"
+            },
+            {
+              "limb": "LH",
+              "to": "hand-10-3"
+            },
+            {
+              "limb": "LF",
+              "to": "foot-11-1"
+            },
+            {
+              "limb": "RH",
+              "to": "top"
+            },
+            {
+              "limb": "RF",
+              "to": "foot-11-2"
+            },
+            {
+              "limb": "LH",
+              "to": "top"
+            }
+          ],
+          "search": {
+            "algorithm": "history_contact_beam_v1",
+            "expanded": 20172,
+            "expansion_limit": 60000,
+            "beam_width": 24,
+            "complete_sequences": 100,
+            "returned_candidates": 3,
+            "distinct_hand_sequences": 2,
+            "rejected": {
+              "beam_pruned": 5093,
+              "contact_geometry_or_overlap": 11950,
+              "lagging_hand_progress": 1895,
+              "same_contacts_inventory_load_bin": 1001
+            },
+            "budget_exhausted": false,
+            "history_state": "relative_load_bin_2_and_installed_inventory",
+            "scope": "synthetic_phase_and_history_search; candidates_get_independent_P0_checks",
+            "pool_count": 70,
+            "seed_policy": "deterministic_design_search; seed_used_for_IK",
+            "reproduced_for_current_route": true
+          }
+        }
+      ]
+    },
+    {
+      "program": "power_finish",
+      "source_bundle": "fixtures/route-power_finish-bundle.json",
+      "candidates": [
+        {
+          "candidate_id": "candidate-route-42-1",
+          "status": {
+            "status": "pass",
+            "passed": 70,
+            "total": 70
+          },
+          "hand_moves": 10,
+          "foot_moves": 8,
+          "installed_holds": 21,
+          "unused_installed_holds": 0,
+          "phases": [
+            {
+              "id": "segment-1",
+              "label": "建立",
+              "phase_kind": "establish",
+              "event_start": 0,
+              "event_end": 1,
+              "hand_move_start": 0,
+              "hand_move_end": 0,
+              "target": {
+                "strength": 26.0,
+                "power": 31.0,
+                "technical": 29.0,
+                "load": 37.0
+              },
+              "estimate": {
+                "strength": 32.45071,
+                "power": 27.29328,
+                "technical": 35.38775,
+                "load": 30.11488
+              },
+              "entry_load": 0.0,
+              "exit_load": 28.5305,
+              "rest_opportunity": 0.11298,
+              "load_basis": "contextual_burden"
+            },
+            {
+              "id": "segment-2",
+              "label": "持续输出",
+              "phase_kind": "sustained",
+              "event_start": 2,
+              "event_end": 2,
+              "hand_move_start": 1,
+              "hand_move_end": 1,
+              "target": {
+                "strength": 39.0,
+                "power": 43.0,
+                "technical": 44.0,
+                "load": 64.0
+              },
+              "estimate": {
+                "strength": 54.37113,
+                "power": 43.38996,
+                "technical": 66.54769,
+                "load": 53.21874
+              },
+              "entry_load": 28.5305,
+              "exit_load": 59.82075,
+              "rest_opportunity": 0.0,
+              "load_basis": "contextual_burden"
+            },
+            {
+              "id": "segment-3",
+              "label": "技术转换",
+              "phase_kind": "technical",
+              "event_start": 3,
+              "event_end": 6,
+              "hand_move_start": 2,
+              "hand_move_end": 3,
+              "target": {
+                "strength": 36.0,
+                "power": 37.0,
+                "technical": 62.0,
+                "load": 51.0
+              },
+              "estimate": {
+                "strength": 45.04429,
+                "power": 46.7259,
+                "technical": 61.76998,
+                "load": 56.61663
+              },
+              "entry_load": 59.82075,
+              "exit_load": 113.48133,
+              "rest_opportunity": 0.0,
+              "load_basis": "contextual_burden"
+            },
+            {
+              "id": "segment-4",
+              "label": "缓和",
+              "phase_kind": "relief",
+              "event_start": 7,
+              "event_end": 8,
+              "hand_move_start": 4,
+              "hand_move_end": 4,
+              "target": {
+                "strength": 23.0,
+                "power": 27.0,
+                "technical": 28.0,
+                "load": 38.0
+              },
+              "estimate": {
+                "strength": 20.886,
+                "power": 42.6764,
+                "technical": 23.58837,
+                "load": 43.94222
+              },
+              "entry_load": 113.48133,
+              "exit_load": 118.93603,
+              "rest_opportunity": 0.04278,
+              "load_basis": "contextual_burden"
+            },
+            {
+              "id": "segment-5",
+              "label": "力量难点",
+              "phase_kind": "power",
+              "event_start": 9,
+              "event_end": 14,
+              "hand_move_start": 5,
+              "hand_move_end": 7,
+              "target": {
+                "strength": 47.0,
+                "power": 57.0,
+                "technical": 42.0,
+                "load": 61.0
+              },
+              "estimate": {
+                "strength": 41.782,
+                "power": 51.85375,
+                "technical": 45.72935,
+                "load": 62.80075
+              },
+              "entry_load": 118.93603,
+              "exit_load": 158.40973,
+              "rest_opportunity": 0.02769,
+              "load_basis": "contextual_burden"
+            },
+            {
+              "id": "segment-6",
+              "label": "终点匹配",
+              "phase_kind": "finish",
+              "event_start": 15,
+              "event_end": 17,
+              "hand_move_start": 8,
+              "hand_move_end": 9,
+              "target": {
+                "strength": 20.0,
+                "power": 32.0,
+                "technical": 27.0,
+                "load": 45.0
+              },
+              "estimate": {
+                "strength": 18.92054,
+                "power": 33.31903,
+                "technical": 23.48538,
+                "load": 47.7732
+              },
+              "entry_load": 158.40973,
+              "exit_load": 142.09016,
+              "rest_opportunity": 0.12179,
+              "load_basis": "contextual_burden"
+            }
+          ],
+          "summary": {
+            "peak_strength": 54.37113,
+            "peak_power": 54.83269,
+            "mean_technical": 43.32226,
+            "total_load": 471.10708,
+            "peak_burden": 65.73504,
+            "crux_event_index": 14,
+            "objective": 0.05142,
+            "load_variability": 10.02211,
+            "hand_moves": 10,
+            "foot_moves": 8,
+            "installed_holds": 21
+          },
+          "history_comparison": {
+            "fresh_peak": 48.36855,
+            "with_history_peak": 65.73504,
+            "delta": 17.36649,
+            "late_move_delta": 24.80434,
+            "initial_load": 0.0,
+            "source": "same_sequence_counterfactual_zero_prior_load",
+            "description": "同一动作序列：每次动作前负荷清零，对比保留真实前序模型状态；非真人实验。"
+          },
+          "sequence": [
+            {
+              "limb": "RF",
+              "to": "foot-01-3"
+            },
+            {
+              "limb": "LH",
+              "to": "hand-01-2"
+            },
+            {
+              "limb": "RH",
+              "to": "hand-02-1"
+            },
+            {
+              "limb": "LH",
+              "to": "hand-03-2"
+            },
+            {
+              "limb": "LF",
+              "to": "foot-02-1"
+            },
+            {
+              "limb": "RF",
+              "to": "foot-04-2"
+            },
+            {
+              "limb": "RH",
+              "to": "hand-05-1"
+            },
+            {
+              "limb": "LF",
+              "to": "foot-06-1"
+            },
+            {
+              "limb": "LH",
+              "to": "hand-06-1"
+            },
+            {
+              "limb": "RF",
+              "to": "foot-07-3"
+            },
+            {
+              "limb": "RH",
+              "to": "hand-08-2"
+            },
+            {
+              "limb": "LF",
+              "to": "foot-08-2"
+            },
+            {
+              "limb": "LH",
+              "to": "hand-09-1"
+            },
+            {
+              "limb": "RF",
+              "to": "foot-09-2"
+            },
+            {
+              "limb": "LH",
+              "to": "hand-10-3"
+            },
+            {
+              "limb": "LF",
+              "to": "foot-11-2"
+            },
+            {
+              "limb": "RH",
+              "to": "top"
+            },
+            {
+              "limb": "LH",
+              "to": "top"
+            }
+          ],
+          "search": {
+            "algorithm": "history_contact_beam_v1",
+            "expanded": 19878,
+            "expansion_limit": 60000,
+            "beam_width": 24,
+            "complete_sequences": 182,
+            "returned_candidates": 3,
+            "distinct_hand_sequences": 2,
+            "rejected": {
+              "beam_pruned": 7527,
+              "contact_geometry_or_overlap": 10098,
+              "lagging_hand_progress": 655,
+              "same_contacts_inventory_load_bin": 1358
+            },
+            "budget_exhausted": false,
+            "history_state": "relative_load_bin_2_and_installed_inventory",
+            "scope": "synthetic_phase_and_history_search; candidates_get_independent_P0_checks",
+            "pool_count": 70,
+            "seed_policy": "deterministic_design_search; seed_used_for_IK",
+            "reproduced_for_current_route": true
+          }
+        },
+        {
+          "candidate_id": "candidate-route-42-2",
+          "status": {
+            "status": "pass",
+            "passed": 70,
+            "total": 70
+          },
+          "hand_moves": 10,
+          "foot_moves": 8,
+          "installed_holds": 21,
+          "unused_installed_holds": 0,
+          "phases": [
+            {
+              "id": "segment-1",
+              "label": "建立",
+              "phase_kind": "establish",
+              "event_start": 0,
+              "event_end": 1,
+              "hand_move_start": 0,
+              "hand_move_end": 0,
+              "target": {
+                "strength": 26.0,
+                "power": 31.0,
+                "technical": 29.0,
+                "load": 37.0
+              },
+              "estimate": {
+                "strength": 32.45071,
+                "power": 27.29328,
+                "technical": 35.38775,
+                "load": 30.11488
+              },
+              "entry_load": 0.0,
+              "exit_load": 28.5305,
+              "rest_opportunity": 0.11298,
+              "load_basis": "contextual_burden"
+            },
+            {
+              "id": "segment-2",
+              "label": "持续输出",
+              "phase_kind": "sustained",
+              "event_start": 2,
+              "event_end": 2,
+              "hand_move_start": 1,
+              "hand_move_end": 1,
+              "target": {
+                "strength": 39.0,
+                "power": 43.0,
+                "technical": 44.0,
+                "load": 64.0
+              },
+              "estimate": {
+                "strength": 54.37113,
+                "power": 43.38996,
+                "technical": 66.54769,
+                "load": 53.21874
+              },
+              "entry_load": 28.5305,
+              "exit_load": 59.82075,
+              "rest_opportunity": 0.0,
+              "load_basis": "contextual_burden"
+            },
+            {
+              "id": "segment-3",
+              "label": "技术转换",
+              "phase_kind": "technical",
+              "event_start": 3,
+              "event_end": 6,
+              "hand_move_start": 2,
+              "hand_move_end": 3,
+              "target": {
+                "strength": 36.0,
+                "power": 37.0,
+                "technical": 62.0,
+                "load": 51.0
+              },
+              "estimate": {
+                "strength": 45.06722,
+                "power": 46.87093,
+                "technical": 61.9228,
+                "load": 56.63456
+              },
+              "entry_load": 59.82075,
+              "exit_load": 113.00306,
+              "rest_opportunity": 0.0,
+              "load_basis": "contextual_burden"
+            },
+            {
+              "id": "segment-4",
+              "label": "缓和",
+              "phase_kind": "relief",
+              "event_start": 7,
+              "event_end": 8,
+              "hand_move_start": 4,
+              "hand_move_end": 4,
+              "target": {
+                "strength": 23.0,
+                "power": 27.0,
+                "technical": 28.0,
+                "load": 38.0
+              },
+              "estimate": {
+                "strength": 20.74488,
+                "power": 41.7839,
+                "technical": 22.648,
+                "load": 43.19641
+              },
+              "entry_load": 113.00306,
+              "exit_load": 117.00098,
+              "rest_opportunity": 0.04354,
+              "load_basis": "contextual_burden"
+            },
+            {
+              "id": "segment-5",
+              "label": "力量难点",
+              "phase_kind": "power",
+              "event_start": 9,
+              "event_end": 14,
+              "hand_move_start": 5,
+              "hand_move_end": 7,
+              "target": {
+                "strength": 47.0,
+                "power": 57.0,
+                "technical": 42.0,
+                "load": 61.0
+              },
+              "estimate": {
+                "strength": 43.53047,
+                "power": 51.5488,
+                "technical": 44.71956,
+                "load": 63.61949
+              },
+              "entry_load": 117.00098,
+              "exit_load": 161.54634,
+              "rest_opportunity": 0.0068,
+              "load_basis": "contextual_burden"
+            },
+            {
+              "id": "segment-6",
+              "label": "终点匹配",
+              "phase_kind": "finish",
+              "event_start": 15,
+              "event_end": 17,
+              "hand_move_start": 8,
+              "hand_move_end": 9,
+              "target": {
+                "strength": 20.0,
+                "power": 32.0,
+                "technical": 27.0,
+                "load": 45.0
+              },
+              "estimate": {
+                "strength": 18.43334,
+                "power": 30.23778,
+                "technical": 20.23883,
+                "load": 46.83084
+              },
+              "entry_load": 161.54634,
+              "exit_load": 142.42892,
+              "rest_opportunity": 0.12933,
+              "load_basis": "contextual_burden"
+            }
+          ],
+          "summary": {
+            "peak_strength": 54.37113,
+            "peak_power": 54.83269,
+            "mean_technical": 42.30654,
+            "total_load": 469.60973,
+            "peak_burden": 66.321,
+            "crux_event_index": 14,
+            "objective": 0.0527,
+            "load_variability": 10.6333,
+            "hand_moves": 10,
+            "foot_moves": 8,
+            "installed_holds": 21
+          },
+          "history_comparison": {
+            "fresh_peak": 48.36855,
+            "with_history_peak": 66.321,
+            "delta": 17.95245,
+            "late_move_delta": 25.3867,
+            "initial_load": 0.0,
+            "source": "same_sequence_counterfactual_zero_prior_load",
+            "description": "同一动作序列：每次动作前负荷清零，对比保留真实前序模型状态；非真人实验。"
+          },
+          "sequence": [
+            {
+              "limb": "RF",
+              "to": "foot-01-3"
+            },
+            {
+              "limb": "LH",
+              "to": "hand-01-2"
+            },
+            {
+              "limb": "RH",
+              "to": "hand-02-1"
+            },
+            {
+              "limb": "LH",
+              "to": "hand-03-2"
+            },
+            {
+              "limb": "LF",
+              "to": "foot-03-1"
+            },
+            {
+              "limb": "RF",
+              "to": "foot-03-2"
+            },
+            {
+              "limb": "RH",
+              "to": "hand-05-1"
+            },
+            {
+              "limb": "RF",
+              "to": "foot-05-2"
+            },
+            {
+              "limb": "LH",
+              "to": "hand-06-1"
+            },
+            {
+              "limb": "LF",
+              "to": "foot-06-1"
+            },
+            {
+              "limb": "LH",
+              "to": "hand-08-2"
+            },
+            {
+              "limb": "RF",
+              "to": "foot-08-2"
+            },
+            {
+              "limb": "RH",
+              "to": "hand-09-1"
+            },
+            {
+              "limb": "LF",
+              "to": "foot-09-2"
+            },
+            {
+              "limb": "RH",
+              "to": "hand-10-3"
+            },
+            {
+              "limb": "RF",
+              "to": "foot-11-3"
+            },
+            {
+              "limb": "LH",
+              "to": "top"
+            },
+            {
+              "limb": "RH",
+              "to": "top"
+            }
+          ],
+          "search": {
+            "algorithm": "history_contact_beam_v1",
+            "expanded": 19878,
+            "expansion_limit": 60000,
+            "beam_width": 24,
+            "complete_sequences": 182,
+            "returned_candidates": 3,
+            "distinct_hand_sequences": 2,
+            "rejected": {
+              "beam_pruned": 7527,
+              "contact_geometry_or_overlap": 10098,
+              "lagging_hand_progress": 655,
+              "same_contacts_inventory_load_bin": 1358
+            },
+            "budget_exhausted": false,
+            "history_state": "relative_load_bin_2_and_installed_inventory",
+            "scope": "synthetic_phase_and_history_search; candidates_get_independent_P0_checks",
+            "pool_count": 70,
+            "seed_policy": "deterministic_design_search; seed_used_for_IK",
+            "reproduced_for_current_route": true
+          }
+        },
+        {
+          "candidate_id": "candidate-route-42-3",
+          "status": {
+            "status": "pass",
+            "passed": 70,
+            "total": 70
+          },
+          "hand_moves": 10,
+          "foot_moves": 8,
+          "installed_holds": 21,
+          "unused_installed_holds": 0,
+          "phases": [
+            {
+              "id": "segment-1",
+              "label": "建立",
+              "phase_kind": "establish",
+              "event_start": 0,
+              "event_end": 1,
+              "hand_move_start": 0,
+              "hand_move_end": 0,
+              "target": {
+                "strength": 26.0,
+                "power": 31.0,
+                "technical": 29.0,
+                "load": 37.0
+              },
+              "estimate": {
+                "strength": 32.45071,
+                "power": 27.29328,
+                "technical": 35.38775,
+                "load": 30.11488
+              },
+              "entry_load": 0.0,
+              "exit_load": 28.5305,
+              "rest_opportunity": 0.11298,
+              "load_basis": "contextual_burden"
+            },
+            {
+              "id": "segment-2",
+              "label": "持续输出",
+              "phase_kind": "sustained",
+              "event_start": 2,
+              "event_end": 2,
+              "hand_move_start": 1,
+              "hand_move_end": 1,
+              "target": {
+                "strength": 39.0,
+                "power": 43.0,
+                "technical": 44.0,
+                "load": 64.0
+              },
+              "estimate": {
+                "strength": 54.37113,
+                "power": 43.38996,
+                "technical": 66.54769,
+                "load": 53.21874
+              },
+              "entry_load": 28.5305,
+              "exit_load": 59.82075,
+              "rest_opportunity": 0.0,
+              "load_basis": "contextual_burden"
+            },
+            {
+              "id": "segment-3",
+              "label": "技术转换",
+              "phase_kind": "technical",
+              "event_start": 3,
+              "event_end": 6,
+              "hand_move_start": 2,
+              "hand_move_end": 3,
+              "target": {
+                "strength": 36.0,
+                "power": 37.0,
+                "technical": 62.0,
+                "load": 51.0
+              },
+              "estimate": {
+                "strength": 45.12149,
+                "power": 47.21412,
+                "technical": 62.28439,
+                "load": 56.8883
+              },
+              "entry_load": 59.82075,
+              "exit_load": 114.13367,
+              "rest_opportunity": 0.0,
+              "load_basis": "contextual_burden"
+            },
+            {
+              "id": "segment-4",
+              "label": "缓和",
+              "phase_kind": "relief",
+              "event_start": 7,
+              "event_end": 8,
+              "hand_move_start": 4,
+              "hand_move_end": 4,
+              "target": {
+                "strength": 23.0,
+                "power": 27.0,
+                "technical": 28.0,
+                "load": 38.0
+              },
+              "estimate": {
+                "strength": 20.886,
+                "power": 42.6764,
+                "technical": 23.58837,
+                "load": 43.89065
+              },
+              "entry_load": 114.13367,
+              "exit_load": 118.66621,
+              "rest_opportunity": 0.04278,
+              "load_basis": "contextual_burden"
+            },
+            {
+              "id": "segment-5",
+              "label": "力量难点",
+              "phase_kind": "power",
+              "event_start": 9,
+              "event_end": 14,
+              "hand_move_start": 5,
+              "hand_move_end": 7,
+              "target": {
+                "strength": 47.0,
+                "power": 57.0,
+                "technical": 42.0,
+                "load": 61.0
+              },
+              "estimate": {
+                "strength": 41.782,
+                "power": 51.85375,
+                "technical": 45.72935,
+                "load": 62.76682
+              },
+              "entry_load": 118.66621,
+              "exit_load": 158.26314,
+              "rest_opportunity": 0.02769,
+              "load_basis": "contextual_burden"
+            },
+            {
+              "id": "segment-6",
+              "label": "终点匹配",
+              "phase_kind": "finish",
+              "event_start": 15,
+              "event_end": 17,
+              "hand_move_start": 8,
+              "hand_move_end": 9,
+              "target": {
+                "strength": 20.0,
+                "power": 32.0,
+                "technical": 27.0,
+                "load": 45.0
+              },
+              "estimate": {
+                "strength": 18.92054,
+                "power": 33.31903,
+                "technical": 23.48538,
+                "load": 47.7516
+              },
+              "entry_load": 158.26314,
+              "exit_load": 141.99028,
+              "rest_opportunity": 0.12179,
+              "load_basis": "contextual_burden"
+            }
+          ],
+          "summary": {
+            "peak_strength": 54.37113,
+            "peak_power": 54.83269,
+            "mean_technical": 43.42514,
+            "total_load": 470.88636,
+            "peak_burden": 65.70766,
+            "crux_event_index": 14,
+            "objective": 0.05167,
+            "load_variability": 10.0633,
+            "hand_moves": 10,
+            "foot_moves": 8,
+            "installed_holds": 21
+          },
+          "history_comparison": {
+            "fresh_peak": 48.36855,
+            "with_history_peak": 65.70766,
+            "delta": 17.3391,
+            "late_move_delta": 24.77842,
+            "initial_load": 0.0,
+            "source": "same_sequence_counterfactual_zero_prior_load",
+            "description": "同一动作序列：每次动作前负荷清零，对比保留真实前序模型状态；非真人实验。"
+          },
+          "sequence": [
+            {
+              "limb": "RF",
+              "to": "foot-01-3"
+            },
+            {
+              "limb": "LH",
+              "to": "hand-01-2"
+            },
+            {
+              "limb": "RH",
+              "to": "hand-02-1"
+            },
+            {
+              "limb": "LH",
+              "to": "hand-03-2"
+            },
+            {
+              "limb": "LF",
+              "to": "foot-03-1"
+            },
+            {
+              "limb": "RF",
+              "to": "foot-04-2"
+            },
+            {
+              "limb": "RH",
+              "to": "hand-05-1"
+            },
+            {
+              "limb": "LF",
+              "to": "foot-06-1"
+            },
+            {
+              "limb": "LH",
+              "to": "hand-06-1"
+            },
+            {
+              "limb": "RF",
+              "to": "foot-07-3"
+            },
+            {
+              "limb": "RH",
+              "to": "hand-08-2"
+            },
+            {
+              "limb": "LF",
+              "to": "foot-08-2"
+            },
+            {
+              "limb": "LH",
+              "to": "hand-09-1"
+            },
+            {
+              "limb": "RF",
+              "to": "foot-09-2"
+            },
+            {
+              "limb": "LH",
+              "to": "hand-10-3"
+            },
+            {
+              "limb": "LF",
+              "to": "foot-11-2"
+            },
+            {
+              "limb": "RH",
+              "to": "top"
+            },
+            {
+              "limb": "LH",
+              "to": "top"
+            }
+          ],
+          "search": {
+            "algorithm": "history_contact_beam_v1",
+            "expanded": 19878,
+            "expansion_limit": 60000,
+            "beam_width": 24,
+            "complete_sequences": 182,
+            "returned_candidates": 3,
+            "distinct_hand_sequences": 2,
+            "rejected": {
+              "beam_pruned": 7527,
+              "contact_geometry_or_overlap": 10098,
+              "lagging_hand_progress": 655,
+              "same_contacts_inventory_load_bin": 1358
+            },
+            "budget_exhausted": false,
+            "history_state": "relative_load_bin_2_and_installed_inventory",
+            "scope": "synthetic_phase_and_history_search; candidates_get_independent_P0_checks",
+            "pool_count": 70,
+            "seed_policy": "deterministic_design_search; seed_used_for_IK",
+            "reproduced_for_current_route": true
+          }
+        }
+      ]
+    },
+    {
+      "program": "sustained_finish",
+      "source_bundle": "fixtures/route-sustained_finish-bundle.json",
+      "candidates": [
+        {
+          "candidate_id": "candidate-route-42-1",
+          "status": {
+            "status": "pass",
+            "passed": 70,
+            "total": 70
+          },
+          "hand_moves": 10,
+          "foot_moves": 8,
+          "installed_holds": 21,
+          "unused_installed_holds": 0,
+          "phases": [
+            {
+              "id": "segment-1",
+              "label": "建立",
+              "phase_kind": "establish",
+              "event_start": 0,
+              "event_end": 1,
+              "hand_move_start": 0,
+              "hand_move_end": 0,
+              "target": {
+                "strength": 26.0,
+                "power": 31.0,
+                "technical": 29.0,
+                "load": 37.0
+              },
+              "estimate": {
+                "strength": 32.41409,
+                "power": 27.06165,
+                "technical": 35.1437,
+                "load": 29.72808
+              },
+              "entry_load": 0.0,
+              "exit_load": 27.03013,
+              "rest_opportunity": 0.13858,
+              "load_basis": "contextual_burden"
+            },
+            {
+              "id": "segment-2",
+              "label": "力量难点",
+              "phase_kind": "power",
+              "event_start": 2,
+              "event_end": 4,
+              "hand_move_start": 1,
+              "hand_move_end": 2,
+              "target": {
+                "strength": 47.0,
+                "power": 57.0,
+                "technical": 42.0,
+                "load": 61.0
+              },
+              "estimate": {
+                "strength": 42.68663,
+                "power": 60.65461,
+                "technical": 56.03775,
+                "load": 52.53519
+              },
+              "entry_load": 27.03013,
+              "exit_load": 87.32737,
+              "rest_opportunity": 0.0,
+              "load_basis": "contextual_burden"
+            },
+            {
+              "id": "segment-3",
+              "label": "缓和",
+              "phase_kind": "relief",
+              "event_start": 5,
+              "event_end": 5,
+              "hand_move_start": 3,
+              "hand_move_end": 3,
+              "target": {
+                "strength": 23.0,
+                "power": 27.0,
+                "technical": 28.0,
+                "load": 38.0
+              },
+              "estimate": {
+                "strength": 21.52195,
+                "power": 15.86895,
+                "technical": 23.82795,
+                "load": 33.25071
+              },
+              "entry_load": 87.32737,
+              "exit_load": 90.51002,
+              "rest_opportunity": 0.08786,
+              "load_basis": "contextual_burden"
+            },
+            {
+              "id": "segment-4",
+              "label": "技术转换",
+              "phase_kind": "technical",
+              "event_start": 6,
+              "event_end": 7,
+              "hand_move_start": 4,
+              "hand_move_end": 4,
+              "target": {
+                "strength": 36.0,
+                "power": 37.0,
+                "technical": 62.0,
+                "load": 51.0
+              },
+              "estimate": {
+                "strength": 38.54843,
+                "power": 41.31996,
+                "technical": 65.18957,
+                "load": 55.62587
+              },
+              "entry_load": 90.51002,
+              "exit_load": 110.3686,
+              "rest_opportunity": 0.06072,
+              "load_basis": "contextual_burden"
+            },
+            {
+              "id": "segment-5",
+              "label": "持续输出",
+              "phase_kind": "sustained",
+              "event_start": 8,
+              "event_end": 13,
+              "hand_move_start": 5,
+              "hand_move_end": 7,
+              "target": {
+                "strength": 39.0,
+                "power": 43.0,
+                "technical": 44.0,
+                "load": 64.0
+              },
+              "estimate": {
+                "strength": 44.2632,
+                "power": 46.50079,
+                "technical": 39.73153,
+                "load": 61.26153
+              },
+              "entry_load": 110.3686,
+              "exit_load": 159.21416,
+              "rest_opportunity": 0.00745,
+              "load_basis": "contextual_burden"
+            },
+            {
+              "id": "segment-6",
+              "label": "终点匹配",
+              "phase_kind": "finish",
+              "event_start": 14,
+              "event_end": 17,
+              "hand_move_start": 8,
+              "hand_move_end": 9,
+              "target": {
+                "strength": 20.0,
+                "power": 32.0,
+                "technical": 27.0,
+                "load": 45.0
+              },
+              "estimate": {
+                "strength": 19.25115,
+                "power": 27.87596,
+                "technical": 25.92041,
+                "load": 46.96853
+              },
+              "entry_load": 159.21416,
+              "exit_load": 145.35109,
+              "rest_opportunity": 0.09804,
+              "load_basis": "contextual_burden"
+            }
+          ],
+          "summary": {
+            "peak_strength": 45.60679,
+            "peak_power": 66.02393,
+            "mean_technical": 40.72721,
+            "total_load": 469.75234,
+            "peak_burden": 65.60655,
+            "crux_event_index": 13,
+            "objective": 0.03055,
+            "load_variability": 10.06491,
+            "hand_moves": 10,
+            "foot_moves": 8,
+            "installed_holds": 21
+          },
+          "history_comparison": {
+            "fresh_peak": 45.35187,
+            "with_history_peak": 65.60655,
+            "delta": 20.25468,
+            "late_move_delta": 24.82597,
+            "initial_load": 0.0,
+            "source": "same_sequence_counterfactual_zero_prior_load",
+            "description": "同一动作序列：每次动作前负荷清零，对比保留真实前序模型状态；非真人实验。"
+          },
+          "sequence": [
+            {
+              "limb": "LF",
+              "to": "foot-01-2"
+            },
+            {
+              "limb": "LH",
+              "to": "hand-01-2"
+            },
+            {
+              "limb": "RH",
+              "to": "hand-03-2"
+            },
+            {
+              "limb": "RF",
+              "to": "foot-03-2"
+            },
+            {
+              "limb": "LH",
+              "to": "hand-04-3"
+            },
+            {
+              "limb": "RH",
+              "to": "hand-04-2"
+            },
+            {
+              "limb": "LF",
+              "to": "foot-04-3"
+            },
+            {
+              "limb": "LH",
+              "to": "hand-06-3"
+            },
+            {
+              "limb": "RF",
+              "to": "foot-06-3"
+            },
+            {
+              "limb": "RH",
+              "to": "hand-07-2"
+            },
+            {
+              "limb": "LF",
+              "to": "hand-03-3"
+            },
+            {
+              "limb": "LH",
+              "to": "hand-09-3"
+            },
+            {
+              "limb": "RF",
+              "to": "foot-09-3"
+            },
+            {
+              "limb": "RH",
+              "to": "hand-10-3"
+            },
+            {
+              "limb": "LF",
+              "to": "foot-10-1"
+            },
+            {
+              "limb": "RH",
+              "to": "top"
+            },
+            {
+              "limb": "RF",
+              "to": "hand-08-3"
+            },
+            {
+              "limb": "LH",
+              "to": "top"
+            }
+          ],
+          "search": {
+            "algorithm": "history_contact_beam_v1",
+            "expanded": 20451,
+            "expansion_limit": 60000,
+            "beam_width": 24,
+            "complete_sequences": 93,
+            "returned_candidates": 3,
+            "distinct_hand_sequences": 3,
+            "rejected": {
+              "beam_pruned": 6666,
+              "contact_geometry_or_overlap": 10901,
+              "lagging_hand_progress": 1556,
+              "same_contacts_inventory_load_bin": 1088
+            },
+            "budget_exhausted": false,
+            "history_state": "relative_load_bin_2_and_installed_inventory",
+            "scope": "synthetic_phase_and_history_search; candidates_get_independent_P0_checks",
+            "pool_count": 70,
+            "seed_policy": "deterministic_design_search; seed_used_for_IK",
+            "reproduced_for_current_route": true
+          }
+        },
+        {
+          "candidate_id": "candidate-route-42-2",
+          "status": {
+            "status": "pass",
+            "passed": 70,
+            "total": 70
+          },
+          "hand_moves": 10,
+          "foot_moves": 8,
+          "installed_holds": 21,
+          "unused_installed_holds": 0,
+          "phases": [
+            {
+              "id": "segment-1",
+              "label": "建立",
+              "phase_kind": "establish",
+              "event_start": 0,
+              "event_end": 1,
+              "hand_move_start": 0,
+              "hand_move_end": 0,
+              "target": {
+                "strength": 26.0,
+                "power": 31.0,
+                "technical": 29.0,
+                "load": 37.0
+              },
+              "estimate": {
+                "strength": 32.41409,
+                "power": 27.06165,
+                "technical": 35.1437,
+                "load": 29.72808
+              },
+              "entry_load": 0.0,
+              "exit_load": 27.03013,
+              "rest_opportunity": 0.13858,
+              "load_basis": "contextual_burden"
+            },
+            {
+              "id": "segment-2",
+              "label": "力量难点",
+              "phase_kind": "power",
+              "event_start": 2,
+              "event_end": 4,
+              "hand_move_start": 1,
+              "hand_move_end": 2,
+              "target": {
+                "strength": 47.0,
+                "power": 57.0,
+                "technical": 42.0,
+                "load": 61.0
+              },
+              "estimate": {
+                "strength": 42.68663,
+                "power": 60.65461,
+                "technical": 56.03775,
+                "load": 52.53519
+              },
+              "entry_load": 27.03013,
+              "exit_load": 87.32737,
+              "rest_opportunity": 0.0,
+              "load_basis": "contextual_burden"
+            },
+            {
+              "id": "segment-3",
+              "label": "缓和",
+              "phase_kind": "relief",
+              "event_start": 5,
+              "event_end": 5,
+              "hand_move_start": 3,
+              "hand_move_end": 3,
+              "target": {
+                "strength": 23.0,
+                "power": 27.0,
+                "technical": 28.0,
+                "load": 38.0
+              },
+              "estimate": {
+                "strength": 21.52195,
+                "power": 15.86895,
+                "technical": 23.82795,
+                "load": 33.25071
+              },
+              "entry_load": 87.32737,
+              "exit_load": 90.51002,
+              "rest_opportunity": 0.08786,
+              "load_basis": "contextual_burden"
+            },
+            {
+              "id": "segment-4",
+              "label": "技术转换",
+              "phase_kind": "technical",
+              "event_start": 6,
+              "event_end": 7,
+              "hand_move_start": 4,
+              "hand_move_end": 4,
+              "target": {
+                "strength": 36.0,
+                "power": 37.0,
+                "technical": 62.0,
+                "load": 51.0
+              },
+              "estimate": {
+                "strength": 38.54843,
+                "power": 41.31996,
+                "technical": 65.18957,
+                "load": 55.62587
+              },
+              "entry_load": 90.51002,
+              "exit_load": 110.3686,
+              "rest_opportunity": 0.06072,
+              "load_basis": "contextual_burden"
+            },
+            {
+              "id": "segment-5",
+              "label": "持续输出",
+              "phase_kind": "sustained",
+              "event_start": 8,
+              "event_end": 13,
+              "hand_move_start": 5,
+              "hand_move_end": 7,
+              "target": {
+                "strength": 39.0,
+                "power": 43.0,
+                "technical": 44.0,
+                "load": 64.0
+              },
+              "estimate": {
+                "strength": 44.2632,
+                "power": 46.50079,
+                "technical": 39.73153,
+                "load": 61.26153
+              },
+              "entry_load": 110.3686,
+              "exit_load": 159.21416,
+              "rest_opportunity": 0.00745,
+              "load_basis": "contextual_burden"
+            },
+            {
+              "id": "segment-6",
+              "label": "终点匹配",
+              "phase_kind": "finish",
+              "event_start": 14,
+              "event_end": 17,
+              "hand_move_start": 8,
+              "hand_move_end": 9,
+              "target": {
+                "strength": 20.0,
+                "power": 32.0,
+                "technical": 27.0,
+                "load": 45.0
+              },
+              "estimate": {
+                "strength": 19.85115,
+                "power": 27.87596,
+                "technical": 25.92041,
+                "load": 47.73017
+              },
+              "entry_load": 159.21416,
+              "exit_load": 148.09076,
+              "rest_opportunity": 0.07436,
+              "load_basis": "contextual_burden"
+            }
+          ],
+          "summary": {
+            "peak_strength": 45.60679,
+            "peak_power": 66.02393,
+            "mean_technical": 40.72721,
+            "total_load": 470.46382,
+            "peak_burden": 65.60655,
+            "crux_event_index": 13,
+            "objective": 0.03169,
+            "load_variability": 10.05302,
+            "hand_moves": 10,
+            "foot_moves": 8,
+            "installed_holds": 21
+          },
+          "history_comparison": {
+            "fresh_peak": 45.35187,
+            "with_history_peak": 65.60655,
+            "delta": 20.25468,
+            "late_move_delta": 25.05979,
+            "initial_load": 0.0,
+            "source": "same_sequence_counterfactual_zero_prior_load",
+            "description": "同一动作序列：每次动作前负荷清零，对比保留真实前序模型状态；非真人实验。"
+          },
+          "sequence": [
+            {
+              "limb": "LF",
+              "to": "foot-01-2"
+            },
+            {
+              "limb": "LH",
+              "to": "hand-01-2"
+            },
+            {
+              "limb": "RH",
+              "to": "hand-03-2"
+            },
+            {
+              "limb": "RF",
+              "to": "foot-03-2"
+            },
+            {
+              "limb": "LH",
+              "to": "hand-04-3"
+            },
+            {
+              "limb": "RH",
+              "to": "hand-04-2"
+            },
+            {
+              "limb": "LF",
+              "to": "foot-04-3"
+            },
+            {
+              "limb": "LH",
+              "to": "hand-06-3"
+            },
+            {
+              "limb": "RF",
+              "to": "foot-06-3"
+            },
+            {
+              "limb": "RH",
+              "to": "hand-07-2"
+            },
+            {
+              "limb": "LF",
+              "to": "hand-03-3"
+            },
+            {
+              "limb": "LH",
+              "to": "hand-09-3"
+            },
+            {
+              "limb": "RF",
+              "to": "foot-09-3"
+            },
+            {
+              "limb": "RH",
+              "to": "hand-10-3"
+            },
+            {
+              "limb": "LF",
+              "to": "foot-10-1"
+            },
+            {
+              "limb": "LH",
+              "to": "top"
+            },
+            {
+              "limb": "RF",
+              "to": "hand-08-3"
+            },
+            {
+              "limb": "RH",
+              "to": "top"
+            }
+          ],
+          "search": {
+            "algorithm": "history_contact_beam_v1",
+            "expanded": 20451,
+            "expansion_limit": 60000,
+            "beam_width": 24,
+            "complete_sequences": 93,
+            "returned_candidates": 3,
+            "distinct_hand_sequences": 3,
+            "rejected": {
+              "beam_pruned": 6666,
+              "contact_geometry_or_overlap": 10901,
+              "lagging_hand_progress": 1556,
+              "same_contacts_inventory_load_bin": 1088
+            },
+            "budget_exhausted": false,
+            "history_state": "relative_load_bin_2_and_installed_inventory",
+            "scope": "synthetic_phase_and_history_search; candidates_get_independent_P0_checks",
+            "pool_count": 70,
+            "seed_policy": "deterministic_design_search; seed_used_for_IK",
+            "reproduced_for_current_route": true
+          }
+        },
+        {
+          "candidate_id": "candidate-route-42-3",
+          "status": {
+            "status": "pass",
+            "passed": 70,
+            "total": 70
+          },
+          "hand_moves": 10,
+          "foot_moves": 8,
+          "installed_holds": 21,
+          "unused_installed_holds": 0,
+          "phases": [
+            {
+              "id": "segment-1",
+              "label": "建立",
+              "phase_kind": "establish",
+              "event_start": 0,
+              "event_end": 1,
+              "hand_move_start": 0,
+              "hand_move_end": 0,
+              "target": {
+                "strength": 26.0,
+                "power": 31.0,
+                "technical": 29.0,
+                "load": 37.0
+              },
+              "estimate": {
+                "strength": 32.45071,
+                "power": 27.29328,
+                "technical": 35.38775,
+                "load": 30.11488
+              },
+              "entry_load": 0.0,
+              "exit_load": 28.5305,
+              "rest_opportunity": 0.11298,
+              "load_basis": "contextual_burden"
+            },
+            {
+              "id": "segment-2",
+              "label": "力量难点",
+              "phase_kind": "power",
+              "event_start": 2,
+              "event_end": 4,
+              "hand_move_start": 1,
+              "hand_move_end": 2,
+              "target": {
+                "strength": 47.0,
+                "power": 57.0,
+                "technical": 42.0,
+                "load": 61.0
+              },
+              "estimate": {
+                "strength": 42.77903,
+                "power": 61.23899,
+                "technical": 56.65348,
+                "load": 53.14901
+              },
+              "entry_load": 28.5305,
+              "exit_load": 89.42672,
+              "rest_opportunity": 0.0,
+              "load_basis": "contextual_burden"
+            },
+            {
+              "id": "segment-3",
+              "label": "缓和",
+              "phase_kind": "relief",
+              "event_start": 5,
+              "event_end": 5,
+              "hand_move_start": 3,
+              "hand_move_end": 3,
+              "target": {
+                "strength": 23.0,
+                "power": 27.0,
+                "technical": 28.0,
+                "load": 38.0
+              },
+              "estimate": {
+                "strength": 21.52195,
+                "power": 15.86895,
+                "technical": 23.82795,
+                "load": 33.6076
+              },
+              "entry_load": 89.42672,
+              "exit_load": 92.37617,
+              "rest_opportunity": 0.08786,
+              "load_basis": "contextual_burden"
+            },
+            {
+              "id": "segment-4",
+              "label": "技术转换",
+              "phase_kind": "technical",
+              "event_start": 6,
+              "event_end": 8,
+              "hand_move_start": 4,
+              "hand_move_end": 4,
+              "target": {
+                "strength": 36.0,
+                "power": 37.0,
+                "technical": 62.0,
+                "load": 51.0
+              },
+              "estimate": {
+                "strength": 44.18752,
+                "power": 44.21248,
+                "technical": 60.78546,
+                "load": 58.75278
+              },
+              "entry_load": 92.37617,
+              "exit_load": 116.3016,
+              "rest_opportunity": 0.02717,
+              "load_basis": "contextual_burden"
+            },
+            {
+              "id": "segment-5",
+              "label": "持续输出",
+              "phase_kind": "sustained",
+              "event_start": 9,
+              "event_end": 14,
+              "hand_move_start": 5,
+              "hand_move_end": 7,
+              "target": {
+                "strength": 39.0,
+                "power": 43.0,
+                "technical": 44.0,
+                "load": 64.0
+              },
+              "estimate": {
+                "strength": 43.36279,
+                "power": 49.00707,
+                "technical": 38.74421,
+                "load": 61.7741
+              },
+              "entry_load": 116.3016,
+              "exit_load": 159.34414,
+              "rest_opportunity": 0.0,
+              "load_basis": "contextual_burden"
+            },
+            {
+              "id": "segment-6",
+              "label": "终点匹配",
+              "phase_kind": "finish",
+              "event_start": 15,
+              "event_end": 17,
+              "hand_move_start": 8,
+              "hand_move_end": 9,
+              "target": {
+                "strength": 20.0,
+                "power": 32.0,
+                "technical": 27.0,
+                "load": 45.0
+              },
+              "estimate": {
+                "strength": 18.09778,
+                "power": 25.86996,
+                "technical": 22.00092,
+                "load": 44.99474
+              },
+              "entry_load": 159.34414,
+              "exit_load": 135.88797,
+              "rest_opportunity": 0.16307,
+              "load_basis": "contextual_burden"
+            }
+          ],
+          "summary": {
+            "peak_strength": 44.24034,
+            "peak_power": 66.02393,
+            "mean_technical": 39.35426,
+            "total_load": 454.20746,
+            "peak_burden": 65.17894,
+            "crux_event_index": 14,
+            "objective": 0.03183,
+            "load_variability": 10.76731,
+            "hand_moves": 10,
+            "foot_moves": 8,
+            "installed_holds": 21
+          },
+          "history_comparison": {
+            "fresh_peak": 45.93227,
+            "with_history_peak": 65.17894,
+            "delta": 19.24667,
+            "late_move_delta": 24.81111,
+            "initial_load": 0.0,
+            "source": "same_sequence_counterfactual_zero_prior_load",
+            "description": "同一动作序列：每次动作前负荷清零，对比保留真实前序模型状态；非真人实验。"
+          },
+          "sequence": [
+            {
+              "limb": "RF",
+              "to": "foot-01-3"
+            },
+            {
+              "limb": "LH",
+              "to": "hand-01-2"
+            },
+            {
+              "limb": "RH",
+              "to": "hand-03-2"
+            },
+            {
+              "limb": "LF",
+              "to": "foot-03-1"
+            },
+            {
+              "limb": "LH",
+              "to": "hand-04-3"
+            },
+            {
+              "limb": "RH",
+              "to": "hand-04-2"
+            },
+            {
+              "limb": "RF",
+              "to": "foot-04-3"
+            },
+            {
+              "limb": "LF",
+              "to": "foot-05-3"
+            },
+            {
+              "limb": "RH",
+              "to": "hand-06-3"
+            },
+            {
+              "limb": "RF",
+              "to": "foot-07-3"
+            },
+            {
+              "limb": "LH",
+              "to": "hand-07-2"
+            },
+            {
+              "limb": "LF",
+              "to": "foot-09-2"
+            },
+            {
+              "limb": "RH",
+              "to": "hand-09-3"
+            },
+            {
+              "limb": "RF",
+              "to": "foot-09-3"
+            },
+            {
+              "limb": "LH",
+              "to": "hand-10-3"
+            },
+            {
+              "limb": "LH",
+              "to": "top"
+            },
+            {
+              "limb": "LF",
+              "to": "finish-foot-right"
+            },
+            {
+              "limb": "RH",
+              "to": "top"
+            }
+          ],
+          "search": {
+            "algorithm": "history_contact_beam_v1",
+            "expanded": 20451,
+            "expansion_limit": 60000,
+            "beam_width": 24,
+            "complete_sequences": 93,
+            "returned_candidates": 3,
+            "distinct_hand_sequences": 3,
+            "rejected": {
+              "beam_pruned": 6666,
+              "contact_geometry_or_overlap": 10901,
+              "lagging_hand_progress": 1556,
+              "same_contacts_inventory_load_bin": 1088
+            },
+            "budget_exhausted": false,
+            "history_state": "relative_load_bin_2_and_installed_inventory",
+            "scope": "synthetic_phase_and_history_search; candidates_get_independent_P0_checks",
+            "pool_count": 70,
+            "seed_policy": "deterministic_design_search; seed_used_for_IK",
+            "reproduced_for_current_route": true
+          }
+        }
+      ]
+    }
+  ],
+  "current_fixture_validation": [
+    {
+      "file": "catalog-10deg-bundle.json",
+      "candidate_statuses": [
+        "pass",
+        "pass",
+        "pass"
+      ]
+    },
+    {
+      "file": "catalog-demo-bundle.json",
+      "candidate_statuses": [
+        "pass",
+        "pass",
+        "pass"
+      ]
+    },
+    {
+      "file": "competition-10deg-bundle.json",
+      "candidate_statuses": [
+        "unknown",
+        "unknown",
+        "unknown"
+      ]
+    },
+    {
+      "file": "competition-demo-bundle.json",
+      "candidate_statuses": [
+        "unknown",
+        "unknown",
+        "unknown"
+      ]
+    },
+    {
+      "file": "demo-bundle.json",
+      "candidate_statuses": [
+        "pass",
+        "pass",
+        "pass"
+      ]
+    },
+    {
+      "file": "route-demo-bundle.json",
+      "candidate_statuses": [
+        "pass",
+        "pass",
+        "pass"
+      ]
+    },
+    {
+      "file": "route-mixed_flow-bundle.json",
+      "candidate_statuses": [
+        "pass",
+        "pass",
+        "pass"
+      ]
+    },
+    {
+      "file": "route-power_finish-bundle.json",
+      "candidate_statuses": [
+        "pass",
+        "pass",
+        "pass"
+      ]
+    },
+    {
+      "file": "route-sustained_finish-bundle.json",
+      "candidate_statuses": [
+        "pass",
+        "pass",
+        "pass"
+      ]
+    },
+    {
+      "file": "style-demo-bundle.json",
+      "candidate_statuses": [
+        "pass",
+        "pass",
+        "pass"
+      ]
+    },
+    {
+      "file": "style-power-bundle.json",
+      "candidate_statuses": [
+        "pass",
+        "pass",
+        "pass"
+      ]
+    },
+    {
+      "file": "style-sustained-bundle.json",
+      "candidate_statuses": [
+        "pass",
+        "pass",
+        "pass"
+      ]
+    },
+    {
+      "file": "style-technical-bundle.json",
+      "candidate_statuses": [
+        "pass",
+        "pass",
+        "pass"
+      ]
+    }
+  ],
+  "limitations": [
+    "No physical force, fatigue, dynamics, safety or V grade claims.",
+    "Existing competition examples retain unresolved P0 results; no passing-only filter.",
+    "All historical fixture bytes preserved before refresh."
+  ]
+}

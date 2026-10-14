@@ -1,0 +1,1723 @@
+{
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "const": "1.0"
+    },
+    "id": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 120
+    },
+    "revision": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 1000000
+    },
+    "source": {
+      "const": "synthetic_assumption"
+    },
+    "scene": {
+      "type": "object",
+      "properties": {
+        "width": {
+          "enum": [
+            3,
+            4.8
+          ]
+        },
+        "height": {
+          "enum": [
+            3,
+            4.2
+          ]
+        },
+        "angle_deg": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 40
+        },
+        "margin": {
+          "const": 0.2
+        },
+        "inventory": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 120
+              },
+              "type": {
+                "enum": [
+                  "jug",
+                  "directional_edge",
+                  "foothold",
+                  "sloper",
+                  "pinch",
+                  "rail",
+                  "volume",
+                  "crimp",
+                  "pocket"
+                ]
+              },
+              "width": {
+                "type": "number",
+                "exclusiveMinimum": 0,
+                "maximum": 1
+              },
+              "height": {
+                "type": "number",
+                "exclusiveMinimum": 0,
+                "maximum": 1
+              },
+              "depth": {
+                "type": "number",
+                "exclusiveMinimum": 0,
+                "maximum": 1
+              },
+              "contact": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "const": "main"
+                  },
+                  "position": {
+                    "type": "array",
+                    "items": {
+                      "type": "number"
+                    },
+                    "minItems": 3,
+                    "maxItems": 3
+                  },
+                  "radius": {
+                    "type": "number",
+                    "minimum": 0,
+                    "maximum": 0.2
+                  },
+                  "limbs": {
+                    "type": "array",
+                    "items": {
+                      "enum": [
+                        "LH",
+                        "RH",
+                        "LF",
+                        "RF"
+                      ]
+                    },
+                    "minItems": 1,
+                    "maxItems": 4,
+                    "uniqueItems": true
+                  }
+                },
+                "required": [
+                  "id",
+                  "position",
+                  "radius",
+                  "limbs"
+                ]
+              },
+              "template_id": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 120
+              },
+              "template_name": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 120
+              },
+              "grip_surfaces": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 120
+                    },
+                    "label": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 120
+                    },
+                    "normal": {
+                      "type": "array",
+                      "items": {
+                        "type": "number"
+                      },
+                      "minItems": 3,
+                      "maxItems": 3
+                    },
+                    "u_axis": {
+                      "type": "array",
+                      "items": {
+                        "type": "number"
+                      },
+                      "minItems": 3,
+                      "maxItems": 3
+                    },
+                    "v_axis": {
+                      "type": "array",
+                      "items": {
+                        "type": "number"
+                      },
+                      "minItems": 3,
+                      "maxItems": 3
+                    },
+                    "position": {
+                      "type": "array",
+                      "items": {
+                        "type": "number"
+                      },
+                      "minItems": 3,
+                      "maxItems": 3
+                    },
+                    "radii": {
+                      "type": "array",
+                      "items": {
+                        "type": "number",
+                        "exclusiveMinimum": 0,
+                        "maximum": 1
+                      },
+                      "minItems": 2,
+                      "maxItems": 2
+                    },
+                    "limbs": {
+                      "type": "array",
+                      "items": {
+                        "enum": [
+                          "LH",
+                          "RH",
+                          "LF",
+                          "RF"
+                        ]
+                      },
+                      "minItems": 1,
+                      "maxItems": 4,
+                      "uniqueItems": true
+                    },
+                    "pull_direction": {
+                      "type": "array",
+                      "items": {
+                        "type": "number"
+                      },
+                      "minItems": 3,
+                      "maxItems": 3
+                    },
+                    "mesh_anchor": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "required": [
+                        "triangle_index",
+                        "barycentric"
+                      ],
+                      "properties": {
+                        "triangle_index": {
+                          "type": "integer",
+                          "minimum": 0
+                        },
+                        "barycentric": {
+                          "type": "array",
+                          "minItems": 3,
+                          "maxItems": 3,
+                          "items": {
+                            "type": "number",
+                            "minimum": 0,
+                            "maximum": 1
+                          }
+                        }
+                      }
+                    },
+                    "annotations": {
+                      "type": "object",
+                      "required": [
+                        "triangle_indices"
+                      ],
+                      "properties": {
+                        "triangle_indices": {
+                          "type": "array",
+                          "minItems": 1,
+                          "uniqueItems": true,
+                          "items": {
+                            "type": "integer",
+                            "minimum": 0
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "additionalProperties": false,
+                  "required": [
+                    "id",
+                    "label",
+                    "normal",
+                    "u_axis",
+                    "v_axis",
+                    "position",
+                    "radii",
+                    "limbs",
+                    "pull_direction"
+                  ]
+                },
+                "minItems": 1,
+                "maxItems": 8
+              },
+              "mounting_faces": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 120
+                    },
+                    "label": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 120
+                    },
+                    "normal": {
+                      "type": "array",
+                      "items": {
+                        "type": "number"
+                      },
+                      "minItems": 3,
+                      "maxItems": 3
+                    },
+                    "u_axis": {
+                      "type": "array",
+                      "items": {
+                        "type": "number"
+                      },
+                      "minItems": 3,
+                      "maxItems": 3
+                    },
+                    "v_axis": {
+                      "type": "array",
+                      "items": {
+                        "type": "number"
+                      },
+                      "minItems": 3,
+                      "maxItems": 3
+                    },
+                    "origin": {
+                      "type": "array",
+                      "items": {
+                        "type": "number"
+                      },
+                      "minItems": 3,
+                      "maxItems": 3
+                    },
+                    "polygon": {
+                      "type": "array",
+                      "items": {
+                        "type": "array",
+                        "items": {
+                          "type": "number"
+                        },
+                        "minItems": 2,
+                        "maxItems": 2
+                      },
+                      "minItems": 3,
+                      "maxItems": 8
+                    }
+                  },
+                  "additionalProperties": false,
+                  "required": [
+                    "id",
+                    "label",
+                    "normal",
+                    "u_axis",
+                    "v_axis",
+                    "origin",
+                    "polygon"
+                  ]
+                },
+                "minItems": 1,
+                "maxItems": 8
+              },
+              "design_attributes": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "source",
+                  "grip_accessibility",
+                  "precision",
+                  "force_demand",
+                  "friction_dependence"
+                ],
+                "properties": {
+                  "source": {
+                    "const": "synthetic_assumption"
+                  },
+                  "grip_accessibility": {
+                    "type": "number",
+                    "minimum": 0,
+                    "maximum": 1
+                  },
+                  "precision": {
+                    "type": "number",
+                    "minimum": 0,
+                    "maximum": 1
+                  },
+                  "force_demand": {
+                    "type": "number",
+                    "minimum": 0,
+                    "maximum": 1
+                  },
+                  "friction_dependence": {
+                    "type": "number",
+                    "minimum": 0,
+                    "maximum": 1
+                  }
+                }
+              },
+              "asset_id": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 120
+              },
+              "asset_geometry_sha256": {
+                "type": "string",
+                "pattern": "^sha256:[a-f0-9]{64}$"
+              },
+              "asset_record_sha256": {
+                "type": "string",
+                "pattern": "^sha256:[a-f0-9]{64}$"
+              },
+              "asset_scale": {
+                "type": "number",
+                "exclusiveMinimum": 0,
+                "maximum": 1000
+              },
+              "asset_source": {
+                "const": "external_mesh"
+              },
+              "asset_fallback_reason": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 600
+              }
+            },
+            "required": [
+              "id",
+              "type",
+              "width",
+              "height",
+              "depth",
+              "contact"
+            ]
+          },
+          "minItems": 1,
+          "maxItems": 180
+        },
+        "catalog_stock": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "template_id": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 120
+              },
+              "template_name": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 120
+              },
+              "type": {
+                "enum": [
+                  "jug",
+                  "directional_edge",
+                  "foothold",
+                  "sloper",
+                  "pinch",
+                  "rail",
+                  "volume",
+                  "crimp",
+                  "pocket"
+                ]
+              },
+              "count": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 20
+              }
+            },
+            "additionalProperties": false,
+            "required": [
+              "template_id",
+              "template_name",
+              "type",
+              "count"
+            ]
+          },
+          "minItems": 9,
+          "maxItems": 9
+        },
+        "wall_panels": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 12,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "id",
+              "label",
+              "origin",
+              "rotation_deg",
+              "width",
+              "height"
+            ],
+            "properties": {
+              "id": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 120
+              },
+              "label": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 120
+              },
+              "origin": {
+                "type": "array",
+                "minItems": 3,
+                "maxItems": 3,
+                "items": {
+                  "type": "number",
+                  "minimum": -10,
+                  "maximum": 10
+                }
+              },
+              "rotation_deg": {
+                "type": "array",
+                "minItems": 3,
+                "maxItems": 3,
+                "items": {
+                  "type": "number",
+                  "minimum": -90,
+                  "maximum": 90
+                }
+              },
+              "width": {
+                "type": "number",
+                "minimum": 0.5,
+                "maximum": 8
+              },
+              "height": {
+                "type": "number",
+                "minimum": 0.5,
+                "maximum": 8
+              }
+            }
+          }
+        }
+      },
+      "required": [
+        "width",
+        "height",
+        "angle_deg",
+        "margin",
+        "inventory"
+      ]
+    },
+    "body": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 120
+        },
+        "source": {
+          "const": "synthetic_assumption"
+        },
+        "upper_arm": {
+          "type": "number",
+          "exclusiveMinimum": 0,
+          "maximum": 1.5
+        },
+        "forearm": {
+          "type": "number",
+          "exclusiveMinimum": 0,
+          "maximum": 1.5
+        },
+        "thigh": {
+          "type": "number",
+          "exclusiveMinimum": 0,
+          "maximum": 1.5
+        },
+        "shin": {
+          "type": "number",
+          "exclusiveMinimum": 0,
+          "maximum": 1.5
+        },
+        "shoulder_width": {
+          "type": "number",
+          "exclusiveMinimum": 0,
+          "maximum": 1.5
+        },
+        "hip_width": {
+          "type": "number",
+          "exclusiveMinimum": 0,
+          "maximum": 1.5
+        },
+        "torso": {
+          "type": "number",
+          "exclusiveMinimum": 0,
+          "maximum": 1.5
+        },
+        "endpoint_offsets": {
+          "type": "object",
+          "properties": {
+            "LH": {
+              "type": "array",
+              "items": {
+                "type": "number"
+              },
+              "minItems": 3,
+              "maxItems": 3
+            },
+            "RH": {
+              "type": "array",
+              "items": {
+                "type": "number"
+              },
+              "minItems": 3,
+              "maxItems": 3
+            },
+            "LF": {
+              "type": "array",
+              "items": {
+                "type": "number"
+              },
+              "minItems": 3,
+              "maxItems": 3
+            },
+            "RF": {
+              "type": "array",
+              "items": {
+                "type": "number"
+              },
+              "minItems": 3,
+              "maxItems": 3
+            }
+          },
+          "required": [
+            "LH",
+            "RH",
+            "LF",
+            "RF"
+          ]
+        },
+        "joint_limits_deg": {
+          "type": "object",
+          "properties": {
+            "shoulder": {
+              "type": "array",
+              "items": {
+                "type": "array",
+                "items": {
+                  "type": "number"
+                },
+                "minItems": 2,
+                "maxItems": 2
+              },
+              "minItems": 3,
+              "maxItems": 3
+            },
+            "hip": {
+              "type": "array",
+              "items": {
+                "type": "array",
+                "items": {
+                  "type": "number"
+                },
+                "minItems": 2,
+                "maxItems": 2
+              },
+              "minItems": 3,
+              "maxItems": 3
+            },
+            "elbow": {
+              "type": "array",
+              "items": {
+                "type": "number"
+              },
+              "minItems": 2,
+              "maxItems": 2
+            },
+            "knee": {
+              "type": "array",
+              "items": {
+                "type": "number"
+              },
+              "minItems": 2,
+              "maxItems": 2
+            }
+          },
+          "required": [
+            "shoulder",
+            "hip",
+            "elbow",
+            "knee"
+          ]
+        }
+      },
+      "required": [
+        "id",
+        "source",
+        "upper_arm",
+        "forearm",
+        "thigh",
+        "shin",
+        "shoulder_width",
+        "hip_width",
+        "torso",
+        "endpoint_offsets",
+        "joint_limits_deg"
+      ]
+    },
+    "scenario": {
+      "enum": [
+        "foot_first",
+        "sidepull",
+        "foot_reposition",
+        "competition_sequence",
+        "style_search",
+        "route_search",
+        "setting_search"
+      ]
+    },
+    "mode": {
+      "enum": [
+        "free",
+        "fixed"
+      ]
+    },
+    "hand_moves": {
+      "type": "integer",
+      "minimum": 2,
+      "maximum": 12
+    },
+    "seed": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 2147483647
+    },
+    "budget": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 12
+    },
+    "solver": {
+      "type": "object",
+      "properties": {
+        "max_nfev": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 400
+        },
+        "restarts": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 8
+        },
+        "contact_tolerance_m": {
+          "type": "number",
+          "exclusiveMinimum": 0,
+          "maximum": 0.05
+        },
+        "epsilon_geometry_m": {
+          "type": "number",
+          "exclusiveMinimum": 0,
+          "maximum": 0.001
+        },
+        "root_bounds": {
+          "type": "array",
+          "items": {
+            "type": "array",
+            "items": {
+              "type": "number"
+            },
+            "minItems": 2,
+            "maxItems": 2
+          },
+          "minItems": 3,
+          "maxItems": 3
+        },
+        "root_rotation_deg": {
+          "type": "array",
+          "items": {
+            "type": "array",
+            "items": {
+              "type": "number"
+            },
+            "minItems": 2,
+            "maxItems": 2
+          },
+          "minItems": 3,
+          "maxItems": 3
+        },
+        "timeout_seconds": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 60
+        }
+      },
+      "required": [
+        "max_nfev",
+        "restarts",
+        "contact_tolerance_m",
+        "epsilon_geometry_m",
+        "root_bounds",
+        "root_rotation_deg",
+        "timeout_seconds"
+      ]
+    },
+    "reference_layout": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 120
+          },
+          "inventory_id": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 120
+          },
+          "u": {
+            "type": "number"
+          },
+          "v": {
+            "type": "number"
+          },
+          "rotation_deg": {
+            "type": "number"
+          },
+          "contact_surface_id": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 120
+          },
+          "mount": {
+            "type": "object",
+            "properties": {
+              "parent_id": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 120
+              },
+              "face_id": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 120
+              }
+            },
+            "required": [
+              "parent_id",
+              "face_id"
+            ],
+            "additionalProperties": false
+          },
+          "wall_panel_id": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 120
+          }
+        },
+        "required": [
+          "id",
+          "inventory_id",
+          "u",
+          "v",
+          "rotation_deg"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 1,
+      "maxItems": 180
+    },
+    "start_contacts": {
+      "type": "object",
+      "properties": {
+        "LH": {
+          "anyOf": [
+            {
+              "type": "object",
+              "properties": {
+                "placement_id": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 120
+                },
+                "contact_id": {
+                  "const": "main"
+                }
+              },
+              "required": [
+                "placement_id",
+                "contact_id"
+              ],
+              "additionalProperties": false
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "RH": {
+          "anyOf": [
+            {
+              "type": "object",
+              "properties": {
+                "placement_id": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 120
+                },
+                "contact_id": {
+                  "const": "main"
+                }
+              },
+              "required": [
+                "placement_id",
+                "contact_id"
+              ],
+              "additionalProperties": false
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "LF": {
+          "anyOf": [
+            {
+              "type": "object",
+              "properties": {
+                "placement_id": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 120
+                },
+                "contact_id": {
+                  "const": "main"
+                }
+              },
+              "required": [
+                "placement_id",
+                "contact_id"
+              ],
+              "additionalProperties": false
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "RF": {
+          "anyOf": [
+            {
+              "type": "object",
+              "properties": {
+                "placement_id": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 120
+                },
+                "contact_id": {
+                  "const": "main"
+                }
+              },
+              "required": [
+                "placement_id",
+                "contact_id"
+              ],
+              "additionalProperties": false
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "LH",
+        "RH",
+        "LF",
+        "RF"
+      ],
+      "additionalProperties": false
+    },
+    "end_contacts": {
+      "type": "object",
+      "properties": {
+        "LH": {
+          "anyOf": [
+            {
+              "type": "object",
+              "properties": {
+                "placement_id": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 120
+                },
+                "contact_id": {
+                  "const": "main"
+                }
+              },
+              "required": [
+                "placement_id",
+                "contact_id"
+              ],
+              "additionalProperties": false
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "RH": {
+          "anyOf": [
+            {
+              "type": "object",
+              "properties": {
+                "placement_id": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 120
+                },
+                "contact_id": {
+                  "const": "main"
+                }
+              },
+              "required": [
+                "placement_id",
+                "contact_id"
+              ],
+              "additionalProperties": false
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "LF": {
+          "anyOf": [
+            {
+              "type": "object",
+              "properties": {
+                "placement_id": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 120
+                },
+                "contact_id": {
+                  "const": "main"
+                }
+              },
+              "required": [
+                "placement_id",
+                "contact_id"
+              ],
+              "additionalProperties": false
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "RF": {
+          "anyOf": [
+            {
+              "type": "object",
+              "properties": {
+                "placement_id": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 120
+                },
+                "contact_id": {
+                  "const": "main"
+                }
+              },
+              "required": [
+                "placement_id",
+                "contact_id"
+              ],
+              "additionalProperties": false
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "LH",
+        "RH",
+        "LF",
+        "RF"
+      ],
+      "additionalProperties": false
+    },
+    "profile": {
+      "enum": [
+        "basic",
+        "competition",
+        "catalog",
+        "style",
+        "route",
+        "setting"
+      ]
+    },
+    "design_brief": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "title": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 600
+        },
+        "intent": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 600
+        },
+        "source": {
+          "const": "competition_inspired_synthetic"
+        },
+        "disclaimer": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 600
+        },
+        "zone_placement_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 120
+          },
+          "minItems": 1,
+          "maxItems": 4,
+          "uniqueItems": true
+        },
+        "top_placement_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 120
+          },
+          "minItems": 1,
+          "maxItems": 4,
+          "uniqueItems": true
+        },
+        "phases": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 8,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "id": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 120
+              },
+              "label": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 120
+              },
+              "intent": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 600
+              },
+              "event_start": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 31
+              },
+              "event_end": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 31
+              }
+            },
+            "required": [
+              "id",
+              "label",
+              "intent",
+              "event_start",
+              "event_end"
+            ]
+          }
+        }
+      },
+      "required": [
+        "title",
+        "intent",
+        "phases",
+        "zone_placement_ids",
+        "top_placement_ids",
+        "source",
+        "disclaimer"
+      ]
+    },
+    "route_design": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "style_goal",
+        "rhythm",
+        "source",
+        "search",
+        "phases"
+      ],
+      "properties": {
+        "style_goal": {
+          "enum": [
+            "power",
+            "sustained",
+            "technical"
+          ]
+        },
+        "rhythm": {
+          "enum": [
+            "early_crux",
+            "late_crux",
+            "sustained"
+          ]
+        },
+        "source": {
+          "const": "synthetic_assumption"
+        },
+        "search": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "beam_width",
+            "max_expansions"
+          ],
+          "properties": {
+            "beam_width": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 128
+            },
+            "max_expansions": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 60000
+            }
+          }
+        },
+        "phases": {
+          "type": "array",
+          "minItems": 4,
+          "maxItems": 12,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "id",
+              "label",
+              "hand_move_index",
+              "target"
+            ],
+            "properties": {
+              "id": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 120
+              },
+              "label": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 120
+              },
+              "hand_move_index": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 11
+              },
+              "target": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "strength",
+                  "power",
+                  "technical",
+                  "load"
+                ],
+                "properties": {
+                  "strength": {
+                    "type": "number",
+                    "minimum": 0,
+                    "maximum": 100
+                  },
+                  "power": {
+                    "type": "number",
+                    "minimum": 0,
+                    "maximum": 100
+                  },
+                  "technical": {
+                    "type": "number",
+                    "minimum": 0,
+                    "maximum": 100
+                  },
+                  "load": {
+                    "type": "number",
+                    "minimum": 0,
+                    "maximum": 100
+                  }
+                }
+              },
+              "segment_id": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 120
+              },
+              "phase_kind": {
+                "enum": [
+                  "establish",
+                  "power",
+                  "technical",
+                  "relief",
+                  "sustained",
+                  "finish"
+                ]
+              }
+            }
+          }
+        },
+        "program": {
+          "enum": [
+            "mixed_flow",
+            "power_finish",
+            "sustained_finish"
+          ]
+        }
+      }
+    },
+    "setting_design": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "program",
+        "source",
+        "intent",
+        "search"
+      ],
+      "properties": {
+        "program": {
+          "enum": [
+            "diagonal_balance",
+            "opposing_sidepulls",
+            "roof_exit"
+          ]
+        },
+        "source": {
+          "const": "synthetic_assumption"
+        },
+        "intent": {
+          "type": "string",
+          "maxLength": 600
+        },
+        "search": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "geometry_trials",
+            "max_expansions",
+            "beam_width"
+          ],
+          "properties": {
+            "geometry_trials": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 4
+            },
+            "max_expansions": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 60000
+            },
+            "beam_width": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 128
+            }
+          }
+        },
+        "hold_source": {
+          "enum": [
+            "templates",
+            "assets"
+          ]
+        },
+        "asset_application": {
+          "type": "object"
+        },
+        "wall_profile": {
+          "enum": [
+            "default",
+            "overhang",
+            "roof",
+            "dihedral",
+            "arete"
+          ]
+        },
+        "wall_application": {
+          "type": "object"
+        }
+      }
+    },
+    "mechanics_parameters": {
+      "type": "object"
+    }
+  },
+  "required": [
+    "schema_version",
+    "id",
+    "revision",
+    "source",
+    "scene",
+    "body",
+    "scenario",
+    "mode",
+    "hand_moves",
+    "seed",
+    "budget",
+    "solver",
+    "reference_layout",
+    "start_contacts",
+    "end_contacts"
+  ],
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "profile": {
+            "const": "setting"
+          }
+        },
+        "required": [
+          "profile"
+        ]
+      },
+      "then": {
+        "required": [
+          "setting_design"
+        ],
+        "properties": {
+          "scenario": {
+            "const": "setting_search"
+          },
+          "mode": {
+            "const": "free"
+          },
+          "scene": {
+            "properties": {
+              "width": {
+                "const": 4.8
+              },
+              "height": {
+                "const": 4.2
+              }
+            }
+          }
+        }
+      },
+      "else": {
+        "allOf": [
+          {
+            "if": {
+              "properties": {
+                "scenario": {
+                  "const": "competition_sequence"
+                }
+              },
+              "required": [
+                "scenario"
+              ]
+            },
+            "then": {
+              "properties": {
+                "profile": {
+                  "const": "competition"
+                },
+                "hand_moves": {
+                  "const": 4
+                },
+                "scene": {
+                  "properties": {
+                    "width": {
+                      "const": 4.8
+                    },
+                    "height": {
+                      "const": 4.2
+                    }
+                  }
+                }
+              },
+              "required": [
+                "profile"
+              ]
+            },
+            "else": {
+              "if": {
+                "properties": {
+                  "profile": {
+                    "const": "route"
+                  }
+                },
+                "required": [
+                  "profile"
+                ]
+              },
+              "then": {
+                "properties": {
+                  "scene": {
+                    "properties": {
+                      "width": {
+                        "const": 4.8
+                      },
+                      "height": {
+                        "const": 4.2
+                      }
+                    }
+                  }
+                }
+              },
+              "else": {
+                "properties": {
+                  "profile": {
+                    "enum": [
+                      "basic",
+                      "catalog",
+                      "style"
+                    ]
+                  },
+                  "scene": {
+                    "properties": {
+                      "width": {
+                        "const": 3
+                      },
+                      "height": {
+                        "const": 3
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          {
+            "if": {
+              "properties": {
+                "profile": {
+                  "const": "competition"
+                }
+              },
+              "required": [
+                "profile"
+              ]
+            },
+            "then": {
+              "properties": {
+                "scenario": {
+                  "const": "competition_sequence"
+                }
+              }
+            }
+          },
+          {
+            "if": {
+              "properties": {
+                "profile": {
+                  "const": "catalog"
+                }
+              },
+              "required": [
+                "profile"
+              ]
+            },
+            "then": {
+              "properties": {
+                "scene": {
+                  "required": [
+                    "catalog_stock"
+                  ]
+                }
+              }
+            }
+          },
+          {
+            "if": {
+              "properties": {
+                "profile": {
+                  "const": "style"
+                }
+              },
+              "required": [
+                "profile"
+              ]
+            },
+            "then": {
+              "required": [
+                "route_design"
+              ],
+              "properties": {
+                "scenario": {
+                  "const": "style_search"
+                },
+                "mode": {
+                  "const": "fixed"
+                },
+                "hand_moves": {
+                  "const": 4
+                }
+              }
+            },
+            "else": {
+              "if": {
+                "properties": {
+                  "profile": {
+                    "const": "route"
+                  }
+                },
+                "required": [
+                  "profile"
+                ]
+              },
+              "then": {
+                "required": [
+                  "route_design"
+                ],
+                "properties": {
+                  "scenario": {
+                    "const": "route_search"
+                  },
+                  "mode": {
+                    "const": "free"
+                  },
+                  "hand_moves": {
+                    "enum": [
+                      8,
+                      10,
+                      12
+                    ]
+                  },
+                  "route_design": {
+                    "required": [
+                      "program"
+                    ]
+                  }
+                }
+              },
+              "else": {
+                "properties": {
+                  "scene": {
+                    "properties": {
+                      "angle_deg": {
+                        "maximum": 10
+                      }
+                    }
+                  },
+                  "scenario": {
+                    "not": {
+                      "const": "style_search"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          {
+            "if": {
+              "properties": {
+                "profile": {
+                  "enum": [
+                    "basic",
+                    "catalog"
+                  ]
+                }
+              }
+            },
+            "then": {
+              "properties": {
+                "hand_moves": {
+                  "maximum": 4
+                }
+              }
+            }
+          },
+          {
+            "if": {
+              "properties": {
+                "scenario": {
+                  "const": "route_search"
+                }
+              },
+              "required": [
+                "scenario"
+              ]
+            },
+            "then": {
+              "properties": {
+                "profile": {
+                  "const": "route"
+                }
+              },
+              "required": [
+                "profile"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "scenario": {
+            "const": "setting_search"
+          }
+        },
+        "required": [
+          "scenario"
+        ]
+      },
+      "then": {
+        "required": [
+          "profile"
+        ],
+        "properties": {
+          "profile": {
+            "const": "setting"
+          }
+        }
+      }
+    }
+  ]
+}

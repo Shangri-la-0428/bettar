@@ -1,0 +1,2956 @@
+{
+  "schema_version": "1.0",
+  "id": "request-style-power-A",
+  "revision": 1,
+  "source": "synthetic_assumption",
+  "scene": {
+    "width": 3,
+    "height": 3,
+    "angle_deg": 0,
+    "margin": 0.2,
+    "inventory": [
+      {
+        "id": "board-01",
+        "type": "jug",
+        "width": 0.17,
+        "height": 0.12,
+        "depth": 0.07,
+        "template_id": "study-jug-0.17",
+        "template_name": "研究模板 · jug",
+        "source": "synthetic_assumption",
+        "pull_direction": [
+          0,
+          -1,
+          0
+        ],
+        "contact": {
+          "id": "main",
+          "position": [
+            0,
+            0,
+            0.07
+          ],
+          "radius": 0.015,
+          "limbs": [
+            "LH",
+            "RH"
+          ]
+        },
+        "design_attributes": {
+          "source": "synthetic_assumption",
+          "grip_accessibility": 0.88,
+          "precision": 0.18,
+          "force_demand": 0.2,
+          "friction_dependence": 0.2
+        },
+        "grip_surfaces": [
+          {
+            "id": "working",
+            "label": "主要抓握面",
+            "position": [
+              0.0,
+              -0.0048,
+              0.07
+            ],
+            "normal": [
+              -0.0,
+              -0.0,
+              1.0
+            ],
+            "u_axis": [
+              1.0,
+              0.0,
+              0.0
+            ],
+            "v_axis": [
+              -0.0,
+              1.0,
+              0.0
+            ],
+            "radii": [
+              0.023800000000000005,
+              0.016800000000000002
+            ],
+            "limbs": [
+              "LH",
+              "RH"
+            ],
+            "pull_direction": [
+              0.0,
+              -1.0,
+              -0.0
+            ]
+          },
+          {
+            "id": "alternate",
+            "label": "备选抓握面",
+            "position": [
+              0.0,
+              0.016800000000000002,
+              0.01531575815069922
+            ],
+            "normal": [
+              -0.0,
+              0.9250647370826719,
+              0.3798094682945213
+            ],
+            "u_axis": [
+              1.0,
+              0.0,
+              0.0
+            ],
+            "v_axis": [
+              0.0,
+              0.3798094682945213,
+              -0.9250647370826719
+            ],
+            "radii": [
+              0.023800000000000005,
+              0.016800000000000002
+            ],
+            "limbs": [
+              "LH",
+              "RH"
+            ],
+            "pull_direction": [
+              -0.0,
+              -0.3798094682945213,
+              0.9250647370826719
+            ]
+          }
+        ]
+      },
+      {
+        "id": "board-02",
+        "type": "jug",
+        "width": 0.17,
+        "height": 0.12,
+        "depth": 0.07,
+        "template_id": "study-jug-0.17",
+        "template_name": "研究模板 · jug",
+        "source": "synthetic_assumption",
+        "pull_direction": [
+          0,
+          -1,
+          0
+        ],
+        "contact": {
+          "id": "main",
+          "position": [
+            0,
+            0,
+            0.07
+          ],
+          "radius": 0.015,
+          "limbs": [
+            "LH",
+            "RH"
+          ]
+        },
+        "design_attributes": {
+          "source": "synthetic_assumption",
+          "grip_accessibility": 0.88,
+          "precision": 0.18,
+          "force_demand": 0.2,
+          "friction_dependence": 0.2
+        },
+        "grip_surfaces": [
+          {
+            "id": "working",
+            "label": "主要抓握面",
+            "position": [
+              0.0,
+              -0.0048,
+              0.07
+            ],
+            "normal": [
+              -0.0,
+              -0.0,
+              1.0
+            ],
+            "u_axis": [
+              1.0,
+              0.0,
+              0.0
+            ],
+            "v_axis": [
+              -0.0,
+              1.0,
+              0.0
+            ],
+            "radii": [
+              0.023800000000000005,
+              0.016800000000000002
+            ],
+            "limbs": [
+              "LH",
+              "RH"
+            ],
+            "pull_direction": [
+              0.0,
+              -1.0,
+              -0.0
+            ]
+          },
+          {
+            "id": "alternate",
+            "label": "备选抓握面",
+            "position": [
+              0.0,
+              0.016800000000000002,
+              0.01531575815069922
+            ],
+            "normal": [
+              -0.0,
+              0.9250647370826719,
+              0.3798094682945213
+            ],
+            "u_axis": [
+              1.0,
+              0.0,
+              0.0
+            ],
+            "v_axis": [
+              0.0,
+              0.3798094682945213,
+              -0.9250647370826719
+            ],
+            "radii": [
+              0.023800000000000005,
+              0.016800000000000002
+            ],
+            "limbs": [
+              "LH",
+              "RH"
+            ],
+            "pull_direction": [
+              -0.0,
+              -0.3798094682945213,
+              0.9250647370826719
+            ]
+          }
+        ]
+      },
+      {
+        "id": "board-03",
+        "type": "jug",
+        "width": 0.17,
+        "height": 0.12,
+        "depth": 0.07,
+        "template_id": "study-jug-0.17",
+        "template_name": "研究模板 · jug",
+        "source": "synthetic_assumption",
+        "pull_direction": [
+          0,
+          -1,
+          0
+        ],
+        "contact": {
+          "id": "main",
+          "position": [
+            0,
+            0,
+            0.07
+          ],
+          "radius": 0.015,
+          "limbs": [
+            "LH",
+            "RH"
+          ]
+        },
+        "design_attributes": {
+          "source": "synthetic_assumption",
+          "grip_accessibility": 0.88,
+          "precision": 0.18,
+          "force_demand": 0.2,
+          "friction_dependence": 0.2
+        },
+        "grip_surfaces": [
+          {
+            "id": "working",
+            "label": "主要抓握面",
+            "position": [
+              0.0,
+              -0.0048,
+              0.07
+            ],
+            "normal": [
+              -0.0,
+              -0.0,
+              1.0
+            ],
+            "u_axis": [
+              1.0,
+              0.0,
+              0.0
+            ],
+            "v_axis": [
+              -0.0,
+              1.0,
+              0.0
+            ],
+            "radii": [
+              0.023800000000000005,
+              0.016800000000000002
+            ],
+            "limbs": [
+              "LH",
+              "RH"
+            ],
+            "pull_direction": [
+              0.0,
+              -1.0,
+              -0.0
+            ]
+          },
+          {
+            "id": "alternate",
+            "label": "备选抓握面",
+            "position": [
+              0.0,
+              0.016800000000000002,
+              0.01531575815069922
+            ],
+            "normal": [
+              -0.0,
+              0.9250647370826719,
+              0.3798094682945213
+            ],
+            "u_axis": [
+              1.0,
+              0.0,
+              0.0
+            ],
+            "v_axis": [
+              0.0,
+              0.3798094682945213,
+              -0.9250647370826719
+            ],
+            "radii": [
+              0.023800000000000005,
+              0.016800000000000002
+            ],
+            "limbs": [
+              "LH",
+              "RH"
+            ],
+            "pull_direction": [
+              -0.0,
+              -0.3798094682945213,
+              0.9250647370826719
+            ]
+          }
+        ]
+      },
+      {
+        "id": "board-04",
+        "type": "directional_edge",
+        "width": 0.13,
+        "height": 0.08,
+        "depth": 0.07,
+        "template_id": "study-directional_edge-0.13",
+        "template_name": "研究模板 · directional_edge",
+        "source": "synthetic_assumption",
+        "pull_direction": [
+          0,
+          -1,
+          0
+        ],
+        "contact": {
+          "id": "main",
+          "position": [
+            0,
+            0,
+            0.07
+          ],
+          "radius": 0.015,
+          "limbs": [
+            "LH",
+            "RH"
+          ]
+        },
+        "design_attributes": {
+          "source": "synthetic_assumption",
+          "grip_accessibility": 0.44,
+          "precision": 0.88,
+          "force_demand": 0.72,
+          "friction_dependence": 0.38
+        },
+        "grip_surfaces": [
+          {
+            "id": "working",
+            "label": "主要抓握面",
+            "position": [
+              0.0,
+              -0.0024,
+              0.06579958084492674
+            ],
+            "normal": [
+              -0.0,
+              -0.860687437405064,
+              0.5091337104269409
+            ],
+            "u_axis": [
+              1.0,
+              0.0,
+              0.0
+            ],
+            "v_axis": [
+              -0.0,
+              0.5091337104269409,
+              0.860687437405064
+            ],
+            "radii": [
+              0.0182,
+              0.011200000000000002
+            ],
+            "limbs": [
+              "LH",
+              "RH"
+            ],
+            "pull_direction": [
+              0.0,
+              -0.5091337104269409,
+              -0.860687437405064
+            ]
+          },
+          {
+            "id": "alternate",
+            "label": "备选抓握面",
+            "position": [
+              0.0,
+              0.0072,
+              0.032613888563657746
+            ],
+            "normal": [
+              -0.0,
+              0.9545316693545387,
+              0.29810953054076866
+            ],
+            "u_axis": [
+              1.0,
+              0.0,
+              0.0
+            ],
+            "v_axis": [
+              0.0,
+              0.29810953054076866,
+              -0.9545316693545387
+            ],
+            "radii": [
+              0.0182,
+              0.011200000000000002
+            ],
+            "limbs": [
+              "LH",
+              "RH"
+            ],
+            "pull_direction": [
+              -0.0,
+              -0.29810953054076866,
+              0.9545316693545387
+            ]
+          }
+        ]
+      },
+      {
+        "id": "board-05",
+        "type": "pinch",
+        "width": 0.14,
+        "height": 0.17,
+        "depth": 0.09,
+        "template_id": "study-pinch-0.14",
+        "template_name": "研究模板 · pinch",
+        "source": "synthetic_assumption",
+        "pull_direction": [
+          0,
+          -1,
+          0
+        ],
+        "contact": {
+          "id": "main",
+          "position": [
+            0,
+            0,
+            0.09
+          ],
+          "radius": 0.015,
+          "limbs": [
+            "LH",
+            "RH"
+          ]
+        },
+        "design_attributes": {
+          "source": "synthetic_assumption",
+          "grip_accessibility": 0.58,
+          "precision": 0.6,
+          "force_demand": 0.62,
+          "friction_dependence": 0.55
+        },
+        "grip_surfaces": [
+          {
+            "id": "working",
+            "label": "主要抓握面",
+            "position": [
+              -0.0252,
+              0.0,
+              0.05782548634522768
+            ],
+            "normal": [
+              -0.8205796068072003,
+              -0.0,
+              0.571532246589937
+            ],
+            "u_axis": [
+              0.571532246589937,
+              0.0,
+              0.8205796068072003
+            ],
+            "v_axis": [
+              -0.0,
+              1.0,
+              0.0
+            ],
+            "radii": [
+              0.019600000000000003,
+              0.023800000000000005
+            ],
+            "limbs": [
+              "LH",
+              "RH"
+            ],
+            "pull_direction": [
+              0.0,
+              -1.0,
+              -0.0
+            ]
+          },
+          {
+            "id": "alternate",
+            "label": "备选抓握面",
+            "position": [
+              0.0252,
+              0.0,
+              0.05782548634522768
+            ],
+            "normal": [
+              0.8205796068072003,
+              -0.0,
+              0.571532246589937
+            ],
+            "u_axis": [
+              0.571532246589937,
+              0.0,
+              -0.8205796068072003
+            ],
+            "v_axis": [
+              0.0,
+              1.0,
+              0.0
+            ],
+            "radii": [
+              0.019600000000000003,
+              0.023800000000000005
+            ],
+            "limbs": [
+              "LH",
+              "RH"
+            ],
+            "pull_direction": [
+              -0.0,
+              -1.0,
+              -0.0
+            ]
+          }
+        ]
+      },
+      {
+        "id": "board-06",
+        "type": "sloper",
+        "width": 0.23,
+        "height": 0.18,
+        "depth": 0.105,
+        "template_id": "study-sloper-0.23",
+        "template_name": "研究模板 · sloper",
+        "source": "synthetic_assumption",
+        "pull_direction": [
+          0,
+          -1,
+          0
+        ],
+        "contact": {
+          "id": "main",
+          "position": [
+            0,
+            0,
+            0.105
+          ],
+          "radius": 0.015,
+          "limbs": [
+            "LH",
+            "RH"
+          ]
+        },
+        "design_attributes": {
+          "source": "synthetic_assumption",
+          "grip_accessibility": 0.46,
+          "precision": 0.45,
+          "force_demand": 0.7,
+          "friction_dependence": 0.92
+        },
+        "grip_surfaces": [
+          {
+            "id": "working",
+            "label": "主要抓握面",
+            "position": [
+              -0.023000000000000003,
+              0.010799999999999999,
+              0.10172238068004132
+            ],
+            "normal": [
+              -0.18204372967590254,
+              0.20200626799806803,
+              0.9623167608304345
+            ],
+            "u_axis": [
+              0.9825732664449291,
+              0.0,
+              0.1858757005844018
+            ],
+            "v_axis": [
+              0.03754805658658132,
+              0.9793842288343695,
+              -0.19848595858921148
+            ],
+            "radii": [
+              0.032200000000000006,
+              0.0252
+            ],
+            "limbs": [
+              "LH",
+              "RH"
+            ],
+            "pull_direction": [
+              -0.03754805658658132,
+              -0.9793842288343695,
+              0.19848595858921148
+            ]
+          },
+          {
+            "id": "alternate",
+            "label": "备选抓握面",
+            "position": [
+              0.0253,
+              0.010799999999999999,
+              0.10068592719585359
+            ],
+            "normal": [
+              0.23467357490494123,
+              0.21181200444911238,
+              0.9487170220948837
+            ],
+            "u_axis": [
+              0.9707427587737412,
+              0.0,
+              -0.24012183634219136
+            ],
+            "v_axis": [
+              -0.050860687467641275,
+              0.9773104290711571,
+              -0.2056149695403273
+            ],
+            "radii": [
+              0.032200000000000006,
+              0.0252
+            ],
+            "limbs": [
+              "LH",
+              "RH"
+            ],
+            "pull_direction": [
+              0.050860687467641275,
+              -0.9773104290711571,
+              0.2056149695403273
+            ]
+          }
+        ]
+      },
+      {
+        "id": "board-07",
+        "type": "sloper",
+        "width": 0.23,
+        "height": 0.18,
+        "depth": 0.105,
+        "template_id": "study-sloper-0.23",
+        "template_name": "研究模板 · sloper",
+        "source": "synthetic_assumption",
+        "pull_direction": [
+          0,
+          -1,
+          0
+        ],
+        "contact": {
+          "id": "main",
+          "position": [
+            0,
+            0,
+            0.105
+          ],
+          "radius": 0.015,
+          "limbs": [
+            "LH",
+            "RH"
+          ]
+        },
+        "design_attributes": {
+          "source": "synthetic_assumption",
+          "grip_accessibility": 0.46,
+          "precision": 0.45,
+          "force_demand": 0.7,
+          "friction_dependence": 0.92
+        },
+        "grip_surfaces": [
+          {
+            "id": "working",
+            "label": "主要抓握面",
+            "position": [
+              -0.023000000000000003,
+              0.010799999999999999,
+              0.10172238068004132
+            ],
+            "normal": [
+              -0.18204372967590254,
+              0.20200626799806803,
+              0.9623167608304345
+            ],
+            "u_axis": [
+              0.9825732664449291,
+              0.0,
+              0.1858757005844018
+            ],
+            "v_axis": [
+              0.03754805658658132,
+              0.9793842288343695,
+              -0.19848595858921148
+            ],
+            "radii": [
+              0.032200000000000006,
+              0.0252
+            ],
+            "limbs": [
+              "LH",
+              "RH"
+            ],
+            "pull_direction": [
+              -0.03754805658658132,
+              -0.9793842288343695,
+              0.19848595858921148
+            ]
+          },
+          {
+            "id": "alternate",
+            "label": "备选抓握面",
+            "position": [
+              0.0253,
+              0.010799999999999999,
+              0.10068592719585359
+            ],
+            "normal": [
+              0.23467357490494123,
+              0.21181200444911238,
+              0.9487170220948837
+            ],
+            "u_axis": [
+              0.9707427587737412,
+              0.0,
+              -0.24012183634219136
+            ],
+            "v_axis": [
+              -0.050860687467641275,
+              0.9773104290711571,
+              -0.2056149695403273
+            ],
+            "radii": [
+              0.032200000000000006,
+              0.0252
+            ],
+            "limbs": [
+              "LH",
+              "RH"
+            ],
+            "pull_direction": [
+              0.050860687467641275,
+              -0.9773104290711571,
+              0.2056149695403273
+            ]
+          }
+        ]
+      },
+      {
+        "id": "board-08",
+        "type": "pinch",
+        "width": 0.14,
+        "height": 0.17,
+        "depth": 0.09,
+        "template_id": "study-pinch-0.14",
+        "template_name": "研究模板 · pinch",
+        "source": "synthetic_assumption",
+        "pull_direction": [
+          0,
+          -1,
+          0
+        ],
+        "contact": {
+          "id": "main",
+          "position": [
+            0,
+            0,
+            0.09
+          ],
+          "radius": 0.015,
+          "limbs": [
+            "LH",
+            "RH"
+          ]
+        },
+        "design_attributes": {
+          "source": "synthetic_assumption",
+          "grip_accessibility": 0.58,
+          "precision": 0.6,
+          "force_demand": 0.62,
+          "friction_dependence": 0.55
+        },
+        "grip_surfaces": [
+          {
+            "id": "working",
+            "label": "主要抓握面",
+            "position": [
+              -0.0252,
+              0.0,
+              0.05782548634522768
+            ],
+            "normal": [
+              -0.8205796068072003,
+              -0.0,
+              0.571532246589937
+            ],
+            "u_axis": [
+              0.571532246589937,
+              0.0,
+              0.8205796068072003
+            ],
+            "v_axis": [
+              -0.0,
+              1.0,
+              0.0
+            ],
+            "radii": [
+              0.019600000000000003,
+              0.023800000000000005
+            ],
+            "limbs": [
+              "LH",
+              "RH"
+            ],
+            "pull_direction": [
+              0.0,
+              -1.0,
+              -0.0
+            ]
+          },
+          {
+            "id": "alternate",
+            "label": "备选抓握面",
+            "position": [
+              0.0252,
+              0.0,
+              0.05782548634522768
+            ],
+            "normal": [
+              0.8205796068072003,
+              -0.0,
+              0.571532246589937
+            ],
+            "u_axis": [
+              0.571532246589937,
+              0.0,
+              -0.8205796068072003
+            ],
+            "v_axis": [
+              0.0,
+              1.0,
+              0.0
+            ],
+            "radii": [
+              0.019600000000000003,
+              0.023800000000000005
+            ],
+            "limbs": [
+              "LH",
+              "RH"
+            ],
+            "pull_direction": [
+              -0.0,
+              -1.0,
+              -0.0
+            ]
+          }
+        ]
+      },
+      {
+        "id": "board-09",
+        "type": "directional_edge",
+        "width": 0.13,
+        "height": 0.08,
+        "depth": 0.07,
+        "template_id": "study-directional_edge-0.13",
+        "template_name": "研究模板 · directional_edge",
+        "source": "synthetic_assumption",
+        "pull_direction": [
+          0,
+          -1,
+          0
+        ],
+        "contact": {
+          "id": "main",
+          "position": [
+            0,
+            0,
+            0.07
+          ],
+          "radius": 0.015,
+          "limbs": [
+            "LH",
+            "RH"
+          ]
+        },
+        "design_attributes": {
+          "source": "synthetic_assumption",
+          "grip_accessibility": 0.44,
+          "precision": 0.88,
+          "force_demand": 0.72,
+          "friction_dependence": 0.38
+        },
+        "grip_surfaces": [
+          {
+            "id": "working",
+            "label": "主要抓握面",
+            "position": [
+              0.0,
+              -0.0024,
+              0.06579958084492674
+            ],
+            "normal": [
+              -0.0,
+              -0.860687437405064,
+              0.5091337104269409
+            ],
+            "u_axis": [
+              1.0,
+              0.0,
+              0.0
+            ],
+            "v_axis": [
+              -0.0,
+              0.5091337104269409,
+              0.860687437405064
+            ],
+            "radii": [
+              0.0182,
+              0.011200000000000002
+            ],
+            "limbs": [
+              "LH",
+              "RH"
+            ],
+            "pull_direction": [
+              0.0,
+              -0.5091337104269409,
+              -0.860687437405064
+            ]
+          },
+          {
+            "id": "alternate",
+            "label": "备选抓握面",
+            "position": [
+              0.0,
+              0.0072,
+              0.032613888563657746
+            ],
+            "normal": [
+              -0.0,
+              0.9545316693545387,
+              0.29810953054076866
+            ],
+            "u_axis": [
+              1.0,
+              0.0,
+              0.0
+            ],
+            "v_axis": [
+              0.0,
+              0.29810953054076866,
+              -0.9545316693545387
+            ],
+            "radii": [
+              0.0182,
+              0.011200000000000002
+            ],
+            "limbs": [
+              "LH",
+              "RH"
+            ],
+            "pull_direction": [
+              -0.0,
+              -0.29810953054076866,
+              0.9545316693545387
+            ]
+          }
+        ]
+      },
+      {
+        "id": "board-10",
+        "type": "jug",
+        "width": 0.17,
+        "height": 0.12,
+        "depth": 0.07,
+        "template_id": "study-jug-0.17",
+        "template_name": "研究模板 · jug",
+        "source": "synthetic_assumption",
+        "pull_direction": [
+          0,
+          -1,
+          0
+        ],
+        "contact": {
+          "id": "main",
+          "position": [
+            0,
+            0,
+            0.07
+          ],
+          "radius": 0.015,
+          "limbs": [
+            "LH",
+            "RH"
+          ]
+        },
+        "design_attributes": {
+          "source": "synthetic_assumption",
+          "grip_accessibility": 0.88,
+          "precision": 0.18,
+          "force_demand": 0.2,
+          "friction_dependence": 0.2
+        },
+        "grip_surfaces": [
+          {
+            "id": "working",
+            "label": "主要抓握面",
+            "position": [
+              0.0,
+              -0.0048,
+              0.07
+            ],
+            "normal": [
+              -0.0,
+              -0.0,
+              1.0
+            ],
+            "u_axis": [
+              1.0,
+              0.0,
+              0.0
+            ],
+            "v_axis": [
+              -0.0,
+              1.0,
+              0.0
+            ],
+            "radii": [
+              0.023800000000000005,
+              0.016800000000000002
+            ],
+            "limbs": [
+              "LH",
+              "RH"
+            ],
+            "pull_direction": [
+              0.0,
+              -1.0,
+              -0.0
+            ]
+          },
+          {
+            "id": "alternate",
+            "label": "备选抓握面",
+            "position": [
+              0.0,
+              0.016800000000000002,
+              0.01531575815069922
+            ],
+            "normal": [
+              -0.0,
+              0.9250647370826719,
+              0.3798094682945213
+            ],
+            "u_axis": [
+              1.0,
+              0.0,
+              0.0
+            ],
+            "v_axis": [
+              0.0,
+              0.3798094682945213,
+              -0.9250647370826719
+            ],
+            "radii": [
+              0.023800000000000005,
+              0.016800000000000002
+            ],
+            "limbs": [
+              "LH",
+              "RH"
+            ],
+            "pull_direction": [
+              -0.0,
+              -0.3798094682945213,
+              0.9250647370826719
+            ]
+          }
+        ]
+      },
+      {
+        "id": "board-11",
+        "type": "rail",
+        "width": 0.22,
+        "height": 0.1,
+        "depth": 0.07,
+        "template_id": "study-rail-0.22",
+        "template_name": "研究模板 · rail",
+        "source": "synthetic_assumption",
+        "pull_direction": [
+          0,
+          -1,
+          0
+        ],
+        "contact": {
+          "id": "main",
+          "position": [
+            0,
+            0,
+            0.07
+          ],
+          "radius": 0.015,
+          "limbs": [
+            "LH",
+            "RH"
+          ]
+        },
+        "design_attributes": {
+          "source": "synthetic_assumption",
+          "grip_accessibility": 0.71,
+          "precision": 0.38,
+          "force_demand": 0.42,
+          "friction_dependence": 0.4
+        },
+        "grip_surfaces": [
+          {
+            "id": "working",
+            "label": "主要抓握面",
+            "position": [
+              0.0,
+              -0.004,
+              0.064604484154129
+            ],
+            "normal": [
+              -0.0,
+              -0.7904334940985173,
+              0.6125478686659591
+            ],
+            "u_axis": [
+              1.0,
+              0.0,
+              0.0
+            ],
+            "v_axis": [
+              -0.0,
+              0.6125478686659591,
+              0.7904334940985173
+            ],
+            "radii": [
+              0.030800000000000004,
+              0.014000000000000002
+            ],
+            "limbs": [
+              "LH",
+              "RH"
+            ],
+            "pull_direction": [
+              0.0,
+              -0.6125478686659591,
+              -0.7904334940985173
+            ]
+          },
+          {
+            "id": "alternate",
+            "label": "备选抓握面",
+            "position": [
+              0.0,
+              0.009,
+              0.03018175658152133
+            ],
+            "normal": [
+              -0.0,
+              0.9341359642318915,
+              0.3569173578414959
+            ],
+            "u_axis": [
+              1.0,
+              0.0,
+              0.0
+            ],
+            "v_axis": [
+              0.0,
+              0.3569173578414959,
+              -0.9341359642318915
+            ],
+            "radii": [
+              0.030800000000000004,
+              0.014000000000000002
+            ],
+            "limbs": [
+              "LH",
+              "RH"
+            ],
+            "pull_direction": [
+              -0.0,
+              -0.3569173578414959,
+              0.9341359642318915
+            ]
+          }
+        ]
+      },
+      {
+        "id": "board-12",
+        "type": "rail",
+        "width": 0.22,
+        "height": 0.1,
+        "depth": 0.07,
+        "template_id": "study-rail-0.22",
+        "template_name": "研究模板 · rail",
+        "source": "synthetic_assumption",
+        "pull_direction": [
+          0,
+          -1,
+          0
+        ],
+        "contact": {
+          "id": "main",
+          "position": [
+            0,
+            0,
+            0.07
+          ],
+          "radius": 0.015,
+          "limbs": [
+            "LH",
+            "RH"
+          ]
+        },
+        "design_attributes": {
+          "source": "synthetic_assumption",
+          "grip_accessibility": 0.71,
+          "precision": 0.38,
+          "force_demand": 0.42,
+          "friction_dependence": 0.4
+        },
+        "grip_surfaces": [
+          {
+            "id": "working",
+            "label": "主要抓握面",
+            "position": [
+              0.0,
+              -0.004,
+              0.064604484154129
+            ],
+            "normal": [
+              -0.0,
+              -0.7904334940985173,
+              0.6125478686659591
+            ],
+            "u_axis": [
+              1.0,
+              0.0,
+              0.0
+            ],
+            "v_axis": [
+              -0.0,
+              0.6125478686659591,
+              0.7904334940985173
+            ],
+            "radii": [
+              0.030800000000000004,
+              0.014000000000000002
+            ],
+            "limbs": [
+              "LH",
+              "RH"
+            ],
+            "pull_direction": [
+              0.0,
+              -0.6125478686659591,
+              -0.7904334940985173
+            ]
+          },
+          {
+            "id": "alternate",
+            "label": "备选抓握面",
+            "position": [
+              0.0,
+              0.009,
+              0.03018175658152133
+            ],
+            "normal": [
+              -0.0,
+              0.9341359642318915,
+              0.3569173578414959
+            ],
+            "u_axis": [
+              1.0,
+              0.0,
+              0.0
+            ],
+            "v_axis": [
+              0.0,
+              0.3569173578414959,
+              -0.9341359642318915
+            ],
+            "radii": [
+              0.030800000000000004,
+              0.014000000000000002
+            ],
+            "limbs": [
+              "LH",
+              "RH"
+            ],
+            "pull_direction": [
+              -0.0,
+              -0.3569173578414959,
+              0.9341359642318915
+            ]
+          }
+        ]
+      },
+      {
+        "id": "board-13",
+        "type": "foothold",
+        "width": 0.1,
+        "height": 0.065,
+        "depth": 0.045,
+        "template_id": "study-foothold-0.1",
+        "template_name": "研究模板 · foothold",
+        "source": "synthetic_assumption",
+        "pull_direction": [
+          0,
+          -1,
+          0
+        ],
+        "contact": {
+          "id": "main",
+          "position": [
+            0,
+            0,
+            0.045
+          ],
+          "radius": 0.015,
+          "limbs": [
+            "LF",
+            "RF"
+          ]
+        },
+        "design_attributes": {
+          "source": "synthetic_assumption",
+          "grip_accessibility": 0.714,
+          "precision": 0.5,
+          "force_demand": 0.15,
+          "friction_dependence": 0.35
+        },
+        "grip_surfaces": [
+          {
+            "id": "working",
+            "label": "主要踩踏面",
+            "position": [
+              0.0,
+              0.00585,
+              0.02508845198486843
+            ],
+            "normal": [
+              -0.0,
+              0.922805084194267,
+              0.38526714963154035
+            ],
+            "u_axis": [
+              1.0,
+              0.0,
+              0.0
+            ],
+            "v_axis": [
+              0.0,
+              0.38526714963154035,
+              -0.922805084194267
+            ],
+            "radii": [
+              0.014000000000000002,
+              0.0091
+            ],
+            "limbs": [
+              "LF",
+              "RF"
+            ],
+            "pull_direction": [
+              -0.0,
+              -0.38526714963154035,
+              0.922805084194267
+            ]
+          },
+          {
+            "id": "alternate",
+            "label": "备选踩踏面",
+            "position": [
+              0.0,
+              -0.00195,
+              0.04269042
+            ],
+            "normal": [
+              -0.0,
+              -0.7640807941242063,
+              0.6451205624149042
+            ],
+            "u_axis": [
+              1.0,
+              0.0,
+              0.0
+            ],
+            "v_axis": [
+              -0.0,
+              0.6451205624149042,
+              0.7640807941242063
+            ],
+            "radii": [
+              0.014000000000000002,
+              0.0091
+            ],
+            "limbs": [
+              "LF",
+              "RF"
+            ],
+            "pull_direction": [
+              0.0,
+              -0.6451205624149042,
+              -0.7640807941242063
+            ]
+          }
+        ]
+      },
+      {
+        "id": "board-14",
+        "type": "foothold",
+        "width": 0.1,
+        "height": 0.065,
+        "depth": 0.045,
+        "template_id": "study-foothold-0.1",
+        "template_name": "研究模板 · foothold",
+        "source": "synthetic_assumption",
+        "pull_direction": [
+          0,
+          -1,
+          0
+        ],
+        "contact": {
+          "id": "main",
+          "position": [
+            0,
+            0,
+            0.045
+          ],
+          "radius": 0.015,
+          "limbs": [
+            "LF",
+            "RF"
+          ]
+        },
+        "design_attributes": {
+          "source": "synthetic_assumption",
+          "grip_accessibility": 0.714,
+          "precision": 0.5,
+          "force_demand": 0.15,
+          "friction_dependence": 0.35
+        },
+        "grip_surfaces": [
+          {
+            "id": "working",
+            "label": "主要踩踏面",
+            "position": [
+              0.0,
+              0.00585,
+              0.02508845198486843
+            ],
+            "normal": [
+              -0.0,
+              0.922805084194267,
+              0.38526714963154035
+            ],
+            "u_axis": [
+              1.0,
+              0.0,
+              0.0
+            ],
+            "v_axis": [
+              0.0,
+              0.38526714963154035,
+              -0.922805084194267
+            ],
+            "radii": [
+              0.014000000000000002,
+              0.0091
+            ],
+            "limbs": [
+              "LF",
+              "RF"
+            ],
+            "pull_direction": [
+              -0.0,
+              -0.38526714963154035,
+              0.922805084194267
+            ]
+          },
+          {
+            "id": "alternate",
+            "label": "备选踩踏面",
+            "position": [
+              0.0,
+              -0.00195,
+              0.04269042
+            ],
+            "normal": [
+              -0.0,
+              -0.7640807941242063,
+              0.6451205624149042
+            ],
+            "u_axis": [
+              1.0,
+              0.0,
+              0.0
+            ],
+            "v_axis": [
+              -0.0,
+              0.6451205624149042,
+              0.7640807941242063
+            ],
+            "radii": [
+              0.014000000000000002,
+              0.0091
+            ],
+            "limbs": [
+              "LF",
+              "RF"
+            ],
+            "pull_direction": [
+              0.0,
+              -0.6451205624149042,
+              -0.7640807941242063
+            ]
+          }
+        ]
+      },
+      {
+        "id": "board-15",
+        "type": "foothold",
+        "width": 0.09,
+        "height": 0.065,
+        "depth": 0.045,
+        "template_id": "study-foothold-0.09",
+        "template_name": "研究模板 · foothold",
+        "source": "synthetic_assumption",
+        "pull_direction": [
+          0,
+          -1,
+          0
+        ],
+        "contact": {
+          "id": "main",
+          "position": [
+            0,
+            0,
+            0.045
+          ],
+          "radius": 0.015,
+          "limbs": [
+            "LF",
+            "RF"
+          ]
+        },
+        "design_attributes": {
+          "source": "synthetic_assumption",
+          "grip_accessibility": 0.643,
+          "precision": 0.55,
+          "force_demand": 0.15,
+          "friction_dependence": 0.35
+        },
+        "grip_surfaces": [
+          {
+            "id": "working",
+            "label": "主要踩踏面",
+            "position": [
+              0.0,
+              0.00585,
+              0.02508845198486843
+            ],
+            "normal": [
+              -0.0,
+              0.922805084194267,
+              0.38526714963154035
+            ],
+            "u_axis": [
+              1.0,
+              0.0,
+              0.0
+            ],
+            "v_axis": [
+              0.0,
+              0.38526714963154035,
+              -0.922805084194267
+            ],
+            "radii": [
+              0.0126,
+              0.0091
+            ],
+            "limbs": [
+              "LF",
+              "RF"
+            ],
+            "pull_direction": [
+              -0.0,
+              -0.38526714963154035,
+              0.922805084194267
+            ]
+          },
+          {
+            "id": "alternate",
+            "label": "备选踩踏面",
+            "position": [
+              0.0,
+              -0.00195,
+              0.04269042
+            ],
+            "normal": [
+              -0.0,
+              -0.7640807941242063,
+              0.6451205624149042
+            ],
+            "u_axis": [
+              1.0,
+              0.0,
+              0.0
+            ],
+            "v_axis": [
+              -0.0,
+              0.6451205624149042,
+              0.7640807941242063
+            ],
+            "radii": [
+              0.0126,
+              0.0091
+            ],
+            "limbs": [
+              "LF",
+              "RF"
+            ],
+            "pull_direction": [
+              0.0,
+              -0.6451205624149042,
+              -0.7640807941242063
+            ]
+          }
+        ]
+      },
+      {
+        "id": "board-16",
+        "type": "foothold",
+        "width": 0.12,
+        "height": 0.065,
+        "depth": 0.045,
+        "template_id": "study-foothold-0.12",
+        "template_name": "研究模板 · foothold",
+        "source": "synthetic_assumption",
+        "pull_direction": [
+          0,
+          -1,
+          0
+        ],
+        "contact": {
+          "id": "main",
+          "position": [
+            0,
+            0,
+            0.045
+          ],
+          "radius": 0.015,
+          "limbs": [
+            "LF",
+            "RF"
+          ]
+        },
+        "design_attributes": {
+          "source": "synthetic_assumption",
+          "grip_accessibility": 0.857,
+          "precision": 0.4,
+          "force_demand": 0.15,
+          "friction_dependence": 0.35
+        },
+        "grip_surfaces": [
+          {
+            "id": "working",
+            "label": "主要踩踏面",
+            "position": [
+              0.0,
+              0.00585,
+              0.02508845198486843
+            ],
+            "normal": [
+              -0.0,
+              0.922805084194267,
+              0.38526714963154035
+            ],
+            "u_axis": [
+              1.0,
+              0.0,
+              0.0
+            ],
+            "v_axis": [
+              0.0,
+              0.38526714963154035,
+              -0.922805084194267
+            ],
+            "radii": [
+              0.016800000000000002,
+              0.0091
+            ],
+            "limbs": [
+              "LF",
+              "RF"
+            ],
+            "pull_direction": [
+              -0.0,
+              -0.38526714963154035,
+              0.922805084194267
+            ]
+          },
+          {
+            "id": "alternate",
+            "label": "备选踩踏面",
+            "position": [
+              0.0,
+              -0.00195,
+              0.04269042
+            ],
+            "normal": [
+              -0.0,
+              -0.7640807941242063,
+              0.6451205624149042
+            ],
+            "u_axis": [
+              1.0,
+              0.0,
+              0.0
+            ],
+            "v_axis": [
+              -0.0,
+              0.6451205624149042,
+              0.7640807941242063
+            ],
+            "radii": [
+              0.016800000000000002,
+              0.0091
+            ],
+            "limbs": [
+              "LF",
+              "RF"
+            ],
+            "pull_direction": [
+              0.0,
+              -0.6451205624149042,
+              -0.7640807941242063
+            ]
+          }
+        ]
+      },
+      {
+        "id": "board-17",
+        "type": "foothold",
+        "width": 0.07,
+        "height": 0.065,
+        "depth": 0.045,
+        "template_id": "study-foothold-0.07",
+        "template_name": "研究模板 · foothold",
+        "source": "synthetic_assumption",
+        "pull_direction": [
+          0,
+          -1,
+          0
+        ],
+        "contact": {
+          "id": "main",
+          "position": [
+            0,
+            0,
+            0.045
+          ],
+          "radius": 0.015,
+          "limbs": [
+            "LF",
+            "RF"
+          ]
+        },
+        "design_attributes": {
+          "source": "synthetic_assumption",
+          "grip_accessibility": 0.5,
+          "precision": 0.65,
+          "force_demand": 0.15,
+          "friction_dependence": 0.35
+        },
+        "grip_surfaces": [
+          {
+            "id": "working",
+            "label": "主要踩踏面",
+            "position": [
+              0.0,
+              0.00585,
+              0.02508845198486843
+            ],
+            "normal": [
+              -0.0,
+              0.922805084194267,
+              0.38526714963154035
+            ],
+            "u_axis": [
+              1.0,
+              0.0,
+              0.0
+            ],
+            "v_axis": [
+              0.0,
+              0.38526714963154035,
+              -0.922805084194267
+            ],
+            "radii": [
+              0.009800000000000001,
+              0.0091
+            ],
+            "limbs": [
+              "LF",
+              "RF"
+            ],
+            "pull_direction": [
+              -0.0,
+              -0.38526714963154035,
+              0.922805084194267
+            ]
+          },
+          {
+            "id": "alternate",
+            "label": "备选踩踏面",
+            "position": [
+              0.0,
+              -0.00195,
+              0.04269042
+            ],
+            "normal": [
+              -0.0,
+              -0.7640807941242063,
+              0.6451205624149042
+            ],
+            "u_axis": [
+              1.0,
+              0.0,
+              0.0
+            ],
+            "v_axis": [
+              -0.0,
+              0.6451205624149042,
+              0.7640807941242063
+            ],
+            "radii": [
+              0.009800000000000001,
+              0.0091
+            ],
+            "limbs": [
+              "LF",
+              "RF"
+            ],
+            "pull_direction": [
+              0.0,
+              -0.6451205624149042,
+              -0.7640807941242063
+            ]
+          }
+        ]
+      },
+      {
+        "id": "board-18",
+        "type": "foothold",
+        "width": 0.1,
+        "height": 0.065,
+        "depth": 0.045,
+        "template_id": "study-foothold-0.1",
+        "template_name": "研究模板 · foothold",
+        "source": "synthetic_assumption",
+        "pull_direction": [
+          0,
+          -1,
+          0
+        ],
+        "contact": {
+          "id": "main",
+          "position": [
+            0,
+            0,
+            0.045
+          ],
+          "radius": 0.015,
+          "limbs": [
+            "LF",
+            "RF"
+          ]
+        },
+        "design_attributes": {
+          "source": "synthetic_assumption",
+          "grip_accessibility": 0.714,
+          "precision": 0.5,
+          "force_demand": 0.15,
+          "friction_dependence": 0.35
+        },
+        "grip_surfaces": [
+          {
+            "id": "working",
+            "label": "主要踩踏面",
+            "position": [
+              0.0,
+              0.00585,
+              0.02508845198486843
+            ],
+            "normal": [
+              -0.0,
+              0.922805084194267,
+              0.38526714963154035
+            ],
+            "u_axis": [
+              1.0,
+              0.0,
+              0.0
+            ],
+            "v_axis": [
+              0.0,
+              0.38526714963154035,
+              -0.922805084194267
+            ],
+            "radii": [
+              0.014000000000000002,
+              0.0091
+            ],
+            "limbs": [
+              "LF",
+              "RF"
+            ],
+            "pull_direction": [
+              -0.0,
+              -0.38526714963154035,
+              0.922805084194267
+            ]
+          },
+          {
+            "id": "alternate",
+            "label": "备选踩踏面",
+            "position": [
+              0.0,
+              -0.00195,
+              0.04269042
+            ],
+            "normal": [
+              -0.0,
+              -0.7640807941242063,
+              0.6451205624149042
+            ],
+            "u_axis": [
+              1.0,
+              0.0,
+              0.0
+            ],
+            "v_axis": [
+              -0.0,
+              0.6451205624149042,
+              0.7640807941242063
+            ],
+            "radii": [
+              0.014000000000000002,
+              0.0091
+            ],
+            "limbs": [
+              "LF",
+              "RF"
+            ],
+            "pull_direction": [
+              0.0,
+              -0.6451205624149042,
+              -0.7640807941242063
+            ]
+          }
+        ]
+      },
+      {
+        "id": "board-19",
+        "type": "foothold",
+        "width": 0.07,
+        "height": 0.065,
+        "depth": 0.045,
+        "template_id": "study-foothold-0.07",
+        "template_name": "研究模板 · foothold",
+        "source": "synthetic_assumption",
+        "pull_direction": [
+          0,
+          -1,
+          0
+        ],
+        "contact": {
+          "id": "main",
+          "position": [
+            0,
+            0,
+            0.045
+          ],
+          "radius": 0.015,
+          "limbs": [
+            "LF",
+            "RF"
+          ]
+        },
+        "design_attributes": {
+          "source": "synthetic_assumption",
+          "grip_accessibility": 0.5,
+          "precision": 0.65,
+          "force_demand": 0.15,
+          "friction_dependence": 0.35
+        },
+        "grip_surfaces": [
+          {
+            "id": "working",
+            "label": "主要踩踏面",
+            "position": [
+              0.0,
+              0.00585,
+              0.02508845198486843
+            ],
+            "normal": [
+              -0.0,
+              0.922805084194267,
+              0.38526714963154035
+            ],
+            "u_axis": [
+              1.0,
+              0.0,
+              0.0
+            ],
+            "v_axis": [
+              0.0,
+              0.38526714963154035,
+              -0.922805084194267
+            ],
+            "radii": [
+              0.009800000000000001,
+              0.0091
+            ],
+            "limbs": [
+              "LF",
+              "RF"
+            ],
+            "pull_direction": [
+              -0.0,
+              -0.38526714963154035,
+              0.922805084194267
+            ]
+          },
+          {
+            "id": "alternate",
+            "label": "备选踩踏面",
+            "position": [
+              0.0,
+              -0.00195,
+              0.04269042
+            ],
+            "normal": [
+              -0.0,
+              -0.7640807941242063,
+              0.6451205624149042
+            ],
+            "u_axis": [
+              1.0,
+              0.0,
+              0.0
+            ],
+            "v_axis": [
+              -0.0,
+              0.6451205624149042,
+              0.7640807941242063
+            ],
+            "radii": [
+              0.009800000000000001,
+              0.0091
+            ],
+            "limbs": [
+              "LF",
+              "RF"
+            ],
+            "pull_direction": [
+              0.0,
+              -0.6451205624149042,
+              -0.7640807941242063
+            ]
+          }
+        ]
+      },
+      {
+        "id": "board-20",
+        "type": "foothold",
+        "width": 0.12,
+        "height": 0.065,
+        "depth": 0.045,
+        "template_id": "study-foothold-0.12",
+        "template_name": "研究模板 · foothold",
+        "source": "synthetic_assumption",
+        "pull_direction": [
+          0,
+          -1,
+          0
+        ],
+        "contact": {
+          "id": "main",
+          "position": [
+            0,
+            0,
+            0.045
+          ],
+          "radius": 0.015,
+          "limbs": [
+            "LF",
+            "RF"
+          ]
+        },
+        "design_attributes": {
+          "source": "synthetic_assumption",
+          "grip_accessibility": 0.857,
+          "precision": 0.4,
+          "force_demand": 0.15,
+          "friction_dependence": 0.35
+        },
+        "grip_surfaces": [
+          {
+            "id": "working",
+            "label": "主要踩踏面",
+            "position": [
+              0.0,
+              0.00585,
+              0.02508845198486843
+            ],
+            "normal": [
+              -0.0,
+              0.922805084194267,
+              0.38526714963154035
+            ],
+            "u_axis": [
+              1.0,
+              0.0,
+              0.0
+            ],
+            "v_axis": [
+              0.0,
+              0.38526714963154035,
+              -0.922805084194267
+            ],
+            "radii": [
+              0.016800000000000002,
+              0.0091
+            ],
+            "limbs": [
+              "LF",
+              "RF"
+            ],
+            "pull_direction": [
+              -0.0,
+              -0.38526714963154035,
+              0.922805084194267
+            ]
+          },
+          {
+            "id": "alternate",
+            "label": "备选踩踏面",
+            "position": [
+              0.0,
+              -0.00195,
+              0.04269042
+            ],
+            "normal": [
+              -0.0,
+              -0.7640807941242063,
+              0.6451205624149042
+            ],
+            "u_axis": [
+              1.0,
+              0.0,
+              0.0
+            ],
+            "v_axis": [
+              -0.0,
+              0.6451205624149042,
+              0.7640807941242063
+            ],
+            "radii": [
+              0.016800000000000002,
+              0.0091
+            ],
+            "limbs": [
+              "LF",
+              "RF"
+            ],
+            "pull_direction": [
+              0.0,
+              -0.6451205624149042,
+              -0.7640807941242063
+            ]
+          }
+        ]
+      },
+      {
+        "id": "board-21",
+        "type": "foothold",
+        "width": 0.08,
+        "height": 0.065,
+        "depth": 0.045,
+        "template_id": "study-foothold-0.08",
+        "template_name": "研究模板 · foothold",
+        "source": "synthetic_assumption",
+        "pull_direction": [
+          0,
+          -1,
+          0
+        ],
+        "contact": {
+          "id": "main",
+          "position": [
+            0,
+            0,
+            0.045
+          ],
+          "radius": 0.015,
+          "limbs": [
+            "LF",
+            "RF"
+          ]
+        },
+        "design_attributes": {
+          "source": "synthetic_assumption",
+          "grip_accessibility": 0.571,
+          "precision": 0.6,
+          "force_demand": 0.15,
+          "friction_dependence": 0.35
+        },
+        "grip_surfaces": [
+          {
+            "id": "working",
+            "label": "主要踩踏面",
+            "position": [
+              0.0,
+              0.00585,
+              0.02508845198486843
+            ],
+            "normal": [
+              -0.0,
+              0.922805084194267,
+              0.38526714963154035
+            ],
+            "u_axis": [
+              1.0,
+              0.0,
+              0.0
+            ],
+            "v_axis": [
+              0.0,
+              0.38526714963154035,
+              -0.922805084194267
+            ],
+            "radii": [
+              0.011200000000000002,
+              0.0091
+            ],
+            "limbs": [
+              "LF",
+              "RF"
+            ],
+            "pull_direction": [
+              -0.0,
+              -0.38526714963154035,
+              0.922805084194267
+            ]
+          },
+          {
+            "id": "alternate",
+            "label": "备选踩踏面",
+            "position": [
+              0.0,
+              -0.00195,
+              0.04269042
+            ],
+            "normal": [
+              -0.0,
+              -0.7640807941242063,
+              0.6451205624149042
+            ],
+            "u_axis": [
+              1.0,
+              0.0,
+              0.0
+            ],
+            "v_axis": [
+              -0.0,
+              0.6451205624149042,
+              0.7640807941242063
+            ],
+            "radii": [
+              0.011200000000000002,
+              0.0091
+            ],
+            "limbs": [
+              "LF",
+              "RF"
+            ],
+            "pull_direction": [
+              0.0,
+              -0.6451205624149042,
+              -0.7640807941242063
+            ]
+          }
+        ]
+      },
+      {
+        "id": "board-22",
+        "type": "foothold",
+        "width": 0.1,
+        "height": 0.065,
+        "depth": 0.045,
+        "template_id": "study-foothold-0.1",
+        "template_name": "研究模板 · foothold",
+        "source": "synthetic_assumption",
+        "pull_direction": [
+          0,
+          -1,
+          0
+        ],
+        "contact": {
+          "id": "main",
+          "position": [
+            0,
+            0,
+            0.045
+          ],
+          "radius": 0.015,
+          "limbs": [
+            "LF",
+            "RF"
+          ]
+        },
+        "design_attributes": {
+          "source": "synthetic_assumption",
+          "grip_accessibility": 0.714,
+          "precision": 0.5,
+          "force_demand": 0.15,
+          "friction_dependence": 0.35
+        },
+        "grip_surfaces": [
+          {
+            "id": "working",
+            "label": "主要踩踏面",
+            "position": [
+              0.0,
+              0.00585,
+              0.02508845198486843
+            ],
+            "normal": [
+              -0.0,
+              0.922805084194267,
+              0.38526714963154035
+            ],
+            "u_axis": [
+              1.0,
+              0.0,
+              0.0
+            ],
+            "v_axis": [
+              0.0,
+              0.38526714963154035,
+              -0.922805084194267
+            ],
+            "radii": [
+              0.014000000000000002,
+              0.0091
+            ],
+            "limbs": [
+              "LF",
+              "RF"
+            ],
+            "pull_direction": [
+              -0.0,
+              -0.38526714963154035,
+              0.922805084194267
+            ]
+          },
+          {
+            "id": "alternate",
+            "label": "备选踩踏面",
+            "position": [
+              0.0,
+              -0.00195,
+              0.04269042
+            ],
+            "normal": [
+              -0.0,
+              -0.7640807941242063,
+              0.6451205624149042
+            ],
+            "u_axis": [
+              1.0,
+              0.0,
+              0.0
+            ],
+            "v_axis": [
+              -0.0,
+              0.6451205624149042,
+              0.7640807941242063
+            ],
+            "radii": [
+              0.014000000000000002,
+              0.0091
+            ],
+            "limbs": [
+              "LF",
+              "RF"
+            ],
+            "pull_direction": [
+              0.0,
+              -0.6451205624149042,
+              -0.7640807941242063
+            ]
+          }
+        ]
+      },
+      {
+        "id": "board-23",
+        "type": "foothold",
+        "width": 0.1,
+        "height": 0.065,
+        "depth": 0.045,
+        "template_id": "study-foothold-0.1",
+        "template_name": "研究模板 · foothold",
+        "source": "synthetic_assumption",
+        "pull_direction": [
+          0,
+          -1,
+          0
+        ],
+        "contact": {
+          "id": "main",
+          "position": [
+            0,
+            0,
+            0.045
+          ],
+          "radius": 0.015,
+          "limbs": [
+            "LF",
+            "RF"
+          ]
+        },
+        "design_attributes": {
+          "source": "synthetic_assumption",
+          "grip_accessibility": 0.714,
+          "precision": 0.5,
+          "force_demand": 0.15,
+          "friction_dependence": 0.35
+        },
+        "grip_surfaces": [
+          {
+            "id": "working",
+            "label": "主要踩踏面",
+            "position": [
+              0.0,
+              0.00585,
+              0.02508845198486843
+            ],
+            "normal": [
+              -0.0,
+              0.922805084194267,
+              0.38526714963154035
+            ],
+            "u_axis": [
+              1.0,
+              0.0,
+              0.0
+            ],
+            "v_axis": [
+              0.0,
+              0.38526714963154035,
+              -0.922805084194267
+            ],
+            "radii": [
+              0.014000000000000002,
+              0.0091
+            ],
+            "limbs": [
+              "LF",
+              "RF"
+            ],
+            "pull_direction": [
+              -0.0,
+              -0.38526714963154035,
+              0.922805084194267
+            ]
+          },
+          {
+            "id": "alternate",
+            "label": "备选踩踏面",
+            "position": [
+              0.0,
+              -0.00195,
+              0.04269042
+            ],
+            "normal": [
+              -0.0,
+              -0.7640807941242063,
+              0.6451205624149042
+            ],
+            "u_axis": [
+              1.0,
+              0.0,
+              0.0
+            ],
+            "v_axis": [
+              -0.0,
+              0.6451205624149042,
+              0.7640807941242063
+            ],
+            "radii": [
+              0.014000000000000002,
+              0.0091
+            ],
+            "limbs": [
+              "LF",
+              "RF"
+            ],
+            "pull_direction": [
+              0.0,
+              -0.6451205624149042,
+              -0.7640807941242063
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "body": {
+    "upper_arm": 0.28,
+    "forearm": 0.25,
+    "thigh": 0.4,
+    "shin": 0.38,
+    "shoulder_width": 0.34,
+    "hip_width": 0.26,
+    "torso": 0.43,
+    "id": "A",
+    "source": "synthetic_assumption",
+    "endpoint_offsets": {
+      "LH": [
+        0,
+        0,
+        0
+      ],
+      "RH": [
+        0,
+        0,
+        0
+      ],
+      "LF": [
+        0,
+        0,
+        0
+      ],
+      "RF": [
+        0,
+        0,
+        0
+      ]
+    },
+    "joint_limits_deg": {
+      "shoulder": [
+        [
+          -170,
+          170
+        ],
+        [
+          -170,
+          170
+        ],
+        [
+          -170,
+          170
+        ]
+      ],
+      "hip": [
+        [
+          -110,
+          110
+        ],
+        [
+          -90,
+          90
+        ],
+        [
+          -70,
+          70
+        ]
+      ],
+      "elbow": [
+        0,
+        140
+      ],
+      "knee": [
+        0,
+        140
+      ]
+    }
+  },
+  "scenario": "style_search",
+  "mode": "fixed",
+  "hand_moves": 4,
+  "seed": 42,
+  "budget": 3,
+  "reference_layout": [
+    {
+      "id": "board-01",
+      "inventory_id": "board-01",
+      "u": -0.28,
+      "v": 1.5,
+      "rotation_deg": 0,
+      "contact_surface_id": "working"
+    },
+    {
+      "id": "board-02",
+      "inventory_id": "board-02",
+      "u": 0.28,
+      "v": 1.5,
+      "rotation_deg": 0,
+      "contact_surface_id": "working"
+    },
+    {
+      "id": "board-03",
+      "inventory_id": "board-03",
+      "u": -0.62,
+      "v": 1.76,
+      "rotation_deg": 0,
+      "contact_surface_id": "working"
+    },
+    {
+      "id": "board-04",
+      "inventory_id": "board-04",
+      "u": -0.2,
+      "v": 1.76,
+      "rotation_deg": 60,
+      "contact_surface_id": "working"
+    },
+    {
+      "id": "board-05",
+      "inventory_id": "board-05",
+      "u": 0.2,
+      "v": 1.76,
+      "rotation_deg": -22,
+      "contact_surface_id": "working"
+    },
+    {
+      "id": "board-06",
+      "inventory_id": "board-06",
+      "u": 0.62,
+      "v": 1.76,
+      "rotation_deg": 0,
+      "contact_surface_id": "working"
+    },
+    {
+      "id": "board-07",
+      "inventory_id": "board-07",
+      "u": -0.62,
+      "v": 1.98,
+      "rotation_deg": 0,
+      "contact_surface_id": "working"
+    },
+    {
+      "id": "board-08",
+      "inventory_id": "board-08",
+      "u": -0.2,
+      "v": 1.98,
+      "rotation_deg": 28,
+      "contact_surface_id": "working"
+    },
+    {
+      "id": "board-09",
+      "inventory_id": "board-09",
+      "u": 0.2,
+      "v": 1.98,
+      "rotation_deg": -65,
+      "contact_surface_id": "working"
+    },
+    {
+      "id": "board-10",
+      "inventory_id": "board-10",
+      "u": 0.62,
+      "v": 1.98,
+      "rotation_deg": 0,
+      "contact_surface_id": "working"
+    },
+    {
+      "id": "board-11",
+      "inventory_id": "board-11",
+      "u": -0.27,
+      "v": 2.24,
+      "rotation_deg": -12,
+      "contact_surface_id": "working"
+    },
+    {
+      "id": "board-12",
+      "inventory_id": "board-12",
+      "u": 0.27,
+      "v": 2.24,
+      "rotation_deg": 12,
+      "contact_surface_id": "working"
+    },
+    {
+      "id": "board-13",
+      "inventory_id": "board-13",
+      "u": -0.22,
+      "v": 0.52,
+      "rotation_deg": 0,
+      "contact_surface_id": "working"
+    },
+    {
+      "id": "board-14",
+      "inventory_id": "board-14",
+      "u": 0.22,
+      "v": 0.52,
+      "rotation_deg": 0,
+      "contact_surface_id": "working"
+    },
+    {
+      "id": "board-15",
+      "inventory_id": "board-15",
+      "u": -0.52,
+      "v": 0.73,
+      "rotation_deg": -30,
+      "contact_surface_id": "working"
+    },
+    {
+      "id": "board-16",
+      "inventory_id": "board-16",
+      "u": -0.17,
+      "v": 0.77,
+      "rotation_deg": 0,
+      "contact_surface_id": "working"
+    },
+    {
+      "id": "board-17",
+      "inventory_id": "board-17",
+      "u": 0.17,
+      "v": 0.77,
+      "rotation_deg": 32,
+      "contact_surface_id": "working"
+    },
+    {
+      "id": "board-18",
+      "inventory_id": "board-18",
+      "u": 0.52,
+      "v": 0.73,
+      "rotation_deg": 0,
+      "contact_surface_id": "working"
+    },
+    {
+      "id": "board-19",
+      "inventory_id": "board-19",
+      "u": -0.42,
+      "v": 0.92,
+      "rotation_deg": -38,
+      "contact_surface_id": "working"
+    },
+    {
+      "id": "board-20",
+      "inventory_id": "board-20",
+      "u": -0.06,
+      "v": 0.94,
+      "rotation_deg": 0,
+      "contact_surface_id": "working"
+    },
+    {
+      "id": "board-21",
+      "inventory_id": "board-21",
+      "u": 0.34,
+      "v": 0.94,
+      "rotation_deg": 30,
+      "contact_surface_id": "working"
+    },
+    {
+      "id": "board-22",
+      "inventory_id": "board-22",
+      "u": -0.2,
+      "v": 1.1,
+      "rotation_deg": 0,
+      "contact_surface_id": "working"
+    },
+    {
+      "id": "board-23",
+      "inventory_id": "board-23",
+      "u": 0.23,
+      "v": 1.1,
+      "rotation_deg": 0,
+      "contact_surface_id": "working"
+    }
+  ],
+  "solver": {
+    "max_nfev": 100,
+    "restarts": 3,
+    "contact_tolerance_m": 0.015,
+    "epsilon_geometry_m": 1e-06,
+    "root_bounds": [
+      [
+        -1.6,
+        1.6
+      ],
+      [
+        0.35,
+        2.6
+      ],
+      [
+        0.08,
+        2.4
+      ]
+    ],
+    "root_rotation_deg": [
+      [
+        -35,
+        35
+      ],
+      [
+        -65,
+        65
+      ],
+      [
+        -35,
+        35
+      ]
+    ],
+    "timeout_seconds": 12
+  },
+  "start_contacts": {
+    "LH": {
+      "placement_id": "board-01",
+      "contact_id": "main"
+    },
+    "RH": {
+      "placement_id": "board-02",
+      "contact_id": "main"
+    },
+    "LF": {
+      "placement_id": "board-13",
+      "contact_id": "main"
+    },
+    "RF": {
+      "placement_id": "board-14",
+      "contact_id": "main"
+    }
+  },
+  "end_contacts": {
+    "LH": {
+      "placement_id": "board-11",
+      "contact_id": "main"
+    },
+    "RH": {
+      "placement_id": "board-12",
+      "contact_id": "main"
+    },
+    "LF": {
+      "placement_id": "board-22",
+      "contact_id": "main"
+    },
+    "RF": {
+      "placement_id": "board-23",
+      "contact_id": "main"
+    }
+  },
+  "profile": "style",
+  "route_design": {
+    "style_goal": "power",
+    "rhythm": "late_crux",
+    "source": "synthetic_assumption",
+    "search": {
+      "beam_width": 128,
+      "max_expansions": 16000
+    },
+    "phases": [
+      {
+        "id": "phase-1",
+        "label": "建立",
+        "hand_move_index": 0,
+        "target": {
+          "strength": 43.52,
+          "power": 40.8,
+          "technical": 27.2,
+          "load": 37.4
+        }
+      },
+      {
+        "id": "phase-2",
+        "label": "铺垫",
+        "hand_move_index": 1,
+        "target": {
+          "strength": 55.04,
+          "power": 51.6,
+          "technical": 34.4,
+          "load": 47.3
+        }
+      },
+      {
+        "id": "phase-3",
+        "label": "进入难点",
+        "hand_move_index": 2,
+        "target": {
+          "strength": 71.68,
+          "power": 67.2,
+          "technical": 44.8,
+          "load": 61.6
+        }
+      },
+      {
+        "id": "phase-4",
+        "label": "难点收尾",
+        "hand_move_index": 3,
+        "target": {
+          "strength": 80.64,
+          "power": 75.6,
+          "technical": 50.4,
+          "load": 69.3
+        }
+      }
+    ]
+  }
+}

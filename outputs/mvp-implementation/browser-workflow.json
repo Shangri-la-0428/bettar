@@ -1,0 +1,15 @@
+{
+  "checks": [
+    "Initial real demo: 3 evaluated candidates and a solved pose.",
+    "Candidate switching, release states and locating the final IK check select the correct state.",
+    "Edit creates revision 2, preserves originals, invalidates the result and exports an unchecked draft.",
+    "Moving the hold beyond the wall produces a real boundary failure after recheck.",
+    "Repair returns to pass; repeated rechecks do not duplicate results; feedback is exported.",
+    "Malformed import keeps the current scene; exported bundle imports successfully.",
+    "Next-generation controls stay separate; generating B/10°/4 moves/fixed runs the real engine and locks editing.",
+    "Budget-exhausted import stays unknown and displays contact targets without an invented pose.",
+    "Arbitrary decimal edits validate; mobile import has an accessible name and the active step scrolls into view without horizontal page overflow."
+  ],
+  "errors": [],
+  "status": "pass"
+}

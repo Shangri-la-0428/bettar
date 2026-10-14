@@ -1,0 +1,4566 @@
+{
+  "schema_version": "1.0",
+  "id": "request-catalog-foot_first-A",
+  "revision": 1,
+  "source": "synthetic_assumption",
+  "scene": {
+    "width": 3,
+    "height": 3,
+    "angle_deg": 0,
+    "margin": 0.2,
+    "inventory": [
+      {
+        "type": "jug",
+        "template_id": "std-jug",
+        "template_name": "J-01 标准把手",
+        "width": 0.17,
+        "height": 0.12,
+        "depth": 0.09,
+        "taxonomy": {
+          "family": "jug",
+          "form": "positive_lip",
+          "preferred_role": "hand",
+          "roles": [
+            "hand",
+            "foot"
+          ]
+        },
+        "grip_surfaces": [
+          {
+            "id": "working",
+            "label": "主要抓握面",
+            "position": [
+              0.0,
+              -0.0048,
+              0.09
+            ],
+            "normal": [
+              -0.0,
+              -0.0,
+              1.0
+            ],
+            "u_axis": [
+              1.0,
+              0.0,
+              0.0
+            ],
+            "v_axis": [
+              -0.0,
+              1.0,
+              0.0
+            ],
+            "radii": [
+              0.023800000000000005,
+              0.016800000000000002
+            ],
+            "limbs": [
+              "LH",
+              "RH"
+            ],
+            "pull_direction": [
+              0.0,
+              -1.0,
+              -0.0
+            ]
+          },
+          {
+            "id": "alternate",
+            "label": "备选抓握面",
+            "position": [
+              0.0,
+              0.016800000000000002,
+              0.019691689050898995
+            ],
+            "normal": [
+              -0.0,
+              0.9526073169208805,
+              0.30420272804299636
+            ],
+            "u_axis": [
+              1.0,
+              0.0,
+              0.0
+            ],
+            "v_axis": [
+              0.0,
+              0.30420272804299636,
+              -0.9526073169208805
+            ],
+            "radii": [
+              0.023800000000000005,
+              0.016800000000000002
+            ],
+            "limbs": [
+              "LH",
+              "RH"
+            ],
+            "pull_direction": [
+              -0.0,
+              -0.30420272804299636,
+              0.9526073169208805
+            ]
+          }
+        ],
+        "id": "jug_01",
+        "source": "synthetic_assumption",
+        "pull_direction": [
+          0,
+          -1,
+          0
+        ],
+        "contact": {
+          "id": "main",
+          "position": [
+            0,
+            0,
+            0.09
+          ],
+          "radius": 0.015,
+          "limbs": [
+            "LH",
+            "RH"
+          ]
+        }
+      },
+      {
+        "type": "jug",
+        "template_id": "std-jug",
+        "template_name": "J-01 标准把手",
+        "width": 0.17,
+        "height": 0.12,
+        "depth": 0.09,
+        "taxonomy": {
+          "family": "jug",
+          "form": "positive_lip",
+          "preferred_role": "hand",
+          "roles": [
+            "hand",
+            "foot"
+          ]
+        },
+        "grip_surfaces": [
+          {
+            "id": "working",
+            "label": "主要抓握面",
+            "position": [
+              0.0,
+              -0.0048,
+              0.09
+            ],
+            "normal": [
+              -0.0,
+              -0.0,
+              1.0
+            ],
+            "u_axis": [
+              1.0,
+              0.0,
+              0.0
+            ],
+            "v_axis": [
+              -0.0,
+              1.0,
+              0.0
+            ],
+            "radii": [
+              0.023800000000000005,
+              0.016800000000000002
+            ],
+            "limbs": [
+              "LH",
+              "RH"
+            ],
+            "pull_direction": [
+              0.0,
+              -1.0,
+              -0.0
+            ]
+          },
+          {
+            "id": "alternate",
+            "label": "备选抓握面",
+            "position": [
+              0.0,
+              0.016800000000000002,
+              0.019691689050898995
+            ],
+            "normal": [
+              -0.0,
+              0.9526073169208805,
+              0.30420272804299636
+            ],
+            "u_axis": [
+              1.0,
+              0.0,
+              0.0
+            ],
+            "v_axis": [
+              0.0,
+              0.30420272804299636,
+              -0.9526073169208805
+            ],
+            "radii": [
+              0.023800000000000005,
+              0.016800000000000002
+            ],
+            "limbs": [
+              "LH",
+              "RH"
+            ],
+            "pull_direction": [
+              -0.0,
+              -0.30420272804299636,
+              0.9526073169208805
+            ]
+          }
+        ],
+        "id": "jug_02",
+        "source": "synthetic_assumption",
+        "pull_direction": [
+          0,
+          -1,
+          0
+        ],
+        "contact": {
+          "id": "main",
+          "position": [
+            0,
+            0,
+            0.09
+          ],
+          "radius": 0.015,
+          "limbs": [
+            "LH",
+            "RH"
+          ]
+        }
+      },
+      {
+        "type": "jug",
+        "template_id": "std-jug",
+        "template_name": "J-01 标准把手",
+        "width": 0.17,
+        "height": 0.12,
+        "depth": 0.09,
+        "taxonomy": {
+          "family": "jug",
+          "form": "positive_lip",
+          "preferred_role": "hand",
+          "roles": [
+            "hand",
+            "foot"
+          ]
+        },
+        "grip_surfaces": [
+          {
+            "id": "working",
+            "label": "主要抓握面",
+            "position": [
+              0.0,
+              -0.0048,
+              0.09
+            ],
+            "normal": [
+              -0.0,
+              -0.0,
+              1.0
+            ],
+            "u_axis": [
+              1.0,
+              0.0,
+              0.0
+            ],
+            "v_axis": [
+              -0.0,
+              1.0,
+              0.0
+            ],
+            "radii": [
+              0.023800000000000005,
+              0.016800000000000002
+            ],
+            "limbs": [
+              "LH",
+              "RH"
+            ],
+            "pull_direction": [
+              0.0,
+              -1.0,
+              -0.0
+            ]
+          },
+          {
+            "id": "alternate",
+            "label": "备选抓握面",
+            "position": [
+              0.0,
+              0.016800000000000002,
+              0.019691689050898995
+            ],
+            "normal": [
+              -0.0,
+              0.9526073169208805,
+              0.30420272804299636
+            ],
+            "u_axis": [
+              1.0,
+              0.0,
+              0.0
+            ],
+            "v_axis": [
+              0.0,
+              0.30420272804299636,
+              -0.9526073169208805
+            ],
+            "radii": [
+              0.023800000000000005,
+              0.016800000000000002
+            ],
+            "limbs": [
+              "LH",
+              "RH"
+            ],
+            "pull_direction": [
+              -0.0,
+              -0.30420272804299636,
+              0.9526073169208805
+            ]
+          }
+        ],
+        "id": "jug_03",
+        "source": "synthetic_assumption",
+        "pull_direction": [
+          0,
+          -1,
+          0
+        ],
+        "contact": {
+          "id": "main",
+          "position": [
+            0,
+            0,
+            0.09
+          ],
+          "radius": 0.015,
+          "limbs": [
+            "LH",
+            "RH"
+          ]
+        }
+      },
+      {
+        "type": "jug",
+        "template_id": "std-jug",
+        "template_name": "J-01 标准把手",
+        "width": 0.17,
+        "height": 0.12,
+        "depth": 0.09,
+        "taxonomy": {
+          "family": "jug",
+          "form": "positive_lip",
+          "preferred_role": "hand",
+          "roles": [
+            "hand",
+            "foot"
+          ]
+        },
+        "grip_surfaces": [
+          {
+            "id": "working",
+            "label": "主要抓握面",
+            "position": [
+              0.0,
+              -0.0048,
+              0.09
+            ],
+            "normal": [
+              -0.0,
+              -0.0,
+              1.0
+            ],
+            "u_axis": [
+              1.0,
+              0.0,
+              0.0
+            ],
+            "v_axis": [
+              -0.0,
+              1.0,
+              0.0
+            ],
+            "radii": [
+              0.023800000000000005,
+              0.016800000000000002
+            ],
+            "limbs": [
+              "LH",
+              "RH"
+            ],
+            "pull_direction": [
+              0.0,
+              -1.0,
+              -0.0
+            ]
+          },
+          {
+            "id": "alternate",
+            "label": "备选抓握面",
+            "position": [
+              0.0,
+              0.016800000000000002,
+              0.019691689050898995
+            ],
+            "normal": [
+              -0.0,
+              0.9526073169208805,
+              0.30420272804299636
+            ],
+            "u_axis": [
+              1.0,
+              0.0,
+              0.0
+            ],
+            "v_axis": [
+              0.0,
+              0.30420272804299636,
+              -0.9526073169208805
+            ],
+            "radii": [
+              0.023800000000000005,
+              0.016800000000000002
+            ],
+            "limbs": [
+              "LH",
+              "RH"
+            ],
+            "pull_direction": [
+              -0.0,
+              -0.30420272804299636,
+              0.9526073169208805
+            ]
+          }
+        ],
+        "id": "jug_04",
+        "source": "synthetic_assumption",
+        "pull_direction": [
+          0,
+          -1,
+          0
+        ],
+        "contact": {
+          "id": "main",
+          "position": [
+            0,
+            0,
+            0.09
+          ],
+          "radius": 0.015,
+          "limbs": [
+            "LH",
+            "RH"
+          ]
+        }
+      },
+      {
+        "type": "jug",
+        "template_id": "std-jug",
+        "template_name": "J-01 标准把手",
+        "width": 0.17,
+        "height": 0.12,
+        "depth": 0.09,
+        "taxonomy": {
+          "family": "jug",
+          "form": "positive_lip",
+          "preferred_role": "hand",
+          "roles": [
+            "hand",
+            "foot"
+          ]
+        },
+        "grip_surfaces": [
+          {
+            "id": "working",
+            "label": "主要抓握面",
+            "position": [
+              0.0,
+              -0.0048,
+              0.09
+            ],
+            "normal": [
+              -0.0,
+              -0.0,
+              1.0
+            ],
+            "u_axis": [
+              1.0,
+              0.0,
+              0.0
+            ],
+            "v_axis": [
+              -0.0,
+              1.0,
+              0.0
+            ],
+            "radii": [
+              0.023800000000000005,
+              0.016800000000000002
+            ],
+            "limbs": [
+              "LH",
+              "RH"
+            ],
+            "pull_direction": [
+              0.0,
+              -1.0,
+              -0.0
+            ]
+          },
+          {
+            "id": "alternate",
+            "label": "备选抓握面",
+            "position": [
+              0.0,
+              0.016800000000000002,
+              0.019691689050898995
+            ],
+            "normal": [
+              -0.0,
+              0.9526073169208805,
+              0.30420272804299636
+            ],
+            "u_axis": [
+              1.0,
+              0.0,
+              0.0
+            ],
+            "v_axis": [
+              0.0,
+              0.30420272804299636,
+              -0.9526073169208805
+            ],
+            "radii": [
+              0.023800000000000005,
+              0.016800000000000002
+            ],
+            "limbs": [
+              "LH",
+              "RH"
+            ],
+            "pull_direction": [
+              -0.0,
+              -0.30420272804299636,
+              0.9526073169208805
+            ]
+          }
+        ],
+        "id": "jug_05",
+        "source": "synthetic_assumption",
+        "pull_direction": [
+          0,
+          -1,
+          0
+        ],
+        "contact": {
+          "id": "main",
+          "position": [
+            0,
+            0,
+            0.09
+          ],
+          "radius": 0.015,
+          "limbs": [
+            "LH",
+            "RH"
+          ]
+        }
+      },
+      {
+        "type": "jug",
+        "template_id": "std-jug",
+        "template_name": "J-01 标准把手",
+        "width": 0.17,
+        "height": 0.12,
+        "depth": 0.09,
+        "taxonomy": {
+          "family": "jug",
+          "form": "positive_lip",
+          "preferred_role": "hand",
+          "roles": [
+            "hand",
+            "foot"
+          ]
+        },
+        "grip_surfaces": [
+          {
+            "id": "working",
+            "label": "主要抓握面",
+            "position": [
+              0.0,
+              -0.0048,
+              0.09
+            ],
+            "normal": [
+              -0.0,
+              -0.0,
+              1.0
+            ],
+            "u_axis": [
+              1.0,
+              0.0,
+              0.0
+            ],
+            "v_axis": [
+              -0.0,
+              1.0,
+              0.0
+            ],
+            "radii": [
+              0.023800000000000005,
+              0.016800000000000002
+            ],
+            "limbs": [
+              "LH",
+              "RH"
+            ],
+            "pull_direction": [
+              0.0,
+              -1.0,
+              -0.0
+            ]
+          },
+          {
+            "id": "alternate",
+            "label": "备选抓握面",
+            "position": [
+              0.0,
+              0.016800000000000002,
+              0.019691689050898995
+            ],
+            "normal": [
+              -0.0,
+              0.9526073169208805,
+              0.30420272804299636
+            ],
+            "u_axis": [
+              1.0,
+              0.0,
+              0.0
+            ],
+            "v_axis": [
+              0.0,
+              0.30420272804299636,
+              -0.9526073169208805
+            ],
+            "radii": [
+              0.023800000000000005,
+              0.016800000000000002
+            ],
+            "limbs": [
+              "LH",
+              "RH"
+            ],
+            "pull_direction": [
+              -0.0,
+              -0.30420272804299636,
+              0.9526073169208805
+            ]
+          }
+        ],
+        "id": "jug_06",
+        "source": "synthetic_assumption",
+        "pull_direction": [
+          0,
+          -1,
+          0
+        ],
+        "contact": {
+          "id": "main",
+          "position": [
+            0,
+            0,
+            0.09
+          ],
+          "radius": 0.015,
+          "limbs": [
+            "LH",
+            "RH"
+          ]
+        }
+      },
+      {
+        "type": "directional_edge",
+        "template_id": "std-directional_edge",
+        "template_name": "E-01 扣边（兼容模板）",
+        "width": 0.16,
+        "height": 0.1,
+        "depth": 0.07,
+        "taxonomy": {
+          "family": "crimp",
+          "form": "edge",
+          "preferred_role": "hand",
+          "roles": [
+            "hand",
+            "foot"
+          ],
+          "legacy_alias": "directional_edge"
+        },
+        "grip_surfaces": [
+          {
+            "id": "working",
+            "label": "主要抓握面",
+            "position": [
+              0.0,
+              -0.003,
+              0.06579958084492674
+            ],
+            "normal": [
+              -0.0,
+              -0.8040614272183434,
+              0.594546231389621
+            ],
+            "u_axis": [
+              1.0,
+              0.0,
+              0.0
+            ],
+            "v_axis": [
+              -0.0,
+              0.594546231389621,
+              0.8040614272183434
+            ],
+            "radii": [
+              0.022400000000000003,
+              0.014000000000000002
+            ],
+            "limbs": [
+              "LH",
+              "RH"
+            ],
+            "pull_direction": [
+              0.0,
+              -0.594546231389621,
+              -0.8040614272183434
+            ]
+          },
+          {
+            "id": "alternate",
+            "label": "备选抓握面",
+            "position": [
+              0.0,
+              0.009,
+              0.03261388856365775
+            ],
+            "normal": [
+              -0.0,
+              0.9315324154868039,
+              0.36365829964036356
+            ],
+            "u_axis": [
+              1.0,
+              0.0,
+              0.0
+            ],
+            "v_axis": [
+              0.0,
+              0.36365829964036356,
+              -0.9315324154868039
+            ],
+            "radii": [
+              0.022400000000000003,
+              0.014000000000000002
+            ],
+            "limbs": [
+              "LH",
+              "RH"
+            ],
+            "pull_direction": [
+              -0.0,
+              -0.36365829964036356,
+              0.9315324154868039
+            ]
+          }
+        ],
+        "id": "directional_edge_01",
+        "source": "synthetic_assumption",
+        "pull_direction": [
+          0,
+          -1,
+          0
+        ],
+        "contact": {
+          "id": "main",
+          "position": [
+            0,
+            0,
+            0.07
+          ],
+          "radius": 0.015,
+          "limbs": [
+            "LH",
+            "RH"
+          ]
+        }
+      },
+      {
+        "type": "directional_edge",
+        "template_id": "std-directional_edge",
+        "template_name": "E-01 扣边（兼容模板）",
+        "width": 0.16,
+        "height": 0.1,
+        "depth": 0.07,
+        "taxonomy": {
+          "family": "crimp",
+          "form": "edge",
+          "preferred_role": "hand",
+          "roles": [
+            "hand",
+            "foot"
+          ],
+          "legacy_alias": "directional_edge"
+        },
+        "grip_surfaces": [
+          {
+            "id": "working",
+            "label": "主要抓握面",
+            "position": [
+              0.0,
+              -0.003,
+              0.06579958084492674
+            ],
+            "normal": [
+              -0.0,
+              -0.8040614272183434,
+              0.594546231389621
+            ],
+            "u_axis": [
+              1.0,
+              0.0,
+              0.0
+            ],
+            "v_axis": [
+              -0.0,
+              0.594546231389621,
+              0.8040614272183434
+            ],
+            "radii": [
+              0.022400000000000003,
+              0.014000000000000002
+            ],
+            "limbs": [
+              "LH",
+              "RH"
+            ],
+            "pull_direction": [
+              0.0,
+              -0.594546231389621,
+              -0.8040614272183434
+            ]
+          },
+          {
+            "id": "alternate",
+            "label": "备选抓握面",
+            "position": [
+              0.0,
+              0.009,
+              0.03261388856365775
+            ],
+            "normal": [
+              -0.0,
+              0.9315324154868039,
+              0.36365829964036356
+            ],
+            "u_axis": [
+              1.0,
+              0.0,
+              0.0
+            ],
+            "v_axis": [
+              0.0,
+              0.36365829964036356,
+              -0.9315324154868039
+            ],
+            "radii": [
+              0.022400000000000003,
+              0.014000000000000002
+            ],
+            "limbs": [
+              "LH",
+              "RH"
+            ],
+            "pull_direction": [
+              -0.0,
+              -0.36365829964036356,
+              0.9315324154868039
+            ]
+          }
+        ],
+        "id": "directional_edge_02",
+        "source": "synthetic_assumption",
+        "pull_direction": [
+          0,
+          -1,
+          0
+        ],
+        "contact": {
+          "id": "main",
+          "position": [
+            0,
+            0,
+            0.07
+          ],
+          "radius": 0.015,
+          "limbs": [
+            "LH",
+            "RH"
+          ]
+        }
+      },
+      {
+        "type": "directional_edge",
+        "template_id": "std-directional_edge",
+        "template_name": "E-01 扣边（兼容模板）",
+        "width": 0.16,
+        "height": 0.1,
+        "depth": 0.07,
+        "taxonomy": {
+          "family": "crimp",
+          "form": "edge",
+          "preferred_role": "hand",
+          "roles": [
+            "hand",
+            "foot"
+          ],
+          "legacy_alias": "directional_edge"
+        },
+        "grip_surfaces": [
+          {
+            "id": "working",
+            "label": "主要抓握面",
+            "position": [
+              0.0,
+              -0.003,
+              0.06579958084492674
+            ],
+            "normal": [
+              -0.0,
+              -0.8040614272183434,
+              0.594546231389621
+            ],
+            "u_axis": [
+              1.0,
+              0.0,
+              0.0
+            ],
+            "v_axis": [
+              -0.0,
+              0.594546231389621,
+              0.8040614272183434
+            ],
+            "radii": [
+              0.022400000000000003,
+              0.014000000000000002
+            ],
+            "limbs": [
+              "LH",
+              "RH"
+            ],
+            "pull_direction": [
+              0.0,
+              -0.594546231389621,
+              -0.8040614272183434
+            ]
+          },
+          {
+            "id": "alternate",
+            "label": "备选抓握面",
+            "position": [
+              0.0,
+              0.009,
+              0.03261388856365775
+            ],
+            "normal": [
+              -0.0,
+              0.9315324154868039,
+              0.36365829964036356
+            ],
+            "u_axis": [
+              1.0,
+              0.0,
+              0.0
+            ],
+            "v_axis": [
+              0.0,
+              0.36365829964036356,
+              -0.9315324154868039
+            ],
+            "radii": [
+              0.022400000000000003,
+              0.014000000000000002
+            ],
+            "limbs": [
+              "LH",
+              "RH"
+            ],
+            "pull_direction": [
+              -0.0,
+              -0.36365829964036356,
+              0.9315324154868039
+            ]
+          }
+        ],
+        "id": "directional_edge_03",
+        "source": "synthetic_assumption",
+        "pull_direction": [
+          0,
+          -1,
+          0
+        ],
+        "contact": {
+          "id": "main",
+          "position": [
+            0,
+            0,
+            0.07
+          ],
+          "radius": 0.015,
+          "limbs": [
+            "LH",
+            "RH"
+          ]
+        }
+      },
+      {
+        "type": "directional_edge",
+        "template_id": "std-directional_edge",
+        "template_name": "E-01 扣边（兼容模板）",
+        "width": 0.16,
+        "height": 0.1,
+        "depth": 0.07,
+        "taxonomy": {
+          "family": "crimp",
+          "form": "edge",
+          "preferred_role": "hand",
+          "roles": [
+            "hand",
+            "foot"
+          ],
+          "legacy_alias": "directional_edge"
+        },
+        "grip_surfaces": [
+          {
+            "id": "working",
+            "label": "主要抓握面",
+            "position": [
+              0.0,
+              -0.003,
+              0.06579958084492674
+            ],
+            "normal": [
+              -0.0,
+              -0.8040614272183434,
+              0.594546231389621
+            ],
+            "u_axis": [
+              1.0,
+              0.0,
+              0.0
+            ],
+            "v_axis": [
+              -0.0,
+              0.594546231389621,
+              0.8040614272183434
+            ],
+            "radii": [
+              0.022400000000000003,
+              0.014000000000000002
+            ],
+            "limbs": [
+              "LH",
+              "RH"
+            ],
+            "pull_direction": [
+              0.0,
+              -0.594546231389621,
+              -0.8040614272183434
+            ]
+          },
+          {
+            "id": "alternate",
+            "label": "备选抓握面",
+            "position": [
+              0.0,
+              0.009,
+              0.03261388856365775
+            ],
+            "normal": [
+              -0.0,
+              0.9315324154868039,
+              0.36365829964036356
+            ],
+            "u_axis": [
+              1.0,
+              0.0,
+              0.0
+            ],
+            "v_axis": [
+              0.0,
+              0.36365829964036356,
+              -0.9315324154868039
+            ],
+            "radii": [
+              0.022400000000000003,
+              0.014000000000000002
+            ],
+            "limbs": [
+              "LH",
+              "RH"
+            ],
+            "pull_direction": [
+              -0.0,
+              -0.36365829964036356,
+              0.9315324154868039
+            ]
+          }
+        ],
+        "id": "directional_edge_04",
+        "source": "synthetic_assumption",
+        "pull_direction": [
+          0,
+          -1,
+          0
+        ],
+        "contact": {
+          "id": "main",
+          "position": [
+            0,
+            0,
+            0.07
+          ],
+          "radius": 0.015,
+          "limbs": [
+            "LH",
+            "RH"
+          ]
+        }
+      },
+      {
+        "type": "crimp",
+        "template_id": "std-crimp",
+        "template_name": "C-01 浅扣边 Crimp",
+        "width": 0.12,
+        "height": 0.065,
+        "depth": 0.03,
+        "taxonomy": {
+          "family": "crimp",
+          "form": "edge",
+          "preferred_role": "hand",
+          "roles": [
+            "hand",
+            "foot"
+          ]
+        },
+        "grip_surfaces": [
+          {
+            "id": "working",
+            "label": "浅扣抓边",
+            "position": [
+              0.0,
+              0.00715,
+              0.012000505686111614
+            ],
+            "normal": [
+              -0.0,
+              0.9333483073215549,
+              0.35897205632192103
+            ],
+            "u_axis": [
+              1.0,
+              0.0,
+              0.0
+            ],
+            "v_axis": [
+              0.0,
+              0.35897205632192103,
+              -0.9333483073215549
+            ],
+            "radii": [
+              0.014,
+              0.005
+            ],
+            "limbs": [
+              "LH",
+              "RH",
+              "LF",
+              "RF"
+            ],
+            "pull_direction": [
+              -0.0,
+              -0.35897205632192103,
+              0.9333483073215549
+            ]
+          },
+          {
+            "id": "alternate",
+            "label": "侧段抓边",
+            "position": [
+              0.0144,
+              0.00715,
+              0.01188713490439517
+            ],
+            "normal": [
+              0.005843779170896398,
+              0.9321819829817639,
+              0.36194281433561903
+            ],
+            "u_axis": [
+              0.999869685488651,
+              0.0,
+              -0.01614348292117564
+            ],
+            "v_axis": [
+              -0.015048663921693746,
+              0.36198998688387307,
+              -0.9320605061421633
+            ],
+            "radii": [
+              0.014,
+              0.005
+            ],
+            "limbs": [
+              "LH",
+              "RH",
+              "LF",
+              "RF"
+            ],
+            "pull_direction": [
+              0.015048663921693746,
+              -0.36198998688387307,
+              0.9320605061421633
+            ]
+          }
+        ],
+        "id": "crimp_01",
+        "source": "synthetic_assumption",
+        "pull_direction": [
+          0,
+          -1,
+          0
+        ],
+        "contact": {
+          "id": "main",
+          "position": [
+            0.0,
+            0.00715,
+            0.012000505686111614
+          ],
+          "radius": 0.005,
+          "limbs": [
+            "LH",
+            "RH",
+            "LF",
+            "RF"
+          ]
+        }
+      },
+      {
+        "type": "crimp",
+        "template_id": "std-crimp",
+        "template_name": "C-01 浅扣边 Crimp",
+        "width": 0.12,
+        "height": 0.065,
+        "depth": 0.03,
+        "taxonomy": {
+          "family": "crimp",
+          "form": "edge",
+          "preferred_role": "hand",
+          "roles": [
+            "hand",
+            "foot"
+          ]
+        },
+        "grip_surfaces": [
+          {
+            "id": "working",
+            "label": "浅扣抓边",
+            "position": [
+              0.0,
+              0.00715,
+              0.012000505686111614
+            ],
+            "normal": [
+              -0.0,
+              0.9333483073215549,
+              0.35897205632192103
+            ],
+            "u_axis": [
+              1.0,
+              0.0,
+              0.0
+            ],
+            "v_axis": [
+              0.0,
+              0.35897205632192103,
+              -0.9333483073215549
+            ],
+            "radii": [
+              0.014,
+              0.005
+            ],
+            "limbs": [
+              "LH",
+              "RH",
+              "LF",
+              "RF"
+            ],
+            "pull_direction": [
+              -0.0,
+              -0.35897205632192103,
+              0.9333483073215549
+            ]
+          },
+          {
+            "id": "alternate",
+            "label": "侧段抓边",
+            "position": [
+              0.0144,
+              0.00715,
+              0.01188713490439517
+            ],
+            "normal": [
+              0.005843779170896398,
+              0.9321819829817639,
+              0.36194281433561903
+            ],
+            "u_axis": [
+              0.999869685488651,
+              0.0,
+              -0.01614348292117564
+            ],
+            "v_axis": [
+              -0.015048663921693746,
+              0.36198998688387307,
+              -0.9320605061421633
+            ],
+            "radii": [
+              0.014,
+              0.005
+            ],
+            "limbs": [
+              "LH",
+              "RH",
+              "LF",
+              "RF"
+            ],
+            "pull_direction": [
+              0.015048663921693746,
+              -0.36198998688387307,
+              0.9320605061421633
+            ]
+          }
+        ],
+        "id": "crimp_02",
+        "source": "synthetic_assumption",
+        "pull_direction": [
+          0,
+          -1,
+          0
+        ],
+        "contact": {
+          "id": "main",
+          "position": [
+            0.0,
+            0.00715,
+            0.012000505686111614
+          ],
+          "radius": 0.005,
+          "limbs": [
+            "LH",
+            "RH",
+            "LF",
+            "RF"
+          ]
+        }
+      },
+      {
+        "type": "crimp",
+        "template_id": "std-crimp",
+        "template_name": "C-01 浅扣边 Crimp",
+        "width": 0.12,
+        "height": 0.065,
+        "depth": 0.03,
+        "taxonomy": {
+          "family": "crimp",
+          "form": "edge",
+          "preferred_role": "hand",
+          "roles": [
+            "hand",
+            "foot"
+          ]
+        },
+        "grip_surfaces": [
+          {
+            "id": "working",
+            "label": "浅扣抓边",
+            "position": [
+              0.0,
+              0.00715,
+              0.012000505686111614
+            ],
+            "normal": [
+              -0.0,
+              0.9333483073215549,
+              0.35897205632192103
+            ],
+            "u_axis": [
+              1.0,
+              0.0,
+              0.0
+            ],
+            "v_axis": [
+              0.0,
+              0.35897205632192103,
+              -0.9333483073215549
+            ],
+            "radii": [
+              0.014,
+              0.005
+            ],
+            "limbs": [
+              "LH",
+              "RH",
+              "LF",
+              "RF"
+            ],
+            "pull_direction": [
+              -0.0,
+              -0.35897205632192103,
+              0.9333483073215549
+            ]
+          },
+          {
+            "id": "alternate",
+            "label": "侧段抓边",
+            "position": [
+              0.0144,
+              0.00715,
+              0.01188713490439517
+            ],
+            "normal": [
+              0.005843779170896398,
+              0.9321819829817639,
+              0.36194281433561903
+            ],
+            "u_axis": [
+              0.999869685488651,
+              0.0,
+              -0.01614348292117564
+            ],
+            "v_axis": [
+              -0.015048663921693746,
+              0.36198998688387307,
+              -0.9320605061421633
+            ],
+            "radii": [
+              0.014,
+              0.005
+            ],
+            "limbs": [
+              "LH",
+              "RH",
+              "LF",
+              "RF"
+            ],
+            "pull_direction": [
+              0.015048663921693746,
+              -0.36198998688387307,
+              0.9320605061421633
+            ]
+          }
+        ],
+        "id": "crimp_03",
+        "source": "synthetic_assumption",
+        "pull_direction": [
+          0,
+          -1,
+          0
+        ],
+        "contact": {
+          "id": "main",
+          "position": [
+            0.0,
+            0.00715,
+            0.012000505686111614
+          ],
+          "radius": 0.005,
+          "limbs": [
+            "LH",
+            "RH",
+            "LF",
+            "RF"
+          ]
+        }
+      },
+      {
+        "type": "crimp",
+        "template_id": "std-crimp",
+        "template_name": "C-01 浅扣边 Crimp",
+        "width": 0.12,
+        "height": 0.065,
+        "depth": 0.03,
+        "taxonomy": {
+          "family": "crimp",
+          "form": "edge",
+          "preferred_role": "hand",
+          "roles": [
+            "hand",
+            "foot"
+          ]
+        },
+        "grip_surfaces": [
+          {
+            "id": "working",
+            "label": "浅扣抓边",
+            "position": [
+              0.0,
+              0.00715,
+              0.012000505686111614
+            ],
+            "normal": [
+              -0.0,
+              0.9333483073215549,
+              0.35897205632192103
+            ],
+            "u_axis": [
+              1.0,
+              0.0,
+              0.0
+            ],
+            "v_axis": [
+              0.0,
+              0.35897205632192103,
+              -0.9333483073215549
+            ],
+            "radii": [
+              0.014,
+              0.005
+            ],
+            "limbs": [
+              "LH",
+              "RH",
+              "LF",
+              "RF"
+            ],
+            "pull_direction": [
+              -0.0,
+              -0.35897205632192103,
+              0.9333483073215549
+            ]
+          },
+          {
+            "id": "alternate",
+            "label": "侧段抓边",
+            "position": [
+              0.0144,
+              0.00715,
+              0.01188713490439517
+            ],
+            "normal": [
+              0.005843779170896398,
+              0.9321819829817639,
+              0.36194281433561903
+            ],
+            "u_axis": [
+              0.999869685488651,
+              0.0,
+              -0.01614348292117564
+            ],
+            "v_axis": [
+              -0.015048663921693746,
+              0.36198998688387307,
+              -0.9320605061421633
+            ],
+            "radii": [
+              0.014,
+              0.005
+            ],
+            "limbs": [
+              "LH",
+              "RH",
+              "LF",
+              "RF"
+            ],
+            "pull_direction": [
+              0.015048663921693746,
+              -0.36198998688387307,
+              0.9320605061421633
+            ]
+          }
+        ],
+        "id": "crimp_04",
+        "source": "synthetic_assumption",
+        "pull_direction": [
+          0,
+          -1,
+          0
+        ],
+        "contact": {
+          "id": "main",
+          "position": [
+            0.0,
+            0.00715,
+            0.012000505686111614
+          ],
+          "radius": 0.005,
+          "limbs": [
+            "LH",
+            "RH",
+            "LF",
+            "RF"
+          ]
+        }
+      },
+      {
+        "type": "crimp",
+        "template_id": "std-crimp",
+        "template_name": "C-01 浅扣边 Crimp",
+        "width": 0.12,
+        "height": 0.065,
+        "depth": 0.03,
+        "taxonomy": {
+          "family": "crimp",
+          "form": "edge",
+          "preferred_role": "hand",
+          "roles": [
+            "hand",
+            "foot"
+          ]
+        },
+        "grip_surfaces": [
+          {
+            "id": "working",
+            "label": "浅扣抓边",
+            "position": [
+              0.0,
+              0.00715,
+              0.012000505686111614
+            ],
+            "normal": [
+              -0.0,
+              0.9333483073215549,
+              0.35897205632192103
+            ],
+            "u_axis": [
+              1.0,
+              0.0,
+              0.0
+            ],
+            "v_axis": [
+              0.0,
+              0.35897205632192103,
+              -0.9333483073215549
+            ],
+            "radii": [
+              0.014,
+              0.005
+            ],
+            "limbs": [
+              "LH",
+              "RH",
+              "LF",
+              "RF"
+            ],
+            "pull_direction": [
+              -0.0,
+              -0.35897205632192103,
+              0.9333483073215549
+            ]
+          },
+          {
+            "id": "alternate",
+            "label": "侧段抓边",
+            "position": [
+              0.0144,
+              0.00715,
+              0.01188713490439517
+            ],
+            "normal": [
+              0.005843779170896398,
+              0.9321819829817639,
+              0.36194281433561903
+            ],
+            "u_axis": [
+              0.999869685488651,
+              0.0,
+              -0.01614348292117564
+            ],
+            "v_axis": [
+              -0.015048663921693746,
+              0.36198998688387307,
+              -0.9320605061421633
+            ],
+            "radii": [
+              0.014,
+              0.005
+            ],
+            "limbs": [
+              "LH",
+              "RH",
+              "LF",
+              "RF"
+            ],
+            "pull_direction": [
+              0.015048663921693746,
+              -0.36198998688387307,
+              0.9320605061421633
+            ]
+          }
+        ],
+        "id": "crimp_05",
+        "source": "synthetic_assumption",
+        "pull_direction": [
+          0,
+          -1,
+          0
+        ],
+        "contact": {
+          "id": "main",
+          "position": [
+            0.0,
+            0.00715,
+            0.012000505686111614
+          ],
+          "radius": 0.005,
+          "limbs": [
+            "LH",
+            "RH",
+            "LF",
+            "RF"
+          ]
+        }
+      },
+      {
+        "type": "crimp",
+        "template_id": "std-crimp",
+        "template_name": "C-01 浅扣边 Crimp",
+        "width": 0.12,
+        "height": 0.065,
+        "depth": 0.03,
+        "taxonomy": {
+          "family": "crimp",
+          "form": "edge",
+          "preferred_role": "hand",
+          "roles": [
+            "hand",
+            "foot"
+          ]
+        },
+        "grip_surfaces": [
+          {
+            "id": "working",
+            "label": "浅扣抓边",
+            "position": [
+              0.0,
+              0.00715,
+              0.012000505686111614
+            ],
+            "normal": [
+              -0.0,
+              0.9333483073215549,
+              0.35897205632192103
+            ],
+            "u_axis": [
+              1.0,
+              0.0,
+              0.0
+            ],
+            "v_axis": [
+              0.0,
+              0.35897205632192103,
+              -0.9333483073215549
+            ],
+            "radii": [
+              0.014,
+              0.005
+            ],
+            "limbs": [
+              "LH",
+              "RH",
+              "LF",
+              "RF"
+            ],
+            "pull_direction": [
+              -0.0,
+              -0.35897205632192103,
+              0.9333483073215549
+            ]
+          },
+          {
+            "id": "alternate",
+            "label": "侧段抓边",
+            "position": [
+              0.0144,
+              0.00715,
+              0.01188713490439517
+            ],
+            "normal": [
+              0.005843779170896398,
+              0.9321819829817639,
+              0.36194281433561903
+            ],
+            "u_axis": [
+              0.999869685488651,
+              0.0,
+              -0.01614348292117564
+            ],
+            "v_axis": [
+              -0.015048663921693746,
+              0.36198998688387307,
+              -0.9320605061421633
+            ],
+            "radii": [
+              0.014,
+              0.005
+            ],
+            "limbs": [
+              "LH",
+              "RH",
+              "LF",
+              "RF"
+            ],
+            "pull_direction": [
+              0.015048663921693746,
+              -0.36198998688387307,
+              0.9320605061421633
+            ]
+          }
+        ],
+        "id": "crimp_06",
+        "source": "synthetic_assumption",
+        "pull_direction": [
+          0,
+          -1,
+          0
+        ],
+        "contact": {
+          "id": "main",
+          "position": [
+            0.0,
+            0.00715,
+            0.012000505686111614
+          ],
+          "radius": 0.005,
+          "limbs": [
+            "LH",
+            "RH",
+            "LF",
+            "RF"
+          ]
+        }
+      },
+      {
+        "type": "pocket",
+        "template_id": "std-pocket",
+        "template_name": "H-01 指洞 Pocket",
+        "width": 0.16,
+        "height": 0.14,
+        "depth": 0.065,
+        "taxonomy": {
+          "family": "pocket",
+          "form": "recess",
+          "preferred_role": "hand",
+          "roles": [
+            "hand",
+            "foot"
+          ]
+        },
+        "grip_surfaces": [
+          {
+            "id": "working",
+            "label": "洞口内上缘",
+            "position": [
+              0.0,
+              0.028000000000000004,
+              0.024665530947881105
+            ],
+            "normal": [
+              -0.0,
+              -0.8959186111514501,
+              0.44421823712276437
+            ],
+            "u_axis": [
+              1.0,
+              0.0,
+              0.0
+            ],
+            "v_axis": [
+              -0.0,
+              0.44421823712276437,
+              0.8959186111514501
+            ],
+            "radii": [
+              0.011,
+              0.008
+            ],
+            "limbs": [
+              "LH",
+              "RH"
+            ],
+            "pull_direction": [
+              0.0,
+              -0.44421823712276437,
+              -0.8959186111514501
+            ]
+          },
+          {
+            "id": "alternate",
+            "label": "洞口内侧缘",
+            "position": [
+              0.0232,
+              0.0126,
+              0.02874790281060133
+            ],
+            "normal": [
+              -0.88173987044199,
+              -0.16410555009096986,
+              0.44227160128396537
+            ],
+            "u_axis": [
+              0.44834997825469186,
+              0.0,
+              0.893858096679231
+            ],
+            "v_axis": [
+              -0.14668707465881253,
+              0.9864427851778026,
+              0.07357671981476058
+            ],
+            "radii": [
+              0.011,
+              0.008
+            ],
+            "limbs": [
+              "LH",
+              "RH"
+            ],
+            "pull_direction": [
+              0.14668707465881253,
+              -0.9864427851778026,
+              -0.07357671981476058
+            ]
+          },
+          {
+            "id": "standing",
+            "label": "洞外上缘踩面",
+            "position": [
+              0.0,
+              0.049,
+              0.049075115052541224
+            ],
+            "normal": [
+              -0.0,
+              0.5758185519058894,
+              0.8175775163744443
+            ],
+            "u_axis": [
+              1.0,
+              0.0,
+              0.0
+            ],
+            "v_axis": [
+              0.0,
+              0.8175775163744443,
+              -0.5758185519058894
+            ],
+            "radii": [
+              0.018,
+              0.009
+            ],
+            "limbs": [
+              "LF",
+              "RF"
+            ],
+            "pull_direction": [
+              -0.0,
+              -0.8175775163744443,
+              0.5758185519058894
+            ]
+          }
+        ],
+        "id": "pocket_01",
+        "source": "synthetic_assumption",
+        "pull_direction": [
+          0,
+          -1,
+          0
+        ],
+        "contact": {
+          "id": "main",
+          "position": [
+            0.0,
+            0.028000000000000004,
+            0.024665530947881105
+          ],
+          "radius": 0.008,
+          "limbs": [
+            "LH",
+            "RH"
+          ]
+        }
+      },
+      {
+        "type": "pocket",
+        "template_id": "std-pocket",
+        "template_name": "H-01 指洞 Pocket",
+        "width": 0.16,
+        "height": 0.14,
+        "depth": 0.065,
+        "taxonomy": {
+          "family": "pocket",
+          "form": "recess",
+          "preferred_role": "hand",
+          "roles": [
+            "hand",
+            "foot"
+          ]
+        },
+        "grip_surfaces": [
+          {
+            "id": "working",
+            "label": "洞口内上缘",
+            "position": [
+              0.0,
+              0.028000000000000004,
+              0.024665530947881105
+            ],
+            "normal": [
+              -0.0,
+              -0.8959186111514501,
+              0.44421823712276437
+            ],
+            "u_axis": [
+              1.0,
+              0.0,
+              0.0
+            ],
+            "v_axis": [
+              -0.0,
+              0.44421823712276437,
+              0.8959186111514501
+            ],
+            "radii": [
+              0.011,
+              0.008
+            ],
+            "limbs": [
+              "LH",
+              "RH"
+            ],
+            "pull_direction": [
+              0.0,
+              -0.44421823712276437,
+              -0.8959186111514501
+            ]
+          },
+          {
+            "id": "alternate",
+            "label": "洞口内侧缘",
+            "position": [
+              0.0232,
+              0.0126,
+              0.02874790281060133
+            ],
+            "normal": [
+              -0.88173987044199,
+              -0.16410555009096986,
+              0.44227160128396537
+            ],
+            "u_axis": [
+              0.44834997825469186,
+              0.0,
+              0.893858096679231
+            ],
+            "v_axis": [
+              -0.14668707465881253,
+              0.9864427851778026,
+              0.07357671981476058
+            ],
+            "radii": [
+              0.011,
+              0.008
+            ],
+            "limbs": [
+              "LH",
+              "RH"
+            ],
+            "pull_direction": [
+              0.14668707465881253,
+              -0.9864427851778026,
+              -0.07357671981476058
+            ]
+          },
+          {
+            "id": "standing",
+            "label": "洞外上缘踩面",
+            "position": [
+              0.0,
+              0.049,
+              0.049075115052541224
+            ],
+            "normal": [
+              -0.0,
+              0.5758185519058894,
+              0.8175775163744443
+            ],
+            "u_axis": [
+              1.0,
+              0.0,
+              0.0
+            ],
+            "v_axis": [
+              0.0,
+              0.8175775163744443,
+              -0.5758185519058894
+            ],
+            "radii": [
+              0.018,
+              0.009
+            ],
+            "limbs": [
+              "LF",
+              "RF"
+            ],
+            "pull_direction": [
+              -0.0,
+              -0.8175775163744443,
+              0.5758185519058894
+            ]
+          }
+        ],
+        "id": "pocket_02",
+        "source": "synthetic_assumption",
+        "pull_direction": [
+          0,
+          -1,
+          0
+        ],
+        "contact": {
+          "id": "main",
+          "position": [
+            0.0,
+            0.028000000000000004,
+            0.024665530947881105
+          ],
+          "radius": 0.008,
+          "limbs": [
+            "LH",
+            "RH"
+          ]
+        }
+      },
+      {
+        "type": "foothold",
+        "template_id": "std-foothold",
+        "template_name": "F-01 标准脚点",
+        "width": 0.1,
+        "height": 0.07,
+        "depth": 0.045,
+        "taxonomy": {
+          "family": "foot_chip",
+          "form": "chip",
+          "preferred_role": "foot",
+          "roles": [
+            "foot"
+          ]
+        },
+        "grip_surfaces": [
+          {
+            "id": "working",
+            "label": "主要踩踏面",
+            "position": [
+              0.0,
+              0.0063,
+              0.02508845198486843
+            ],
+            "normal": [
+              -0.0,
+              0.9120543126936125,
+              0.41006942180194556
+            ],
+            "u_axis": [
+              1.0,
+              0.0,
+              0.0
+            ],
+            "v_axis": [
+              0.0,
+              0.41006942180194556,
+              -0.9120543126936125
+            ],
+            "radii": [
+              0.014000000000000002,
+              0.009800000000000001
+            ],
+            "limbs": [
+              "LF",
+              "RF"
+            ],
+            "pull_direction": [
+              -0.0,
+              -0.41006942180194556,
+              0.9120543126936125
+            ]
+          },
+          {
+            "id": "alternate",
+            "label": "备选踩踏面",
+            "position": [
+              0.0,
+              -0.0021000000000000003,
+              0.04269042
+            ],
+            "normal": [
+              -0.0,
+              -0.7398791889390244,
+              0.6727397608101751
+            ],
+            "u_axis": [
+              1.0,
+              0.0,
+              0.0
+            ],
+            "v_axis": [
+              -0.0,
+              0.6727397608101751,
+              0.7398791889390244
+            ],
+            "radii": [
+              0.014000000000000002,
+              0.009800000000000001
+            ],
+            "limbs": [
+              "LF",
+              "RF"
+            ],
+            "pull_direction": [
+              0.0,
+              -0.6727397608101751,
+              -0.7398791889390244
+            ]
+          }
+        ],
+        "id": "foothold_01",
+        "source": "synthetic_assumption",
+        "pull_direction": [
+          0,
+          -1,
+          0
+        ],
+        "contact": {
+          "id": "main",
+          "position": [
+            0,
+            0,
+            0.045
+          ],
+          "radius": 0.015,
+          "limbs": [
+            "LF",
+            "RF"
+          ]
+        }
+      },
+      {
+        "type": "foothold",
+        "template_id": "std-foothold",
+        "template_name": "F-01 标准脚点",
+        "width": 0.1,
+        "height": 0.07,
+        "depth": 0.045,
+        "taxonomy": {
+          "family": "foot_chip",
+          "form": "chip",
+          "preferred_role": "foot",
+          "roles": [
+            "foot"
+          ]
+        },
+        "grip_surfaces": [
+          {
+            "id": "working",
+            "label": "主要踩踏面",
+            "position": [
+              0.0,
+              0.0063,
+              0.02508845198486843
+            ],
+            "normal": [
+              -0.0,
+              0.9120543126936125,
+              0.41006942180194556
+            ],
+            "u_axis": [
+              1.0,
+              0.0,
+              0.0
+            ],
+            "v_axis": [
+              0.0,
+              0.41006942180194556,
+              -0.9120543126936125
+            ],
+            "radii": [
+              0.014000000000000002,
+              0.009800000000000001
+            ],
+            "limbs": [
+              "LF",
+              "RF"
+            ],
+            "pull_direction": [
+              -0.0,
+              -0.41006942180194556,
+              0.9120543126936125
+            ]
+          },
+          {
+            "id": "alternate",
+            "label": "备选踩踏面",
+            "position": [
+              0.0,
+              -0.0021000000000000003,
+              0.04269042
+            ],
+            "normal": [
+              -0.0,
+              -0.7398791889390244,
+              0.6727397608101751
+            ],
+            "u_axis": [
+              1.0,
+              0.0,
+              0.0
+            ],
+            "v_axis": [
+              -0.0,
+              0.6727397608101751,
+              0.7398791889390244
+            ],
+            "radii": [
+              0.014000000000000002,
+              0.009800000000000001
+            ],
+            "limbs": [
+              "LF",
+              "RF"
+            ],
+            "pull_direction": [
+              0.0,
+              -0.6727397608101751,
+              -0.7398791889390244
+            ]
+          }
+        ],
+        "id": "foothold_02",
+        "source": "synthetic_assumption",
+        "pull_direction": [
+          0,
+          -1,
+          0
+        ],
+        "contact": {
+          "id": "main",
+          "position": [
+            0,
+            0,
+            0.045
+          ],
+          "radius": 0.015,
+          "limbs": [
+            "LF",
+            "RF"
+          ]
+        }
+      },
+      {
+        "type": "foothold",
+        "template_id": "std-foothold",
+        "template_name": "F-01 标准脚点",
+        "width": 0.1,
+        "height": 0.07,
+        "depth": 0.045,
+        "taxonomy": {
+          "family": "foot_chip",
+          "form": "chip",
+          "preferred_role": "foot",
+          "roles": [
+            "foot"
+          ]
+        },
+        "grip_surfaces": [
+          {
+            "id": "working",
+            "label": "主要踩踏面",
+            "position": [
+              0.0,
+              0.0063,
+              0.02508845198486843
+            ],
+            "normal": [
+              -0.0,
+              0.9120543126936125,
+              0.41006942180194556
+            ],
+            "u_axis": [
+              1.0,
+              0.0,
+              0.0
+            ],
+            "v_axis": [
+              0.0,
+              0.41006942180194556,
+              -0.9120543126936125
+            ],
+            "radii": [
+              0.014000000000000002,
+              0.009800000000000001
+            ],
+            "limbs": [
+              "LF",
+              "RF"
+            ],
+            "pull_direction": [
+              -0.0,
+              -0.41006942180194556,
+              0.9120543126936125
+            ]
+          },
+          {
+            "id": "alternate",
+            "label": "备选踩踏面",
+            "position": [
+              0.0,
+              -0.0021000000000000003,
+              0.04269042
+            ],
+            "normal": [
+              -0.0,
+              -0.7398791889390244,
+              0.6727397608101751
+            ],
+            "u_axis": [
+              1.0,
+              0.0,
+              0.0
+            ],
+            "v_axis": [
+              -0.0,
+              0.6727397608101751,
+              0.7398791889390244
+            ],
+            "radii": [
+              0.014000000000000002,
+              0.009800000000000001
+            ],
+            "limbs": [
+              "LF",
+              "RF"
+            ],
+            "pull_direction": [
+              0.0,
+              -0.6727397608101751,
+              -0.7398791889390244
+            ]
+          }
+        ],
+        "id": "foothold_03",
+        "source": "synthetic_assumption",
+        "pull_direction": [
+          0,
+          -1,
+          0
+        ],
+        "contact": {
+          "id": "main",
+          "position": [
+            0,
+            0,
+            0.045
+          ],
+          "radius": 0.015,
+          "limbs": [
+            "LF",
+            "RF"
+          ]
+        }
+      },
+      {
+        "type": "foothold",
+        "template_id": "std-foothold",
+        "template_name": "F-01 标准脚点",
+        "width": 0.1,
+        "height": 0.07,
+        "depth": 0.045,
+        "taxonomy": {
+          "family": "foot_chip",
+          "form": "chip",
+          "preferred_role": "foot",
+          "roles": [
+            "foot"
+          ]
+        },
+        "grip_surfaces": [
+          {
+            "id": "working",
+            "label": "主要踩踏面",
+            "position": [
+              0.0,
+              0.0063,
+              0.02508845198486843
+            ],
+            "normal": [
+              -0.0,
+              0.9120543126936125,
+              0.41006942180194556
+            ],
+            "u_axis": [
+              1.0,
+              0.0,
+              0.0
+            ],
+            "v_axis": [
+              0.0,
+              0.41006942180194556,
+              -0.9120543126936125
+            ],
+            "radii": [
+              0.014000000000000002,
+              0.009800000000000001
+            ],
+            "limbs": [
+              "LF",
+              "RF"
+            ],
+            "pull_direction": [
+              -0.0,
+              -0.41006942180194556,
+              0.9120543126936125
+            ]
+          },
+          {
+            "id": "alternate",
+            "label": "备选踩踏面",
+            "position": [
+              0.0,
+              -0.0021000000000000003,
+              0.04269042
+            ],
+            "normal": [
+              -0.0,
+              -0.7398791889390244,
+              0.6727397608101751
+            ],
+            "u_axis": [
+              1.0,
+              0.0,
+              0.0
+            ],
+            "v_axis": [
+              -0.0,
+              0.6727397608101751,
+              0.7398791889390244
+            ],
+            "radii": [
+              0.014000000000000002,
+              0.009800000000000001
+            ],
+            "limbs": [
+              "LF",
+              "RF"
+            ],
+            "pull_direction": [
+              0.0,
+              -0.6727397608101751,
+              -0.7398791889390244
+            ]
+          }
+        ],
+        "id": "foothold_04",
+        "source": "synthetic_assumption",
+        "pull_direction": [
+          0,
+          -1,
+          0
+        ],
+        "contact": {
+          "id": "main",
+          "position": [
+            0,
+            0,
+            0.045
+          ],
+          "radius": 0.015,
+          "limbs": [
+            "LF",
+            "RF"
+          ]
+        }
+      },
+      {
+        "type": "foothold",
+        "template_id": "std-foothold",
+        "template_name": "F-01 标准脚点",
+        "width": 0.1,
+        "height": 0.07,
+        "depth": 0.045,
+        "taxonomy": {
+          "family": "foot_chip",
+          "form": "chip",
+          "preferred_role": "foot",
+          "roles": [
+            "foot"
+          ]
+        },
+        "grip_surfaces": [
+          {
+            "id": "working",
+            "label": "主要踩踏面",
+            "position": [
+              0.0,
+              0.0063,
+              0.02508845198486843
+            ],
+            "normal": [
+              -0.0,
+              0.9120543126936125,
+              0.41006942180194556
+            ],
+            "u_axis": [
+              1.0,
+              0.0,
+              0.0
+            ],
+            "v_axis": [
+              0.0,
+              0.41006942180194556,
+              -0.9120543126936125
+            ],
+            "radii": [
+              0.014000000000000002,
+              0.009800000000000001
+            ],
+            "limbs": [
+              "LF",
+              "RF"
+            ],
+            "pull_direction": [
+              -0.0,
+              -0.41006942180194556,
+              0.9120543126936125
+            ]
+          },
+          {
+            "id": "alternate",
+            "label": "备选踩踏面",
+            "position": [
+              0.0,
+              -0.0021000000000000003,
+              0.04269042
+            ],
+            "normal": [
+              -0.0,
+              -0.7398791889390244,
+              0.6727397608101751
+            ],
+            "u_axis": [
+              1.0,
+              0.0,
+              0.0
+            ],
+            "v_axis": [
+              -0.0,
+              0.6727397608101751,
+              0.7398791889390244
+            ],
+            "radii": [
+              0.014000000000000002,
+              0.009800000000000001
+            ],
+            "limbs": [
+              "LF",
+              "RF"
+            ],
+            "pull_direction": [
+              0.0,
+              -0.6727397608101751,
+              -0.7398791889390244
+            ]
+          }
+        ],
+        "id": "foothold_05",
+        "source": "synthetic_assumption",
+        "pull_direction": [
+          0,
+          -1,
+          0
+        ],
+        "contact": {
+          "id": "main",
+          "position": [
+            0,
+            0,
+            0.045
+          ],
+          "radius": 0.015,
+          "limbs": [
+            "LF",
+            "RF"
+          ]
+        }
+      },
+      {
+        "type": "foothold",
+        "template_id": "std-foothold",
+        "template_name": "F-01 标准脚点",
+        "width": 0.1,
+        "height": 0.07,
+        "depth": 0.045,
+        "taxonomy": {
+          "family": "foot_chip",
+          "form": "chip",
+          "preferred_role": "foot",
+          "roles": [
+            "foot"
+          ]
+        },
+        "grip_surfaces": [
+          {
+            "id": "working",
+            "label": "主要踩踏面",
+            "position": [
+              0.0,
+              0.0063,
+              0.02508845198486843
+            ],
+            "normal": [
+              -0.0,
+              0.9120543126936125,
+              0.41006942180194556
+            ],
+            "u_axis": [
+              1.0,
+              0.0,
+              0.0
+            ],
+            "v_axis": [
+              0.0,
+              0.41006942180194556,
+              -0.9120543126936125
+            ],
+            "radii": [
+              0.014000000000000002,
+              0.009800000000000001
+            ],
+            "limbs": [
+              "LF",
+              "RF"
+            ],
+            "pull_direction": [
+              -0.0,
+              -0.41006942180194556,
+              0.9120543126936125
+            ]
+          },
+          {
+            "id": "alternate",
+            "label": "备选踩踏面",
+            "position": [
+              0.0,
+              -0.0021000000000000003,
+              0.04269042
+            ],
+            "normal": [
+              -0.0,
+              -0.7398791889390244,
+              0.6727397608101751
+            ],
+            "u_axis": [
+              1.0,
+              0.0,
+              0.0
+            ],
+            "v_axis": [
+              -0.0,
+              0.6727397608101751,
+              0.7398791889390244
+            ],
+            "radii": [
+              0.014000000000000002,
+              0.009800000000000001
+            ],
+            "limbs": [
+              "LF",
+              "RF"
+            ],
+            "pull_direction": [
+              0.0,
+              -0.6727397608101751,
+              -0.7398791889390244
+            ]
+          }
+        ],
+        "id": "foothold_06",
+        "source": "synthetic_assumption",
+        "pull_direction": [
+          0,
+          -1,
+          0
+        ],
+        "contact": {
+          "id": "main",
+          "position": [
+            0,
+            0,
+            0.045
+          ],
+          "radius": 0.015,
+          "limbs": [
+            "LF",
+            "RF"
+          ]
+        }
+      },
+      {
+        "type": "foothold",
+        "template_id": "std-foothold",
+        "template_name": "F-01 标准脚点",
+        "width": 0.1,
+        "height": 0.07,
+        "depth": 0.045,
+        "taxonomy": {
+          "family": "foot_chip",
+          "form": "chip",
+          "preferred_role": "foot",
+          "roles": [
+            "foot"
+          ]
+        },
+        "grip_surfaces": [
+          {
+            "id": "working",
+            "label": "主要踩踏面",
+            "position": [
+              0.0,
+              0.0063,
+              0.02508845198486843
+            ],
+            "normal": [
+              -0.0,
+              0.9120543126936125,
+              0.41006942180194556
+            ],
+            "u_axis": [
+              1.0,
+              0.0,
+              0.0
+            ],
+            "v_axis": [
+              0.0,
+              0.41006942180194556,
+              -0.9120543126936125
+            ],
+            "radii": [
+              0.014000000000000002,
+              0.009800000000000001
+            ],
+            "limbs": [
+              "LF",
+              "RF"
+            ],
+            "pull_direction": [
+              -0.0,
+              -0.41006942180194556,
+              0.9120543126936125
+            ]
+          },
+          {
+            "id": "alternate",
+            "label": "备选踩踏面",
+            "position": [
+              0.0,
+              -0.0021000000000000003,
+              0.04269042
+            ],
+            "normal": [
+              -0.0,
+              -0.7398791889390244,
+              0.6727397608101751
+            ],
+            "u_axis": [
+              1.0,
+              0.0,
+              0.0
+            ],
+            "v_axis": [
+              -0.0,
+              0.6727397608101751,
+              0.7398791889390244
+            ],
+            "radii": [
+              0.014000000000000002,
+              0.009800000000000001
+            ],
+            "limbs": [
+              "LF",
+              "RF"
+            ],
+            "pull_direction": [
+              0.0,
+              -0.6727397608101751,
+              -0.7398791889390244
+            ]
+          }
+        ],
+        "id": "foothold_07",
+        "source": "synthetic_assumption",
+        "pull_direction": [
+          0,
+          -1,
+          0
+        ],
+        "contact": {
+          "id": "main",
+          "position": [
+            0,
+            0,
+            0.045
+          ],
+          "radius": 0.015,
+          "limbs": [
+            "LF",
+            "RF"
+          ]
+        }
+      },
+      {
+        "type": "foothold",
+        "template_id": "std-foothold",
+        "template_name": "F-01 标准脚点",
+        "width": 0.1,
+        "height": 0.07,
+        "depth": 0.045,
+        "taxonomy": {
+          "family": "foot_chip",
+          "form": "chip",
+          "preferred_role": "foot",
+          "roles": [
+            "foot"
+          ]
+        },
+        "grip_surfaces": [
+          {
+            "id": "working",
+            "label": "主要踩踏面",
+            "position": [
+              0.0,
+              0.0063,
+              0.02508845198486843
+            ],
+            "normal": [
+              -0.0,
+              0.9120543126936125,
+              0.41006942180194556
+            ],
+            "u_axis": [
+              1.0,
+              0.0,
+              0.0
+            ],
+            "v_axis": [
+              0.0,
+              0.41006942180194556,
+              -0.9120543126936125
+            ],
+            "radii": [
+              0.014000000000000002,
+              0.009800000000000001
+            ],
+            "limbs": [
+              "LF",
+              "RF"
+            ],
+            "pull_direction": [
+              -0.0,
+              -0.41006942180194556,
+              0.9120543126936125
+            ]
+          },
+          {
+            "id": "alternate",
+            "label": "备选踩踏面",
+            "position": [
+              0.0,
+              -0.0021000000000000003,
+              0.04269042
+            ],
+            "normal": [
+              -0.0,
+              -0.7398791889390244,
+              0.6727397608101751
+            ],
+            "u_axis": [
+              1.0,
+              0.0,
+              0.0
+            ],
+            "v_axis": [
+              -0.0,
+              0.6727397608101751,
+              0.7398791889390244
+            ],
+            "radii": [
+              0.014000000000000002,
+              0.009800000000000001
+            ],
+            "limbs": [
+              "LF",
+              "RF"
+            ],
+            "pull_direction": [
+              0.0,
+              -0.6727397608101751,
+              -0.7398791889390244
+            ]
+          }
+        ],
+        "id": "foothold_08",
+        "source": "synthetic_assumption",
+        "pull_direction": [
+          0,
+          -1,
+          0
+        ],
+        "contact": {
+          "id": "main",
+          "position": [
+            0,
+            0,
+            0.045
+          ],
+          "radius": 0.015,
+          "limbs": [
+            "LF",
+            "RF"
+          ]
+        }
+      },
+      {
+        "type": "sloper",
+        "template_id": "std-sloper",
+        "template_name": "S-01 圆坡面",
+        "width": 0.46,
+        "height": 0.36,
+        "depth": 0.18,
+        "taxonomy": {
+          "family": "sloper",
+          "form": "convex",
+          "preferred_role": "hand",
+          "roles": [
+            "hand",
+            "foot"
+          ]
+        },
+        "grip_surfaces": [
+          {
+            "id": "working",
+            "label": "主要抓握面",
+            "position": [
+              -0.046000000000000006,
+              0.021599999999999998,
+              0.17438122402292797
+            ],
+            "normal": [
+              -0.1575908965214686,
+              0.17487135453143623,
+              0.9718976894189534
+            ],
+            "u_axis": [
+              0.9871077459027807,
+              0.0,
+              0.1600571709694113
+            ],
+            "v_axis": [
+              0.027989414289890626,
+              0.9845912905182234,
+              -0.17261686859449205
+            ],
+            "radii": [
+              0.06440000000000001,
+              0.0504
+            ],
+            "limbs": [
+              "LH",
+              "RH"
+            ],
+            "pull_direction": [
+              -0.027989414289890626,
+              -0.9845912905182234,
+              0.17261686859449205
+            ]
+          },
+          {
+            "id": "alternate",
+            "label": "备选抓握面",
+            "position": [
+              0.0506,
+              0.021599999999999998,
+              0.1726044466214633
+            ],
+            "normal": [
+              0.20386954166451277,
+              0.18400845231603413,
+              0.9615498424199128
+            ],
+            "u_axis": [
+              0.9782538585461518,
+              0.0,
+              -0.20741115746161234
+            ],
+            "v_axis": [
+              -0.03816540607758854,
+              0.9829246611395289,
+              -0.18000697848326597
+            ],
+            "radii": [
+              0.06440000000000001,
+              0.0504
+            ],
+            "limbs": [
+              "LH",
+              "RH"
+            ],
+            "pull_direction": [
+              0.03816540607758854,
+              -0.9829246611395289,
+              0.18000697848326597
+            ]
+          }
+        ],
+        "id": "sloper_01",
+        "source": "synthetic_assumption",
+        "pull_direction": [
+          0,
+          -1,
+          0
+        ],
+        "contact": {
+          "id": "main",
+          "position": [
+            0,
+            0,
+            0.18
+          ],
+          "radius": 0.015,
+          "limbs": [
+            "LH",
+            "RH"
+          ]
+        }
+      },
+      {
+        "type": "sloper",
+        "template_id": "std-sloper",
+        "template_name": "S-01 圆坡面",
+        "width": 0.46,
+        "height": 0.36,
+        "depth": 0.18,
+        "taxonomy": {
+          "family": "sloper",
+          "form": "convex",
+          "preferred_role": "hand",
+          "roles": [
+            "hand",
+            "foot"
+          ]
+        },
+        "grip_surfaces": [
+          {
+            "id": "working",
+            "label": "主要抓握面",
+            "position": [
+              -0.046000000000000006,
+              0.021599999999999998,
+              0.17438122402292797
+            ],
+            "normal": [
+              -0.1575908965214686,
+              0.17487135453143623,
+              0.9718976894189534
+            ],
+            "u_axis": [
+              0.9871077459027807,
+              0.0,
+              0.1600571709694113
+            ],
+            "v_axis": [
+              0.027989414289890626,
+              0.9845912905182234,
+              -0.17261686859449205
+            ],
+            "radii": [
+              0.06440000000000001,
+              0.0504
+            ],
+            "limbs": [
+              "LH",
+              "RH"
+            ],
+            "pull_direction": [
+              -0.027989414289890626,
+              -0.9845912905182234,
+              0.17261686859449205
+            ]
+          },
+          {
+            "id": "alternate",
+            "label": "备选抓握面",
+            "position": [
+              0.0506,
+              0.021599999999999998,
+              0.1726044466214633
+            ],
+            "normal": [
+              0.20386954166451277,
+              0.18400845231603413,
+              0.9615498424199128
+            ],
+            "u_axis": [
+              0.9782538585461518,
+              0.0,
+              -0.20741115746161234
+            ],
+            "v_axis": [
+              -0.03816540607758854,
+              0.9829246611395289,
+              -0.18000697848326597
+            ],
+            "radii": [
+              0.06440000000000001,
+              0.0504
+            ],
+            "limbs": [
+              "LH",
+              "RH"
+            ],
+            "pull_direction": [
+              0.03816540607758854,
+              -0.9829246611395289,
+              0.18000697848326597
+            ]
+          }
+        ],
+        "id": "sloper_02",
+        "source": "synthetic_assumption",
+        "pull_direction": [
+          0,
+          -1,
+          0
+        ],
+        "contact": {
+          "id": "main",
+          "position": [
+            0,
+            0,
+            0.18
+          ],
+          "radius": 0.015,
+          "limbs": [
+            "LH",
+            "RH"
+          ]
+        }
+      },
+      {
+        "type": "pinch",
+        "template_id": "std-pinch",
+        "template_name": "P-01 捏点",
+        "width": 0.22,
+        "height": 0.34,
+        "depth": 0.14,
+        "taxonomy": {
+          "family": "pinch",
+          "form": "opposed_faces",
+          "preferred_role": "hand",
+          "roles": [
+            "hand",
+            "foot"
+          ]
+        },
+        "grip_surfaces": [
+          {
+            "id": "working",
+            "label": "主要抓握面",
+            "position": [
+              -0.039599999999999996,
+              0.0,
+              0.08995075653702085
+            ],
+            "normal": [
+              -0.8178454594651495,
+              -0.0,
+              0.5754379240476234
+            ],
+            "u_axis": [
+              0.5754379240476234,
+              0.0,
+              0.8178454594651495
+            ],
+            "v_axis": [
+              -0.0,
+              1.0,
+              0.0
+            ],
+            "radii": [
+              0.030800000000000004,
+              0.04760000000000001
+            ],
+            "limbs": [
+              "LH",
+              "RH"
+            ],
+            "pull_direction": [
+              0.0,
+              -1.0,
+              -0.0
+            ]
+          },
+          {
+            "id": "alternate",
+            "label": "备选抓握面",
+            "position": [
+              0.039599999999999996,
+              0.0,
+              0.08995075653702085
+            ],
+            "normal": [
+              0.8178454594651495,
+              -0.0,
+              0.5754379240476234
+            ],
+            "u_axis": [
+              0.5754379240476234,
+              0.0,
+              -0.8178454594651495
+            ],
+            "v_axis": [
+              0.0,
+              1.0,
+              0.0
+            ],
+            "radii": [
+              0.030800000000000004,
+              0.04760000000000001
+            ],
+            "limbs": [
+              "LH",
+              "RH"
+            ],
+            "pull_direction": [
+              -0.0,
+              -1.0,
+              -0.0
+            ]
+          }
+        ],
+        "id": "pinch_01",
+        "source": "synthetic_assumption",
+        "pull_direction": [
+          0,
+          -1,
+          0
+        ],
+        "contact": {
+          "id": "main",
+          "position": [
+            0,
+            0,
+            0.14
+          ],
+          "radius": 0.015,
+          "limbs": [
+            "LH",
+            "RH"
+          ]
+        }
+      },
+      {
+        "type": "pinch",
+        "template_id": "std-pinch",
+        "template_name": "P-01 捏点",
+        "width": 0.22,
+        "height": 0.34,
+        "depth": 0.14,
+        "taxonomy": {
+          "family": "pinch",
+          "form": "opposed_faces",
+          "preferred_role": "hand",
+          "roles": [
+            "hand",
+            "foot"
+          ]
+        },
+        "grip_surfaces": [
+          {
+            "id": "working",
+            "label": "主要抓握面",
+            "position": [
+              -0.039599999999999996,
+              0.0,
+              0.08995075653702085
+            ],
+            "normal": [
+              -0.8178454594651495,
+              -0.0,
+              0.5754379240476234
+            ],
+            "u_axis": [
+              0.5754379240476234,
+              0.0,
+              0.8178454594651495
+            ],
+            "v_axis": [
+              -0.0,
+              1.0,
+              0.0
+            ],
+            "radii": [
+              0.030800000000000004,
+              0.04760000000000001
+            ],
+            "limbs": [
+              "LH",
+              "RH"
+            ],
+            "pull_direction": [
+              0.0,
+              -1.0,
+              -0.0
+            ]
+          },
+          {
+            "id": "alternate",
+            "label": "备选抓握面",
+            "position": [
+              0.039599999999999996,
+              0.0,
+              0.08995075653702085
+            ],
+            "normal": [
+              0.8178454594651495,
+              -0.0,
+              0.5754379240476234
+            ],
+            "u_axis": [
+              0.5754379240476234,
+              0.0,
+              -0.8178454594651495
+            ],
+            "v_axis": [
+              0.0,
+              1.0,
+              0.0
+            ],
+            "radii": [
+              0.030800000000000004,
+              0.04760000000000001
+            ],
+            "limbs": [
+              "LH",
+              "RH"
+            ],
+            "pull_direction": [
+              -0.0,
+              -1.0,
+              -0.0
+            ]
+          }
+        ],
+        "id": "pinch_02",
+        "source": "synthetic_assumption",
+        "pull_direction": [
+          0,
+          -1,
+          0
+        ],
+        "contact": {
+          "id": "main",
+          "position": [
+            0,
+            0,
+            0.14
+          ],
+          "radius": 0.015,
+          "limbs": [
+            "LH",
+            "RH"
+          ]
+        }
+      },
+      {
+        "type": "rail",
+        "template_id": "std-rail",
+        "template_name": "R-01 长条扣边 Rail",
+        "width": 0.45,
+        "height": 0.13,
+        "depth": 0.12,
+        "taxonomy": {
+          "family": "crimp",
+          "form": "rail",
+          "preferred_role": "hand",
+          "roles": [
+            "hand",
+            "foot"
+          ],
+          "legacy_alias": "rail"
+        },
+        "grip_surfaces": [
+          {
+            "id": "working",
+            "label": "主要抓握面",
+            "position": [
+              0.0,
+              -0.005200000000000001,
+              0.11075054426422115
+            ],
+            "normal": [
+              -0.0,
+              -0.862146161111207,
+              0.5066596459964113
+            ],
+            "u_axis": [
+              1.0,
+              0.0,
+              0.0
+            ],
+            "v_axis": [
+              -0.0,
+              0.5066596459964113,
+              0.862146161111207
+            ],
+            "radii": [
+              0.06300000000000001,
+              0.0182
+            ],
+            "limbs": [
+              "LH",
+              "RH"
+            ],
+            "pull_direction": [
+              0.0,
+              -0.5066596459964113,
+              -0.862146161111207
+            ]
+          },
+          {
+            "id": "alternate",
+            "label": "备选抓握面",
+            "position": [
+              0.0,
+              0.0117,
+              0.05174015413975084
+            ],
+            "normal": [
+              -0.0,
+              0.9604919652628261,
+              0.27830771578516095
+            ],
+            "u_axis": [
+              1.0,
+              0.0,
+              0.0
+            ],
+            "v_axis": [
+              0.0,
+              0.27830771578516095,
+              -0.9604919652628261
+            ],
+            "radii": [
+              0.06300000000000001,
+              0.0182
+            ],
+            "limbs": [
+              "LH",
+              "RH"
+            ],
+            "pull_direction": [
+              -0.0,
+              -0.27830771578516095,
+              0.9604919652628261
+            ]
+          }
+        ],
+        "id": "rail_01",
+        "source": "synthetic_assumption",
+        "pull_direction": [
+          0,
+          -1,
+          0
+        ],
+        "contact": {
+          "id": "main",
+          "position": [
+            0,
+            0,
+            0.12
+          ],
+          "radius": 0.015,
+          "limbs": [
+            "LH",
+            "RH"
+          ]
+        }
+      },
+      {
+        "type": "rail",
+        "template_id": "std-rail",
+        "template_name": "R-01 长条扣边 Rail",
+        "width": 0.45,
+        "height": 0.13,
+        "depth": 0.12,
+        "taxonomy": {
+          "family": "crimp",
+          "form": "rail",
+          "preferred_role": "hand",
+          "roles": [
+            "hand",
+            "foot"
+          ],
+          "legacy_alias": "rail"
+        },
+        "grip_surfaces": [
+          {
+            "id": "working",
+            "label": "主要抓握面",
+            "position": [
+              0.0,
+              -0.005200000000000001,
+              0.11075054426422115
+            ],
+            "normal": [
+              -0.0,
+              -0.862146161111207,
+              0.5066596459964113
+            ],
+            "u_axis": [
+              1.0,
+              0.0,
+              0.0
+            ],
+            "v_axis": [
+              -0.0,
+              0.5066596459964113,
+              0.862146161111207
+            ],
+            "radii": [
+              0.06300000000000001,
+              0.0182
+            ],
+            "limbs": [
+              "LH",
+              "RH"
+            ],
+            "pull_direction": [
+              0.0,
+              -0.5066596459964113,
+              -0.862146161111207
+            ]
+          },
+          {
+            "id": "alternate",
+            "label": "备选抓握面",
+            "position": [
+              0.0,
+              0.0117,
+              0.05174015413975084
+            ],
+            "normal": [
+              -0.0,
+              0.9604919652628261,
+              0.27830771578516095
+            ],
+            "u_axis": [
+              1.0,
+              0.0,
+              0.0
+            ],
+            "v_axis": [
+              0.0,
+              0.27830771578516095,
+              -0.9604919652628261
+            ],
+            "radii": [
+              0.06300000000000001,
+              0.0182
+            ],
+            "limbs": [
+              "LH",
+              "RH"
+            ],
+            "pull_direction": [
+              -0.0,
+              -0.27830771578516095,
+              0.9604919652628261
+            ]
+          }
+        ],
+        "id": "rail_02",
+        "source": "synthetic_assumption",
+        "pull_direction": [
+          0,
+          -1,
+          0
+        ],
+        "contact": {
+          "id": "main",
+          "position": [
+            0,
+            0,
+            0.12
+          ],
+          "radius": 0.015,
+          "limbs": [
+            "LH",
+            "RH"
+          ]
+        }
+      },
+      {
+        "type": "volume",
+        "template_id": "std-volume",
+        "template_name": "V-01 三角体积块",
+        "width": 0.9,
+        "height": 0.72,
+        "depth": 0.28,
+        "taxonomy": {
+          "family": "volume",
+          "form": "volume",
+          "preferred_role": "structure",
+          "roles": [
+            "structure",
+            "hand",
+            "foot"
+          ]
+        },
+        "grip_surfaces": [
+          {
+            "id": "face_1_grip",
+            "label": "斜面接触 1",
+            "position": [
+              0.0,
+              -0.1848,
+              0.09866666666666668
+            ],
+            "normal": [
+              0.07412161468713861,
+              -0.6984536768595749,
+              0.7118064677407139
+            ],
+            "u_axis": [
+              0.9944161329206003,
+              0.10552987533034944,
+              0.0
+            ],
+            "v_axis": [
+              -0.07511684780001393,
+              0.7078318350385927,
+              0.702375649124091
+            ],
+            "radii": [
+              0.06,
+              0.05
+            ],
+            "limbs": [
+              "LF",
+              "RF"
+            ],
+            "pull_direction": [
+              0.07511684780001393,
+              -0.7078318350385927,
+              -0.702375649124091
+            ]
+          },
+          {
+            "id": "face_2_grip",
+            "label": "斜面接触 2",
+            "position": [
+              0.078,
+              0.0408,
+              0.09866666666666668
+            ],
+            "normal": [
+              0.608900046179823,
+              0.67655560686647,
+              0.41414157552671776
+            ],
+            "u_axis": [
+              -0.7432941462471664,
+              0.6689647316224496,
+              0.0
+            ],
+            "v_axis": [
+              -0.2770461079259292,
+              -0.30782900880658803,
+              0.9102124781721288
+            ],
+            "radii": [
+              0.06,
+              0.05
+            ],
+            "limbs": [
+              "LF",
+              "RF"
+            ],
+            "pull_direction": [
+              0.2770461079259292,
+              0.30782900880658803,
+              -0.9102124781721288
+            ]
+          },
+          {
+            "id": "face_3_grip",
+            "label": "斜面接触 3",
+            "position": [
+              -0.216,
+              0.009599999999999997,
+              0.09866666666666668
+            ],
+            "normal": [
+              -0.6222855229397378,
+              0.21515190952703697,
+              0.752642268123766
+            ],
+            "u_axis": [
+              -0.32676521552636273,
+              -0.9451055464454801,
+              0.0
+            ],
+            "v_axis": [
+              0.7113263820930774,
+              -0.24593731295771287,
+              0.658429659290583
+            ],
+            "radii": [
+              0.06,
+              0.05
+            ],
+            "limbs": [
+              "LF",
+              "RF"
+            ],
+            "pull_direction": [
+              -0.7113263820930774,
+              0.24593731295771287,
+              -0.658429659290583
+            ]
+          }
+        ],
+        "mounting_faces": [
+          {
+            "id": "face_1",
+            "label": "安装斜面 1",
+            "origin": [
+              0.0,
+              -0.1848,
+              0.09866666666666668
+            ],
+            "u_axis": [
+              0.9944161329206003,
+              0.10552987533034944,
+              0.0
+            ],
+            "v_axis": [
+              -0.07511684780001393,
+              0.7078318350385927,
+              0.702375649124091
+            ],
+            "normal": [
+              0.07412161468713861,
+              -0.6984536768595749,
+              0.7118064677407139
+            ],
+            "polygon": [
+              [
+                0.019501920961048577,
+                0.2581714408229671
+              ],
+              [
+                -0.4532272732639694,
+                -0.12908572041148356
+              ],
+              [
+                0.4337253523029208,
+                -0.12908572041148356
+              ]
+            ]
+          },
+          {
+            "id": "face_2",
+            "label": "安装斜面 2",
+            "origin": [
+              0.078,
+              0.0408,
+              0.09866666666666668
+            ],
+            "u_axis": [
+              -0.7432941462471664,
+              0.6689647316224496,
+              0.0
+            ],
+            "v_axis": [
+              -0.2770461079259292,
+              -0.30782900880658803,
+              0.9102124781721288
+            ],
+            "normal": [
+              0.608900046179823,
+              0.67655560686647,
+              0.41414157552671776
+            ],
+            "polygon": [
+              [
+                0.03068318235708303,
+                0.1992208826860773
+              ],
+              [
+                -0.4512390103037297,
+                -0.09961044134303863
+              ],
+              [
+                0.4205558279466467,
+                -0.09961044134303865
+              ]
+            ]
+          },
+          {
+            "id": "face_3",
+            "label": "安装斜面 3",
+            "origin": [
+              -0.216,
+              0.009599999999999997,
+              0.09866666666666668
+            ],
+            "u_axis": [
+              -0.32676521552636273,
+              -0.9451055464454801,
+              0.0
+            ],
+            "v_axis": [
+              0.7113263820930774,
+              -0.24593731295771287,
+              0.658429659290583
+            ],
+            "normal": [
+              -0.6222855229397378,
+              0.21515190952703697,
+              0.752642268123766
+            ],
+            "polygon": [
+              [
+                -0.06150827330781774,
+                0.27540274162119116
+              ],
+              [
+                -0.327301110479826,
+                -0.13770137081059558
+              ],
+              [
+                0.38880938378764374,
+                -0.1377013708105956
+              ]
+            ]
+          }
+        ],
+        "id": "volume_01",
+        "source": "synthetic_assumption",
+        "pull_direction": [
+          0,
+          -1,
+          0
+        ],
+        "contact": {
+          "id": "main",
+          "position": [
+            0,
+            0,
+            0.28
+          ],
+          "radius": 0.015,
+          "limbs": [
+            "LF",
+            "RF"
+          ]
+        }
+      },
+      {
+        "type": "volume",
+        "template_id": "std-volume",
+        "template_name": "V-01 三角体积块",
+        "width": 0.9,
+        "height": 0.72,
+        "depth": 0.28,
+        "taxonomy": {
+          "family": "volume",
+          "form": "volume",
+          "preferred_role": "structure",
+          "roles": [
+            "structure",
+            "hand",
+            "foot"
+          ]
+        },
+        "grip_surfaces": [
+          {
+            "id": "face_1_grip",
+            "label": "斜面接触 1",
+            "position": [
+              0.0,
+              -0.1848,
+              0.09866666666666668
+            ],
+            "normal": [
+              0.07412161468713861,
+              -0.6984536768595749,
+              0.7118064677407139
+            ],
+            "u_axis": [
+              0.9944161329206003,
+              0.10552987533034944,
+              0.0
+            ],
+            "v_axis": [
+              -0.07511684780001393,
+              0.7078318350385927,
+              0.702375649124091
+            ],
+            "radii": [
+              0.06,
+              0.05
+            ],
+            "limbs": [
+              "LF",
+              "RF"
+            ],
+            "pull_direction": [
+              0.07511684780001393,
+              -0.7078318350385927,
+              -0.702375649124091
+            ]
+          },
+          {
+            "id": "face_2_grip",
+            "label": "斜面接触 2",
+            "position": [
+              0.078,
+              0.0408,
+              0.09866666666666668
+            ],
+            "normal": [
+              0.608900046179823,
+              0.67655560686647,
+              0.41414157552671776
+            ],
+            "u_axis": [
+              -0.7432941462471664,
+              0.6689647316224496,
+              0.0
+            ],
+            "v_axis": [
+              -0.2770461079259292,
+              -0.30782900880658803,
+              0.9102124781721288
+            ],
+            "radii": [
+              0.06,
+              0.05
+            ],
+            "limbs": [
+              "LF",
+              "RF"
+            ],
+            "pull_direction": [
+              0.2770461079259292,
+              0.30782900880658803,
+              -0.9102124781721288
+            ]
+          },
+          {
+            "id": "face_3_grip",
+            "label": "斜面接触 3",
+            "position": [
+              -0.216,
+              0.009599999999999997,
+              0.09866666666666668
+            ],
+            "normal": [
+              -0.6222855229397378,
+              0.21515190952703697,
+              0.752642268123766
+            ],
+            "u_axis": [
+              -0.32676521552636273,
+              -0.9451055464454801,
+              0.0
+            ],
+            "v_axis": [
+              0.7113263820930774,
+              -0.24593731295771287,
+              0.658429659290583
+            ],
+            "radii": [
+              0.06,
+              0.05
+            ],
+            "limbs": [
+              "LF",
+              "RF"
+            ],
+            "pull_direction": [
+              -0.7113263820930774,
+              0.24593731295771287,
+              -0.658429659290583
+            ]
+          }
+        ],
+        "mounting_faces": [
+          {
+            "id": "face_1",
+            "label": "安装斜面 1",
+            "origin": [
+              0.0,
+              -0.1848,
+              0.09866666666666668
+            ],
+            "u_axis": [
+              0.9944161329206003,
+              0.10552987533034944,
+              0.0
+            ],
+            "v_axis": [
+              -0.07511684780001393,
+              0.7078318350385927,
+              0.702375649124091
+            ],
+            "normal": [
+              0.07412161468713861,
+              -0.6984536768595749,
+              0.7118064677407139
+            ],
+            "polygon": [
+              [
+                0.019501920961048577,
+                0.2581714408229671
+              ],
+              [
+                -0.4532272732639694,
+                -0.12908572041148356
+              ],
+              [
+                0.4337253523029208,
+                -0.12908572041148356
+              ]
+            ]
+          },
+          {
+            "id": "face_2",
+            "label": "安装斜面 2",
+            "origin": [
+              0.078,
+              0.0408,
+              0.09866666666666668
+            ],
+            "u_axis": [
+              -0.7432941462471664,
+              0.6689647316224496,
+              0.0
+            ],
+            "v_axis": [
+              -0.2770461079259292,
+              -0.30782900880658803,
+              0.9102124781721288
+            ],
+            "normal": [
+              0.608900046179823,
+              0.67655560686647,
+              0.41414157552671776
+            ],
+            "polygon": [
+              [
+                0.03068318235708303,
+                0.1992208826860773
+              ],
+              [
+                -0.4512390103037297,
+                -0.09961044134303863
+              ],
+              [
+                0.4205558279466467,
+                -0.09961044134303865
+              ]
+            ]
+          },
+          {
+            "id": "face_3",
+            "label": "安装斜面 3",
+            "origin": [
+              -0.216,
+              0.009599999999999997,
+              0.09866666666666668
+            ],
+            "u_axis": [
+              -0.32676521552636273,
+              -0.9451055464454801,
+              0.0
+            ],
+            "v_axis": [
+              0.7113263820930774,
+              -0.24593731295771287,
+              0.658429659290583
+            ],
+            "normal": [
+              -0.6222855229397378,
+              0.21515190952703697,
+              0.752642268123766
+            ],
+            "polygon": [
+              [
+                -0.06150827330781774,
+                0.27540274162119116
+              ],
+              [
+                -0.327301110479826,
+                -0.13770137081059558
+              ],
+              [
+                0.38880938378764374,
+                -0.1377013708105956
+              ]
+            ]
+          }
+        ],
+        "id": "volume_02",
+        "source": "synthetic_assumption",
+        "pull_direction": [
+          0,
+          -1,
+          0
+        ],
+        "contact": {
+          "id": "main",
+          "position": [
+            0,
+            0,
+            0.28
+          ],
+          "radius": 0.015,
+          "limbs": [
+            "LF",
+            "RF"
+          ]
+        }
+      }
+    ],
+    "catalog_stock": [
+      {
+        "template_id": "std-jug",
+        "template_name": "J-01 标准把手",
+        "type": "jug",
+        "count": 6
+      },
+      {
+        "template_id": "std-directional_edge",
+        "template_name": "E-01 扣边（兼容模板）",
+        "type": "directional_edge",
+        "count": 4
+      },
+      {
+        "template_id": "std-crimp",
+        "template_name": "C-01 浅扣边 Crimp",
+        "type": "crimp",
+        "count": 6
+      },
+      {
+        "template_id": "std-pocket",
+        "template_name": "H-01 指洞 Pocket",
+        "type": "pocket",
+        "count": 2
+      },
+      {
+        "template_id": "std-foothold",
+        "template_name": "F-01 标准脚点",
+        "type": "foothold",
+        "count": 8
+      },
+      {
+        "template_id": "std-sloper",
+        "template_name": "S-01 圆坡面",
+        "type": "sloper",
+        "count": 2
+      },
+      {
+        "template_id": "std-pinch",
+        "template_name": "P-01 捏点",
+        "type": "pinch",
+        "count": 2
+      },
+      {
+        "template_id": "std-rail",
+        "template_name": "R-01 长条扣边 Rail",
+        "type": "rail",
+        "count": 2
+      },
+      {
+        "template_id": "std-volume",
+        "template_name": "V-01 三角体积块",
+        "type": "volume",
+        "count": 2
+      }
+    ]
+  },
+  "body": {
+    "upper_arm": 0.28,
+    "forearm": 0.25,
+    "thigh": 0.4,
+    "shin": 0.38,
+    "shoulder_width": 0.34,
+    "hip_width": 0.26,
+    "torso": 0.43,
+    "id": "A",
+    "source": "synthetic_assumption",
+    "endpoint_offsets": {
+      "LH": [
+        0,
+        0,
+        0
+      ],
+      "RH": [
+        0,
+        0,
+        0
+      ],
+      "LF": [
+        0,
+        0,
+        0
+      ],
+      "RF": [
+        0,
+        0,
+        0
+      ]
+    },
+    "joint_limits_deg": {
+      "shoulder": [
+        [
+          -170,
+          170
+        ],
+        [
+          -170,
+          170
+        ],
+        [
+          -170,
+          170
+        ]
+      ],
+      "hip": [
+        [
+          -110,
+          110
+        ],
+        [
+          -90,
+          90
+        ],
+        [
+          -70,
+          70
+        ]
+      ],
+      "elbow": [
+        0,
+        140
+      ],
+      "knee": [
+        0,
+        140
+      ]
+    }
+  },
+  "scenario": "foot_first",
+  "mode": "free",
+  "hand_moves": 2,
+  "seed": 42,
+  "budget": 3,
+  "reference_layout": [
+    {
+      "id": "jug_01",
+      "inventory_id": "jug_01",
+      "u": -0.28,
+      "v": 1.55,
+      "rotation_deg": 0,
+      "contact_surface_id": "working"
+    },
+    {
+      "id": "jug_02",
+      "inventory_id": "jug_02",
+      "u": 0.28,
+      "v": 1.55,
+      "rotation_deg": 0,
+      "contact_surface_id": "working"
+    },
+    {
+      "id": "jug_03",
+      "inventory_id": "jug_03",
+      "u": 0.45,
+      "v": 1.8,
+      "rotation_deg": 0,
+      "contact_surface_id": "working"
+    },
+    {
+      "id": "jug_04",
+      "inventory_id": "jug_04",
+      "u": -0.12,
+      "v": 1.88,
+      "rotation_deg": 0,
+      "contact_surface_id": "working"
+    },
+    {
+      "id": "foothold_01",
+      "inventory_id": "foothold_01",
+      "u": -0.42,
+      "v": 0.39,
+      "rotation_deg": 0,
+      "contact_surface_id": "working"
+    },
+    {
+      "id": "foothold_02",
+      "inventory_id": "foothold_02",
+      "u": 0.22,
+      "v": 0.6,
+      "rotation_deg": 0,
+      "contact_surface_id": "working"
+    },
+    {
+      "id": "foothold_03",
+      "inventory_id": "foothold_03",
+      "u": 0,
+      "v": 0,
+      "rotation_deg": 0,
+      "contact_surface_id": "working",
+      "mount": {
+        "parent_id": "volume_01",
+        "face_id": "face_1"
+      }
+    },
+    {
+      "id": "foothold_04",
+      "inventory_id": "foothold_04",
+      "u": 0.12,
+      "v": 0.93,
+      "rotation_deg": 0,
+      "contact_surface_id": "working"
+    },
+    {
+      "id": "volume_01",
+      "inventory_id": "volume_01",
+      "u": -0.62,
+      "v": 0.88,
+      "rotation_deg": 0,
+      "contact_surface_id": "face_1_grip"
+    },
+    {
+      "id": "directional_edge_03",
+      "inventory_id": "directional_edge_03",
+      "u": 0,
+      "v": 0,
+      "rotation_deg": 0,
+      "mount": {
+        "parent_id": "volume_01",
+        "face_id": "face_2"
+      },
+      "contact_surface_id": "working"
+    }
+  ],
+  "solver": {
+    "max_nfev": 100,
+    "restarts": 3,
+    "contact_tolerance_m": 0.015,
+    "epsilon_geometry_m": 1e-06,
+    "root_bounds": [
+      [
+        -1.6,
+        1.6
+      ],
+      [
+        0.35,
+        2.6
+      ],
+      [
+        0.08,
+        1.0
+      ]
+    ],
+    "root_rotation_deg": [
+      [
+        -35,
+        35
+      ],
+      [
+        -65,
+        65
+      ],
+      [
+        -35,
+        35
+      ]
+    ],
+    "timeout_seconds": 12
+  },
+  "start_contacts": {
+    "LH": {
+      "placement_id": "jug_01",
+      "contact_id": "main"
+    },
+    "RH": {
+      "placement_id": "jug_02",
+      "contact_id": "main"
+    },
+    "LF": {
+      "placement_id": "foothold_01",
+      "contact_id": "main"
+    },
+    "RF": {
+      "placement_id": "foothold_02",
+      "contact_id": "main"
+    }
+  },
+  "end_contacts": {
+    "LH": {
+      "placement_id": "jug_04",
+      "contact_id": "main"
+    },
+    "RH": {
+      "placement_id": "jug_03",
+      "contact_id": "main"
+    },
+    "LF": {
+      "placement_id": "foothold_03",
+      "contact_id": "main"
+    },
+    "RF": {
+      "placement_id": "foothold_04",
+      "contact_id": "main"
+    }
+  },
+  "profile": "catalog"
+}

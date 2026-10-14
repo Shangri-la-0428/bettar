@@ -1,0 +1,41 @@
+import type { Candidate, Evaluation, MechanicsContact, MechanicsReport, MechanicsStatus } from './types';
+import { escape as esc, holdNames, limbNames, limbs } from './types';
+
+export const mechanicsLabels: Record<MechanicsStatus, string> = { feasible: '假设下可平衡', infeasible: '需复核 · 当前静态假设未满足', unknown: '尚无法判断' };
+export function mechanicsLabel(evaluation?: Evaluation) { return evaluation?.mechanics_report ? mechanicsLabels[evaluation.mechanics_report.summary.status] : '未计算'; }
+export const mechanicsStateClass = (status?: MechanicsStatus) => status === 'feasible' ? 'pass' : status === 'infeasible' ? 'fail' : 'unknown';
+const value = (v: unknown, digits = 1) => typeof v === 'number' && Number.isFinite(v) ? v.toFixed(digits) : '—';
+const percent = (v: unknown) => typeof v === 'number' && Number.isFinite(v) ? `${(100 * v).toFixed(0)}%` : '—';
+const reasonText = (reason: string) => ({
+  ik_pose_unavailable: '当前状态没有通过姿态检查，尚未进行受力求解。',
+  no_equilibrium_with_declared_contact_cones: '当前姿态在声明的接触锥内没有平衡力分配。',
+  lp_solver_unknown: '求解器没有返回确定结论。',
+  independent_residual_check_failed: '求解结果未通过独立残差或接触锥复核。',
+  equilibrium_within_declared_envelopes: '找到满足平衡、接触锥与容量条件的力分配。',
+  declared_axial_capacity_exceeded: '维持该姿态所需的轴向容量超过本次假设上限。',
+  missing_contacts: '缺少接触目标，无法建立受力模型。',
+} as Record<string, string>)[reason] || (reason.startsWith('contact_or_pose_model_missing:') ? '缺少姿态或接触参数，未能完成计算。' : reason);
+function forceMagnitude(contact: MechanicsContact) { return contact.force_world_n && contact.force_world_n.every(Number.isFinite) ? Math.hypot(...contact.force_world_n) : null; }
+function parameterHTML(report: MechanicsReport) {
+  const p = report.parameters;
+  return `<details class="mechanics-assumptions"><summary>本次采用的合成参数与边界</summary><p>以下参数是研究假设，尚未由岩点材料、鞋底或真人力量试验标定；它们会直接改变求解结果。</p><dl><div><dt>体重 / 重力</dt><dd>${value(p.mass_kg, 0)} kg / ${value(p.gravity_m_s2, 5)} m/s²</dd></div><div><dt>脚 / 手摩擦系数</dt><dd>μ ${value(p.friction_coefficient_foot, 2)} / ${value(p.friction_coefficient_hand, 2)}</dd></div><div><dt>脚 / 手法向容量</dt><dd>${value(p.foot_normal_capacity_n, 0)} / ${value(p.hand_normal_capacity_n, 0)} N</dd></div><div><dt>抓握包络锥斜率 / 内向偏置</dt><dd>${value(p.grasp_cone_slope, 2)} / ${value(p.grasp_inward_bias, 2)}</dd></div><div><dt>摩擦锥近似</dt><dd>${p.cone_sides} 个侧面</dd></div></dl><p>有抓握结构的手点使用合成抓握包络，脚和摩擦接触使用单边摩擦约束；不能把手部抓握包络理解为实测摩擦系数。</p><div class="mechanics-capacities">${Object.entries(p.grasp_axial_capacity_n || {}).map(([family, capacity]) => `<span>${esc(holdNames[family] || family)} <b>${value(capacity, 0)} N</b></span>`).join('')}</div><p>上列为不同手点家族的假设轴向容量。COM 使用合成人体节段质量模型，不是人体扫描得到的重心。</p>${report.limitations.map(limit => `<p>${esc(limit)}</p>`).join('')}<p class="mechanics-version">模型 ${esc(report.model_version)} · 标识 ${esc(report.model_fingerprint.slice(0, 14))}</p></details>`;
+}
+export function mechanicsHTML(candidate: Candidate, evaluation: Evaluation | undefined, step: number, stale: boolean, showForces: boolean, hasParameters: boolean) {
+  const report = !stale ? evaluation?.mechanics_report : undefined;
+  const header = `<div class="mechanics-heading"><div><span class="section-label">辅助诊断 · 当前姿态假设</span><h2>准静态受力检查</h2></div><span class="mechanics-status ${mechanicsStateClass(report?.summary.status)}">${report ? `${candidate.layout_report ? '起始姿态 · ' : ''}${mechanicsLabels[report.summary.status]}` : !hasParameters ? '未启用此模型' : stale ? '修订待重算' : '尚未计算'}</span></div>`;
+  if (!report) return `${header}<p class="mechanics-intro">${!hasParameters ? '此结果包未声明准静态参数。请使用“手脚协同摆点”示例查看受力报告；仅重新检查这份旧结果包不会启用准静态模型。' : stale ? '点位、朝向或接触已经修改，旧受力结果不适用于当前修订。重新检查后再显示接触力。' : '这个结果包已声明准静态参数，但还没有报告。重新检查当前方案，可在这些合成参数下计算每个离散状态的受力与力矩。'}</p><p class="index-caption">几何检查通过并不代表能保持平衡；动态动作和真人完成情况需另行验证。</p>`;
+  const summary = report.summary, current = report.states.find(item => item.state_id === candidate.states[step]?.id);
+  const total = summary.feasible_states + summary.infeasible_states + summary.unknown_states;
+  const worstIndex = candidate.states.findIndex(item => item.id === summary.worst_state_id);
+  const passing = report.states.some(item => item.status === 'feasible');
+  const releaseLimbs = current ? limbs.filter(limb => !current.active_contacts.includes(limb)) : [];
+  return `${header}<p class="mechanics-intro">${candidate.layout_report ? '当前仅有起始姿态，以下结果不涵盖完整线路。' : ''}固定当前姿态，检查合力、力矩、摩擦与假设容量；释放态也单独求解。静态失败提示复核，不否定动态解法，保留定线员的判断；最终仍需修改初稿并真人试爬。</p>
+    <div class="mechanics-overview"><div><span>${candidate.layout_report ? '起始可平衡状态' : '全线可平衡状态'}</span><strong>${summary.feasible_states}<small> / ${total}</small></strong></div><div><span>需复核 / 无法判断</span><strong>${summary.infeasible_states}<small> / ${summary.unknown_states}</small></strong></div><div><span>释放态需复核</span><strong>${summary.release_infeasible_states}<small> / ${summary.release_states}</small></strong></div><div><span>最大所需容量比</span><strong>${percent(summary.max_capacity_utilization)}</strong></div></div>
+    <p class="index-caption">所需容量比以本次假设容量为 100%；超过 100% 表示至少一项容量不足。它不是人的体力消耗百分比。${summary.release_unknown_states ? `另有 ${summary.release_unknown_states} 个释放态尚无法判断。` : ''}</p>
+    <div class="mechanics-state-heading"><h3>当前状态 ${step}${current?.is_release ? ' · 释放态' : ' · 接触态'}</h3><div>${worstIndex >= 0 ? `<button class="text-button" data-action="phase" data-step="${worstIndex}">定位关键状态 ↗</button>` : ''}<label><input id="show-forces" type="checkbox" ${showForces ? 'checked' : ''} ${passing ? '' : 'disabled'} />显示求解的力</label></div></div>
+    <div class="mechanics-state-list" role="region" tabindex="0" aria-label="逐状态准静态检查">${candidate.states.map((state, index) => { const item = report.states.find(result => result.state_id === state.id); return `<button class="${index === step ? 'active' : ''} ${mechanicsStateClass(item?.status)}" data-action="phase" data-step="${index}" aria-pressed="${index === step}" title="状态 ${index} · ${item?.is_release ? '释放' : '接触'} · ${item ? mechanicsLabels[item.status] : '未计算'}"><span>${index}</span><small>${item?.is_release ? '释放' : '接触'}</small><i class="status-dot ${mechanicsStateClass(item?.status)}"></i></button>`; }).join('')}</div>
+    ${current ? `<div class="mechanics-current ${mechanicsStateClass(current.status)}"><strong>${mechanicsLabels[current.status]}</strong><p>${current.reason ? esc(reasonText(current.reason)) : ''}${releaseLimbs.length ? ` · 已释放：${releaseLimbs.map(limb => limbNames[limb]).join('、')}` : ''}</p></div><dl class="mechanics-residuals"><div><dt>合力残差</dt><dd>${value(current.force_residual_n, 3)} N</dd></div><div><dt>合力矩残差</dt><dd>${value(current.torque_residual_nm, 3)} N·m</dd></div><div><dt>所需容量比</dt><dd>${percent(current.capacity_utilization)}</dd></div></dl>
+    <div class="mechanics-contacts-scroll" role="region" tabindex="0" aria-label="当前状态接触力与假设容量"><table class="mechanics-contacts"><thead><tr><th>接触</th><th>约束模型</th><th>求解力</th><th>轴向 / 横向</th><th>假设容量</th><th>摩擦 / 包络余量</th></tr></thead><tbody>${limbs.map(limb => { const contact = current.contacts.find(item => item.limb === limb); if (!contact) return `<tr class="released"><th>${limbNames[limb]}</th><td colspan="5">${current.active_contacts.includes(limb) ? '缺少接触求解数据' : '已释放，不提供接触力'}</td></tr>`; const solved = current.status === 'feasible'; return `<tr><th>${limbNames[limb]}<small>${esc(contact.placement_id)}</small></th><td>${contact.mode === 'unilateral_friction' ? '单边摩擦' : '合成抓握包络'}</td><td>${solved ? value(forceMagnitude(contact)) : '—'} N</td><td>${solved ? value(contact.axial_force_n) : '—'} / ${solved ? value(contact.tangent_force_n) : '—'} N</td><td>${value(contact.capacity_n, 0)} N</td><td>${solved ? value(contact.mode === 'unilateral_friction' ? contact.friction_margin_n : contact.envelope_margin_n) : '—'} N</td></tr>`; }).join('')}</tbody></table></div>
+    <p class="mechanics-force-note">脚的承载轴是表面法向；抓握的承载轴是声明的合成包络方向。“横向”均相对此轴计算。</p><p class="mechanics-force-note">${current.status === 'feasible' ? '开启后，箭头显示作用在人体上的接触力与 COM 处重力；100 N 对应 0.10 m 箭头长度。COM 是模型估计的质心。' : '当前状态没有通过准静态求解，不绘制接触力或重力箭头；没有箭头不表示接触力为零。'}${showForces && current.status === 'feasible' ? ' 抓握面上的白色短箭头仍表示声明拉向，和求解力分开。' : ''}</p>` : '<p class="mechanics-intro">这个状态没有对应的机械报告，不绘制力箭头。</p>'}
+    ${parameterHTML(report)}<p class="index-caption">这里判断的是当前姿态在这些假设下的准静态平衡。当前姿态不可行也不代表整个接触组合或线路不可攀，其他姿态仍可能有解。它不证明真人可连续完成，也不验证摆荡、跳跃、落点或现场安全。</p>`;
+}

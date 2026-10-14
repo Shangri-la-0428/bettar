@@ -1,0 +1,35 @@
+.venv/
+.runtime/
+__pycache__/
+.pytest_cache/
+*.pyc
+node_modules/
+dist/
+.DS_Store
+.impeccable/review/
+
+# Local configuration and generated process output
+.env
+.env.*
+!.env.example
+*.log
+!outputs/asset-study/build.log
+!outputs/asset-study/pytest.log
+
+# Keep current examples; older generated snapshots remain local.
+fixtures/history/
+outputs/workspace-takeover/
+
+# Reference photos are linked and attributed, not redistributed.
+outputs/competition-study/references.png
+
+# Publish maintained research documents and reproducible asset inputs only.
+work/*
+!work/ai-bouldering-strategy-v0.2-draft.md
+!work/implementation-contract.md
+!work/recent-products.md
+!work/external-holds/
+work/external-holds/*
+!work/external-holds/selection.json
+!work/external-holds/fetch_setrsoft.py
+!work/external-holds/inspect_meshes.py

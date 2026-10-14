@@ -1,0 +1,596 @@
+{
+  "schema_version": "1.0",
+  "id": "request-competition-A",
+  "revision": 1,
+  "source": "synthetic_assumption",
+  "profile": "competition",
+  "scene": {
+    "width": 4.8,
+    "height": 4.2,
+    "angle_deg": 0,
+    "margin": 0.2,
+    "inventory": [
+      {
+        "id": "pinch_01",
+        "type": "pinch",
+        "width": 0.38,
+        "height": 0.52,
+        "depth": 0.16,
+        "source": "synthetic_assumption",
+        "pull_direction": [
+          1,
+          -0.7,
+          0
+        ],
+        "contact": {
+          "id": "main",
+          "position": [
+            0,
+            0,
+            0.16
+          ],
+          "radius": 0.015,
+          "limbs": [
+            "LH",
+            "RH"
+          ]
+        }
+      },
+      {
+        "id": "rail_01",
+        "type": "rail",
+        "width": 0.6,
+        "height": 0.16,
+        "depth": 0.12,
+        "source": "synthetic_assumption",
+        "pull_direction": [
+          -1,
+          -0.7,
+          0
+        ],
+        "contact": {
+          "id": "main",
+          "position": [
+            0,
+            0,
+            0.12
+          ],
+          "radius": 0.015,
+          "limbs": [
+            "LH",
+            "RH"
+          ]
+        }
+      },
+      {
+        "id": "sloper_01",
+        "type": "sloper",
+        "width": 0.57,
+        "height": 0.43,
+        "depth": 0.23,
+        "source": "synthetic_assumption",
+        "pull_direction": [
+          0,
+          -1,
+          0
+        ],
+        "contact": {
+          "id": "main",
+          "position": [
+            0,
+            0,
+            0.23
+          ],
+          "radius": 0.015,
+          "limbs": [
+            "LH",
+            "RH"
+          ]
+        }
+      },
+      {
+        "id": "pinch_02",
+        "type": "pinch",
+        "width": 0.35,
+        "height": 0.54,
+        "depth": 0.17,
+        "source": "synthetic_assumption",
+        "pull_direction": [
+          -1,
+          -0.5,
+          0
+        ],
+        "contact": {
+          "id": "main",
+          "position": [
+            0,
+            0,
+            0.17
+          ],
+          "radius": 0.015,
+          "limbs": [
+            "LH",
+            "RH"
+          ]
+        }
+      },
+      {
+        "id": "sloper_02",
+        "type": "sloper",
+        "width": 0.63,
+        "height": 0.44,
+        "depth": 0.22,
+        "source": "synthetic_assumption",
+        "pull_direction": [
+          0,
+          -1,
+          0
+        ],
+        "contact": {
+          "id": "main",
+          "position": [
+            0,
+            0,
+            0.22
+          ],
+          "radius": 0.015,
+          "limbs": [
+            "LH",
+            "RH"
+          ]
+        }
+      },
+      {
+        "id": "rail_02",
+        "type": "rail",
+        "width": 0.62,
+        "height": 0.18,
+        "depth": 0.13,
+        "source": "synthetic_assumption",
+        "pull_direction": [
+          0,
+          -1,
+          0
+        ],
+        "contact": {
+          "id": "main",
+          "position": [
+            0,
+            0,
+            0.13
+          ],
+          "radius": 0.015,
+          "limbs": [
+            "LH",
+            "RH"
+          ]
+        }
+      },
+      {
+        "id": "volume_01",
+        "type": "volume",
+        "width": 0.82,
+        "height": 0.58,
+        "depth": 0.28,
+        "source": "synthetic_assumption",
+        "pull_direction": [
+          0,
+          -1,
+          0
+        ],
+        "contact": {
+          "id": "main",
+          "position": [
+            0,
+            0,
+            0.28
+          ],
+          "radius": 0.015,
+          "limbs": [
+            "LF",
+            "RF"
+          ]
+        }
+      },
+      {
+        "id": "foothold_01",
+        "type": "foothold",
+        "width": 0.1,
+        "height": 0.07,
+        "depth": 0.045,
+        "source": "synthetic_assumption",
+        "pull_direction": [
+          0,
+          -1,
+          0
+        ],
+        "contact": {
+          "id": "main",
+          "position": [
+            0,
+            0,
+            0.045
+          ],
+          "radius": 0.015,
+          "limbs": [
+            "LF",
+            "RF"
+          ]
+        }
+      },
+      {
+        "id": "foothold_02",
+        "type": "foothold",
+        "width": 0.1,
+        "height": 0.07,
+        "depth": 0.045,
+        "source": "synthetic_assumption",
+        "pull_direction": [
+          0,
+          -1,
+          0
+        ],
+        "contact": {
+          "id": "main",
+          "position": [
+            0,
+            0,
+            0.045
+          ],
+          "radius": 0.015,
+          "limbs": [
+            "LF",
+            "RF"
+          ]
+        }
+      },
+      {
+        "id": "foothold_03",
+        "type": "foothold",
+        "width": 0.11,
+        "height": 0.075,
+        "depth": 0.05,
+        "source": "synthetic_assumption",
+        "pull_direction": [
+          0,
+          -1,
+          0
+        ],
+        "contact": {
+          "id": "main",
+          "position": [
+            0,
+            0,
+            0.05
+          ],
+          "radius": 0.015,
+          "limbs": [
+            "LF",
+            "RF"
+          ]
+        }
+      },
+      {
+        "id": "foothold_04",
+        "type": "foothold",
+        "width": 0.1,
+        "height": 0.07,
+        "depth": 0.045,
+        "source": "synthetic_assumption",
+        "pull_direction": [
+          0,
+          -1,
+          0
+        ],
+        "contact": {
+          "id": "main",
+          "position": [
+            0,
+            0,
+            0.045
+          ],
+          "radius": 0.015,
+          "limbs": [
+            "LF",
+            "RF"
+          ]
+        }
+      },
+      {
+        "id": "foothold_05",
+        "type": "foothold",
+        "width": 0.12,
+        "height": 0.08,
+        "depth": 0.05,
+        "source": "synthetic_assumption",
+        "pull_direction": [
+          0,
+          -1,
+          0
+        ],
+        "contact": {
+          "id": "main",
+          "position": [
+            0,
+            0,
+            0.05
+          ],
+          "radius": 0.015,
+          "limbs": [
+            "LF",
+            "RF"
+          ]
+        }
+      }
+    ]
+  },
+  "body": {
+    "upper_arm": 0.28,
+    "forearm": 0.25,
+    "thigh": 0.4,
+    "shin": 0.38,
+    "shoulder_width": 0.34,
+    "hip_width": 0.26,
+    "torso": 0.43,
+    "id": "A",
+    "source": "synthetic_assumption",
+    "endpoint_offsets": {
+      "LH": [
+        0,
+        0,
+        0
+      ],
+      "RH": [
+        0,
+        0,
+        0
+      ],
+      "LF": [
+        0,
+        0,
+        0
+      ],
+      "RF": [
+        0,
+        0,
+        0
+      ]
+    },
+    "joint_limits_deg": {
+      "shoulder": [
+        [
+          -170,
+          170
+        ],
+        [
+          -170,
+          170
+        ],
+        [
+          -170,
+          170
+        ]
+      ],
+      "hip": [
+        [
+          -110,
+          110
+        ],
+        [
+          -90,
+          90
+        ],
+        [
+          -70,
+          70
+        ]
+      ],
+      "elbow": [
+        0,
+        140
+      ],
+      "knee": [
+        0,
+        140
+      ]
+    }
+  },
+  "scenario": "competition_sequence",
+  "mode": "free",
+  "hand_moves": 4,
+  "seed": 42,
+  "budget": 3,
+  "reference_layout": [
+    {
+      "id": "pinch_01",
+      "inventory_id": "pinch_01",
+      "u": -1.25,
+      "v": 1.5,
+      "rotation_deg": -18
+    },
+    {
+      "id": "rail_01",
+      "inventory_id": "rail_01",
+      "u": -0.67,
+      "v": 1.64,
+      "rotation_deg": 28
+    },
+    {
+      "id": "sloper_01",
+      "inventory_id": "sloper_01",
+      "u": -0.22,
+      "v": 2.18,
+      "rotation_deg": -12
+    },
+    {
+      "id": "pinch_02",
+      "inventory_id": "pinch_02",
+      "u": 0.4,
+      "v": 2.61,
+      "rotation_deg": -15
+    },
+    {
+      "id": "sloper_02",
+      "inventory_id": "sloper_02",
+      "u": 1.02,
+      "v": 3.2,
+      "rotation_deg": 16
+    },
+    {
+      "id": "rail_02",
+      "inventory_id": "rail_02",
+      "u": 1.29,
+      "v": 3.73,
+      "rotation_deg": -18
+    },
+    {
+      "id": "volume_01",
+      "inventory_id": "volume_01",
+      "u": -0.65,
+      "v": 1.0,
+      "rotation_deg": 12
+    },
+    {
+      "id": "foothold_01",
+      "inventory_id": "foothold_01",
+      "u": -1.35,
+      "v": 0.45,
+      "rotation_deg": -8
+    },
+    {
+      "id": "foothold_02",
+      "inventory_id": "foothold_02",
+      "u": -0.67,
+      "v": 0.5,
+      "rotation_deg": 8
+    },
+    {
+      "id": "foothold_03",
+      "inventory_id": "foothold_03",
+      "u": -0.1,
+      "v": 1.51,
+      "rotation_deg": 12
+    },
+    {
+      "id": "foothold_04",
+      "inventory_id": "foothold_04",
+      "u": 0.55,
+      "v": 2.08,
+      "rotation_deg": -14
+    },
+    {
+      "id": "foothold_05",
+      "inventory_id": "foothold_05",
+      "u": 0.98,
+      "v": 2.52,
+      "rotation_deg": 6
+    }
+  ],
+  "solver": {
+    "max_nfev": 100,
+    "restarts": 3,
+    "contact_tolerance_m": 0.015,
+    "epsilon_geometry_m": 1e-06,
+    "root_bounds": [
+      [
+        -2.3,
+        2.3
+      ],
+      [
+        0.35,
+        3.8
+      ],
+      [
+        0.08,
+        1.8
+      ]
+    ],
+    "root_rotation_deg": [
+      [
+        -35,
+        35
+      ],
+      [
+        -65,
+        65
+      ],
+      [
+        -35,
+        35
+      ]
+    ],
+    "timeout_seconds": 12
+  },
+  "start_contacts": {
+    "LH": {
+      "placement_id": "pinch_01",
+      "contact_id": "main"
+    },
+    "RH": {
+      "placement_id": "rail_01",
+      "contact_id": "main"
+    },
+    "LF": {
+      "placement_id": "foothold_01",
+      "contact_id": "main"
+    },
+    "RF": {
+      "placement_id": "foothold_02",
+      "contact_id": "main"
+    }
+  },
+  "design_brief": {
+    "title": "对向建立 · 移重抬升 · 延伸收尾",
+    "intent": "沿左下至右上的稀疏线路研究四次手移动，利用不同体量与方向表达动作意图。",
+    "phases": [
+      {
+        "id": "opposition",
+        "label": "对向建立",
+        "event_start": 0,
+        "event_end": 1,
+        "intent": "先抬左脚，再右手伸向斜面岩点；对向受力尚未验证。"
+      },
+      {
+        "id": "weight_shift",
+        "label": "移重抬升",
+        "event_start": 2,
+        "event_end": 4,
+        "intent": "右脚上移、左手换捏点、再抬左脚；重心移动尚未验证。"
+      },
+      {
+        "id": "finish",
+        "label": "延伸收尾",
+        "event_start": 5,
+        "event_end": 7,
+        "intent": "右手到高点，右脚补位后左手收尾；两只手使用分离接触目标。"
+      }
+    ],
+    "zone_placement_ids": [
+      "pinch_02"
+    ],
+    "top_placement_ids": [
+      "sloper_02",
+      "rail_02"
+    ],
+    "source": "competition_inspired_synthetic",
+    "disclaimer": "从比赛影像提炼的合成研究，不是任何比赛线路复刻。尺寸、单点接触与方向均是假设；分离终点不是正式比赛判定模型。"
+  },
+  "end_contacts": {
+    "LH": {
+      "placement_id": "rail_02",
+      "contact_id": "main"
+    },
+    "RH": {
+      "placement_id": "sloper_02",
+      "contact_id": "main"
+    },
+    "LF": {
+      "placement_id": "foothold_04",
+      "contact_id": "main"
+    },
+    "RF": {
+      "placement_id": "foothold_05",
+      "contact_id": "main"
+    }
+  }
+}

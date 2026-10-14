@@ -1,0 +1,174 @@
+{
+  "code_hash": "sha256:1ae35117ca292f1aef1dde412e8f53378c63a652ecfcebe7456889bc5cfb4645",
+  "examples": [
+    {
+      "program": "diagonal_balance",
+      "label": "斜向移重",
+      "panels": [
+        {
+          "id": "main-panel",
+          "label": "主墙面 0°",
+          "origin": [
+            0,
+            0,
+            0
+          ],
+          "rotation_deg": [
+            0,
+            0,
+            0
+          ],
+          "width": 4.8,
+          "height": 4.2
+        }
+      ],
+      "installed": 18,
+      "used": 16,
+      "changes": 8,
+      "alternatives": 3,
+      "evaluation": {
+        "status": "pass",
+        "passed": 54,
+        "total": 54
+      },
+      "before": {
+        "hand_moves": 6,
+        "foot_moves": 7,
+        "transfers": 13,
+        "total_proxy_effort": 537.24641,
+        "peak_proxy_burden": 57.49833,
+        "final_load": 121.63122
+      },
+      "after": {
+        "hand_moves": 6,
+        "foot_moves": 7,
+        "transfers": 13,
+        "total_proxy_effort": 539.33543,
+        "peak_proxy_burden": 58.59564,
+        "final_load": 122.0704
+      },
+      "selected_trial": 1,
+      "elapsed_ms": 23086.5,
+      "time_budget_exhausted": false,
+      "source_fingerprint": "sha256:8571ca7d669ac84546aa9f7e1b035eb9137159e53593704fad9dd9bc00ece46d"
+    },
+    {
+      "program": "opposing_sidepulls",
+      "label": "对向侧拉",
+      "panels": [
+        {
+          "id": "main-panel",
+          "label": "主墙面 10°",
+          "origin": [
+            0,
+            0,
+            0
+          ],
+          "rotation_deg": [
+            10,
+            0,
+            0
+          ],
+          "width": 4.8,
+          "height": 4.2
+        }
+      ],
+      "installed": 18,
+      "used": 15,
+      "changes": 7,
+      "alternatives": 5,
+      "evaluation": {
+        "status": "pass",
+        "passed": 50,
+        "total": 50
+      },
+      "before": {
+        "hand_moves": 5,
+        "foot_moves": 7,
+        "transfers": 12,
+        "total_proxy_effort": 481.04894,
+        "peak_proxy_burden": 58.81574,
+        "final_load": 119.40551
+      },
+      "after": {
+        "hand_moves": 6,
+        "foot_moves": 6,
+        "transfers": 12,
+        "total_proxy_effort": 518.77055,
+        "peak_proxy_burden": 62.75731,
+        "final_load": 135.23217
+      },
+      "selected_trial": 1,
+      "elapsed_ms": 29833.1,
+      "time_budget_exhausted": false,
+      "source_fingerprint": "sha256:cd9215c97ed6fdf879aa8760e8554f36b6048dc29d6425b9ff53bb690af42440"
+    },
+    {
+      "program": "roof_exit",
+      "label": "仰角转出",
+      "panels": [
+        {
+          "id": "lower-overhang",
+          "label": "下段仰角 18°",
+          "origin": [
+            0,
+            0,
+            0
+          ],
+          "rotation_deg": [
+            18,
+            0,
+            0
+          ],
+          "width": 4.8,
+          "height": 2.85
+        },
+        {
+          "id": "upper-exit",
+          "label": "上段转出 4°",
+          "origin": [
+            0,
+            2.7105110714411875,
+            0.8806984339686001
+          ],
+          "rotation_deg": [
+            4,
+            0,
+            0
+          ],
+          "width": 4.8,
+          "height": 1.35
+        }
+      ],
+      "installed": 18,
+      "used": 17,
+      "changes": 0,
+      "alternatives": 5,
+      "evaluation": {
+        "status": "pass",
+        "passed": 57,
+        "total": 57
+      },
+      "before": {
+        "hand_moves": 7,
+        "foot_moves": 7,
+        "transfers": 14,
+        "total_proxy_effort": 678.43033,
+        "peak_proxy_burden": 72.33835,
+        "final_load": 124.81388
+      },
+      "after": {
+        "hand_moves": 7,
+        "foot_moves": 7,
+        "transfers": 14,
+        "total_proxy_effort": 678.43033,
+        "peak_proxy_burden": 72.33835,
+        "final_load": 124.81388
+      },
+      "selected_trial": 0,
+      "elapsed_ms": 28866.87,
+      "time_budget_exhausted": false,
+      "source_fingerprint": "sha256:339558e540b3a92795a285e33ab8801ed6ff6bb447a3085e17318a334b6e1955"
+    }
+  ]
+}

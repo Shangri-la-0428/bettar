@@ -1,0 +1,908 @@
+{
+  "set": "development",
+  "created_at": "20261013T221419",
+  "code_hash": "sha256:72e888b738db320767188c61dd1f91f47f8658c7619b1ef2fc1bb2fa6427037f",
+  "strategy": {
+    "id": "codex-foot-preparation-v1",
+    "source": "One explicit design suggestion authored in the current Codex conversation; replayed as deterministic edits, no model API.",
+    "reason": "Try preparing both feet before the hand sequence. In free mode, lower destination hand holds by 0.06 m and raise destination footholds by 0.03 m, aiming to reduce endpoint reach demands. This is a geometric hypothesis, not a claim about force, stability or climbing quality.",
+    "fixed_mode": "Only reorder foot events before hand events; preserve every installation position and orientation.",
+    "calls": 1,
+    "token_usage": null,
+    "model_identifier": null,
+    "unknown_cost_reason": "The local session exposes no per-suggestion token/cost record; software editing and design time are not inferred as model latency."
+  },
+  "config": {
+    "schema_version": "1.0",
+    "source": "synthetic_assumption",
+    "purpose": "Local engineering comparison, not real-world routesetting validation",
+    "seeds": [
+      11,
+      29,
+      47
+    ],
+    "candidate_budget": 5,
+    "development": [
+      {
+        "id": "dev-foot-fixed",
+        "scenario": "foot_first",
+        "mode": "fixed",
+        "body_id": "A",
+        "angle_deg": 0,
+        "hand_moves": 2
+      },
+      {
+        "id": "dev-foot-free",
+        "scenario": "foot_first",
+        "mode": "free",
+        "body_id": "A",
+        "angle_deg": 0,
+        "hand_moves": 2
+      },
+      {
+        "id": "dev-side-fixed",
+        "scenario": "sidepull",
+        "mode": "fixed",
+        "body_id": "B",
+        "angle_deg": 10,
+        "hand_moves": 2
+      },
+      {
+        "id": "dev-side-free",
+        "scenario": "sidepull",
+        "mode": "free",
+        "body_id": "B",
+        "angle_deg": 10,
+        "hand_moves": 2
+      },
+      {
+        "id": "dev-reposition-fixed",
+        "scenario": "foot_reposition",
+        "mode": "fixed",
+        "body_id": "A",
+        "angle_deg": 10,
+        "hand_moves": 2
+      },
+      {
+        "id": "dev-reposition-free",
+        "scenario": "foot_reposition",
+        "mode": "free",
+        "body_id": "A",
+        "angle_deg": 10,
+        "hand_moves": 2
+      }
+    ],
+    "holdout": [
+      {
+        "id": "hold-foot-fixed",
+        "scenario": "foot_first",
+        "mode": "fixed",
+        "body_id": "B",
+        "angle_deg": 10,
+        "hand_moves": 3
+      },
+      {
+        "id": "hold-foot-free",
+        "scenario": "foot_first",
+        "mode": "free",
+        "body_id": "B",
+        "angle_deg": 10,
+        "hand_moves": 3
+      },
+      {
+        "id": "hold-side-fixed",
+        "scenario": "sidepull",
+        "mode": "fixed",
+        "body_id": "A",
+        "angle_deg": 0,
+        "hand_moves": 3
+      },
+      {
+        "id": "hold-side-free",
+        "scenario": "sidepull",
+        "mode": "free",
+        "body_id": "A",
+        "angle_deg": 0,
+        "hand_moves": 3
+      },
+      {
+        "id": "hold-reposition-fixed",
+        "scenario": "foot_reposition",
+        "mode": "fixed",
+        "body_id": "B",
+        "angle_deg": 0,
+        "hand_moves": 3
+      },
+      {
+        "id": "hold-reposition-free",
+        "scenario": "foot_reposition",
+        "mode": "free",
+        "body_id": "B",
+        "angle_deg": 0,
+        "hand_moves": 3
+      }
+    ],
+    "expectation": "Every candidate uses the same frozen checks. Any arm may produce pass, fail or unknown. Fixed mode never edits placements. Failed attempts remain in the denominator. Holdout is synthetic and not independent external evidence."
+  },
+  "workers": 2,
+  "results": [
+    {
+      "case": "dev-foot-fixed",
+      "scenario": "foot_first",
+      "mode": "fixed",
+      "body": "A",
+      "seed": 11,
+      "arm": "A",
+      "attempts": 5,
+      "distinct": 2,
+      "statuses": {
+        "pass": 5,
+        "fail": 0,
+        "unknown": 0
+      },
+      "first_pass_evaluation": 1,
+      "evaluation_ms": 2552.3199999999997,
+      "total_ms": 2590.23,
+      "evidence_path": ".runtime/experiments/development-20261013T221419/dev-foot-fixed-seed11-A.json",
+      "distinct_pass": 2,
+      "first_pass_evaluation_ms": 524.18
+    },
+    {
+      "case": "dev-foot-fixed",
+      "scenario": "foot_first",
+      "mode": "fixed",
+      "body": "A",
+      "seed": 11,
+      "arm": "B",
+      "attempts": 5,
+      "distinct": 2,
+      "statuses": {
+        "pass": 5,
+        "fail": 0,
+        "unknown": 0
+      },
+      "first_pass_evaluation": 1,
+      "evaluation_ms": 2593.49,
+      "total_ms": 2634.28,
+      "evidence_path": ".runtime/experiments/development-20261013T221419/dev-foot-fixed-seed11-B.json",
+      "distinct_pass": 2,
+      "first_pass_evaluation_ms": 503.46
+    },
+    {
+      "case": "dev-foot-fixed",
+      "scenario": "foot_first",
+      "mode": "fixed",
+      "body": "A",
+      "seed": 29,
+      "arm": "A",
+      "attempts": 5,
+      "distinct": 2,
+      "statuses": {
+        "pass": 5,
+        "fail": 0,
+        "unknown": 0
+      },
+      "first_pass_evaluation": 1,
+      "evaluation_ms": 2545.23,
+      "total_ms": 2583.25,
+      "evidence_path": ".runtime/experiments/development-20261013T221419/dev-foot-fixed-seed29-A.json",
+      "distinct_pass": 2,
+      "first_pass_evaluation_ms": 524.7
+    },
+    {
+      "case": "dev-foot-fixed",
+      "scenario": "foot_first",
+      "mode": "fixed",
+      "body": "A",
+      "seed": 29,
+      "arm": "B",
+      "attempts": 5,
+      "distinct": 2,
+      "statuses": {
+        "pass": 5,
+        "fail": 0,
+        "unknown": 0
+      },
+      "first_pass_evaluation": 1,
+      "evaluation_ms": 2576.3300000000004,
+      "total_ms": 2616.46,
+      "evidence_path": ".runtime/experiments/development-20261013T221419/dev-foot-fixed-seed29-B.json",
+      "distinct_pass": 2,
+      "first_pass_evaluation_ms": 499.39
+    },
+    {
+      "case": "dev-foot-fixed",
+      "scenario": "foot_first",
+      "mode": "fixed",
+      "body": "A",
+      "seed": 47,
+      "arm": "A",
+      "attempts": 5,
+      "distinct": 2,
+      "statuses": {
+        "pass": 5,
+        "fail": 0,
+        "unknown": 0
+      },
+      "first_pass_evaluation": 1,
+      "evaluation_ms": 2584.55,
+      "total_ms": 2621.33,
+      "evidence_path": ".runtime/experiments/development-20261013T221419/dev-foot-fixed-seed47-A.json",
+      "distinct_pass": 2,
+      "first_pass_evaluation_ms": 538.84
+    },
+    {
+      "case": "dev-foot-fixed",
+      "scenario": "foot_first",
+      "mode": "fixed",
+      "body": "A",
+      "seed": 47,
+      "arm": "B",
+      "attempts": 5,
+      "distinct": 2,
+      "statuses": {
+        "pass": 5,
+        "fail": 0,
+        "unknown": 0
+      },
+      "first_pass_evaluation": 1,
+      "evaluation_ms": 2544.51,
+      "total_ms": 2581.31,
+      "evidence_path": ".runtime/experiments/development-20261013T221419/dev-foot-fixed-seed47-B.json",
+      "distinct_pass": 2,
+      "first_pass_evaluation_ms": 501.43
+    },
+    {
+      "case": "dev-foot-free",
+      "scenario": "foot_first",
+      "mode": "free",
+      "body": "A",
+      "seed": 11,
+      "arm": "A",
+      "attempts": 5,
+      "distinct": 2,
+      "statuses": {
+        "pass": 5,
+        "fail": 0,
+        "unknown": 0
+      },
+      "first_pass_evaluation": 1,
+      "evaluation_ms": 2631.96,
+      "total_ms": 2668.14,
+      "evidence_path": ".runtime/experiments/development-20261013T221419/dev-foot-free-seed11-A.json",
+      "distinct_pass": 2,
+      "first_pass_evaluation_ms": 542.49
+    },
+    {
+      "case": "dev-foot-free",
+      "scenario": "foot_first",
+      "mode": "free",
+      "body": "A",
+      "seed": 11,
+      "arm": "B",
+      "attempts": 5,
+      "distinct": 2,
+      "statuses": {
+        "pass": 5,
+        "fail": 0,
+        "unknown": 0
+      },
+      "first_pass_evaluation": 1,
+      "evaluation_ms": 2442.6800000000003,
+      "total_ms": 2479.48,
+      "evidence_path": ".runtime/experiments/development-20261013T221419/dev-foot-free-seed11-B.json",
+      "distinct_pass": 2,
+      "first_pass_evaluation_ms": 488.08
+    },
+    {
+      "case": "dev-foot-free",
+      "scenario": "foot_first",
+      "mode": "free",
+      "body": "A",
+      "seed": 29,
+      "arm": "A",
+      "attempts": 5,
+      "distinct": 2,
+      "statuses": {
+        "pass": 5,
+        "fail": 0,
+        "unknown": 0
+      },
+      "first_pass_evaluation": 1,
+      "evaluation_ms": 2498.31,
+      "total_ms": 2536.8,
+      "evidence_path": ".runtime/experiments/development-20261013T221419/dev-foot-free-seed29-A.json",
+      "distinct_pass": 2,
+      "first_pass_evaluation_ms": 521.92
+    },
+    {
+      "case": "dev-foot-free",
+      "scenario": "foot_first",
+      "mode": "free",
+      "body": "A",
+      "seed": 29,
+      "arm": "B",
+      "attempts": 5,
+      "distinct": 2,
+      "statuses": {
+        "pass": 5,
+        "fail": 0,
+        "unknown": 0
+      },
+      "first_pass_evaluation": 1,
+      "evaluation_ms": 2526.33,
+      "total_ms": 2563.35,
+      "evidence_path": ".runtime/experiments/development-20261013T221419/dev-foot-free-seed29-B.json",
+      "distinct_pass": 2,
+      "first_pass_evaluation_ms": 494.68
+    },
+    {
+      "case": "dev-foot-free",
+      "scenario": "foot_first",
+      "mode": "free",
+      "body": "A",
+      "seed": 47,
+      "arm": "A",
+      "attempts": 5,
+      "distinct": 2,
+      "statuses": {
+        "pass": 5,
+        "fail": 0,
+        "unknown": 0
+      },
+      "first_pass_evaluation": 1,
+      "evaluation_ms": 2553.46,
+      "total_ms": 2589.49,
+      "evidence_path": ".runtime/experiments/development-20261013T221419/dev-foot-free-seed47-A.json",
+      "distinct_pass": 2,
+      "first_pass_evaluation_ms": 519.05
+    },
+    {
+      "case": "dev-foot-free",
+      "scenario": "foot_first",
+      "mode": "free",
+      "body": "A",
+      "seed": 47,
+      "arm": "B",
+      "attempts": 5,
+      "distinct": 2,
+      "statuses": {
+        "pass": 5,
+        "fail": 0,
+        "unknown": 0
+      },
+      "first_pass_evaluation": 1,
+      "evaluation_ms": 2459.16,
+      "total_ms": 2496.68,
+      "evidence_path": ".runtime/experiments/development-20261013T221419/dev-foot-free-seed47-B.json",
+      "distinct_pass": 2,
+      "first_pass_evaluation_ms": 491.38
+    },
+    {
+      "case": "dev-reposition-fixed",
+      "scenario": "foot_reposition",
+      "mode": "fixed",
+      "body": "A",
+      "seed": 11,
+      "arm": "A",
+      "attempts": 5,
+      "distinct": 2,
+      "statuses": {
+        "pass": 5,
+        "fail": 0,
+        "unknown": 0
+      },
+      "first_pass_evaluation": 1,
+      "evaluation_ms": 2535.37,
+      "total_ms": 2571.37,
+      "evidence_path": ".runtime/experiments/development-20261013T221419/dev-reposition-fixed-seed11-A.json",
+      "distinct_pass": 2,
+      "first_pass_evaluation_ms": 517.15
+    },
+    {
+      "case": "dev-reposition-fixed",
+      "scenario": "foot_reposition",
+      "mode": "fixed",
+      "body": "A",
+      "seed": 11,
+      "arm": "B",
+      "attempts": 5,
+      "distinct": 2,
+      "statuses": {
+        "pass": 5,
+        "fail": 0,
+        "unknown": 0
+      },
+      "first_pass_evaluation": 1,
+      "evaluation_ms": 2561.68,
+      "total_ms": 2599.9,
+      "evidence_path": ".runtime/experiments/development-20261013T221419/dev-reposition-fixed-seed11-B.json",
+      "distinct_pass": 2,
+      "first_pass_evaluation_ms": 514.05
+    },
+    {
+      "case": "dev-reposition-fixed",
+      "scenario": "foot_reposition",
+      "mode": "fixed",
+      "body": "A",
+      "seed": 29,
+      "arm": "A",
+      "attempts": 5,
+      "distinct": 2,
+      "statuses": {
+        "pass": 5,
+        "fail": 0,
+        "unknown": 0
+      },
+      "first_pass_evaluation": 1,
+      "evaluation_ms": 2532.7200000000003,
+      "total_ms": 2570.02,
+      "evidence_path": ".runtime/experiments/development-20261013T221419/dev-reposition-fixed-seed29-A.json",
+      "distinct_pass": 2,
+      "first_pass_evaluation_ms": 518.1
+    },
+    {
+      "case": "dev-reposition-fixed",
+      "scenario": "foot_reposition",
+      "mode": "fixed",
+      "body": "A",
+      "seed": 29,
+      "arm": "B",
+      "attempts": 5,
+      "distinct": 2,
+      "statuses": {
+        "pass": 5,
+        "fail": 0,
+        "unknown": 0
+      },
+      "first_pass_evaluation": 1,
+      "evaluation_ms": 2564.08,
+      "total_ms": 2601.06,
+      "evidence_path": ".runtime/experiments/development-20261013T221419/dev-reposition-fixed-seed29-B.json",
+      "distinct_pass": 2,
+      "first_pass_evaluation_ms": 515.95
+    },
+    {
+      "case": "dev-reposition-fixed",
+      "scenario": "foot_reposition",
+      "mode": "fixed",
+      "body": "A",
+      "seed": 47,
+      "arm": "A",
+      "attempts": 5,
+      "distinct": 2,
+      "statuses": {
+        "pass": 5,
+        "fail": 0,
+        "unknown": 0
+      },
+      "first_pass_evaluation": 1,
+      "evaluation_ms": 2670.06,
+      "total_ms": 2706.64,
+      "evidence_path": ".runtime/experiments/development-20261013T221419/dev-reposition-fixed-seed47-A.json",
+      "distinct_pass": 2,
+      "first_pass_evaluation_ms": 644.93
+    },
+    {
+      "case": "dev-reposition-fixed",
+      "scenario": "foot_reposition",
+      "mode": "fixed",
+      "body": "A",
+      "seed": 47,
+      "arm": "B",
+      "attempts": 5,
+      "distinct": 2,
+      "statuses": {
+        "pass": 5,
+        "fail": 0,
+        "unknown": 0
+      },
+      "first_pass_evaluation": 1,
+      "evaluation_ms": 2531.52,
+      "total_ms": 2568.15,
+      "evidence_path": ".runtime/experiments/development-20261013T221419/dev-reposition-fixed-seed47-B.json",
+      "distinct_pass": 2,
+      "first_pass_evaluation_ms": 520.97
+    },
+    {
+      "case": "dev-reposition-free",
+      "scenario": "foot_reposition",
+      "mode": "free",
+      "body": "A",
+      "seed": 11,
+      "arm": "A",
+      "attempts": 5,
+      "distinct": 2,
+      "statuses": {
+        "pass": 5,
+        "fail": 0,
+        "unknown": 0
+      },
+      "first_pass_evaluation": 1,
+      "evaluation_ms": 2684.5,
+      "total_ms": 2720.45,
+      "evidence_path": ".runtime/experiments/development-20261013T221419/dev-reposition-free-seed11-A.json",
+      "distinct_pass": 2,
+      "first_pass_evaluation_ms": 640.81
+    },
+    {
+      "case": "dev-reposition-free",
+      "scenario": "foot_reposition",
+      "mode": "free",
+      "body": "A",
+      "seed": 11,
+      "arm": "B",
+      "attempts": 5,
+      "distinct": 2,
+      "statuses": {
+        "pass": 5,
+        "fail": 0,
+        "unknown": 0
+      },
+      "first_pass_evaluation": 1,
+      "evaluation_ms": 2534.72,
+      "total_ms": 2571.73,
+      "evidence_path": ".runtime/experiments/development-20261013T221419/dev-reposition-free-seed11-B.json",
+      "distinct_pass": 2,
+      "first_pass_evaluation_ms": 531.07
+    },
+    {
+      "case": "dev-reposition-free",
+      "scenario": "foot_reposition",
+      "mode": "free",
+      "body": "A",
+      "seed": 29,
+      "arm": "A",
+      "attempts": 5,
+      "distinct": 2,
+      "statuses": {
+        "pass": 5,
+        "fail": 0,
+        "unknown": 0
+      },
+      "first_pass_evaluation": 1,
+      "evaluation_ms": 2508.9700000000003,
+      "total_ms": 2545.16,
+      "evidence_path": ".runtime/experiments/development-20261013T221419/dev-reposition-free-seed29-A.json",
+      "distinct_pass": 2,
+      "first_pass_evaluation_ms": 558.47
+    },
+    {
+      "case": "dev-reposition-free",
+      "scenario": "foot_reposition",
+      "mode": "free",
+      "body": "A",
+      "seed": 29,
+      "arm": "B",
+      "attempts": 5,
+      "distinct": 2,
+      "statuses": {
+        "pass": 5,
+        "fail": 0,
+        "unknown": 0
+      },
+      "first_pass_evaluation": 1,
+      "evaluation_ms": 2480.89,
+      "total_ms": 2517.49,
+      "evidence_path": ".runtime/experiments/development-20261013T221419/dev-reposition-free-seed29-B.json",
+      "distinct_pass": 2,
+      "first_pass_evaluation_ms": 524.31
+    },
+    {
+      "case": "dev-reposition-free",
+      "scenario": "foot_reposition",
+      "mode": "free",
+      "body": "A",
+      "seed": 47,
+      "arm": "A",
+      "attempts": 5,
+      "distinct": 2,
+      "statuses": {
+        "pass": 5,
+        "fail": 0,
+        "unknown": 0
+      },
+      "first_pass_evaluation": 1,
+      "evaluation_ms": 2573.71,
+      "total_ms": 2610.06,
+      "evidence_path": ".runtime/experiments/development-20261013T221419/dev-reposition-free-seed47-A.json",
+      "distinct_pass": 2,
+      "first_pass_evaluation_ms": 558.7
+    },
+    {
+      "case": "dev-reposition-free",
+      "scenario": "foot_reposition",
+      "mode": "free",
+      "body": "A",
+      "seed": 47,
+      "arm": "B",
+      "attempts": 5,
+      "distinct": 2,
+      "statuses": {
+        "pass": 5,
+        "fail": 0,
+        "unknown": 0
+      },
+      "first_pass_evaluation": 1,
+      "evaluation_ms": 2567.54,
+      "total_ms": 2604.07,
+      "evidence_path": ".runtime/experiments/development-20261013T221419/dev-reposition-free-seed47-B.json",
+      "distinct_pass": 2,
+      "first_pass_evaluation_ms": 527.36
+    },
+    {
+      "case": "dev-side-fixed",
+      "scenario": "sidepull",
+      "mode": "fixed",
+      "body": "B",
+      "seed": 11,
+      "arm": "A",
+      "attempts": 5,
+      "distinct": 2,
+      "statuses": {
+        "pass": 5,
+        "fail": 0,
+        "unknown": 0
+      },
+      "first_pass_evaluation": 1,
+      "evaluation_ms": 2943.6699999999996,
+      "total_ms": 2979.77,
+      "evidence_path": ".runtime/experiments/development-20261013T221419/dev-side-fixed-seed11-A.json",
+      "distinct_pass": 2,
+      "first_pass_evaluation_ms": 619.52
+    },
+    {
+      "case": "dev-side-fixed",
+      "scenario": "sidepull",
+      "mode": "fixed",
+      "body": "B",
+      "seed": 11,
+      "arm": "B",
+      "attempts": 5,
+      "distinct": 2,
+      "statuses": {
+        "pass": 5,
+        "fail": 0,
+        "unknown": 0
+      },
+      "first_pass_evaluation": 1,
+      "evaluation_ms": 2710.25,
+      "total_ms": 2747.92,
+      "evidence_path": ".runtime/experiments/development-20261013T221419/dev-side-fixed-seed11-B.json",
+      "distinct_pass": 2,
+      "first_pass_evaluation_ms": 552.0
+    },
+    {
+      "case": "dev-side-fixed",
+      "scenario": "sidepull",
+      "mode": "fixed",
+      "body": "B",
+      "seed": 29,
+      "arm": "A",
+      "attempts": 5,
+      "distinct": 2,
+      "statuses": {
+        "pass": 5,
+        "fail": 0,
+        "unknown": 0
+      },
+      "first_pass_evaluation": 1,
+      "evaluation_ms": 2928.2499999999995,
+      "total_ms": 2964.06,
+      "evidence_path": ".runtime/experiments/development-20261013T221419/dev-side-fixed-seed29-A.json",
+      "distinct_pass": 2,
+      "first_pass_evaluation_ms": 614.71
+    },
+    {
+      "case": "dev-side-fixed",
+      "scenario": "sidepull",
+      "mode": "fixed",
+      "body": "B",
+      "seed": 29,
+      "arm": "B",
+      "attempts": 5,
+      "distinct": 2,
+      "statuses": {
+        "pass": 5,
+        "fail": 0,
+        "unknown": 0
+      },
+      "first_pass_evaluation": 1,
+      "evaluation_ms": 2705.37,
+      "total_ms": 2747.43,
+      "evidence_path": ".runtime/experiments/development-20261013T221419/dev-side-fixed-seed29-B.json",
+      "distinct_pass": 2,
+      "first_pass_evaluation_ms": 551.7
+    },
+    {
+      "case": "dev-side-fixed",
+      "scenario": "sidepull",
+      "mode": "fixed",
+      "body": "B",
+      "seed": 47,
+      "arm": "A",
+      "attempts": 5,
+      "distinct": 2,
+      "statuses": {
+        "pass": 5,
+        "fail": 0,
+        "unknown": 0
+      },
+      "first_pass_evaluation": 1,
+      "evaluation_ms": 2907.2299999999996,
+      "total_ms": 2943.25,
+      "evidence_path": ".runtime/experiments/development-20261013T221419/dev-side-fixed-seed47-A.json",
+      "distinct_pass": 2,
+      "first_pass_evaluation_ms": 611.55
+    },
+    {
+      "case": "dev-side-fixed",
+      "scenario": "sidepull",
+      "mode": "fixed",
+      "body": "B",
+      "seed": 47,
+      "arm": "B",
+      "attempts": 5,
+      "distinct": 2,
+      "statuses": {
+        "pass": 5,
+        "fail": 0,
+        "unknown": 0
+      },
+      "first_pass_evaluation": 1,
+      "evaluation_ms": 2683.65,
+      "total_ms": 2720.46,
+      "evidence_path": ".runtime/experiments/development-20261013T221419/dev-side-fixed-seed47-B.json",
+      "distinct_pass": 2,
+      "first_pass_evaluation_ms": 544.9
+    },
+    {
+      "case": "dev-side-free",
+      "scenario": "sidepull",
+      "mode": "free",
+      "body": "B",
+      "seed": 11,
+      "arm": "A",
+      "attempts": 5,
+      "distinct": 2,
+      "statuses": {
+        "pass": 5,
+        "fail": 0,
+        "unknown": 0
+      },
+      "first_pass_evaluation": 1,
+      "evaluation_ms": 2842.8899999999994,
+      "total_ms": 2879.17,
+      "evidence_path": ".runtime/experiments/development-20261013T221419/dev-side-free-seed11-A.json",
+      "distinct_pass": 2,
+      "first_pass_evaluation_ms": 612.79
+    },
+    {
+      "case": "dev-side-free",
+      "scenario": "sidepull",
+      "mode": "free",
+      "body": "B",
+      "seed": 11,
+      "arm": "B",
+      "attempts": 5,
+      "distinct": 2,
+      "statuses": {
+        "pass": 5,
+        "fail": 0,
+        "unknown": 0
+      },
+      "first_pass_evaluation": 1,
+      "evaluation_ms": 2745.05,
+      "total_ms": 2781.63,
+      "evidence_path": ".runtime/experiments/development-20261013T221419/dev-side-free-seed11-B.json",
+      "distinct_pass": 2,
+      "first_pass_evaluation_ms": 542.43
+    },
+    {
+      "case": "dev-side-free",
+      "scenario": "sidepull",
+      "mode": "free",
+      "body": "B",
+      "seed": 29,
+      "arm": "A",
+      "attempts": 5,
+      "distinct": 2,
+      "statuses": {
+        "pass": 5,
+        "fail": 0,
+        "unknown": 0
+      },
+      "first_pass_evaluation": 1,
+      "evaluation_ms": 2869.91,
+      "total_ms": 2906.28,
+      "evidence_path": ".runtime/experiments/development-20261013T221419/dev-side-free-seed29-A.json",
+      "distinct_pass": 2,
+      "first_pass_evaluation_ms": 614.51
+    },
+    {
+      "case": "dev-side-free",
+      "scenario": "sidepull",
+      "mode": "free",
+      "body": "B",
+      "seed": 29,
+      "arm": "B",
+      "attempts": 5,
+      "distinct": 2,
+      "statuses": {
+        "pass": 5,
+        "fail": 0,
+        "unknown": 0
+      },
+      "first_pass_evaluation": 1,
+      "evaluation_ms": 2717.5499999999997,
+      "total_ms": 2754.56,
+      "evidence_path": ".runtime/experiments/development-20261013T221419/dev-side-free-seed29-B.json",
+      "distinct_pass": 2,
+      "first_pass_evaluation_ms": 545.95
+    },
+    {
+      "case": "dev-side-free",
+      "scenario": "sidepull",
+      "mode": "free",
+      "body": "B",
+      "seed": 47,
+      "arm": "A",
+      "attempts": 5,
+      "distinct": 2,
+      "statuses": {
+        "pass": 5,
+        "fail": 0,
+        "unknown": 0
+      },
+      "first_pass_evaluation": 1,
+      "evaluation_ms": 2853.1899999999996,
+      "total_ms": 2889.44,
+      "evidence_path": ".runtime/experiments/development-20261013T221419/dev-side-free-seed47-A.json",
+      "distinct_pass": 2,
+      "first_pass_evaluation_ms": 609.63
+    },
+    {
+      "case": "dev-side-free",
+      "scenario": "sidepull",
+      "mode": "free",
+      "body": "B",
+      "seed": 47,
+      "arm": "B",
+      "attempts": 5,
+      "distinct": 2,
+      "statuses": {
+        "pass": 5,
+        "fail": 0,
+        "unknown": 0
+      },
+      "first_pass_evaluation": 1,
+      "evaluation_ms": 2699.52,
+      "total_ms": 2736.18,
+      "evidence_path": ".runtime/experiments/development-20261013T221419/dev-side-free-seed47-B.json",
+      "distinct_pass": 2,
+      "first_pass_evaluation_ms": 541.52
+    }
+  ],
+  "totals": {
+    "A": {
+      "attempts": 90,
+      "pass": 90,
+      "fail": 0,
+      "unknown": 0
+    },
+    "B": {
+      "attempts": 90,
+      "pass": 90,
+      "fail": 0,
+      "unknown": 0
+    }
+  },
+  "script_record": {
+    "sha256": "c296fcb05b62dddfecea2105975f30ac83e53deffb1c66cbb0e6e5aff7dbc614",
+    "path": ".runtime/experiments/development-20261013T221419/experiment-source-record.py",
+    "captured_at": "2026-10-13T22:18:54.447900+00:00",
+    "capture_method": "Retrospective reconstruction from recorded tool edits",
+    "limitation": "Source snapshot was added after the run; not a pre-registered experiment. Engine hash and input configuration were recorded before execution. No tuning based on these results."
+  },
+  "arm_order": "A then B for all configured seeds; timing is descriptive only"
+}

@@ -1,0 +1,164 @@
+[
+  {
+    "file": "fixtures/setting-roof_exit-bundle.json",
+    "valid": true,
+    "candidates": 1,
+    "statuses": [
+      "pass"
+    ]
+  },
+  {
+    "file": "fixtures/route-mixed_flow-bundle.json",
+    "valid": true,
+    "candidates": 3,
+    "statuses": [
+      "pass",
+      "pass",
+      "pass"
+    ]
+  },
+  {
+    "file": "fixtures/setting-demo-bundle.json",
+    "valid": true,
+    "candidates": 1,
+    "statuses": [
+      "pass"
+    ]
+  },
+  {
+    "file": "fixtures/catalog-10deg-bundle.json",
+    "valid": true,
+    "candidates": 3,
+    "statuses": [
+      "pass",
+      "pass",
+      "pass"
+    ]
+  },
+  {
+    "file": "fixtures/route-power_finish-bundle.json",
+    "valid": true,
+    "candidates": 3,
+    "statuses": [
+      "pass",
+      "pass",
+      "pass"
+    ]
+  },
+  {
+    "file": "fixtures/setting-diagonal_balance-bundle.json",
+    "valid": true,
+    "candidates": 1,
+    "statuses": [
+      "pass"
+    ]
+  },
+  {
+    "file": "fixtures/style-demo-bundle.json",
+    "valid": true,
+    "candidates": 3,
+    "statuses": [
+      "pass",
+      "pass",
+      "pass"
+    ]
+  },
+  {
+    "file": "fixtures/style-sustained-bundle.json",
+    "valid": true,
+    "candidates": 3,
+    "statuses": [
+      "pass",
+      "pass",
+      "pass"
+    ]
+  },
+  {
+    "file": "fixtures/style-power-bundle.json",
+    "valid": true,
+    "candidates": 3,
+    "statuses": [
+      "pass",
+      "pass",
+      "pass"
+    ]
+  },
+  {
+    "file": "fixtures/style-technical-bundle.json",
+    "valid": true,
+    "candidates": 3,
+    "statuses": [
+      "pass",
+      "pass",
+      "pass"
+    ]
+  },
+  {
+    "file": "fixtures/catalog-demo-bundle.json",
+    "valid": true,
+    "candidates": 3,
+    "statuses": [
+      "pass",
+      "pass",
+      "pass"
+    ]
+  },
+  {
+    "file": "fixtures/demo-bundle.json",
+    "valid": true,
+    "candidates": 3,
+    "statuses": [
+      "pass",
+      "pass",
+      "pass"
+    ]
+  },
+  {
+    "file": "fixtures/setting-opposing_sidepulls-bundle.json",
+    "valid": true,
+    "candidates": 1,
+    "statuses": [
+      "pass"
+    ]
+  },
+  {
+    "file": "fixtures/competition-10deg-bundle.json",
+    "valid": true,
+    "candidates": 3,
+    "statuses": [
+      "unknown",
+      "unknown",
+      "unknown"
+    ]
+  },
+  {
+    "file": "fixtures/route-sustained_finish-bundle.json",
+    "valid": true,
+    "candidates": 3,
+    "statuses": [
+      "pass",
+      "pass",
+      "pass"
+    ]
+  },
+  {
+    "file": "fixtures/route-demo-bundle.json",
+    "valid": true,
+    "candidates": 3,
+    "statuses": [
+      "pass",
+      "pass",
+      "pass"
+    ]
+  },
+  {
+    "file": "fixtures/competition-demo-bundle.json",
+    "valid": true,
+    "candidates": 3,
+    "statuses": [
+      "unknown",
+      "unknown",
+      "unknown"
+    ]
+  }
+]

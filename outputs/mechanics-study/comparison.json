@@ -1,0 +1,487 @@
+{
+  "schema_version": "mechanics-comparison/1",
+  "created_at": "2026-10-14T13:41:04.102909+00:00",
+  "extraction_method": "Read current saved fixtures; no generation, pose solving or LP recomputation performed. Counts derive from actual candidate events.",
+  "current_code_hash": "sha256:6e13125711cd01dd5972c499f679ccc4c0f7bbcf1f3ff7cbd8a98922c9882e2b",
+  "scope": "Static-support-oriented design study; P0 and current-pose quasi-static status are separate. Infeasible is not a dynamic-route or human-climbability verdict.",
+  "examples": [
+    {
+      "program": "diagonal_balance",
+      "label": "斜向移重",
+      "source_fixture": "fixtures/setting-diagonal_balance-bundle.json",
+      "bundle_id": "bundle-b9e9e34576-1791984795453188000",
+      "code_hash": "sha256:6e13125711cd01dd5972c499f679ccc4c0f7bbcf1f3ff7cbd8a98922c9882e2b",
+      "before": {
+        "candidate_id": "setting-diagonal_balance-trial0-beta3",
+        "p0": {
+          "status": "pass",
+          "passed": 54,
+          "total": 54
+        },
+        "hand_moves": 6,
+        "foot_moves": 7,
+        "transfers": 13,
+        "mechanics_summary": {
+          "status": "infeasible",
+          "feasible_states": 16,
+          "infeasible_states": 11,
+          "unknown_states": 0,
+          "release_states": 13,
+          "release_infeasible_states": 7,
+          "release_unknown_states": 0,
+          "max_capacity_utilization": 0.998055,
+          "worst_state_id": "b11"
+        },
+        "proxy_summary": {
+          "hand_moves": 6,
+          "foot_moves": 7,
+          "transfers": 13,
+          "total_proxy_effort": 553.86272,
+          "peak_proxy_burden": 58.11185,
+          "final_load": 125.07776
+        },
+        "evaluation_elapsed_ms": 1868.97,
+        "mechanics_model_fingerprint": "sha256:6b29611b8115d66e7c321142a95b51cfdac4a1b8f20cd8e67352642b8471505a"
+      },
+      "after": {
+        "candidate_id": "setting-diagonal_balance-trial1-beta2",
+        "p0": {
+          "status": "pass",
+          "passed": 53,
+          "total": 53
+        },
+        "hand_moves": 7,
+        "foot_moves": 6,
+        "transfers": 13,
+        "mechanics_summary": {
+          "status": "infeasible",
+          "feasible_states": 16,
+          "infeasible_states": 11,
+          "unknown_states": 0,
+          "release_states": 13,
+          "release_infeasible_states": 7,
+          "release_unknown_states": 0,
+          "max_capacity_utilization": 0.8001079,
+          "worst_state_id": "b3"
+        },
+        "proxy_summary": {
+          "hand_moves": 7,
+          "foot_moves": 6,
+          "transfers": 13,
+          "total_proxy_effort": 550.58683,
+          "peak_proxy_burden": 58.60561,
+          "final_load": 113.95591
+        },
+        "evaluation_elapsed_ms": 1790.42,
+        "mechanics_model_fingerprint": "sha256:34744e193d018b56ce81153b044cc8e9ddcb3e5aa3dd5f2d1940e2b9409ca4af"
+      },
+      "changed_hold_count": 9,
+      "changes": [
+        {
+          "placement_id": "hand-1",
+          "before": {
+            "u": -0.75,
+            "v": 1.62,
+            "rotation_deg": 0
+          },
+          "after": {
+            "u": -0.75,
+            "v": 1.62,
+            "rotation_deg": -16.25
+          },
+          "reason": "依据当前释放态的准静态反力/重心，调整手点反力朝向与支撑脚位置；调整后重新搜索、求姿态并检查平衡。"
+        },
+        {
+          "placement_id": "hand-2",
+          "before": {
+            "u": -0.13,
+            "v": 1.92,
+            "rotation_deg": 0
+          },
+          "after": {
+            "u": -0.13,
+            "v": 1.92,
+            "rotation_deg": -8.9086
+          },
+          "reason": "依据当前释放态的准静态反力/重心，调整手点反力朝向与支撑脚位置；调整后重新搜索、求姿态并检查平衡。"
+        },
+        {
+          "placement_id": "hand-3",
+          "before": {
+            "u": 0.22,
+            "v": 2.3,
+            "rotation_deg": 0
+          },
+          "after": {
+            "u": 0.22,
+            "v": 2.3,
+            "rotation_deg": -16.25
+          },
+          "reason": "依据当前释放态的准静态反力/重心，调整手点反力朝向与支撑脚位置；调整后重新搜索、求姿态并检查平衡。"
+        },
+        {
+          "placement_id": "hand-4",
+          "before": {
+            "u": 0.02,
+            "v": 2.67,
+            "rotation_deg": 0
+          },
+          "after": {
+            "u": 0.02,
+            "v": 2.67,
+            "rotation_deg": 4.0963
+          },
+          "reason": "依据当前释放态的准静态反力/重心，调整手点反力朝向与支撑脚位置；调整后重新搜索、求姿态并检查平衡。"
+        },
+        {
+          "placement_id": "foot-1",
+          "before": {
+            "u": -0.86,
+            "v": 0.78,
+            "rotation_deg": 0
+          },
+          "after": {
+            "u": -0.8498,
+            "v": 0.7854,
+            "rotation_deg": 0
+          },
+          "reason": "依据当前释放态的准静态反力/重心，调整手点反力朝向与支撑脚位置；调整后重新搜索、求姿态并检查平衡。"
+        },
+        {
+          "placement_id": "foot-2",
+          "before": {
+            "u": -0.43,
+            "v": 0.95,
+            "rotation_deg": 0
+          },
+          "after": {
+            "u": -0.4526,
+            "v": 0.9571,
+            "rotation_deg": 0
+          },
+          "reason": "依据当前释放态的准静态反力/重心，调整手点反力朝向与支撑脚位置；调整后重新搜索、求姿态并检查平衡。"
+        },
+        {
+          "placement_id": "foot-3",
+          "before": {
+            "u": -0.11,
+            "v": 1.26,
+            "rotation_deg": 0
+          },
+          "after": {
+            "u": -0.1183,
+            "v": 1.2661,
+            "rotation_deg": 0
+          },
+          "reason": "依据当前释放态的准静态反力/重心，调整手点反力朝向与支撑脚位置；调整后重新搜索、求姿态并检查平衡。"
+        },
+        {
+          "placement_id": "foot-5",
+          "before": {
+            "u": 0.2,
+            "v": 1.8,
+            "rotation_deg": 0
+          },
+          "after": {
+            "u": 0.1755,
+            "v": 1.8015,
+            "rotation_deg": 0
+          },
+          "reason": "依据当前释放态的准静态反力/重心，调整手点反力朝向与支撑脚位置；调整后重新搜索、求姿态并检查平衡。"
+        },
+        {
+          "placement_id": "foot-6",
+          "before": {
+            "u": 0.04,
+            "v": 2.12,
+            "rotation_deg": 0
+          },
+          "after": {
+            "u": 0.0551,
+            "v": 2.1226,
+            "rotation_deg": 0
+          },
+          "reason": "依据当前释放态的准静态反力/重心，调整手点反力朝向与支撑脚位置；调整后重新搜索、求姿态并检查平衡。"
+        }
+      ],
+      "alternative_count": 2,
+      "alternative_p0_status_counts": {
+        "pass": 2
+      },
+      "alternative_mechanics_status_counts": {
+        "infeasible": 2
+      },
+      "search": {
+        "elapsed_ms": 13994.1,
+        "timeout_seconds": 60,
+        "time_budget_exhausted": false,
+        "geometry_trials": 3,
+        "selected_trial": 1,
+        "ranking": "P0 first; maximize current-pose release equilibrium fraction, then all-state equilibrium fraction, then lower required axial capacity utilization; geometry character does not select layouts"
+      },
+      "parameters": {
+        "com_model": "synthetic_segments_v1",
+        "cone_sides": 8,
+        "foot_normal_capacity_n": 900.0,
+        "friction_coefficient_foot": 0.65,
+        "friction_coefficient_hand": 0.6,
+        "grasp_axial_capacity_n": {
+          "crimp": 350.0,
+          "directional_edge": 400.0,
+          "jug": 650.0,
+          "pinch": 450.0,
+          "pocket": 400.0,
+          "rail": 550.0
+        },
+        "grasp_cone_slope": 0.65,
+        "grasp_inward_bias": 0.55,
+        "gravity_m_s2": 9.80665,
+        "hand_normal_capacity_n": 400.0,
+        "mass_kg": 70.0,
+        "source": "synthetic_assumption"
+      },
+      "mechanics_limitations": [
+        "只检查当前 IK 求得的离散姿态；不满足不代表该接触组合没有其它可平衡姿态，也不代表线路不可攀。",
+        "质量、分段质心、摩擦系数与手脚容量均为显式合成假设，未经测量或真人标定。容量是法向/抓握轴向上限，不是合力或肌肉力上限。",
+        "脚点与 Sloper 使用可压、不可拉的单侧摩擦点；其它手点采用声明的合成整体抓握包络。倒扣、多指与挤压接触并未由当前高度场几何验证。",
+        "八边内接锥保守近似圆锥，并复核平衡及圆锥；每个点无自由力矩。抓握包络与摩擦锥分开标注，二者不是同一物理接触模型。",
+        "包含每个释放态的三接触平衡，但未验证连续轨迹、动态动量、肌肉/关节力矩、人体碰撞和握力持续时间。双手同点仍共用一个代表位置；容量按每肢声明，同一抓握片的共享承载与独立手掌位置未建模。",
+        "准静态可行只表示这些姿态与假设下找到受限反力分配，不是难度、安全性或真人可攀证明。"
+      ]
+    },
+    {
+      "program": "opposing_sidepulls",
+      "label": "对向侧拉",
+      "source_fixture": "fixtures/setting-opposing_sidepulls-bundle.json",
+      "bundle_id": "bundle-6afac10b9f-1791984820180148000",
+      "code_hash": "sha256:6e13125711cd01dd5972c499f679ccc4c0f7bbcf1f3ff7cbd8a98922c9882e2b",
+      "before": {
+        "candidate_id": "setting-opposing_sidepulls-trial0-beta5",
+        "p0": {
+          "status": "pass",
+          "passed": 51,
+          "total": 51
+        },
+        "hand_moves": 5,
+        "foot_moves": 7,
+        "transfers": 12,
+        "mechanics_summary": {
+          "status": "infeasible",
+          "feasible_states": 15,
+          "infeasible_states": 10,
+          "unknown_states": 0,
+          "release_states": 12,
+          "release_infeasible_states": 6,
+          "release_unknown_states": 0,
+          "max_capacity_utilization": 0.9244707,
+          "worst_state_id": "b3"
+        },
+        "proxy_summary": {
+          "hand_moves": 5,
+          "foot_moves": 7,
+          "transfers": 12,
+          "total_proxy_effort": 481.21201,
+          "peak_proxy_burden": 58.87705,
+          "final_load": 119.2727
+        },
+        "evaluation_elapsed_ms": 1742.52,
+        "mechanics_model_fingerprint": "sha256:07c3f15ab8a2074c27699ced2c5102f9302a11c1583ff438ed076ae7c48ecac3"
+      },
+      "after": {
+        "candidate_id": "setting-opposing_sidepulls-trial0-beta5",
+        "p0": {
+          "status": "pass",
+          "passed": 51,
+          "total": 51
+        },
+        "hand_moves": 5,
+        "foot_moves": 7,
+        "transfers": 12,
+        "mechanics_summary": {
+          "status": "infeasible",
+          "feasible_states": 15,
+          "infeasible_states": 10,
+          "unknown_states": 0,
+          "release_states": 12,
+          "release_infeasible_states": 6,
+          "release_unknown_states": 0,
+          "max_capacity_utilization": 0.9244707,
+          "worst_state_id": "b3"
+        },
+        "proxy_summary": {
+          "hand_moves": 5,
+          "foot_moves": 7,
+          "transfers": 12,
+          "total_proxy_effort": 481.21201,
+          "peak_proxy_burden": 58.87705,
+          "final_load": 119.2727
+        },
+        "evaluation_elapsed_ms": 1751.18,
+        "mechanics_model_fingerprint": "sha256:b9d47ca03356314d26ee0b101257ca0a790447e1dcf1999ee9dc525b10f2192f"
+      },
+      "changed_hold_count": 0,
+      "changes": [],
+      "alternative_count": 5,
+      "alternative_p0_status_counts": {
+        "pass": 5
+      },
+      "alternative_mechanics_status_counts": {
+        "infeasible": 5
+      },
+      "search": {
+        "elapsed_ms": 22410.84,
+        "timeout_seconds": 60,
+        "time_budget_exhausted": false,
+        "geometry_trials": 3,
+        "selected_trial": 0,
+        "ranking": "P0 first; maximize current-pose release equilibrium fraction, then all-state equilibrium fraction, then lower required axial capacity utilization; geometry character does not select layouts"
+      },
+      "parameters": {
+        "com_model": "synthetic_segments_v1",
+        "cone_sides": 8,
+        "foot_normal_capacity_n": 900.0,
+        "friction_coefficient_foot": 0.65,
+        "friction_coefficient_hand": 0.6,
+        "grasp_axial_capacity_n": {
+          "crimp": 350.0,
+          "directional_edge": 400.0,
+          "jug": 650.0,
+          "pinch": 450.0,
+          "pocket": 400.0,
+          "rail": 550.0
+        },
+        "grasp_cone_slope": 0.65,
+        "grasp_inward_bias": 0.55,
+        "gravity_m_s2": 9.80665,
+        "hand_normal_capacity_n": 400.0,
+        "mass_kg": 70.0,
+        "source": "synthetic_assumption"
+      },
+      "mechanics_limitations": [
+        "只检查当前 IK 求得的离散姿态；不满足不代表该接触组合没有其它可平衡姿态，也不代表线路不可攀。",
+        "质量、分段质心、摩擦系数与手脚容量均为显式合成假设，未经测量或真人标定。容量是法向/抓握轴向上限，不是合力或肌肉力上限。",
+        "脚点与 Sloper 使用可压、不可拉的单侧摩擦点；其它手点采用声明的合成整体抓握包络。倒扣、多指与挤压接触并未由当前高度场几何验证。",
+        "八边内接锥保守近似圆锥，并复核平衡及圆锥；每个点无自由力矩。抓握包络与摩擦锥分开标注，二者不是同一物理接触模型。",
+        "包含每个释放态的三接触平衡，但未验证连续轨迹、动态动量、肌肉/关节力矩、人体碰撞和握力持续时间。双手同点仍共用一个代表位置；容量按每肢声明，同一抓握片的共享承载与独立手掌位置未建模。",
+        "准静态可行只表示这些姿态与假设下找到受限反力分配，不是难度、安全性或真人可攀证明。"
+      ]
+    },
+    {
+      "program": "roof_exit",
+      "label": "仰角转出",
+      "source_fixture": "fixtures/setting-roof_exit-bundle.json",
+      "bundle_id": "bundle-ee3fccd00b-1791984842682823000",
+      "code_hash": "sha256:6e13125711cd01dd5972c499f679ccc4c0f7bbcf1f3ff7cbd8a98922c9882e2b",
+      "before": {
+        "candidate_id": "setting-roof_exit-trial0-beta4",
+        "p0": {
+          "status": "pass",
+          "passed": 57,
+          "total": 57
+        },
+        "hand_moves": 7,
+        "foot_moves": 7,
+        "transfers": 14,
+        "mechanics_summary": {
+          "status": "infeasible",
+          "feasible_states": 14,
+          "infeasible_states": 14,
+          "unknown_states": 1,
+          "release_states": 14,
+          "release_infeasible_states": 9,
+          "release_unknown_states": 0,
+          "max_capacity_utilization": 1.4957259,
+          "worst_state_id": "b3"
+        },
+        "proxy_summary": {
+          "hand_moves": 7,
+          "foot_moves": 7,
+          "transfers": 14,
+          "total_proxy_effort": 670.2197,
+          "peak_proxy_burden": 66.70473,
+          "final_load": 122.71901
+        },
+        "evaluation_elapsed_ms": 2028.23,
+        "mechanics_model_fingerprint": "sha256:a10cff98759ee2e0c6c52a4a17de6e5521fb7e9c0d6bc27d6d6e91026b3027c2"
+      },
+      "after": {
+        "candidate_id": "setting-roof_exit-trial0-beta4",
+        "p0": {
+          "status": "pass",
+          "passed": 57,
+          "total": 57
+        },
+        "hand_moves": 7,
+        "foot_moves": 7,
+        "transfers": 14,
+        "mechanics_summary": {
+          "status": "infeasible",
+          "feasible_states": 14,
+          "infeasible_states": 14,
+          "unknown_states": 1,
+          "release_states": 14,
+          "release_infeasible_states": 9,
+          "release_unknown_states": 0,
+          "max_capacity_utilization": 1.4957259,
+          "worst_state_id": "b3"
+        },
+        "proxy_summary": {
+          "hand_moves": 7,
+          "foot_moves": 7,
+          "transfers": 14,
+          "total_proxy_effort": 670.2197,
+          "peak_proxy_burden": 66.70473,
+          "final_load": 122.71901
+        },
+        "evaluation_elapsed_ms": 2010.7,
+        "mechanics_model_fingerprint": "sha256:b204bd2658718d0e10adfe48dff3c7171a8a61143d2c37716d261a025b657d17"
+      },
+      "changed_hold_count": 0,
+      "changes": [],
+      "alternative_count": 5,
+      "alternative_p0_status_counts": {
+        "pass": 5
+      },
+      "alternative_mechanics_status_counts": {
+        "infeasible": 5
+      },
+      "search": {
+        "elapsed_ms": 19893.86,
+        "timeout_seconds": 60,
+        "time_budget_exhausted": false,
+        "geometry_trials": 3,
+        "selected_trial": 0,
+        "ranking": "P0 first; maximize current-pose release equilibrium fraction, then all-state equilibrium fraction, then lower required axial capacity utilization; geometry character does not select layouts"
+      },
+      "parameters": {
+        "com_model": "synthetic_segments_v1",
+        "cone_sides": 8,
+        "foot_normal_capacity_n": 900.0,
+        "friction_coefficient_foot": 0.65,
+        "friction_coefficient_hand": 0.6,
+        "grasp_axial_capacity_n": {
+          "crimp": 350.0,
+          "directional_edge": 400.0,
+          "jug": 650.0,
+          "pinch": 450.0,
+          "pocket": 400.0,
+          "rail": 550.0
+        },
+        "grasp_cone_slope": 0.65,
+        "grasp_inward_bias": 0.55,
+        "gravity_m_s2": 9.80665,
+        "hand_normal_capacity_n": 400.0,
+        "mass_kg": 70.0,
+        "source": "synthetic_assumption"
+      },
+      "mechanics_limitations": [
+        "只检查当前 IK 求得的离散姿态；不满足不代表该接触组合没有其它可平衡姿态，也不代表线路不可攀。",
+        "质量、分段质心、摩擦系数与手脚容量均为显式合成假设，未经测量或真人标定。容量是法向/抓握轴向上限，不是合力或肌肉力上限。",
+        "脚点与 Sloper 使用可压、不可拉的单侧摩擦点；其它手点采用声明的合成整体抓握包络。倒扣、多指与挤压接触并未由当前高度场几何验证。",
+        "八边内接锥保守近似圆锥，并复核平衡及圆锥；每个点无自由力矩。抓握包络与摩擦锥分开标注，二者不是同一物理接触模型。",
+        "包含每个释放态的三接触平衡，但未验证连续轨迹、动态动量、肌肉/关节力矩、人体碰撞和握力持续时间。双手同点仍共用一个代表位置；容量按每肢声明，同一抓握片的共享承载与独立手掌位置未建模。",
+        "准静态可行只表示这些姿态与假设下找到受限反力分配，不是难度、安全性或真人可攀证明。"
+      ]
+    }
+  ]
+}

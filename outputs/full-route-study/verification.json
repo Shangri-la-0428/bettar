@@ -1,0 +1,262 @@
+{
+  "checked_on": "2026-10-14",
+  "timezone": "Asia/Shanghai",
+  "scope": "Complete mixed-phase routes with history-dependent search, selected installations and corrected hold taxonomy",
+  "status": "passed",
+  "engine_code_hash": "sha256:1fde4021beb1e690be1ef15587f32fd1cf04af82fffdf2622d837d1ecb499edd",
+  "python_tests": {
+    "command": ".venv/bin/python -m pytest -q",
+    "passed": 201,
+    "seconds": 43.52,
+    "reported_by": "root final suite execution"
+  },
+  "frontend_build": {
+    "command": "npm --prefix web run build",
+    "status": "pass",
+    "remaining_warning": "Single output chunk exceeds 500 kB",
+    "final_label_adjustment_recheck": "pass",
+    "js_kb": 626.94,
+    "gzip_kb": 168.62
+  },
+  "geometry": {
+    "display_models": {
+      "status": "pass",
+      "count": 22,
+      "evidence": "model-checks.json"
+    },
+    "grip_surfaces": {
+      "status": "pass",
+      "templates": 9,
+      "surfaces": 20,
+      "evidence": "grip-checks.json"
+    },
+    "placement_transforms": {
+      "status": "pass",
+      "comparisons": 118,
+      "evidence": "placement-checks.json"
+    }
+  },
+  "default_comparison": {
+    "conditions": "Same synthetic wall/pool, body, 0-degree wall, seed 42 and 10 hand transfers; program varies",
+    "evidence": "../route-study/generation-comparison.json",
+    "programs": [
+      {
+        "program": "mixed_flow",
+        "candidate_count": 3,
+        "p0_statuses": [
+          {
+            "status": "pass",
+            "passed": 66,
+            "total": 66
+          },
+          {
+            "status": "pass",
+            "passed": 66,
+            "total": 66
+          },
+          {
+            "status": "pass",
+            "passed": 70,
+            "total": 70
+          }
+        ],
+        "preferred_candidate": {
+          "id": "candidate-route-42-1",
+          "hand_moves": 10,
+          "foot_moves": 7,
+          "total_events": 17,
+          "installed_holds": 20,
+          "unused_installed_holds": 0,
+          "crux_hand_transfer_one_based": 5,
+          "history_comparison": {
+            "fresh_peak": 50.32267,
+            "with_history_peak": 67.17825,
+            "delta": 16.85558,
+            "late_move_delta": 24.94183,
+            "initial_load": 0.0,
+            "source": "same_sequence_counterfactual_zero_prior_load",
+            "description": "同一动作序列：每次动作前负荷清零，对比保留真实前序模型状态；非真人实验。"
+          }
+        }
+      },
+      {
+        "program": "power_finish",
+        "candidate_count": 3,
+        "p0_statuses": [
+          {
+            "status": "pass",
+            "passed": 70,
+            "total": 70
+          },
+          {
+            "status": "pass",
+            "passed": 70,
+            "total": 70
+          },
+          {
+            "status": "pass",
+            "passed": 70,
+            "total": 70
+          }
+        ],
+        "preferred_candidate": {
+          "id": "candidate-route-42-1",
+          "hand_moves": 10,
+          "foot_moves": 8,
+          "total_events": 18,
+          "installed_holds": 21,
+          "unused_installed_holds": 0,
+          "crux_hand_transfer_one_based": 8,
+          "history_comparison": {
+            "fresh_peak": 48.36855,
+            "with_history_peak": 65.73504,
+            "delta": 17.36649,
+            "late_move_delta": 24.80434,
+            "initial_load": 0.0,
+            "source": "same_sequence_counterfactual_zero_prior_load",
+            "description": "同一动作序列：每次动作前负荷清零，对比保留真实前序模型状态；非真人实验。"
+          }
+        }
+      },
+      {
+        "program": "sustained_finish",
+        "candidate_count": 3,
+        "p0_statuses": [
+          {
+            "status": "pass",
+            "passed": 70,
+            "total": 70
+          },
+          {
+            "status": "pass",
+            "passed": 70,
+            "total": 70
+          },
+          {
+            "status": "pass",
+            "passed": 70,
+            "total": 70
+          }
+        ],
+        "preferred_candidate": {
+          "id": "candidate-route-42-1",
+          "hand_moves": 10,
+          "foot_moves": 8,
+          "total_events": 18,
+          "installed_holds": 21,
+          "unused_installed_holds": 0,
+          "crux_hand_transfer_one_based": 8,
+          "history_comparison": {
+            "fresh_peak": 45.35187,
+            "with_history_peak": 65.60655,
+            "delta": 20.25468,
+            "late_move_delta": 24.82597,
+            "initial_load": 0.0,
+            "source": "same_sequence_counterfactual_zero_prior_load",
+            "description": "同一动作序列：每次动作前负荷清零，对比保留真实前序模型状态；非真人实验。"
+          }
+        }
+      }
+    ]
+  },
+  "browser": {
+    "url": "http://127.0.0.1:5174/",
+    "checks_reported_by": "root in-app browser verification",
+    "functional_checks": [
+      {
+        "status": "pass",
+        "check": "Live UI comparison generation at 12 hand transfers and 10 degrees; all three programs generated and switched",
+        "evidence": "live-12-move-comparison.txt"
+      },
+      {
+        "status": "pass",
+        "check": "Individual eight-transfer power-finish generation"
+      },
+      {
+        "status": "pass",
+        "check": "Hold rotation creates a new revision and invalidates old report; recheck restores current analysis"
+      },
+      {
+        "status": "pass",
+        "check": "UI bundle export and re-import preserve three original candidates and the new revision; all four exported evaluations have 64/64 P0 results",
+        "evidence": "exported-eight-move-revision.json"
+      },
+      {
+        "status": "pass",
+        "check": "Nine-template catalogue exposes 34 inventory instances with 23/23 P0 result and working unused-installation visibility toggle"
+      },
+      {
+        "status": "pass",
+        "check": "Crimp and Pocket model inspection",
+        "evidence": [
+          "crimp-preview.png",
+          "pocket-preview.png"
+        ]
+      },
+      {
+        "status": "pass",
+        "check": "Phase button selects its actual contact event and updates corresponding move explanation"
+      }
+    ],
+    "desktop_final": {
+      "status": "pass",
+      "viewport": [
+        1440,
+        1000
+      ],
+      "document_scroll_width": 1435,
+      "screenshots": [
+        "desktop-route.png",
+        "desktop-history.png"
+      ],
+      "notes": [
+        "Complete route, compact inventory, one shared START marker and distinct TOP marker",
+        "All six stages and the baseline/history curves display correctly"
+      ]
+    },
+    "mobile_final": {
+      "status": "pass",
+      "viewport": [
+        390,
+        844
+      ],
+      "document_scroll_width": 385,
+      "screenshots": [
+        "mobile-wall.png",
+        "mobile-history.png"
+      ],
+      "notes": [
+        "No page-level horizontal overflow",
+        "Hand transfer numbers replace long canvas labels at narrow widths; full names remain in inspector",
+        "The 550 px curve scrolls within a 331 px region; horizontal scroll reached 219 px with page scrollLeft=0",
+        "Viewport override reset after testing"
+      ]
+    },
+    "final_console_errors": [],
+    "final_console_warnings": []
+  },
+  "evidence": [
+    "../route-study/generation-comparison.json",
+    "model-checks.json",
+    "grip-checks.json",
+    "placement-checks.json",
+    "live-12-move-comparison.txt",
+    "exported-eight-move-revision.json"
+  ],
+  "screenshots": [
+    "crimp-preview.png",
+    "pocket-preview.png",
+    "desktop-route.png",
+    "desktop-history.png",
+    "mobile-wall.png",
+    "mobile-history.png"
+  ],
+  "pending": [],
+  "limitations": [
+    "Hold attributes, movement scores and history coefficients are synthetic, uncalibrated assumptions; no V grades or measured fatigue claims",
+    "Search chooses from a fixed pool of possible installations under bounded beam search and a limited contact grammar; it is not unrestricted spatial or motion optimization",
+    "Zero unused installed holds means every selected hold appears in the declared sequence; it does not prove a real climber must use each hold or follow this beta",
+    "Contact force, friction, balance, full body collision, continuous transitions and true climbing difficulty remain not_checked",
+    "Existing competition fixtures retain unresolved P0 states; previous exact fixture bytes remain in fixtures/history"
+  ]
+}

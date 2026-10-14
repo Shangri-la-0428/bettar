@@ -1,0 +1,93 @@
+{
+  "schema_version": "mechanics-verification/1",
+  "verified_at": "2026-10-14T13:43:28.005824+00:00",
+  "status": "pass_with_disclosed_model_limits",
+  "scope": "Routesetter first drafts: quasi-static advisory diagnostics, coupled orientation/foot proposals, independent STL/OBJ annotation workbench. No real scanned assets integrated into route solver.",
+  "code_hash": "sha256:6e13125711cd01dd5972c499f679ccc4c0f7bbcf1f3ff7cbd8a98922c9882e2b",
+  "checks": {
+    "pytest": {
+      "command": ".venv/bin/python -m pytest -q",
+      "passed": 263,
+      "seconds": 121.02,
+      "exit_code": 0
+    },
+    "build": {
+      "command": "npm --prefix web run build",
+      "status": "pass",
+      "warning": "Existing single JS chunk exceeds 500 kB: 745.66 kB / gzip 208.91 kB"
+    },
+    "placement_geometry": {
+      "command": "node web/scripts/verify-placement-geometry.mjs",
+      "passed": 241
+    },
+    "hold_models": {
+      "command": "node web/scripts/verify-hold-models.mjs",
+      "passed": 22
+    },
+    "grip_surfaces": {
+      "command": "node web/scripts/verify-grip-surfaces.mjs",
+      "templates": 9,
+      "patches": 20,
+      "status": "pass"
+    },
+    "scan_geometry": {
+      "command": "node web/scripts/verify-scan-geometry.mjs",
+      "passed": 14
+    },
+    "mechanics_render_data": {
+      "command": "node web/scripts/verify-mechanics-render-data.mjs",
+      "paths": 18,
+      "states": 482,
+      "feasible": 226,
+      "infeasible": 252,
+      "unknown": 4,
+      "drawable_contact_forces": 824,
+      "infeasible_unknown_drawable_forces": 0,
+      "max_force_residual_n": 1.73e-07,
+      "max_torque_residual_nm": 6.62e-05,
+      "status": "pass"
+    },
+    "fixtures": "17 regenerated packages validated during scripts/prepare_demo.py save_bundle; see fixture-validation.json",
+    "browser_export": {
+      "path": "browser-edited-bundle.json",
+      "candidates": 2,
+      "evaluations": 2,
+      "validate_bundle": "pass"
+    }
+  },
+  "browser": {
+    "tool": "cua_repl",
+    "url": "http://127.0.0.1:5174/",
+    "checks_passed": [
+      "Switched all three current setting examples and before/after; counts reflect fresh fixture mechanics reports.",
+      "Feasible start state draws per-contact forces and estimated COM/gravity; infeasible release state draws no solved force labels.",
+      "Changed start-left orientation by 1 degree and saved r2: old mechanics, body pose and setting comparison invalidated.",
+      "Rechecked r2 via live API: new report restored, including one unknown pose; no false pass.",
+      "Downloaded browser two-revision result package and independently validated backend provenance and mechanics.",
+      "Imported synthetic millimetre STL via file chooser; explicit scale produces 0.248 x 0.143 x 0.147 m mesh.",
+      "Selected triangle 210, manually flipped normal, exported geometry/annotation; source and normalized hashes, metric vertices and applied mm scale verified.",
+      "Changed pending input units without applying; exported current geometry retains applied units. Invalid metre application rejects oversize model and preserves old mesh/annotation.",
+      "Desktop and 390 x 844 mobile mesh/diagnostic layouts inspected; mobile document width 385 <= viewport390; console errors empty; viewport override reset."
+    ],
+    "screenshots": [
+      "desktop-mechanics.png",
+      "desktop-mesh.png",
+      "mobile-mechanics.png",
+      "mobile-mesh.png"
+    ],
+    "annotations": "browser-annotated-mesh.json",
+    "synthetic_sources": [
+      "synthetic-undercut-jug.stl",
+      "synthetic-faceted-wall.obj",
+      "synthetic-jug-millimetres.stl"
+    ]
+  },
+  "limitations": [
+    "P0 and static equilibrium are separate. Current pose infeasibility does not prove another posture or dynamic route impossible.",
+    "Synthetic COM, friction, per-limb capacities and aggregate grasp envelopes remain uncalibrated. Shared-patch capacity, muscle fatigue, continuous dynamics and full body collision are not solved.",
+    "Only one chosen representative patch per hold; search corridors, beam budget and matching policy restrict alternatives.",
+    "Setting selection here prioritizes static support for a diagnostic experiment, not universal setting quality. Two layouts retain the baseline.",
+    "Mesh workbench does not replace route contact, collision or installation geometry. GLB is not yet supported; no third-party asset was downloaded or bundled.",
+    "Downloaded external mesh still needs verified scale, license, mounting and contact annotations. Texture roughness is not a friction measurement."
+  ]
+}

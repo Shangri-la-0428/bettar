@@ -1,0 +1,232 @@
+{
+  "code_hash": "sha256:f3fa1aa55f85513543371fb2c6ace089439c47cf5a0ab2faf1308abadeddd5d9",
+  "shared_conditions": {
+    "body_id": "A",
+    "angle_deg": 0,
+    "seed": 42,
+    "hand_moves": 4,
+    "default_comparison_rhythm": "late_crux"
+  },
+  "default_goals": {
+    "power": {
+      "p0": [
+        {
+          "status": "pass",
+          "passed": 36,
+          "total": 36
+        },
+        {
+          "status": "pass",
+          "passed": 36,
+          "total": 36
+        },
+        {
+          "status": "pass",
+          "passed": 36,
+          "total": 36
+        }
+      ],
+      "dimensions": {
+        "strength": 37.20284,
+        "power": 51.3085,
+        "technical": 38.92267,
+        "load": 37.16028
+      },
+      "summary": {
+        "peak_strength": 45.21902,
+        "peak_power": 64.01817,
+        "mean_technical": 38.92267,
+        "total_load": 208.40984,
+        "peak_burden": 47.94799,
+        "crux_event_index": 7,
+        "objective": 0.14075,
+        "load_variability": 3.11725
+      },
+      "search": {
+        "algorithm": "bounded_contact_beam_v1",
+        "expanded": 10088,
+        "expansion_limit": 16000,
+        "beam_width": 128,
+        "complete_sequences": 86,
+        "returned_candidates": 3,
+        "distinct_hand_sequences": 3,
+        "rejected": {
+          "beam_duplicate_state": 5392,
+          "beam_pruned": 2305,
+          "duplicate_contact": 2048
+        },
+        "budget_exhausted": false,
+        "scope": "cheap_geometry_and_design_objective; returned_candidates_get_independent_P0_checks",
+        "seed_policy": "recorded_for_IK; design_search_order_is_deterministic",
+        "reproduced_for_current_route": true
+      }
+    },
+    "sustained": {
+      "p0": [
+        {
+          "status": "pass",
+          "passed": 36,
+          "total": 36
+        },
+        {
+          "status": "pass",
+          "passed": 36,
+          "total": 36
+        },
+        {
+          "status": "pass",
+          "passed": 36,
+          "total": 36
+        }
+      ],
+      "dimensions": {
+        "strength": 37.62002,
+        "power": 41.19102,
+        "technical": 42.02305,
+        "load": 35.46357
+      },
+      "summary": {
+        "peak_strength": 43.08624,
+        "peak_power": 49.16242,
+        "mean_technical": 42.02305,
+        "total_load": 202.74838,
+        "peak_burden": 46.88247,
+        "crux_event_index": 5,
+        "objective": 0.11222,
+        "load_variability": 2.24784
+      },
+      "search": {
+        "algorithm": "bounded_contact_beam_v1",
+        "expanded": 10088,
+        "expansion_limit": 16000,
+        "beam_width": 128,
+        "complete_sequences": 66,
+        "returned_candidates": 3,
+        "distinct_hand_sequences": 3,
+        "rejected": {
+          "beam_duplicate_state": 5411,
+          "beam_pruned": 2306,
+          "duplicate_contact": 2048
+        },
+        "budget_exhausted": false,
+        "scope": "cheap_geometry_and_design_objective; returned_candidates_get_independent_P0_checks",
+        "seed_policy": "recorded_for_IK; design_search_order_is_deterministic",
+        "reproduced_for_current_route": true
+      }
+    },
+    "technical": {
+      "p0": [
+        {
+          "status": "pass",
+          "passed": 36,
+          "total": 36
+        },
+        {
+          "status": "pass",
+          "passed": 36,
+          "total": 36
+        },
+        {
+          "status": "pass",
+          "passed": 36,
+          "total": 36
+        }
+      ],
+      "dimensions": {
+        "strength": 37.36691,
+        "power": 43.66044,
+        "technical": 53.3003,
+        "load": 37.84934
+      },
+      "summary": {
+        "peak_strength": 50.68541,
+        "peak_power": 57.88844,
+        "mean_technical": 53.3003,
+        "total_load": 206.42589,
+        "peak_burden": 59.12046,
+        "crux_event_index": 5,
+        "objective": 0.18549,
+        "load_variability": 7.7897
+      },
+      "search": {
+        "algorithm": "bounded_contact_beam_v1",
+        "expanded": 10229,
+        "expansion_limit": 16000,
+        "beam_width": 128,
+        "complete_sequences": 123,
+        "returned_candidates": 3,
+        "distinct_hand_sequences": 3,
+        "rejected": {
+          "beam_duplicate_state": 5533,
+          "beam_pruned": 2268,
+          "duplicate_contact": 2048
+        },
+        "budget_exhausted": false,
+        "scope": "cheap_geometry_and_design_objective; returned_candidates_get_independent_P0_checks",
+        "seed_policy": "recorded_for_IK; design_search_order_is_deterministic",
+        "reproduced_for_current_route": true
+      }
+    }
+  },
+  "high_target_note": "Same final code and shared scene/body/IK checks; only design phase power target changes from base60 to70. A design-target sensitivity comparison, not an algorithm-version improvement or calibrated real difficulty.",
+  "rhythm_comparison": {
+    "high_power": {
+      "p0": [
+        {
+          "status": "unknown",
+          "passed": 33,
+          "total": 36
+        },
+        {
+          "status": "unknown",
+          "passed": 32,
+          "total": 36
+        },
+        {
+          "status": "unknown",
+          "passed": 33,
+          "total": 36
+        }
+      ],
+      "summary": {
+        "peak_strength": 46.74276,
+        "peak_power": 71.98692,
+        "mean_technical": 40.76358,
+        "total_load": 228.97127,
+        "peak_burden": 54.0306,
+        "crux_event_index": 5,
+        "objective": 0.13295,
+        "load_variability": 3.67769
+      }
+    },
+    "technical_early": {
+      "p0": [
+        {
+          "status": "pass",
+          "passed": 36,
+          "total": 36
+        },
+        {
+          "status": "pass",
+          "passed": 36,
+          "total": 36
+        },
+        {
+          "status": "pass",
+          "passed": 36,
+          "total": 36
+        }
+      ],
+      "summary": {
+        "peak_strength": 54.51156,
+        "peak_power": 47.19005,
+        "mean_technical": 57.28075,
+        "total_load": 214.76251,
+        "peak_burden": 52.04429,
+        "crux_event_index": 3,
+        "objective": 0.03644,
+        "load_variability": 6.64819
+      }
+    }
+  }
+}

@@ -1,0 +1,747 @@
+- banner:
+  - link "Beta Atelier 定线工作台":
+    - /url: /
+    - generic: Beta Atelier
+    - generic: 定线工作台
+  - text: 本地实验
+  - generic: ·
+  - generic: 合成场景
+  - button "导入结果包":
+    - generic: 导入
+  - button "导出反馈":
+    - generic: 导出反馈
+  - button "保存结果包":
+    - generic: 保存结果包
+- main:
+  - region "定线研究":
+    - heading "定线研究" [level=1]
+    - paragraph: 下一次生成的条件
+    - text: 工作场景
+    - combobox "工作场景":
+      - option "完整混合线路" [selected]
+      - option "四手风格实验"
+      - option "标准模板岩点库"
+      - option "竞赛风格研究"
+      - option "基础算法算例"
+    - text: 线路计划
+    - combobox "线路计划":
+      - option "对比三条线路"
+      - option "混合节奏"
+      - option "后段力量"
+      - option "持续收尾" [selected]
+    - text: 人体样例
+    - combobox "人体样例":
+      - option "样例 A" [selected]
+      - option "样例 B"
+    - text: 墙面角度
+    - combobox "墙面角度":
+      - option "垂直 · 0°"
+      - option "仰角 · 10°" [selected]
+      - option "仰角 · 20°"
+      - option "仰角 · 30°"
+      - option "仰角 · 40°"
+    - text: 手部移动
+    - combobox "手部移动":
+      - option "8 次"
+      - option "10 次"
+      - option "12 次" [selected]
+    - text: 随机种子
+    - spinbutton "随机种子": "42"
+    - button "生成 3 个候选":
+      - text: 生成 3 个候选
+  - region "完整线路示例对照":
+    - heading "完整线路对照" [level=2]
+    - generic: 同一候选库 · 人体 A · 10° · 12 次移手
+    - paragraph: 每条线在力量、技巧与持续输出之间切换。比较目标不同，墙面、身材、起终点与搜索预算相同；需求为模型指数，需与下方独立检查一起阅读。
+    - region "三条完整线路对照，可横向滚动":
+      - table:
+        - rowgroup:
+          - row "阶段计划 实际接触点 力量 / 技巧 单动作基线峰值 含前序负荷峰值 后段负担增量 几何与姿态":
+            - columnheader "阶段计划"
+            - columnheader "实际接触点"
+            - columnheader "力量 / 技巧"
+            - columnheader "单动作基线峰值"
+            - columnheader "含前序负荷峰值"
+            - columnheader "后段负担增量"
+            - columnheader "几何与姿态"
+        - rowgroup:
+          - row "难点后转换与缓和 19 次接触转换 22 35 / 37 44.8 65.7 +25.2 通过":
+            - rowheader "难点后转换与缓和 19 次接触转换":
+              - button "难点后转换与缓和 19 次接触转换":
+                - strong: 难点后转换与缓和
+                - generic: 19 次接触转换
+            - cell "22"
+            - cell "35 / 37"
+            - cell "44.8"
+            - cell "65.7"
+            - cell "+25.2"
+            - cell "通过"
+          - row "前段消耗后力量收尾 19 次接触转换 22 39 / 41 49.5 72.8 +30.3 通过":
+            - rowheader "前段消耗后力量收尾 19 次接触转换":
+              - button "前段消耗后力量收尾 19 次接触转换":
+                - strong: 前段消耗后力量收尾
+                - generic: 19 次接触转换
+            - cell "22"
+            - cell "39 / 41"
+            - cell "49.5"
+            - cell "72.8"
+            - cell "+30.3"
+            - cell "通过"
+          - row "技巧转换后连续输出 22 次接触转换 25 36 / 38 53.0 74.9 +28.4 通过":
+            - rowheader "技巧转换后连续输出 22 次接触转换":
+              - button "技巧转换后连续输出 22 次接触转换" [pressed]:
+                - strong: 技巧转换后连续输出
+                - generic: 22 次接触转换
+            - cell "25"
+            - cell "36 / 38"
+            - cell "53.0"
+            - cell "74.9"
+            - cell "+28.4"
+            - cell "通过"
+  - region "候选与三维场景":
+    - generic: 方案
+    - generic: "3"
+    - tablist "候选方案":
+      - tab "持续收尾 · 1 r1" [selected]:
+        - text: 持续收尾 · 1
+        - generic: r1
+      - tab "持续收尾 · 2 r1":
+        - text: 持续收尾 · 2
+        - generic: r1
+      - tab "持续收尾 · 3 r1":
+        - text: 持续收尾 · 3
+        - generic: r1
+    - generic "切换本次会话中的结果包":
+      - generic: 结果包历史
+      - combobox "结果包历史":
+        - option "实验 01 · 种子 42"
+        - option "实验 02 · 种子 42"
+        - option "实验 03 · 种子 42"
+        - option "实验 04 · 种子 42" [selected]
+    - generic "岩壁操作工具":
+      - group "操作模式":
+        - button "浏览" [pressed]:
+          - text: 浏览
+        - button "移动岩点":
+          - text: 移动岩点
+      - generic: 拖动旋转岩壁，点击选点
+      - generic "当前方案没有未用安装点":
+        - checkbox "仅显示当前线路" [checked] [disabled]
+        - text: 仅显示当前线路
+      - checkbox "抓握面与方向"
+      - text: 抓握面与方向
+      - checkbox "手点顺序连线"
+      - text: 手点顺序连线
+    - img "三维岩壁；浏览模式拖动旋转，移动模式拖动岩点，Esc 取消。"
+    - generic: 4.8 m
+    - generic: 4.2 m
+    - generic "start-left · start-left": J1 · 手
+    - generic "start-right · start-right": J2 · 手
+    - generic "start-foot-left · start-foot-left": F1
+    - generic "start-foot-right · start-foot-right": F2
+    - generic "hand-01-2 · hand-01-2": P1 · 手 1
+    - generic "hand-02-2 · hand-02-2": S1 · 手 2
+    - generic "hand-03-1 · hand-03-1": P2 · 手 3
+    - generic "hand-04-2 · hand-04-2": J5 · 手 5
+    - generic "hand-04-3 · hand-04-3": P3 · 手 4
+    - generic "hand-06-3 · hand-06-3": O4 · 手 6
+    - generic "hand-07-1 · hand-07-1": C4 · 手 7
+    - generic "hand-08-1 · hand-08-1": P5 · 手 8
+    - generic "hand-09-2 · hand-09-2": J8 · 手 9
+    - generic "hand-10-3 · hand-10-3": S6 · 手 10
+    - generic "top · top": J9 · 手 11/12
+    - generic: 起手 START
+    - generic: 起手 START
+    - generic: 起脚
+    - generic: 起脚
+    - generic: 终点 TOP
+    - generic: 当前线路 · 同色岩点
+    - generic: 4.8 × 4.2 m · 仰角 10° · 人体 A · 自由摆点
+    - button "正视图":
+    - button "三维视角":
+    - generic: 当前线路
+    - generic: 手 / 脚：实际用途
+    - generic: 数字：移手次序
+    - checkbox "编号" [checked]
+    - text: 编号
+    - checkbox "计算姿态"
+    - text: 计算姿态
+    - generic: 拖动旋转 · 滚轮缩放 · 点击岩点近看
+    - strong: 当前线路 25 个接触点
+    - generic: 仅手用 13 · 仅脚用 12 · 手脚共用 0
+    - generic: 12 次移手 · 22 次接触转换
+    - generic: 画布只布置这条线路实际使用的岩点及必要支撑。未选库存不会被画成线路。
+    - region "风格估计与阶段节奏":
+      - text: 当前线路计划
+      - heading "持续收尾 / 12 次移手" [level=2]
+      - generic: 模型 full-route-proxy-1
+      - generic "握持属性、支撑与倾角的组合估计":
+        - generic: 力量需求
+        - strong: 36 / 100
+      - generic "跨度与转换特征；尚未计算动态动作":
+        - generic: 爆发倾向
+        - strong: 42 / 100
+      - generic "单动作相对负荷；不是生理能量":
+        - generic: 动作负荷
+        - strong: 36 / 100
+      - generic "精度、方向与支撑转换的组合估计":
+        - generic: 技巧需求
+        - strong: 38 / 100
+      - paragraph: 四项为移手动作平均需求；它们可同时升高，并非必须加总到 100 的风格占比。每段目标参与选点和动作搜索。
+      - heading "把阶段连成一条线" [level=3]
+      - generic: 点击阶段，查看对应动作
+      - button "1 建立 建立 · 动作 1–3 力量需求 26 / 38 爆发倾向 31 / 26 动作负荷 37 / 36 技巧需求 29 / 34 累计状态 0.0 → 50.7 缓和机会 0.08":
+        - generic: "1"
+        - strong: 建立
+        - generic: 建立 · 动作 1–3
+        - generic: 力量需求
+        - generic: 26 / 38
+        - generic: 爆发倾向
+        - generic: 31 / 26
+        - generic: 动作负荷
+        - generic: 37 / 36
+        - generic: 技巧需求
+        - generic: 29 / 34
+        - generic: 累计状态
+        - strong: 0.0 → 50.7
+        - generic: 缓和机会 0.08
+      - button "2 力量难点 力量 · 动作 4–6 力量需求 47 / 45 爆发倾向 57 / 54 动作负荷 61 / 56 技巧需求 42 / 44 累计状态 50.7 → 107.7 缓和机会 0.00":
+        - generic: "2"
+        - strong: 力量难点
+        - generic: 力量 · 动作 4–6
+        - generic: 力量需求
+        - generic: 47 / 45
+        - generic: 爆发倾向
+        - generic: 57 / 54
+        - generic: 动作负荷
+        - generic: 61 / 56
+        - generic: 技巧需求
+        - generic: 42 / 44
+        - generic: 累计状态
+        - strong: 50.7 → 107.7
+        - generic: 缓和机会 0.00
+      - button "3 缓和 缓和 · 动作 7–7 力量需求 23 / 24 爆发倾向 27 / 31 动作负荷 38 / 43 技巧需求 28 / 21 累计状态 107.7 → 113.2 缓和机会 0.08":
+        - generic: "3"
+        - strong: 缓和
+        - generic: 缓和 · 动作 7–7
+        - generic: 力量需求
+        - generic: 23 / 24
+        - generic: 爆发倾向
+        - generic: 27 / 31
+        - generic: 动作负荷
+        - generic: 38 / 43
+        - generic: 技巧需求
+        - generic: 28 / 21
+        - generic: 累计状态
+        - strong: 107.7 → 113.2
+        - generic: 缓和机会 0.08
+      - button "4 技术转换 技巧 · 动作 8–13 力量需求 36 / 49 爆发倾向 37 / 49 动作负荷 51 / 69 技巧需求 62 / 64 累计状态 113.2 → 154.4 缓和机会 0.04":
+        - generic: "4"
+        - strong: 技术转换
+        - generic: 技巧 · 动作 8–13
+        - generic: 力量需求
+        - generic: 36 / 49
+        - generic: 爆发倾向
+        - generic: 37 / 49
+        - generic: 动作负荷
+        - generic: 51 / 69
+        - generic: 技巧需求
+        - generic: 62 / 64
+        - generic: 累计状态
+        - strong: 113.2 → 154.4
+        - generic: 缓和机会 0.04
+      - button "5 持续输出 持续输出 · 动作 14–19 力量需求 39 / 38 爆发倾向 43 / 52 动作负荷 64 / 67 技巧需求 44 / 36 累计状态 154.4 → 178.8 缓和机会 0.02":
+        - generic: "5"
+        - strong: 持续输出
+        - generic: 持续输出 · 动作 14–19
+        - generic: 力量需求
+        - generic: 39 / 38
+        - generic: 爆发倾向
+        - generic: 43 / 52
+        - generic: 动作负荷
+        - generic: 64 / 67
+        - generic: 技巧需求
+        - generic: 44 / 36
+        - generic: 累计状态
+        - strong: 154.4 → 178.8
+        - generic: 缓和机会 0.02
+      - button "6 终点匹配 收尾 · 动作 20–22 力量需求 20 / 18 爆发倾向 32 / 28 动作负荷 45 / 49 技巧需求 27 / 21 累计状态 178.8 → 143.2 缓和机会 0.25":
+        - generic: "6"
+        - strong: 终点匹配
+        - generic: 收尾 · 动作 20–22
+        - generic: 力量需求
+        - generic: 20 / 18
+        - generic: 爆发倾向
+        - generic: 32 / 28
+        - generic: 动作负荷
+        - generic: 45 / 49
+        - generic: 技巧需求
+        - generic: 27 / 21
+        - generic: 累计状态
+        - strong: 178.8 → 143.2
+        - generic: 缓和机会 0.25
+      - paragraph: 阶段名称为设计目标，实际难点见下方曲线；“缓和”阶段不保证累计负荷净下降。每项数值为目标 / 估计。累计状态带入后续动作；缓和机会是由支撑与握持推算的模型量，不保证可以休息，也不代表真实恢复比例。
+      - heading "前面的消耗，如何影响后面的动作" [level=3]
+      - generic: 同一动作序列的两种计算
+      - generic: 逐动作重新从基线计算
+      - strong: 53.0峰值负担
+      - generic: 连续携带前序负荷
+      - strong: 74.9峰值负担
+      - generic: 最后三分之一移手
+      - strong: +28.4平均负担增量
+      - generic: 逐动作基线
+      - generic: 带前序负荷
+      - generic: 负担模型指数
+      - img "同一线路逐动作基线与带前序负荷的需求曲线":
+        - generic: "0"
+        - generic: "40"
+        - generic: "80"
+        - generic: "1"
+        - generic: "2"
+        - generic: "3"
+        - generic: "4"
+        - generic: "5"
+        - generic: "6"
+        - generic: "7"
+        - generic: "8"
+        - generic: "9"
+        - generic: "10"
+        - generic: "11"
+        - generic: "12"
+        - generic: "13"
+        - generic: "14"
+        - generic: "15"
+        - generic: "16"
+        - generic: "17"
+        - generic: "18"
+        - generic: "19"
+        - generic: "20"
+        - generic: "21"
+        - generic: "22"
+      - region "逐动作负担，可横向滚动":
+        - button "1 左脚 F4":
+          - generic: "1"
+          - strong: 左脚
+          - generic: F4
+        - button "2 左手 P1":
+          - generic: "2"
+          - strong: 左手
+          - generic: P1
+        - button "3 左手 S1":
+          - generic: "3"
+          - strong: 左手
+          - generic: S1
+        - button "4 右手 P2":
+          - generic: "4"
+          - strong: 右手
+          - generic: P2
+        - button "5 右脚 F11":
+          - generic: "5"
+          - strong: 右脚
+          - generic: F11
+        - button "6 右手 P3":
+          - generic: "6"
+          - strong: 右手
+          - generic: P3
+        - button "7 左手 J5":
+          - generic: "7"
+          - strong: 左手
+          - generic: J5
+        - button "8 左脚 F14":
+          - generic: "8"
+          - strong: 左脚
+          - generic: F14
+        - button "9 右脚 F17":
+          - generic: "9"
+          - strong: 右脚
+          - generic: F17
+        - button "10 右手 O4":
+          - generic: "10"
+          - strong: 右手
+          - generic: O4
+        - button "11 左脚 F21":
+          - generic: "11"
+          - strong: 左脚
+          - generic: F21
+        - button "12 右脚 F19":
+          - generic: "12"
+          - strong: 右脚
+          - generic: F19
+        - button "13 难点 左手 C4":
+          - text: "13"
+          - generic: 难点
+          - strong: 左手
+          - generic: C4
+        - button "14 右手 P5":
+          - generic: "14"
+          - strong: 右手
+          - generic: P5
+        - button "15 右脚 C3":
+          - generic: "15"
+          - strong: 右脚
+          - generic: C3
+        - button "16 左手 J8":
+          - generic: "16"
+          - strong: 左手
+          - generic: J8
+        - button "17 左脚 F31":
+          - generic: "17"
+          - strong: 左脚
+          - generic: F31
+        - button "18 右脚 F29":
+          - generic: "18"
+          - strong: 右脚
+          - generic: F29
+        - button "19 右手 S6":
+          - generic: "19"
+          - strong: 右手
+          - generic: S6
+        - button "20 右手 J9":
+          - generic: "20"
+          - strong: 右手
+          - generic: J9
+        - button "21 左脚 F34":
+          - generic: "21"
+          - strong: 左脚
+          - generic: F34
+        - button "22 左手 J9":
+          - generic: "22"
+          - strong: 左手
+          - generic: J9
+      - strong: 下一动作 · 左脚 → F4
+      - generic: 力量需求 11 · 爆发倾向 16 · 动作负荷 14 · 技巧需求 45
+      - generic: 进入前累计 0.0
+      - generic: 基线负担 13.9
+      - generic: 带前序负荷 13.9
+      - generic: 动作后累计 9.7
+      - generic: 跨度 / 臂长 0.87 · 支撑指标 0.35 · 缓和机会 0.15
+      - paragraph:
+        - strong: 当前模型难点：动作 13
+        - generic: 左手 → C4 · 负担 74.9
+      - paragraph: 虚线将每个动作视为独立的新鲜状态；实线计算同一动作序列中前序负荷的影响。二者不是不同路线，也不是测得的疲劳、体能百分比或真实攀爬等级。
+      - generic "完整选点顺序与模型依据"
+    - generic "岩点库 70 当前合成库存 · 程序示意模型":
+      - text: 岩点库
+      - generic: "70"
+      - generic: 当前合成库存 · 程序示意模型
+    - region "动作步骤":
+      - generic: 接触步骤
+      - generic: 12 次手移动 · 10 次脚移动
+      - button "上一个状态" [disabled]:
+      - button "下一个状态":
+      - button "00 起始接触":
+        - generic: "00"
+        - generic: 起始接触
+      - button "01 左脚释放":
+        - generic: "01"
+        - generic: 左脚释放
+      - button "02 左脚接触":
+        - generic: "02"
+        - generic: 左脚接触
+      - button "03 左手释放":
+        - generic: "03"
+        - generic: 左手释放
+      - button "04 左手接触":
+        - generic: "04"
+        - generic: 左手接触
+      - button "05 左手释放":
+        - generic: "05"
+        - generic: 左手释放
+      - button "06 左手接触":
+        - generic: "06"
+        - generic: 左手接触
+      - button "07 右手释放":
+        - generic: "07"
+        - generic: 右手释放
+      - button "08 右手接触":
+        - generic: "08"
+        - generic: 右手接触
+      - button "09 右脚释放":
+        - generic: "09"
+        - generic: 右脚释放
+      - button "10 右脚接触":
+        - generic: "10"
+        - generic: 右脚接触
+      - button "11 右手释放":
+        - generic: "11"
+        - generic: 右手释放
+      - button "12 右手接触":
+        - generic: "12"
+        - generic: 右手接触
+      - button "13 左手释放":
+        - generic: "13"
+        - generic: 左手释放
+      - button "14 左手接触":
+        - generic: "14"
+        - generic: 左手接触
+      - button "15 左脚释放":
+        - generic: "15"
+        - generic: 左脚释放
+      - button "16 左脚接触":
+        - generic: "16"
+        - generic: 左脚接触
+      - button "17 右脚释放":
+        - generic: "17"
+        - generic: 右脚释放
+      - button "18 右脚接触":
+        - generic: "18"
+        - generic: 右脚接触
+      - button "19 右手释放":
+        - generic: "19"
+        - generic: 右手释放
+      - button "20 右手接触":
+        - generic: "20"
+        - generic: 右手接触
+      - button "21 左脚释放":
+        - generic: "21"
+        - generic: 左脚释放
+      - button "22 左脚接触":
+        - generic: "22"
+        - generic: 左脚接触
+      - button "23 右脚释放":
+        - generic: "23"
+        - generic: 右脚释放
+      - button "24 右脚接触":
+        - generic: "24"
+        - generic: 右脚接触
+      - button "25 左手释放":
+        - generic: "25"
+        - generic: 左手释放
+      - button "26 左手接触":
+        - generic: "26"
+        - generic: 左手接触
+      - button "27 右手释放":
+        - generic: "27"
+        - generic: 右手释放
+      - button "28 右手接触":
+        - generic: "28"
+        - generic: 右手接触
+      - button "29 右脚释放":
+        - generic: "29"
+        - generic: 右脚释放
+      - button "30 右脚接触":
+        - generic: "30"
+        - generic: 右脚接触
+      - button "31 左手释放":
+        - generic: "31"
+        - generic: 左手释放
+      - button "32 左手接触":
+        - generic: "32"
+        - generic: 左手接触
+      - button "33 左脚释放":
+        - generic: "33"
+        - generic: 左脚释放
+      - button "34 左脚接触":
+        - generic: "34"
+        - generic: 左脚接触
+      - button "35 右脚释放":
+        - generic: "35"
+        - generic: 右脚释放
+      - button "36 右脚接触":
+        - generic: "36"
+        - generic: 右脚接触
+      - button "37 右手释放":
+        - generic: "37"
+        - generic: 右手释放
+      - button "38 右手接触":
+        - generic: "38"
+        - generic: 右手接触
+      - button "39 右手释放":
+        - generic: "39"
+        - generic: 右手释放
+      - button "40 右手接触":
+        - generic: "40"
+        - generic: 右手接触
+      - button "41 左脚释放":
+        - generic: "41"
+        - generic: 左脚释放
+      - button "42 左脚接触":
+        - generic: "42"
+        - generic: 左脚接触
+      - button "43 左手释放":
+        - generic: "43"
+        - generic: 左手释放
+      - button "44 左手接触":
+        - generic: "44"
+        - generic: 左手接触
+      - generic: LH
+      - generic: 左手
+      - strong: start-left
+      - generic: RH
+      - generic: 右手
+      - strong: start-right
+      - generic: LF
+      - generic: 左脚
+      - strong: start-foot-left
+      - generic: RF
+      - generic: 右脚
+      - strong: start-foot-right
+      - paragraph: 离散接触状态；状态之间的运动过程尚未验证。
+  - complementary "编辑与检查":
+    - heading "岩点工作台" [level=2]
+    - generic: 修订 1
+    - region "选中岩点近看与编辑":
+      - heading "J1 · 研究模板 · 把手 · Jug" [level=3]
+      - generic: 程序示意模型
+      - generic "选中岩点三维近看，可拖动旋转":
+        - generic "岩点局部三维近看，浅色粗糙区域为声明抓握面，青色箭头为面法线，暖色箭头为拉向；拖动可旋转"
+      - paragraph: 型号近看 · 青色为面法向，白色为声明拉向
+      - generic: 选择库存岩点
+      - combobox "选择库存岩点":
+        - option "J1 · 研究模板 · 把手 · Jug" [selected]
+        - option "J2 · 研究模板 · 把手 · Jug"
+        - option "F1 · 研究模板 · 小脚点"
+        - option "F2 · 研究模板 · 小脚点"
+        - option "J3 · 研究模板 · 把手 · Jug"
+        - option "P1 · 研究模板 · 捏点 · Pinch"
+        - option "O1 · 研究模板 · 指洞 · Pocket"
+        - option "C1 · 研究模板 · 抓边 · Crimp"
+        - option "S1 · 研究模板 · 摩擦点 · Sloper"
+        - option "J4 · 研究模板 · 把手 · Jug"
+        - option "P2 · 研究模板 · 捏点 · Pinch"
+        - option "O2 · 研究模板 · 指洞 · Pocket"
+        - option "C2 · 研究模板 · 抓边 · Crimp"
+        - option "S2 · 研究模板 · 摩擦点 · Sloper"
+        - option "J5 · 研究模板 · 把手 · Jug"
+        - option "P3 · 研究模板 · 捏点 · Pinch"
+        - option "O3 · 研究模板 · 指洞 · Pocket"
+        - option "C3 · 研究模板 · 抓边 · Crimp"
+        - option "S3 · 研究模板 · 摩擦点 · Sloper"
+        - option "J6 · 研究模板 · 把手 · Jug"
+        - option "P4 · 研究模板 · 捏点 · Pinch"
+        - option "O4 · 研究模板 · 指洞 · Pocket"
+        - option "C4 · 研究模板 · 抓边 · Crimp"
+        - option "S4 · 研究模板 · 摩擦点 · Sloper"
+        - option "J7 · 研究模板 · 把手 · Jug"
+        - option "P5 · 研究模板 · 捏点 · Pinch"
+        - option "O5 · 研究模板 · 指洞 · Pocket"
+        - option "C5 · 研究模板 · 抓边 · Crimp"
+        - option "S5 · 研究模板 · 摩擦点 · Sloper"
+        - option "J8 · 研究模板 · 把手 · Jug"
+        - option "P6 · 研究模板 · 捏点 · Pinch"
+        - option "O6 · 研究模板 · 指洞 · Pocket"
+        - option "C6 · 研究模板 · 抓边 · Crimp"
+        - option "S6 · 研究模板 · 摩擦点 · Sloper"
+        - option "F3 · 研究模板 · 小脚点"
+        - option "F4 · 研究模板 · 小脚点"
+        - option "F5 · 研究模板 · 小脚点"
+        - option "F6 · 研究模板 · 小脚点"
+        - option "F7 · 研究模板 · 小脚点"
+        - option "F8 · 研究模板 · 小脚点"
+        - option "F9 · 研究模板 · 小脚点"
+        - option "F10 · 研究模板 · 小脚点"
+        - option "F11 · 研究模板 · 小脚点"
+        - option "F12 · 研究模板 · 小脚点"
+        - option "F13 · 研究模板 · 小脚点"
+        - option "F14 · 研究模板 · 小脚点"
+        - option "F15 · 研究模板 · 小脚点"
+        - option "F16 · 研究模板 · 小脚点"
+        - option "F17 · 研究模板 · 小脚点"
+        - option "F18 · 研究模板 · 小脚点"
+        - option "F19 · 研究模板 · 小脚点"
+        - option "F20 · 研究模板 · 小脚点"
+        - option "F21 · 研究模板 · 小脚点"
+        - option "F22 · 研究模板 · 小脚点"
+        - option "F23 · 研究模板 · 小脚点"
+        - option "F24 · 研究模板 · 小脚点"
+        - option "F25 · 研究模板 · 小脚点"
+        - option "F26 · 研究模板 · 小脚点"
+        - option "F27 · 研究模板 · 小脚点"
+        - option "F28 · 研究模板 · 小脚点"
+        - option "F29 · 研究模板 · 小脚点"
+        - option "F30 · 研究模板 · 小脚点"
+        - option "F31 · 研究模板 · 小脚点"
+        - option "F32 · 研究模板 · 小脚点"
+        - option "F33 · 研究模板 · 小脚点"
+        - option "F34 · 研究模板 · 小脚点"
+        - option "F35 · 研究模板 · 小脚点"
+        - option "J9 · 研究模板 · 把手 · Jug"
+        - option "F36 · 研究模板 · 小脚点"
+        - option "F37 · 研究模板 · 小脚点"
+      - text: 宽 × 高 × 深
+      - strong: 180 × 120 × 75 mm
+      - text: 库存状态
+      - strong: 已安装 · 线路使用
+      - text: 适用接触
+      - strong: 左手 / 右手
+      - paragraph:
+        - text: 把手 · Jug
+        - generic: 潜在用途：手点 / 也可踩踏 · 本动作接触以所选表面为准
+      - generic "定线属性 模板声明 · 0–1"
+      - text: 当前接触面
+      - combobox "当前接触面":
+        - option "主要抓握面" [selected]
+        - option "备选抓握面"
+      - paragraph: 浅色为模板接触区域。本版整条线路共用所选面，以面上代表点计算姿态。
+      - text: 安装位置
+      - combobox "安装位置":
+        - option "直接安装在墙面" [selected]
+      - generic: 水平 u · m
+      - spinbutton "水平 u · m": "-0.85"
+      - generic: 沿墙 v · m
+      - spinbutton "沿墙 v · m": "1.12"
+      - text: 旋转 · °
+      - spinbutton "旋转 · °": "0"
+      - paragraph: u / v 以墙面底部中心为原点；旋转沿墙面法线。
+      - button "−15°"
+      - button "+15°"
+      - button "定位岩点":
+        - text: 定位岩点
+      - button "保存为新修订"
+      - paragraph: 修改接触面、安装位置或朝向后保存；旧版保留，报告需重算。
+      - button "卸下并归还库存" [disabled]
+      - paragraph: 该岩点被动作序列使用，不能直接卸下。
+      - paragraph: 模板区域是可接触面的设计假设，未验证真实摩擦、抓握或受力。
+      - generic "模型与检查范围"
+    - heading "当前方案检查" [level=3]
+    - strong: 几何与姿态检查通过
+    - text: 84 / 84
+    - generic: 已实现检查
+    - generic: 84 通过
+    - generic: 0 违反条件
+    - generic: 0 无法判断
+    - paragraph: 受力与连续动作尚未验证
+    - button "重新检查":
+      - text: 重新检查
+    - generic "展开检查明细 84 项":
+      - text: 展开检查明细
+      - generic: 84 项
+    - heading "方案对照" [level=3]
+    - generic: 保留同一视角
+    - generic: 选择对照方案
+    - combobox "选择对照方案":
+      - option "不叠加对照" [selected]
+      - option "持续收尾 · 2 · r1"
+      - option "持续收尾 · 3 · r1"
+    - paragraph: 选择另一方案，以浅色轮廓叠加它的点位。
+    - heading "目前未验证" [level=3]
+    - generic "抓握、摩擦与受力 未检查":
+      - generic: 抓握、摩擦与受力
+      - generic: 未检查
+    - generic "平衡与稳定性 未检查":
+      - generic: 平衡与稳定性
+      - generic: 未检查
+    - generic "完整人体碰撞 未检查":
+      - generic: 完整人体碰撞
+      - generic: 未检查
+    - generic "连续动作转换 未检查":
+      - generic: 连续动作转换
+      - generic: 未检查
+    - generic "真实难度与体验 未检查":
+      - generic: 真实难度与体验
+      - generic: 未检查
+    - paragraph: 几何与姿态结果不等于真人能够完成，也不代表攀爬等级。
+    - heading "设计反馈" [level=3]
+    - generic: 不是试爬记录
+    - generic: 反馈内容
+    - textbox "反馈内容":
+      - /placeholder: 例如：下一手点偏远，想试试先调整右脚。
+    - button "保存这条反馈"
+  - generic "比赛参考与差距 世界杯 · 世锦赛 · 3 个真实案例":
+    - generic: 比赛参考与差距
+    - generic: 世界杯 · 世锦赛 · 3 个真实案例
+  - generic "固定训练板参考 布局、朝向与反馈":
+    - generic: 固定训练板参考
+    - generic: 布局、朝向与反馈
+  - generic: 合成岩点与人体参数 · 研究原型
+  - generic: 种子 42 · rules · 检查器 0.1.0 · 3.03 s
