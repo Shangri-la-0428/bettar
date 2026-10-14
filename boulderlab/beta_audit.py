@@ -17,8 +17,8 @@ import numpy as np
 
 from .full_route import _history
 from .geometry import selected_contact, wall_basis
-from .route_constraints import allowed_contact_ids, constraint_errors
-from .route_design import DIMS, _context, _metrics, _ref, _valid_contact_geometry
+from .route_constraints import allowed_contact_refs, constraint_errors
+from .route_design import DIMS, _contact_key, _context, _metrics, _ref, _valid_contact_geometry
 
 MODEL_VERSION = "independent-beta-proxy-3"
 LIMBS = ("LH", "RH", "LF", "RF")
@@ -31,7 +31,7 @@ MATCHING_POLICY = {
     "meaning": "wide-hold matching permission only; independent hand contact locations and collision are not modeled",
 }
 LIMITATIONS = [
-    "仅检查已安装岩点的当前选中抓握面；不会借用候选库存，也未搜索其它抓握面、抹脚、挂脚、跑跳或同时移动多肢。",
+    "搜索当前手部抓握面和已声明的合法踩面；不会借用未安装库存，也未搜索其它手部抓握面、抹脚、挂脚、跑跳或同时移动多肢。",
     "允许任意单肢顺序、双手匹配、跳点及有限回撤；不要求原动作数、阶段顺序或每个点被使用。",
     "受限搜索有剪枝和预算；未找到更优解不证明点不可跳、难点不可绕过或当前走法最优。",
     "拉向与手脚配合只作为透明几何代理量；抓握力、摩擦、力矩、平衡、连续转换与真人可攀性均未验证。",
@@ -52,11 +52,11 @@ def _contacts(key):
 
 
 def _key(contacts):
-    return tuple(contacts[l]["placement_id"] for l in LIMBS)
+    return tuple(_contact_key(contacts[l]) for l in LIMBS)
 
 
-def _audit_context(request, placements):
-    context = _context(request, placements)
+def _audit_context(request, placements, all_surfaces=True):
+    context = _context(request, placements, all_surfaces=True)
     inventory = {item["id"]: item for item in request["scene"]["inventory"]}
     by_id = {p["id"]: p for p in placements}
     to_wall = wall_basis(request["scene"]["angle_deg"]).T
@@ -64,8 +64,9 @@ def _audit_context(request, placements):
         # Mounted points have face-local u/v. Use their actual world contacts
         # projected onto the wall for this audit's hand/foot descriptors.
         p["uv"] = (to_wall @ p["position"])[:2]
-        item = inventory[by_id[pid]["inventory_id"]]
-        contact = selected_contact(by_id[pid], item)
+        ref = _ref(pid)
+        item = inventory[by_id[ref["placement_id"]]["inventory_id"]]
+        contact = selected_contact(by_id[ref["placement_id"]], item, ref["contact_id"])
         diameters = sorted((2*radius for radius in contact.get("radii", [])), reverse=True)
         p["hand_match_allowed"] = (item["type"] in MATCHING_POLICY["allowed_types"] and
             item["width"] >= MATCHING_POLICY["min_hold_width_m"] and item["height"] >= MATCHING_POLICY["min_hold_height_m"] and
@@ -77,9 +78,11 @@ def _audit_context(request, placements):
 def _occupancy_error(context, key):
     """Role permission is not simultaneous capacity of one contact patch."""
     hands, feet = key[:2], key[2:]
-    if set(hands) & set(feet): return "simultaneous_hand_foot_same_point"
-    if feet[0] == feet[1]: return "simultaneous_feet_same_point"
-    if hands[0] == hands[1] and not context[hands[0]]["hand_match_allowed"]:
+    hand_ids = [_ref(k)["placement_id"] for k in hands]
+    foot_ids = [_ref(k)["placement_id"] for k in feet]
+    if set(hand_ids) & set(foot_ids): return "simultaneous_hand_foot_same_point"
+    if foot_ids[0] == foot_ids[1]: return "simultaneous_feet_same_point"
+    if hand_ids[0] == hand_ids[1] and not all(context[key]["hand_match_allowed"] for key in hands):
         return "hand_match_not_supported_by_selected_patch"
     return None
 
@@ -99,8 +102,8 @@ def _setting_contact_corridor(context, contacts, body, solver):
         return _contact_valid(context, contacts, body, solver)
     if not _valid_contact_geometry(context, contacts, body, solver):
         return False
-    hands = np.array([context[contacts[l]["placement_id"]]["position"] for l in ("LH", "RH")])
-    feet = np.array([context[contacts[l]["placement_id"]]["position"] for l in ("LF", "RF")])
+    hands = np.array([context[_contact_key(contacts[l])]["position"] for l in ("LH", "RH")])
+    feet = np.array([context[_contact_key(contacts[l])]["position"] for l in ("LF", "RF")])
     hand_mid, foot_mid = hands.mean(axis=0), feet.mean(axis=0)
     axis = hand_mid-foot_mid
     separation = float(np.linalg.norm(axis))
@@ -130,8 +133,8 @@ def orientation_support(context, contacts, moving_limb):
     not an IK centre of mass. A hand's declared pull is compared to its vector
     toward that location. The moving hand is excluded from retained support.
     """
-    hands = [context[contacts[l]["placement_id"]] for l in ("LH", "RH")]
-    feet = [context[contacts[l]["placement_id"]] for l in ("LF", "RF")]
+    hands = [context[_contact_key(contacts[l])] for l in ("LH", "RH")]
+    feet = [context[_contact_key(contacts[l])] for l in ("LF", "RF")]
     hand_mid = np.mean([p["position"] for p in hands], axis=0)
     foot_mid = np.mean([p["position"] for p in feet], axis=0)
     trunk = (hand_mid + foot_mid)/2
@@ -139,7 +142,7 @@ def orientation_support(context, contacts, moving_limb):
     lateral_pulls = []
     for limb in ("LH", "RH"):
         if limb == moving_limb: continue
-        p = context[contacts[limb]["placement_id"]]
+        p = context[_contact_key(contacts[limb])]
         direction = trunk-p["position"]
         denominator = float(np.linalg.norm(direction)*np.linalg.norm(p["pull"]))
         alignment = float(np.dot(direction, p["pull"])/denominator) if denominator > 1e-9 else 0.
@@ -149,7 +152,7 @@ def orientation_support(context, contacts, moving_limb):
     mismatch = sum((1-a)/2 for a in alignments.values())/max(1, len(alignments))
     # Trunk uses the pre-release nominal pose, but the support interval may
     # contain only retained feet. The moving foot cannot support its own step.
-    footprint = [context[contacts[l]["placement_id"]]["position"][0] for l in ("LF", "RF") if l != moving_limb]
+    footprint = [context[_contact_key(contacts[l])]["position"][0] for l in ("LF", "RF") if l != moving_limb]
     outside = max(min(footprint)-trunk[0], trunk[0]-max(footprint), 0.)
     support_offset = min(1., float(outside)/.6)
     # Positive means two retained hand pulls have lateral opposition. A single
@@ -172,17 +175,17 @@ def _step(request, context, before, limb, target, previous):
 
 
 def analyze_beta(request, candidate):
-    context = _audit_context(request, candidate["placements"])
+    context = _audit_context(request, candidate["placements"], all_surfaces=True)
     states = {s["id"]: s for s in candidate["states"]}
     moves, load, hand_index = [], 0., 0
     for index, event in enumerate(candidate["events"]):
         limb = event["limb"]
         before = states[event["from_state"]]["contacts"]
-        target = states[event["to_state"]]["contacts"][limb]["placement_id"]
+        target = _contact_key(states[event["to_state"]]["contacts"][limb])
         prior = load
         _, load, metrics, rest, recovery, burden, support = _step(request, context, before, limb, target, prior)
         moves.append({"event_index": index, "hand_move_index": hand_index, "phase_id": "independent-sequence", "phase_kind": "observed",
-                      "limb": limb, "from_placement_id": before[limb]["placement_id"], "to_placement_id": target,
+                      "limb": limb, "from_placement_id": before[limb]["placement_id"], "to_placement_id": _ref(target)["placement_id"], "to_contact_id": _ref(target)["contact_id"], "from_contact_id": before[limb].get("contact_id", "main"),
                       **metrics, "prior_load": prior, "accumulated_load": load, "rest_opportunity": rest,
                       "recovery_proxy": recovery, "fresh_burden": metrics["load"], "effective_burden": burden,
                       "burden": burden, "proxy_effort": burden+support["proxy_penalty"], "orientation_support": support})
@@ -227,8 +230,8 @@ def _used(candidate):
 
 def _deletion_challenges(request, original, *, deadline=None):
     """A local counterexample search complements, never replaces, the beam."""
-    context = _audit_context(request, original["placements"])
-    sequence = [(event["limb"], original["states"][2*i+2]["contacts"][event["limb"]]["placement_id"]) for i, event in enumerate(original["events"])]
+    context = _audit_context(request, original["placements"], all_surfaces=True)
+    sequence = [(event["limb"], _contact_key(original["states"][2*i+2]["contacts"][event["limb"]])) for i, event in enumerate(original["events"])]
     original_analysis, _ = analyze_beta(request, original)
     crux_index = original_analysis["summary"]["crux_event_index"]
     candidates, rejected = [], Counter()
@@ -238,7 +241,7 @@ def _deletion_challenges(request, original, *, deadline=None):
         current = copy.deepcopy(original["states"][0]["contacts"])
         valid = True
         for limb, pid in steps:
-            if current[limb]["placement_id"] == pid:
+            if _contact_key(current[limb]) == pid:
                 rejected["no_op"] += 1; valid = False; break
             current[limb] = _ref(pid)
             occupancy = _occupancy_error(context, _key(current))
@@ -263,15 +266,21 @@ def _search(request, original, objective, options, *, deadline=None):
     restrictions = constraint_errors(request, original["placements"], states=original["states"][:1])
     if restrictions:
         raise ValueError("; ".join(restrictions))
-    context = _audit_context(request, original["placements"])
+    context = _audit_context(request, original["placements"], all_surfaces=True)
     start = _key(original["states"][0]["contacts"])
-    goal = request["end_contacts"]["LH"]["placement_id"]
-    top_y = context[goal]["uv"][1]
+    goals = tuple(_contact_key(request["end_contacts"][limb]) for limb in ("LH", "RH"))
+    top_y = max(context[key]["uv"][1] for key in goals)
     arm = request["body"]["upper_arm"]+request["body"]["forearm"]
     leg = request["body"]["thigh"]+request["body"]["shin"]
-    ordered = sorted(context, key=lambda p: (context[p]["key"], p))
-    allowed = allowed_contact_ids(request, original["placements"])
-    targets = {limb: [p for p in ordered if p in allowed[limb]] for limb in LIMBS}
+    allowed = allowed_contact_refs(request, original["placements"])
+    # Preserve the chosen hand face. Foot options may use other declared faces;
+    # this adds standing on a former hand hold without inventing grip permission.
+    targets = {limb: sorted({_contact_key(ref) for ref in allowed[limb]
+                 if limb.endswith("F") or ref.get("contact_id", "main") == "main" or ref == request["end_contacts"].get(limb)},
+                 key=lambda key: (context[key]["key"], str(key))) for limb in LIMBS}
+    for limb, goal in zip(("LH", "RH"), goals):
+        if goal not in targets[limb] and limb in context[goal]["limbs"]:
+            targets[limb].append(goal)
     rejected = Counter()
     def remaining(key):
         # Ranking only, not an admissible optimality proof. Both hands must
@@ -293,6 +302,7 @@ def _search(request, original, objective, options, *, deadline=None):
                 old = context[key[i]]
                 for pid in targets[limb]:
                     if pid == key[i]: continue
+                    if _ref(pid)["placement_id"] == _ref(key[i])["placement_id"] and context[pid]["surface_id"] == context[key[i]]["surface_id"]: continue
                     dest = context[pid]
                     # Backtracking exists but stays within the declared local
                     # neighbourhood. The bound is a search limit, not physics.
@@ -323,9 +333,9 @@ def _search(request, original, objective, options, *, deadline=None):
                     labels.append((next_cost, load)); labels.sort()
                     seen[changed] = labels[:3]
                     new_steps = steps+[(limb, pid)]
-                    new_tie = tie+((limb, context[pid]["key"], pid),)
+                    new_tie = tie+((limb, context[pid]["key"], str(pid)),)
                     entry = (next_cost, new_tie, changed, new_steps, load)
-                    if changed[0] == goal and changed[1] == goal:
+                    if changed[0] == goals[0] and changed[1] == goals[1]:
                         signature = tuple(new_steps)
                         if signature not in signatures:
                             completed.append(entry); signatures.add(signature)
@@ -391,8 +401,8 @@ def audit_beta(request, candidate, *, search_options=None):
               "expansion_limit": options["max_expansions"]*2, "expanded": 0, "complete_sequences": 0, "ik_checked": 0,
               "verified_alternatives": 0, "distinct_sequences": 0, "unverified_count": 0, "budget_exhausted": False, "objectives": [],
               "scope": "fixed_installed_geometry; no_phase_or_transfer_count_requirement; selected_surface_permissions",
-              "matching_policy": {**MATCHING_POLICY, "allowed_hold_ids": sorted(pid for pid, point in _audit_context(request, candidate["placements"]).items() if point["hand_match_allowed"]) }}, "limitations": LIMITATIONS}
-    old_sequence = [(event["limb"], candidate["states"][2*i+2]["contacts"][event["limb"]]["placement_id"]) for i, event in enumerate(candidate["events"])]
+              "matching_policy": {**MATCHING_POLICY, "allowed_hold_ids": sorted(str(pid) for pid, point in _audit_context(request, candidate["placements"]).items() if point["hand_match_allowed"]) }}, "limitations": LIMITATIONS}
+    old_sequence = [(event["limb"], _contact_key(candidate["states"][2*i+2]["contacts"][event["limb"]])) for i, event in enumerate(candidate["events"])]
     def checked_entry(steps, objective, source):
         alternate = _make_candidate(candidate, steps, objective)
         alt_analysis, alt_summary = analyze_beta(request, alternate)

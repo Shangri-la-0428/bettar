@@ -128,7 +128,10 @@
                         "maxLength": 120
                       },
                       "contact_id": {
-                        "const": "main"
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 120,
+                        "description": "main resolves the placement-selected surface; another ID must name a declared grip_surface."
                       }
                     },
                     "required": [
@@ -153,7 +156,10 @@
                         "maxLength": 120
                       },
                       "contact_id": {
-                        "const": "main"
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 120,
+                        "description": "main resolves the placement-selected surface; another ID must name a declared grip_surface."
                       }
                     },
                     "required": [
@@ -178,7 +184,10 @@
                         "maxLength": 120
                       },
                       "contact_id": {
-                        "const": "main"
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 120,
+                        "description": "main resolves the placement-selected surface; another ID must name a declared grip_surface."
                       }
                     },
                     "required": [
@@ -203,7 +212,10 @@
                         "maxLength": 120
                       },
                       "contact_id": {
-                        "const": "main"
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 120,
+                        "description": "main resolves the placement-selected surface; another ID must name a declared grip_surface."
                       }
                     },
                     "required": [

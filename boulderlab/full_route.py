@@ -16,7 +16,7 @@ import numpy as np
 
 from .geometry import grip_surfaces
 from .catalog import hold_taxonomy
-from .route_design import DIMS, AFFORDANCES, _context, _metrics, _ref, _valid_contact_geometry
+from .route_design import DIMS, AFFORDANCES, _context, _metrics, _ref, _valid_contact_geometry, _contact_key
 
 PROGRAMS = [
     {"id": "mixed_flow", "label": "混合节奏", "description": "建立 → 技术转换 → 力量难点 → 缓和 → 收尾。"},
@@ -117,7 +117,7 @@ def make_request(base_request, program="mixed_flow", hand_moves=10):
 
 
 def _history(previous, metrics, context, after):
-    hands = [context[after[l]["placement_id"]]["attrs"] for l in ("LH", "RH")]
+    hands = [context[_contact_key(after[l])]["attrs"] for l in ("LH", "RH")]
     access = sum(a["grip_accessibility"] for a in hands)/2
     grip = sum(a["force_demand"] for a in hands)/2
     # Relative release of effort only when both current hands and feet permit
@@ -134,8 +134,8 @@ def _history(previous, metrics, context, after):
 
 def _contact_valid(context, contacts, body, solver=None):
     if not _valid_contact_geometry(context, contacts, body, solver): return False
-    h = [context[contacts[l]["placement_id"]]["uv"] for l in ("LH", "RH")]
-    f = [context[contacts[l]["placement_id"]]["uv"] for l in ("LF", "RF")]
+    h = [context[_contact_key(contacts[l])]["uv"] for l in ("LH", "RH")]
+    f = [context[_contact_key(contacts[l])]["uv"] for l in ("LF", "RF")]
     arm = body["upper_arm"]+body["forearm"]
     leg = body["thigh"]+body["shin"]
     # Local shape constraints remove ladder-wide splits and high feet. These
@@ -297,7 +297,7 @@ def _search_cached(serialized):
 
 
 def analyze_route(request, candidate, initial_load=0.):
-    context = _context(request, candidate["placements"])
+    context = _context(request, candidate["placements"], all_surfaces=True)
     states = {s["id"]: s for s in candidate["states"]}
     brief = request["route_design"]
     if not math.isfinite(initial_load) or initial_load < 0:
@@ -306,14 +306,14 @@ def analyze_route(request, candidate, initial_load=0.):
     for index, event in enumerate(candidate["events"]):
         before = states[event["from_state"]]["contacts"]
         after = states[event["to_state"]]["contacts"]
-        limb, target = event["limb"], after[event["limb"]]["placement_id"]
+        limb, target = event["limb"], _contact_key(after[event["limb"]])
         metrics = _metrics(request, context, before, limb, target)
         phase = brief["phases"][min(hand_index, len(brief["phases"])-1)]
         prior = load
         load, rest, recovery, burden = _history(prior, metrics, context, after)
         if limb.endswith("H"): objective += _cost(metrics, phase, prior, burden)
         moves.append({"event_index": index, "hand_move_index": hand_index, "phase_id": phase["segment_id"], "phase_kind": phase["phase_kind"],
-                      "limb": limb, "from_placement_id": before[limb]["placement_id"], "to_placement_id": target,
+                      "limb": limb, "from_placement_id": before[limb]["placement_id"], "to_placement_id": after[limb]["placement_id"],
                       **metrics, "prior_load": prior, "accumulated_load": load, "rest_opportunity": rest, "recovery_proxy": recovery,
                       "fresh_burden": metrics["load"], "effective_burden": burden, "burden": burden, "phase_target": phase["target"]})
         if limb.endswith("H"): hand_index += 1

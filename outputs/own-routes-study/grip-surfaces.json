@@ -1,0 +1,192 @@
+{
+  "status": "pass",
+  "templates": 9,
+  "surfaces": 25,
+  "checks": [
+    "same-template geometry",
+    "surface center and normal alignment",
+    "all patch vertices on actual triangles",
+    "patches clipped to silhouette and declared ellipse",
+    "surface picking",
+    "separate normal and pull arrows",
+    "invalid and empty selections",
+    "volume mounting faces match display mesh"
+  ],
+  "results": [
+    {
+      "family": "jug",
+      "surface": "working",
+      "vertices": 2784,
+      "center_error_m": 0.000014023576584559772,
+      "max_patch_error_m": 4.294448574526655e-9
+    },
+    {
+      "family": "jug",
+      "surface": "alternate",
+      "vertices": 873,
+      "center_error_m": 0.0000878836739056886,
+      "max_patch_error_m": 3.5487555116731073e-9
+    },
+    {
+      "family": "jug",
+      "surface": "standing",
+      "vertices": 666,
+      "center_error_m": 0.00007531664814320119,
+      "max_patch_error_m": 2.528219633646245e-9
+    },
+    {
+      "family": "directional_edge",
+      "surface": "working",
+      "vertices": 1794,
+      "center_error_m": 0.000014626043909810038,
+      "max_patch_error_m": 3.853309005208416e-9
+    },
+    {
+      "family": "directional_edge",
+      "surface": "alternate",
+      "vertices": 1320,
+      "center_error_m": 0.00012348930533813418,
+      "max_patch_error_m": 2.653543162978167e-9
+    },
+    {
+      "family": "directional_edge",
+      "surface": "standing",
+      "vertices": 888,
+      "center_error_m": 0.000024064055870694212,
+      "max_patch_error_m": 1.6315295781055283e-9
+    },
+    {
+      "family": "crimp",
+      "surface": "working",
+      "vertices": 1266,
+      "center_error_m": 0.000032337396797692264,
+      "max_patch_error_m": 1.5926484575601307e-9
+    },
+    {
+      "family": "crimp",
+      "surface": "alternate",
+      "vertices": 1308,
+      "center_error_m": 0.0000068764908663018764,
+      "max_patch_error_m": 1.6634598143383528e-9
+    },
+    {
+      "family": "pocket",
+      "surface": "working",
+      "vertices": 558,
+      "center_error_m": 0.000029235573148649052,
+      "max_patch_error_m": 3.060631525997337e-9
+    },
+    {
+      "family": "pocket",
+      "surface": "alternate",
+      "vertices": 786,
+      "center_error_m": 0.00004817318420049718,
+      "max_patch_error_m": 3.45691586467467e-9
+    },
+    {
+      "family": "pocket",
+      "surface": "standing",
+      "vertices": 810,
+      "center_error_m": 0.000015354716302401483,
+      "max_patch_error_m": 3.2297655661039926e-9
+    },
+    {
+      "family": "foothold",
+      "surface": "working",
+      "vertices": 1422,
+      "center_error_m": 0.00004787123812798402,
+      "max_patch_error_m": 2.0908892395254952e-9
+    },
+    {
+      "family": "foothold",
+      "surface": "alternate",
+      "vertices": 1872,
+      "center_error_m": 6.160360416229693e-11,
+      "max_patch_error_m": 2.1998918242616128e-9
+    },
+    {
+      "family": "sloper",
+      "surface": "working",
+      "vertices": 3216,
+      "center_error_m": 0.00003999438311272363,
+      "max_patch_error_m": 8.536027662486845e-9
+    },
+    {
+      "family": "sloper",
+      "surface": "alternate",
+      "vertices": 2949,
+      "center_error_m": 0.000027896081434108932,
+      "max_patch_error_m": 9.81152470380664e-9
+    },
+    {
+      "family": "sloper",
+      "surface": "standing",
+      "vertices": 204,
+      "center_error_m": 0.0000680640296256696,
+      "max_patch_error_m": 1.0221312241043279e-8
+    },
+    {
+      "family": "pinch",
+      "surface": "working",
+      "vertices": 780,
+      "center_error_m": 0.00000703562294528115,
+      "max_patch_error_m": 4.916677065480712e-9
+    },
+    {
+      "family": "pinch",
+      "surface": "alternate",
+      "vertices": 786,
+      "center_error_m": 0.00000703562380836853,
+      "max_patch_error_m": 4.916677065480712e-9
+    },
+    {
+      "family": "pinch",
+      "surface": "standing",
+      "vertices": 354,
+      "center_error_m": 0.00003314460046623113,
+      "max_patch_error_m": 5.231564292884627e-9
+    },
+    {
+      "family": "rail",
+      "surface": "working",
+      "vertices": 1695,
+      "center_error_m": 0.000015952494876181333,
+      "max_patch_error_m": 4.200520375974293e-9
+    },
+    {
+      "family": "rail",
+      "surface": "alternate",
+      "vertices": 1074,
+      "center_error_m": 0.0001598037558916618,
+      "max_patch_error_m": 4.727255253911267e-9
+    },
+    {
+      "family": "rail",
+      "surface": "standing",
+      "vertices": 252,
+      "center_error_m": 0.00004074869535681744,
+      "max_patch_error_m": 3.4589195951895135e-9
+    },
+    {
+      "family": "volume",
+      "surface": "face_1_grip",
+      "vertices": 114,
+      "center_error_m": 3.318894048476295e-10,
+      "max_patch_error_m": 1.3916838570438017e-8
+    },
+    {
+      "family": "volume",
+      "surface": "face_2_grip",
+      "vertices": 114,
+      "center_error_m": 1.5159133504027977e-8,
+      "max_patch_error_m": 8.27864576891102e-9
+    },
+    {
+      "family": "volume",
+      "surface": "face_3_grip",
+      "vertices": 114,
+      "center_error_m": 6.30089469488837e-9,
+      "max_patch_error_m": 1.2820281281022972e-8
+    }
+  ]
+}

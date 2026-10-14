@@ -1,0 +1,649 @@
+{
+  "schema_version": "own-routes-verification-v1",
+  "created_at": "2026-10-14T20:34:04.774401+00:00",
+  "engine_code_hash": "sha256:b314a55a201d54bc48b04bfd5ba3ee571a1b200a025d26b7c0b1d7912289962d",
+  "generation_engine_code_hash": "sha256:9309643b263d25d79315fb4b619804d406c52fe9dd2ae39631257a9601b1ce68",
+  "generator_code_hash": "sha256:1cd0abfce2c2d1a11282ed75bce38758f6779984a8c05a957fc421d4ce26573f",
+  "python": {
+    "passed_after_targeted_rerun": 394,
+    "skipped": 2,
+    "skipped_reason": "Opt-in BetaZero real inference tests; no ML inference or training is needed for this workflow.",
+    "full_run": {
+      "passed": 393,
+      "failed": 1,
+      "skipped": 2,
+      "seconds": 197.11
+    },
+    "transient_failure": {
+      "test": "tests/test_style_generation.py::test_forged_analysis_is_rejected_even_with_a_new_bundle_digest[summary]",
+      "reason": "Two roof metadata strings changed during the suite; the in-flight result fingerprint was correctly rejected.",
+      "rerun_passed": 1,
+      "rerun_seconds": 2.15
+    },
+    "contact_chain_checks": {
+      "passed": 69,
+      "seconds": 6.17
+    }
+  },
+  "web": {
+    "typescript": "pass",
+    "vite_build": "pass",
+    "known_warning": "Existing JavaScript bundle exceeds 500 kB.",
+    "ui": {
+      "status": "pass",
+      "routes": [
+        {
+          "id": "lateral-balance",
+          "movements": 13,
+          "stepped_handholds": [
+            "start-right",
+            "hand-3"
+          ],
+          "hand_to_foot": [
+            "hand-3",
+            "start-right"
+          ]
+        },
+        {
+          "id": "compact-strength",
+          "movements": 10,
+          "stepped_handholds": [
+            "start-left",
+            "start-right"
+          ],
+          "hand_to_foot": [
+            "start-left",
+            "start-right"
+          ]
+        },
+        {
+          "id": "sustained-transfer",
+          "movements": 12,
+          "stepped_handholds": [
+            "start-left",
+            "start-right",
+            "hand-2"
+          ],
+          "hand_to_foot": [
+            "hand-2",
+            "start-left",
+            "start-right"
+          ]
+        }
+      ],
+      "contacts": 257,
+      "standing_contacts": 40,
+      "hand_to_foot_moments": 7
+    },
+    "geometry": {
+      "status": "pass",
+      "comparisons": 1748,
+      "own_route_contacts": 257,
+      "explicit_foot_contacts": 40,
+      "cases": [
+        "initial",
+        "parent-translate",
+        "parent-rotate",
+        "panel-initial",
+        "panel-parent-translate",
+        "panel-parent-rotate",
+        "wall-fixture/overhang/setting-diagonal_balance-trial1-beta3",
+        "wall-fixture/roof/setting-diagonal_balance-trial1-beta3",
+        "wall-fixture/roof/setting-diagonal_balance-trial0-beta3",
+        "wall-fixture/dihedral/setting-diagonal_balance-trial0-beta0",
+        "wall-fixture/arete/setting-diagonal_balance-trial0-beta3",
+        "own-route/lateral-balance/own-lateral-balance",
+        "own-route/compact-strength/own-compact-strength",
+        "own-route/sustained-transfer/own-sustained-transfer"
+      ],
+      "wall_fixtures": [
+        {
+          "profile": "overhang",
+          "placements": 18,
+          "panels": 1,
+          "layout_only": false
+        },
+        {
+          "profile": "roof",
+          "placements": 18,
+          "panels": 3,
+          "layout_only": false
+        },
+        {
+          "profile": "roof",
+          "placements": 18,
+          "panels": 3,
+          "layout_only": false
+        },
+        {
+          "profile": "dihedral",
+          "placements": 18,
+          "panels": 2,
+          "layout_only": false
+        },
+        {
+          "profile": "arete",
+          "placements": 18,
+          "panels": 2,
+          "layout_only": false
+        }
+      ],
+      "checks": [
+        "Python frame/contact/normal parity",
+        "wall and face inverse drag",
+        "selected-surface main alias",
+        "legacy contact preserved",
+        "parent translation and rotation inheritance",
+        "cancelled preview restoration",
+        "multi-axis panel rotation and translated origin",
+        "panel-mounted volume child inherits transform",
+        "invalid panel mount omitted",
+        "front corner elevation measured above y=0 separately from layout height",
+        "saved wall profile panel corners, placement axes and selected mesh contact frames"
+      ]
+    },
+    "mechanics": {
+      "status": "pass",
+      "checked_paths": 53,
+      "states": {
+        "feasible": 578,
+        "infeasible": 737,
+        "unknown": 4
+      },
+      "force_contacts": 2119,
+      "own_route_explicit_foot_contacts": 40,
+      "own_routes": [
+        {
+          "route": "lateral-balance",
+          "states": 27,
+          "summary": {
+            "status": "infeasible",
+            "feasible_states": 11,
+            "infeasible_states": 16,
+            "unknown_states": 0,
+            "release_states": 13,
+            "release_infeasible_states": 9,
+            "release_unknown_states": 0,
+            "max_capacity_utilization": 1.0130921,
+            "worst_state_id": "b3"
+          }
+        },
+        {
+          "route": "compact-strength",
+          "states": 21,
+          "summary": {
+            "status": "infeasible",
+            "feasible_states": 8,
+            "infeasible_states": 13,
+            "unknown_states": 0,
+            "release_states": 10,
+            "release_infeasible_states": 8,
+            "release_unknown_states": 0,
+            "max_capacity_utilization": 1.1228496,
+            "worst_state_id": "b3"
+          }
+        },
+        {
+          "route": "sustained-transfer",
+          "states": 25,
+          "summary": {
+            "status": "infeasible",
+            "feasible_states": 11,
+            "infeasible_states": 14,
+            "unknown_states": 0,
+            "release_states": 12,
+            "release_infeasible_states": 8,
+            "release_unknown_states": 0,
+            "max_capacity_utilization": 0.698655,
+            "worst_state_id": "b3"
+          }
+        }
+      ],
+      "max_point_error_m": 7.040251819070927e-08,
+      "max_normal_error": 7.455283380317608e-08,
+      "max_rendered_force_residual_n": 1.732051197018814e-07,
+      "max_rendered_torque_residual_nm": 6.842494452743246e-05,
+      "checks": [
+        "state and release binding",
+        "renderer contact frame parity",
+        "failed solve has no drawable force",
+        "axial/transverse values share model axis",
+        "rendered forces balance gravity and moment",
+        "all four wall experiments, including actual starting state without a complete beta"
+      ],
+      "programs": [
+        {
+          "program": "diagonal_balance",
+          "before": {
+            "status": "infeasible",
+            "feasible_states": 15,
+            "infeasible_states": 10,
+            "unknown_states": 0,
+            "release_states": 12,
+            "release_infeasible_states": 6,
+            "release_unknown_states": 0,
+            "max_capacity_utilization": 0.8189289,
+            "worst_state_id": "b3"
+          },
+          "after": {
+            "status": "infeasible",
+            "feasible_states": 15,
+            "infeasible_states": 10,
+            "unknown_states": 0,
+            "release_states": 12,
+            "release_infeasible_states": 6,
+            "release_unknown_states": 0,
+            "max_capacity_utilization": 0.8102667,
+            "worst_state_id": "b3"
+          },
+          "alternatives": 5
+        },
+        {
+          "program": "opposing_sidepulls",
+          "before": {
+            "status": "infeasible",
+            "feasible_states": 14,
+            "infeasible_states": 9,
+            "unknown_states": 0,
+            "release_states": 11,
+            "release_infeasible_states": 7,
+            "release_unknown_states": 0,
+            "max_capacity_utilization": 0.5872014,
+            "worst_state_id": "b3"
+          },
+          "after": {
+            "status": "infeasible",
+            "feasible_states": 14,
+            "infeasible_states": 9,
+            "unknown_states": 0,
+            "release_states": 11,
+            "release_infeasible_states": 7,
+            "release_unknown_states": 0,
+            "max_capacity_utilization": 0.5872014,
+            "worst_state_id": "b3"
+          },
+          "alternatives": 4
+        },
+        {
+          "program": "roof_exit",
+          "before": {
+            "status": "infeasible",
+            "feasible_states": 9,
+            "infeasible_states": 20,
+            "unknown_states": 0,
+            "release_states": 14,
+            "release_infeasible_states": 11,
+            "release_unknown_states": 0,
+            "max_capacity_utilization": 0.5249364,
+            "worst_state_id": "b3"
+          },
+          "after": {
+            "status": "infeasible",
+            "feasible_states": 9,
+            "infeasible_states": 20,
+            "unknown_states": 0,
+            "release_states": 14,
+            "release_infeasible_states": 11,
+            "release_unknown_states": 0,
+            "max_capacity_utilization": 0.5249364,
+            "worst_state_id": "b3"
+          },
+          "alternatives": 3
+        }
+      ],
+      "wall_profiles": [
+        {
+          "profile": "overhang",
+          "layout_only": false,
+          "states": 25,
+          "events": 12,
+          "summary": {
+            "status": "infeasible",
+            "feasible_states": 13,
+            "infeasible_states": 12,
+            "unknown_states": 0,
+            "release_states": 12,
+            "release_infeasible_states": 7,
+            "release_unknown_states": 0,
+            "max_capacity_utilization": 0.9975785,
+            "worst_state_id": "b3"
+          },
+          "alternatives": 5
+        },
+        {
+          "profile": "roof",
+          "layout_only": false,
+          "states": 25,
+          "events": 12,
+          "summary": {
+            "status": "infeasible",
+            "feasible_states": 14,
+            "infeasible_states": 11,
+            "unknown_states": 0,
+            "release_states": 12,
+            "release_infeasible_states": 7,
+            "release_unknown_states": 0,
+            "max_capacity_utilization": 1.1659898,
+            "worst_state_id": "b3"
+          },
+          "alternatives": 5
+        },
+        {
+          "profile": "roof",
+          "layout_only": false,
+          "states": 23,
+          "events": 11,
+          "summary": {
+            "status": "infeasible",
+            "feasible_states": 10,
+            "infeasible_states": 13,
+            "unknown_states": 0,
+            "release_states": 11,
+            "release_infeasible_states": 8,
+            "release_unknown_states": 0,
+            "max_capacity_utilization": 0.5522252,
+            "worst_state_id": "b5"
+          },
+          "alternatives": 5
+        },
+        {
+          "profile": "dihedral",
+          "layout_only": false,
+          "states": 25,
+          "events": 12,
+          "summary": {
+            "status": "infeasible",
+            "feasible_states": 13,
+            "infeasible_states": 12,
+            "unknown_states": 0,
+            "release_states": 12,
+            "release_infeasible_states": 8,
+            "release_unknown_states": 0,
+            "max_capacity_utilization": 1.1150631,
+            "worst_state_id": "b3"
+          },
+          "alternatives": 2
+        },
+        {
+          "profile": "arete",
+          "layout_only": false,
+          "states": 27,
+          "events": 13,
+          "summary": {
+            "status": "infeasible",
+            "feasible_states": 17,
+            "infeasible_states": 10,
+            "unknown_states": 0,
+            "release_states": 13,
+            "release_infeasible_states": 7,
+            "release_unknown_states": 0,
+            "max_capacity_utilization": 0.9142734,
+            "worst_state_id": "b5"
+          },
+          "alternatives": 5
+        }
+      ]
+    },
+    "grip_surfaces": "grip-surfaces.json",
+    "external_models": "external-models.json",
+    "roof": "roof-regression.json"
+  },
+  "bundle_validation": {
+    "code_hash": "sha256:b314a55a201d54bc48b04bfd5ba3ee571a1b200a025d26b7c0b1d7912289962d",
+    "fixtures": [
+      {
+        "path": "fixtures/catalog-10deg-bundle.json",
+        "bundle_digest": "sha256:09cc6d5fd1255fee786747d0f199d1c87bd3323dbf0bdd7ce3d5e931b90410e4",
+        "candidates": 3,
+        "p0_pass": 3
+      },
+      {
+        "path": "fixtures/catalog-demo-bundle.json",
+        "bundle_digest": "sha256:2c4d5e6d8c8c9eaee06349c766f8cd6d3fedcd009476d8d6743a9c14220746fd",
+        "candidates": 3,
+        "p0_pass": 3
+      },
+      {
+        "path": "fixtures/competition-10deg-bundle.json",
+        "bundle_digest": "sha256:c293cdff06a42fba269d93ff239a5d1213dc1ac6858a23fedc28224e21aa8e4f",
+        "candidates": 3,
+        "p0_pass": 0
+      },
+      {
+        "path": "fixtures/competition-demo-bundle.json",
+        "bundle_digest": "sha256:7f779f580980f2c8b1e5774ba1a8f9ead6cd573bfa70606deb869b4c9881bc1c",
+        "candidates": 3,
+        "p0_pass": 0
+      },
+      {
+        "path": "fixtures/demo-bundle.json",
+        "bundle_digest": "sha256:6694dda4522acf056a22f9054c4f08711144576cc447c03d0f38f84f7eb31b2e",
+        "candidates": 3,
+        "p0_pass": 3
+      },
+      {
+        "path": "fixtures/route-demo-bundle.json",
+        "bundle_digest": "sha256:65358a8f745d0e3ff61f131d67fb28ced565c32c07e240cbf281040dfd8da047",
+        "candidates": 3,
+        "p0_pass": 3
+      },
+      {
+        "path": "fixtures/route-mixed_flow-bundle.json",
+        "bundle_digest": "sha256:ebcc8354f1a2491478a726c1a357cd2bd418918807102c966d4cea1b1bd1c01a",
+        "candidates": 3,
+        "p0_pass": 3
+      },
+      {
+        "path": "fixtures/route-power_finish-bundle.json",
+        "bundle_digest": "sha256:76f4c88627b0287c4ecd0c98c084e5325962a45023494703935a9120e604fb44",
+        "candidates": 3,
+        "p0_pass": 3
+      },
+      {
+        "path": "fixtures/route-sustained_finish-bundle.json",
+        "bundle_digest": "sha256:7a5a7eb33af67b9727247517f56588511afe55f861d7074da22aa28d019ec7f2",
+        "candidates": 3,
+        "p0_pass": 3
+      },
+      {
+        "path": "fixtures/setting-demo-bundle.json",
+        "bundle_digest": "sha256:1cb595dcaaef2197cc7a5363794e07b9776f8b91137bfb29e1c5b5db796ab8e1",
+        "candidates": 1,
+        "p0_pass": 1
+      },
+      {
+        "path": "fixtures/setting-diagonal_balance-bundle.json",
+        "bundle_digest": "sha256:283aceefd349ec2bee5eb1a7d4069fb251993a1b4389b9a1ef4497df7e5047db",
+        "candidates": 1,
+        "p0_pass": 1
+      },
+      {
+        "path": "fixtures/setting-opposing_sidepulls-bundle.json",
+        "bundle_digest": "sha256:ca5a5ede1a14a537e424c8b3d7c202573861678033af66d954ddb52d11d9c51f",
+        "candidates": 1,
+        "p0_pass": 1
+      },
+      {
+        "path": "fixtures/setting-roof_exit-bundle.json",
+        "bundle_digest": "sha256:02f9bad3b34860ec20b626f16742c40e14c8bc7cf8c0fa935c6fbef4bef9d3f6",
+        "candidates": 1,
+        "p0_pass": 1
+      },
+      {
+        "path": "fixtures/setting-templates-diagonal_balance-bundle.json",
+        "bundle_digest": "sha256:6f50df62665987144892ac40227f292406b940fd0071580f1a8604c778666b58",
+        "candidates": 1,
+        "p0_pass": 1
+      },
+      {
+        "path": "fixtures/setting-templates-opposing_sidepulls-bundle.json",
+        "bundle_digest": "sha256:ed31bf4e41db45d1a7fc4bde13c3086abf649bfdf55ff4225e89777c32b8fbd6",
+        "candidates": 1,
+        "p0_pass": 1
+      },
+      {
+        "path": "fixtures/setting-templates-roof_exit-bundle.json",
+        "bundle_digest": "sha256:8f8aaae6ee2a5470f05c1eeb36be06344a085c02efe3e7cf1684398043715424",
+        "candidates": 1,
+        "p0_pass": 1
+      },
+      {
+        "path": "fixtures/style-demo-bundle.json",
+        "bundle_digest": "sha256:c9e961d3c106d02908f059a3f6be5361688d73f4c6e286cb1d01e56fce1a54d1",
+        "candidates": 3,
+        "p0_pass": 3
+      },
+      {
+        "path": "fixtures/style-power-bundle.json",
+        "bundle_digest": "sha256:0925bfefd11d12bb9f7544071035b624430f5abd5d096b3823285aa8caa28853",
+        "candidates": 3,
+        "p0_pass": 3
+      },
+      {
+        "path": "fixtures/style-sustained-bundle.json",
+        "bundle_digest": "sha256:73bc7977f1e3ac1dded89445d8cf77e1a200ecc294246ad6b0a373e4c51678c2",
+        "candidates": 3,
+        "p0_pass": 3
+      },
+      {
+        "path": "fixtures/style-technical-bundle.json",
+        "bundle_digest": "sha256:344ab1098d6bd3e8c27e64b3f8e8ed54a0ec72f56bfaa5ecd9eccf5ab6b01795",
+        "candidates": 3,
+        "p0_pass": 3
+      },
+      {
+        "path": "fixtures/wall-arete-bundle.json",
+        "bundle_digest": "sha256:4cae456d62715a567bc7c8a93415c3de7385b490f81bfb57a77228384cafd2aa",
+        "candidates": 1,
+        "p0_pass": 1
+      },
+      {
+        "path": "fixtures/wall-dihedral-bundle.json",
+        "bundle_digest": "sha256:4c2c91888e12e88f99bc3a7d0bd0c7fb5fe75b3b3c11c6565aef0febe7f2d4ae",
+        "candidates": 1,
+        "p0_pass": 1
+      },
+      {
+        "path": "fixtures/wall-overhang-bundle.json",
+        "bundle_digest": "sha256:79b06534246f5a8ab07c40511d9c54431e1f1c0727ef0b43d021d0bb985311ae",
+        "candidates": 1,
+        "p0_pass": 1
+      },
+      {
+        "path": "fixtures/wall-roof-bundle.json",
+        "bundle_digest": "sha256:bcd2e358ddf55af42f00613156bb18e819100b2c26d256bd06a467e6c929a0a4",
+        "candidates": 2,
+        "p0_pass": 2
+      }
+    ],
+    "fixture_count": 24,
+    "own_routes": 3,
+    "own_route_evidence_bundles": 9,
+    "roundtrip_candidates": 2,
+    "elapsed_seconds": 22.52
+  },
+  "browser": {
+    "routeUI": [
+      {
+        "id": "compact-strength",
+        "detail": "规则搜索 · 待定线员调整\n紧凑握持\n已保存走法\n\n较窄空间中的侧拉与较高握持需求；保留把下方手点当脚点的选择。\n\n移手 / 移脚\n5 / 5\n踩到手点 / 手脚共用\n2 / 2\n使用 / 安装\n11 / 18\n峰值 / 最终负荷\n224.2 / 224.2\n几何检查\n通过\n释放态静态通过\n2 / 10\n手转脚位置\n左脚踩 start-left ↗\n右脚踩 start-right ↗\n\n补全前预算内未找到完整走法；补入 6 个可用脚点（foot-1、foot-2、foot-3、foot-4、foot-5、foot-6），启用 6 个岩点的独立踩面。每次踩踏仍需通过几何与支撑检查。\n\n负荷是算法的相对估计，不能换算为真人等级；几何通过不代表静态支撑全部通过。动态跳跃与连续动作尚未模拟。"
+      },
+      {
+        "id": "sustained-transfer",
+        "detail": "规则搜索 · 待定线员调整\n持续转换\n已保存走法\n\n左右交替的空间走向，观察连续换脚与前序负荷；本例仍是单面25°墙。\n\n移手 / 移脚\n6 / 6\n踩到手点 / 手脚共用\n3 / 3\n使用 / 安装\n12 / 18\n峰值 / 最终负荷\n277.1 / 277.1\n几何检查\n通过\n释放态静态通过\n4 / 12\n手转脚位置\n右脚踩 start-left ↗\n左脚踩 start-right ↗\n右脚踩 hand-2 ↗\n\n补全前预算内未找到完整走法；补入 6 个可用脚点（foot-1、foot-2、foot-3、foot-4、foot-5、foot-6），启用 7 个岩点的独立踩面。每次踩踏仍需通过几何与支撑检查。\n\n负荷是算法的相对估计，不能换算为真人等级；几何通过不代表静态支撑全部通过。动态跳跃与连续动作尚未模拟。"
+      },
+      {
+        "id": "lateral-balance",
+        "detail": "规则搜索 · 待定线员调整\n斜向移重\n已保存走法\n\n手点横向渐移；独立搜索脚位和移重，观察方向与支撑的配合。\n\n移手 / 移脚\n7 / 6\n踩到手点 / 手脚共用\n2 / 2\n使用 / 安装\n14 / 18\n峰值 / 最终负荷\n303.8 / 303.8\n几何检查\n通过\n释放态静态通过\n4 / 13\n手转脚位置\n右脚踩 start-right ↗\n左脚踩 hand-3 ↗\n\n补全前预算内未找到完整走法；补入 5 个可用脚点（foot-1、foot-2、foot-3、foot-4、foot-5），启用 7 个岩点的独立踩面。每次踩踏仍需通过几何与支撑检查。\n\n负荷是算法的相对估计，不能换算为真人等级；几何通过不代表静态支撑全部通过。动态跳跃与连续动作尚未模拟。"
+      }
+    ],
+    "edit": {
+      "ownDetailHidden": true,
+      "activeOwnChoices": 0,
+      "oldReportInvalidated": true,
+      "recheck": "80/80"
+    },
+    "roundtrip": {
+      "file": "edited-roundtrip.json",
+      "ownAttributionCleared": true
+    },
+    "contact": {
+      "limb": "LF",
+      "placement": "hand-3",
+      "surface": "standing",
+      "poseResidualMm": 0
+    },
+    "responsive": [
+      {
+        "viewport": 1440,
+        "height": 1000
+      },
+      {
+        "viewport": 390,
+        "documentWidth": 385,
+        "overflow": false
+      },
+      {
+        "viewport": 556,
+        "overflow": false
+      }
+    ],
+    "mobile_comparison": {
+      "viewport": 390,
+      "document_client_width": 385,
+      "table_scroll_width": 650,
+      "table_client_width": 365,
+      "page_horizontal_overflow": false,
+      "comparison_scrolls_inside_region": true
+    },
+    "visual_review": {
+      "verdict": "SHIP",
+      "scope": "desktop 1440, mobile 390 and actual 556 screenshots; comparison and actual hand-to-foot state",
+      "p0_p1_p2_findings": 0,
+      "limits": "Static visual review, not a separate keyboard, contrast or climbing validation."
+    },
+    "console_after_final_engine_restart": {
+      "errors": 0,
+      "warnings": 0
+    },
+    "final_reload": {
+      "engine_restart": true,
+      "lateral_metrics": "7 hand / 6 foot; 14 of 18 installed holds; static release 4 of 13",
+      "standing_label": "LF · 踩面",
+      "explicit_foot_surface": "hand-3/standing",
+      "batch_digest_check": "network and cached packages must match current study record"
+    },
+    "roof_final_reload": {
+      "candidate_label": "屋檐 · 出口支撑备选方案",
+      "retained_original_layout": true,
+      "transfers_before_after": [
+        11,
+        11
+      ],
+      "effort_before_after": [
+        513.58059,
+        513.58059
+      ],
+      "zero_cost_change_explicit": true
+    }
+  },
+  "review": {
+    "visual": "SHIP; desktop 1440, mobile 390, actual user width 556; static visual scope only",
+    "code": "Network and cached own-route packages now must match the index digest. Regression covers new-batch mismatch, cached mismatch and missing digest. No other P0/P1/P2 found in bounded review."
+  },
+  "metadata_revalidation": {
+    "own_routes": "revalidation.json",
+    "fixtures": "fixtures-metadata-revalidation.json",
+    "search_rerun": false,
+    "purpose": "Reevaluate unchanged contact/search geometry after roof label-only correction; retain original generation provenance."
+  },
+  "limits": [
+    "风格是空间设计意图；实际动作与指标由独立搜索和检查得出，不是保证达到风格或V等级。",
+    "已声明踩面可复用；不会因为名称为手点就禁止脚，也不会把所有手部内缘自动当踩面。",
+    "一个岩点同时手脚占用仍保守禁止；不同面的手脚同时使用、抹脚、挂脚与动态尚未建模。",
+    "姿态几何通过不代表静态支撑通过，更不代表真人可攀；静力和消耗参数未标定，需定线员试攀。",
+    "有界束搜索并非穷举；预算内未找到完整走法不代表不可攀。",
+    "Only three saved 25-degree single-panel drafts; not trained difficulty estimation or proof of real-world climbability.",
+    "Feet completion enables installed stock; it neither adds physical points nor proves the minimal required foothold set."
+  ]
+}

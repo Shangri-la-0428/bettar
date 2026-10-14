@@ -864,7 +864,10 @@
                   "maxLength": 120
                 },
                 "contact_id": {
-                  "const": "main"
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 120,
+                  "description": "main resolves the placement-selected surface; another ID must name a declared grip_surface."
                 }
               },
               "required": [
@@ -889,7 +892,10 @@
                   "maxLength": 120
                 },
                 "contact_id": {
-                  "const": "main"
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 120,
+                  "description": "main resolves the placement-selected surface; another ID must name a declared grip_surface."
                 }
               },
               "required": [
@@ -914,7 +920,10 @@
                   "maxLength": 120
                 },
                 "contact_id": {
-                  "const": "main"
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 120,
+                  "description": "main resolves the placement-selected surface; another ID must name a declared grip_surface."
                 }
               },
               "required": [
@@ -939,7 +948,10 @@
                   "maxLength": 120
                 },
                 "contact_id": {
-                  "const": "main"
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 120,
+                  "description": "main resolves the placement-selected surface; another ID must name a declared grip_surface."
                 }
               },
               "required": [
@@ -976,7 +988,10 @@
                   "maxLength": 120
                 },
                 "contact_id": {
-                  "const": "main"
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 120,
+                  "description": "main resolves the placement-selected surface; another ID must name a declared grip_surface."
                 }
               },
               "required": [
@@ -1001,7 +1016,10 @@
                   "maxLength": 120
                 },
                 "contact_id": {
-                  "const": "main"
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 120,
+                  "description": "main resolves the placement-selected surface; another ID must name a declared grip_surface."
                 }
               },
               "required": [
@@ -1026,7 +1044,10 @@
                   "maxLength": 120
                 },
                 "contact_id": {
-                  "const": "main"
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 120,
+                  "description": "main resolves the placement-selected surface; another ID must name a declared grip_surface."
                 }
               },
               "required": [
@@ -1051,7 +1072,10 @@
                   "maxLength": 120
                 },
                 "contact_id": {
-                  "const": "main"
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 120,
+                  "description": "main resolves the placement-selected surface; another ID must name a declared grip_surface."
                 }
               },
               "required": [
@@ -1394,17 +1418,32 @@
     "route_constraints": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["allowed_contacts"],
+      "required": [
+        "allowed_contacts"
+      ],
       "properties": {
         "allowed_contacts": {
           "type": "object",
           "additionalProperties": false,
-          "required": ["LH", "RH", "LF", "RF"],
+          "required": [
+            "LH",
+            "RH",
+            "LF",
+            "RF"
+          ],
           "properties": {
-            "LH": {"$ref": "#/$defs/contactPlacementIds"},
-            "RH": {"$ref": "#/$defs/contactPlacementIds"},
-            "LF": {"$ref": "#/$defs/contactPlacementIds"},
-            "RF": {"$ref": "#/$defs/contactPlacementIds"}
+            "LH": {
+              "$ref": "#/$defs/contactPlacementIds"
+            },
+            "RH": {
+              "$ref": "#/$defs/contactPlacementIds"
+            },
+            "LF": {
+              "$ref": "#/$defs/contactPlacementIds"
+            },
+            "RF": {
+              "$ref": "#/$defs/contactPlacementIds"
+            }
           }
         }
       }
@@ -1435,7 +1474,11 @@
     "contactPlacementIds": {
       "type": "array",
       "uniqueItems": true,
-      "items": {"type": "string", "minLength": 1, "maxLength": 120}
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 120
+      }
     }
   },
   "allOf": [

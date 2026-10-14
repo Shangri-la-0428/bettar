@@ -87,7 +87,11 @@ def test_representative_ranking_prefers_verified_then_release_and_load():
 
 
 def test_no_sequence_retains_all_physical_holds_and_failure_is_bounded(monkeypatch):
-    request = study.read_json(ROOT / "fixtures" / "learned-wall-request.json")
+    # This checks failure retention, not the frozen historical model study.
+    # Use current registry bindings; historical study inputs remain unchanged.
+    from boulderlab.engine import default_request
+    request = default_request(profile="setting", setting_program="diagonal_balance",
+                              hold_source="assets", wall_profile="overhang")
     request["solver"].update(max_nfev=0, restarts=1)
     mask, _ = study.adapt_proposal(request, {"raw_selections": []})
     monkeypatch.setattr(study, "_sequence_search", lambda *a, **kw: ([], [{"termination_reason": "frontier_empty"}]))

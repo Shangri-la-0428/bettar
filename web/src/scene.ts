@@ -476,10 +476,11 @@ export class WallView {
       const hold = holdMap.get(placement.inventory_id); if (!hold) return;
       const frame = tryContactFrame(placement, hold, this.context(), contact.contact_id); if (!frame) return;
       const ring = new THREE.Mesh(new THREE.TorusGeometry(0.046, 0.007, 8, 30), new THREE.MeshBasicMaterial({ color: limbColors[limb], depthTest: false }));
-      this.applyFrame(ring, frame); ring.renderOrder = 10;
+      this.applyFrame(ring, frame); if (limb.endsWith('F')) ring.scale.set(.72, 1.2, 1); ring.renderOrder = 10;
       this.poseGroup.add(ring);
       const labelPosition = new THREE.Vector3(...transformPoint(frame, [offsets[limb][0], offsets[limb][1], .06]));
-      const label = this.label(limb, labelPosition, `contact-label ${limb.toLowerCase()}`); this.poseGroup.add(label);
+      const label = this.label(`${limb}${limb.endsWith('F') && contact.contact_id !== 'main' ? ' · 踩面' : ''}`, labelPosition, `contact-label ${limb.toLowerCase()}`);
+      label.element.dataset.contactId = contact.contact_id; label.element.dataset.placement = contact.placement_id; this.poseGroup.add(label);
     });
   }
 

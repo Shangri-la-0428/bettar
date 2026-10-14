@@ -1,0 +1,154 @@
+{
+  "code_hash": "sha256:b314a55a201d54bc48b04bfd5ba3ee571a1b200a025d26b7c0b1d7912289962d",
+  "fixtures": [
+    {
+      "path": "fixtures/catalog-10deg-bundle.json",
+      "bundle_digest": "sha256:09cc6d5fd1255fee786747d0f199d1c87bd3323dbf0bdd7ce3d5e931b90410e4",
+      "candidates": 3,
+      "p0_pass": 3
+    },
+    {
+      "path": "fixtures/catalog-demo-bundle.json",
+      "bundle_digest": "sha256:2c4d5e6d8c8c9eaee06349c766f8cd6d3fedcd009476d8d6743a9c14220746fd",
+      "candidates": 3,
+      "p0_pass": 3
+    },
+    {
+      "path": "fixtures/competition-10deg-bundle.json",
+      "bundle_digest": "sha256:c293cdff06a42fba269d93ff239a5d1213dc1ac6858a23fedc28224e21aa8e4f",
+      "candidates": 3,
+      "p0_pass": 0
+    },
+    {
+      "path": "fixtures/competition-demo-bundle.json",
+      "bundle_digest": "sha256:7f779f580980f2c8b1e5774ba1a8f9ead6cd573bfa70606deb869b4c9881bc1c",
+      "candidates": 3,
+      "p0_pass": 0
+    },
+    {
+      "path": "fixtures/demo-bundle.json",
+      "bundle_digest": "sha256:6694dda4522acf056a22f9054c4f08711144576cc447c03d0f38f84f7eb31b2e",
+      "candidates": 3,
+      "p0_pass": 3
+    },
+    {
+      "path": "fixtures/route-demo-bundle.json",
+      "bundle_digest": "sha256:65358a8f745d0e3ff61f131d67fb28ced565c32c07e240cbf281040dfd8da047",
+      "candidates": 3,
+      "p0_pass": 3
+    },
+    {
+      "path": "fixtures/route-mixed_flow-bundle.json",
+      "bundle_digest": "sha256:ebcc8354f1a2491478a726c1a357cd2bd418918807102c966d4cea1b1bd1c01a",
+      "candidates": 3,
+      "p0_pass": 3
+    },
+    {
+      "path": "fixtures/route-power_finish-bundle.json",
+      "bundle_digest": "sha256:76f4c88627b0287c4ecd0c98c084e5325962a45023494703935a9120e604fb44",
+      "candidates": 3,
+      "p0_pass": 3
+    },
+    {
+      "path": "fixtures/route-sustained_finish-bundle.json",
+      "bundle_digest": "sha256:7a5a7eb33af67b9727247517f56588511afe55f861d7074da22aa28d019ec7f2",
+      "candidates": 3,
+      "p0_pass": 3
+    },
+    {
+      "path": "fixtures/setting-demo-bundle.json",
+      "bundle_digest": "sha256:1cb595dcaaef2197cc7a5363794e07b9776f8b91137bfb29e1c5b5db796ab8e1",
+      "candidates": 1,
+      "p0_pass": 1
+    },
+    {
+      "path": "fixtures/setting-diagonal_balance-bundle.json",
+      "bundle_digest": "sha256:283aceefd349ec2bee5eb1a7d4069fb251993a1b4389b9a1ef4497df7e5047db",
+      "candidates": 1,
+      "p0_pass": 1
+    },
+    {
+      "path": "fixtures/setting-opposing_sidepulls-bundle.json",
+      "bundle_digest": "sha256:ca5a5ede1a14a537e424c8b3d7c202573861678033af66d954ddb52d11d9c51f",
+      "candidates": 1,
+      "p0_pass": 1
+    },
+    {
+      "path": "fixtures/setting-roof_exit-bundle.json",
+      "bundle_digest": "sha256:02f9bad3b34860ec20b626f16742c40e14c8bc7cf8c0fa935c6fbef4bef9d3f6",
+      "candidates": 1,
+      "p0_pass": 1
+    },
+    {
+      "path": "fixtures/setting-templates-diagonal_balance-bundle.json",
+      "bundle_digest": "sha256:6f50df62665987144892ac40227f292406b940fd0071580f1a8604c778666b58",
+      "candidates": 1,
+      "p0_pass": 1
+    },
+    {
+      "path": "fixtures/setting-templates-opposing_sidepulls-bundle.json",
+      "bundle_digest": "sha256:ed31bf4e41db45d1a7fc4bde13c3086abf649bfdf55ff4225e89777c32b8fbd6",
+      "candidates": 1,
+      "p0_pass": 1
+    },
+    {
+      "path": "fixtures/setting-templates-roof_exit-bundle.json",
+      "bundle_digest": "sha256:8f8aaae6ee2a5470f05c1eeb36be06344a085c02efe3e7cf1684398043715424",
+      "candidates": 1,
+      "p0_pass": 1
+    },
+    {
+      "path": "fixtures/style-demo-bundle.json",
+      "bundle_digest": "sha256:c9e961d3c106d02908f059a3f6be5361688d73f4c6e286cb1d01e56fce1a54d1",
+      "candidates": 3,
+      "p0_pass": 3
+    },
+    {
+      "path": "fixtures/style-power-bundle.json",
+      "bundle_digest": "sha256:0925bfefd11d12bb9f7544071035b624430f5abd5d096b3823285aa8caa28853",
+      "candidates": 3,
+      "p0_pass": 3
+    },
+    {
+      "path": "fixtures/style-sustained-bundle.json",
+      "bundle_digest": "sha256:73bc7977f1e3ac1dded89445d8cf77e1a200ecc294246ad6b0a373e4c51678c2",
+      "candidates": 3,
+      "p0_pass": 3
+    },
+    {
+      "path": "fixtures/style-technical-bundle.json",
+      "bundle_digest": "sha256:344ab1098d6bd3e8c27e64b3f8e8ed54a0ec72f56bfaa5ecd9eccf5ab6b01795",
+      "candidates": 3,
+      "p0_pass": 3
+    },
+    {
+      "path": "fixtures/wall-arete-bundle.json",
+      "bundle_digest": "sha256:4cae456d62715a567bc7c8a93415c3de7385b490f81bfb57a77228384cafd2aa",
+      "candidates": 1,
+      "p0_pass": 1
+    },
+    {
+      "path": "fixtures/wall-dihedral-bundle.json",
+      "bundle_digest": "sha256:4c2c91888e12e88f99bc3a7d0bd0c7fb5fe75b3b3c11c6565aef0febe7f2d4ae",
+      "candidates": 1,
+      "p0_pass": 1
+    },
+    {
+      "path": "fixtures/wall-overhang-bundle.json",
+      "bundle_digest": "sha256:79b06534246f5a8ab07c40511d9c54431e1f1c0727ef0b43d021d0bb985311ae",
+      "candidates": 1,
+      "p0_pass": 1
+    },
+    {
+      "path": "fixtures/wall-roof-bundle.json",
+      "bundle_digest": "sha256:bcd2e358ddf55af42f00613156bb18e819100b2c26d256bd06a467e6c929a0a4",
+      "candidates": 2,
+      "p0_pass": 2
+    }
+  ],
+  "fixture_count": 24,
+  "own_routes": 3,
+  "own_route_evidence_bundles": 9,
+  "roundtrip_candidates": 2,
+  "elapsed_seconds": 22.52
+}

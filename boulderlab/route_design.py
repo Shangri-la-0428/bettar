@@ -47,8 +47,13 @@ LIMITATIONS = [
 ]
 
 
+def _contact_key(ref):
+    """Hashable search identity retains the surface without changing old main keys."""
+    return ref["placement_id"] if ref.get("contact_id", "main") == "main" else (ref["placement_id"], ref["contact_id"])
+
+
 def _ref(pid):
-    return {"placement_id": pid, "contact_id": "main"}
+    return {"placement_id": pid[0], "contact_id": pid[1]} if isinstance(pid, tuple) else {"placement_id": pid, "contact_id": "main"}
 
 
 def make_brief(goal="power", rhythm="late_crux"):
@@ -111,7 +116,7 @@ def _clip(value):
     return max(0., min(1., float(value)))
 
 
-def _context(request, placements):
+def _context(request, placements, *, all_surfaces=False):
     inventory = {h["id"]: h for h in request["scene"]["inventory"]}
     frames = placement_frames(placements, inventory, request["scene"]["angle_deg"], request["scene"].get("wall_panels"))
     out = {}
@@ -122,27 +127,40 @@ def _context(request, placements):
         pull = np.asarray(contact.get("pull_direction", item.get("pull_direction", [0, -1, 0])), float)
         _, rot = frames[p["id"]]
         out[p["id"]] = {"position": contact_world(request, p, item, placements, frames), "uv": np.array([p["u"], p["v"]]),
-                         "attrs": attrs, "limbs": contact["limbs"], "pull": rot @ pull,
+                         "attrs": attrs, "limbs": contact["limbs"], "surface_id": contact.get("id", "main"), "pull": rot @ pull,
                          "normal": rot @ np.asarray(contact.get("normal", [0., 0., 1.]), float),
                          "key": (p["v"], p["u"], p["rotation_deg"], item["type"], item["width"], item["height"], item["depth"])}
         if request["scene"].get("wall_panels"):
             out[p["id"]]["uv"] = (wall_basis(request["scene"]["angle_deg"]).T @ out[p["id"]]["position"])[:2]
             out[p["id"]]["inclination"] = max(0., min(1., -float(rot[1, 2])))
+    if all_surfaces:
+        for placement in placements:
+            item = inventory[placement["inventory_id"]]
+            primary = selected_contact(placement, item)
+            for surface in item.get("grip_surfaces", []):
+                key = (placement["id"], surface["id"])
+                record = dict(out[placement["id"]])
+                _, rotation = frames[placement["id"]]
+                record.update(position=contact_world(request, placement, item, placements, frames, contact_id=surface["id"]),
+                              limbs=surface["limbs"], surface_id=surface["id"], normal=rotation @ np.asarray(surface.get("normal", [0,0,1]), float),
+                              pull=rotation @ np.asarray(surface.get("pull_direction", item.get("pull_direction", [0,-1,0])), float))
+                record["uv"] = (wall_basis(request["scene"]["angle_deg"]).T @ record["position"])[:2]
+                out[key] = record
     return out
 
 
 def _metrics(request, context, before, limb, target):
-    source = before[limb]["placement_id"]
+    source = _contact_key(before[limb])
     old, dest = context[source], context[target]
     delta = dest["position"]-old["position"]
     arm = request["body"]["upper_arm"]+request["body"]["forearm"]
     span = float(np.linalg.norm(delta))/arm
     inclination = math.sin(math.radians(request["scene"]["angle_deg"]))
     if request["scene"].get("wall_panels"):
-        contact_ids = [ref["placement_id"] for key, ref in before.items() if key.endswith("H") and ref and key != limb]
+        contact_ids = [_contact_key(ref) for key, ref in before.items() if key.endswith("H") and ref and key != limb]
         if limb.endswith("H"): contact_ids.append(target)
         inclination = sum(context[pid]["inclination"] for pid in contact_ids)/max(1, len(contact_ids))
-    others = {l: context[r["placement_id"]] for l, r in before.items() if r and l != limb}
+    others = {l: context[_contact_key(r)] for l, r in before.items() if r and l != limb}
     feet = [p for l, p in others.items() if l.endswith("F")]
     # A down-facing roof tread is not the same standing/recovery opportunity
     # as the same foothold facing upward. This is a gravity-aware proxy only;
@@ -192,7 +210,7 @@ def _cost(metrics, target, goal, accumulated):
 
 
 def _valid_contact_geometry(context, contacts, body, solver=None):
-    points = {limb: context[ref["placement_id"]]["position"] for limb, ref in contacts.items() if ref}
+    points = {limb: context[_contact_key(ref)]["position"] for limb, ref in contacts.items() if ref}
     solver = solver or {}
     tolerance = solver.get("contact_tolerance_m", 0.)
     epsilon = solver.get("epsilon_geometry_m", 0.)
@@ -320,7 +338,7 @@ def analyze_route(request, candidate):
     if request.get("profile") != "style":
         return None
     brief = request["route_design"]
-    context = _context(request, candidate["placements"])
+    context = _context(request, candidate["placements"], all_surfaces=True)
     states = {state["id"]: state for state in candidate["states"]}
     accumulated, moves, hand_index = 0., [], 0
     objective = 0.
@@ -328,7 +346,7 @@ def analyze_route(request, candidate):
         before = states[event["from_state"]]["contacts"]
         after = states[event["to_state"]]["contacts"]
         limb = event["limb"]
-        target = after[limb]["placement_id"]
+        target = _contact_key(after[limb])
         metrics = _metrics(request, context, before, limb, target)
         phase = brief["phases"][min(hand_index, 3)]
         previous_load = accumulated
@@ -336,7 +354,7 @@ def analyze_route(request, candidate):
         if limb.endswith("H"):
             objective += _cost(metrics, phase["target"], brief["style_goal"], previous_load)
         moves.append({"event_index": index, "hand_move_index": hand_index, "phase_id": phase["id"], "limb": limb,
-                      "from_placement_id": before[limb]["placement_id"], "to_placement_id": target,
+                      "from_placement_id": before[limb]["placement_id"], "to_placement_id": after[limb]["placement_id"],
                       **metrics, "accumulated_load": accumulated, "phase_target": phase["target"],
                       "burden": metrics["load"]+.12*previous_load})
         if limb.endswith("H"): hand_index += 1

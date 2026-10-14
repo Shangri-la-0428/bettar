@@ -12,6 +12,8 @@ import { betaAuditHTML, betaPathCount } from './beta-audit';
 import { settingExamplesHTML, settingStudyHTML, settingNames, movementVocabularyHTML, gymReferencesHTML, settingWorkflowHTML } from './setting-design';
 import { learnedExperimentHTML, learnedRunHTML, learnedSourceNames } from './learned-experiment';
 import type { LearnedExperiment, LearnedRun } from './learned-experiment';
+import { contactPresentation, ownRouteChoicesHTML, ownRouteDetailHTML, readOwnRouteBundle } from './own-route-study';
+import type { OwnRouteStudy, OwnRoute } from './own-route-study';
 import type { BetaAudit, Bundle, Candidate, Defaults, Evaluation, Placement, Request, Review, Status, StyleExample, SettingReport } from './types';
 import { escape as esc, holdDisplayName, holdFamily, holdRoleName, holdNames, limbNames, limbs, shortHoldName, statusLabels } from './types';
 
@@ -52,12 +54,12 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
     <section class="setter-brief" aria-labelledby="setter-brief-title">
       <div class="setter-brief-heading"><h1 id="setter-brief-title">定线意图</h1><p>先选风格与目标，再在岩壁上查看草稿。</p></div>
       <form id="draft-form" class="draft-form">
-        <label class="control">线路风格<select id="draft-style"><option value="mixed">混合</option><option value="power">力量</option><option value="balance">技巧与平衡</option><option value="sustained">持续输出</option><option value="coordination">动态协调</option></select></label>
-        <label class="control">目标难度<select id="draft-grade"><option value="V3">V3</option><option value="V4">V4</option><option value="V5">V5</option></select></label>
-        <label class="control draft-wall-control">墙形与区域<select id="draft-wall"><option value="learned-overhang">25° 单面墙 · 全墙</option><option value="roof">屋檐 · 转出区域</option><option value="dihedral">内角 · 两侧墙面</option><option value="arete">外角 · 两侧墙面</option></select></label>
+        <label class="control">线路风格<select id="draft-style"><option value="mixed">对比三种思路</option><option value="power">力量</option><option value="balance">技巧与平衡</option><option value="sustained">持续输出</option></select></label>
+        <label class="control">目标难度<select id="draft-grade"><option value="ungraded">待试攀定级</option><option value="V3">V3 · 意图</option><option value="V4">V4 · 意图</option><option value="V5">V5 · 意图</option></select></label>
+        <label class="control draft-wall-control">墙形与区域<select id="draft-wall"><option value="own-overhang">25° 单面墙 · 规则线路</option><option value="roof">屋檐 · 转出区域</option><option value="dihedral">内角 · 两侧墙面</option><option value="arete">外角 · 两侧墙面</option></select></label>
         <button id="draft-open" class="button primary" type="submit">查看草稿 ${icon('chevron')}</button>
       </form>
-      <p id="draft-condition-note" class="draft-condition-note">风格作为意图记录，当前模型尚未按风格生成。目标难度用于选择保存的模型条件，仍待真人试攀定级。</p>
+      <p id="draft-condition-note" class="draft-condition-note">风格对应不同空间布局；等级只记录为意图，待定线员调整与试攀。</p>
     </section>
     <details class="advanced-generation"><summary>高级生成与研究参数<span>人体、库存、摆点与搜索实验</span></summary>
     <section class="setup-strip" aria-labelledby="setup-title">
@@ -85,8 +87,9 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
     </details>
     </details>
     <div id="notice" class="notice" role="alert" hidden></div>
-    <section id="learned-experiment" class="learned-experiment" aria-label="学习生成对照"></section>
-    <details class="saved-reference-drafts"><summary>其他规则草稿与墙形</summary>
+    <section id="own-route-choices" class="own-route-section" aria-label="规则线路对照"></section>
+    <details class="historical-experiments"><summary>历史模型实验 · BetaZero<span>暂停使用，仅保留已保存记录</span></summary><section id="learned-experiment" class="learned-experiment" aria-label="历史学习生成对照"></section></details>
+    <details class="saved-reference-drafts"><summary>其他规则草稿与墙形</summary><p id="reference-load-status" class="field-hint" hidden></p>
     <section id="wall-examples" class="wall-examples" aria-label="查看已保存墙形实验" hidden></section>
     <section id="setting-examples" class="setting-examples" aria-label="手脚协同摆点实验" hidden></section>
     <section id="style-examples" class="style-examples" aria-label="同墙风格示例对照" hidden></section>
@@ -114,6 +117,7 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
           <div id="canvas-hint" class="canvas-hint">拖动旋转 · 滚轮缩放 · 点击岩点近看</div>
         </div>
         <div id="route-inventory-summary" class="route-inventory-summary"></div>
+        <section id="own-route-detail" class="own-route-detail" aria-label="当前规则线路的实际走法" hidden></section>
         <section id="learned-study" class="learned-study" aria-label="当前学习生成实验与配对对照" hidden></section>
         <details class="mechanics-disclosure"><summary>受力、摩擦与支撑检查<span>展开查看模型估计与具体状态</span></summary><section id="mechanics-study" class="mechanics-study" aria-label="准静态受力与摩擦检查" hidden></section></details>
         <section id="setting-study" class="setting-study" aria-label="摆点调整与备选走法" hidden></section>
@@ -133,7 +137,7 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
       </section>
       <aside class="inspector" aria-label="编辑与检查">
         <div class="inspector-heading"><h2>岩点工作台</h2><span id="revision-badge" class="small-badge">—</span></div>
-        <section class="edit-section" aria-label="选中岩点近看与编辑"><div class="section-heading"><h3 id="selected-hold-title">选择岩点</h3><span id="hold-model-kind" class="small-note">程序示意模型</span></div><div id="hold-preview" class="hold-preview" aria-label="选中岩点三维近看，可拖动旋转"></div><p class="preview-caption">型号近看 · 青色为面法向，白色为声明拉向</p><div id="hold-editor"><p class="muted">点击画布或下方岩点库选择岩点。</p></div><div id="hold-asset-details"></div><p class="model-limit">模板区域是可接触面的设计假设，未验证真实摩擦、抓握或受力。</p><details class="model-details"><summary>模型与检查范围</summary><p id="hold-model-scope">原创参数模板，不是真实岩点扫描。浅色区域为声明接触面；当前每件岩点选择一个面，以面上的代表点计算姿态。朝向与安装关系会进入几何计算。抓握面上的白色箭头是声明拉向；“显示求解的力”中的箭头来自独立准静态报告。尚未搜索面内任意抓握位置。</p></details></section>
+        <section class="edit-section" aria-label="选中岩点近看与编辑"><div class="section-heading"><h3 id="selected-hold-title">选择岩点</h3><span id="hold-model-kind" class="small-note">程序示意模型</span></div><div id="hold-preview" class="hold-preview" aria-label="选中岩点三维近看，可拖动旋转"></div><p class="preview-caption">型号近看 · 青色为面法向，白色为声明拉向</p><div id="hold-editor"><p class="muted">点击画布或下方岩点库选择岩点。</p></div><div id="hold-asset-details"></div><p class="model-limit">模板区域是可接触面的设计假设，未验证真实摩擦、抓握或受力。</p><details class="model-details"><summary>模型与检查范围</summary><p id="hold-model-scope">原创参数模板，不是真实岩点扫描。浅色区域为声明接触面；每个动作引用具体接触面；同一岩点可以先抓握、再踩其声明的脚面。每个面以代表点计算姿态。朝向与安装关系会进入几何计算。抓握面上的白色箭头是声明拉向；“显示求解的力”中的箭头来自独立准静态报告。尚未搜索面内任意抓握位置。</p></details></section>
         <section class="inspector-section check-section"><div class="section-heading"><h3>当前方案检查</h3></div><div id="summary" class="summary-panel"><p class="muted">选择方案后查看计算结果。</p></div><details class="checks-disclosure"><summary>展开检查明细 <span id="check-count" class="small-note"></span>${icon('chevron', 'details-chevron')}</summary><div id="checks" tabindex="0" aria-label="检查明细，可滚动"></div></details></section>
         <section class="inspector-section"><div class="section-heading"><h3>方案对照</h3><span class="small-note">保留同一视角</span></div><label class="sr-only" for="compare">选择对照方案</label><select id="compare" class="full-select" disabled><option value="">不叠加对照</option></select><div id="comparison-detail"></div></section>
         <section class="inspector-section limits-section"><h3>目前未验证</h3><div id="limits"></div><p>几何与姿态结果不等于真人能够完成，也不代表攀爬等级。</p></section>
@@ -189,9 +193,14 @@ let learnedError = '';
 let activeLearnedRunId = '';
 let learnedComparisonId = '';
 const learnedBundles = new Map<string, Bundle>();
-const draftStyleNames: Record<string, string> = { mixed: '混合', power: '力量', balance: '技巧与平衡', sustained: '持续输出', coordination: '动态协调' };
+let ownRouteStudy: OwnRouteStudy | undefined;
+let activeOwnRouteId = '';
+let ownRouteError = '';
+const ownRouteBundles = new Map<string, Bundle>();
+const ownRouteStyleIds: Record<string, string> = { mixed: 'lateral-balance', balance: 'lateral-balance', power: 'compact-strength', sustained: 'sustained-transfer' };
+const draftStyleNames: Record<string, string> = { mixed: '对比三种思路', power: '力量', balance: '技巧与平衡', sustained: '持续输出', coordination: '动态协调' };
 let activeDraftIntent: { style: string; grade: string; wall: string; learned: boolean } | undefined;
-try { const saved = localStorage.getItem('bettar.draft-style'); if (saved && draftStyleNames[saved]) $<HTMLSelectElement>('#draft-style').value = saved; } catch { /* Intent storage is optional. */ }
+try { const saved = localStorage.getItem('bettar.draft-style'); if (saved && ownRouteStyleIds[saved]) $<HTMLSelectElement>('#draft-style').value = saved; } catch { /* Intent storage is optional. */ }
 let palette = getScenePalette(defaultPaletteId);
 try { palette = getScenePalette(localStorage.getItem('betar.scene-palette') || defaultPaletteId); } catch { /* Storage is optional; rendering remains local. */ }
 $<HTMLSelectElement>('#scene-palette').value = palette.id;
@@ -235,33 +244,68 @@ function selectedSettingAlternative() { return activeSettingReport()?.allowed_al
 function viewingAlternative() { return !!selectedBeta() || !!selectedSettingAlternative(); }
 function current(): Candidate | undefined { return selectedSettingAlternative()?.candidate || selectedBeta()?.candidate || sourceCandidate(); }
 function activeLearnedRun() { return learnedExperiment?.runs.find(run => run.id === activeLearnedRunId); }
+function activeOwnRoute() { return ownRouteStudy?.routes.find(route => route.id === activeOwnRouteId); }
+function clearOwnRoute() { activeOwnRouteId = ''; ownRouteError = ''; }
 function clearLearnedExperiment() { activeLearnedRunId = ''; learnedComparisonId = ''; learnedOpen = false; learnedError = ''; }
 function syncDraftControls() {
-  const learning = $<HTMLSelectElement>('#draft-wall').value === 'learned-overhang';
+  const own = $<HTMLSelectElement>('#draft-wall').value === 'own-overhang';
   $('#draft-form').querySelectorAll<HTMLInputElement | HTMLButtonElement | HTMLSelectElement>('input,button,select').forEach(el => { el.disabled = busy; });
   $('#draft-open').innerHTML = busy ? '<span class="loading-spinner small"></span>处理中…' : `查看草稿 ${icon('chevron')}`;
-  $<HTMLSelectElement>('#draft-grade').disabled = busy || !learning;
-  $('#draft-condition-note').textContent = learning ? '风格作为意图记录，当前模型尚未按风格生成。目标难度用于选择保存的模型条件，仍待真人试攀定级。' : '该墙形仅有已有规则草稿；目标等级与风格未参与生成。风格只保留为定线意图，供人工调整参考。';
+  $('#draft-condition-note').textContent = own ? '风格对应三份已保存的规则搜索结果；目标等级只记录为意图，不影响这批结果，待定线员调整与试攀。' : '该墙形展示已有规则草稿；风格与目标等级只记录为意图，尚未参与该墙形的生成。';
 }
 function renderDraftContext() {
   const host = $('#draft-context'); host.hidden = !bundle;
   if (!bundle) return;
-  const run = activeLearnedRun();
+  const run = activeLearnedRun(), own = activeOwnRoute();
   const wallName = bundle.request.setting_design?.wall_profile ? wallProfileNames[bundle.request.setting_design.wall_profile] : `${bundle.request.scene.angle_deg}° 单面墙`;
-  const source = run ? learnedSourceNames[run.source] : bundle.request.route_constraints ? '限定选点草稿' : '已有规则草稿';
-  host.innerHTML = `<strong>当前草稿</strong><span>${esc(wallName || '单面墙')} · ${esc(source)}${run?.condition ? ` · ${esc(run.condition)} 模型条件` : ''}</span>${activeDraftIntent ? `<span>意图：${esc(draftStyleNames[activeDraftIntent.style])}</span><small>${activeDraftIntent.learned ? '风格尚未参与生成；目标等级待试攀确认。' : '目标等级与风格未参与这份规则草稿的生成。'}</small>` : '<small>上方条件用于下一次查看草稿。</small>'}`;
+  const source = own ? own.label : run ? learnedSourceNames[run.source] : bundle.request.route_constraints ? '限定选点草稿' : '规则草稿';
+  host.innerHTML = `<strong>当前草稿</strong><span>${esc(wallName || '单面墙')} · ${esc(source)}${run?.condition ? ` · ${esc(run.condition)} 模型条件` : ''}</span>${activeDraftIntent ? `<span>意图：${esc(draftStyleNames[activeDraftIntent.style])}${activeDraftIntent.grade !== 'ungraded' ? ` · ${esc(activeDraftIntent.grade)}` : ''}</span><small>${own ? '风格映射到已保存的摆点与搜索目标；目标等级不参与计算，待试攀确认。' : '这份已有草稿未按上方风格或目标等级重新生成。'}</small>` : own ? '<small>手与脚按每个动作的接触面区分；允许先抓、后踩同一个岩点。</small>' : '<small>上方条件用于下一次查看草稿。</small>'}`;
 }
 async function viewIntentDraft(event: SubmitEvent) {
   event.preventDefault(); if (busy) return;
   const style = $<HTMLSelectElement>('#draft-style').value, grade = $<HTMLSelectElement>('#draft-grade').value, wall = $<HTMLSelectElement>('#draft-wall').value;
   const previous = bundle;
-  if (wall === 'learned-overhang') await openLearnedExperiment(grade);
+  if (wall === 'own-overhang') await openOwnRouteStudy(ownRouteStyleIds[style]);
   else await loadWallExample(wall);
   if (bundle && bundle !== previous) {
-    activeDraftIntent = { style, grade, wall, learned: wall === 'learned-overhang' };
+    activeDraftIntent = { style, grade, wall, learned: false };
     renderDraftContext();
     $('#draft-context').scrollIntoView({ block: 'start', behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
   }
+}
+function renderOwnRouteStudy() {
+  const choices = $('#own-route-choices'), comparisonOpen = choices.querySelector<HTMLDetailsElement>('.own-route-compare')?.open;
+  choices.innerHTML = ownRouteChoicesHTML(ownRouteStudy, activeOwnRouteId, busy, ownRouteError);
+  const comparison = choices.querySelector<HTMLDetailsElement>('.own-route-compare'); if (comparison && comparisonOpen) comparison.open = true;
+  const host = $('#own-route-detail'), route = activeOwnRoute(), candidate = current();
+  host.hidden = !route || !bundle || !candidate || viewingAlternative();
+  host.innerHTML = !host.hidden && route && bundle && candidate ? ownRouteDetailHTML(route, bundle, candidate, evaluation(), isStale()) : '';
+}
+async function readOwnRoute(route: OwnRoute) {
+  const path = `/api/own-routes-study/routes/${encodeURIComponent(route.id)}`;
+  const loaded = await readOwnRouteBundle(route, ownRouteBundles, () => api<Bundle>(path));
+  const preserveView = !!activeOwnRouteId;
+  acceptBundle(structuredClone(loaded), true, !preserveView);
+  activeOwnRouteId = route.id; ownRouteError = '';
+  $<HTMLSelectElement>('#draft-wall').value = 'own-overhang';
+  const style = Object.entries(ownRouteStyleIds).find(([key, value]) => key !== 'mixed' && value === route.id)?.[0];
+  if (style) $<HTMLSelectElement>('#draft-style').value = style;
+  renderAll();
+}
+async function openOwnRouteStudy(routeId?: string) {
+  if (busy) return;
+  setBusy(true, '读取规则线路…'); ownRouteError = '';
+  try {
+    if (!ownRouteStudy) {
+      const next = await api<OwnRouteStudy>('/api/own-routes-study');
+      if (next.schema_version !== 'own-routes-study-v1' || !Array.isArray(next.routes)) throw new Error('规则线路记录的格式无法识别。');
+      ownRouteStudy = next; ownRouteBundles.clear();
+    }
+    const route = ownRouteStudy.routes.find(item => item.id === routeId) || ownRouteStudy.routes[0];
+    if (!route) throw new Error('尚无保存的规则线路。');
+    await readOwnRoute(route);
+  } catch (error) { ownRouteError = `线路未切换：${error instanceof Error ? error.message : String(error)}。当前场景保持不变。`; }
+  finally { setBusy(false); renderOwnRouteStudy(); }
 }
 function renderLearnedExperiment() {
   const host = $('#learned-experiment'), recordsOpen = host.querySelector<HTMLDetailsElement>('.learned-records')?.open, batchOpen = host.querySelector<HTMLDetailsElement>('.learned-batch')?.open;
@@ -466,7 +510,7 @@ function setBusy(value: boolean, label?: string) {
   syncProfileControls();
   syncDraftControls();
   syncToolState();
-  renderEditor(); renderBetaAudit(); renderLearnedExperiment();
+  renderEditor(); renderBetaAudit(); renderLearnedExperiment(); renderOwnRouteStudy();
 }
 
 function syncProfileControls() {
@@ -568,6 +612,7 @@ function populateControls(request: Request) {
 
 function acceptBundle(next: Bundle, addHistory = true, resetView = true, learnedRunId = '') {
   clearBetaAudit();
+  clearOwnRoute();
   if (!next.request || !Array.isArray(next.candidates) || !Array.isArray(next.evaluations)) throw new Error('结果包缺少场景、候选或评价数据。');
   if (!learnedRunId) clearLearnedExperiment();
   else activeLearnedRunId = learnedRunId;
@@ -590,7 +635,7 @@ function acceptBundle(next: Bundle, addHistory = true, resetView = true, learned
 
 function renderAll() {
   ensureSelection();
-  renderCandidates(); renderSummary(); renderEditor(); renderLibrary(); renderChecks(); renderSteps(); renderComparison(); renderReviews(); renderBrief(); renderStyleStudy(); renderRouteInventory(); renderBetaAudit(); renderSettingStudy(); renderMechanics(); renderLearnedExperiment(); renderDraftContext(); updateScene(); syncToolState();
+  renderCandidates(); renderSummary(); renderEditor(); renderLibrary(); renderChecks(); renderSteps(); renderComparison(); renderReviews(); renderBrief(); renderStyleStudy(); renderRouteInventory(); renderBetaAudit(); renderSettingStudy(); renderMechanics(); renderLearnedExperiment(); renderOwnRouteStudy(); renderDraftContext(); updateScene(); syncToolState();
   document.querySelectorAll<HTMLButtonElement>('[data-action="export-bundle"], [data-action="export-review"], [data-action="save-review"]').forEach((button) => { button.disabled = busy || !bundle || (button.dataset.action === 'save-review' && viewingAlternative()); });
   const candidate = current();
   $('#revision-badge').textContent = candidate ? `修订 ${candidate.revision}${viewingAlternative() ? ' · 替代走法' : ''}` : '—';
@@ -721,8 +766,9 @@ function renderEditor() {
   const assetResolution = hold ? resolveHoldAsset(hold) : undefined;
   $('#hold-model-kind').textContent = assetResolution?.kind === 'asset' ? '外部网格' : assetResolution?.kind === 'unavailable' ? '资产未匹配' : '参数模板';
   $('#hold-asset-details').innerHTML = hold ? holdAssetDetailsHTML(hold, surface) : '';
+  const usedSurfaces = placement && hold ? [...new Set(current()?.states.flatMap(state => Object.entries(state.contacts).flatMap(([limb, contact]) => contact?.placement_id === placement.id ? [`${limbNames[limb as import('./types').Limb]} · ${contactPresentation(contact, limb as import('./types').Limb, placement, hold).surfaceLabel}`] : [])) || [])] : [];
   $('.model-limit').textContent = assetResolution && assetResolution.kind !== 'template' ? '真实网格形状与实验接触标注；来源尺度、抓握能力和受力仍按当前声明的假设处理。' : '模板区域是可接触面的设计假设，未验证真实摩擦、抓握或受力。';
-  $('#hold-model-scope').textContent = assetResolution && assetResolution.kind !== 'template' ? '外部三角网格用于画布、近看和拾取；浅色区域裁切自网格表面。每件岩点选择一个面，以标注代表点计算姿态。白色箭头是声明拉向，求解力另列；尚未搜索面内任意抓握位置。' : '原创参数模板，不是真实岩点扫描。浅色区域为声明接触面；每件岩点选择一个面，以面上的代表点计算姿态。白色箭头是声明拉向，求解力另列；尚未搜索面内任意抓握位置。';
+  $('#hold-model-scope').textContent = assetResolution && assetResolution.kind !== 'template' ? '外部三角网格用于画布、近看和拾取；浅色区域裁切自网格表面。每次接触引用具体表面，以标注代表点计算姿态；同一岩点可使用不同的抓握面与踩面。白色箭头是声明拉向，求解力另列；尚未搜索面内任意抓握位置。' : '原创参数模板，不是真实岩点扫描。浅色区域为声明接触面；每次接触引用具体表面，以面上的代表点计算姿态；同一岩点可先抓后踩。白色箭头是声明拉向，求解力另列；尚未搜索面内任意抓握位置。';
   $('#selected-hold-title').textContent = hold ? `${shortHoldName(hold, inventory)} · ${holdDisplayName(hold)}` : '选择岩点';
   const parentOptions = hold?.type === 'volume' ? [] : candidate.placements.filter(p => p.id !== placement?.id && !p.mount).flatMap(p => {
     const parent = inventory.find(h => h.id === p.inventory_id);
@@ -737,10 +783,11 @@ function renderEditor() {
   const hasChildren = !!placement && candidate.placements.some(p => p.mount?.parent_id === placement.id);
   const removeBlocked = inRoute || hasChildren;
   $('#hold-editor').innerHTML = `<label class="sr-only" for="hold-select">选择库存岩点</label><select id="hold-select" class="full-select">${inventory.map(h => `<option value="${esc(h.id)}" ${h.id === selectedInventory ? 'selected' : ''}>${esc(shortHoldName(h, inventory))} · ${esc(holdDisplayName(h))}</option>`).join('')}</select>
+    ${usedSurfaces.length ? `<p class="hold-used-surfaces"><strong>本走法实际接触</strong>${usedSurfaces.map(label => `<span>${esc(label)}</span>`).join('')}</p>` : ''}
     ${hold ? `<div class="hold-specs"><span>${assetResolution?.kind === 'asset' && !assetResolution.asset.scale.verified ? '实验宽 × 高 × 深' : '宽 × 高 × 深'}<strong>${[hold.width, hold.height, hold.depth].map(n => Math.round(n * 1000)).join(' × ')} mm</strong></span><span>库存状态<strong>${placement ? inRoute ? '已安装 · 线路使用' : '已安装 · 线路未用' : '未安装 · 可用'}</strong></span><span>适用接触<strong id="surface-limbs">${(surface?.limbs || hold.contact.limbs).map(limb => limbNames[limb]).join(' / ')}</strong></span></div>` : ''}
     ${hold ? `<p class="hold-taxonomy">${esc(holdNames[holdFamily(hold)] || hold.type)}<span>潜在用途：${esc(holdRoleName(hold))} · 本动作接触以所选表面为准</span></p>` + holdAttributesHTML(hold) : ''}
     ${hold ? `<form id="edit-form">
-      ${hold.grip_surfaces?.length || missingSurface ? `<label class="editor-control">当前接触面<select id="surface-select" name="contact_surface_id" ${disabled ? 'disabled' : ''}>${missingSurface ? `<option value="${esc(surfaceId)}" selected>未识别接触面 · ${esc(surfaceId)}</option>` : ''}${(hold.grip_surfaces || []).map(item => `<option value="${esc(item.id)}" ${item.id === surfaceId ? 'selected' : ''}>${esc(item.label)}</option>`).join('')}</select></label><p class="field-hint surface-explanation">${hold.asset_id ? '浅色区域来自本资产三角面。' : '浅色为模板接触区域。'}整条线路共用所选面，以标注代表点计算姿态。</p>` : ''}
+      ${hold.grip_surfaces?.length || missingSurface ? `<label class="editor-control">默认接触面<select id="surface-select" name="contact_surface_id" ${disabled ? 'disabled' : ''}>${missingSurface ? `<option value="${esc(surfaceId)}" selected>未识别接触面 · ${esc(surfaceId)}</option>` : ''}${(hold.grip_surfaces || []).map(item => `<option value="${esc(item.id)}" ${item.id === surfaceId ? 'selected' : ''}>${esc(item.label)}</option>`).join('')}</select></label><p class="field-hint surface-explanation">${hold.asset_id ? '浅色区域来自本资产三角面。' : '浅色为模板接触区域。'}这里修改 main 接触的默认面；明确引用其他面的动作保持各自接触面。手抓面与脚踩面分别检查。</p>` : ''}
       <label class="editor-control">安装位置<select id="mount-select" name="mount" ${disabled ? 'disabled' : ''}>${panels.length ? panels.map(item => `<option value="panel:${esc(item.id)}" ${`panel:${item.id}` === mountValue ? 'selected' : ''}>${esc(item.label)} · 墙面分区</option>`).join('') : '<option value="">直接安装在墙面</option>'}${missingMount ? `<option value="${esc(mountValue)}" selected>无效安装面 · 请重新选择</option>` : ''}${parentOptions.map(item => `<option value="${esc(item.value)}" ${item.value === mountValue ? 'selected' : ''}>${esc(item.label)}</option>`).join('')}</select></label>
       ${placement?.mount ? `<button class="text-button" type="button" data-action="focus-parent">查看组合安装 ↗</button>` : ''}
       <div class="numeric-grid"><label><span id="u-coordinate-label">${placement?.mount || panel ? '面内 u · m' : '水平 u · m'}</span><input name="u" type="number" step="any" value="${placement?.u ?? 0}" required ${disabled ? 'disabled' : ''}/></label><label><span id="v-coordinate-label">${placement?.mount || panel ? '面内 v · m' : '沿墙 v · m'}</span><input name="v" type="number" step="any" value="${placement?.v ?? 1}" required ${disabled ? 'disabled' : ''}/></label><label>旋转 · °<input name="rotation_deg" type="number" step="any" value="${placement?.rotation_deg ?? 0}" required ${disabled ? 'disabled' : ''}/></label></div>
@@ -830,7 +877,13 @@ function renderSteps() {
     if (delta) stepList.scrollBy({ left: delta, behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
   }
   renderMovementIntent();
-  $('#contact-strip').innerHTML = state ? limbs.map((limb) => `<span class="limb-contact"><i class="limb-dot ${limb.toLowerCase()}"></i><b>${limb}</b><span>${limbNames[limb]}</span><strong>${esc(state.contacts[limb]?.placement_id || '释放')}</strong></span>`).join('') : '';
+  $('#contact-strip').innerHTML = state ? limbs.map((limb) => {
+    const contact = state.contacts[limb];
+    const placement = candidate.placements.find(item => item.id === contact?.placement_id);
+    const hold = bundle?.request.scene.inventory.find(item => item.id === placement?.inventory_id);
+    const detail = contact ? contactPresentation(contact, limb, placement, hold) : undefined;
+    return `<span class="limb-contact ${detail?.onHandHold ? 'foot-on-handhold' : ''}" ${contact ? `data-contact-id="${esc(contact.contact_id)}"` : ''}><i class="limb-dot ${limb.toLowerCase()}"></i><b>${limb}</b><span>${limbNames[limb]}</span><strong>${esc(contact?.placement_id || '释放')}</strong>${detail ? `<small>${detail.onHandHold ? '踩手点 · ' : `${detail.action} · `}${esc(detail.surfaceLabel)}</small>` : ''}</span>`;
+  }).join('') : '';
   $<HTMLButtonElement>('[data-action="previous"]').disabled = step <= 0;
   $<HTMLButtonElement>('[data-action="next"]').disabled = step >= states.length - 1;
   const pose = evaluation()?.poses.find((item) => item.state_id === state?.id);
@@ -903,6 +956,7 @@ function makeRevision(change: (candidate: Candidate) => void, note: string, inve
   if (updated.layout_report) updated.layout_report = { ...updated.layout_report, reason: '当前修订仅保留起始接触，尚未为新点位搜索完整走法。', search: [] };
   change(updated); delete updated.setting_report; updated.design_notes = [...(updated.design_notes || []), note];
   clearLearnedExperiment();
+  clearOwnRoute();
   activeDraftIntent = undefined;
   clearBetaAudit();
   bundle.candidates.push(updated); activeId = updated.id; compareId = candidate.id;
@@ -1065,6 +1119,8 @@ document.addEventListener('click', (event) => {
   if (busy && ['candidate', 'style-example', 'route-example', 'setting-example', 'setting-stage', 'setting-path', 'import', 'save-review', 'export-bundle', 'export-review'].includes(action || '')) return;
   if (action === 'board-study') { $<HTMLSelectElement>('#profile').value = 'style'; $<HTMLSelectElement>('#style-goal').value = 'compare'; syncProfileControls(); $('#generation-form').scrollIntoView({ block: 'center' }); $<HTMLSelectElement>('#style-goal').focus(); toast('已设置同墙风格对照；点击生成后搜索不同选点与动作序列。'); }
   else if (action === 'setting-example') selectSettingExample(button.dataset.id || '');
+  else if (action === 'own-route') void openOwnRouteStudy(button.dataset.routeId);
+  else if (action === 'own-route-reload') { ownRouteStudy = undefined; void openOwnRouteStudy(); }
   else if (action === 'learned-open') void openLearnedExperiment();
   else if (action === 'learned-run') void selectLearnedRun(button.dataset.runId || '');
   else if (action === 'setting-stage') { const context = settingContext(); if (context) selectSettingExample(context.example.id, button.dataset.stage); }
@@ -1077,7 +1133,7 @@ document.addEventListener('click', (event) => {
   else if (action === 'beta-audit') void auditBeta();
   else if (action === 'beta-select') selectBeta(button.dataset.id || '');
   else if (action === 'beta-export' && betaReport && !busy) download(betaReport, `beta-audit-${betaReport.source.candidate_id}-r${betaReport.source.revision}.json`);
-  else if (action === 'candidate') { clearBetaAudit(); if (activeId !== button.dataset.id) { clearLearnedExperiment(); activeDraftIntent = undefined; } activeId = button.dataset.id!; step = 0; selectedHold = ''; selectedInventory = ''; renderAll(); }
+  else if (action === 'candidate') { clearBetaAudit(); if (activeId !== button.dataset.id) { clearLearnedExperiment(); clearOwnRoute(); activeDraftIntent = undefined; } activeId = button.dataset.id!; step = 0; selectedHold = ''; selectedInventory = ''; renderAll(); }
   else if (action === 'phase') { step = Number(button.dataset.step); renderSteps(); renderBrief(); view?.setStep(step); }
   else if (action === 'roof-step' || action === 'roof-view') {
     const nextStep = Number(button.dataset.step);
@@ -1124,31 +1180,41 @@ document.addEventListener('keydown', (event) => {
   if (event.key === 'ArrowRight' && step < current()!.states.length - 1) { step++; renderSteps(); view?.setStep(step); }
 });
 
+let referenceLoad: Promise<void> | undefined;
+async function loadReferenceDrafts() {
+  if (referenceLoad) return referenceLoad;
+  const message = $('#reference-load-status');
+  message.hidden = false; message.textContent = '读取其他已保存规则草稿…';
+  referenceLoad = (async () => {
+    const results = await Promise.allSettled([api<{ examples: StyleExample[] }>('/api/route-examples'), api<{ examples: StyleExample[] }>('/api/setting-examples')]);
+    if (results[0].status === 'fulfilled') routeExamples = results[0].value.examples || [];
+    if (results[1].status === 'fulfilled') settingExamples = results[1].value.examples || [];
+    const failures = results.filter(result => result.status === 'rejected');
+    message.hidden = !failures.length;
+    message.textContent = failures.length ? '部分旧草稿暂不可用；当前规则线路不受影响。墙形可通过下方按钮单独读取。' : '';
+    renderStyleStudy(); renderSettingStudy();
+  })();
+  return referenceLoad;
+}
+$('.saved-reference-drafts').addEventListener('toggle', event => { if ((event.target as HTMLDetailsElement).open) void loadReferenceDrafts(); });
 async function initialize() {
   $('#canvas-empty').hidden = false;
-  $('#canvas-empty').innerHTML = '<span class="loading-spinner"></span><h2>正在打开工作台</h2><p>读取场景与已检查的示例</p>';
-  const results = await Promise.allSettled([api<Defaults>('/api/defaults'), api<Bundle>('/api/demo?profile=route'), api<{ examples: StyleExample[] }>('/api/route-examples'), api<{ examples: StyleExample[] }>('/api/setting-examples'), api<{ examples: StyleExample[] }>('/api/wall-examples')]);
+  $('#canvas-empty').innerHTML = '<span class="loading-spinner"></span><h2>正在打开工作台</h2><p>读取规则线路与检查结果</p>';
+  // Current rules are independent of optional historical fixtures and model runs.
+  const results = await Promise.allSettled([api<Defaults>('/api/defaults'), api<OwnRouteStudy>('/api/own-routes-study')]);
   if (results[0].status === 'fulfilled') { defaults = results[0].value; populateControls(defaults.request); }
-  if (results[2].status === 'fulfilled' && Array.isArray(results[2].value.examples)) routeExamples = results[2].value.examples;
-  if (results[4].status === 'fulfilled' && Array.isArray(results[4].value.examples)) wallExamples = results[4].value.examples;
-  if (results[3].status === 'fulfilled' && Array.isArray(results[3].value.examples)) settingExamples = results[3].value.examples;
-  if (results[1].status === 'fulfilled' || routeExamples.length || settingExamples.length) {
-    try { acceptBundle(settingExamples[0]?.bundle || routeExamples[0]?.bundle || (results[1].status === 'fulfilled' ? results[1].value : undefined)!); $<HTMLSelectElement>('#route-program').value = 'compare'; syncProfileControls(); } catch (error) { showNotice(`示例数据不完整：${String(error)}`); }
-  } else {
-    // Saved studies are independent: stale legacy fixtures must not hide a valid new experiment.
-    let recovered = false;
+  let ownLoaded = false;
+  if (results[1].status === 'fulfilled' && results[1].value.schema_version === 'own-routes-study-v1') {
+    ownRouteStudy = results[1].value;
     try {
-      const saved = await api<LearnedExperiment>('/api/learned-experiment');
-      if (saved.schema_version === 'learned-experiment-v1' && Array.isArray(saved.runs)) {
-        const baseline = saved.runs.find(run => run.source === 'baseline' && run.bundle_url);
-        if (baseline) { learnedExperiment = saved; await readLearnedRun(baseline); recovered = true; }
-      }
-    } catch { /* The optional model experiment is not required to start the app. */ }
-    if (!recovered) {
-      $('#canvas-empty').innerHTML = `<div class="empty-icon">${icon('cube')}</div><h2>等待本地计算服务</h2><p>请启动 Python 服务后重试。<br />工作台会加载真实生成、检查的示例。</p><button class="button outlined" data-action="retry">${icon('refresh')}重新连接</button>`;
-      if (results[1].status === 'rejected') showNotice(`无法读取示例：${results[1].reason instanceof Error ? results[1].reason.message : String(results[1].reason)}`);
-    }
+      const route = ownRouteStudy.routes.find(item => item.id === ownRouteStyleIds[$<HTMLSelectElement>('#draft-style').value]) || ownRouteStudy.routes[0];
+      if (route) { await readOwnRoute(route); ownLoaded = true; }
+    } catch (error) { ownRouteError = `规则线路暂不可用：${error instanceof Error ? error.message : String(error)}`; }
+  } else if (results[1].status === 'rejected') { ownRouteError = `规则线路暂不可用：${results[1].reason instanceof Error ? results[1].reason.message : String(results[1].reason)}`; }
+  if (!ownLoaded) {
+    $('#canvas-empty').innerHTML = `<div class="empty-icon">${icon('cube')}</div><h2>规则线路尚未就绪</h2><p>请确认本地计算服务与保存结果可用。<br />也可从上方墙形选择中读取其他规则草稿。</p><button class="button outlined" data-action="retry">${icon('refresh')}重新连接</button>`;
   }
+  syncDraftControls(); renderOwnRouteStudy();
   if (results[0].status === 'rejected') showNotice('默认配置加载失败，生成暂不可用。请确认本地服务已运行后重新连接。');
 }
 window.addEventListener('pagehide', () => preview?.dispose(), { once: true });

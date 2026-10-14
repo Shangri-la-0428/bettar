@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
-  "id": "bundle-8e273a183b-1792002610686557000",
-  "created_at": "2026-10-14T18:30:10.686559+00:00",
+  "id": "bundle-8e1132850f-1792009700455687000",
+  "created_at": "2026-10-14T20:28:20.455690+00:00",
   "request": {
     "schema_version": "1.0",
     "id": "request-catalog-foot_first-A",
@@ -102,6 +102,43 @@
                 -0.0,
                 -0.30420272804299636,
                 0.9526073169208805
+              ]
+            },
+            {
+              "id": "standing",
+              "label": "外部上缘踩面",
+              "position": [
+                0.0,
+                0.051,
+                0.024847781223075488
+              ],
+              "normal": [
+                -0.0,
+                0.5826151175693389,
+                0.812748192726176
+              ],
+              "u_axis": [
+                1.0,
+                0.0,
+                0.0
+              ],
+              "v_axis": [
+                0.0,
+                0.812748192726176,
+                -0.5826151175693389
+              ],
+              "radii": [
+                0.023800000000000005,
+                0.0096
+              ],
+              "limbs": [
+                "LF",
+                "RF"
+              ],
+              "pull_direction": [
+                -0.0,
+                -0.812748192726176,
+                0.5826151175693389
               ]
             }
           ],
@@ -216,6 +253,43 @@
                 -0.30420272804299636,
                 0.9526073169208805
               ]
+            },
+            {
+              "id": "standing",
+              "label": "外部上缘踩面",
+              "position": [
+                0.0,
+                0.051,
+                0.024847781223075488
+              ],
+              "normal": [
+                -0.0,
+                0.5826151175693389,
+                0.812748192726176
+              ],
+              "u_axis": [
+                1.0,
+                0.0,
+                0.0
+              ],
+              "v_axis": [
+                0.0,
+                0.812748192726176,
+                -0.5826151175693389
+              ],
+              "radii": [
+                0.023800000000000005,
+                0.0096
+              ],
+              "limbs": [
+                "LF",
+                "RF"
+              ],
+              "pull_direction": [
+                -0.0,
+                -0.812748192726176,
+                0.5826151175693389
+              ]
             }
           ],
           "id": "jug_02",
@@ -328,6 +402,43 @@
                 -0.0,
                 -0.30420272804299636,
                 0.9526073169208805
+              ]
+            },
+            {
+              "id": "standing",
+              "label": "外部上缘踩面",
+              "position": [
+                0.0,
+                0.051,
+                0.024847781223075488
+              ],
+              "normal": [
+                -0.0,
+                0.5826151175693389,
+                0.812748192726176
+              ],
+              "u_axis": [
+                1.0,
+                0.0,
+                0.0
+              ],
+              "v_axis": [
+                0.0,
+                0.812748192726176,
+                -0.5826151175693389
+              ],
+              "radii": [
+                0.023800000000000005,
+                0.0096
+              ],
+              "limbs": [
+                "LF",
+                "RF"
+              ],
+              "pull_direction": [
+                -0.0,
+                -0.812748192726176,
+                0.5826151175693389
               ]
             }
           ],
@@ -442,6 +553,43 @@
                 -0.30420272804299636,
                 0.9526073169208805
               ]
+            },
+            {
+              "id": "standing",
+              "label": "外部上缘踩面",
+              "position": [
+                0.0,
+                0.051,
+                0.024847781223075488
+              ],
+              "normal": [
+                -0.0,
+                0.5826151175693389,
+                0.812748192726176
+              ],
+              "u_axis": [
+                1.0,
+                0.0,
+                0.0
+              ],
+              "v_axis": [
+                0.0,
+                0.812748192726176,
+                -0.5826151175693389
+              ],
+              "radii": [
+                0.023800000000000005,
+                0.0096
+              ],
+              "limbs": [
+                "LF",
+                "RF"
+              ],
+              "pull_direction": [
+                -0.0,
+                -0.812748192726176,
+                0.5826151175693389
+              ]
             }
           ],
           "id": "jug_04",
@@ -555,6 +703,43 @@
                 -0.30420272804299636,
                 0.9526073169208805
               ]
+            },
+            {
+              "id": "standing",
+              "label": "外部上缘踩面",
+              "position": [
+                0.0,
+                0.051,
+                0.024847781223075488
+              ],
+              "normal": [
+                -0.0,
+                0.5826151175693389,
+                0.812748192726176
+              ],
+              "u_axis": [
+                1.0,
+                0.0,
+                0.0
+              ],
+              "v_axis": [
+                0.0,
+                0.812748192726176,
+                -0.5826151175693389
+              ],
+              "radii": [
+                0.023800000000000005,
+                0.0096
+              ],
+              "limbs": [
+                "LF",
+                "RF"
+              ],
+              "pull_direction": [
+                -0.0,
+                -0.812748192726176,
+                0.5826151175693389
+              ]
             }
           ],
           "id": "jug_05",
@@ -667,6 +852,43 @@
                 -0.0,
                 -0.30420272804299636,
                 0.9526073169208805
+              ]
+            },
+            {
+              "id": "standing",
+              "label": "外部上缘踩面",
+              "position": [
+                0.0,
+                0.051,
+                0.024847781223075488
+              ],
+              "normal": [
+                -0.0,
+                0.5826151175693389,
+                0.812748192726176
+              ],
+              "u_axis": [
+                1.0,
+                0.0,
+                0.0
+              ],
+              "v_axis": [
+                0.0,
+                0.812748192726176,
+                -0.5826151175693389
+              ],
+              "radii": [
+                0.023800000000000005,
+                0.0096
+              ],
+              "limbs": [
+                "LF",
+                "RF"
+              ],
+              "pull_direction": [
+                -0.0,
+                -0.812748192726176,
+                0.5826151175693389
               ]
             }
           ],
@@ -782,6 +1004,43 @@
                 -0.36365829964036356,
                 0.9315324154868039
               ]
+            },
+            {
+              "id": "standing",
+              "label": "外部上缘踩面",
+              "position": [
+                0.0,
+                0.016,
+                0.019719480633663293
+              ],
+              "normal": [
+                -0.0,
+                0.7861544966777534,
+                0.618030021401346
+              ],
+              "u_axis": [
+                1.0,
+                0.0,
+                0.0
+              ],
+              "v_axis": [
+                0.0,
+                0.618030021401346,
+                -0.7861544966777534
+              ],
+              "radii": [
+                0.022400000000000003,
+                0.008
+              ],
+              "limbs": [
+                "LF",
+                "RF"
+              ],
+              "pull_direction": [
+                -0.0,
+                -0.618030021401346,
+                0.7861544966777534
+              ]
             }
           ],
           "id": "directional_edge_01",
@@ -895,6 +1154,43 @@
                 -0.0,
                 -0.36365829964036356,
                 0.9315324154868039
+              ]
+            },
+            {
+              "id": "standing",
+              "label": "外部上缘踩面",
+              "position": [
+                0.0,
+                0.016,
+                0.019719480633663293
+              ],
+              "normal": [
+                -0.0,
+                0.7861544966777534,
+                0.618030021401346
+              ],
+              "u_axis": [
+                1.0,
+                0.0,
+                0.0
+              ],
+              "v_axis": [
+                0.0,
+                0.618030021401346,
+                -0.7861544966777534
+              ],
+              "radii": [
+                0.022400000000000003,
+                0.008
+              ],
+              "limbs": [
+                "LF",
+                "RF"
+              ],
+              "pull_direction": [
+                -0.0,
+                -0.618030021401346,
+                0.7861544966777534
               ]
             }
           ],
@@ -1010,6 +1306,43 @@
                 -0.36365829964036356,
                 0.9315324154868039
               ]
+            },
+            {
+              "id": "standing",
+              "label": "外部上缘踩面",
+              "position": [
+                0.0,
+                0.016,
+                0.019719480633663293
+              ],
+              "normal": [
+                -0.0,
+                0.7861544966777534,
+                0.618030021401346
+              ],
+              "u_axis": [
+                1.0,
+                0.0,
+                0.0
+              ],
+              "v_axis": [
+                0.0,
+                0.618030021401346,
+                -0.7861544966777534
+              ],
+              "radii": [
+                0.022400000000000003,
+                0.008
+              ],
+              "limbs": [
+                "LF",
+                "RF"
+              ],
+              "pull_direction": [
+                -0.0,
+                -0.618030021401346,
+                0.7861544966777534
+              ]
             }
           ],
           "id": "directional_edge_03",
@@ -1123,6 +1456,43 @@
                 -0.0,
                 -0.36365829964036356,
                 0.9315324154868039
+              ]
+            },
+            {
+              "id": "standing",
+              "label": "外部上缘踩面",
+              "position": [
+                0.0,
+                0.016,
+                0.019719480633663293
+              ],
+              "normal": [
+                -0.0,
+                0.7861544966777534,
+                0.618030021401346
+              ],
+              "u_axis": [
+                1.0,
+                0.0,
+                0.0
+              ],
+              "v_axis": [
+                0.0,
+                0.618030021401346,
+                -0.7861544966777534
+              ],
+              "radii": [
+                0.022400000000000003,
+                0.008
+              ],
+              "limbs": [
+                "LF",
+                "RF"
+              ],
+              "pull_direction": [
+                -0.0,
+                -0.618030021401346,
+                0.7861544966777534
               ]
             }
           ],
@@ -3147,6 +3517,43 @@
                 -0.9829246611395289,
                 0.18000697848326597
               ]
+            },
+            {
+              "id": "standing",
+              "label": "外部上缘踩面",
+              "position": [
+                0.0,
+                0.108,
+                0.13056973378789716
+              ],
+              "normal": [
+                0.013084707909988011,
+                0.6934530510849509,
+                0.7203829928308153
+              ],
+              "u_axis": [
+                0.9998350836467458,
+                0.0,
+                -0.01816054814990418
+              ],
+              "v_axis": [
+                -0.012593487523926215,
+                0.7205018153627181,
+                -0.693338689336613
+              ],
+              "radii": [
+                0.025,
+                0.012
+              ],
+              "limbs": [
+                "LF",
+                "RF"
+              ],
+              "pull_direction": [
+                0.012593487523926215,
+                -0.7205018153627181,
+                0.693338689336613
+              ]
             }
           ],
           "id": "sloper_01",
@@ -3259,6 +3666,43 @@
                 0.03816540607758854,
                 -0.9829246611395289,
                 0.18000697848326597
+              ]
+            },
+            {
+              "id": "standing",
+              "label": "外部上缘踩面",
+              "position": [
+                0.0,
+                0.108,
+                0.13056973378789716
+              ],
+              "normal": [
+                0.013084707909988011,
+                0.6934530510849509,
+                0.7203829928308153
+              ],
+              "u_axis": [
+                0.9998350836467458,
+                0.0,
+                -0.01816054814990418
+              ],
+              "v_axis": [
+                -0.012593487523926215,
+                0.7205018153627181,
+                -0.693338689336613
+              ],
+              "radii": [
+                0.025,
+                0.012
+              ],
+              "limbs": [
+                "LF",
+                "RF"
+              ],
+              "pull_direction": [
+                0.012593487523926215,
+                -0.7205018153627181,
+                0.693338689336613
               ]
             }
           ],
@@ -3373,6 +3817,43 @@
                 -1.0,
                 -0.0
               ]
+            },
+            {
+              "id": "standing",
+              "label": "外部上缘踩面",
+              "position": [
+                0.0,
+                0.11560000000000002,
+                0.1140702684766204
+              ],
+              "normal": [
+                -0.0,
+                0.48516640087861806,
+                0.8744218452546164
+              ],
+              "u_axis": [
+                1.0,
+                0.0,
+                0.0
+              ],
+              "v_axis": [
+                0.0,
+                0.8744218452546164,
+                -0.48516640087861806
+              ],
+              "radii": [
+                0.025,
+                0.012
+              ],
+              "limbs": [
+                "LF",
+                "RF"
+              ],
+              "pull_direction": [
+                -0.0,
+                -0.8744218452546164,
+                0.48516640087861806
+              ]
             }
           ],
           "id": "pinch_01",
@@ -3485,6 +3966,43 @@
                 -0.0,
                 -1.0,
                 -0.0
+              ]
+            },
+            {
+              "id": "standing",
+              "label": "外部上缘踩面",
+              "position": [
+                0.0,
+                0.11560000000000002,
+                0.1140702684766204
+              ],
+              "normal": [
+                -0.0,
+                0.48516640087861806,
+                0.8744218452546164
+              ],
+              "u_axis": [
+                1.0,
+                0.0,
+                0.0
+              ],
+              "v_axis": [
+                0.0,
+                0.8744218452546164,
+                -0.48516640087861806
+              ],
+              "radii": [
+                0.025,
+                0.012
+              ],
+              "limbs": [
+                "LF",
+                "RF"
+              ],
+              "pull_direction": [
+                -0.0,
+                -0.8744218452546164,
+                0.48516640087861806
               ]
             }
           ],
@@ -3600,6 +4118,43 @@
                 -0.27830771578516095,
                 0.9604919652628261
               ]
+            },
+            {
+              "id": "standing",
+              "label": "外部上缘踩面",
+              "position": [
+                0.0,
+                0.020800000000000003,
+                0.029704798828745816
+              ],
+              "normal": [
+                -0.0,
+                0.851004671711586,
+                0.525158117832197
+              ],
+              "u_axis": [
+                1.0,
+                0.0,
+                0.0
+              ],
+              "v_axis": [
+                0.0,
+                0.525158117832197,
+                -0.851004671711586
+              ],
+              "radii": [
+                0.025,
+                0.010400000000000001
+              ],
+              "limbs": [
+                "LF",
+                "RF"
+              ],
+              "pull_direction": [
+                -0.0,
+                -0.525158117832197,
+                0.851004671711586
+              ]
             }
           ],
           "id": "rail_01",
@@ -3713,6 +4268,43 @@
                 -0.0,
                 -0.27830771578516095,
                 0.9604919652628261
+              ]
+            },
+            {
+              "id": "standing",
+              "label": "外部上缘踩面",
+              "position": [
+                0.0,
+                0.020800000000000003,
+                0.029704798828745816
+              ],
+              "normal": [
+                -0.0,
+                0.851004671711586,
+                0.525158117832197
+              ],
+              "u_axis": [
+                1.0,
+                0.0,
+                0.0
+              ],
+              "v_axis": [
+                0.0,
+                0.525158117832197,
+                -0.851004671711586
+              ],
+              "radii": [
+                0.025,
+                0.010400000000000001
+              ],
+              "limbs": [
+                "LF",
+                "RF"
+              ],
+              "pull_direction": [
+                -0.0,
+                -0.525158117832197,
+                0.851004671711586
               ]
             }
           ],
@@ -5523,9 +6115,9 @@
   ],
   "evaluations": [
     {
-      "id": "eval-candidate-42-1-297c9f5670",
+      "id": "eval-candidate-42-1-9f28836568",
       "candidate_id": "candidate-42-1",
-      "fingerprint": "sha256:49fb81dbd670c45e1ad3d17403b81164568d39c24ee904aa59d414297c9f5670",
+      "fingerprint": "sha256:a59602d6bc1463828b579eeb696292f3e66b695943c17009056e649f28836568",
       "version": "0.1.0",
       "checks": [
         {
@@ -5630,7 +6222,7 @@
             "upper_arm": 0.28,
             "forearm": 0.25,
             "endpoint_offset_sum_m": 0.0,
-            "fingerprint": "sha256:49fb81dbd670c45e1ad3d17403b81164568d39c24ee904aa59d414297c9f5670"
+            "fingerprint": "sha256:a59602d6bc1463828b579eeb696292f3e66b695943c17009056e649f28836568"
           }
         },
         {
@@ -5656,7 +6248,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 67.46
+            "elapsed_ms": 70.03
           }
         },
         {
@@ -5672,7 +6264,7 @@
             "upper_arm": 0.28,
             "forearm": 0.25,
             "endpoint_offset_sum_m": 0.0,
-            "fingerprint": "sha256:49fb81dbd670c45e1ad3d17403b81164568d39c24ee904aa59d414297c9f5670"
+            "fingerprint": "sha256:a59602d6bc1463828b579eeb696292f3e66b695943c17009056e649f28836568"
           }
         },
         {
@@ -5697,7 +6289,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 3.25
+            "elapsed_ms": 3.33
           }
         },
         {
@@ -5713,7 +6305,7 @@
             "upper_arm": 0.28,
             "forearm": 0.25,
             "endpoint_offset_sum_m": 0.0,
-            "fingerprint": "sha256:49fb81dbd670c45e1ad3d17403b81164568d39c24ee904aa59d414297c9f5670"
+            "fingerprint": "sha256:a59602d6bc1463828b579eeb696292f3e66b695943c17009056e649f28836568"
           }
         },
         {
@@ -5739,7 +6331,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 116.27
+            "elapsed_ms": 122.29
           }
         },
         {
@@ -5764,7 +6356,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 3.27
+            "elapsed_ms": 3.26
           }
         },
         {
@@ -5780,7 +6372,7 @@
             "upper_arm": 0.28,
             "forearm": 0.25,
             "endpoint_offset_sum_m": 0.0,
-            "fingerprint": "sha256:49fb81dbd670c45e1ad3d17403b81164568d39c24ee904aa59d414297c9f5670"
+            "fingerprint": "sha256:a59602d6bc1463828b579eeb696292f3e66b695943c17009056e649f28836568"
           }
         },
         {
@@ -5806,7 +6398,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 75.17
+            "elapsed_ms": 77.69
           }
         },
         {
@@ -5822,7 +6414,7 @@
             "upper_arm": 0.28,
             "forearm": 0.25,
             "endpoint_offset_sum_m": 0.0,
-            "fingerprint": "sha256:49fb81dbd670c45e1ad3d17403b81164568d39c24ee904aa59d414297c9f5670"
+            "fingerprint": "sha256:a59602d6bc1463828b579eeb696292f3e66b695943c17009056e649f28836568"
           }
         },
         {
@@ -5847,7 +6439,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 3.2
+            "elapsed_ms": 3.29
           }
         },
         {
@@ -5863,7 +6455,7 @@
             "upper_arm": 0.28,
             "forearm": 0.25,
             "endpoint_offset_sum_m": 0.0,
-            "fingerprint": "sha256:49fb81dbd670c45e1ad3d17403b81164568d39c24ee904aa59d414297c9f5670"
+            "fingerprint": "sha256:a59602d6bc1463828b579eeb696292f3e66b695943c17009056e649f28836568"
           }
         },
         {
@@ -5889,7 +6481,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 106.77
+            "elapsed_ms": 112.08
           }
         },
         {
@@ -5914,7 +6506,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 3.15
+            "elapsed_ms": 3.56
           }
         },
         {
@@ -5930,7 +6522,7 @@
             "upper_arm": 0.28,
             "forearm": 0.25,
             "endpoint_offset_sum_m": 0.0,
-            "fingerprint": "sha256:49fb81dbd670c45e1ad3d17403b81164568d39c24ee904aa59d414297c9f5670"
+            "fingerprint": "sha256:a59602d6bc1463828b579eeb696292f3e66b695943c17009056e649f28836568"
           }
         },
         {
@@ -5956,7 +6548,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 88.37
+            "elapsed_ms": 91.55
           }
         },
         {
@@ -6111,7 +6703,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 67.46
+            "elapsed_ms": 70.03
           },
           "state_id": "s0"
         },
@@ -6229,7 +6821,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 3.25
+            "elapsed_ms": 3.33
           },
           "state_id": "s1"
         },
@@ -6348,7 +6940,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 116.27
+            "elapsed_ms": 122.29
           },
           "state_id": "s2"
         },
@@ -6466,7 +7058,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 3.27
+            "elapsed_ms": 3.26
           },
           "state_id": "s3"
         },
@@ -6585,7 +7177,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 75.17
+            "elapsed_ms": 77.69
           },
           "state_id": "s4"
         },
@@ -6703,7 +7295,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 3.2
+            "elapsed_ms": 3.29
           },
           "state_id": "s5"
         },
@@ -6822,7 +7414,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 106.77
+            "elapsed_ms": 112.08
           },
           "state_id": "s6"
         },
@@ -6940,7 +7532,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 3.15
+            "elapsed_ms": 3.56
           },
           "state_id": "s7"
         },
@@ -7059,7 +7651,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 88.37
+            "elapsed_ms": 91.55
           },
           "state_id": "s8"
         }
@@ -7069,12 +7661,12 @@
         "passed": 23,
         "total": 23
       },
-      "elapsed_ms": 483.71
+      "elapsed_ms": 506.28
     },
     {
-      "id": "eval-candidate-42-2-e52bbf8ac1",
+      "id": "eval-candidate-42-2-068d20b98e",
       "candidate_id": "candidate-42-2",
-      "fingerprint": "sha256:1901db45cb924cc4e03f1f9bcdfadee2f9f0fe42e5d1c668a2b85be52bbf8ac1",
+      "fingerprint": "sha256:23650cce11392aaf62de7fd4a70f30c3d74861c57fa8c9657f66fc068d20b98e",
       "version": "0.1.0",
       "checks": [
         {
@@ -7179,7 +7771,7 @@
             "upper_arm": 0.28,
             "forearm": 0.25,
             "endpoint_offset_sum_m": 0.0,
-            "fingerprint": "sha256:1901db45cb924cc4e03f1f9bcdfadee2f9f0fe42e5d1c668a2b85be52bbf8ac1"
+            "fingerprint": "sha256:23650cce11392aaf62de7fd4a70f30c3d74861c57fa8c9657f66fc068d20b98e"
           }
         },
         {
@@ -7205,7 +7797,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 71.59
+            "elapsed_ms": 75.26
           }
         },
         {
@@ -7221,7 +7813,7 @@
             "upper_arm": 0.28,
             "forearm": 0.25,
             "endpoint_offset_sum_m": 0.0,
-            "fingerprint": "sha256:1901db45cb924cc4e03f1f9bcdfadee2f9f0fe42e5d1c668a2b85be52bbf8ac1"
+            "fingerprint": "sha256:23650cce11392aaf62de7fd4a70f30c3d74861c57fa8c9657f66fc068d20b98e"
           }
         },
         {
@@ -7246,7 +7838,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 3.3
+            "elapsed_ms": 3.56
           }
         },
         {
@@ -7262,7 +7854,7 @@
             "upper_arm": 0.28,
             "forearm": 0.25,
             "endpoint_offset_sum_m": 0.0,
-            "fingerprint": "sha256:1901db45cb924cc4e03f1f9bcdfadee2f9f0fe42e5d1c668a2b85be52bbf8ac1"
+            "fingerprint": "sha256:23650cce11392aaf62de7fd4a70f30c3d74861c57fa8c9657f66fc068d20b98e"
           }
         },
         {
@@ -7288,7 +7880,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 125.16
+            "elapsed_ms": 130.49
           }
         },
         {
@@ -7313,7 +7905,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 3.31
+            "elapsed_ms": 3.36
           }
         },
         {
@@ -7329,7 +7921,7 @@
             "upper_arm": 0.28,
             "forearm": 0.25,
             "endpoint_offset_sum_m": 0.0,
-            "fingerprint": "sha256:1901db45cb924cc4e03f1f9bcdfadee2f9f0fe42e5d1c668a2b85be52bbf8ac1"
+            "fingerprint": "sha256:23650cce11392aaf62de7fd4a70f30c3d74861c57fa8c9657f66fc068d20b98e"
           }
         },
         {
@@ -7355,7 +7947,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 94.47
+            "elapsed_ms": 100.05
           }
         },
         {
@@ -7371,7 +7963,7 @@
             "upper_arm": 0.28,
             "forearm": 0.25,
             "endpoint_offset_sum_m": 0.0,
-            "fingerprint": "sha256:1901db45cb924cc4e03f1f9bcdfadee2f9f0fe42e5d1c668a2b85be52bbf8ac1"
+            "fingerprint": "sha256:23650cce11392aaf62de7fd4a70f30c3d74861c57fa8c9657f66fc068d20b98e"
           }
         },
         {
@@ -7396,7 +7988,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 3.15
+            "elapsed_ms": 3.34
           }
         },
         {
@@ -7412,7 +8004,7 @@
             "upper_arm": 0.28,
             "forearm": 0.25,
             "endpoint_offset_sum_m": 0.0,
-            "fingerprint": "sha256:1901db45cb924cc4e03f1f9bcdfadee2f9f0fe42e5d1c668a2b85be52bbf8ac1"
+            "fingerprint": "sha256:23650cce11392aaf62de7fd4a70f30c3d74861c57fa8c9657f66fc068d20b98e"
           }
         },
         {
@@ -7438,7 +8030,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 106.11
+            "elapsed_ms": 111.15
           }
         },
         {
@@ -7463,7 +8055,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 3.2
+            "elapsed_ms": 3.3
           }
         },
         {
@@ -7479,7 +8071,7 @@
             "upper_arm": 0.28,
             "forearm": 0.25,
             "endpoint_offset_sum_m": 0.0,
-            "fingerprint": "sha256:1901db45cb924cc4e03f1f9bcdfadee2f9f0fe42e5d1c668a2b85be52bbf8ac1"
+            "fingerprint": "sha256:23650cce11392aaf62de7fd4a70f30c3d74861c57fa8c9657f66fc068d20b98e"
           }
         },
         {
@@ -7505,7 +8097,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 116.0
+            "elapsed_ms": 121.18
           }
         },
         {
@@ -7660,7 +8252,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 71.59
+            "elapsed_ms": 75.26
           },
           "state_id": "s0"
         },
@@ -7778,7 +8370,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 3.3
+            "elapsed_ms": 3.56
           },
           "state_id": "s1"
         },
@@ -7897,7 +8489,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 125.16
+            "elapsed_ms": 130.49
           },
           "state_id": "s2"
         },
@@ -8015,7 +8607,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 3.31
+            "elapsed_ms": 3.36
           },
           "state_id": "s3"
         },
@@ -8134,7 +8726,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 94.47
+            "elapsed_ms": 100.05
           },
           "state_id": "s4"
         },
@@ -8252,7 +8844,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 3.15
+            "elapsed_ms": 3.34
           },
           "state_id": "s5"
         },
@@ -8371,7 +8963,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 106.11
+            "elapsed_ms": 111.15
           },
           "state_id": "s6"
         },
@@ -8489,7 +9081,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 3.2
+            "elapsed_ms": 3.3
           },
           "state_id": "s7"
         },
@@ -8608,7 +9200,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 116.0
+            "elapsed_ms": 121.18
           },
           "state_id": "s8"
         }
@@ -8618,12 +9210,12 @@
         "passed": 23,
         "total": 23
       },
-      "elapsed_ms": 543.77
+      "elapsed_ms": 570.97
     },
     {
-      "id": "eval-candidate-42-3-5b88e7fa00",
+      "id": "eval-candidate-42-3-aee4db4cb9",
       "candidate_id": "candidate-42-3",
-      "fingerprint": "sha256:8408d0dd344a9aa3f5a4f7fb0b5cb6834bf3b30e936f1b2f6a2b025b88e7fa00",
+      "fingerprint": "sha256:cd6f072e5503e2c129b045a869c721d1d63ffe4b9d8804d01bfe88aee4db4cb9",
       "version": "0.1.0",
       "checks": [
         {
@@ -8728,7 +9320,7 @@
             "upper_arm": 0.28,
             "forearm": 0.25,
             "endpoint_offset_sum_m": 0.0,
-            "fingerprint": "sha256:8408d0dd344a9aa3f5a4f7fb0b5cb6834bf3b30e936f1b2f6a2b025b88e7fa00"
+            "fingerprint": "sha256:cd6f072e5503e2c129b045a869c721d1d63ffe4b9d8804d01bfe88aee4db4cb9"
           }
         },
         {
@@ -8754,7 +9346,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 71.64
+            "elapsed_ms": 73.31
           }
         },
         {
@@ -8770,7 +9362,7 @@
             "upper_arm": 0.28,
             "forearm": 0.25,
             "endpoint_offset_sum_m": 0.0,
-            "fingerprint": "sha256:8408d0dd344a9aa3f5a4f7fb0b5cb6834bf3b30e936f1b2f6a2b025b88e7fa00"
+            "fingerprint": "sha256:cd6f072e5503e2c129b045a869c721d1d63ffe4b9d8804d01bfe88aee4db4cb9"
           }
         },
         {
@@ -8795,7 +9387,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 3.63
+            "elapsed_ms": 3.31
           }
         },
         {
@@ -8811,7 +9403,7 @@
             "upper_arm": 0.28,
             "forearm": 0.25,
             "endpoint_offset_sum_m": 0.0,
-            "fingerprint": "sha256:8408d0dd344a9aa3f5a4f7fb0b5cb6834bf3b30e936f1b2f6a2b025b88e7fa00"
+            "fingerprint": "sha256:cd6f072e5503e2c129b045a869c721d1d63ffe4b9d8804d01bfe88aee4db4cb9"
           }
         },
         {
@@ -8837,7 +9429,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 105.96
+            "elapsed_ms": 122.35
           }
         },
         {
@@ -8862,7 +9454,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 3.29
+            "elapsed_ms": 3.75
           }
         },
         {
@@ -8878,7 +9470,7 @@
             "upper_arm": 0.28,
             "forearm": 0.25,
             "endpoint_offset_sum_m": 0.0,
-            "fingerprint": "sha256:8408d0dd344a9aa3f5a4f7fb0b5cb6834bf3b30e936f1b2f6a2b025b88e7fa00"
+            "fingerprint": "sha256:cd6f072e5503e2c129b045a869c721d1d63ffe4b9d8804d01bfe88aee4db4cb9"
           }
         },
         {
@@ -8904,7 +9496,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 68.13
+            "elapsed_ms": 78.73
           }
         },
         {
@@ -8920,7 +9512,7 @@
             "upper_arm": 0.28,
             "forearm": 0.25,
             "endpoint_offset_sum_m": 0.0,
-            "fingerprint": "sha256:8408d0dd344a9aa3f5a4f7fb0b5cb6834bf3b30e936f1b2f6a2b025b88e7fa00"
+            "fingerprint": "sha256:cd6f072e5503e2c129b045a869c721d1d63ffe4b9d8804d01bfe88aee4db4cb9"
           }
         },
         {
@@ -8945,7 +9537,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 3.25
+            "elapsed_ms": 3.49
           }
         },
         {
@@ -8961,7 +9553,7 @@
             "upper_arm": 0.28,
             "forearm": 0.25,
             "endpoint_offset_sum_m": 0.0,
-            "fingerprint": "sha256:8408d0dd344a9aa3f5a4f7fb0b5cb6834bf3b30e936f1b2f6a2b025b88e7fa00"
+            "fingerprint": "sha256:cd6f072e5503e2c129b045a869c721d1d63ffe4b9d8804d01bfe88aee4db4cb9"
           }
         },
         {
@@ -8987,7 +9579,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 109.57
+            "elapsed_ms": 114.93
           }
         },
         {
@@ -9012,7 +9604,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 3.25
+            "elapsed_ms": 3.52
           }
         },
         {
@@ -9028,7 +9620,7 @@
             "upper_arm": 0.28,
             "forearm": 0.25,
             "endpoint_offset_sum_m": 0.0,
-            "fingerprint": "sha256:8408d0dd344a9aa3f5a4f7fb0b5cb6834bf3b30e936f1b2f6a2b025b88e7fa00"
+            "fingerprint": "sha256:cd6f072e5503e2c129b045a869c721d1d63ffe4b9d8804d01bfe88aee4db4cb9"
           }
         },
         {
@@ -9054,7 +9646,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 82.82
+            "elapsed_ms": 85.63
           }
         },
         {
@@ -9209,7 +9801,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 71.64
+            "elapsed_ms": 73.31
           },
           "state_id": "s0"
         },
@@ -9327,7 +9919,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 3.63
+            "elapsed_ms": 3.31
           },
           "state_id": "s1"
         },
@@ -9446,7 +10038,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 105.96
+            "elapsed_ms": 122.35
           },
           "state_id": "s2"
         },
@@ -9564,7 +10156,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 3.29
+            "elapsed_ms": 3.75
           },
           "state_id": "s3"
         },
@@ -9683,7 +10275,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 68.13
+            "elapsed_ms": 78.73
           },
           "state_id": "s4"
         },
@@ -9801,7 +10393,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 3.25
+            "elapsed_ms": 3.49
           },
           "state_id": "s5"
         },
@@ -9920,7 +10512,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 109.57
+            "elapsed_ms": 114.93
           },
           "state_id": "s6"
         },
@@ -10038,7 +10630,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 3.25
+            "elapsed_ms": 3.52
           },
           "state_id": "s7"
         },
@@ -10157,7 +10749,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 82.82
+            "elapsed_ms": 85.63
           },
           "state_id": "s8"
         }
@@ -10167,12 +10759,12 @@
         "passed": 23,
         "total": 23
       },
-      "elapsed_ms": 468.92
+      "elapsed_ms": 508.48
     }
   ],
   "manifest": {
     "engine_version": "0.1.0",
-    "code_hash": "sha256:17247b8606a4e1edaa0ce8766f69fccd0cdc7fbb63b3821fbb09de3cb5e8e062",
+    "code_hash": "sha256:b314a55a201d54bc48b04bfd5ba3ee571a1b200a025d26b7c0b1d7912289962d",
     "source": "synthetic_assumption",
     "python": "3.11.15",
     "numpy": "2.4.6",
@@ -10188,7 +10780,7 @@
       "连续动作转换",
       "真实难度与体验"
     ],
-    "bundle_digest": "sha256:99da6596b59716d3570d4f81924aa73a6a31a8c5e8ad6f9107049f8341d24628"
+    "bundle_digest": "sha256:2c4d5e6d8c8c9eaee06349c766f8cd6d3fedcd009476d8d6743a9c14220746fd"
   },
   "reviews": []
 }

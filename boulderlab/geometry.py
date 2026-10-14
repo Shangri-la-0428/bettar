@@ -152,9 +152,13 @@ def grip_surfaces(item):
                  "normal": face["normal"], "u_axis": face["u_axis"], "v_axis": face["v_axis"],
                  "radii": [.06, .05], "limbs": ["LF", "RF"], "pull_direction": (-np.asarray(face["v_axis"])).tolist()}
                 for i, face in enumerate(mounting_faces(item))]
-    samples = {"jug": [(0, -.08), (0, .28)], "directional_edge": [(0, -.06), (0, .18)],
-               "foothold": [(0, .18), (0, -.06)], "rail": [(0, -.08), (0, .18)],
-               "sloper": [(-.20, .12), (.22, .12)], "pinch": [(-.36, 0), (.36, 0)],
+    # Separate exterior upper samples support stepping onto a released hand
+    # hold. Pocket's two interior samples and pinch's side samples stay hand
+    # only. Directions below come from the actual synthetic height field, so
+    # rotating the hold also rotates its declared standing normal.
+    samples = {"jug": [(0, -.08), (0, .28), (0, .85)], "directional_edge": [(0, -.06), (0, .18), (0, .32)],
+               "foothold": [(0, .18), (0, -.06)], "rail": [(0, -.08), (0, .18), (0, .32)],
+               "sloper": [(-.20, .12), (.22, .12), (0, .60)], "pinch": [(-.36, 0), (.36, 0), (0, .68)],
                "crimp": [(0, .22), (.24, .22)], "pocket": [(0, .40), (.29, .18), (0, .70)]}[kind]
     surfaces = []
     for i, (nx, ny) in enumerate(samples):
@@ -165,11 +169,11 @@ def grip_surfaces(item):
         normal = unit([-dx, -dy, 1])
         u = unit([1, 0, dx])
         v = np.cross(normal, u)
-        surface_id = "standing" if kind == "pocket" and i == 2 else "working" if i == 0 else "alternate"
+        surface_id = "standing" if i == 2 else "working" if i == 0 else "alternate"
         labels = {"pocket": ("洞口内上缘", "洞口内侧缘", "洞外上缘踩面"),
                   "crimp": ("浅扣抓边", "侧段抓边"),
                   "foothold": ("主要踩踏面", "备选踩踏面")}
-        label = labels.get(kind, ("主要抓握面", "备选抓握面"))[i]
+        label = labels.get(kind, ("主要抓握面", "备选抓握面", "外部上缘踩面"))[i]
         if kind == "foothold" or surface_id == "standing":
             limbs = ["LF", "RF"]
         else:
@@ -178,6 +182,8 @@ def grip_surfaces(item):
             radii = [.014, .005]
         elif kind == "pocket":
             radii = [.011, .008] if i < 2 else [.018, .009]
+        elif surface_id == "standing":
+            radii = [min(.025, .14*item["width"]), min(.012, .08*item["height"])]
         else:
             radii = [.14*item["width"], .14*item["height"]]
         surfaces.append({"id": surface_id, "label": label,
@@ -195,8 +201,13 @@ def frame_axes(record):
     return axes
 
 
-def selected_contact(placement, item):
-    surface_id = placement.get("contact_surface_id")
+def selected_contact(placement, item, contact_id="main"):
+    """Resolve one declared surface; ``main`` preserves the placement alias.
+
+    A foot may use a hand hold only through a surface that explicitly grants
+    foot contact. Naming another surface never changes installation geometry.
+    """
+    surface_id = placement.get("contact_surface_id") if contact_id == "main" else contact_id
     if surface_id is None:
         return item["contact"]
     for surface in item.get("grip_surfaces", []):
@@ -246,7 +257,7 @@ def placement_frames(placements, inventory, angle_deg, wall_panels=None):
     return frames
 
 
-def contact_world(request, placement, item, placements=None, frames=None):
+def contact_world(request, placement, item, placements=None, frames=None, contact_id="main"):
     placements = placements if placements is not None else request["reference_layout"]
     # A caller may pass an independently edited root placement, as old tests do.
     if frames is None:
@@ -254,7 +265,7 @@ def contact_world(request, placement, item, placements=None, frames=None):
         layout = [p for p in placements if p["id"] != placement["id"]] + [placement]
         frames = placement_frames(layout, items, request["scene"]["angle_deg"], request["scene"].get("wall_panels"))
     origin, axes = frames[placement["id"]]
-    return origin + axes @ np.asarray(selected_contact(placement, item)["position"])
+    return origin + axes @ np.asarray(selected_contact(placement, item, contact_id)["position"])
 
 
 def box_corners(item, frame):

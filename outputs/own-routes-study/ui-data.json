@@ -1,0 +1,46 @@
+{
+  "status": "pass",
+  "routes": [
+    {
+      "id": "lateral-balance",
+      "movements": 13,
+      "stepped_handholds": [
+        "start-right",
+        "hand-3"
+      ],
+      "hand_to_foot": [
+        "hand-3",
+        "start-right"
+      ]
+    },
+    {
+      "id": "compact-strength",
+      "movements": 10,
+      "stepped_handholds": [
+        "start-left",
+        "start-right"
+      ],
+      "hand_to_foot": [
+        "start-left",
+        "start-right"
+      ]
+    },
+    {
+      "id": "sustained-transfer",
+      "movements": 12,
+      "stepped_handholds": [
+        "start-left",
+        "start-right",
+        "hand-2"
+      ],
+      "hand_to_foot": [
+        "hand-2",
+        "start-left",
+        "start-right"
+      ]
+    }
+  ],
+  "contacts": 257,
+  "standing_contacts": 40,
+  "hand_to_foot_moments": 7
+}

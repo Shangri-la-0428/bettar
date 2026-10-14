@@ -1,0 +1,85 @@
+{
+  "routeUI": [
+    {
+      "id": "compact-strength",
+      "detail": "规则搜索 · 待定线员调整\n紧凑握持\n已保存走法\n\n较窄空间中的侧拉与较高握持需求；保留把下方手点当脚点的选择。\n\n移手 / 移脚\n5 / 5\n踩到手点 / 手脚共用\n2 / 2\n使用 / 安装\n11 / 18\n峰值 / 最终负荷\n224.2 / 224.2\n几何检查\n通过\n释放态静态通过\n2 / 10\n手转脚位置\n左脚踩 start-left ↗\n右脚踩 start-right ↗\n\n补全前预算内未找到完整走法；补入 6 个可用脚点（foot-1、foot-2、foot-3、foot-4、foot-5、foot-6），启用 6 个岩点的独立踩面。每次踩踏仍需通过几何与支撑检查。\n\n负荷是算法的相对估计，不能换算为真人等级；几何通过不代表静态支撑全部通过。动态跳跃与连续动作尚未模拟。"
+    },
+    {
+      "id": "sustained-transfer",
+      "detail": "规则搜索 · 待定线员调整\n持续转换\n已保存走法\n\n左右交替的空间走向，观察连续换脚与前序负荷；本例仍是单面25°墙。\n\n移手 / 移脚\n6 / 6\n踩到手点 / 手脚共用\n3 / 3\n使用 / 安装\n12 / 18\n峰值 / 最终负荷\n277.1 / 277.1\n几何检查\n通过\n释放态静态通过\n4 / 12\n手转脚位置\n右脚踩 start-left ↗\n左脚踩 start-right ↗\n右脚踩 hand-2 ↗\n\n补全前预算内未找到完整走法；补入 6 个可用脚点（foot-1、foot-2、foot-3、foot-4、foot-5、foot-6），启用 7 个岩点的独立踩面。每次踩踏仍需通过几何与支撑检查。\n\n负荷是算法的相对估计，不能换算为真人等级；几何通过不代表静态支撑全部通过。动态跳跃与连续动作尚未模拟。"
+    },
+    {
+      "id": "lateral-balance",
+      "detail": "规则搜索 · 待定线员调整\n斜向移重\n已保存走法\n\n手点横向渐移；独立搜索脚位和移重，观察方向与支撑的配合。\n\n移手 / 移脚\n7 / 6\n踩到手点 / 手脚共用\n2 / 2\n使用 / 安装\n14 / 18\n峰值 / 最终负荷\n303.8 / 303.8\n几何检查\n通过\n释放态静态通过\n4 / 13\n手转脚位置\n右脚踩 start-right ↗\n左脚踩 hand-3 ↗\n\n补全前预算内未找到完整走法；补入 5 个可用脚点（foot-1、foot-2、foot-3、foot-4、foot-5），启用 7 个岩点的独立踩面。每次踩踏仍需通过几何与支撑检查。\n\n负荷是算法的相对估计，不能换算为真人等级；几何通过不代表静态支撑全部通过。动态跳跃与连续动作尚未模拟。"
+    }
+  ],
+  "edit": {
+    "ownDetailHidden": true,
+    "activeOwnChoices": 0,
+    "oldReportInvalidated": true,
+    "recheck": "80/80"
+  },
+  "roundtrip": {
+    "file": "edited-roundtrip.json",
+    "ownAttributionCleared": true
+  },
+  "contact": {
+    "limb": "LF",
+    "placement": "hand-3",
+    "surface": "standing",
+    "poseResidualMm": 0
+  },
+  "responsive": [
+    {
+      "viewport": 1440,
+      "height": 1000
+    },
+    {
+      "viewport": 390,
+      "documentWidth": 385,
+      "overflow": false
+    },
+    {
+      "viewport": 556,
+      "overflow": false
+    }
+  ],
+  "mobile_comparison": {
+    "viewport": 390,
+    "document_client_width": 385,
+    "table_scroll_width": 650,
+    "table_client_width": 365,
+    "page_horizontal_overflow": false,
+    "comparison_scrolls_inside_region": true
+  },
+  "visual_review": {
+    "verdict": "SHIP",
+    "scope": "desktop 1440, mobile 390 and actual 556 screenshots; comparison and actual hand-to-foot state",
+    "p0_p1_p2_findings": 0,
+    "limits": "Static visual review, not a separate keyboard, contrast or climbing validation."
+  },
+  "console_after_final_engine_restart": {
+    "errors": 0,
+    "warnings": 0
+  },
+  "final_reload": {
+    "engine_restart": true,
+    "lateral_metrics": "7 hand / 6 foot; 14 of 18 installed holds; static release 4 of 13",
+    "standing_label": "LF · 踩面",
+    "explicit_foot_surface": "hand-3/standing",
+    "batch_digest_check": "network and cached packages must match current study record"
+  },
+  "roof_final_reload": {
+    "candidate_label": "屋檐 · 出口支撑备选方案",
+    "retained_original_layout": true,
+    "transfers_before_after": [
+      11,
+      11
+    ],
+    "effort_before_after": [
+      513.58059,
+      513.58059
+    ],
+    "zero_cost_change_explicit": true
+  }
+}

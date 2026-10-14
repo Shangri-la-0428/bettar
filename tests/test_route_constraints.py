@@ -149,8 +149,8 @@ def test_search_filters_targets_but_retains_full_geometry_context(monkeypatch):
     attempted = []
 
     def observed_step(req, context, before, limb, target, load):
-        assert set(context) == all_ids
-        attempted.append((limb, target))
+        assert {beta_audit._ref(key)["placement_id"] for key in context} == all_ids
+        attempted.append((limb, beta_audit._ref(target)["placement_id"]))
         return None, 0., {}, 0., 0., 1., {"proxy_penalty": 0.}
 
     monkeypatch.setattr(beta_audit, "_step", observed_step)

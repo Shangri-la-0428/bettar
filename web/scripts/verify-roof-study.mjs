@@ -78,8 +78,21 @@ for(const main of bundle.candidates) {
   for(const change of comparison.unusedChanges) assert.ok(rendered.includes(change.placement_id),'skipped modified hold remains explicitly described');
   if(report.selection_role==='exit_support_tradeoff') {
     assert.ok(rendered.includes('出口支撑与全程消耗的取舍'));
-    assert.ok(comparison.transferDelta>0 && comparison.effortDelta>0,'tradeoff example exposes its extra whole-route cost');
-    assert.ok(comparison.unusedChanges.some(change=>change.after.wall_panel_id==='upper-wall'),'exit trial hold is not forced into selected beta');
+    assert.equal(comparison.transferDelta,main.events.length-report.baseline_candidate.events.length,'transfer delta follows the actual independent paths, including zero or negative changes');
+    const effortSum = evaluation => evaluation.design_analysis.moves.reduce((sum,move)=>sum+move.proxy_effort,0);
+    assert.ok(Math.abs(comparison.effortDelta-(effortSum(currentEvaluation)-effortSum(report.baseline_evaluation)))<1e-4,'effort delta follows evaluated paths');
+    if(!report.changes.length && comparison.transferDelta===0 && comparison.effortDelta===0) {
+      assert.ok(rendered.includes('当前保留原布局。'),'unchanged layout is explicitly retained without claiming improvement');
+      assert.equal(comparison.unusedChanges.length,0,'no unmade adjustment receives credit');
+    }
+    for(const [transferDelta,effortDelta] of [[-1,-10],[0,0],[2,10]]) {
+      const variedReport=structuredClone(report);
+      variedReport.result.summary.transfers=variedReport.baseline.summary.transfers+transferDelta;
+      variedReport.result.summary.total_proxy_effort=variedReport.baseline.summary.total_proxy_effort+effortDelta;
+      const varied=roofStudyHTML(bundle.request,main,currentEvaluation,currentEvaluation.design_analysis,0,false,variedReport,'after');
+      assert.ok(varied.includes(`转换次数变化 ${transferDelta>=0?'+':''}${transferDelta}`));
+      assert.ok(varied.includes(`模型总负荷变化 ${effortDelta>=0?'+':''}${effortDelta.toFixed(1)}`),'cost changes are signed data, never inferred from the scenario title');
+    }
   }
   primary.push({candidate_id:main.id,role:report.selection_role,exit_feasible:report.result.exit_support.feasible_states,exit_states:report.result.exit_support.states,exit_release_feasible:report.result.exit_support.release_feasible_states,exit_release_states:report.result.exit_support.release_states,transfers:report.result.summary.transfers,total_proxy_effort:report.result.summary.total_proxy_effort,unused_changed_ids:comparison.unusedChanges.map(change=>change.placement_id)});
 }

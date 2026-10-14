@@ -3,6 +3,7 @@
 // Read-only: fixtures are prepared by the backend acceptance workflow.
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
+import { gunzipSync } from 'node:zlib';
 import { contactFrame } from '../src/placement-geometry.ts';
 
 const add = (a,b) => a.map((value,index) => value+b[index]);
@@ -14,6 +15,8 @@ const vector = a => Array.isArray(a) && a.length===3 && a.every(Number.isFinite)
 let maxPointError = 0, maxNormalError = 0, forceContacts = 0, feasible = 0, infeasible = 0, unknown = 0, checkedPaths = 0, maxForceResidual = 0, maxTorqueResidual = 0;
 const totals = [];
 const wallTotals = [];
+const ownRouteTotals = [];
+let explicitFootContacts = 0;
 function verify(request, candidate, evaluation, label) {
   const report = evaluation.mechanics_report;
   assert.ok(report, `${label}: mechanics report required`);
@@ -39,6 +42,10 @@ function verify(request, candidate, evaluation, label) {
       assert.ok(ref && ref.placement_id===contact.placement_id,`${label}/${state.id}: no force on released or different hold`);
       const placement = candidate.placements.find(item=>item.id===contact.placement_id), hold = request.scene.inventory.find(item=>item.id===placement.inventory_id);
       const rendered = contactFrame(placement,hold,context,ref.contact_id);
+      if (label.startsWith('own-route/') && contact.limb.endsWith('F') && ref.contact_id !== 'main') {
+        explicitFootContacts++;
+        assert.equal(contact.mode, 'unilateral_friction', `${label}/${state.id}: standing surface uses foot friction, never a hand grasp`);
+      }
       const pointError = length(sub(rendered.origin,contact.point_world_m)), normalError = length(sub(rendered.normal,contact.normal_world));
       maxPointError = Math.max(maxPointError,pointError); maxNormalError = Math.max(maxNormalError,normalError);
       assert.ok(pointError < 1e-6 && normalError < 1e-6,`${label}/${state.id}/${contact.limb}: arrow contact frame parity`);
@@ -91,5 +98,19 @@ for(const profile of ['overhang','roof','dihedral','arete']) {
     wallTotals.push({profile,layout_only:layoutOnly,states:candidate.states.length,events:candidate.events.length,summary:evaluation.mechanics_report.summary,alternatives:report?.allowed_alternatives.length ?? 0});
   }
 }
+const studyPath = new URL('../../outputs/own-routes-study/study.json', import.meta.url);
+if (fs.existsSync(studyPath)) {
+  const study = JSON.parse(fs.readFileSync(studyPath, 'utf8'));
+  for (const route of study.routes) {
+    const bytes = fs.readFileSync(new URL(route.bundle_file, studyPath));
+    const bundle = JSON.parse((route.bundle_file.endsWith('.gz') ? gunzipSync(bytes) : bytes).toString('utf8'));
+    for (const candidate of bundle.candidates) {
+      const evaluation = bundle.evaluations.find(item => item.candidate_id === candidate.id);
+      verify(bundle.request, candidate, evaluation, `own-route/${route.id}/${candidate.id}`);
+      ownRouteTotals.push({ route: route.id, states: candidate.states.length, summary: evaluation.mechanics_report.summary });
+    }
+  }
+}
+if (process.argv.includes('--require-own-routes')) { assert.ok(ownRouteTotals.length >= 3, 'three own rule routes required'); assert.ok(explicitFootContacts > 0, 'explicit standing contacts included in force-frame checks'); }
 assert.ok(feasible>0 && forceContacts>0,'acceptance contains drawable feasible states');
-console.log(JSON.stringify({status:'pass',checked_paths:checkedPaths,states:{feasible,infeasible,unknown},force_contacts:forceContacts,max_point_error_m:maxPointError,max_normal_error:maxNormalError,max_rendered_force_residual_n:maxForceResidual,max_rendered_torque_residual_nm:maxTorqueResidual,checks:['state and release binding','renderer contact frame parity','failed solve has no drawable force','axial/transverse values share model axis','rendered forces balance gravity and moment','all four wall experiments, including actual starting state without a complete beta'],programs:totals,wall_profiles:wallTotals},null,2));
+console.log(JSON.stringify({status:'pass',checked_paths:checkedPaths,states:{feasible,infeasible,unknown},force_contacts:forceContacts,own_route_explicit_foot_contacts:explicitFootContacts,own_routes:ownRouteTotals,max_point_error_m:maxPointError,max_normal_error:maxNormalError,max_rendered_force_residual_n:maxForceResidual,max_rendered_torque_residual_nm:maxTorqueResidual,checks:['state and release binding','renderer contact frame parity','failed solve has no drawable force','axial/transverse values share model axis','rendered forces balance gravity and moment','all four wall experiments, including actual starting state without a complete beta'],programs:totals,wall_profiles:wallTotals},null,2));

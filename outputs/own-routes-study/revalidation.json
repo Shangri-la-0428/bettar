@@ -1,0 +1,1226 @@
+{
+  "schema_version": "metadata-only-revalidation-v1",
+  "reason": "Two roof presentation strings were corrected; contact search, geometry and mechanics code are byte-identical to the generating revision after reversing these strings.",
+  "created_at": "2026-10-14T20:26:23.531044+00:00",
+  "generation_engine_code_hash": "sha256:9309643b263d25d79315fb4b619804d406c52fe9dd2ae39631257a9601b1ce68",
+  "evaluation_engine_code_hash": "sha256:b314a55a201d54bc48b04bfd5ba3ee571a1b200a025d26b7c0b1d7912289962d",
+  "previous_index_digest": "sha256:08ffeb4fdf6a306c327b2da0e7e4f9f34bc67d8f600275578bc5d1243c9d5700",
+  "source_proof": {
+    "reconstructed_generation_engine_code_hash": "sha256:9309643b263d25d79315fb4b619804d406c52fe9dd2ae39631257a9601b1ce68",
+    "current_engine_code_hash": "sha256:b314a55a201d54bc48b04bfd5ba3ee571a1b200a025d26b7c0b1d7912289962d",
+    "setting_before_sha256": "5bea82d55ae08e2ae60226b9bbb2f8a495a53aaf27d9a711c3c7ce1abf7f437e",
+    "setting_after_sha256": "cb859c1e8366ea38997e849af35aef4cf53014ba5a77642bd5ef6202ac977d9f",
+    "substitutions": [
+      {
+        "before": "candidate[\"name\"] = \"屋檐 · 转换调整方案（增加动作）\"",
+        "after": "candidate[\"name\"] = \"屋檐 · 出口支撑备选方案\""
+      },
+      {
+        "before": "full-route support and added transfers remain visible, not a global improvement claim",
+        "after": "full-route support and actual transfer/effort changes remain visible, not a global improvement claim"
+      }
+    ],
+    "source_files_modified_by_this_script": false
+  },
+  "contact_search_rerun": false,
+  "original_search_records_preserved": true,
+  "new_fingerprints_produced_by": "engine.evaluate and engine.make_bundle, without mutation",
+  "checks": [
+    {
+      "route_id": "lateral-balance",
+      "stage": "final",
+      "previous_bundle_file": "bundles/c8394d1fa4c81a202f3fe7ae6240bced269fdf245d84fa9916955461ab59fc6b.json.gz",
+      "previous_bundle_digest": "sha256:c8394d1fa4c81a202f3fe7ae6240bced269fdf245d84fa9916955461ab59fc6b",
+      "current_bundle_file": "bundles/82e1bc83f0a8127cb987a4e2f50de70f41687a696cfc9f0f7d3062ab020cb047.json.gz",
+      "current_bundle_digest": "sha256:82e1bc83f0a8127cb987a4e2f50de70f41687a696cfc9f0f7d3062ab020cb047",
+      "previous_evaluation_fingerprint": "sha256:20bc1d1d77ff7e9ab9b5f27476d805397cd1d16216a2f0cfb0b57d41c8f22aa8",
+      "current_evaluation_fingerprint": "sha256:97c82de896504736ac046f981e483cbf372b9dfb99b14d41d82943053629e1ef",
+      "geometry_and_contact_sequence_unchanged": true,
+      "solved_poses_identical": true,
+      "pose_comparison_excludes": [
+        "elapsed_ms timing fields"
+      ],
+      "metrics_identical": true,
+      "previous_metrics": {
+        "complete": true,
+        "p0_status": "pass",
+        "hand_moves": 7,
+        "foot_moves": 6,
+        "transfers": 13,
+        "used_hold_ids": [
+          "foot-1",
+          "foot-3",
+          "foot-4",
+          "foot-5",
+          "hand-1",
+          "hand-2",
+          "hand-3",
+          "hand-4",
+          "hand-5",
+          "start-foot-left",
+          "start-foot-right",
+          "start-left",
+          "start-right",
+          "top"
+        ],
+        "hand_used_ids": [
+          "hand-1",
+          "hand-2",
+          "hand-3",
+          "hand-4",
+          "hand-5",
+          "start-left",
+          "start-right",
+          "top"
+        ],
+        "foot_used_ids": [
+          "foot-1",
+          "foot-3",
+          "foot-4",
+          "foot-5",
+          "hand-3",
+          "start-foot-left",
+          "start-foot-right",
+          "start-right"
+        ],
+        "skipped_hold_ids": [
+          "foot-2"
+        ],
+        "unselected_hold_ids": [
+          "foot-6",
+          "foot-7",
+          "foot-8"
+        ],
+        "hand_then_foot_ids": [
+          "hand-3",
+          "start-right"
+        ],
+        "peak_load": 303.81992,
+        "final_load": 303.81992,
+        "total_proxy_effort": 801.07571,
+        "static_release_pass": 4,
+        "static_release_total": 13,
+        "static_landed_pass": 7,
+        "static_landed_total": 14,
+        "mean_technical": 46.17339,
+        "peak_strength": 57.60173,
+        "hand_lateral_travel_m": 2.9675
+      },
+      "current_metrics": {
+        "complete": true,
+        "p0_status": "pass",
+        "hand_moves": 7,
+        "foot_moves": 6,
+        "transfers": 13,
+        "used_hold_ids": [
+          "foot-1",
+          "foot-3",
+          "foot-4",
+          "foot-5",
+          "hand-1",
+          "hand-2",
+          "hand-3",
+          "hand-4",
+          "hand-5",
+          "start-foot-left",
+          "start-foot-right",
+          "start-left",
+          "start-right",
+          "top"
+        ],
+        "hand_used_ids": [
+          "hand-1",
+          "hand-2",
+          "hand-3",
+          "hand-4",
+          "hand-5",
+          "start-left",
+          "start-right",
+          "top"
+        ],
+        "foot_used_ids": [
+          "foot-1",
+          "foot-3",
+          "foot-4",
+          "foot-5",
+          "hand-3",
+          "start-foot-left",
+          "start-foot-right",
+          "start-right"
+        ],
+        "skipped_hold_ids": [
+          "foot-2"
+        ],
+        "unselected_hold_ids": [
+          "foot-6",
+          "foot-7",
+          "foot-8"
+        ],
+        "hand_then_foot_ids": [
+          "hand-3",
+          "start-right"
+        ],
+        "peak_load": 303.81992,
+        "final_load": 303.81992,
+        "total_proxy_effort": 801.07571,
+        "static_release_pass": 4,
+        "static_release_total": 13,
+        "static_landed_pass": 7,
+        "static_landed_total": 14,
+        "mean_technical": 46.17339,
+        "peak_strength": 57.60173,
+        "hand_lateral_travel_m": 2.9675
+      }
+    },
+    {
+      "route_id": "lateral-balance",
+      "stage": "before",
+      "previous_bundle_file": "bundles/48e6d06d6f453661ab5a1160a2ad5e47eaf535f1cd4c8be1794373e08bdfa225.json.gz",
+      "previous_bundle_digest": "sha256:48e6d06d6f453661ab5a1160a2ad5e47eaf535f1cd4c8be1794373e08bdfa225",
+      "current_bundle_file": "bundles/1b16172fc530da22ad7d2d90249310d2a74753a74ccf69e7ed52aa016c4cbe04.json.gz",
+      "current_bundle_digest": "sha256:1b16172fc530da22ad7d2d90249310d2a74753a74ccf69e7ed52aa016c4cbe04",
+      "previous_evaluation_fingerprint": "sha256:a7bccd0b73d1c8d32c412881351dcbc3f7b3b84d23062d761f63d830e65749f9",
+      "current_evaluation_fingerprint": "sha256:341a7d49f02d1f851d3c41ed32c6e00e315c83ec045055caecc8bb17d056d097",
+      "geometry_and_contact_sequence_unchanged": true,
+      "solved_poses_identical": true,
+      "pose_comparison_excludes": [
+        "elapsed_ms timing fields"
+      ],
+      "metrics_identical": true,
+      "previous_metrics": {
+        "complete": false,
+        "p0_status": "fail",
+        "hand_moves": 0,
+        "foot_moves": 0,
+        "transfers": 0,
+        "used_hold_ids": [
+          "start-foot-left",
+          "start-foot-right",
+          "start-left",
+          "start-right"
+        ],
+        "hand_used_ids": [
+          "start-left",
+          "start-right"
+        ],
+        "foot_used_ids": [
+          "start-foot-left",
+          "start-foot-right"
+        ],
+        "skipped_hold_ids": [
+          "hand-1",
+          "hand-2",
+          "hand-3",
+          "hand-4",
+          "hand-5",
+          "top"
+        ],
+        "unselected_hold_ids": [
+          "foot-1",
+          "foot-2",
+          "foot-3",
+          "foot-4",
+          "foot-5",
+          "foot-6",
+          "foot-7",
+          "foot-8"
+        ],
+        "hand_then_foot_ids": [],
+        "peak_load": null,
+        "final_load": null,
+        "total_proxy_effort": null,
+        "static_release_pass": 0,
+        "static_release_total": 0,
+        "static_landed_pass": 0,
+        "static_landed_total": 1,
+        "mean_technical": null,
+        "peak_strength": null,
+        "hand_lateral_travel_m": 0
+      },
+      "current_metrics": {
+        "complete": false,
+        "p0_status": "fail",
+        "hand_moves": 0,
+        "foot_moves": 0,
+        "transfers": 0,
+        "used_hold_ids": [
+          "start-foot-left",
+          "start-foot-right",
+          "start-left",
+          "start-right"
+        ],
+        "hand_used_ids": [
+          "start-left",
+          "start-right"
+        ],
+        "foot_used_ids": [
+          "start-foot-left",
+          "start-foot-right"
+        ],
+        "skipped_hold_ids": [
+          "hand-1",
+          "hand-2",
+          "hand-3",
+          "hand-4",
+          "hand-5",
+          "top"
+        ],
+        "unselected_hold_ids": [
+          "foot-1",
+          "foot-2",
+          "foot-3",
+          "foot-4",
+          "foot-5",
+          "foot-6",
+          "foot-7",
+          "foot-8"
+        ],
+        "hand_then_foot_ids": [],
+        "peak_load": null,
+        "final_load": null,
+        "total_proxy_effort": null,
+        "static_release_pass": 0,
+        "static_release_total": 0,
+        "static_landed_pass": 0,
+        "static_landed_total": 1,
+        "mean_technical": null,
+        "peak_strength": null,
+        "hand_lateral_travel_m": 0
+      }
+    },
+    {
+      "route_id": "lateral-balance",
+      "stage": "after_support_completion",
+      "previous_bundle_file": "bundles/254ff273c90729a3a015e72f925825faeeabd41126b2e7eeabe9dae3bb7e46f1.json.gz",
+      "previous_bundle_digest": "sha256:254ff273c90729a3a015e72f925825faeeabd41126b2e7eeabe9dae3bb7e46f1",
+      "current_bundle_file": "bundles/592f397bb62074450183e35473095fa15818f0fbee877196df86e5b855046cbe.json.gz",
+      "current_bundle_digest": "sha256:592f397bb62074450183e35473095fa15818f0fbee877196df86e5b855046cbe",
+      "previous_evaluation_fingerprint": "sha256:67f0b98dc79472a556b274600586b075825a1dd062c14912b01a332327de9b6e",
+      "current_evaluation_fingerprint": "sha256:cf2ee109956623ad03e506875041b7bdee58276af6e1e4ff487f890b5bb2870d",
+      "geometry_and_contact_sequence_unchanged": true,
+      "solved_poses_identical": true,
+      "pose_comparison_excludes": [
+        "elapsed_ms timing fields"
+      ],
+      "metrics_identical": true,
+      "previous_metrics": {
+        "complete": true,
+        "p0_status": "pass",
+        "hand_moves": 7,
+        "foot_moves": 6,
+        "transfers": 13,
+        "used_hold_ids": [
+          "foot-1",
+          "foot-2",
+          "foot-3",
+          "foot-4",
+          "foot-5",
+          "hand-1",
+          "hand-2",
+          "hand-3",
+          "hand-4",
+          "hand-5",
+          "start-foot-left",
+          "start-foot-right",
+          "start-left",
+          "start-right",
+          "top"
+        ],
+        "hand_used_ids": [
+          "hand-1",
+          "hand-2",
+          "hand-3",
+          "hand-4",
+          "hand-5",
+          "start-left",
+          "start-right",
+          "top"
+        ],
+        "foot_used_ids": [
+          "foot-1",
+          "foot-2",
+          "foot-3",
+          "foot-4",
+          "foot-5",
+          "hand-3",
+          "start-foot-left",
+          "start-foot-right"
+        ],
+        "skipped_hold_ids": [],
+        "unselected_hold_ids": [
+          "foot-6",
+          "foot-7",
+          "foot-8"
+        ],
+        "hand_then_foot_ids": [
+          "hand-3"
+        ],
+        "peak_load": 304.60491,
+        "final_load": 304.60491,
+        "total_proxy_effort": 801.8166,
+        "static_release_pass": 4,
+        "static_release_total": 13,
+        "static_landed_pass": 7,
+        "static_landed_total": 14,
+        "mean_technical": 46.60212,
+        "peak_strength": 58.20835,
+        "hand_lateral_travel_m": 2.96
+      },
+      "current_metrics": {
+        "complete": true,
+        "p0_status": "pass",
+        "hand_moves": 7,
+        "foot_moves": 6,
+        "transfers": 13,
+        "used_hold_ids": [
+          "foot-1",
+          "foot-2",
+          "foot-3",
+          "foot-4",
+          "foot-5",
+          "hand-1",
+          "hand-2",
+          "hand-3",
+          "hand-4",
+          "hand-5",
+          "start-foot-left",
+          "start-foot-right",
+          "start-left",
+          "start-right",
+          "top"
+        ],
+        "hand_used_ids": [
+          "hand-1",
+          "hand-2",
+          "hand-3",
+          "hand-4",
+          "hand-5",
+          "start-left",
+          "start-right",
+          "top"
+        ],
+        "foot_used_ids": [
+          "foot-1",
+          "foot-2",
+          "foot-3",
+          "foot-4",
+          "foot-5",
+          "hand-3",
+          "start-foot-left",
+          "start-foot-right"
+        ],
+        "skipped_hold_ids": [],
+        "unselected_hold_ids": [
+          "foot-6",
+          "foot-7",
+          "foot-8"
+        ],
+        "hand_then_foot_ids": [
+          "hand-3"
+        ],
+        "peak_load": 304.60491,
+        "final_load": 304.60491,
+        "total_proxy_effort": 801.8166,
+        "static_release_pass": 4,
+        "static_release_total": 13,
+        "static_landed_pass": 7,
+        "static_landed_total": 14,
+        "mean_technical": 46.60212,
+        "peak_strength": 58.20835,
+        "hand_lateral_travel_m": 2.96
+      }
+    },
+    {
+      "route_id": "compact-strength",
+      "stage": "final",
+      "previous_bundle_file": "bundles/93698af26723080ec871c8b7783a1a7a70e93d5344b0fd78aa420c54e5aa577d.json.gz",
+      "previous_bundle_digest": "sha256:93698af26723080ec871c8b7783a1a7a70e93d5344b0fd78aa420c54e5aa577d",
+      "current_bundle_file": "bundles/4256ee863b59cea3eb63f884371a662c3fd16bab8e84fe293d632ea67bad3a08.json.gz",
+      "current_bundle_digest": "sha256:4256ee863b59cea3eb63f884371a662c3fd16bab8e84fe293d632ea67bad3a08",
+      "previous_evaluation_fingerprint": "sha256:58ee1ce6c9bf63fdc567daacf8bc0dab78544e29b89c97d4b8dba6fd60e3b8d5",
+      "current_evaluation_fingerprint": "sha256:14a3f8c4866192c44b2ed6f2ddfcf4268e65f9ddf4cf431cfb00b514ad7c4973",
+      "geometry_and_contact_sequence_unchanged": true,
+      "solved_poses_identical": true,
+      "pose_comparison_excludes": [
+        "elapsed_ms timing fields"
+      ],
+      "metrics_identical": true,
+      "previous_metrics": {
+        "complete": true,
+        "p0_status": "pass",
+        "hand_moves": 5,
+        "foot_moves": 5,
+        "transfers": 10,
+        "used_hold_ids": [
+          "foot-1",
+          "foot-5",
+          "foot-6",
+          "hand-1",
+          "hand-3",
+          "hand-5",
+          "start-foot-left",
+          "start-foot-right",
+          "start-left",
+          "start-right",
+          "top"
+        ],
+        "hand_used_ids": [
+          "hand-1",
+          "hand-3",
+          "hand-5",
+          "start-left",
+          "start-right",
+          "top"
+        ],
+        "foot_used_ids": [
+          "foot-1",
+          "foot-5",
+          "foot-6",
+          "start-foot-left",
+          "start-foot-right",
+          "start-left",
+          "start-right"
+        ],
+        "skipped_hold_ids": [
+          "foot-2",
+          "foot-3",
+          "foot-4",
+          "hand-2",
+          "hand-4"
+        ],
+        "unselected_hold_ids": [
+          "foot-7",
+          "foot-8"
+        ],
+        "hand_then_foot_ids": [
+          "start-left",
+          "start-right"
+        ],
+        "peak_load": 224.23438,
+        "final_load": 224.23438,
+        "total_proxy_effort": 513.37816,
+        "static_release_pass": 2,
+        "static_release_total": 10,
+        "static_landed_pass": 6,
+        "static_landed_total": 11,
+        "mean_technical": 43.78199,
+        "peak_strength": 56.69547,
+        "hand_lateral_travel_m": 2.0785
+      },
+      "current_metrics": {
+        "complete": true,
+        "p0_status": "pass",
+        "hand_moves": 5,
+        "foot_moves": 5,
+        "transfers": 10,
+        "used_hold_ids": [
+          "foot-1",
+          "foot-5",
+          "foot-6",
+          "hand-1",
+          "hand-3",
+          "hand-5",
+          "start-foot-left",
+          "start-foot-right",
+          "start-left",
+          "start-right",
+          "top"
+        ],
+        "hand_used_ids": [
+          "hand-1",
+          "hand-3",
+          "hand-5",
+          "start-left",
+          "start-right",
+          "top"
+        ],
+        "foot_used_ids": [
+          "foot-1",
+          "foot-5",
+          "foot-6",
+          "start-foot-left",
+          "start-foot-right",
+          "start-left",
+          "start-right"
+        ],
+        "skipped_hold_ids": [
+          "foot-2",
+          "foot-3",
+          "foot-4",
+          "hand-2",
+          "hand-4"
+        ],
+        "unselected_hold_ids": [
+          "foot-7",
+          "foot-8"
+        ],
+        "hand_then_foot_ids": [
+          "start-left",
+          "start-right"
+        ],
+        "peak_load": 224.23438,
+        "final_load": 224.23438,
+        "total_proxy_effort": 513.37816,
+        "static_release_pass": 2,
+        "static_release_total": 10,
+        "static_landed_pass": 6,
+        "static_landed_total": 11,
+        "mean_technical": 43.78199,
+        "peak_strength": 56.69547,
+        "hand_lateral_travel_m": 2.0785
+      }
+    },
+    {
+      "route_id": "compact-strength",
+      "stage": "before",
+      "previous_bundle_file": "bundles/e63746e7a7bd71ed4fe27efd469762fdcf32dad9465c63ba73224693e74048de.json.gz",
+      "previous_bundle_digest": "sha256:e63746e7a7bd71ed4fe27efd469762fdcf32dad9465c63ba73224693e74048de",
+      "current_bundle_file": "bundles/0bd82c8f75b4a366b6dd1d80cd48721a801b065ac2a0c6b31fbe7f21e5c0000b.json.gz",
+      "current_bundle_digest": "sha256:0bd82c8f75b4a366b6dd1d80cd48721a801b065ac2a0c6b31fbe7f21e5c0000b",
+      "previous_evaluation_fingerprint": "sha256:76c52d228c298010d06b0e672594d4e8580c3386339ecb7c305d9b236ebcdc85",
+      "current_evaluation_fingerprint": "sha256:9b4ee0bffb6b69f48d17d08b6ca82dd3ce606b8f92538f306400c265270debbb",
+      "geometry_and_contact_sequence_unchanged": true,
+      "solved_poses_identical": true,
+      "pose_comparison_excludes": [
+        "elapsed_ms timing fields"
+      ],
+      "metrics_identical": true,
+      "previous_metrics": {
+        "complete": false,
+        "p0_status": "fail",
+        "hand_moves": 0,
+        "foot_moves": 0,
+        "transfers": 0,
+        "used_hold_ids": [
+          "start-foot-left",
+          "start-foot-right",
+          "start-left",
+          "start-right"
+        ],
+        "hand_used_ids": [
+          "start-left",
+          "start-right"
+        ],
+        "foot_used_ids": [
+          "start-foot-left",
+          "start-foot-right"
+        ],
+        "skipped_hold_ids": [
+          "hand-1",
+          "hand-2",
+          "hand-3",
+          "hand-4",
+          "hand-5",
+          "top"
+        ],
+        "unselected_hold_ids": [
+          "foot-1",
+          "foot-2",
+          "foot-3",
+          "foot-4",
+          "foot-5",
+          "foot-6",
+          "foot-7",
+          "foot-8"
+        ],
+        "hand_then_foot_ids": [],
+        "peak_load": null,
+        "final_load": null,
+        "total_proxy_effort": null,
+        "static_release_pass": 0,
+        "static_release_total": 0,
+        "static_landed_pass": 0,
+        "static_landed_total": 1,
+        "mean_technical": null,
+        "peak_strength": null,
+        "hand_lateral_travel_m": 0
+      },
+      "current_metrics": {
+        "complete": false,
+        "p0_status": "fail",
+        "hand_moves": 0,
+        "foot_moves": 0,
+        "transfers": 0,
+        "used_hold_ids": [
+          "start-foot-left",
+          "start-foot-right",
+          "start-left",
+          "start-right"
+        ],
+        "hand_used_ids": [
+          "start-left",
+          "start-right"
+        ],
+        "foot_used_ids": [
+          "start-foot-left",
+          "start-foot-right"
+        ],
+        "skipped_hold_ids": [
+          "hand-1",
+          "hand-2",
+          "hand-3",
+          "hand-4",
+          "hand-5",
+          "top"
+        ],
+        "unselected_hold_ids": [
+          "foot-1",
+          "foot-2",
+          "foot-3",
+          "foot-4",
+          "foot-5",
+          "foot-6",
+          "foot-7",
+          "foot-8"
+        ],
+        "hand_then_foot_ids": [],
+        "peak_load": null,
+        "final_load": null,
+        "total_proxy_effort": null,
+        "static_release_pass": 0,
+        "static_release_total": 0,
+        "static_landed_pass": 0,
+        "static_landed_total": 1,
+        "mean_technical": null,
+        "peak_strength": null,
+        "hand_lateral_travel_m": 0
+      }
+    },
+    {
+      "route_id": "compact-strength",
+      "stage": "after_support_completion",
+      "previous_bundle_file": "bundles/7d40f995607997b7ddba9fb5b2e8a5e401cfbd22866d32a04ae5f7868ba47f67.json.gz",
+      "previous_bundle_digest": "sha256:7d40f995607997b7ddba9fb5b2e8a5e401cfbd22866d32a04ae5f7868ba47f67",
+      "current_bundle_file": "bundles/030c032ed129d8512b46c931a08fdde241cfff32c6b0c9831c40fb440255b990.json.gz",
+      "current_bundle_digest": "sha256:030c032ed129d8512b46c931a08fdde241cfff32c6b0c9831c40fb440255b990",
+      "previous_evaluation_fingerprint": "sha256:d3b0b96c8a652bc06af5572d98a5a5309640c44d3097e07c611bd59434935f9c",
+      "current_evaluation_fingerprint": "sha256:e6a2fa2678c502c98b4903a4e95cde43383f99b451627cf6201d9ca7d8cdbaa6",
+      "geometry_and_contact_sequence_unchanged": true,
+      "solved_poses_identical": true,
+      "pose_comparison_excludes": [
+        "elapsed_ms timing fields"
+      ],
+      "metrics_identical": true,
+      "previous_metrics": {
+        "complete": true,
+        "p0_status": "pass",
+        "hand_moves": 4,
+        "foot_moves": 5,
+        "transfers": 9,
+        "used_hold_ids": [
+          "foot-1",
+          "foot-2",
+          "foot-4",
+          "foot-5",
+          "foot-6",
+          "hand-2",
+          "hand-4",
+          "start-foot-left",
+          "start-foot-right",
+          "start-left",
+          "start-right",
+          "top"
+        ],
+        "hand_used_ids": [
+          "hand-2",
+          "hand-4",
+          "start-left",
+          "start-right",
+          "top"
+        ],
+        "foot_used_ids": [
+          "foot-1",
+          "foot-2",
+          "foot-4",
+          "foot-5",
+          "foot-6",
+          "start-foot-left",
+          "start-foot-right"
+        ],
+        "skipped_hold_ids": [
+          "foot-3",
+          "hand-1",
+          "hand-3",
+          "hand-5"
+        ],
+        "unselected_hold_ids": [
+          "foot-7",
+          "foot-8"
+        ],
+        "hand_then_foot_ids": [],
+        "peak_load": 206.32488,
+        "final_load": 206.32488,
+        "total_proxy_effort": 458.19437,
+        "static_release_pass": 1,
+        "static_release_total": 9,
+        "static_landed_pass": 2,
+        "static_landed_total": 10,
+        "mean_technical": 43.66355,
+        "peak_strength": 56.97798,
+        "hand_lateral_travel_m": 1.01
+      },
+      "current_metrics": {
+        "complete": true,
+        "p0_status": "pass",
+        "hand_moves": 4,
+        "foot_moves": 5,
+        "transfers": 9,
+        "used_hold_ids": [
+          "foot-1",
+          "foot-2",
+          "foot-4",
+          "foot-5",
+          "foot-6",
+          "hand-2",
+          "hand-4",
+          "start-foot-left",
+          "start-foot-right",
+          "start-left",
+          "start-right",
+          "top"
+        ],
+        "hand_used_ids": [
+          "hand-2",
+          "hand-4",
+          "start-left",
+          "start-right",
+          "top"
+        ],
+        "foot_used_ids": [
+          "foot-1",
+          "foot-2",
+          "foot-4",
+          "foot-5",
+          "foot-6",
+          "start-foot-left",
+          "start-foot-right"
+        ],
+        "skipped_hold_ids": [
+          "foot-3",
+          "hand-1",
+          "hand-3",
+          "hand-5"
+        ],
+        "unselected_hold_ids": [
+          "foot-7",
+          "foot-8"
+        ],
+        "hand_then_foot_ids": [],
+        "peak_load": 206.32488,
+        "final_load": 206.32488,
+        "total_proxy_effort": 458.19437,
+        "static_release_pass": 1,
+        "static_release_total": 9,
+        "static_landed_pass": 2,
+        "static_landed_total": 10,
+        "mean_technical": 43.66355,
+        "peak_strength": 56.97798,
+        "hand_lateral_travel_m": 1.01
+      }
+    },
+    {
+      "route_id": "sustained-transfer",
+      "stage": "final",
+      "previous_bundle_file": "bundles/19e7a96801e05de03731e50ba224dc382aae74269f844a71fbc7421bb64aca53.json.gz",
+      "previous_bundle_digest": "sha256:19e7a96801e05de03731e50ba224dc382aae74269f844a71fbc7421bb64aca53",
+      "current_bundle_file": "bundles/681261725aab34bf8cda4c0370f51a8630cc3e597016a46f85fbd20f56b940a3.json.gz",
+      "current_bundle_digest": "sha256:681261725aab34bf8cda4c0370f51a8630cc3e597016a46f85fbd20f56b940a3",
+      "previous_evaluation_fingerprint": "sha256:735f1e00c20b322fb1dc302e032033ac45ec0cab22929a088b0013542c2cb361",
+      "current_evaluation_fingerprint": "sha256:2d20881155f75871b00094d773487286408166abe5a68e5ffb3db3017ee6d8f1",
+      "geometry_and_contact_sequence_unchanged": true,
+      "solved_poses_identical": true,
+      "pose_comparison_excludes": [
+        "elapsed_ms timing fields"
+      ],
+      "metrics_identical": true,
+      "previous_metrics": {
+        "complete": true,
+        "p0_status": "pass",
+        "hand_moves": 6,
+        "foot_moves": 6,
+        "transfers": 12,
+        "used_hold_ids": [
+          "foot-1",
+          "foot-5",
+          "foot-6",
+          "hand-1",
+          "hand-2",
+          "hand-3",
+          "hand-4",
+          "start-foot-left",
+          "start-foot-right",
+          "start-left",
+          "start-right",
+          "top"
+        ],
+        "hand_used_ids": [
+          "hand-1",
+          "hand-2",
+          "hand-3",
+          "hand-4",
+          "start-left",
+          "start-right",
+          "top"
+        ],
+        "foot_used_ids": [
+          "foot-1",
+          "foot-5",
+          "foot-6",
+          "hand-2",
+          "start-foot-left",
+          "start-foot-right",
+          "start-left",
+          "start-right"
+        ],
+        "skipped_hold_ids": [
+          "foot-2",
+          "foot-3",
+          "foot-4",
+          "hand-5"
+        ],
+        "unselected_hold_ids": [
+          "foot-7",
+          "foot-8"
+        ],
+        "hand_then_foot_ids": [
+          "hand-2",
+          "start-left",
+          "start-right"
+        ],
+        "peak_load": 277.10004,
+        "final_load": 277.10004,
+        "total_proxy_effort": 707.95406,
+        "static_release_pass": 4,
+        "static_release_total": 12,
+        "static_landed_pass": 7,
+        "static_landed_total": 13,
+        "mean_technical": 46.88574,
+        "peak_strength": 59.37631,
+        "hand_lateral_travel_m": 2.0909
+      },
+      "current_metrics": {
+        "complete": true,
+        "p0_status": "pass",
+        "hand_moves": 6,
+        "foot_moves": 6,
+        "transfers": 12,
+        "used_hold_ids": [
+          "foot-1",
+          "foot-5",
+          "foot-6",
+          "hand-1",
+          "hand-2",
+          "hand-3",
+          "hand-4",
+          "start-foot-left",
+          "start-foot-right",
+          "start-left",
+          "start-right",
+          "top"
+        ],
+        "hand_used_ids": [
+          "hand-1",
+          "hand-2",
+          "hand-3",
+          "hand-4",
+          "start-left",
+          "start-right",
+          "top"
+        ],
+        "foot_used_ids": [
+          "foot-1",
+          "foot-5",
+          "foot-6",
+          "hand-2",
+          "start-foot-left",
+          "start-foot-right",
+          "start-left",
+          "start-right"
+        ],
+        "skipped_hold_ids": [
+          "foot-2",
+          "foot-3",
+          "foot-4",
+          "hand-5"
+        ],
+        "unselected_hold_ids": [
+          "foot-7",
+          "foot-8"
+        ],
+        "hand_then_foot_ids": [
+          "hand-2",
+          "start-left",
+          "start-right"
+        ],
+        "peak_load": 277.10004,
+        "final_load": 277.10004,
+        "total_proxy_effort": 707.95406,
+        "static_release_pass": 4,
+        "static_release_total": 12,
+        "static_landed_pass": 7,
+        "static_landed_total": 13,
+        "mean_technical": 46.88574,
+        "peak_strength": 59.37631,
+        "hand_lateral_travel_m": 2.0909
+      }
+    },
+    {
+      "route_id": "sustained-transfer",
+      "stage": "before",
+      "previous_bundle_file": "bundles/f6c24a11e8d0a3014283b98fd13e82afd1cfbe7735a2309bde8ebe5c59572bc4.json.gz",
+      "previous_bundle_digest": "sha256:f6c24a11e8d0a3014283b98fd13e82afd1cfbe7735a2309bde8ebe5c59572bc4",
+      "current_bundle_file": "bundles/47613cbb311cc3874cbff200efae8a296f0038027c996573e9fcc48c3f987fa5.json.gz",
+      "current_bundle_digest": "sha256:47613cbb311cc3874cbff200efae8a296f0038027c996573e9fcc48c3f987fa5",
+      "previous_evaluation_fingerprint": "sha256:8b153281a245eda4366a755ed187fb2fda66ef99b0211c3490c9e09498c5d252",
+      "current_evaluation_fingerprint": "sha256:2a2f9ec6ca1a07df32185e88eb1f2a144cce246674057b8612efc3584a34afee",
+      "geometry_and_contact_sequence_unchanged": true,
+      "solved_poses_identical": true,
+      "pose_comparison_excludes": [
+        "elapsed_ms timing fields"
+      ],
+      "metrics_identical": true,
+      "previous_metrics": {
+        "complete": false,
+        "p0_status": "fail",
+        "hand_moves": 0,
+        "foot_moves": 0,
+        "transfers": 0,
+        "used_hold_ids": [
+          "start-foot-left",
+          "start-foot-right",
+          "start-left",
+          "start-right"
+        ],
+        "hand_used_ids": [
+          "start-left",
+          "start-right"
+        ],
+        "foot_used_ids": [
+          "start-foot-left",
+          "start-foot-right"
+        ],
+        "skipped_hold_ids": [
+          "hand-1",
+          "hand-2",
+          "hand-3",
+          "hand-4",
+          "hand-5",
+          "top"
+        ],
+        "unselected_hold_ids": [
+          "foot-1",
+          "foot-2",
+          "foot-3",
+          "foot-4",
+          "foot-5",
+          "foot-6",
+          "foot-7",
+          "foot-8"
+        ],
+        "hand_then_foot_ids": [],
+        "peak_load": null,
+        "final_load": null,
+        "total_proxy_effort": null,
+        "static_release_pass": 0,
+        "static_release_total": 0,
+        "static_landed_pass": 0,
+        "static_landed_total": 1,
+        "mean_technical": null,
+        "peak_strength": null,
+        "hand_lateral_travel_m": 0
+      },
+      "current_metrics": {
+        "complete": false,
+        "p0_status": "fail",
+        "hand_moves": 0,
+        "foot_moves": 0,
+        "transfers": 0,
+        "used_hold_ids": [
+          "start-foot-left",
+          "start-foot-right",
+          "start-left",
+          "start-right"
+        ],
+        "hand_used_ids": [
+          "start-left",
+          "start-right"
+        ],
+        "foot_used_ids": [
+          "start-foot-left",
+          "start-foot-right"
+        ],
+        "skipped_hold_ids": [
+          "hand-1",
+          "hand-2",
+          "hand-3",
+          "hand-4",
+          "hand-5",
+          "top"
+        ],
+        "unselected_hold_ids": [
+          "foot-1",
+          "foot-2",
+          "foot-3",
+          "foot-4",
+          "foot-5",
+          "foot-6",
+          "foot-7",
+          "foot-8"
+        ],
+        "hand_then_foot_ids": [],
+        "peak_load": null,
+        "final_load": null,
+        "total_proxy_effort": null,
+        "static_release_pass": 0,
+        "static_release_total": 0,
+        "static_landed_pass": 0,
+        "static_landed_total": 1,
+        "mean_technical": null,
+        "peak_strength": null,
+        "hand_lateral_travel_m": 0
+      }
+    },
+    {
+      "route_id": "sustained-transfer",
+      "stage": "after_support_completion",
+      "previous_bundle_file": "bundles/433456299a9cf19ac716f2259ed7ece9bc0b4c7fbe40a9b6105fe23022a81f6a.json.gz",
+      "previous_bundle_digest": "sha256:433456299a9cf19ac716f2259ed7ece9bc0b4c7fbe40a9b6105fe23022a81f6a",
+      "current_bundle_file": "bundles/8b5743f90c83557b45b3c366f215397e914c65d769b098c857efc4b48509fb8a.json.gz",
+      "current_bundle_digest": "sha256:8b5743f90c83557b45b3c366f215397e914c65d769b098c857efc4b48509fb8a",
+      "previous_evaluation_fingerprint": "sha256:6f274f1da612cc0d69b1fe42be14055e64fa256f2a64958d6d28cdc784721eba",
+      "current_evaluation_fingerprint": "sha256:258d79713793403db34cc2054a21ce877abc64da7f263f6f6f0e90b8b58504ae",
+      "geometry_and_contact_sequence_unchanged": true,
+      "solved_poses_identical": true,
+      "pose_comparison_excludes": [
+        "elapsed_ms timing fields"
+      ],
+      "metrics_identical": true,
+      "previous_metrics": {
+        "complete": true,
+        "p0_status": "pass",
+        "hand_moves": 6,
+        "foot_moves": 5,
+        "transfers": 11,
+        "used_hold_ids": [
+          "foot-2",
+          "foot-5",
+          "foot-6",
+          "hand-1",
+          "hand-2",
+          "hand-3",
+          "hand-4",
+          "start-foot-left",
+          "start-foot-right",
+          "start-left",
+          "start-right",
+          "top"
+        ],
+        "hand_used_ids": [
+          "hand-1",
+          "hand-2",
+          "hand-3",
+          "hand-4",
+          "start-left",
+          "start-right",
+          "top"
+        ],
+        "foot_used_ids": [
+          "foot-2",
+          "foot-5",
+          "foot-6",
+          "hand-2",
+          "start-foot-left",
+          "start-foot-right",
+          "start-right"
+        ],
+        "skipped_hold_ids": [
+          "foot-1",
+          "foot-3",
+          "foot-4",
+          "hand-5"
+        ],
+        "unselected_hold_ids": [
+          "foot-7",
+          "foot-8"
+        ],
+        "hand_then_foot_ids": [
+          "hand-2",
+          "start-right"
+        ],
+        "peak_load": 278.99089,
+        "final_load": 278.99089,
+        "total_proxy_effort": 687.00216,
+        "static_release_pass": 2,
+        "static_release_total": 11,
+        "static_landed_pass": 8,
+        "static_landed_total": 12,
+        "mean_technical": 47.90818,
+        "peak_strength": 62.27273,
+        "hand_lateral_travel_m": 2.8312
+      },
+      "current_metrics": {
+        "complete": true,
+        "p0_status": "pass",
+        "hand_moves": 6,
+        "foot_moves": 5,
+        "transfers": 11,
+        "used_hold_ids": [
+          "foot-2",
+          "foot-5",
+          "foot-6",
+          "hand-1",
+          "hand-2",
+          "hand-3",
+          "hand-4",
+          "start-foot-left",
+          "start-foot-right",
+          "start-left",
+          "start-right",
+          "top"
+        ],
+        "hand_used_ids": [
+          "hand-1",
+          "hand-2",
+          "hand-3",
+          "hand-4",
+          "start-left",
+          "start-right",
+          "top"
+        ],
+        "foot_used_ids": [
+          "foot-2",
+          "foot-5",
+          "foot-6",
+          "hand-2",
+          "start-foot-left",
+          "start-foot-right",
+          "start-right"
+        ],
+        "skipped_hold_ids": [
+          "foot-1",
+          "foot-3",
+          "foot-4",
+          "hand-5"
+        ],
+        "unselected_hold_ids": [
+          "foot-7",
+          "foot-8"
+        ],
+        "hand_then_foot_ids": [
+          "hand-2",
+          "start-right"
+        ],
+        "peak_load": 278.99089,
+        "final_load": 278.99089,
+        "total_proxy_effort": 687.00216,
+        "static_release_pass": 2,
+        "static_release_total": 11,
+        "static_landed_pass": 8,
+        "static_landed_total": 12,
+        "mean_technical": 47.90818,
+        "peak_strength": 62.27273,
+        "hand_lateral_travel_m": 2.8312
+      }
+    }
+  ]
+}

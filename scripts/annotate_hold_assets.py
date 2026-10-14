@@ -13,16 +13,19 @@ from prepare_hold_assets import render
 TARGETS={
  'jug':[
   dict(id='working',label='凹唇内沿 · 向下抓握',target=[0,-.060,.044],normal=[0,1,.15],radii=[.070,.022],pull=[0,-1,0]),
-  dict(id='alternate',label='左侧凹唇 · 侧向抓握',target=[-.070,-.025,.040],normal=[1,.3,.4],radii=[.030,.018],pull=[-.8,-.6,0])],
+  dict(id='alternate',label='左侧凹唇 · 侧向抓握',target=[-.070,-.025,.040],normal=[1,.3,.4],radii=[.030,.018],pull=[-.8,-.6,0]),
+  dict(id='standing',label='洞外上沿 · 鞋尖踩面（草稿）',target=[-.015258463333,.101536646667,.015261546667],normal=[-.329535,.802176,.497917],radii=[.018,.006],pull=[0,-1,0],limbs=['LF','RF'])],
  'crimp':[
   dict(id='working',label='上缘浅扣边',target=[-.015,.026,.011],normal=[0,1,.4],radii=[.025,.006],pull=[0,-1,0]),
-  dict(id='alternate',label='右段浅扣边',target=[.035,.023,.009],normal=[0,1,.5],radii=[.018,.005],pull=[0,-1,0])],
+  dict(id='alternate',label='右段浅扣边',target=[.035,.023,.009],normal=[0,1,.5],radii=[.018,.005],pull=[0,-1,0]),
+  dict(id='standing',label='上缘浅台 · 鞋尖踩面（草稿）',target=[.00120264,.02778645,.010688386667],normal=[.131332,.990889,.029839],radii=[.018,.004],pull=[0,-1,0],limbs=['LF','RF'])],
  'pinch':[
   dict(id='working',label='左侧捏握面（与右面配对）',target=[-.075,0,.050],normal=[-1,0,.1],radii=[.060,.018],pull=[0,-1,0],axis=[0,1,0]),
   dict(id='alternate',label='右侧捏握面（与左面配对）',target=[.075,0,.050],normal=[1,0,.1],radii=[.060,.018],pull=[0,-1,0],axis=[0,1,0])],
  'sloper':[
   dict(id='working',label='上部圆坡摩擦面',target=[.060,.085,.135],normal=[0,.65,.76],radii=[.085,.050],pull=[0,-1,0]),
-  dict(id='alternate',label='左上圆坡摩擦面',target=[-.100,.050,.110],normal=[-.3,.65,.70],radii=[.060,.040],pull=[.3,-.954,0])]
+  dict(id='alternate',label='左上圆坡摩擦面',target=[-.100,.050,.110],normal=[-.3,.65,.70],radii=[.060,.040],pull=[.3,-.954,0]),
+  dict(id='standing',label='外部上坡 · 摩擦踩面（草稿）',target=[.00030235,.102507566667,.087170153333],normal=[-.220560,.782398,.582414],radii=[.050,.025],pull=[0,-1,0],limbs=['LF','RF'])]
 }
 LABELS={'jug':'SetRsoft 12 · 凹唇 Jug','crimp':'SetRsoft 25 · 浅边 Crimp','pinch':'SetRsoft 17 · 长块 Pinch','sloper':'SetRsoft 11 · 圆坡 Sloper'}
 
@@ -40,7 +43,7 @@ def surfaces(g,specs):
   delta=centers-pos;r=spec['radii']
   ids=np.flatnonzero(((delta@u/r[0])**2+(delta@vv/r[1])**2<1.1)&(np.abs(delta@n)<max(r)*.50)&(normals@n>.15)).tolist()
   if i not in ids:ids.append(i)
-  s=dict(id=spec['id'],label=spec['label'],position=pos.tolist(),normal=n.tolist(),u_axis=u.tolist(),v_axis=vv.tolist(),radii=r,limbs=['LH','RH'],pull_direction=spec['pull'],mesh_anchor={'triangle_index':i,'barycentric':[1/3,1/3,1/3]},annotations={'triangle_indices':sorted(ids)})
+  s=dict(id=spec['id'],label=spec['label'],position=pos.tolist(),normal=n.tolist(),u_axis=u.tolist(),v_axis=vv.tolist(),radii=r,limbs=spec.get('limbs',['LH','RH']),pull_direction=spec['pull'],mesh_anchor={'triangle_index':i,'barycentric':[1/3,1/3,1/3]},annotations={'triangle_indices':sorted(ids)})
   out.append(s)
  return out
 

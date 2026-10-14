@@ -9,3 +9,13 @@ Changes made for this local prototype: applied GLB scene/node transforms; change
 `library.json` records per-asset sources, original and normalized geometry hashes, transformations, classification evidence, exact triangle anchors and contact-region triangle IDs. Contact regions, effective pull directions and backplate annotations are AI-assisted first drafts for routesetter review. Friction and load capacity are not measured from the mesh. The application still uses conservative bounding boxes for collision checks and synthetic grasp envelopes for static diagnostics.
 
 Asset preparation is reproducible with `requirements-assets.txt`, `scripts/prepare_hold_assets.py`, `scripts/annotate_hold_assets.py` and the explicit `work/external-holds/selection.json` configuration. The application runtime does not download or execute third-party content.
+
+The jug, crimp and sloper now have a separate `standing` annotation on their
+exterior upper surface. Their representative points and normals are bound to
+mesh triangles 1490, 2560 and 1993 respectively; record hashes include these
+annotations. The jug's inner grip and the pinch's side grips remain hand-only.
+The pinch has no declared standing surface because its current annotations do
+not establish an exterior upper foothold. These are conservative AI-assisted
+contact proposals, not measured friction, shoe fit or human forerun evidence.
+An explicit state `contact_id` selects one of these surfaces; the legacy
+`main` alias still selects the placement's default surface.

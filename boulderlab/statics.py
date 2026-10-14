@@ -112,8 +112,9 @@ def solve_equilibrium(contacts,com,gravity_force,cone_sides=8):
     return {"status":"feasible" if utilization<=1+1e-7 else "infeasible","reason":"equilibrium_within_declared_envelopes" if utilization<=1+1e-7 else "declared_axial_capacity_exceeded","capacity_utilization":utilization,"forces":forces,"force_residual_n":force_residual,"torque_residual_nm":torque_residual}
 
 
-def _contact_model(request,placement,item,limb,frames,parameters,placements):
-    surface=selected_contact(placement,item)
+def _contact_model(request,placement,item,limb,frames,parameters,placements,contact_id="main"):
+    surface=selected_contact(placement,item,contact_id)
+    if limb not in surface["limbs"]:raise ValueError("contact_surface_limb_disallowed")
     if any(key not in surface for key in ("normal","u_axis","v_axis","pull_direction")):raise ValueError("contact_surface_frame_missing")
     rot=frames[placement["id"]][1];normal=rot @ np.asarray(surface["normal"],float)
     passive=limb.endswith("F") or item["type"]=="sloper"
@@ -128,7 +129,7 @@ def _contact_model(request,placement,item,limb,frames,parameters,placements):
         axis=rot @ (-np.asarray(surface["pull_direction"],float)-np.array([0.,0.,parameters["grasp_inward_bias"]]))
         slope=parameters["grasp_cone_slope"];capacity=parameters["grasp_axial_capacity_n"][item["type"]];mode="synthetic_grasp_envelope"
     axis=_basis(axis)[0]
-    return {"limb":limb,"placement_id":placement["id"],"position":contact_world(request,placement,item,placements,frames),"axis":axis,"normal":normal,"slope":slope,"capacity_n":capacity,"mode":mode}
+    return {"limb":limb,"placement_id":placement["id"],"contact_id":contact_id,"position":contact_world(request,placement,item,placements,frames,contact_id),"axis":axis,"normal":normal,"slope":slope,"capacity_n":capacity,"mode":mode}
 
 
 def mechanics_report(request,candidate,evaluation):
@@ -155,12 +156,12 @@ def _report_cached(encoded):
         if not pose or pose.get("status")!="pass":states.append(entry);continue
         try:
             com=segment_com(pose["joints"]);entry["com_world_m"]=com
-            models=[_contact_model(request,placements[state["contacts"][limb]["placement_id"]],inventory[placements[state["contacts"][limb]["placement_id"]]["inventory_id"]],limb,frames,params,candidate["placements"]) for limb in active]
+            models=[_contact_model(request,placements[state["contacts"][limb]["placement_id"]],inventory[placements[state["contacts"][limb]["placement_id"]]["inventory_id"]],limb,frames,params,candidate["placements"],state["contacts"][limb]["contact_id"]) for limb in active]
             result=solve_equilibrium(models,com,gravity,params["cone_sides"])
             entry.update({k:result.get(k) for k in ("status","reason","capacity_utilization","force_residual_n","torque_residual_nm")})
             for i,model in enumerate(models):
                 solved=result["forces"][i] if result["forces"] else None
-                entry["contacts"].append({"limb":model["limb"],"placement_id":model["placement_id"],"point_world_m":model["position"],"mode":model["mode"],"normal_world":model["normal"],"axial_direction_world":model["axis"],"force_world_n":solved["force"] if solved and result["status"]=="feasible" else None,"required_force_world_n":solved["force"] if solved else None,"normal_force_n":float(np.dot(solved["force"],model["normal"])) if solved else None,"axial_force_n":solved["axial_force_n"] if solved else None,"tangent_force_n":solved["tangent_force_n"] if solved else None,"friction_margin_n":solved["cone_margin_n"] if solved and model["mode"]=="unilateral_friction" else None,"envelope_margin_n":solved["cone_margin_n"] if solved and model["mode"]=="synthetic_grasp_envelope" else None,"capacity_n":model["capacity_n"],"capacity_margin_n":solved["capacity_margin_n"] if solved else None,"cone_slope":model["slope"]})
+                entry["contacts"].append({"limb":model["limb"],"placement_id":model["placement_id"],"contact_id":model["contact_id"],"point_world_m":model["position"],"mode":model["mode"],"normal_world":model["normal"],"axial_direction_world":model["axis"],"force_world_n":solved["force"] if solved and result["status"]=="feasible" else None,"required_force_world_n":solved["force"] if solved else None,"normal_force_n":float(np.dot(solved["force"],model["normal"])) if solved else None,"axial_force_n":solved["axial_force_n"] if solved else None,"tangent_force_n":solved["tangent_force_n"] if solved else None,"friction_margin_n":solved["cone_margin_n"] if solved and model["mode"]=="unilateral_friction" else None,"envelope_margin_n":solved["cone_margin_n"] if solved and model["mode"]=="synthetic_grasp_envelope" else None,"capacity_n":model["capacity_n"],"capacity_margin_n":solved["capacity_margin_n"] if solved else None,"cone_slope":model["slope"]})
         except (ValueError,KeyError,TypeError) as exc:entry["reason"]="contact_or_pose_model_missing: "+str(exc)
         states.append(entry)
     counts={status:sum(s["status"]==status for s in states) for status in ("feasible","infeasible","unknown")}

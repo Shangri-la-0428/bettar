@@ -201,6 +201,12 @@ class Handler(BaseHTTPRequestHandler):
                 self.respond(200, setting_examples(parse_qs(urlparse(self.path).query).get("hold_source", ["assets"])[0]))
             elif path == "/api/wall-examples":
                 self.respond(200, wall_examples(parse_qs(urlparse(self.path).query).get("wall_profile", [None])[0]))
+            elif path == "/api/own-routes-study":
+                from .own_routes import load_study
+                self.respond(200, load_study(ROOT / "outputs" / "own-routes-study"))
+            elif path.startswith("/api/own-routes-study/routes/"):
+                from .own_routes import load_route
+                self.respond(200, load_route(ROOT / "outputs" / "own-routes-study", path.removeprefix("/api/own-routes-study/routes/")))
             elif path == "/api/learned-experiment":
                 from .learned_experiment import load_experiment
                 self.respond(200, load_experiment(ROOT / "outputs" / "learned-study"))

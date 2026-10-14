@@ -142,6 +142,8 @@ def validate_request(request):
             if len({s["id"] for s in records}) != len(records):
                 raise ValueError(f"{item['id']}: duplicate {key} id")
             for record in records:
+                if key == "grip_surfaces" and record["id"] == "main":
+                    raise ValueError("grip surface id main is reserved for the placement alias")
                 frame_axes(record)
         if item.get("mounting_faces"):
             if item["type"] != "volume":
@@ -150,6 +152,19 @@ def validate_request(request):
             for face in item["mounting_faces"]:
                 if face["id"] not in expected or any(not np.allclose(face[k], expected[face["id"]][k], atol=1e-8, rtol=0) for k in ("origin", "u_axis", "v_axis", "normal", "polygon")):
                     raise ValueError(f"{item['id']}: mounting face does not match the declared pyramid")
+    if request["reference_layout"]:
+        installed = {p["id"]: p for p in request["reference_layout"]}
+        inventory = {item["id"]: item for item in request["scene"]["inventory"]}
+        for name in ("start_contacts", "end_contacts"):
+            for limb, ref in request[name].items():
+                if ref is None:
+                    continue
+                placement = installed.get(ref["placement_id"])
+                item = inventory.get(placement["inventory_id"]) if placement else None
+                if item is None:
+                    raise ValueError(f"{name}: unknown {limb} contact")
+                if limb not in selected_contact(placement, item, ref["contact_id"])["limbs"]:
+                    raise ValueError(f"{name}: {limb} violates surface permissions")
     if request.get("profile") == "style":
         design = request["route_design"]
         if [p["hand_move_index"] for p in design["phases"]] != list(range(4)) or len({p["id"] for p in design["phases"]}) != 4:
@@ -380,8 +395,8 @@ def _competition_request(body, mode, angle_deg, seed, budget):
     return req
 
 
-def contact_world(request, placement, item, placements=None, frames=None):
-    return geometry_contact_world(request, placement, item, placements, frames)
+def contact_world(request, placement, item, placements=None, frames=None, contact_id="main"):
+    return geometry_contact_world(request, placement, item, placements, frames, contact_id)
 
 
 def _corners(placement, item):
@@ -429,11 +444,11 @@ def _sequence_errors(request, candidate, placements, inventory, *, sequence_poli
                 continue
             p = placements.get(ref["placement_id"])
             item = inventory.get(p["inventory_id"]) if p else None
-            if not item or item["contact"]["id"] != ref["contact_id"]:
+            if not item:
                 errors.append(f"{state['id']}: unknown {limb} contact")
             else:
                 try:
-                    if limb not in selected_contact(p, item)["limbs"]:
+                    if limb not in selected_contact(p, item, ref["contact_id"])["limbs"]:
                         errors.append(f"{state['id']}: disallowed limb {limb}")
                 except ValueError as exc:
                     errors.append(str(exc))
@@ -589,7 +604,7 @@ def evaluate(request, candidate, *, sequence_policy="request", deadline=None, in
             previous_q = None
             body = request["body"]
             for index, state in enumerate(candidate["states"]):
-                targets = {l: contact_world(request, placements[r["placement_id"]], inventory[placements[r["placement_id"]]["inventory_id"]], candidate["placements"], frames)
+                targets = {l: contact_world(request, placements[r["placement_id"]], inventory[placements[r["placement_id"]]["inventory_id"]], candidate["placements"], frames, r["contact_id"])
                            for l, r in state["contacts"].items() if r is not None}
                 span_fail = False
                 if "LH" in targets and "RH" in targets:
@@ -857,7 +872,7 @@ def _validate_evaluation(request, candidate, evaluation):
         for limb, ref in state_map[sid]["contacts"].items():
             if ref is not None:
                 p = placement_map[ref["placement_id"]]
-                errors.append(float(np.linalg.norm(endpoints[limb]-contact_world(request, p, inventory[p["inventory_id"]], candidate["placements"]))))
+                errors.append(float(np.linalg.norm(endpoints[limb]-contact_world(request, p, inventory[p["inventory_id"]], candidate["placements"], contact_id=ref["contact_id"]))))
         worst = max(errors, default=float("inf"))
         if not _number(pose.get("residual_m")) or abs(pose["residual_m"]-worst) > 1e-8 or worst > request["solver"]["contact_tolerance_m"]:
             raise ValueError("pass pose contacts/residual not verified")

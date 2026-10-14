@@ -10,7 +10,7 @@ const root = fileURLToPath(new URL('../../', import.meta.url));
 const localPython = fileURLToPath(new URL('../../.venv/bin/python', import.meta.url));
 const python = process.env.BETAR_PYTHON || (existsSync(localPython) ? localPython : 'python3');
 const fixture = JSON.parse(execFileSync(python, ['-c', String.raw`
-import copy, json
+import copy, gzip, json
 from pathlib import Path
 import numpy as np
 from boulderlab.geometry import mounting_faces, grip_surfaces, placement_frames, contact_world, selected_contact, panel_frame, wall_basis
@@ -82,6 +82,31 @@ for profile in ('overhang','roof','dihedral','arete'):
             layout_only=candidate.get('layout_report',{}).get('status')=='no_sequence',
             scene_height=scene['height'],vertical_height=float(top_y),panel_expected=panel_expected,
             context=dict(angleDeg=angle,inventory=scene['inventory'],placements=layout,wallPanels=panels),expected=expected))
+# A route's concrete contact_id selects the actual hand or standing surface.
+# Verify every limb at every state; selected placement defaults are insufficient.
+study_path = Path('outputs/own-routes-study/study.json')
+if study_path.exists():
+    study = json.loads(study_path.read_text())
+    for route in study['routes']:
+        data = (study_path.parent / route['bundle_file']).read_bytes()
+        bundle = json.loads(gzip.decompress(data) if route['bundle_file'].endswith('.gz') else data)
+        request = bundle['request']; scene = request['scene']
+        items = {h['id']: h for h in scene['inventory']}
+        for candidate in bundle['candidates']:
+            layout = candidate['placements']; placements = {p['id']: p for p in layout}
+            frames = placement_frames(layout, items, scene['angle_deg'], scene.get('wall_panels'))
+            contacts = []
+            for state in candidate['states']:
+                for limb, ref in state['contacts'].items():
+                    if ref is None: continue
+                    placement = placements[ref['placement_id']]; hold = items[placement['inventory_id']]
+                    selected = selected_contact(placement, hold, ref['contact_id'])
+                    origin, axes = frames[placement['id']]
+                    contacts.append(dict(state_id=state['id'],limb=limb,placement_id=placement['id'],contact_id=ref['contact_id'],
+                        point=contact_world(request,placement,hold,layout,frames,ref['contact_id']).tolist(),
+                        normal=(axes @ np.asarray(selected.get('normal',[0,0,1]))).tolist()))
+            cases.append(dict(name=f'own-route/{route["id"]}/{candidate["id"]}',own_route=True,state_contacts=contacts,
+                context=dict(angleDeg=scene['angle_deg'],inventory=scene['inventory'],placements=layout,wallPanels=scene.get('wall_panels'))))
 print(json.dumps(cases))
 `], { cwd: root, encoding: 'utf8' }));
 
@@ -91,7 +116,20 @@ const near = (actual, expected, label) => {
   assert.ok(actual.every((value, i) => Math.abs(value - expected[i]) < 1e-10), `${label}: ${JSON.stringify(actual)} vs ${JSON.stringify(expected)}`);
   comparisons++;
 };
-for (const { name, context, expected, vertical_height, scene_height = 4.2, panel_expected } of fixture) {
+let ownRouteContacts = 0, explicitFootContacts = 0;
+for (const { name, context, expected, vertical_height, scene_height = 4.2, panel_expected, state_contacts } of fixture) {
+  if (state_contacts) {
+    for (const ref of state_contacts) {
+      const placement = context.placements.find(item => item.id === ref.placement_id);
+      const hold = context.inventory.find(item => item.id === placement.inventory_id);
+      const frame = contactFrame(placement, hold, context, ref.contact_id);
+      near(frame.origin, ref.point, `${name}/${ref.state_id}/${ref.limb}/${ref.contact_id}/point`);
+      near(frame.normal, ref.normal, `${name}/${ref.state_id}/${ref.limb}/${ref.contact_id}/normal`);
+      ownRouteContacts++;
+      if (ref.limb.endsWith('F') && ref.contact_id !== 'main') explicitFootContacts++;
+    }
+    continue;
+  }
   const heights = wallHeightMeasures({ height: scene_height, angle_deg: context.angleDeg, wall_panels: context.wallPanels });
   near([heights.unfolded, heights.vertical], [scene_height, vertical_height], `${name}/unfolded vs vertical height`);
   if (panel_expected) for (const panel of context.wallPanels) {
@@ -133,4 +171,5 @@ assert.equal(tryPlacementFrame({ ...panelChild, wall_panel_id: 'lower' }, panelC
 near(transformDirection(wallFrame(10), [0, 0, 1]), [0, -Math.sin(Math.PI / 18), Math.cos(Math.PI / 18)], 'wall normal angle sign');
 const wallFixtures = fixture.filter(item => item.wall_profile).map(item => ({ profile: item.wall_profile, placements: item.context.placements.length, panels: item.context.wallPanels.length, layout_only: item.layout_only }));
 if (process.argv.includes('--require-wall-fixtures')) assert.deepEqual([...new Set(wallFixtures.map(item => item.profile))].sort(), ['arete', 'dihedral', 'overhang', 'roof'], 'all four saved wall profiles required');
-console.log(JSON.stringify({ status: 'pass', comparisons, cases: fixture.map(item => item.name), wall_fixtures: wallFixtures, checks: ['Python frame/contact/normal parity', 'wall and face inverse drag', 'selected-surface main alias', 'legacy contact preserved', 'parent translation and rotation inheritance', 'cancelled preview restoration', 'multi-axis panel rotation and translated origin', 'panel-mounted volume child inherits transform', 'invalid panel mount omitted', 'front corner elevation measured above y=0 separately from layout height', 'saved wall profile panel corners, placement axes and selected mesh contact frames'] }, null, 2));
+if (process.argv.includes('--require-own-routes')) { assert.ok(fixture.filter(item => item.own_route).length >= 3, 'three own rule routes required'); assert.ok(explicitFootContacts > 0, 'own routes include explicit standing surfaces'); }
+console.log(JSON.stringify({ status: 'pass', comparisons, own_route_contacts: ownRouteContacts, explicit_foot_contacts: explicitFootContacts, cases: fixture.map(item => item.name), wall_fixtures: wallFixtures, checks: ['Python frame/contact/normal parity', 'wall and face inverse drag', 'selected-surface main alias', 'legacy contact preserved', 'parent translation and rotation inheritance', 'cancelled preview restoration', 'multi-axis panel rotation and translated origin', 'panel-mounted volume child inherits transform', 'invalid panel mount omitted', 'front corner elevation measured above y=0 separately from layout height', 'saved wall profile panel corners, placement axes and selected mesh contact frames'] }, null, 2));

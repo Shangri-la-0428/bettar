@@ -12,7 +12,7 @@ from functools import lru_cache
 import numpy as np
 from .catalog import hold_taxonomy
 from .geometry import grip_surfaces
-from .route_design import AFFORDANCES, _ref
+from .route_design import AFFORDANCES, _ref, _contact_key
 
 MODEL_VERSION = "geometry-beta-statics-codesign-3"
 PROGRAMS = [
@@ -129,8 +129,8 @@ def _sequence_search(request,placements,deadline=None):
 def _character(request,record):
     """Geometry evidence only; no reward for touching a designated crux hold."""
     from .beta_audit import _audit_context
-    c=record["candidate"];ctx=_audit_context(request,c["placements"]);hands=[m for m in record["analysis"]["moves"] if m["limb"].endswith("H")]
-    horizontal=sum(abs(float(ctx[m["to_placement_id"]]["uv"][0]-ctx[m["from_placement_id"]]["uv"][0])) for m in hands)
+    c=record["candidate"];ctx=_audit_context(request,c["placements"],all_surfaces=True);hands=[m for m in record["analysis"]["moves"] if m["limb"].endswith("H")]
+    horizontal=sum(abs(float(ctx[_contact_key({"placement_id":m["to_placement_id"],"contact_id":m.get("to_contact_id","main")})]["uv"][0]-ctx[_contact_key({"placement_id":m["from_placement_id"],"contact_id":m.get("from_contact_id","main")})]["uv"][0])) for m in hands)
     direction=sum(m["attributes"]["directional_demand"] for m in hands)/len(hands)
     foot_transfer=sum(m["limb"].endswith("F") for m in record["analysis"]["moves"])/len(hands)
     # A bounded tradeoff, not maximizing difficulty or enforcing a sequence.
@@ -242,8 +242,8 @@ def _search_cached(encoded):
             report["baseline"]["exit_support"] = roof_exit_support(baseline["candidate"], baseline["evaluation"])
             report["result"]["exit_support"] = roof_exit_support(candidate, best["evaluation"])
             if role == "exit_support_tradeoff":
-                candidate["name"] = "屋檐 · 转换调整方案（增加动作）"
-                report["search"]["ranking"] = "P0 first; optional design prioritizes exit release equilibrium then exit all-state equilibrium; full-route support and added transfers remain visible, not a global improvement claim"
+                candidate["name"] = "屋檐 · 出口支撑备选方案"
+                report["search"]["ranking"] = "P0 first; optional design prioritizes exit release equilibrium then exit all-state equilibrium; full-route support and actual transfer/effort changes remain visible, not a global improvement claim"
             else:
                 candidate["name"] = "屋檐 · 全程支撑排序保留方案"
         return candidate

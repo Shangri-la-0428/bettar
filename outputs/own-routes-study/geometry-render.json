@@ -1,0 +1,67 @@
+{
+  "status": "pass",
+  "comparisons": 1748,
+  "own_route_contacts": 257,
+  "explicit_foot_contacts": 40,
+  "cases": [
+    "initial",
+    "parent-translate",
+    "parent-rotate",
+    "panel-initial",
+    "panel-parent-translate",
+    "panel-parent-rotate",
+    "wall-fixture/overhang/setting-diagonal_balance-trial1-beta3",
+    "wall-fixture/roof/setting-diagonal_balance-trial1-beta3",
+    "wall-fixture/roof/setting-diagonal_balance-trial0-beta3",
+    "wall-fixture/dihedral/setting-diagonal_balance-trial0-beta0",
+    "wall-fixture/arete/setting-diagonal_balance-trial0-beta3",
+    "own-route/lateral-balance/own-lateral-balance",
+    "own-route/compact-strength/own-compact-strength",
+    "own-route/sustained-transfer/own-sustained-transfer"
+  ],
+  "wall_fixtures": [
+    {
+      "profile": "overhang",
+      "placements": 18,
+      "panels": 1,
+      "layout_only": false
+    },
+    {
+      "profile": "roof",
+      "placements": 18,
+      "panels": 3,
+      "layout_only": false
+    },
+    {
+      "profile": "roof",
+      "placements": 18,
+      "panels": 3,
+      "layout_only": false
+    },
+    {
+      "profile": "dihedral",
+      "placements": 18,
+      "panels": 2,
+      "layout_only": false
+    },
+    {
+      "profile": "arete",
+      "placements": 18,
+      "panels": 2,
+      "layout_only": false
+    }
+  ],
+  "checks": [
+    "Python frame/contact/normal parity",
+    "wall and face inverse drag",
+    "selected-surface main alias",
+    "legacy contact preserved",
+    "parent translation and rotation inheritance",
+    "cancelled preview restoration",
+    "multi-axis panel rotation and translated origin",
+    "panel-mounted volume child inherits transform",
+    "invalid panel mount omitted",
+    "front corner elevation measured above y=0 separately from layout height",
+    "saved wall profile panel corners, placement axes and selected mesh contact frames"
+  ]
+}

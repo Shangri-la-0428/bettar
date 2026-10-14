@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
-  "id": "bundle-e0421119d8-1792002616526919000",
-  "created_at": "2026-10-14T18:30:16.526921+00:00",
+  "id": "bundle-04fd1e4d53-1792009869384748000",
+  "created_at": "2026-10-14T20:31:09.384751+00:00",
   "request": {
     "schema_version": "1.0",
     "id": "request-style-power-A",
@@ -121,6 +121,43 @@
                 -0.3798094682945213,
                 0.9250647370826719
               ]
+            },
+            {
+              "id": "standing",
+              "label": "外部上缘踩面",
+              "position": [
+                0.0,
+                0.051,
+                0.01932605206239205
+              ],
+              "normal": [
+                -0.0,
+                0.48697132120174186,
+                0.8734179597002972
+              ],
+              "u_axis": [
+                1.0,
+                0.0,
+                0.0
+              ],
+              "v_axis": [
+                0.0,
+                0.8734179597002972,
+                -0.48697132120174186
+              ],
+              "radii": [
+                0.023800000000000005,
+                0.0096
+              ],
+              "limbs": [
+                "LF",
+                "RF"
+              ],
+              "pull_direction": [
+                -0.0,
+                -0.8734179597002972,
+                0.48697132120174186
+              ]
             }
           ]
         },
@@ -231,6 +268,43 @@
                 -0.0,
                 -0.3798094682945213,
                 0.9250647370826719
+              ]
+            },
+            {
+              "id": "standing",
+              "label": "外部上缘踩面",
+              "position": [
+                0.0,
+                0.051,
+                0.01932605206239205
+              ],
+              "normal": [
+                -0.0,
+                0.48697132120174186,
+                0.8734179597002972
+              ],
+              "u_axis": [
+                1.0,
+                0.0,
+                0.0
+              ],
+              "v_axis": [
+                0.0,
+                0.8734179597002972,
+                -0.48697132120174186
+              ],
+              "radii": [
+                0.023800000000000005,
+                0.0096
+              ],
+              "limbs": [
+                "LF",
+                "RF"
+              ],
+              "pull_direction": [
+                -0.0,
+                -0.8734179597002972,
+                0.48697132120174186
               ]
             }
           ]
@@ -343,6 +417,43 @@
                 -0.3798094682945213,
                 0.9250647370826719
               ]
+            },
+            {
+              "id": "standing",
+              "label": "外部上缘踩面",
+              "position": [
+                0.0,
+                0.051,
+                0.01932605206239205
+              ],
+              "normal": [
+                -0.0,
+                0.48697132120174186,
+                0.8734179597002972
+              ],
+              "u_axis": [
+                1.0,
+                0.0,
+                0.0
+              ],
+              "v_axis": [
+                0.0,
+                0.8734179597002972,
+                -0.48697132120174186
+              ],
+              "radii": [
+                0.023800000000000005,
+                0.0096
+              ],
+              "limbs": [
+                "LF",
+                "RF"
+              ],
+              "pull_direction": [
+                -0.0,
+                -0.8734179597002972,
+                0.48697132120174186
+              ]
             }
           ]
         },
@@ -453,6 +564,43 @@
                 -0.0,
                 -0.29810953054076866,
                 0.9545316693545387
+              ]
+            },
+            {
+              "id": "standing",
+              "label": "外部上缘踩面",
+              "position": [
+                0.0,
+                0.0128,
+                0.019719480633663293
+              ],
+              "normal": [
+                -0.0,
+                0.8465056501746421,
+                0.532379736863084
+              ],
+              "u_axis": [
+                1.0,
+                0.0,
+                0.0
+              ],
+              "v_axis": [
+                0.0,
+                0.532379736863084,
+                -0.8465056501746421
+              ],
+              "radii": [
+                0.0182,
+                0.0064
+              ],
+              "limbs": [
+                "LF",
+                "RF"
+              ],
+              "pull_direction": [
+                -0.0,
+                -0.532379736863084,
+                0.8465056501746421
               ]
             }
           ]
@@ -565,6 +713,43 @@
                 -1.0,
                 -0.0
               ]
+            },
+            {
+              "id": "standing",
+              "label": "外部上缘踩面",
+              "position": [
+                0.0,
+                0.05780000000000001,
+                0.07333088687782739
+              ],
+              "normal": [
+                -0.0,
+                0.5807475769354906,
+                0.8140836885011004
+              ],
+              "u_axis": [
+                1.0,
+                0.0,
+                0.0
+              ],
+              "v_axis": [
+                0.0,
+                0.8140836885011004,
+                -0.5807475769354906
+              ],
+              "radii": [
+                0.019600000000000003,
+                0.012
+              ],
+              "limbs": [
+                "LF",
+                "RF"
+              ],
+              "pull_direction": [
+                -0.0,
+                -0.8140836885011004,
+                0.5807475769354906
+              ]
             }
           ]
         },
@@ -675,6 +860,43 @@
                 0.050860687467641275,
                 -0.9773104290711571,
                 0.2056149695403273
+              ]
+            },
+            {
+              "id": "standing",
+              "label": "外部上缘踩面",
+              "position": [
+                0.0,
+                0.054,
+                0.07616567804294
+              ],
+              "normal": [
+                0.014090613844208736,
+                0.7467643778162261,
+                0.6649394097406456
+              ],
+              "u_axis": [
+                0.9997755500834129,
+                0.0,
+                -0.021186067483353773
+              ],
+              "v_axis": [
+                -0.015821000502579258,
+                0.6650886888413791,
+                -0.7465967666139149
+              ],
+              "radii": [
+                0.025,
+                0.012
+              ],
+              "limbs": [
+                "LF",
+                "RF"
+              ],
+              "pull_direction": [
+                0.015821000502579258,
+                -0.6650886888413791,
+                0.7465967666139149
               ]
             }
           ]
@@ -787,6 +1009,43 @@
                 -0.9773104290711571,
                 0.2056149695403273
               ]
+            },
+            {
+              "id": "standing",
+              "label": "外部上缘踩面",
+              "position": [
+                0.0,
+                0.054,
+                0.07616567804294
+              ],
+              "normal": [
+                0.014090613844208736,
+                0.7467643778162261,
+                0.6649394097406456
+              ],
+              "u_axis": [
+                0.9997755500834129,
+                0.0,
+                -0.021186067483353773
+              ],
+              "v_axis": [
+                -0.015821000502579258,
+                0.6650886888413791,
+                -0.7465967666139149
+              ],
+              "radii": [
+                0.025,
+                0.012
+              ],
+              "limbs": [
+                "LF",
+                "RF"
+              ],
+              "pull_direction": [
+                0.015821000502579258,
+                -0.6650886888413791,
+                0.7465967666139149
+              ]
             }
           ]
         },
@@ -897,6 +1156,43 @@
                 -0.0,
                 -1.0,
                 -0.0
+              ]
+            },
+            {
+              "id": "standing",
+              "label": "外部上缘踩面",
+              "position": [
+                0.0,
+                0.05780000000000001,
+                0.07333088687782739
+              ],
+              "normal": [
+                -0.0,
+                0.5807475769354906,
+                0.8140836885011004
+              ],
+              "u_axis": [
+                1.0,
+                0.0,
+                0.0
+              ],
+              "v_axis": [
+                0.0,
+                0.8140836885011004,
+                -0.5807475769354906
+              ],
+              "radii": [
+                0.019600000000000003,
+                0.012
+              ],
+              "limbs": [
+                "LF",
+                "RF"
+              ],
+              "pull_direction": [
+                -0.0,
+                -0.8140836885011004,
+                0.5807475769354906
               ]
             }
           ]
@@ -1009,6 +1305,43 @@
                 -0.29810953054076866,
                 0.9545316693545387
               ]
+            },
+            {
+              "id": "standing",
+              "label": "外部上缘踩面",
+              "position": [
+                0.0,
+                0.0128,
+                0.019719480633663293
+              ],
+              "normal": [
+                -0.0,
+                0.8465056501746421,
+                0.532379736863084
+              ],
+              "u_axis": [
+                1.0,
+                0.0,
+                0.0
+              ],
+              "v_axis": [
+                0.0,
+                0.532379736863084,
+                -0.8465056501746421
+              ],
+              "radii": [
+                0.0182,
+                0.0064
+              ],
+              "limbs": [
+                "LF",
+                "RF"
+              ],
+              "pull_direction": [
+                -0.0,
+                -0.532379736863084,
+                0.8465056501746421
+              ]
             }
           ]
         },
@@ -1119,6 +1452,43 @@
                 -0.0,
                 -0.3798094682945213,
                 0.9250647370826719
+              ]
+            },
+            {
+              "id": "standing",
+              "label": "外部上缘踩面",
+              "position": [
+                0.0,
+                0.051,
+                0.01932605206239205
+              ],
+              "normal": [
+                -0.0,
+                0.48697132120174186,
+                0.8734179597002972
+              ],
+              "u_axis": [
+                1.0,
+                0.0,
+                0.0
+              ],
+              "v_axis": [
+                0.0,
+                0.8734179597002972,
+                -0.48697132120174186
+              ],
+              "radii": [
+                0.023800000000000005,
+                0.0096
+              ],
+              "limbs": [
+                "LF",
+                "RF"
+              ],
+              "pull_direction": [
+                -0.0,
+                -0.8734179597002972,
+                0.48697132120174186
               ]
             }
           ]
@@ -1231,6 +1601,43 @@
                 -0.3569173578414959,
                 0.9341359642318915
               ]
+            },
+            {
+              "id": "standing",
+              "label": "外部上缘踩面",
+              "position": [
+                0.0,
+                0.016,
+                0.017327799316768394
+              ],
+              "normal": [
+                -0.0,
+                0.7756441074519131,
+                0.6311705146591728
+              ],
+              "u_axis": [
+                1.0,
+                0.0,
+                0.0
+              ],
+              "v_axis": [
+                0.0,
+                0.6311705146591728,
+                -0.7756441074519131
+              ],
+              "radii": [
+                0.025,
+                0.008
+              ],
+              "limbs": [
+                "LF",
+                "RF"
+              ],
+              "pull_direction": [
+                -0.0,
+                -0.6311705146591728,
+                0.7756441074519131
+              ]
             }
           ]
         },
@@ -1341,6 +1748,43 @@
                 -0.0,
                 -0.3569173578414959,
                 0.9341359642318915
+              ]
+            },
+            {
+              "id": "standing",
+              "label": "外部上缘踩面",
+              "position": [
+                0.0,
+                0.016,
+                0.017327799316768394
+              ],
+              "normal": [
+                -0.0,
+                0.7756441074519131,
+                0.6311705146591728
+              ],
+              "u_axis": [
+                1.0,
+                0.0,
+                0.0
+              ],
+              "v_axis": [
+                0.0,
+                0.6311705146591728,
+                -0.7756441074519131
+              ],
+              "radii": [
+                0.025,
+                0.008
+              ],
+              "limbs": [
+                "LF",
+                "RF"
+              ],
+              "pull_direction": [
+                -0.0,
+                -0.6311705146591728,
+                0.7756441074519131
               ]
             }
           ]
@@ -4819,9 +5263,9 @@
   ],
   "evaluations": [
     {
-      "id": "eval-candidate-style-42-1-c46296bb93",
+      "id": "eval-candidate-style-42-1-3a8d93c7d9",
       "candidate_id": "candidate-style-42-1",
-      "fingerprint": "sha256:b5ff6c0d27ffba820dcaff604d26d02c7a77bd14d180fcbdd10363c46296bb93",
+      "fingerprint": "sha256:14cabeb334d089b48b57225bf5e6576457f10cd997c515b571fe8f3a8d93c7d9",
       "version": "0.1.0",
       "checks": [
         {
@@ -4896,7 +5340,7 @@
             "upper_arm": 0.28,
             "forearm": 0.25,
             "endpoint_offset_sum_m": 0.0,
-            "fingerprint": "sha256:b5ff6c0d27ffba820dcaff604d26d02c7a77bd14d180fcbdd10363c46296bb93"
+            "fingerprint": "sha256:14cabeb334d089b48b57225bf5e6576457f10cd997c515b571fe8f3a8d93c7d9"
           }
         },
         {
@@ -4922,7 +5366,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 66.41
+            "elapsed_ms": 71.18
           }
         },
         {
@@ -4938,7 +5382,7 @@
             "upper_arm": 0.28,
             "forearm": 0.25,
             "endpoint_offset_sum_m": 0.0,
-            "fingerprint": "sha256:b5ff6c0d27ffba820dcaff604d26d02c7a77bd14d180fcbdd10363c46296bb93"
+            "fingerprint": "sha256:14cabeb334d089b48b57225bf5e6576457f10cd997c515b571fe8f3a8d93c7d9"
           }
         },
         {
@@ -4963,7 +5407,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 3.26
+            "elapsed_ms": 3.69
           }
         },
         {
@@ -4979,7 +5423,7 @@
             "upper_arm": 0.28,
             "forearm": 0.25,
             "endpoint_offset_sum_m": 0.0,
-            "fingerprint": "sha256:b5ff6c0d27ffba820dcaff604d26d02c7a77bd14d180fcbdd10363c46296bb93"
+            "fingerprint": "sha256:14cabeb334d089b48b57225bf5e6576457f10cd997c515b571fe8f3a8d93c7d9"
           }
         },
         {
@@ -5005,7 +5449,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 118.67
+            "elapsed_ms": 126.24
           }
         },
         {
@@ -5030,7 +5474,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 3.34
+            "elapsed_ms": 3.41
           }
         },
         {
@@ -5046,7 +5490,7 @@
             "upper_arm": 0.28,
             "forearm": 0.25,
             "endpoint_offset_sum_m": 0.0,
-            "fingerprint": "sha256:b5ff6c0d27ffba820dcaff604d26d02c7a77bd14d180fcbdd10363c46296bb93"
+            "fingerprint": "sha256:14cabeb334d089b48b57225bf5e6576457f10cd997c515b571fe8f3a8d93c7d9"
           }
         },
         {
@@ -5072,7 +5516,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 128.99
+            "elapsed_ms": 132.8
           }
         },
         {
@@ -5088,7 +5532,7 @@
             "upper_arm": 0.28,
             "forearm": 0.25,
             "endpoint_offset_sum_m": 0.0,
-            "fingerprint": "sha256:b5ff6c0d27ffba820dcaff604d26d02c7a77bd14d180fcbdd10363c46296bb93"
+            "fingerprint": "sha256:14cabeb334d089b48b57225bf5e6576457f10cd997c515b571fe8f3a8d93c7d9"
           }
         },
         {
@@ -5113,7 +5557,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 3.55
+            "elapsed_ms": 3.68
           }
         },
         {
@@ -5129,7 +5573,7 @@
             "upper_arm": 0.28,
             "forearm": 0.25,
             "endpoint_offset_sum_m": 0.0,
-            "fingerprint": "sha256:b5ff6c0d27ffba820dcaff604d26d02c7a77bd14d180fcbdd10363c46296bb93"
+            "fingerprint": "sha256:14cabeb334d089b48b57225bf5e6576457f10cd997c515b571fe8f3a8d93c7d9"
           }
         },
         {
@@ -5155,7 +5599,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 121.52
+            "elapsed_ms": 127.64
           }
         },
         {
@@ -5180,7 +5624,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 3.2
+            "elapsed_ms": 3.66
           }
         },
         {
@@ -5196,7 +5640,7 @@
             "upper_arm": 0.28,
             "forearm": 0.25,
             "endpoint_offset_sum_m": 0.0,
-            "fingerprint": "sha256:b5ff6c0d27ffba820dcaff604d26d02c7a77bd14d180fcbdd10363c46296bb93"
+            "fingerprint": "sha256:14cabeb334d089b48b57225bf5e6576457f10cd997c515b571fe8f3a8d93c7d9"
           }
         },
         {
@@ -5222,7 +5666,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 130.62
+            "elapsed_ms": 136.54
           }
         },
         {
@@ -5238,7 +5682,7 @@
             "upper_arm": 0.28,
             "forearm": 0.25,
             "endpoint_offset_sum_m": 0.0,
-            "fingerprint": "sha256:b5ff6c0d27ffba820dcaff604d26d02c7a77bd14d180fcbdd10363c46296bb93"
+            "fingerprint": "sha256:14cabeb334d089b48b57225bf5e6576457f10cd997c515b571fe8f3a8d93c7d9"
           }
         },
         {
@@ -5263,7 +5707,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 3.39
+            "elapsed_ms": 3.33
           }
         },
         {
@@ -5279,7 +5723,7 @@
             "upper_arm": 0.28,
             "forearm": 0.25,
             "endpoint_offset_sum_m": 0.0,
-            "fingerprint": "sha256:b5ff6c0d27ffba820dcaff604d26d02c7a77bd14d180fcbdd10363c46296bb93"
+            "fingerprint": "sha256:14cabeb334d089b48b57225bf5e6576457f10cd997c515b571fe8f3a8d93c7d9"
           }
         },
         {
@@ -5305,7 +5749,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 136.39
+            "elapsed_ms": 147.26
           }
         },
         {
@@ -5330,7 +5774,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 3.2
+            "elapsed_ms": 3.47
           }
         },
         {
@@ -5346,7 +5790,7 @@
             "upper_arm": 0.28,
             "forearm": 0.25,
             "endpoint_offset_sum_m": 0.0,
-            "fingerprint": "sha256:b5ff6c0d27ffba820dcaff604d26d02c7a77bd14d180fcbdd10363c46296bb93"
+            "fingerprint": "sha256:14cabeb334d089b48b57225bf5e6576457f10cd997c515b571fe8f3a8d93c7d9"
           }
         },
         {
@@ -5372,7 +5816,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 139.95
+            "elapsed_ms": 147.59
           }
         },
         {
@@ -5388,7 +5832,7 @@
             "upper_arm": 0.28,
             "forearm": 0.25,
             "endpoint_offset_sum_m": 0.0,
-            "fingerprint": "sha256:b5ff6c0d27ffba820dcaff604d26d02c7a77bd14d180fcbdd10363c46296bb93"
+            "fingerprint": "sha256:14cabeb334d089b48b57225bf5e6576457f10cd997c515b571fe8f3a8d93c7d9"
           }
         },
         {
@@ -5413,7 +5857,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 3.4
+            "elapsed_ms": 3.67
           }
         },
         {
@@ -5429,7 +5873,7 @@
             "upper_arm": 0.28,
             "forearm": 0.25,
             "endpoint_offset_sum_m": 0.0,
-            "fingerprint": "sha256:b5ff6c0d27ffba820dcaff604d26d02c7a77bd14d180fcbdd10363c46296bb93"
+            "fingerprint": "sha256:14cabeb334d089b48b57225bf5e6576457f10cd997c515b571fe8f3a8d93c7d9"
           }
         },
         {
@@ -5455,7 +5899,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 115.12
+            "elapsed_ms": 122.05
           }
         },
         {
@@ -5480,7 +5924,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 3.31
+            "elapsed_ms": 3.64
           }
         },
         {
@@ -5496,7 +5940,7 @@
             "upper_arm": 0.28,
             "forearm": 0.25,
             "endpoint_offset_sum_m": 0.0,
-            "fingerprint": "sha256:b5ff6c0d27ffba820dcaff604d26d02c7a77bd14d180fcbdd10363c46296bb93"
+            "fingerprint": "sha256:14cabeb334d089b48b57225bf5e6576457f10cd997c515b571fe8f3a8d93c7d9"
           }
         },
         {
@@ -5522,7 +5966,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 123.15
+            "elapsed_ms": 130.54
           }
         },
         {
@@ -5677,7 +6121,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 66.41
+            "elapsed_ms": 71.18
           },
           "state_id": "s0"
         },
@@ -5795,7 +6239,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 3.26
+            "elapsed_ms": 3.69
           },
           "state_id": "s1"
         },
@@ -5914,7 +6358,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 118.67
+            "elapsed_ms": 126.24
           },
           "state_id": "s2"
         },
@@ -6032,7 +6476,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 3.34
+            "elapsed_ms": 3.41
           },
           "state_id": "s3"
         },
@@ -6151,7 +6595,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 128.99
+            "elapsed_ms": 132.8
           },
           "state_id": "s4"
         },
@@ -6269,7 +6713,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 3.55
+            "elapsed_ms": 3.68
           },
           "state_id": "s5"
         },
@@ -6388,7 +6832,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 121.52
+            "elapsed_ms": 127.64
           },
           "state_id": "s6"
         },
@@ -6506,7 +6950,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 3.2
+            "elapsed_ms": 3.66
           },
           "state_id": "s7"
         },
@@ -6625,7 +7069,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 130.62
+            "elapsed_ms": 136.54
           },
           "state_id": "s8"
         },
@@ -6743,7 +7187,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 3.39
+            "elapsed_ms": 3.33
           },
           "state_id": "s9"
         },
@@ -6862,7 +7306,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 136.39
+            "elapsed_ms": 147.26
           },
           "state_id": "s10"
         },
@@ -6980,7 +7424,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 3.2
+            "elapsed_ms": 3.47
           },
           "state_id": "s11"
         },
@@ -7099,7 +7543,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 139.95
+            "elapsed_ms": 147.59
           },
           "state_id": "s12"
         },
@@ -7217,7 +7661,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 3.4
+            "elapsed_ms": 3.67
           },
           "state_id": "s13"
         },
@@ -7336,7 +7780,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 115.12
+            "elapsed_ms": 122.05
           },
           "state_id": "s14"
         },
@@ -7454,7 +7898,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 3.31
+            "elapsed_ms": 3.64
           },
           "state_id": "s15"
         },
@@ -7573,7 +8017,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 123.15
+            "elapsed_ms": 130.54
           },
           "state_id": "s16"
         }
@@ -7583,7 +8027,7 @@
         "passed": 36,
         "total": 36
       },
-      "elapsed_ms": 1143.99,
+      "elapsed_ms": 1210.73,
       "design_analysis": {
         "source": "synthetic_assumption",
         "model_version": "style-proxy-2",
@@ -7969,9 +8413,9 @@
       }
     },
     {
-      "id": "eval-candidate-style-42-2-fc64dae43e",
+      "id": "eval-candidate-style-42-2-7a63ee555b",
       "candidate_id": "candidate-style-42-2",
-      "fingerprint": "sha256:77daff6c564c07a3828d55e31988f82e508e9be001284fc8da49d6fc64dae43e",
+      "fingerprint": "sha256:d4bafe32320e82c4fddea22459b5af7f6ffe3b44f2cc976e1e2af47a63ee555b",
       "version": "0.1.0",
       "checks": [
         {
@@ -8046,7 +8490,7 @@
             "upper_arm": 0.28,
             "forearm": 0.25,
             "endpoint_offset_sum_m": 0.0,
-            "fingerprint": "sha256:77daff6c564c07a3828d55e31988f82e508e9be001284fc8da49d6fc64dae43e"
+            "fingerprint": "sha256:d4bafe32320e82c4fddea22459b5af7f6ffe3b44f2cc976e1e2af47a63ee555b"
           }
         },
         {
@@ -8072,7 +8516,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 66.82
+            "elapsed_ms": 69.0
           }
         },
         {
@@ -8088,7 +8532,7 @@
             "upper_arm": 0.28,
             "forearm": 0.25,
             "endpoint_offset_sum_m": 0.0,
-            "fingerprint": "sha256:77daff6c564c07a3828d55e31988f82e508e9be001284fc8da49d6fc64dae43e"
+            "fingerprint": "sha256:d4bafe32320e82c4fddea22459b5af7f6ffe3b44f2cc976e1e2af47a63ee555b"
           }
         },
         {
@@ -8113,7 +8557,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 3.37
+            "elapsed_ms": 3.34
           }
         },
         {
@@ -8129,7 +8573,7 @@
             "upper_arm": 0.28,
             "forearm": 0.25,
             "endpoint_offset_sum_m": 0.0,
-            "fingerprint": "sha256:77daff6c564c07a3828d55e31988f82e508e9be001284fc8da49d6fc64dae43e"
+            "fingerprint": "sha256:d4bafe32320e82c4fddea22459b5af7f6ffe3b44f2cc976e1e2af47a63ee555b"
           }
         },
         {
@@ -8155,7 +8599,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 119.96
+            "elapsed_ms": 124.64
           }
         },
         {
@@ -8180,7 +8624,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 1.71
+            "elapsed_ms": 1.96
           }
         },
         {
@@ -8196,7 +8640,7 @@
             "upper_arm": 0.28,
             "forearm": 0.25,
             "endpoint_offset_sum_m": 0.0,
-            "fingerprint": "sha256:77daff6c564c07a3828d55e31988f82e508e9be001284fc8da49d6fc64dae43e"
+            "fingerprint": "sha256:d4bafe32320e82c4fddea22459b5af7f6ffe3b44f2cc976e1e2af47a63ee555b"
           }
         },
         {
@@ -8222,7 +8666,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 129.46
+            "elapsed_ms": 131.23
           }
         },
         {
@@ -8238,7 +8682,7 @@
             "upper_arm": 0.28,
             "forearm": 0.25,
             "endpoint_offset_sum_m": 0.0,
-            "fingerprint": "sha256:77daff6c564c07a3828d55e31988f82e508e9be001284fc8da49d6fc64dae43e"
+            "fingerprint": "sha256:d4bafe32320e82c4fddea22459b5af7f6ffe3b44f2cc976e1e2af47a63ee555b"
           }
         },
         {
@@ -8263,7 +8707,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 3.38
+            "elapsed_ms": 3.56
           }
         },
         {
@@ -8279,7 +8723,7 @@
             "upper_arm": 0.28,
             "forearm": 0.25,
             "endpoint_offset_sum_m": 0.0,
-            "fingerprint": "sha256:77daff6c564c07a3828d55e31988f82e508e9be001284fc8da49d6fc64dae43e"
+            "fingerprint": "sha256:d4bafe32320e82c4fddea22459b5af7f6ffe3b44f2cc976e1e2af47a63ee555b"
           }
         },
         {
@@ -8305,7 +8749,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 122.02
+            "elapsed_ms": 126.27
           }
         },
         {
@@ -8330,7 +8774,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 3.27
+            "elapsed_ms": 3.36
           }
         },
         {
@@ -8346,7 +8790,7 @@
             "upper_arm": 0.28,
             "forearm": 0.25,
             "endpoint_offset_sum_m": 0.0,
-            "fingerprint": "sha256:77daff6c564c07a3828d55e31988f82e508e9be001284fc8da49d6fc64dae43e"
+            "fingerprint": "sha256:d4bafe32320e82c4fddea22459b5af7f6ffe3b44f2cc976e1e2af47a63ee555b"
           }
         },
         {
@@ -8372,7 +8816,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 124.42
+            "elapsed_ms": 127.1
           }
         },
         {
@@ -8388,7 +8832,7 @@
             "upper_arm": 0.28,
             "forearm": 0.25,
             "endpoint_offset_sum_m": 0.0,
-            "fingerprint": "sha256:77daff6c564c07a3828d55e31988f82e508e9be001284fc8da49d6fc64dae43e"
+            "fingerprint": "sha256:d4bafe32320e82c4fddea22459b5af7f6ffe3b44f2cc976e1e2af47a63ee555b"
           }
         },
         {
@@ -8413,7 +8857,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 3.33
+            "elapsed_ms": 3.42
           }
         },
         {
@@ -8429,7 +8873,7 @@
             "upper_arm": 0.28,
             "forearm": 0.25,
             "endpoint_offset_sum_m": 0.0,
-            "fingerprint": "sha256:77daff6c564c07a3828d55e31988f82e508e9be001284fc8da49d6fc64dae43e"
+            "fingerprint": "sha256:d4bafe32320e82c4fddea22459b5af7f6ffe3b44f2cc976e1e2af47a63ee555b"
           }
         },
         {
@@ -8455,7 +8899,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 136.11
+            "elapsed_ms": 142.82
           }
         },
         {
@@ -8480,7 +8924,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 3.33
+            "elapsed_ms": 3.6
           }
         },
         {
@@ -8496,7 +8940,7 @@
             "upper_arm": 0.28,
             "forearm": 0.25,
             "endpoint_offset_sum_m": 0.0,
-            "fingerprint": "sha256:77daff6c564c07a3828d55e31988f82e508e9be001284fc8da49d6fc64dae43e"
+            "fingerprint": "sha256:d4bafe32320e82c4fddea22459b5af7f6ffe3b44f2cc976e1e2af47a63ee555b"
           }
         },
         {
@@ -8522,7 +8966,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 102.47
+            "elapsed_ms": 106.99
           }
         },
         {
@@ -8538,7 +8982,7 @@
             "upper_arm": 0.28,
             "forearm": 0.25,
             "endpoint_offset_sum_m": 0.0,
-            "fingerprint": "sha256:77daff6c564c07a3828d55e31988f82e508e9be001284fc8da49d6fc64dae43e"
+            "fingerprint": "sha256:d4bafe32320e82c4fddea22459b5af7f6ffe3b44f2cc976e1e2af47a63ee555b"
           }
         },
         {
@@ -8563,7 +9007,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 3.26
+            "elapsed_ms": 3.76
           }
         },
         {
@@ -8579,7 +9023,7 @@
             "upper_arm": 0.28,
             "forearm": 0.25,
             "endpoint_offset_sum_m": 0.0,
-            "fingerprint": "sha256:77daff6c564c07a3828d55e31988f82e508e9be001284fc8da49d6fc64dae43e"
+            "fingerprint": "sha256:d4bafe32320e82c4fddea22459b5af7f6ffe3b44f2cc976e1e2af47a63ee555b"
           }
         },
         {
@@ -8605,7 +9049,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 117.23
+            "elapsed_ms": 127.03
           }
         },
         {
@@ -8630,7 +9074,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 3.39
+            "elapsed_ms": 3.66
           }
         },
         {
@@ -8646,7 +9090,7 @@
             "upper_arm": 0.28,
             "forearm": 0.25,
             "endpoint_offset_sum_m": 0.0,
-            "fingerprint": "sha256:77daff6c564c07a3828d55e31988f82e508e9be001284fc8da49d6fc64dae43e"
+            "fingerprint": "sha256:d4bafe32320e82c4fddea22459b5af7f6ffe3b44f2cc976e1e2af47a63ee555b"
           }
         },
         {
@@ -8672,7 +9116,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 117.29
+            "elapsed_ms": 123.21
           }
         },
         {
@@ -8827,7 +9271,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 66.82
+            "elapsed_ms": 69.0
           },
           "state_id": "s0"
         },
@@ -8945,7 +9389,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 3.37
+            "elapsed_ms": 3.34
           },
           "state_id": "s1"
         },
@@ -9064,7 +9508,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 119.96
+            "elapsed_ms": 124.64
           },
           "state_id": "s2"
         },
@@ -9182,7 +9626,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 1.71
+            "elapsed_ms": 1.96
           },
           "state_id": "s3"
         },
@@ -9301,7 +9745,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 129.46
+            "elapsed_ms": 131.23
           },
           "state_id": "s4"
         },
@@ -9419,7 +9863,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 3.38
+            "elapsed_ms": 3.56
           },
           "state_id": "s5"
         },
@@ -9538,7 +9982,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 122.02
+            "elapsed_ms": 126.27
           },
           "state_id": "s6"
         },
@@ -9656,7 +10100,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 3.27
+            "elapsed_ms": 3.36
           },
           "state_id": "s7"
         },
@@ -9775,7 +10219,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 124.42
+            "elapsed_ms": 127.1
           },
           "state_id": "s8"
         },
@@ -9893,7 +10337,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 3.33
+            "elapsed_ms": 3.42
           },
           "state_id": "s9"
         },
@@ -10012,7 +10456,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 136.11
+            "elapsed_ms": 142.82
           },
           "state_id": "s10"
         },
@@ -10130,7 +10574,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 3.33
+            "elapsed_ms": 3.6
           },
           "state_id": "s11"
         },
@@ -10249,7 +10693,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 102.47
+            "elapsed_ms": 106.99
           },
           "state_id": "s12"
         },
@@ -10367,7 +10811,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 3.26
+            "elapsed_ms": 3.76
           },
           "state_id": "s13"
         },
@@ -10486,7 +10930,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 117.23
+            "elapsed_ms": 127.03
           },
           "state_id": "s14"
         },
@@ -10604,7 +11048,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 3.39
+            "elapsed_ms": 3.66
           },
           "state_id": "s15"
         },
@@ -10723,7 +11167,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 117.29
+            "elapsed_ms": 123.21
           },
           "state_id": "s16"
         }
@@ -10733,7 +11177,7 @@
         "passed": 36,
         "total": 36
       },
-      "elapsed_ms": 1097.54,
+      "elapsed_ms": 1144.59,
       "design_analysis": {
         "source": "synthetic_assumption",
         "model_version": "style-proxy-2",
@@ -11119,9 +11563,9 @@
       }
     },
     {
-      "id": "eval-candidate-style-42-3-1933774264",
+      "id": "eval-candidate-style-42-3-0d9ca35eef",
       "candidate_id": "candidate-style-42-3",
-      "fingerprint": "sha256:527226fed98c94ad52bc36f88c63645e91be8b93c06fed9237859a1933774264",
+      "fingerprint": "sha256:5d248771277d1fd58d841f781f77477155709e31adbf6b430bf27a0d9ca35eef",
       "version": "0.1.0",
       "checks": [
         {
@@ -11196,7 +11640,7 @@
             "upper_arm": 0.28,
             "forearm": 0.25,
             "endpoint_offset_sum_m": 0.0,
-            "fingerprint": "sha256:527226fed98c94ad52bc36f88c63645e91be8b93c06fed9237859a1933774264"
+            "fingerprint": "sha256:5d248771277d1fd58d841f781f77477155709e31adbf6b430bf27a0d9ca35eef"
           }
         },
         {
@@ -11222,7 +11666,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 67.26
+            "elapsed_ms": 70.51
           }
         },
         {
@@ -11238,7 +11682,7 @@
             "upper_arm": 0.28,
             "forearm": 0.25,
             "endpoint_offset_sum_m": 0.0,
-            "fingerprint": "sha256:527226fed98c94ad52bc36f88c63645e91be8b93c06fed9237859a1933774264"
+            "fingerprint": "sha256:5d248771277d1fd58d841f781f77477155709e31adbf6b430bf27a0d9ca35eef"
           }
         },
         {
@@ -11263,7 +11707,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 3.24
+            "elapsed_ms": 3.63
           }
         },
         {
@@ -11279,7 +11723,7 @@
             "upper_arm": 0.28,
             "forearm": 0.25,
             "endpoint_offset_sum_m": 0.0,
-            "fingerprint": "sha256:527226fed98c94ad52bc36f88c63645e91be8b93c06fed9237859a1933774264"
+            "fingerprint": "sha256:5d248771277d1fd58d841f781f77477155709e31adbf6b430bf27a0d9ca35eef"
           }
         },
         {
@@ -11305,7 +11749,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 96.83
+            "elapsed_ms": 102.77
           }
         },
         {
@@ -11330,7 +11774,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 3.31
+            "elapsed_ms": 3.55
           }
         },
         {
@@ -11346,7 +11790,7 @@
             "upper_arm": 0.28,
             "forearm": 0.25,
             "endpoint_offset_sum_m": 0.0,
-            "fingerprint": "sha256:527226fed98c94ad52bc36f88c63645e91be8b93c06fed9237859a1933774264"
+            "fingerprint": "sha256:5d248771277d1fd58d841f781f77477155709e31adbf6b430bf27a0d9ca35eef"
           }
         },
         {
@@ -11372,7 +11816,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 119.52
+            "elapsed_ms": 124.55
           }
         },
         {
@@ -11388,7 +11832,7 @@
             "upper_arm": 0.28,
             "forearm": 0.25,
             "endpoint_offset_sum_m": 0.0,
-            "fingerprint": "sha256:527226fed98c94ad52bc36f88c63645e91be8b93c06fed9237859a1933774264"
+            "fingerprint": "sha256:5d248771277d1fd58d841f781f77477155709e31adbf6b430bf27a0d9ca35eef"
           }
         },
         {
@@ -11413,7 +11857,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 3.34
+            "elapsed_ms": 3.5
           }
         },
         {
@@ -11429,7 +11873,7 @@
             "upper_arm": 0.28,
             "forearm": 0.25,
             "endpoint_offset_sum_m": 0.0,
-            "fingerprint": "sha256:527226fed98c94ad52bc36f88c63645e91be8b93c06fed9237859a1933774264"
+            "fingerprint": "sha256:5d248771277d1fd58d841f781f77477155709e31adbf6b430bf27a0d9ca35eef"
           }
         },
         {
@@ -11455,7 +11899,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 130.37
+            "elapsed_ms": 136.18
           }
         },
         {
@@ -11480,7 +11924,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 3.27
+            "elapsed_ms": 3.62
           }
         },
         {
@@ -11496,7 +11940,7 @@
             "upper_arm": 0.28,
             "forearm": 0.25,
             "endpoint_offset_sum_m": 0.0,
-            "fingerprint": "sha256:527226fed98c94ad52bc36f88c63645e91be8b93c06fed9237859a1933774264"
+            "fingerprint": "sha256:5d248771277d1fd58d841f781f77477155709e31adbf6b430bf27a0d9ca35eef"
           }
         },
         {
@@ -11522,7 +11966,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 145.67
+            "elapsed_ms": 153.39
           }
         },
         {
@@ -11538,7 +11982,7 @@
             "upper_arm": 0.28,
             "forearm": 0.25,
             "endpoint_offset_sum_m": 0.0,
-            "fingerprint": "sha256:527226fed98c94ad52bc36f88c63645e91be8b93c06fed9237859a1933774264"
+            "fingerprint": "sha256:5d248771277d1fd58d841f781f77477155709e31adbf6b430bf27a0d9ca35eef"
           }
         },
         {
@@ -11563,7 +12007,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 3.33
+            "elapsed_ms": 3.46
           }
         },
         {
@@ -11579,7 +12023,7 @@
             "upper_arm": 0.28,
             "forearm": 0.25,
             "endpoint_offset_sum_m": 0.0,
-            "fingerprint": "sha256:527226fed98c94ad52bc36f88c63645e91be8b93c06fed9237859a1933774264"
+            "fingerprint": "sha256:5d248771277d1fd58d841f781f77477155709e31adbf6b430bf27a0d9ca35eef"
           }
         },
         {
@@ -11605,7 +12049,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 117.6
+            "elapsed_ms": 123.41
           }
         },
         {
@@ -11630,7 +12074,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 4.84
+            "elapsed_ms": 5.21
           }
         },
         {
@@ -11646,7 +12090,7 @@
             "upper_arm": 0.28,
             "forearm": 0.25,
             "endpoint_offset_sum_m": 0.0,
-            "fingerprint": "sha256:527226fed98c94ad52bc36f88c63645e91be8b93c06fed9237859a1933774264"
+            "fingerprint": "sha256:5d248771277d1fd58d841f781f77477155709e31adbf6b430bf27a0d9ca35eef"
           }
         },
         {
@@ -11672,7 +12116,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 136.57
+            "elapsed_ms": 143.25
           }
         },
         {
@@ -11688,7 +12132,7 @@
             "upper_arm": 0.28,
             "forearm": 0.25,
             "endpoint_offset_sum_m": 0.0,
-            "fingerprint": "sha256:527226fed98c94ad52bc36f88c63645e91be8b93c06fed9237859a1933774264"
+            "fingerprint": "sha256:5d248771277d1fd58d841f781f77477155709e31adbf6b430bf27a0d9ca35eef"
           }
         },
         {
@@ -11713,7 +12157,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 3.22
+            "elapsed_ms": 3.61
           }
         },
         {
@@ -11729,7 +12173,7 @@
             "upper_arm": 0.28,
             "forearm": 0.25,
             "endpoint_offset_sum_m": 0.0,
-            "fingerprint": "sha256:527226fed98c94ad52bc36f88c63645e91be8b93c06fed9237859a1933774264"
+            "fingerprint": "sha256:5d248771277d1fd58d841f781f77477155709e31adbf6b430bf27a0d9ca35eef"
           }
         },
         {
@@ -11755,7 +12199,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 133.17
+            "elapsed_ms": 139.9
           }
         },
         {
@@ -11780,7 +12224,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 3.33
+            "elapsed_ms": 3.81
           }
         },
         {
@@ -11796,7 +12240,7 @@
             "upper_arm": 0.28,
             "forearm": 0.25,
             "endpoint_offset_sum_m": 0.0,
-            "fingerprint": "sha256:527226fed98c94ad52bc36f88c63645e91be8b93c06fed9237859a1933774264"
+            "fingerprint": "sha256:5d248771277d1fd58d841f781f77477155709e31adbf6b430bf27a0d9ca35eef"
           }
         },
         {
@@ -11822,7 +12266,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 130.43
+            "elapsed_ms": 137.8
           }
         },
         {
@@ -11977,7 +12421,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 67.26
+            "elapsed_ms": 70.51
           },
           "state_id": "s0"
         },
@@ -12095,7 +12539,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 3.24
+            "elapsed_ms": 3.63
           },
           "state_id": "s1"
         },
@@ -12214,7 +12658,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 96.83
+            "elapsed_ms": 102.77
           },
           "state_id": "s2"
         },
@@ -12332,7 +12776,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 3.31
+            "elapsed_ms": 3.55
           },
           "state_id": "s3"
         },
@@ -12451,7 +12895,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 119.52
+            "elapsed_ms": 124.55
           },
           "state_id": "s4"
         },
@@ -12569,7 +13013,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 3.34
+            "elapsed_ms": 3.5
           },
           "state_id": "s5"
         },
@@ -12688,7 +13132,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 130.37
+            "elapsed_ms": 136.18
           },
           "state_id": "s6"
         },
@@ -12806,7 +13250,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 3.27
+            "elapsed_ms": 3.62
           },
           "state_id": "s7"
         },
@@ -12925,7 +13369,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 145.67
+            "elapsed_ms": 153.39
           },
           "state_id": "s8"
         },
@@ -13043,7 +13487,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 3.33
+            "elapsed_ms": 3.46
           },
           "state_id": "s9"
         },
@@ -13162,7 +13606,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 117.6
+            "elapsed_ms": 123.41
           },
           "state_id": "s10"
         },
@@ -13280,7 +13724,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 4.84
+            "elapsed_ms": 5.21
           },
           "state_id": "s11"
         },
@@ -13399,7 +13843,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 136.57
+            "elapsed_ms": 143.25
           },
           "state_id": "s12"
         },
@@ -13517,7 +13961,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 3.22
+            "elapsed_ms": 3.61
           },
           "state_id": "s13"
         },
@@ -13636,7 +14080,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 133.17
+            "elapsed_ms": 139.9
           },
           "state_id": "s14"
         },
@@ -13754,7 +14198,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 3.33
+            "elapsed_ms": 3.81
           },
           "state_id": "s15"
         },
@@ -13873,7 +14317,7 @@
             ],
             "joint_limits_pass": true,
             "body_id": "A",
-            "elapsed_ms": 130.43
+            "elapsed_ms": 137.8
           },
           "state_id": "s16"
         }
@@ -13883,7 +14327,7 @@
         "passed": 36,
         "total": 36
       },
-      "elapsed_ms": 1142.35,
+      "elapsed_ms": 1202.09,
       "design_analysis": {
         "source": "synthetic_assumption",
         "model_version": "style-proxy-2",
@@ -14271,7 +14715,7 @@
   ],
   "manifest": {
     "engine_version": "0.1.0",
-    "code_hash": "sha256:17247b8606a4e1edaa0ce8766f69fccd0cdc7fbb63b3821fbb09de3cb5e8e062",
+    "code_hash": "sha256:b314a55a201d54bc48b04bfd5ba3ee571a1b200a025d26b7c0b1d7912289962d",
     "source": "synthetic_assumption",
     "python": "3.11.15",
     "numpy": "2.4.6",
@@ -14287,7 +14731,7 @@
       "连续动作转换",
       "真实难度与体验"
     ],
-    "bundle_digest": "sha256:9413a16c05165bb29d02df7dd8a9c1a7e2a99293839ccef0ea6c20be42b9286b"
+    "bundle_digest": "sha256:c9e961d3c106d02908f059a3f6be5361688d73f4c6e286cb1d01e56fce1a54d1"
   },
   "reviews": []
 }
