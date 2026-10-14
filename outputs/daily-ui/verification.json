@@ -1,0 +1,89 @@
+{
+  "status": "pass",
+  "date": "2026-10-15",
+  "scope": "Remove the miscellaneous tools page from the daily setting flow; keep research outside daily navigation.",
+  "implementation": {
+    "daily_menu": [
+      "打开草稿",
+      "岩点库"
+    ],
+    "library": "Direct thumbnails, one family filter, natural page scrolling",
+    "research": "Mounted only for ?research=1; no normal navigation or reference links",
+    "checks": "Geometry and static-support notices retained; one action locates an infeasible support state",
+    "algorithm_or_fixture_changes": false
+  },
+  "browser_validation": {
+    "method": "Manual interaction through the Codex in-app browser; DOM and visual inspection",
+    "menu": "Exactly two actions; Escape restores summary focus; outside click and Tab out close it",
+    "library": "18 holds; Pocket filter leaves O1; selecting it opens matching wall editor with focus; selecting F10 at library bottom scrolls to top",
+    "moving_to_library": "Opening library exits move mode; selecting another hold opens its editor",
+    "edit": "Rotate F10 +15 degrees; revision 2; stale check status; no daily comparison overlay",
+    "export_import": {
+      "revision": 2,
+      "candidate_count": 2,
+      "active_first": true,
+      "preserved_pending_check": true,
+      "invalid_bundle_preserves_current": true
+    },
+    "support": "Click support issue action jumps to event 2/13 release posture; current static-support warning displayed",
+    "research": "Explicit URL opens research; profile changes to basic and generator remains enabled; scan workspace mounted; return to / removes research from DOM",
+    "responsive": [
+      {
+        "width": 561,
+        "height": 692,
+        "horizontal_overflow": false,
+        "menu_actions": 2
+      },
+      {
+        "width": 390,
+        "height": 844,
+        "horizontal_overflow": false,
+        "library_columns": 3,
+        "grid_height": 862,
+        "grid_scroll_height": 862
+      },
+      {
+        "width": 1440,
+        "height": 1000,
+        "library_columns": 6,
+        "visual_overflow": false
+      }
+    ],
+    "console_errors": [],
+    "viewport_override_reset": true
+  },
+  "checks": [
+    {
+      "command": "node web/scripts/verify-own-route-ui.mjs",
+      "status": "pass",
+      "routes": 3,
+      "contacts": 257,
+      "standing_contacts": 40,
+      "hand_to_foot_moments": 7
+    },
+    {
+      "command": "node web/scripts/verify-timeline-navigation.mjs",
+      "status": "pass"
+    },
+    {
+      "command": "npm --prefix web run build",
+      "status": "pass",
+      "note": "Existing large JS chunk warning remains."
+    },
+    {
+      "command": "git diff --check",
+      "status": "pass"
+    }
+  ],
+  "evidence": [
+    "menu.jpg",
+    "menu-mobile.jpg",
+    "library-mobile.jpg",
+    "library-desktop.jpg",
+    "daily-dom.json"
+  ],
+  "limitations": [
+    "Physics and fatigue remain approximate; this change does not improve route quality.",
+    "Research code still ships in the existing frontend bundle; its DOM and scan tools are not mounted in daily mode."
+  ]
+}

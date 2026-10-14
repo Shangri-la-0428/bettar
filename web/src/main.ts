@@ -39,6 +39,8 @@ const icons: Record<string, string> = {
 const icon = (name: string, cls = '') => `<svg class="icon ${cls}" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">${icons[name] || icons.info}</svg>`;
 const statusIcon = (status: Status) => icon(status === 'pass' ? 'check' : status === 'fail' ? 'cross' : status === 'unknown' ? 'question' : 'minus');
 
+const researchMode = new URLSearchParams(window.location.search).get('research') === '1';
+
 document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
   <header class="app-header">
     <a class="brand" href="/" aria-label="bettar 定线工作台">
@@ -47,7 +49,8 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
     </a>
     <label class="draft-switcher"><span class="sr-only">切换草稿</span><select id="draft-picker" aria-label="切换草稿"><option>读取草稿…</option></select></label>
     <div class="header-actions">
-      <button class="button quiet" data-action="tools" aria-controls="tools-view" aria-expanded="false">更多</button>
+      <details id="quick-menu" class="quick-menu"><summary>更多</summary><div class="quick-menu-actions"><button data-action="import">${icon('import')}打开草稿</button><button data-action="open-inventory" disabled>${icon('cube')}岩点库</button></div></details>
+      ${researchMode ? '<button class="button quiet" data-action="research">研究</button>' : ''}
       <button class="button outlined" data-action="export-bundle" disabled>${icon('export')}<span>保存</span></button>
     </div>
   </header>
@@ -75,7 +78,7 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
       </section>
       <aside class="inspector" hidden aria-label="编辑与检查">
         <div class="inspector-heading"><h2>调整岩点</h2><span id="revision-badge" class="small-badge">—</span></div>
-        <section id="editor-section" class="edit-section" aria-label="选中岩点近看与编辑"><div class="section-heading"><h3 id="selected-hold-title">选择岩点</h3><button class="text-button" data-action="close-editor" aria-label="关闭岩点编辑">收起</button></div><div id="hold-editor"><p class="muted">点击画布或下方岩点库选择岩点。</p></div><details class="model-details"><summary>岩点资料</summary><div id="hold-preview" class="hold-preview" aria-label="选中岩点三维近看，可拖动旋转"></div><span id="hold-model-kind" class="small-note">程序示意模型</span><div id="hold-asset-details"></div><p class="model-limit">接触与受力属性待实测。</p><p id="hold-model-scope">原创参数模板，不是真实岩点扫描。浅色区域为声明接触面；每个动作引用具体接触面；同一岩点可以先抓握、再踩其声明的脚面。每个面以代表点计算姿态。朝向与安装关系会进入几何计算。抓握面上的白色箭头是声明拉向；“显示求解的力”中的箭头来自独立准静态报告。尚未搜索面内任意抓握位置。</p></details></section>
+        <section id="editor-section" class="edit-section" aria-label="选中岩点近看与编辑"><div class="section-heading"><h3 id="selected-hold-title" tabindex="-1">选择岩点</h3><button class="text-button" data-action="close-editor" aria-label="关闭岩点编辑">收起</button></div><div id="hold-editor"><p class="muted">点击画布或下方岩点库选择岩点。</p></div><details class="model-details"><summary>岩点资料</summary><div id="hold-preview" class="hold-preview" aria-label="选中岩点三维近看，可拖动旋转"></div><span id="hold-model-kind" class="small-note">程序示意模型</span><div id="hold-asset-details"></div><p class="model-limit">接触与受力属性待实测。</p><p id="hold-model-scope">原创参数模板，不是真实岩点扫描。浅色区域为声明接触面；每个动作引用具体接触面；同一岩点可以先抓握、再踩其声明的脚面。每个面以代表点计算姿态。朝向与安装关系会进入几何计算。抓握面上的白色箭头是声明拉向；“显示求解的力”中的箭头来自独立准静态报告。尚未搜索面内任意抓握位置。</p></details></section>
       </aside>
     </div>
     </section>
@@ -88,6 +91,20 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
         </div>
         <section id="own-route-detail" class="own-route-detail" aria-label="当前规则线路的实际走法" hidden></section>
 <details class="checks-disclosure"><summary>检查明细 <span id="check-count" class="small-note"></span>${icon('chevron', 'details-chevron')}</summary><div id="checks" tabindex="0" aria-label="检查明细，可滚动"></div></details>
+<div id="move-state-switch" class="move-state-switch"></div>          <details class="contact-disclosure"><summary>手脚接触明细</summary><div id="steps" class="step-list"></div><div id="movement-intent" class="movement-intent" hidden></div><div id="contact-strip" class="contact-strip"></div><p class="timeline-note">按离散姿态查看，连续动作未验证。</p></details>
+    </section>
+    <section id="library-view" hidden aria-labelledby="library-title">
+      <div class="library-heading"><h1 id="library-title" tabindex="-1">岩点库 <span id="library-count" class="count"></span></h1><button class="button outlined" data-action="workbench">返回岩壁</button></div>
+      <div class="library-toolbar"><label>类型<select id="library-filter" aria-label="筛选岩点类型"><option value="all">全部岩点</option></select></label></div>
+      <div id="hold-library-grid" class="hold-library-grid"></div>
+    </section>
+    <template id="research-template"><section id="research-view" hidden aria-labelledby="research-title">
+      <div class="tools-heading"><h1 id="research-title" tabindex="-1">研究工作台</h1><button class="button outlined" data-action="workbench">返回岩壁 ${icon('chevron')}</button></div>
+      <div class="draft-toolbar" hidden>
+        <form id="draft-form"><label class="wall-choice">墙面<select id="draft-wall"><option value="own-overhang">25° 仰角</option><option value="roof">屋檐</option><option value="dihedral">内角</option><option value="arete">外角</option></select></label></form>
+        <section id="own-route-choices" class="own-route-section" aria-label="选择线路草稿"></section>
+      </div>
+      <div class="file-tools"><button class="button outlined" data-action="import">${icon('import')}导入草稿</button><button class="button quiet" data-action="export-review" disabled>导出反馈</button>          <label class="history-control" title="切换本次会话中的结果包"><span class="sr-only">结果包历史</span><select id="history" aria-label="结果包历史" disabled><option>当前实验</option></select></label></div>
         <details class="analysis-disclosure"><summary>更多分析</summary>        <section id="learned-study" class="learned-study" aria-label="当前学习生成实验与配对对照" hidden></section>
         <details class="mechanics-disclosure"><summary>受力、摩擦与支撑检查<span>展开查看模型估计与具体状态</span></summary><section id="mechanics-study" class="mechanics-study" aria-label="准静态受力与摩擦检查" hidden></section></details>
         <section id="setting-study" class="setting-study" aria-label="摆点调整与备选走法" hidden></section>
@@ -95,20 +112,6 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
         <section id="design-brief" class="design-brief" aria-label="线路设计意图" hidden></section>
         <section id="route-study" class="route-study" aria-label="风格估计与阶段节奏" hidden></section>
 <div id="route-inventory-summary" class="route-inventory-summary"></div></details>
-<div id="move-state-switch" class="move-state-switch"></div>          <details class="contact-disclosure"><summary>手脚接触明细</summary><div id="steps" class="step-list"></div><div id="movement-intent" class="movement-intent" hidden></div><div id="contact-strip" class="contact-strip"></div><p class="timeline-note">按离散姿态查看，连续动作未验证。</p></details>
-    </section>
-    <section id="tools-view" hidden aria-labelledby="tools-title">
-      <div class="tools-heading"><h1 id="tools-title" tabindex="-1">工具与资料</h1><button class="button outlined" data-action="workbench">返回岩壁 ${icon('chevron')}</button></div>
-      <div class="draft-toolbar" hidden>
-        <form id="draft-form"><label class="wall-choice">墙面<select id="draft-wall"><option value="own-overhang">25° 仰角</option><option value="roof">屋檐</option><option value="dihedral">内角</option><option value="arete">外角</option></select></label></form>
-        <section id="own-route-choices" class="own-route-section" aria-label="选择线路草稿"></section>
-      </div>
-      <div class="file-tools"><button class="button outlined" data-action="import">${icon('import')}导入草稿</button><button class="button quiet" data-action="export-review" disabled>导出反馈</button>          <label class="history-control" title="切换本次会话中的结果包"><span class="sr-only">结果包历史</span><select id="history" aria-label="结果包历史" disabled><option>当前实验</option></select></label></div>
-              <details class="hold-library">
-          <summary><span>岩点库 <span id="library-count" class="count">16</span></span><span class="library-description">当前合成库存 · 程序示意模型</span>${icon('chevron', 'details-chevron')}</summary>
-          <div class="library-content"><p class="library-taxonomy-note">手点按抓握家族区分；手／脚是动作中的用途，同一个岩点可以兼用。体积块单独作为结构，能否接触以所选表面的声明为准。</p><div id="library-filters" class="library-filters" role="group" aria-label="筛选岩点类型"><button data-action="hold-filter" data-type="all" aria-pressed="true" class="active">全部</button><button data-action="hold-filter" data-type="jug" aria-pressed="false">大把手</button><button data-action="hold-filter" data-type="directional_edge" aria-pressed="false">方向边缘点</button><button data-action="hold-filter" data-type="foothold" aria-pressed="false">脚点</button></div><div id="stock-summary" class="stock-summary" hidden></div><div id="hold-library-grid" class="hold-library-grid"></div></div>
-        </details>
-
       <details class="tool-group"><summary>版本对照与反馈</summary>        <section class="inspector-section"><div class="section-heading"><h3>方案对照</h3><span class="small-note">保留同一视角</span></div><label class="sr-only" for="compare">选择对照方案</label><select id="compare" class="full-select" disabled><option value="">不叠加对照</option></select><div id="comparison-detail"></div></section>
         <section class="inspector-section limits-section"><h3>目前未验证</h3><div id="limits"></div><p>几何与姿态结果不等于真人能够完成，也不代表攀爬等级。</p></section>
         <section class="inspector-section review-section"><div class="section-heading"><h3>设计反馈</h3><span class="small-note">不是试爬记录</span></div><label class="sr-only" for="review-text">反馈内容</label><textarea id="review-text" rows="3" placeholder="例如：下一手点偏远，想试试先调整右脚。"></textarea><button class="button outlined full-width" data-action="save-review" disabled>保存这条反馈</button><div id="review-list"></div></section>
@@ -160,25 +163,35 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
       <p class="board-limit">A 板的具体品牌／型号待确认。这里借鉴固定布局、条件控制和反馈机制，尚未导入真实品牌布局、岩点模型或社区线路。风格研究在原创合成固定板上搜索选点与动作。</p>
     </details>
     </section>
+    </template>
     <footer class="app-footer"><span>定线草稿 · 需定线员调整与试攀</span><span id="run-meta">bettar / 0.1</span></footer>
   </main>
   <input id="import-file" type="file" accept=".json,application/json" hidden />
   <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
 `;
 
-const $ = <T extends HTMLElement = HTMLElement>(selector: string) => document.querySelector<T>(selector)!;
-document.body.classList.add('distilled');
-function showScreen(screen: 'workbench' | 'tools' | 'checks', focus = true) {
-  for (const name of ['workbench', 'tools', 'checks']) $(`#${name}-view`).hidden = name !== screen;
+// Research controls remain available to the shared renderers, but are not mounted
+// in the daily UI. The explicit research URL also keeps its old tools usable.
+const researchTemplate = document.querySelector<HTMLTemplateElement>('#research-template')!;
+const researchRoot = researchTemplate.content.querySelector<HTMLElement>('#research-view')!;
+if (researchMode) researchTemplate.replaceWith(researchRoot);
+const $ = <T extends HTMLElement = HTMLElement>(selector: string) => (document.querySelector<T>(selector) || researchRoot.querySelector<T>(selector))!;
+document.body.classList.add('distilled', 'at-workbench');
+function closeQuickMenu(restoreFocus = false) {
+  $<HTMLDetailsElement>('#quick-menu').open = false;
+  if (restoreFocus) $('#quick-menu > summary').focus();
+}
+function showScreen(screen: 'workbench' | 'library' | 'checks' | 'research', focus = true) {
+  if (screen === 'research' && !researchMode) return;
+  closeQuickMenu();
+  for (const name of ['workbench', 'library', 'checks']) $(`#${name}-view`).hidden = name !== screen;
+  researchRoot.hidden = screen !== 'research';
   document.body.classList.toggle('at-workbench', screen === 'workbench');
-  const toggle = $<HTMLButtonElement>('[data-action="tools"]');
-  toggle.setAttribute('aria-expanded', String(screen === 'tools')); toggle.textContent = screen === 'tools' ? '返回岩壁' : '更多';
+  document.body.classList.toggle('at-library', screen === 'library');
   if (focus) (screen === 'workbench' ? $('#draft-picker') : $(`#${screen}-title`)).focus({ preventScroll: true });
   if (focus) window.scrollTo({ top: 0, behavior: 'auto' });
 }
-function showWorkspace(tools = false, focus = true) { showScreen(tools ? 'tools' : 'workbench', focus); }
-document.body.classList.add('at-workbench');
-mountScanWorkbench($('#scan-workbench'));
+if (researchMode) mountScanWorkbench($('#scan-workbench'));
 let defaults: Defaults | undefined;
 let bundle: Bundle | undefined;
 let activeId = '';
@@ -213,7 +226,7 @@ const ownRouteBundles = new Map<string, Bundle>();
 const ownRouteStyleIds: Record<string, string> = { mixed: 'lateral-balance', balance: 'lateral-balance', power: 'compact-strength', sustained: 'sustained-transfer' };
 const draftStyleNames: Record<string, string> = { mixed: '对比三种思路', power: '力量', balance: '技巧与平衡', sustained: '持续输出', coordination: '动态协调' };
 let activeDraftIntent: { style: string; grade: string; wall: string; learned: boolean } | undefined;
-try { const saved = localStorage.getItem('bettar.draft-style'); if (saved && ownRouteStyleIds[saved]) $<HTMLSelectElement>('#draft-style').value = saved; } catch { /* Intent storage is optional. */ }
+try { const saved = researchMode ? localStorage.getItem('bettar.draft-style') : null; if (saved && ownRouteStyleIds[saved]) $<HTMLSelectElement>('#draft-style').value = saved; } catch { /* Intent storage is optional. */ }
 let palette = getScenePalette(defaultPaletteId);
 try { palette = getScenePalette(localStorage.getItem('betar.scene-palette') || defaultPaletteId); } catch { /* Storage is optional; rendering remains local. */ }
 $<HTMLSelectElement>('#scene-palette').value = palette.id;
@@ -307,7 +320,7 @@ async function viewIntentDraft(event: Event) {
   if (bundle && bundle !== previous) {
     activeDraftIntent = { style, grade, wall, learned: false };
     renderDraftContext();
-    showWorkspace(false, false);
+    showScreen('workbench', false);
   }
 }
 function renderOwnRouteStudy() {
@@ -445,7 +458,7 @@ function selectSettingPath(id: string) {
   settingAlternativeId = id; editMode = false; compareId = ''; step = id ? 0 : originalStep;
   if (id) clearLearnedExperiment();
   $<HTMLInputElement>('#route-only').checked = id ? false : originalRouteOnly;
-  showWorkspace(false); renderAll();
+  showScreen('workbench'); renderAll();
 }
 function renderMechanics() {
   const candidate = current(), host = $('#mechanics-study');
@@ -505,7 +518,7 @@ function selectBeta(id: string) {
   if (id) clearLearnedExperiment();
   step = id ? 0 : originalStep;
   $<HTMLInputElement>('#route-only').checked = id ? false : originalRouteOnly;
-  showWorkspace(false); renderAll();
+  showScreen('workbench'); renderAll();
 }
 
 function evaluation(candidate = current()): Evaluation | undefined {
@@ -543,7 +556,7 @@ function setBusy(value: boolean, label?: string) {
   $('#generate-button').innerHTML = value ? `<span class="loading-spinner small"></span>${esc(pendingLabel)}` : setting ? `${icon('plus')}重新生成三条实验` : `${icon('plus')}生成 ${bundle?.request.budget || defaults?.request.budget || 3} 个候选`;
   $('#generation-form').querySelectorAll<HTMLInputElement | HTMLButtonElement | HTMLSelectElement>('input,button,select').forEach((el) => { el.disabled = value || !defaults; });
   document.querySelectorAll<HTMLButtonElement>('[data-action="recheck"], [data-action="save-edit"]').forEach((button) => { button.disabled = value; });
-  document.querySelectorAll<HTMLButtonElement>('[data-action="candidate"], [data-action="style-example"], [data-action="route-example"], [data-action="setting-example"], [data-action="setting-stage"], [data-action="setting-path"], [data-action="setting-source"], [data-action="wall-example"], [data-action="import"], [data-action="save-review"]').forEach((button) => { button.disabled = value || (button.dataset.action !== 'import' && !bundle); });
+  document.querySelectorAll<HTMLButtonElement>('[data-action="candidate"], [data-action="style-example"], [data-action="route-example"], [data-action="setting-example"], [data-action="setting-stage"], [data-action="setting-path"], [data-action="setting-source"], [data-action="wall-example"], [data-action="open-inventory"], [data-action="import"], [data-action="save-review"]').forEach((button) => { button.disabled = value || (button.dataset.action !== 'import' && !bundle); });
   document.querySelectorAll<HTMLButtonElement>('[data-action="export-bundle"], [data-action="export-review"]').forEach((button) => { button.disabled = value || !bundle; });
   $<HTMLSelectElement>('#history').disabled = value || histories.length < 2;
   document.querySelectorAll<HTMLInputElement>('[form="generation-form"]').forEach(input => { input.disabled = value || !defaults; });
@@ -658,11 +671,11 @@ function acceptBundle(next: Bundle, addHistory = true, resetView = true, learned
   else activeLearnedRunId = learnedRunId;
   activeDraftIntent = undefined;
   bundle = next;
-  showWorkspace(false, $('#workbench-view').hidden);
+  showScreen('workbench', $('#workbench-view').hidden);
   replayOpen = false; $<HTMLInputElement>('#show-body').checked = false;
   syncWallChoice(next.request);
   if (addHistory) histories.push(next);
-  activeId = next.candidates[0]?.id || ''; step = 0; selectedHold = ''; selectedInventory = ''; compareId = ''; editMode = false; holdFilter = !next.candidates[0]?.layout_report && ['route', 'setting'].includes(next.request.profile || '') ? 'route' : 'all';
+  activeId = next.candidates[0]?.id || ''; step = 0; selectedHold = ''; selectedInventory = ''; compareId = ''; editMode = false; holdFilter = researchMode && !next.candidates[0]?.layout_report && ['route', 'setting'].includes(next.request.profile || '') ? 'route' : 'all';
   $('#review-text').textContent = ''; $<HTMLTextAreaElement>('#review-text').value = '';
   populateControls(next.request);
   $('#canvas-empty').hidden = next.candidates.length > 0;
@@ -679,7 +692,7 @@ function acceptBundle(next: Bundle, addHistory = true, resetView = true, learned
 function renderAll() {
   ensureSelection();
   renderCandidates(); renderSummary(); renderEditor(); renderLibrary(); renderChecks(); renderSteps(); renderComparison(); renderReviews(); renderBrief(); renderStyleStudy(); renderRouteInventory(); renderBetaAudit(); renderSettingStudy(); renderMechanics(); renderLearnedExperiment(); renderOwnRouteStudy(); renderDraftContext(); updateScene(); syncToolState();
-  document.querySelectorAll<HTMLButtonElement>('[data-action="export-bundle"], [data-action="export-review"], [data-action="save-review"]').forEach((button) => { button.disabled = busy || !bundle || (button.dataset.action === 'save-review' && viewingAlternative()); });
+  document.querySelectorAll<HTMLButtonElement>('[data-action="export-bundle"], [data-action="export-review"], [data-action="save-review"], [data-action="open-inventory"]').forEach((button) => { button.disabled = busy || !bundle || (button.dataset.action === 'save-review' && viewingAlternative()); });
   const candidate = current();
   $('#revision-badge').textContent = candidate ? `修订 ${candidate.revision}${viewingAlternative() ? ' · 替代走法' : ''}` : '—';
   if (bundle) {
@@ -725,7 +738,9 @@ function renderSummary() {
   $('#quick-check').textContent = `${compact} · 检查`;
   $('#quick-check').classList.toggle('needs-check', stale || !ev);
   const note = stale ? '重新检查后更新结果。' : ev?.summary.status === 'pass' && support?.status === 'infeasible' ? '静态支撑仍需调整，待试攀。' : '草稿需定线员调整与试攀。';
-  $('#summary').innerHTML = `<div class="summary-title ${cls}">${stale ? icon('refresh') : statusIcon(candidate.layout_report ? 'unknown' : ev?.summary.status || 'unknown')}<strong>${label}</strong></div><p class="summary-limit">${note}</p>${viewingAlternative() ? '<p class="field-hint">备选走法只读，返回主走法可编辑。</p>' : `<button class="button ${stale || !ev ? 'primary' : 'outlined'} full-width" data-action="recheck" ${busy ? 'disabled' : ''}>${icon('refresh')}${stale || !ev ? '检查调整' : '重新检查'}</button>`}`;
+  const supportIssueId = !stale ? ev?.mechanics_report?.states.find(item => item.status === 'infeasible')?.state_id : undefined;
+  const supportIssueStep = supportIssueId ? candidate.states.findIndex(item => item.id === supportIssueId) : -1;
+  $('#summary').innerHTML = `<div class="summary-title ${cls}">${stale ? icon('refresh') : statusIcon(candidate.layout_report ? 'unknown' : ev?.summary.status || 'unknown')}<strong>${label}</strong></div><p class="summary-limit">${note}</p>${supportIssueStep >= 0 ? `<button class="text-button support-issue" data-action="phase" data-step="${supportIssueStep}">查看支撑问题动作 ${icon('chevron')}</button>` : ''}${viewingAlternative() ? '<p class="field-hint">备选走法只读，返回主走法可编辑。</p>' : `<button class="button ${stale || !ev ? 'primary' : 'outlined'} full-width" data-action="recheck" ${busy ? 'disabled' : ''}>${icon('refresh')}${stale || !ev ? '检查调整' : '重新检查'}</button>`}`;
 }
 function ensureSelection() {
   const candidate = current(); if (!candidate || !bundle) return;
@@ -737,7 +752,7 @@ function ensureSelection() {
   selectedHold = candidate.placements.find(p => p.inventory_id === selectedInventory)?.id || '';
 }
 function revealEditor(_scroll = true) {
-  showWorkspace(false, false);
+  showScreen('workbench', false);
   // The editor overlays the wall; opening it must not shift the canvas.
 }
 function selectPlacement(id: string) {
@@ -748,8 +763,10 @@ function selectPlacement(id: string) {
 }
 function selectInventory(id: string) {
   if (!bundle?.request.scene.inventory.some((h) => h.id === id)) return;
+  const fromLibrary = !$('#library-view').hidden;
   selectedInventory = id; selectedHold = current()?.placements.find((p) => p.inventory_id === id)?.id || '';
   view?.select(selectedHold); renderEditor(); renderLibrary(); revealEditor();
+  if (fromLibrary) { window.scrollTo({ top: 0, behavior: 'auto' }); $('#selected-hold-title').focus({ preventScroll: true }); }
 }
 function routePlacementIds() {
   return new Set(current()?.states.flatMap((state) => Object.values(state.contacts).flatMap((contact) => contact ? [contact.placement_id] : [])) || []);
@@ -778,21 +795,11 @@ function renderLibrary() {
   if (!bundle) return;
   const inventory = bundle.request.scene.inventory;
   const used = routePlacementIds();
-  const installed = new Set(current()?.placements.map(item => item.inventory_id));
-  const stock = bundle.request.scene.catalog_stock;
   const layoutOnly = !!current()?.layout_report;
-  $('#stock-summary').hidden = !stock;
-  $('#stock-summary').innerHTML = stock ? `<p><strong>${stock.length} 款模板 · ${inventory.length} 件库存</strong><span>已安装 ${installed.size} · 可用 ${inventory.length - installed.size}</span></p><div>${stock.map(item => { const placed = inventory.filter(h => h.template_id === item.template_id && installed.has(h.id)).length; const family = holdFamily(inventory.find(h => h.template_id === item.template_id) || { type: item.type } as import('./types').Hold); return `<button data-action="hold-filter" data-type="${esc(family)}" class="${holdFilter === family ? 'active' : ''}"><span>${esc(item.template_name)}</span><strong>${item.count - placed}<small> / ${item.count} 可用</small></strong></button>`; }).join('')}</div>` : '';
-  const types = ['route', 'all', ...new Set(inventory.map(holdFamily))];
+  const types = ['all', 'route', ...new Set(inventory.map(holdFamily))];
   if (!types.includes(holdFilter)) holdFilter = 'all';
-  $('#library-filters').innerHTML = types.map(type => `<button data-action="hold-filter" data-type="${esc(type)}" aria-pressed="${type === holdFilter}" class="${type === holdFilter ? 'active' : ''}">${type === 'route' ? `${layoutOnly ? '起始接触' : '线路使用'} · ${used.size}` : type === 'all' ? '全部库存' : esc(holdNames[type] || type)}</button>`).join('');
+  $('#library-filter').innerHTML = types.map(type => `<option value="${esc(type)}" ${type === holdFilter ? 'selected' : ''}>${type === 'route' ? '当前线路' : type === 'all' ? '全部岩点' : esc(holdNames[type] || type)}</option>`).join('');
   $('#library-count').textContent = String(inventory.length);
-  const meshCount = inventory.filter(hold => hold.asset_id).length;
-  $('.library-description').textContent = meshCount ? `${meshCount} 件外部网格 · ${inventory.length - meshCount} 件参数模板` : '参数模板 · 当前有限库存';
-  document.querySelectorAll<HTMLButtonElement>('[data-action="hold-filter"]').forEach((button) => {
-    const active = button.dataset.type === holdFilter;
-    button.classList.toggle('active', active); button.setAttribute('aria-pressed', String(active));
-  });
   $('#hold-library-grid').innerHTML = inventory.filter((hold) => holdFilter === 'all' || holdFamily(hold) === holdFilter || (holdFilter === 'route' && current()?.placements.some(p => p.inventory_id === hold.id && used.has(p.id)))).map((hold) => {
     const placement = current()?.placements.find((p) => p.inventory_id === hold.id);
     const inRoute = !!placement && used.has(placement.id);
@@ -919,7 +926,7 @@ function renderChecks() {
 }
 function showStep(index: number) {
   if (busy || !Number.isInteger(index) || !current()?.states[index]) return;
-  showWorkspace(false, false); replayOpen = true; step = index;
+  showScreen('workbench', false); replayOpen = true; step = index;
   $<HTMLInputElement>('#show-body').checked = true; view?.setBody(true);
   renderSteps(); view?.setStep(step);
 }
@@ -967,6 +974,8 @@ function renderSteps() {
   $('#pose-status').hidden = !$<HTMLInputElement>('#show-body').checked;
   $('#pose-status').className = `pose-status ${isStale() ? 'stale' : pose?.status || 'unknown'}`;
   $('#pose-status').innerHTML = isStale() ? `${icon('refresh')}新修订待检查 · 仅显示接触目标` : pose?.status === 'pass' && pose.joints ? `${icon('check')}计算姿态` : `${icon('question')}${pose?.status === 'fail' ? '违反模型约束' : '当前未找到姿态'} · 仅显示接触目标`;
+  const supportState = !isStale() ? evaluation()?.mechanics_report?.states.find(item => item.state_id === state?.id) : undefined;
+  if (supportState?.status === 'infeasible') { $('#pose-status').className = 'pose-status unknown'; $('#pose-status').textContent = '当前姿态静态支撑需调整'; }
   renderStyleStudy(); renderBetaAudit(); renderSettingStudy(); renderMechanics();
 }
 function renderComparison() {
@@ -1016,7 +1025,7 @@ function renderReviews() {
 function updateScene() {
   const candidate = current();
   view?.setPalette(palette.id);
-  if (bundle && candidate) view?.update(bundle.request, candidate, isStale() ? undefined : evaluation(), step, bundle.candidates.find((item) => item.id === compareId));
+  if (bundle && candidate) view?.update(bundle.request, candidate, isStale() ? undefined : evaluation(), step, researchMode ? bundle.candidates.find((item) => item.id === compareId) : undefined);
   view?.select(selectedHold);
   view?.setBody($<HTMLInputElement>('#show-body').checked);
   view?.setLabels($<HTMLInputElement>('#show-labels').checked);
@@ -1037,7 +1046,7 @@ function makeRevision(change: (candidate: Candidate) => void, note: string, inve
   clearOwnRoute();
   activeDraftIntent = undefined;
   clearBetaAudit();
-  bundle.candidates.push(updated); activeId = updated.id; compareId = candidate.id;
+  bundle.candidates.push(updated); activeId = updated.id; compareId = researchMode ? candidate.id : '';
   selectedInventory = inventoryId; selectedHold = updated.placements.find(p => p.inventory_id === inventoryId)?.id || '';
   const updatedRoute = new Set(updated.states.flatMap(state => Object.values(state.contacts).flatMap(contact => contact ? [contact.placement_id] : [])));
   // Installing or editing a spare hold is an explicit request to inspect it; reveal it as background.
@@ -1181,6 +1190,7 @@ $('#route-only').addEventListener('change', (e) => view?.setRouteOnly((e.target 
 $('#route-path').addEventListener('change', (e) => view?.setRoutePath((e.target as HTMLInputElement).checked));
 $('#compare').addEventListener('change', (e) => { compareId = (e.target as HTMLSelectElement).value; renderComparison(); updateScene(); });
 $('#history').addEventListener('change', (e) => { if (busy) return; const next = histories[Number((e.target as HTMLSelectElement).value)]; if (next) acceptBundle(next, false); });
+$('#library-filter').addEventListener('change', event => { holdFilter = (event.target as HTMLSelectElement).value; renderLibrary(); });
 $('#draft-picker').addEventListener('change', () => { void chooseDraft(); });
 $('#draft-form').addEventListener('submit', event => { void viewIntentDraft(event as SubmitEvent); });
 $('#draft-wall').addEventListener('change', event => { void viewIntentDraft(event); });
@@ -1196,17 +1206,19 @@ $('#import-file').addEventListener('change', async (event) => {
   finally { input.value = ''; setBusy(false); }
 });
 document.addEventListener('click', (event) => {
+  const target = event.target as HTMLElement;
+  if (!target.closest('#quick-menu') || target.closest('#quick-menu [data-action]')) closeQuickMenu(!!target.closest('#quick-menu [data-action]'));
   const button = (event.target as HTMLElement).closest<HTMLElement>('[data-action]');
   if (!button || button.hasAttribute('disabled')) return;
   const action = button.dataset.action;
   if (busy && ['candidate', 'style-example', 'route-example', 'setting-example', 'setting-stage', 'setting-path', 'import', 'save-review', 'export-bundle', 'export-review'].includes(action || '')) return;
-  if (action === 'tools') showWorkspace($('#tools-view').hidden);
-  else if (action === 'workbench') showWorkspace(false);
+  if (action === 'research') showScreen('research');
+  else if (action === 'workbench') showScreen('workbench');
   else if (action === 'checks') showScreen('checks');
   else if (action === 'open-replay') { showStep(0); }
   else if (action === 'close-replay') { replayOpen = false; $<HTMLInputElement>('#show-body').checked = false; view?.setBody(false); renderSteps(); }
   else if (action === 'close-editor') { selectedHold = ''; selectedInventory = ''; editMode = false; view?.select(''); renderEditor(); renderLibrary(); syncToolState(); }
-  else if (action === 'open-inventory') { showWorkspace(true); const library = $<HTMLDetailsElement>('.hold-library'); library.open = true; library.scrollIntoView({block:'start'}); }
+  else if (action === 'open-inventory' && bundle && !busy) { editMode = false; renderEditor(); syncToolState(); showScreen('library'); }
   else if (action === 'board-study') { $<HTMLSelectElement>('#profile').value = 'style'; $<HTMLSelectElement>('#style-goal').value = 'compare'; syncProfileControls(); $('#generation-form').scrollIntoView({ block: 'center' }); $<HTMLSelectElement>('#style-goal').focus(); toast('已设置同墙风格对照；点击生成后搜索不同选点与动作序列。'); }
   else if (action === 'setting-example') selectSettingExample(button.dataset.id || '');
   else if (action === 'own-route') void openOwnRouteStudy(button.dataset.routeId);
@@ -1219,16 +1231,16 @@ document.addEventListener('click', (event) => {
   else if (action === 'setting-path') selectSettingPath(button.dataset.id || '');
   else if (action === 'route-example') { const example = routeExamples.find(item => item.id === button.dataset.id); if (example) acceptBundle(example.bundle, !histories.includes(example.bundle)); }
   else if (action === 'style-example') { const example = styleExamples.find(item => item.id === button.dataset.id); if (example) acceptBundle(example.bundle, !histories.includes(example.bundle)); }
-  else if (action === 'show-references') { showWorkspace(true); ($('#competition-references') as HTMLDetailsElement).open = true; $('#competition-references').scrollIntoView({block:'start'}); }
+  else if (action === 'show-references') { showScreen('research'); ($('#competition-references') as HTMLDetailsElement).open = true; $('#competition-references').scrollIntoView({block:'start'}); }
   else if (action === 'beta-audit') void auditBeta();
   else if (action === 'beta-select') selectBeta(button.dataset.id || '');
   else if (action === 'beta-export' && betaReport && !busy) download(betaReport, `beta-audit-${betaReport.source.candidate_id}-r${betaReport.source.revision}.json`);
-  else if (action === 'candidate') { clearBetaAudit(); if (activeId !== button.dataset.id) { clearLearnedExperiment(); clearOwnRoute(); activeDraftIntent = undefined; } activeId = button.dataset.id!; step = 0; selectedHold = ''; selectedInventory = ''; replayOpen = false; $<HTMLInputElement>('#show-body').checked = false; view?.setBody(false); showWorkspace(false); renderAll(); }
+  else if (action === 'candidate') { clearBetaAudit(); if (activeId !== button.dataset.id) { clearLearnedExperiment(); clearOwnRoute(); activeDraftIntent = undefined; } activeId = button.dataset.id!; step = 0; selectedHold = ''; selectedInventory = ''; replayOpen = false; $<HTMLInputElement>('#show-body').checked = false; view?.setBody(false); showScreen('workbench'); renderAll(); }
   else if (action === 'phase') { showStep(Number(button.dataset.step)); renderBrief(); }
   else if (action === 'roof-step' || action === 'roof-view') {
     const nextStep = Number(button.dataset.step);
     if (busy || !Number.isInteger(nextStep) || !current()?.states[nextStep]) return;
-    showWorkspace(false, false); replayOpen = true; step = nextStep; $<HTMLInputElement>('#show-body').checked = true; view?.setBody(true);
+    showScreen('workbench', false); replayOpen = true; step = nextStep; $<HTMLInputElement>('#show-body').checked = true; view?.setBody(true);
     renderSteps(); view?.setStep(step);
     if (action === 'roof-view') $('.canvas-shell').scrollIntoView({ block: 'center', behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
   }
@@ -1245,27 +1257,28 @@ document.addEventListener('click', (event) => {
   else if (action === 'export-review' && bundle) download({ schema_version: '1.0', bundle_id: bundle.id, reviews: bundle.reviews || [] }, `bettar-reviews-${bundle.request.seed}.json`);
   else if (action === 'save-review') saveReview();
   else if (action === 'dismiss-notice') $('#notice').hidden = true;
-  else if (action === 'retry') void initialize();
+  else if (action === 'retry') void initialize().then(() => { if (researchMode) showScreen('research'); });
   else if (action === 'select-hold') selectPlacement(button.dataset.id!);
   else if (action === 'library-hold') selectInventory(button.dataset.id!);
-  else if (action === 'hold-filter') { holdFilter = button.dataset.type || 'all'; renderLibrary(); }
   else if (action === 'browse-mode') { editMode = false; selectedHold = ''; selectedInventory = ''; view?.select(''); renderEditor(); syncToolState(); }
   else if (action === 'move-mode' && !busy && !viewingAlternative() && bundle?.request.mode === 'free') { editMode = true; renderEditor(); syncToolState(); }
-  else if (action === 'focus-hold' && selectedHold) { showWorkspace(false, false); view?.focusHold(selectedHold); }
+  else if (action === 'focus-hold' && selectedHold) { showScreen('workbench', false); view?.focusHold(selectedHold); }
   else if (action === 'focus-parent') { const parent = current()?.placements.find(p => p.id === selectedHold)?.mount?.parent_id; if (parent) { view?.focusHold(parent); view?.select(selectedHold); } }
   else if ((action === 'rotate-minus' || action === 'rotate-plus') && !busy && !viewingAlternative() && bundle?.request.mode === 'free') {
     const input = document.querySelector<HTMLInputElement>('#edit-form input[name="rotation_deg"]');
     if (input) { const value = Number(input.value); if (Number.isFinite(value)) { input.value = String(value + (action === 'rotate-plus' ? 15 : -15)); toast('点“应用调整”确认新朝向。'); } }
   }
   else if (action === 'locate-check') {
-    showWorkspace(false, false);
+    showScreen('workbench', false);
     const check = evaluation()?.checks.filter((item) => item.status !== 'not_checked')[Number(button.dataset.checkIndex)];
     if (check?.state_id) { const index = current()?.states.findIndex((item) => item.id === check.state_id); if (index !== undefined && index >= 0) showStep(index); }
     selectedHold = check?.placement_ids?.[0] || ''; selectedInventory = '';
     ensureSelection(); renderSteps(); renderEditor(); renderLibrary(); view?.setStep(step); view?.select(selectedHold); if (selectedHold) view?.focusHold(selectedHold);
   }
 });
+document.addEventListener('focusin', event => { if (!(event.target as HTMLElement).closest('#quick-menu')) closeQuickMenu(); });
 document.addEventListener('keydown', (event) => {
+  if (event.key === 'Escape' && $<HTMLDetailsElement>('#quick-menu').open) { event.preventDefault(); closeQuickMenu(true); return; }
   if ($('#workbench-view').hidden || ['INPUT', 'SELECT', 'TEXTAREA', 'BUTTON', 'SUMMARY'].includes((event.target as HTMLElement).tagName) || !current()) return;
   const nav = timelineNavigation(current()!, step);
   if (event.key === 'ArrowLeft' && nav.previous !== null) { event.preventDefault(); showStep(nav.previous); }
@@ -1311,4 +1324,4 @@ async function initialize() {
 }
 window.addEventListener('pagehide', () => preview?.dispose(), { once: true });
 renderLearnedExperiment();
-void initialize();
+void initialize().then(() => { if (researchMode) showScreen('research'); });
