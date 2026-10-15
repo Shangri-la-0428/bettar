@@ -1,7 +1,7 @@
 import './style.css';
 import './workbench.css';
 import { timelineNavigation } from './timeline-navigation';
-import { generateDraftBatch } from './draft-generation';
+import { draftSupportSummary, generateDraftBatch } from './draft-generation';
 import type { DraftBrief, DraftOption, DraftEntry } from './draft-generation';
 import { scanWorkbenchHTML, mountScanWorkbench } from './scan-model';
 import { mechanicsHTML } from './mechanics';
@@ -338,9 +338,11 @@ function renderGeneratedOptions() {
     const name = result?.label || `方案 ${String.fromCharCode(65 + entry.variant)}`;
     const hands = candidate?.events.filter(item => item.limb.endsWith('H')).length || 0;
     const feet = candidate?.events.filter(item => item.limb.endsWith('F')).length || 0;
-    const status = entry.state === 'waiting' ? '等待生成' : entry.state === 'running' ? '正在搜索…' : entry.state === 'error' ? '生成失败，可重试' : candidate?.layout_report ? '预算内未找到完整走法' : stale ? '调整后待检查' : ev?.summary.status !== 'pass' ? '姿态需调整' : ev?.mechanics_report?.summary.status === 'infeasible' ? '支撑需调整' : '待试攀';
+    const support = candidate && !stale && !candidate.layout_report ? draftSupportSummary(candidate, ev) : undefined;
+    const status = entry.state === 'waiting' ? '等待生成' : entry.state === 'running' ? '正在搜索…' : entry.state === 'error' ? '生成失败，可重试' : candidate?.layout_report ? '预算内未找到完整走法' : stale ? '调整后待检查' : ev?.summary.status !== 'pass' ? '姿态需调整' : support?.label || '支撑待确认';
     const count = candidate?.events.length ? `${hands} 次移手 · ${feet} 次换脚` : '';
-    return `<button class="generated-option ${selected ? 'active' : ''}" data-action="generated-option" data-variant="${entry.variant}" aria-pressed="${selected}" ${busy || !result ? 'disabled' : ''}><span class="option-label"><strong>${esc(name)}${candidate && candidate.revision > 1 ? ' · 已调整' : ''}</strong>${selected ? '<span>当前</span>' : ''}</span>${count ? `<span class="option-stats">${count}</span>` : ''}<span class="option-state">${esc(status)}</span>${entry.duplicateOf !== undefined ? `<span class="option-state">与方案 ${String.fromCharCode(65 + entry.duplicateOf)} 相同</span>` : ''}</button>`;
+    const supportCount = support?.hasReport && support.release.total ? `<span class="option-stats" title="当前离散换点姿态中，静态支撑检查通过的数量；不是试攀结论">换点支撑 ${support.release.feasible}/${support.release.total}${support.release.unknown ? ` · ${support.release.unknown} 待确认` : ''}</span>` : '';
+    return `<button class="generated-option ${selected ? 'active' : ''}" data-action="generated-option" data-variant="${entry.variant}" aria-pressed="${selected}" ${busy || !result ? 'disabled' : ''}><span class="option-label"><strong>${esc(name)}${candidate && candidate.revision > 1 ? ' · 已调整' : ''}</strong>${selected ? '<span>当前</span>' : ''}</span>${count ? `<span class="option-stats">${count}</span>` : ''}${supportCount}<span class="option-state">${esc(status)}</span>${entry.duplicateOf !== undefined ? `<span class="option-state">与方案 ${String.fromCharCode(65 + entry.duplicateOf)} 相同</span>` : ''}</button>`;
   }).join('')}</div>`;
 }
 function selectGeneratedOption(variant: number) {
@@ -371,7 +373,7 @@ async function generateNewDrafts(event: SubmitEvent) {
       generatedEntries = entries;
       const running = entries.find(entry => entry.state === 'running');
       $('#generation-progress').hidden = false;
-      $('#generation-progress').textContent = running ? `正在生成 ${running.variant + 1} / 3 · 搜索手脚走法` : '准备生成…';
+      $('#generation-progress').textContent = running ? `正在生成 ${running.variant + 1} / 3 · 搜索与支撑修正（每条约 40 秒）` : '准备生成…';
       const first = entries.find(entry => entry.result);
       if (!displayed && first?.result) { displayed = true; acceptBundle(first.result.bundle); }
       renderGeneratedOptions();
@@ -817,12 +819,12 @@ function renderSummary() {
   const ev = evaluation(), stale = isStale();
   const cls = stale ? 'stale' : candidate.layout_report ? 'unknown' : ev?.summary.status || 'unknown';
   const label = stale ? '调整后待检查' : candidate.layout_report ? '尚未找到完整走法' : !ev ? '尚未检查' : ev.summary.status === 'pass' ? '几何检查通过' : ev.summary.status === 'fail' ? '几何需要调整' : '部分姿态未解出';
-  const support = ev?.mechanics_report?.summary;
-  const compact = stale ? '调整后待检查' : candidate.layout_report ? '尚无完整走法' : !ev ? '尚未检查' : ev.summary.status !== 'pass' ? label : support?.status === 'infeasible' ? '支撑需调整' : '待试攀';
+  const support = !stale ? draftSupportSummary(candidate, ev) : undefined;
+  const compact = stale ? '调整后待检查' : candidate.layout_report ? '尚无完整走法' : !ev ? '尚未检查' : ev.summary.status !== 'pass' ? label : support?.label || '支撑待确认';
   $('#quick-check').textContent = `${compact} · 检查`;
   $('#quick-check').classList.toggle('needs-check', stale || !ev);
-  const note = stale ? '重新检查后更新结果。' : ev?.summary.status === 'pass' && support?.status === 'infeasible' ? '静态支撑仍需调整，待试攀。' : '草稿需定线员调整与试攀。';
-  const supportIssueId = !stale ? ev?.mechanics_report?.states.find(item => item.status === 'infeasible')?.state_id : undefined;
+  const note = stale ? '重新检查后更新结果。' : candidate.layout_report ? '找到完整走法后再检查换点支撑。' : support?.detail || '草稿需定线员调整与试攀。';
+  const supportIssueId = support?.firstIssueStateId;
   const supportIssueStep = supportIssueId ? candidate.states.findIndex(item => item.id === supportIssueId) : -1;
   $('#summary').innerHTML = `<div class="summary-title ${cls}">${stale ? icon('refresh') : statusIcon(candidate.layout_report ? 'unknown' : ev?.summary.status || 'unknown')}<strong>${label}</strong></div><p class="summary-limit">${note}</p>${supportIssueStep >= 0 ? `<button class="text-button support-issue" data-action="phase" data-step="${supportIssueStep}">查看支撑问题动作 ${icon('chevron')}</button>` : ''}${viewingAlternative() ? '<p class="field-hint">备选走法只读，返回主走法可编辑。</p>' : `<button class="button ${stale || !ev ? 'primary' : 'outlined'} full-width" data-action="recheck" ${busy ? 'disabled' : ''}>${icon('refresh')}${stale || !ev ? '检查调整' : '重新检查'}</button>`}`;
 }

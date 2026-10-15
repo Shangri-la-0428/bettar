@@ -18,8 +18,8 @@ from .own_routes import contact_signature, initial_contact_mask, metrics
 from .setting import _mechanical_rank, _shell
 from .wall_profiles import PROFILES, fit_installed_footprints, repair_panel_spacing
 
-VERSION = "rules-draft-options-v1"
-SECONDS = 20
+VERSION = "rules-draft-options-v2"
+SECONDS = 40
 STYLES = {
     "balance": ("技巧移重", "diagonal_balance"),
     "power": ("力量握持", "opposing_sidepulls"),
@@ -86,42 +86,83 @@ def build_request(payload):
         for before, after in zip(original, request["reference_layout"]) if before != after]
     brief = {**options, "labels": {"wall": WALLS[options["wall_profile"]], "style": style_label,
         "difficulty": difficulty_label}, "generator_version": VERSION,
-        "generator_code_hash": "sha256:" + hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),
+        "generator_code_hash": "sha256:" + hashlib.sha256(Path(__file__).read_bytes()
+            + Path(__file__).with_name("support_refinement.py").read_bytes()).hexdigest(),
         "difficulty_policy": {"horizontal_spread": spread, "support": "progressively enable installed foot support; declared hand-hold standing faces remain available"},
         "variant_policy": {"corridor_bend_m": bend, "position_jitter_m": [.018, .012], "rotation_jitter_deg": 2.},
-        "adjustments": adjustments, "panel_fit": fitted, "spacing": spacing, "limitations": LIMITATIONS}
+        "adjustments": adjustments, "panel_fit": fitted, "spacing": spacing, "limitations": LIMITATIONS,
+        "support_policy": "Check several independently searched betas; feed failed release/landing contact directions and moment arms into bounded layout proposals; independently search and check every proposal; retain only a better geometry-first static-support rank.",
+        "support_adjustments": [], "support_proposal": "seed"}
     request["generation_brief"] = brief
     request["setting_design"]["intent"] = f"{style_label} · {difficulty_label}；{LIMITATIONS[0]}"
     validate_request(request)
     return request
 
 
+def _supported(record):
+    return record is not None and record["evaluation"]["summary"]["status"] == "pass" and \
+        record["evaluation"].get("mechanics_report", {}).get("summary", {}).get("status") == "feasible"
+
+
+def _support_summary(record):
+    if record is None:
+        return None
+    summary = record["evaluation"].get("mechanics_report", {}).get("summary", {})
+    release = summary.get("release_states", 0)
+    return {"geometry_status": record["evaluation"]["summary"]["status"],
+        "release_pass": release-summary.get("release_infeasible_states", release)-summary.get("release_unknown_states", 0),
+        "release_total": release, "feasible_states": summary.get("feasible_states", 0),
+        "total_states": sum(summary.get(f"{key}_states", 0) for key in ("feasible", "infeasible", "unknown")),
+        "unknown_states": summary.get("unknown_states", 0),
+        "max_capacity_utilization": summary.get("max_capacity_utilization"),
+        "status": summary.get("status", "unknown")}
+
+
 def _attempt(request, deadline, label):
     shell = _shell(request, request["reference_layout"])
-    options = {**request["setting_design"]["search"], "max_transfers": 26, "max_ik_candidates": 2}
-    sequences, search = _search(request, shell, "fewer_transfers", options, deadline=deadline)
-    checked = []
-    for steps in sequences:
+    options = {**request["setting_design"]["search"], "max_transfers": 26, "max_ik_candidates": 3}
+    searched, search = [], []
+    for objective in ("fewer_transfers", "lower_proxy_effort"):
         if time.perf_counter() >= deadline:
             break
-        candidate = _make_candidate(shell, steps, "fewer_transfers")
+        sequences, stats = _search(request, shell, objective, options, deadline=deadline)
+        searched.append((objective, sequences))
+        search.append(stats)
+    # Interleave short and lower-effort betas so the first geometry-pass short
+    # sequence cannot monopolize the candidate checking budget.
+    choices, seen = [], set()
+    for index in range(options["max_ik_candidates"]):
+        for objective, sequences in searched:
+            if index >= len(sequences):
+                continue
+            signature = tuple(sequences[index])
+            if signature not in seen:
+                choices.append((objective, sequences[index])); seen.add(signature)
+    checked = []
+    for objective, steps in choices:
+        if time.perf_counter() >= deadline:
+            break
+        candidate = _make_candidate(shell, steps, objective)
         candidate["parent_id"] = None
         candidate["name"] = label
         candidate["design_notes"] = LIMITATIONS
         evaluation = evaluate(request, candidate, deadline=deadline)
         analysis, summary = analyze_beta(request, candidate)
         checked.append({"candidate": candidate, "evaluation": evaluation, "analysis": analysis, "summary": summary})
-        if evaluation["summary"]["status"] == "pass":
+        # Geometry pass alone says nothing about the remaining contacts during
+        # a release. Do not discard better-supported independently found betas.
+        if _supported(checked[-1]):
             break
     checked.sort(key=_mechanical_rank)
     return (checked[0] if checked else None), {"search": search, "checked": len(checked),
-        "statuses": [record["evaluation"]["summary"]["status"] for record in checked]}
+        "statuses": [record["evaluation"]["summary"]["status"] for record in checked],
+        "support": [_support_summary(record) for record in checked]}
 
 
 def generate_option(payload, *, seconds=SECONDS):
     options = validate_options(payload)
     if isinstance(seconds, bool) or not isinstance(seconds, (int, float)) or not math.isfinite(seconds) or not 0 < seconds <= SECONDS:
-        raise ValueError("生成预算必须大于 0 且不超过 20 秒。")
+        raise ValueError(f"生成预算必须大于 0 且不超过 {SECONDS} 秒。")
     started = time.perf_counter()
     request = build_request(options)
     deadline = time.perf_counter() + seconds
@@ -130,20 +171,58 @@ def generate_option(payload, *, seconds=SECONDS):
     request["route_constraints"] = {"allowed_contacts": mask}
     best, best_request, attempts = None, None, []
     stages = sorted({0, min(3, len(pool)), len(pool)})
+    # Reserve time for feedback, instead of spending the whole budget on a
+    # reachable layout and merely attaching a support warning afterwards.
+    baseline_deadline = min(deadline, time.perf_counter() + seconds*.40)
     for index, support_count in enumerate(stages):
         if time.perf_counter() >= deadline:
             break
         for limb in ("LF", "RF"):
             mask[limb] = sorted(set(mask[limb]) | set(pool[:support_count]))
         # Leave most of the budget for the fully supported independent search.
-        stage_deadline = deadline if index == len(stages) - 1 else min(deadline, time.perf_counter() + seconds * .12)
+        stage_deadline = baseline_deadline if index == len(stages) - 1 else min(baseline_deadline, time.perf_counter() + seconds * .10)
         record, attempt = _attempt(request, stage_deadline, label)
         attempt["enabled_foot_ids"] = pool[:support_count]
         attempts.append(attempt)
         if record is not None and (best is None or _mechanical_rank(record) < _mechanical_rank(best)):
             best, best_request = record, copy.deepcopy(request)
-        if best is not None and best["evaluation"]["summary"]["status"] == "pass":
+        if _supported(best):
             break
+    if best is None and time.perf_counter() < deadline:
+        # A difficult seed can use the remaining time to find any checked
+        # sequence; no feedback is possible until one has been evaluated.
+        record, attempt = _attempt(request, deadline, label)
+        attempt["enabled_foot_ids"] = pool
+        attempts.append(attempt)
+        if record is not None:
+            best, best_request = record, copy.deepcopy(request)
+    baseline = copy.deepcopy(best)
+    refinement = []
+    if best is not None and not _supported(best) and time.perf_counter() < deadline:
+        from .support_refinement import support_proposals
+        proposal_request = copy.deepcopy(best_request)
+        proposals = support_proposals(proposal_request, best)
+        proposals.sort(key=lambda item: item["label"] != "roof-exit-support")
+        for index, proposal in enumerate(proposals):
+            if time.perf_counter() >= deadline:
+                break
+            proposed = copy.deepcopy(proposal_request)
+            proposed["reference_layout"] = proposal["placements"]
+            proposed["generation_brief"]["support_proposal"] = proposal["label"]
+            proposed["generation_brief"]["support_adjustments"] = proposal["changes"]
+            proposed["generation_brief"]["support_rationale"] = proposal["rationale"]
+            # Every proposed layout is searched from scratch. No old movement
+            # order is carried over to make moved holds appear useful.
+            remaining_proposals = len(proposals)-index
+            trial_deadline = min(deadline, time.perf_counter() + (deadline-time.perf_counter())/remaining_proposals)
+            record, attempt = _attempt(proposed, trial_deadline, label)
+            improved = record is not None and _mechanical_rank(record) < _mechanical_rank(best)
+            refinement.append({"proposal": proposal["label"], "changes": proposal["changes"],
+                "rationale": proposal["rationale"], "search": attempt, "support": _support_summary(record), "accepted": improved})
+            if improved:
+                best, best_request = record, proposed
+            if _supported(best):
+                break
     search_finished = time.perf_counter()
     if best is None:
         candidate = _shell(request, request["reference_layout"])
@@ -163,6 +242,9 @@ def generate_option(payload, *, seconds=SECONDS):
         "metrics": metrics(request, candidate, evaluation), "bundle": bundle,
         "brief": request["generation_brief"], "elapsed_ms": round((time.perf_counter() - started) * 1000, 2),
         "geometry_digest": canonical_hash(candidate["placements"]), "sequence_digest": canonical_hash(contact_signature(candidate)),
+        "refinement": {"before": _support_summary(baseline), "after": _support_summary(best),
+            "proposals": refinement, "selected_proposal": request["generation_brief"]["support_proposal"],
+            "selection": "geometry pass, release-state feasible fraction, all-state feasible fraction, required capacity utilization, proxy effort"},
         "search": {"timeout_seconds": seconds, "elapsed_ms": round((search_finished - started) * 1000, 2),
             "budget_exhausted": search_finished >= deadline, "attempts": attempts,
             "budget_scope": "contact search and pose checks; geometry preparation, bundle validation and serialization recorded in total elapsed_ms"}}

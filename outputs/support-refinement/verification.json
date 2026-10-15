@@ -1,0 +1,121 @@
+{
+  "date": "2026-10-15",
+  "generator_version": "rules-draft-options-v2",
+  "checks": {
+    "python_regression": {
+      "command": ".venv/bin/python -m pytest -q",
+      "passed": 422,
+      "skipped": 2,
+      "elapsed_seconds": 218.71,
+      "exit_code": 0
+    },
+    "frontend_generation_regression": {
+      "command": "node web/scripts/verify-draft-generation.mjs",
+      "status": "passed",
+      "coverage": [
+        "actual release and landing counts",
+        "missing and unknown reports do not pass",
+        "generator metadata cannot manufacture support improvement",
+        "batch generation and distinct options"
+      ]
+    },
+    "timeline_navigation": {
+      "command": "node web/scripts/verify-timeline-navigation.mjs",
+      "status": "passed"
+    },
+    "typescript_vite_build": {
+      "command": "npm --prefix web run build",
+      "status": "passed",
+      "remaining_warning": "Existing main chunk over 500 kB."
+    },
+    "saved_bundle_validation": {
+      "after_comparison_bundles": 6,
+      "browser_export": 1,
+      "current_generator_source_hashes_match": true
+    },
+    "diff_whitespace": "passed"
+  },
+  "fixed_seed_comparison": {
+    "file": "comparison.json",
+    "cases": 6,
+    "distinctness": {
+      "roof": {
+        "samples": 3,
+        "distinct_geometries": 3,
+        "distinct_sequences": 3,
+        "all_geometry_pass": true,
+        "all_complete": true
+      },
+      "overhang": {
+        "samples": 3,
+        "distinct_geometries": 3,
+        "distinct_sequences": 3,
+        "all_geometry_pass": true,
+        "all_complete": true
+      }
+    },
+    "all_release_fractions_improved": true,
+    "all_support_states_pass": false,
+    "physical_assumptions_unchanged": true,
+    "interpretation": "All three overhang cases accepted independently re-searched geometry/grip changes. Roof cases rejected geometry proposals and retained the seed layout with better-supported alternative betas, with increased proxy peak load. No claim of human climbability or overall algorithm superiority from six cases."
+  },
+  "browser": {
+    "url": "http://127.0.0.1:5174/",
+    "conditions": {
+      "wall_profile": "overhang",
+      "style": "balance",
+      "difficulty": "medium",
+      "seed": 770672531
+    },
+    "generation": "Clicked homepage Generate 3 routes; all three completed with separate checked betas.",
+    "release_counts": {
+      "A": [
+        4,
+        12
+      ],
+      "B": [
+        4,
+        11
+      ],
+      "C": [
+        5,
+        12
+      ]
+    },
+    "checks": [
+      "Switched A/B/C and confirmed selected scene labels",
+      "A checks panel reported 8 failed releases and 4 failed landings",
+      "Jumped to the first failed release in replay and advanced to its landing state",
+      "Saved C through the UI; server and offline validate_bundle passed"
+    ],
+    "export": "browser-export.json.gz",
+    "responsive": [
+      {
+        "width": 390,
+        "height": 844,
+        "horizontal_overflow": false,
+        "screenshot": "mobile.jpg"
+      },
+      {
+        "width": 1440,
+        "height": 1000,
+        "horizontal_overflow": false,
+        "screenshot": "desktop.jpg"
+      },
+      {
+        "width": 561,
+        "height": 692,
+        "horizontal_overflow": false,
+        "screenshot": "current-window.jpg"
+      }
+    ],
+    "final_state": "Original viewport restored, generated comparison retained, C selected."
+  },
+  "limitations": [
+    "All six saved routes still contain static support failures.",
+    "Release counts are feasible discrete synthetic poses, not trial-climb success rates.",
+    "Seed fixes geometry proposals; runtime budgets can change how many betas are evaluated.",
+    "Search and pose scheduling share 40 seconds per option; current static report completes, final validation/serialization are extra. Previous version budget was 20 seconds.",
+    "No friction, strength capacities, anatomy or check thresholds were relaxed."
+  ]
+}
