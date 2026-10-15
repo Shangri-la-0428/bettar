@@ -12,6 +12,7 @@ from uuid import uuid4
 
 from .engine import default_request, generate, evaluate, make_bundle, validate_bundle, catalog_metadata
 from .beta_audit import audit_beta
+from .projects import MAX_PROJECT_BYTES, ProjectStore, ProjectConflict, ProjectCorrupt
 
 ROOT = Path(__file__).resolve().parent.parent
 MAX_BODY = 8 * 1024 * 1024
@@ -156,6 +157,11 @@ def finite_tree(value):
             finite_tree(child)
 
 
+def project_store():
+    from .example_gym import gym_metadata
+    return ProjectStore(ROOT / ".runtime" / "projects", gym_metadata())
+
+
 class Handler(BaseHTTPRequestHandler):
     server_version = "BetaAtelier/0.1"
 
@@ -191,6 +197,16 @@ class Handler(BaseHTTPRequestHandler):
         try:
             if path == "/api/health":
                 self.respond(200, {"ok": True, "version": "0.1.0"})
+            elif path == "/api/gym":
+                from .example_gym import gym_metadata
+                self.respond(200, gym_metadata())
+            elif path == "/api/projects":
+                self.respond(200, project_store().list())
+            elif path.startswith("/api/projects/"):
+                try:
+                    self.respond(200, project_store().load(path.removeprefix("/api/projects/")))
+                except FileNotFoundError:
+                    self.respond(404, {"error": "定线记录不存在，可能已被移动。"})
             elif path == "/api/defaults":
                 self.respond(200, {"request": default_request(), "body_profiles": [default_request(body_id=b)["body"] for b in ("A", "B")], "scenarios": SCENARIOS, "catalog_templates": catalog_metadata()})
             elif path == "/api/style-examples":
@@ -224,6 +240,8 @@ class Handler(BaseHTTPRequestHandler):
                     self.respond(200, validate_bundle(json.loads(demo.read_text(encoding="utf-8"))))
             else:
                 self.respond(404, {"error": "接口不存在。"})
+        except ProjectCorrupt as exc:
+            self.respond(422, {"error": str(exc)})
         except FileNotFoundError as exc:
             self.respond(503, {"error": str(exc)})
         except ValueError as exc:
@@ -239,16 +257,22 @@ class Handler(BaseHTTPRequestHandler):
             if self.headers.get("Content-Type", "").split(";", 1)[0].strip() != "application/json":
                 self.respond(415, {"error": "请提交 JSON 文件。"})
                 return
+            path = urlparse(self.path).path
+            limit = MAX_PROJECT_BYTES if path == "/api/projects" else MAX_BODY
             size = int(self.headers.get("Content-Length", "0"))
-            if size <= 0 or size > MAX_BODY:
-                self.respond(413, {"error": "数据为空或超过 8 MB。"})
+            if size <= 0 or size > limit:
+                self.respond(413, {"error": f"数据为空或超过 {limit // (1024 * 1024)} MB。"})
                 return
             payload = json.loads(self.rfile.read(size))
             finite_tree(payload)
             if not isinstance(payload, dict):
                 raise ValueError("请求必须是 JSON 对象。")
-            path = urlparse(self.path).path
-            if path == "/api/request":
+            if path == "/api/projects":
+                try:
+                    self.respond(200, project_store().save(payload))
+                except FileNotFoundError:
+                    self.respond(404, {"error": "定线记录不存在，当前修改尚未保存。"})
+            elif path == "/api/request":
                 allowed = {"body_id", "scenario", "mode", "angle_deg", "hand_moves", "seed", "budget", "profile", "catalog_counts", "style_goal", "rhythm", "route_program", "setting_program", "hold_source", "wall_profile"}
                 if set(payload) - allowed:
                     raise ValueError("包含未支持的场景参数。")
@@ -287,6 +311,8 @@ class Handler(BaseHTTPRequestHandler):
                 self.respond(200, validate_bundle(bundle))
             else:
                 self.respond(404, {"error": "接口不存在。"})
+        except ProjectConflict as exc:
+            self.respond(409, {"error": str(exc), "current_revision": exc.revision})
         except (ValueError, KeyError, TypeError) as exc:
             self.respond(422, {"error": f"数据未通过校验：{exc}"})
         except Exception:

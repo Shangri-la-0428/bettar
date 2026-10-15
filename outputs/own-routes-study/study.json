@@ -1,6 +1,6 @@
 {
   "schema_version": "own-routes-study-v1",
-  "engine_code_hash": "sha256:b314a55a201d54bc48b04bfd5ba3ee571a1b200a025d26b7c0b1d7912289962d",
+  "engine_code_hash": "sha256:46133df4955fa3f8cce6ce0a8b58fa5f7842b5d4e366a664b96d0b44846bdb50",
   "generator_code_hash": "sha256:1cd0abfce2c2d1a11282ed75bce38758f6779984a8c05a957fc421d4ce26573f",
   "protocol": {
     "generator": "rules_only_contact_support_completion_v1",
@@ -196,8 +196,8 @@
           },
           "checked_summaries": [],
           "added_foot_id": null,
-          "bundle_file": "bundles/1b16172fc530da22ad7d2d90249310d2a74753a74ccf69e7ed52aa016c4cbe04.json.gz",
-          "bundle_digest": "sha256:1b16172fc530da22ad7d2d90249310d2a74753a74ccf69e7ed52aa016c4cbe04"
+          "bundle_file": "bundles/b9f6fdfcab2a4ab36315929495412746178f000eeb787d5ebbc2aee0ca42aff9.json.gz",
+          "bundle_digest": "sha256:b9f6fdfcab2a4ab36315929495412746178f000eeb787d5ebbc2aee0ca42aff9"
         },
         "after_support_completion": {
           "search": [
@@ -396,8 +396,8 @@
             }
           ],
           "added_foot_id": "foot-5",
-          "bundle_file": "bundles/592f397bb62074450183e35473095fa15818f0fbee877196df86e5b855046cbe.json.gz",
-          "bundle_digest": "sha256:592f397bb62074450183e35473095fa15818f0fbee877196df86e5b855046cbe"
+          "bundle_file": "bundles/8dd52a683f155205e789e9f177f4f23f126f960ea621dbdb37b57fb78d02cb94.json.gz",
+          "bundle_digest": "sha256:8dd52a683f155205e789e9f177f4f23f126f960ea621dbdb37b57fb78d02cb94"
         },
         "after": {
           "status": "complete",
@@ -1537,8 +1537,8 @@
         "validation_ms": 7503.79,
         "budget_exhausted": true
       },
-      "bundle_digest": "sha256:82e1bc83f0a8127cb987a4e2f50de70f41687a696cfc9f0f7d3062ab020cb047",
-      "bundle_file": "bundles/82e1bc83f0a8127cb987a4e2f50de70f41687a696cfc9f0f7d3062ab020cb047.json.gz",
+      "bundle_digest": "sha256:9392923ef7bcbfd3b9a033033cb671b0af32633b7a2053b4a7bb17ed05086334",
+      "bundle_file": "bundles/9392923ef7bcbfd3b9a033033cb671b0af32633b7a2053b4a7bb17ed05086334.json.gz",
       "generation_engine_code_hash": "sha256:9309643b263d25d79315fb4b619804d406c52fe9dd2ae39631257a9601b1ce68"
     },
     {
@@ -1705,8 +1705,8 @@
           },
           "checked_summaries": [],
           "added_foot_id": null,
-          "bundle_file": "bundles/0bd82c8f75b4a366b6dd1d80cd48721a801b065ac2a0c6b31fbe7f21e5c0000b.json.gz",
-          "bundle_digest": "sha256:0bd82c8f75b4a366b6dd1d80cd48721a801b065ac2a0c6b31fbe7f21e5c0000b"
+          "bundle_file": "bundles/43a0044440c5f25a90f2fedaa6068a693ad6c796297d3736f3e8feb27bb086d5.json.gz",
+          "bundle_digest": "sha256:43a0044440c5f25a90f2fedaa6068a693ad6c796297d3736f3e8feb27bb086d5"
         },
         "after_support_completion": {
           "search": [
@@ -1900,8 +1900,8 @@
             }
           ],
           "added_foot_id": "foot-6",
-          "bundle_file": "bundles/030c032ed129d8512b46c931a08fdde241cfff32c6b0c9831c40fb440255b990.json.gz",
-          "bundle_digest": "sha256:030c032ed129d8512b46c931a08fdde241cfff32c6b0c9831c40fb440255b990"
+          "bundle_file": "bundles/7463655ce6d759789a8d0a6bb1dba465d0b510c6b437a0721ddc349f002db026.json.gz",
+          "bundle_digest": "sha256:7463655ce6d759789a8d0a6bb1dba465d0b510c6b437a0721ddc349f002db026"
         },
         "after": {
           "status": "complete",
@@ -3045,8 +3045,8 @@
         "validation_ms": 7171.68,
         "budget_exhausted": false
       },
-      "bundle_digest": "sha256:4256ee863b59cea3eb63f884371a662c3fd16bab8e84fe293d632ea67bad3a08",
-      "bundle_file": "bundles/4256ee863b59cea3eb63f884371a662c3fd16bab8e84fe293d632ea67bad3a08.json.gz",
+      "bundle_digest": "sha256:8d960854da08324d74d25834383cd725a747f3c11c5574819aec2b4c89e86eec",
+      "bundle_file": "bundles/8d960854da08324d74d25834383cd725a747f3c11c5574819aec2b4c89e86eec.json.gz",
       "generation_engine_code_hash": "sha256:9309643b263d25d79315fb4b619804d406c52fe9dd2ae39631257a9601b1ce68"
     },
     {
@@ -3216,8 +3216,8 @@
           },
           "checked_summaries": [],
           "added_foot_id": null,
-          "bundle_file": "bundles/47613cbb311cc3874cbff200efae8a296f0038027c996573e9fcc48c3f987fa5.json.gz",
-          "bundle_digest": "sha256:47613cbb311cc3874cbff200efae8a296f0038027c996573e9fcc48c3f987fa5"
+          "bundle_file": "bundles/888a4d5219e15cbd97b90461695842f338edc9f37066a0e61a602048266360bc.json.gz",
+          "bundle_digest": "sha256:888a4d5219e15cbd97b90461695842f338edc9f37066a0e61a602048266360bc"
         },
         "after_support_completion": {
           "search": [
@@ -3416,8 +3416,8 @@
             }
           ],
           "added_foot_id": "foot-6",
-          "bundle_file": "bundles/8b5743f90c83557b45b3c366f215397e914c65d769b098c857efc4b48509fb8a.json.gz",
-          "bundle_digest": "sha256:8b5743f90c83557b45b3c366f215397e914c65d769b098c857efc4b48509fb8a"
+          "bundle_file": "bundles/1418f03605497717cbf445e495d82980853d7374d6f849f8bdc4b0166b478b58.json.gz",
+          "bundle_digest": "sha256:1418f03605497717cbf445e495d82980853d7374d6f849f8bdc4b0166b478b58"
         },
         "after": {
           "status": "complete",
@@ -4565,8 +4565,8 @@
         "validation_ms": 6884.66,
         "budget_exhausted": true
       },
-      "bundle_digest": "sha256:681261725aab34bf8cda4c0370f51a8630cc3e597016a46f85fbd20f56b940a3",
-      "bundle_file": "bundles/681261725aab34bf8cda4c0370f51a8630cc3e597016a46f85fbd20f56b940a3.json.gz",
+      "bundle_digest": "sha256:c94212cb6e8551883de193541db585682bb1caa6e7e20b0eca181629d1787cbd",
+      "bundle_file": "bundles/c94212cb6e8551883de193541db585682bb1caa6e7e20b0eca181629d1787cbd.json.gz",
       "generation_engine_code_hash": "sha256:9309643b263d25d79315fb4b619804d406c52fe9dd2ae39631257a9601b1ce68"
     }
   ],
@@ -4596,7 +4596,7 @@
       "note": "IDs name inventory roles across independently installed layouts; geometry differences must be read with overlap."
     }
   ],
-  "index_digest": "sha256:7fc2fa1a45df1401c1a5514e055f44de88610d2f1d88a3e5a6c0cfd43d261728",
+  "index_digest": "sha256:547b11e6d3d87a26c731c9cd4229f146d1e9226e22b7a6ea3a30b5fe095e5dd3",
   "generation_engine_code_hash": "sha256:9309643b263d25d79315fb4b619804d406c52fe9dd2ae39631257a9601b1ce68",
   "revalidation": {
     "reason": "metadata_only_roof_labels",
@@ -4606,5 +4606,13 @@
     "all_numerical_metrics_identical": true,
     "evidence_file": "revalidation.json",
     "evidence_digest": "sha256:39353294d8f3c26ba45d388a11280e1c395970aaed4b6b3de91f2bead6969860"
+  },
+  "compatibility_revalidation": {
+    "reason": "optional_installation_region_constraints_added",
+    "original_engine_code_hash": "sha256:b314a55a201d54bc48b04bfd5ba3ee571a1b200a025d26b7c0b1d7912289962d",
+    "current_engine_code_hash": "sha256:46133df4955fa3f8cce6ce0a8b58fa5f7842b5d4e366a664b96d0b44846bdb50",
+    "contact_search_rerun": false,
+    "geometry_and_contacts_preserved": true,
+    "evidence": "../example-gym/revalidation.json"
   }
 }

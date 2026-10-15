@@ -31,6 +31,18 @@ const mismatched = await generateDraftBatch(brief, 42, async input => {
 }, () => {});
 assert.ok(mismatched.every(item => item.state === 'error'), 'bundle provenance must match selected wall, style, difficulty and seed');
 
+const gymBrief = { ...brief, gym_id: 'bettar-demo', region_id: 'roof-exit' };
+const gymCalls = [];
+const gymEntries = await generateDraftBatch(gymBrief, 42, async input => {
+  gymCalls.push(input); return response(input);
+}, () => {});
+assert.equal(gymEntries.filter(item => item.state === 'ready').length, 3);
+assert.ok(gymCalls.every(input => input.gym_id === gymBrief.gym_id && input.region_id === gymBrief.region_id));
+const wrongRegion = await generateDraftBatch(gymBrief, 42, async input => {
+  const result = response(input); result.bundle.request.generation_brief.region_id = 'overhang-bay'; return result;
+}, () => {});
+assert.ok(wrongRegion.every(item => item.state === 'error'), 'a plausible wall profile cannot conceal a different gym region');
+
 const duplicates = await generateDraftBatch(brief, 42, async input => ({
   ...response(input), geometry_digest: 'same-wall-holds', sequence_digest: 'same-beta',
 }), () => {});
@@ -68,4 +80,4 @@ assert.equal(feasibleSupport.release.feasible, 2, 'counts come from current mech
 const unknownReport = checked(Object.fromEntries(candidate.states.map(state => [state.id, 'feasible'])));
 unknownReport.mechanics_report.summary.status = 'unknown';
 assert.equal(draftSupportSummary(candidate, unknownReport).label, '支撑待确认');
-console.log(JSON.stringify({ status: 'pass', cases: ['three conditioned calls', 'partial failure continuation', 'unresolved retained', 'no saved fallback', 'request provenance mismatch', 'duplicate identification', 'independent bundles', 'actual support counts', 'first support issue', 'partial and missing support unknown', 'generator metadata ignored'] }));
+console.log(JSON.stringify({ status: 'pass', cases: ['three conditioned calls', 'partial failure continuation', 'unresolved retained', 'no saved fallback', 'request provenance mismatch', 'gym and region propagated and verified', 'duplicate identification', 'independent bundles', 'actual support counts', 'first support issue', 'partial and missing support unknown', 'generator metadata ignored'] }));

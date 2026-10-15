@@ -1,6 +1,8 @@
 """Route contact selection is separate from installed, collidable geometry."""
 from __future__ import annotations
 
+import math
+
 from .geometry import selected_contact
 
 LIMBS = ("LH", "RH", "LF", "RF")
@@ -16,8 +18,12 @@ def allowed_contact_refs(request, placements):
     """
     inventory = {item["id"]: item for item in request["scene"]["inventory"]}
     mask = request.get("route_constraints", {}).get("allowed_contacts")
+    region = request.get("route_constraints", {}).get("installation_region")
+    editable = set(region["editable_placement_ids"]) if region else None
     allowed = {limb: [] for limb in LIMBS}
     for placement in placements:
+        if editable is not None and placement["id"] not in editable:
+            continue
         item = inventory[placement["inventory_id"]]
         primary = selected_contact(placement, item)
         surfaces = [("main", primary)] + [(surface["id"], surface)
@@ -43,7 +49,7 @@ def constraint_errors(request, placements=None, *, states=None):
     """
     mask = request.get("route_constraints", {}).get("allowed_contacts")
     allowed = {limb: set(mask[limb]) for limb in LIMBS} if mask is not None else None
-    errors = []
+    errors = installation_errors(request, placements)
     if placements is not None:
         ids = {p["id"] for p in placements}
         for limb in LIMBS if mask is not None else ():
@@ -77,4 +83,57 @@ def constraint_errors(request, placements=None, *, states=None):
                         errors.append(f"{name}: {limb} contact {ref['placement_id']} excluded by surface permissions")
                 except (KeyError, ValueError) as exc:
                     errors.append(f"{name}: invalid {limb} contact: {exc}")
+    return errors
+
+
+def installation_errors(request, placements=None):
+    """Enforce the same real footprint/frozen-neighbour contract everywhere.
+
+    This runs at request, search, evaluation and bundle-import boundaries via
+    constraint_errors. A route mask can narrow permissions, never unlock a
+    neighbouring installed hold. Full physical geometry remains present.
+    """
+    region = request.get("route_constraints", {}).get("installation_region")
+    if region is None:
+        return []
+    errors = []
+    editable = set(region["editable_placement_ids"])
+    fixed = {p["id"]: p for p in region["fixed_placements"]}
+    panels = {p["id"]: p for p in request["scene"].get("wall_panels", [])}
+    patches = {p["wall_panel_id"]: p for p in region["patches"]}
+    if len(patches) != len(region["patches"]):
+        errors.append("installation_region: duplicate panel patches")
+    if len(fixed) != len(region["fixed_placements"]) or editable & set(fixed):
+        errors.append("installation_region: fixed and editable placement IDs must be unique and disjoint")
+    for patch in region["patches"]:
+        panel = panels.get(patch["wall_panel_id"])
+        if panel is None or not (-panel["width"]/2 <= patch["u_min"] < patch["u_max"] <= panel["width"]/2 and
+                0 <= patch["v_min"] < patch["v_max"] <= panel["height"]):
+            errors.append(f"installation_region: invalid patch {patch['wall_panel_id']}")
+    for limb, ids in request.get("route_constraints", {}).get("allowed_contacts", {}).items():
+        if set(ids)-editable:
+            errors.append(f"installation_region: {limb} cannot use neighbouring placements")
+    if placements is None:
+        return errors
+    by_id = {p["id"]: p for p in placements}
+    if set(by_id) != editable | set(fixed):
+        errors.append("installation_region: all editable and fixed placements must remain installed; no undeclared placements")
+    for pid, original in fixed.items():
+        if by_id.get(pid) != original:
+            errors.append(f"installation_region: neighbouring placement {pid} is read-only")
+    inventory = {i["id"]: i for i in request["scene"]["inventory"]}
+    for pid in editable & set(by_id):
+        point = by_id[pid]
+        patch = patches.get(point.get("wall_panel_id"))
+        item = inventory.get(point["inventory_id"])
+        if "mount" in point or patch is None or item is None:
+            errors.append(f"installation_region: {pid} mounting is outside the selected area")
+            continue
+        angle = math.radians(point["rotation_deg"])
+        c, s = abs(math.cos(angle)), abs(math.sin(angle))
+        hu, hv = (c*item["width"]+s*item["height"])/2, (s*item["width"]+c*item["height"])/2
+        eps = 1e-8
+        if not (patch["u_min"]-eps <= point["u"]-hu and point["u"]+hu <= patch["u_max"]+eps and
+                patch["v_min"]-eps <= point["v"]-hv and point["v"]+hv <= patch["v_max"]+eps):
+            errors.append(f"installation_region: {pid} complete footprint is outside the selected area")
     return errors

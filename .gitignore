@@ -30,6 +30,7 @@ outputs/competition-study/references.png
 work/*
 !work/ai-bouldering-strategy-v0.2-draft.md
 !work/implementation-contract.md
+!work/routesetter-workflow.md
 !work/recent-products.md
 !work/external-holds/
 work/external-holds/*

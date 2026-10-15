@@ -1,5 +1,9 @@
 import './style.css';
 import './workbench.css';
+import type { ExampleGym } from './gym';
+import { gymEditableIds, gymPlacementIssue } from './gym';
+import { ProjectAutosave } from './project-records';
+import type { ProjectRecord, ProjectSnapshot, ProjectSummary } from './project-records';
 import { timelineNavigation } from './timeline-navigation';
 import { draftSupportSummary, generateDraftBatch } from './draft-generation';
 import type { DraftBrief, DraftOption, DraftEntry } from './draft-generation';
@@ -50,18 +54,20 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
       <span><span class="brand-name">bettar</span><span class="brand-caption">定线工作台</span></span>
     </a>
     <div class="header-actions">
-      <details id="quick-menu" class="quick-menu"><summary>更多</summary><div class="quick-menu-actions"><button data-action="import">${icon('import')}打开草稿</button><button data-action="open-inventory" disabled>${icon('cube')}岩点库</button><label class="saved-draft-picker">示例草稿<select id="draft-picker" aria-label="切换草稿"><option>读取草稿…</option></select></label></div></details>
+      <button class="button quiet" data-action="records">定线记录</button>
+      <details id="quick-menu" class="quick-menu"><summary>更多</summary><div class="quick-menu-actions"><button data-action="new-project">${icon('plus')}新定线</button><button data-action="import">${icon('import')}导入草稿</button><button data-action="export-bundle" disabled>${icon('export')}导出当前方案</button><button data-action="open-inventory" disabled>${icon('cube')}岩点库</button><label class="saved-draft-picker" ${researchMode ? '' : 'hidden'}>示例草稿<select id="draft-picker" aria-label="切换草稿"><option>读取草稿…</option></select></label></div></details>
       ${researchMode ? '<button class="button quiet" data-action="research">研究</button>' : ''}
-      <button class="button outlined" data-action="export-bundle" disabled>${icon('export')}<span>保存</span></button>
+      <button class="button quiet" data-action="save-project-copy" hidden>另存副本</button><button class="button outlined" data-action="save-project" disabled><span>保存</span></button>
     </div>
   </header>
   <main>
     <div id="notice" class="notice" role="alert" hidden></div>
     <section id="workbench-view" aria-label="定线工作台">
       <section class="generation-panel" aria-labelledby="generation-title">
-        <div class="generation-heading"><h1 id="generation-title">生成线路</h1><p id="generation-hint">难度是设计目标，需试攀确认。</p></div>
+        <div class="generation-heading"><h1 id="generation-title">示例岩馆</h1><p id="generation-hint">选择墙上的区域，开始定线。</p><span id="project-save-status" role="status" aria-live="polite"></span></div>
         <form id="quick-generation-form" class="quick-generation-form">
-          <label>墙面<select id="quick-wall" name="wall_profile"><option value="overhang">25° 仰角</option><option value="roof">屋檐</option><option value="dihedral">内角</option><option value="arete">外角</option></select></label>
+          <label>定线区域<select id="quick-region" name="region_id"><option value="">在岩壁上选一区域</option></select></label>
+          <select id="quick-wall" name="wall_profile" hidden aria-hidden="true" tabindex="-1"><option value="overhang">25° 仰角</option><option value="roof">屋檐</option><option value="dihedral">内角</option><option value="arete">外角</option></select>
           <label>风格<select id="quick-style" name="style"><option value="balance">技巧与平衡</option><option value="power">力量</option><option value="sustained">持续输出</option></select></label>
           <label>大致难度<select id="quick-difficulty" name="difficulty"><option value="easy">轻松</option><option value="medium" selected>适中</option><option value="hard">挑战</option></select></label>
           <button id="quick-generate" class="button primary" type="submit" disabled>生成 3 条线路</button>
@@ -77,7 +83,8 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
           <div class="canvas-top"><div class="scene-meta"><span id="scene-title">3D 场景</span><span id="scene-subtitle">等待本地数据</span></div><div class="view-controls"><details class="display-settings"><summary>显示</summary><div class="display-settings-content">          <label class="palette-control">配色<select id="scene-palette" aria-label="场景配色，仅影响展示" title="仅影响展示，不改变几何、受力或计算指纹">${scenePalettes.map(palette => `<option value="${palette.id}">${palette.label}</option>`).join('')}</select></label>
 
           <div class="route-controls"><label><input id="route-only" type="checkbox" checked />仅显示当前线路</label><label><input id="show-surfaces" type="checkbox" />抓握面与方向</label><label><input id="route-path" type="checkbox" />手点顺序连线</label></div><div class="canvas-toggles"><label><input id="show-labels" type="checkbox" title="常显手点编号；脚点编号在选中或当前接触时显示" />编号</label><label><input id="show-body" type="checkbox" />计算姿态</label></div></div></details><button class="view-button" data-action="front" title="正视图" aria-label="正视图">${icon('front')}</button><button class="view-button active" data-action="perspective" title="三维视角" aria-label="三维视角">${icon('cube')}</button></div></div>
-          <div id="canvas-empty" class="canvas-empty"><span class="loading-spinner"></span><h2>正在打开工作台</h2><p>读取场景与已检查的示例</p></div>
+          <div class="gym-view-switch" role="group" aria-label="岩馆视角"><button data-action="gym-overview" aria-pressed="true">整体岩馆</button><button data-action="gym-region" aria-pressed="false" disabled>当前区域</button></div>
+          <div id="canvas-empty" class="canvas-empty"><span class="loading-spinner"></span><h2>正在打开工作台</h2><p>读取示例岩馆</p></div>
           <div id="pose-status" class="pose-status" hidden></div>
           <div class="canvas-bottom"><div id="canvas-legend" class="canvas-legend"><span><i class="dot jug"></i>大把手</span><span><i class="dot edge"></i>方向边缘点</span><span><i class="dot foot"></i>脚点</span></div></div>
           <div id="canvas-hint" class="canvas-hint">点岩点调整 · 拖动空白旋转</div>
@@ -93,6 +100,7 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
       </aside>
     </div>
     </section>
+    <section id="records-view" hidden aria-labelledby="records-title"><div class="tools-heading"><h1 id="records-title" tabindex="-1">定线记录</h1><button class="button outlined" data-action="workbench">返回岩馆</button></div><p class="records-caption">保存在这台电脑，打开后继续调整。</p><details id="project-details" hidden><summary>当前记录的名称与备注</summary><label>名称<input id="project-name" maxlength="120" /></label><label>备注<textarea id="project-notes" rows="3" maxlength="4000" placeholder="想保留的动作、下次要调整的地方…"></textarea></label></details><div id="project-list" aria-live="polite"></div></section>
     <section id="checks-view" hidden aria-labelledby="checks-title"><div class="tools-heading"><h1 id="checks-title" tabindex="-1">草稿检查</h1><button class="button outlined" data-action="workbench">返回岩壁</button></div>
         <section class="inspector-section check-section"><div id="summary" class="summary-panel"><p class="muted">选择方案后查看计算结果。</p></div></section>
         <div class="candidates-bar">
@@ -192,14 +200,14 @@ function closeQuickMenu(restoreFocus = false) {
   $<HTMLDetailsElement>('#quick-menu').open = false;
   if (restoreFocus) $('#quick-menu > summary').focus();
 }
-function showScreen(screen: 'workbench' | 'library' | 'checks' | 'research', focus = true) {
+function showScreen(screen: 'workbench' | 'library' | 'checks' | 'research' | 'records', focus = true) {
   if (screen === 'research' && !researchMode) return;
   closeQuickMenu();
-  for (const name of ['workbench', 'library', 'checks']) $(`#${name}-view`).hidden = name !== screen;
+  for (const name of ['workbench', 'library', 'checks', 'records']) $(`#${name}-view`).hidden = name !== screen;
   researchRoot.hidden = screen !== 'research';
   document.body.classList.toggle('at-workbench', screen === 'workbench');
   document.body.classList.toggle('at-library', screen === 'library');
-  if (focus) (screen === 'workbench' ? $('#quick-wall') : $(`#${screen}-title`)).focus({ preventScroll: true });
+  if (focus) (screen === 'workbench' ? $('#quick-region') : $(`#${screen}-title`)).focus({ preventScroll: true });
   if (focus) window.scrollTo({ top: 0, behavior: 'auto' });
 }
 if (researchMode) mountScanWorkbench($('#scan-workbench'));
@@ -221,6 +229,21 @@ let initializing = true;
 let generatingDrafts = false;
 let generatedEntries: DraftEntry[] = [];
 let generatedBrief: DraftBrief | undefined;
+let gym: ExampleGym | undefined;
+let selectedRegionId = '';
+let gymOverview = true;
+let projectMeta: ProjectRecord | undefined;
+let projectName = '';
+let projectNotes = '';
+let projectReadOnly = false;
+let projectTransition = false;
+const autosave = new ProjectAutosave(value => api<ProjectRecord>('/api/projects', value), (_state, record) => {
+  if (record) {
+    projectMeta = record;
+    try { localStorage.setItem('bettar.last-project', record.id); } catch { /* Optional convenience; files remain authoritative. */ }
+  }
+  renderSaveStatus();
+});
 let view: WallView | undefined;
 let toastTimer = 0;
 const histories: Bundle[] = [];
@@ -288,6 +311,121 @@ function activeLearnedRun() { return learnedExperiment?.runs.find(run => run.id 
 function activeOwnRoute() { return ownRouteStudy?.routes.find(route => route.id === activeOwnRouteId); }
 function clearOwnRoute() { activeOwnRouteId = ''; ownRouteError = ''; }
 function clearLearnedExperiment() { activeLearnedRunId = ''; learnedComparisonId = ''; learnedOpen = false; learnedError = ''; }
+function selectedRegion() { return gym?.regions.find(region => region.id === selectedRegionId); }
+function currentBrief(): DraftBrief {
+  return { gym_id: gym?.id, region_id: selectedRegionId,
+    wall_profile: (selectedRegion()?.wall_profile || 'overhang') as DraftBrief['wall_profile'],
+    style: $<HTMLSelectElement>('#quick-style').value as DraftBrief['style'],
+    difficulty: $<HTMLSelectElement>('#quick-difficulty').value as DraftBrief['difficulty'] };
+}
+function projectSnapshot(): ProjectSnapshot | undefined {
+  if (!gym || !selectedRegionId || projectReadOnly) return;
+  const selected = generatedEntries.find(entry => entry.result?.bundle === bundle);
+  if (selected) selected.selectedCandidateId = activeId;
+  return { name: projectName || `${selectedRegion()?.name || '定线'} · ${draftStyleNames[(generatedBrief || currentBrief()).style]}`,
+    gym_id: gym.id, gym_version: gym.version, region_id: selectedRegionId,
+    brief: generatedBrief || currentBrief(), entries: generatedEntries,
+    selected_variant: selected?.variant ?? null, notes: projectNotes,
+    status: generatingDrafts ? 'generating' : current()?.revision && current()!.revision > 1 ? 'editing' : 'draft' };
+}
+function saveProjectSoon() { if (projectTransition) return; const snapshot = projectSnapshot(); if (snapshot) autosave.schedule(snapshot); }
+function renderSaveStatus() {
+  const label = bundle && !selectedRegionId ? '导入草稿 · 请导出保存' : projectReadOnly ? '历史场地 · 只读' : autosave.state === 'error' ? '未保存 · 点击重试'
+    : autosave.state === 'saving' || autosave.state === 'pending' ? '正在保存…' : autosave.state === 'saved' ? '已保存到本机' : '示例场地 · 模拟库存';
+  $('#project-save-status').textContent = label;
+  $('#project-save-status').title = autosave.error;
+  $<HTMLButtonElement>('[data-action="save-project-copy"]').hidden = autosave.state !== 'error';
+  $<HTMLButtonElement>('[data-action="save-project-copy"]').disabled = busy || projectTransition;
+  $('#project-save-status').classList.toggle('save-error', autosave.state === 'error');
+  document.querySelectorAll<HTMLButtonElement>('[data-action="save-project"]').forEach(button => {
+    button.disabled = !gym || !selectedRegionId || projectReadOnly || projectTransition;
+    button.textContent = autosave.state === 'error' ? '重试保存' : '保存';
+  });
+}
+function setGymOverview(value: boolean) {
+  gymOverview = value || !selectedRegionId;
+  view?.setGymOverview(gymOverview);
+  document.querySelector('[data-action="gym-overview"]')?.setAttribute('aria-pressed', String(gymOverview));
+  document.querySelector('[data-action="gym-region"]')?.setAttribute('aria-pressed', String(!gymOverview));
+  $<HTMLButtonElement>('[data-action="gym-region"]').disabled = !selectedRegionId || projectReadOnly;
+}
+function showGymPreview() {
+  if (!gym) return;
+  $('#wall-view').hidden = false; $('.gym-view-switch').hidden = false;
+  bundle = undefined; activeId = ''; selectedHold = ''; selectedInventory = ''; replayOpen = false; editMode = false;
+  clearBetaAudit(); clearOwnRoute(); clearLearnedExperiment();
+  view?.setGym(gym, selectedRegionId, id => { void chooseGymRegion(id); });
+  view?.setPalette(palette.id); view?.update(gym.preview.request, gym.preview.candidate, undefined, 0);
+  view?.setBody(false); view?.setRouteOnly(false); view?.setEditMode(false);
+  view?.setGymRegion(selectedRegionId, false); setGymOverview(!selectedRegionId);
+  $('#canvas-empty').hidden = true; $('.inspector').hidden = true; $('.canvas-toolbar').hidden = true;
+  $('.workbench-bottom').hidden = true;
+  $('#scene-title').textContent = selectedRegion()?.name || '整体墙形';
+  $('#canvas-hint').textContent = selectedRegionId ? '选好风格与难度，即可生成' : '点击墙上区域 · 拖动空白旋转';
+  $('#canvas-legend').innerHTML = '<span>示例岩馆 · 周边岩点保留</span>';
+  renderGeneratedOptions(); syncQuickGeneration(); renderSaveStatus();
+}
+async function chooseGymRegion(id: string, forceNew = false) {
+  if (!gym || busy || projectTransition || (!forceNew && id === selectedRegionId)) return;
+  if (id && !gym.regions.some(region => region.id === id)) return;
+  projectTransition = true; syncQuickGeneration();
+  try {
+    if (!await autosave.flush()) { showNotice(`当前记录未保存：${autosave.error}。请重试保存后切换。`); return; }
+    autosave.reset(); projectMeta = undefined; projectName = ''; projectNotes = ''; projectReadOnly = false;
+    selectedRegionId = id; generatedEntries = []; generatedBrief = undefined;
+    $<HTMLSelectElement>('#quick-region').value = id;
+    $<HTMLSelectElement>('#quick-wall').value = selectedRegion()?.wall_profile || 'overhang';
+    $('#generation-progress').hidden = true; $('#notice').hidden = true;
+    showScreen('workbench', false); showGymPreview();
+    if (id) saveProjectSoon();
+  } finally { projectTransition = false; $<HTMLSelectElement>('#quick-region').value = selectedRegionId; syncQuickGeneration(); renderSaveStatus(); if (id === selectedRegionId) saveProjectSoon(); }
+}
+async function openProject(id: string) {
+  if (busy || projectTransition) return;
+  projectTransition = true; syncQuickGeneration();
+  try {
+    if (!await autosave.flush()) throw new Error(`当前记录未保存：${autosave.error}`);
+    const record = await api<ProjectRecord>(`/api/projects/${encodeURIComponent(id)}`);
+    autosave.reset(record); projectMeta = record; projectName = record.name; projectNotes = record.notes;
+    projectReadOnly = !!(record.read_only || record.compatibility.read_only);
+    selectedRegionId = record.region_id; generatedEntries = record.entries; generatedBrief = record.brief;
+    $<HTMLSelectElement>('#quick-region').value = record.region_id;
+    $<HTMLSelectElement>('#quick-wall').value = record.brief.wall_profile;
+    $<HTMLSelectElement>('#quick-style').value = record.brief.style;
+    $<HTMLSelectElement>('#quick-difficulty').value = record.brief.difficulty;
+    view?.setGym(projectReadOnly ? undefined : gym, record.region_id, region => { void chooseGymRegion(region); });
+    const entry = generatedEntries.find(item => item.variant === record.selected_variant && item.result) || generatedEntries.find(item => item.result);
+    if (entry?.result) {
+      const restoredCandidateId = entry.selectedCandidateId;
+      acceptBundle(entry.result.bundle, false, false);
+      if (restoredCandidateId && bundle?.candidates.some(candidate => candidate.id === restoredCandidateId)) activeId = restoredCandidateId;
+      renderAll(); view?.setGymRegion(record.region_id, true); setGymOverview(false);
+    } else if (projectReadOnly) {
+      bundle = undefined; activeId = ''; view?.setGym(undefined);
+      $('#wall-view').hidden = true; $('#canvas-empty').hidden = false;
+      $('#canvas-empty').innerHTML = '<h2>历史场地不可用</h2><p>这份记录没有可恢复的墙体，请从更多菜单新建定线。</p>';
+      $('.workbench-bottom').hidden = true; $('.inspector').hidden = true; renderGeneratedOptions();
+    } else showGymPreview();
+    try { localStorage.setItem('bettar.last-project', record.id); } catch { /* Optional convenience; files remain authoritative. */ }
+    $('#generation-progress').hidden = true;
+    showScreen('workbench', false);
+    if (record.compatibility.status !== 'current' || record.interrupted) showNotice(record.compatibility.messages.join('；') || '上次生成未完成，已有方案已恢复，可继续调整或重新生成。');
+  } catch (error) { showNotice(`记录未能打开：${error instanceof Error ? error.message : error}`); }
+  finally { projectTransition = false; syncQuickGeneration(); renderSaveStatus(); if (bundle) renderAll(); }
+}
+async function showProjectRecords() {
+  showScreen('records');
+  $('#project-list').textContent = '正在读取记录…';
+  $('#project-details').hidden = !selectedRegionId || projectReadOnly;
+  $<HTMLInputElement>('#project-name').value = projectName || projectMeta?.name || projectSnapshot()?.name || '';
+  $<HTMLTextAreaElement>('#project-notes').value = projectNotes;
+  try {
+    if (!await autosave.flush()) throw new Error(`当前修改尚未保存：${autosave.error}`);
+    const result = await api<{projects: ProjectSummary[]; errors?: {message?: string}[]}>('/api/projects');
+    $('#project-list').innerHTML = result.projects.length ? result.projects.map(record => `<button class="project-row" data-action="open-project" data-id="${esc(record.id)}"><span><strong>${esc(record.name)}</strong><small>${esc(gym?.regions.find(region => region.id === record.region_id)?.name || record.region_id)} · ${esc(draftStyleNames[record.brief.style])}${record.compatibility.status !== 'current' ? ' · 检查待更新' : ''}</small></span><span>${record.id === projectMeta?.id ? '当前 · ' : ''}${esc(new Date(record.updated_at).toLocaleString('zh-CN', {month:'numeric',day:'numeric',hour:'2-digit',minute:'2-digit'}))}${icon('chevron')}</span></button>`).join('') : '<p class="records-empty">还没有定线记录。选择一个区域，开始第一条。</p>';
+    if (result.errors?.length) $('#project-list').insertAdjacentHTML('beforeend', '<p class="field-hint">部分本机记录无法读取，原文件已保留。</p>');
+  } catch (error) { $('#project-list').innerHTML = `<p class="field-hint">${esc(error instanceof Error ? error.message : String(error))}</p><button class="button outlined" data-action="records">重新读取</button>`; }
+}
 function syncWallChoice(request: Request) {
   const wallSelect = $<HTMLSelectElement>('#draft-wall');
   wallSelect.querySelector('option[value="current"]')?.remove();
@@ -318,8 +456,11 @@ function syncDraftControls() {
   $('#draft-condition-note').textContent = '难度由定线员试攀后确认。';
 }
 function syncQuickGeneration() {
-  $('#quick-generation-form').querySelectorAll<HTMLSelectElement | HTMLButtonElement>('select,button').forEach(control => { control.disabled = busy || initializing; });
+  for (const selector of ['#project-name', '#project-notes']) $<HTMLInputElement>(selector).disabled = projectTransition || projectReadOnly;
+  $('#quick-generation-form').querySelectorAll<HTMLSelectElement | HTMLButtonElement>('select,button').forEach(control => { control.disabled = busy || initializing || projectTransition || projectReadOnly; });
+  $<HTMLButtonElement>('#quick-generate').disabled ||= !gym || !selectedRegionId;
   $('#quick-generate').textContent = generatingDrafts ? '正在生成…' : '生成 3 条线路';
+  document.querySelectorAll<HTMLButtonElement>('[data-action="new-project"], [data-action="records"], [data-action="import"]').forEach(button => { button.disabled = busy || initializing || projectTransition; });
 }
 function renderGeneratedOptions() {
   const host = $('#generated-options');
@@ -327,11 +468,10 @@ function renderGeneratedOptions() {
   if (host.hidden) return;
   const brief = generatedBrief;
   const difficultyLabels = { easy: '轻松', medium: '适中', hard: '挑战' };
-  const caption = brief ? `${wallProfileNames[brief.wall_profile]} · ${draftStyleNames[brief.style]} · ${difficultyLabels[brief.difficulty]}` : '';
+  const caption = brief ? `${selectedRegion()?.name || wallProfileNames[brief.wall_profile]} · ${draftStyleNames[brief.style]} · ${difficultyLabels[brief.difficulty]}` : '';
   host.innerHTML = `<div class="generated-heading"><h2>对比方案</h2><small>${esc(caption)}</small></div><div class="generated-option-list" role="group" aria-label="本次生成的三条方案">${generatedEntries.map(entry => {
     const result = entry.result;
     const selected = !!result && result.bundle === bundle;
-    if (selected) entry.selectedCandidateId = activeId;
     const candidate = result?.bundle.candidates.find(item => item.id === entry.selectedCandidateId) || result?.bundle.candidates[0];
     const ev = result?.bundle.evaluations.find(item => item.candidate_id === candidate?.id);
     const stale = !!candidate && !ev;
@@ -346,7 +486,7 @@ function renderGeneratedOptions() {
   }).join('')}</div>`;
 }
 function selectGeneratedOption(variant: number) {
-  if (busy) return;
+  if (busy || projectTransition) return;
   const entry = generatedEntries.find(item => item.variant === variant);
   if (!entry?.result) return;
   if (bundle === entry.result.bundle) { showScreen('workbench', false); return; }
@@ -354,16 +494,20 @@ function selectGeneratedOption(variant: number) {
   acceptBundle(entry.result.bundle, !histories.includes(entry.result.bundle), false);
   if (selectedId && bundle?.candidates.some(item => item.id === selectedId)) activeId = selectedId;
   renderAll();
+  saveProjectSoon();
   $(`.generated-option[data-variant="${variant}"]`).focus({ preventScroll: true });
 }
 async function generateNewDrafts(event: SubmitEvent) {
   event.preventDefault();
-  if (busy || initializing) return;
-  const brief: DraftBrief = {
-    wall_profile: $<HTMLSelectElement>('#quick-wall').value as DraftBrief['wall_profile'],
-    style: $<HTMLSelectElement>('#quick-style').value as DraftBrief['style'],
-    difficulty: $<HTMLSelectElement>('#quick-difficulty').value as DraftBrief['difficulty'],
-  };
+  if (busy || initializing || projectTransition || projectReadOnly || !gym || !selectedRegionId) return;
+  projectTransition = true; syncQuickGeneration();
+  let saved = false;
+  try { saved = await autosave.flush(); } finally { projectTransition = false; syncQuickGeneration(); }
+  if (!saved) { showNotice(`请先保存当前修改：${autosave.error}`); return; }
+  // A new batch gets its own record; an earlier comparison stays recoverable.
+  if (generatedEntries.length) { autosave.reset(); projectMeta = undefined; projectName = ''; projectNotes = ''; }
+  const brief = currentBrief();
+  generatedEntries = []; showGymPreview();
   const seed = crypto.getRandomValues(new Uint32Array(1))[0] % 1000000000;
   generatedBrief = brief; generatingDrafts = true;
   setBusy(true); $('#notice').hidden = true;
@@ -377,13 +521,14 @@ async function generateNewDrafts(event: SubmitEvent) {
       const first = entries.find(entry => entry.result);
       if (!displayed && first?.result) { displayed = true; acceptBundle(first.result.bundle); }
       renderGeneratedOptions();
+      saveProjectSoon();
     });
     const complete = generatedEntries.filter(entry => entry.result?.status === 'complete').length;
     const failed = generatedEntries.filter(entry => entry.state === 'error').length;
     $('#generation-progress').textContent = `${complete} / 3 条找到完整走法${failed ? ` · ${failed} 条生成失败` : ''}${complete < 3 ? '，可调整条件再试' : '，点击方案对比'}。`;
     if (failed === 3) showNotice(`生成未完成：${generatedEntries[0].error || '请确认本地服务已连接'}。当前草稿已保留，可重新生成。`);
   } finally {
-    generatingDrafts = false; setBusy(false); renderGeneratedOptions();
+    generatingDrafts = false; setBusy(false); renderGeneratedOptions(); saveProjectSoon();
   }
 }
 function renderDraftContext() {
@@ -640,7 +785,7 @@ function setBusy(value: boolean, label?: string) {
   const pendingLabel = label || (setting ? '搜索摆点与走法…' : '生成候选中…');
   $('#generate-button').innerHTML = value ? `<span class="loading-spinner small"></span>${esc(pendingLabel)}` : setting ? `${icon('plus')}重新生成三条实验` : `${icon('plus')}生成 ${bundle?.request.budget || defaults?.request.budget || 3} 个候选`;
   $('#generation-form').querySelectorAll<HTMLInputElement | HTMLButtonElement | HTMLSelectElement>('input,button,select').forEach((el) => { el.disabled = value || !defaults; });
-  document.querySelectorAll<HTMLButtonElement>('[data-action="recheck"], [data-action="save-edit"]').forEach((button) => { button.disabled = value; });
+  document.querySelectorAll<HTMLButtonElement>('[data-action="recheck"], [data-action="save-edit"]').forEach((button) => { button.disabled = value || projectReadOnly || projectTransition; });
   document.querySelectorAll<HTMLButtonElement>('[data-action="candidate"], [data-action="style-example"], [data-action="route-example"], [data-action="setting-example"], [data-action="setting-stage"], [data-action="setting-path"], [data-action="setting-source"], [data-action="wall-example"], [data-action="open-inventory"], [data-action="import"], [data-action="save-review"]').forEach((button) => { button.disabled = value || (button.dataset.action !== 'import' && !bundle); });
   document.querySelectorAll<HTMLButtonElement>('[data-action="export-bundle"], [data-action="export-review"]').forEach((button) => { button.disabled = value || !bundle; });
   $<HTMLSelectElement>('#history').disabled = value || histories.length < 2;
@@ -757,6 +902,8 @@ function acceptBundle(next: Bundle, addHistory = true, resetView = true, learned
   else activeLearnedRunId = learnedRunId;
   activeDraftIntent = undefined;
   bundle = next;
+  $('#wall-view').hidden = false;
+  $('.gym-view-switch').hidden = !gym || !selectedRegionId || projectReadOnly;
   showScreen('workbench', $('#workbench-view').hidden);
   replayOpen = false; $<HTMLInputElement>('#show-body').checked = false;
   syncWallChoice(next.request);
@@ -797,6 +944,9 @@ function renderAll() {
     const ev = evaluation();
     $('#run-meta').textContent = `种子 ${r.seed} · ${candidate?.generator || 'rules'}${ev ? ` · 检查器 ${ev.version} · ${(ev.elapsed_ms / 1000).toFixed(2)} s` : ''}`;
   }
+  $('.workbench-bottom').hidden = !bundle;
+  if (gym && selectedRegionId && !projectReadOnly) $('#scene-title').textContent = `${current()?.name || '草稿'} · ${selectedRegion()?.name || ''}`;
+  renderSaveStatus();
 }
 function renderCandidates() {
   const setting = bundle?.request.profile === 'setting';
@@ -826,7 +976,7 @@ function renderSummary() {
   const note = stale ? '重新检查后更新结果。' : candidate.layout_report ? '找到完整走法后再检查换点支撑。' : support?.detail || '草稿需定线员调整与试攀。';
   const supportIssueId = support?.firstIssueStateId;
   const supportIssueStep = supportIssueId ? candidate.states.findIndex(item => item.id === supportIssueId) : -1;
-  $('#summary').innerHTML = `<div class="summary-title ${cls}">${stale ? icon('refresh') : statusIcon(candidate.layout_report ? 'unknown' : ev?.summary.status || 'unknown')}<strong>${label}</strong></div><p class="summary-limit">${note}</p>${supportIssueStep >= 0 ? `<button class="text-button support-issue" data-action="phase" data-step="${supportIssueStep}">查看支撑问题动作 ${icon('chevron')}</button>` : ''}${viewingAlternative() ? '<p class="field-hint">备选走法只读，返回主走法可编辑。</p>' : `<button class="button ${stale || !ev ? 'primary' : 'outlined'} full-width" data-action="recheck" ${busy ? 'disabled' : ''}>${icon('refresh')}${stale || !ev ? '检查调整' : '重新检查'}</button>`}`;
+  $('#summary').innerHTML = `<div class="summary-title ${cls}">${stale ? icon('refresh') : statusIcon(candidate.layout_report ? 'unknown' : ev?.summary.status || 'unknown')}<strong>${label}</strong></div><p class="summary-limit">${note}</p>${supportIssueStep >= 0 ? `<button class="text-button support-issue" data-action="phase" data-step="${supportIssueStep}">查看支撑问题动作 ${icon('chevron')}</button>` : ''}${viewingAlternative() ? '<p class="field-hint">备选走法只读，返回主走法可编辑。</p>' : `<button class="button ${stale || !ev ? 'primary' : 'outlined'} full-width" data-action="recheck" ${busy || projectReadOnly || projectTransition ? 'disabled' : ''}>${icon('refresh')}${stale || !ev ? '检查调整' : '重新检查'}</button>`}`;
 }
 function ensureSelection() {
   const candidate = current(); if (!candidate || !bundle) return;
@@ -914,7 +1064,7 @@ function renderEditor() {
   const inventory = bundle.request.scene.inventory;
   const placement = candidate.placements.find(p => p.id === selectedHold);
   const hold = inventory.find(item => item.id === selectedInventory);
-  const locked = bundle.request.mode === 'fixed' || viewingAlternative(), disabled = locked || busy;
+  const locked = projectTransition || projectReadOnly || bundle.request.mode === 'fixed' || viewingAlternative() || (!!placement && gymEditableIds(bundle.request)?.has(placement.id) === false), disabled = locked || busy;
   const surfaceId = placement?.contact_surface_id || hold?.grip_surfaces?.[0]?.id;
   const surface = hold?.grip_surfaces?.find(item => item.id === surfaceId);
   const displayHold = hold ? presentationHold(hold, palette) : undefined;
@@ -984,7 +1134,7 @@ function renderEditor() {
   });
 }
 function syncToolState() {
-  const disabled = busy || !current() || viewingAlternative() || bundle?.request.mode === 'fixed';
+  const disabled = busy || projectTransition || projectReadOnly || !current() || viewingAlternative() || bundle?.request.mode === 'fixed';
   const active = editMode && !disabled;
   view?.setEditMode(active);
   document.querySelectorAll<HTMLButtonElement>('[data-action="browse-mode"], [data-action="move-mode"]').forEach((button) => {
@@ -995,7 +1145,7 @@ function syncToolState() {
   });
   $('.canvas-toolbar').hidden = !active;
   $('#tool-status').textContent = busy ? '处理中…' : viewingAlternative() ? '备选走法 · 只读' : bundle?.request.mode === 'fixed' ? '固定点位' : active ? '拖动岩点，松开即保存' : '点选岩点可调整';
-  $('#canvas-hint').textContent = active ? '拖动岩点 · 松开保存' : '点岩点调整 · 拖动空白旋转';
+  $('#canvas-hint').textContent = active ? '拖动岩点 · 松开保存' : projectReadOnly ? '历史场地 · 只读' : !bundle ? '点击墙上区域 · 拖动空白旋转' : '点岩点调整 · 拖动空白旋转';
   $('.canvas-shell').classList.toggle('editing', active);
 }
 function renderChecks() {
@@ -1121,13 +1271,19 @@ function updateScene() {
 }
 
 function makeRevision(change: (candidate: Candidate) => void, note: string, inventoryId = selectedInventory) {
-  const candidate = current(); if (!candidate || !bundle || busy || viewingAlternative() || bundle.request.mode === 'fixed') return;
+  const candidate = current(); if (!candidate || !bundle || busy || projectTransition || projectReadOnly || viewingAlternative() || bundle.request.mode === 'fixed') return;
   const updated = structuredClone(candidate);
   updated.id = `manual-${crypto.randomUUID()}`; updated.parent_id = candidate.id; updated.revision = candidate.revision + 1;
   updated.name = `${candidate.name.replace(/ · 修改 \d+$/, '')} · 修改 ${updated.revision}`; updated.generator = 'manual';
   delete updated.search_metadata;
   if (updated.layout_report) updated.layout_report = { ...updated.layout_report, reason: '当前修订仅保留起始接触，尚未为新点位搜索完整走法。', search: [] };
   change(updated); delete updated.setting_report; updated.design_notes = [...(updated.design_notes || []), note];
+  const regionIssue = updated.placements.find(placement => {
+    const before = candidate.placements.find(item => item.id === placement.id);
+    return JSON.stringify(before) !== JSON.stringify(placement) && gymPlacementIssue(bundle!.request, placement);
+  });
+  const protectedRemoval = candidate.placements.find(placement => !updated.placements.some(item => item.id === placement.id) && gymEditableIds(bundle!.request)?.has(placement.id) === false);
+  if (regionIssue || protectedRemoval) { showNotice(regionIssue ? gymPlacementIssue(bundle.request, regionIssue)! : '周边岩点需要保留。'); updateScene(); return; }
   clearLearnedExperiment();
   clearOwnRoute();
   activeDraftIntent = undefined;
@@ -1137,7 +1293,7 @@ function makeRevision(change: (candidate: Candidate) => void, note: string, inve
   const updatedRoute = new Set(updated.states.flatMap(state => Object.values(state.contacts).flatMap(contact => contact ? [contact.placement_id] : [])));
   // Installing or editing a spare hold is an explicit request to inspect it; reveal it as background.
   if (selectedHold && !updatedRoute.has(selectedHold)) $<HTMLInputElement>('#route-only').checked = false;
-  renderAll(); toast('已保存新修订。原方案保留，当前修订待重新检查。');
+  renderAll(); saveProjectSoon(); toast('已建立新修订，当前修订待重新检查。');
 }
 function saveEdit(event: SubmitEvent) {
   event.preventDefault(); if (!bundle || busy || viewingAlternative() || bundle.request.mode === 'fixed') return;
@@ -1172,7 +1328,7 @@ function removeInstallation() {
   makeRevision(next => { next.placements = next.placements.filter(p => p.id !== placement.id); }, `卸下 ${placement.inventory_id} 并归还库存。`);
 }
 async function recheck() {
-  const candidate = current(); if (!bundle || !candidate || busy || viewingAlternative()) return;
+  const candidate = current(); if (!bundle || !candidate || busy || projectTransition || projectReadOnly || viewingAlternative()) return;
   clearBetaAudit();
   const workingBundle = bundle; setBusy(true, '检查计算中…');
   try {
@@ -1182,7 +1338,7 @@ async function recheck() {
     workingBundle.evaluations = workingBundle.evaluations.filter((item) => item.candidate_id !== candidate.id);
     workingBundle.evaluations.push(result.evaluation);
     activeId = result.candidate.id;
-    renderAll(); toast('检查完成。结果仅适用于当前模型与检查范围。');
+    renderAll(); saveProjectSoon(); toast('检查完成。结果仅适用于当前模型与检查范围。');
   } catch (error) { showNotice(`检查未完成：${error instanceof Error ? error.message : error}`); }
   finally { setBusy(false); renderSummary(); }
 }
@@ -1250,12 +1406,12 @@ async function exportBundle() {
   finally { setBusy(false); }
 }
 function saveReview() {
-  if (viewingAlternative()) return;
+  if (projectTransition || projectReadOnly || viewingAlternative()) return;
   const text = $<HTMLTextAreaElement>('#review-text').value.trim(); const candidate = current();
   if (!bundle || !candidate || !text) { toast('先写下这份方案的反馈。'); return; }
   const ev = isStale() ? undefined : evaluation();
   const review: Review = { id: crypto.randomUUID(), candidate_id: candidate.id, candidate_revision: candidate.revision, evaluation_id: ev?.id || null, evaluation_fingerprint: ev?.fingerprint || null, state_id: candidate.states[step]?.id || null, placement_id: selectedHold || null, kind: 'design_review', text, created_at: new Date().toISOString() };
-  (bundle.reviews ||= []).push(review); $<HTMLTextAreaElement>('#review-text').value = ''; renderReviews(); toast('反馈已保存到当前结果包，可导出留存。');
+  (bundle.reviews ||= []).push(review); $<HTMLTextAreaElement>('#review-text').value = ''; renderReviews(); saveProjectSoon(); toast('反馈已加入当前记录。');
 }
 
 $('#generation-form').addEventListener('submit', generate);
@@ -1278,23 +1434,40 @@ $('#compare').addEventListener('change', (e) => { compareId = (e.target as HTMLS
 $('#history').addEventListener('change', (e) => { if (busy) return; const next = histories[Number((e.target as HTMLSelectElement).value)]; if (next) acceptBundle(next, false); });
 $('#library-filter').addEventListener('change', event => { holdFilter = (event.target as HTMLSelectElement).value; renderLibrary(); });
 $('#quick-generation-form').addEventListener('submit', event => { void generateNewDrafts(event as SubmitEvent); });
+$('#quick-region').addEventListener('change', event => { void chooseGymRegion((event.target as HTMLSelectElement).value); });
+for (const selector of ['#quick-style', '#quick-difficulty']) $(selector).addEventListener('change', () => { if (!generatedEntries.length) saveProjectSoon(); });
+$('#project-name').addEventListener('input', event => { projectName = (event.target as HTMLInputElement).value.trim(); saveProjectSoon(); });
+$('#project-notes').addEventListener('input', event => { projectNotes = (event.target as HTMLTextAreaElement).value; saveProjectSoon(); });
+$('#project-save-status').addEventListener('click', () => { if (autosave.state === 'error') void autosave.flush(); });
+window.addEventListener('beforeunload', event => { if (autosave.dirty) { event.preventDefault(); event.returnValue = ''; } });
 $('#draft-picker').addEventListener('change', () => { void chooseDraft(); });
 $('#draft-form').addEventListener('submit', event => { void viewIntentDraft(event as SubmitEvent); });
 $('#draft-wall').addEventListener('change', event => { void viewIntentDraft(event); });
 $('#draft-style').addEventListener('change', () => { try { localStorage.setItem('bettar.draft-style', $<HTMLSelectElement>('#draft-style').value); } catch { /* Optional storage. */ } });
 $('#import-file').addEventListener('change', async (event) => {
-  const input = event.target as HTMLInputElement; const file = input.files?.[0]; if (!file || busy) return;
+  const input = event.target as HTMLInputElement; const file = input.files?.[0]; if (!file || busy || projectTransition) return;
   setBusy(true, '校验导入中…');
   try {
+    if (!await autosave.flush()) throw new Error(`当前记录未保存：${autosave.error}`);
     const parsed = JSON.parse(await file.text());
     const result = await api<Bundle>('/api/validate', { bundle: parsed });
+    autosave.reset(); projectMeta = undefined; projectName = ''; projectNotes = ''; projectReadOnly = false; selectedRegionId = '';
+    view?.setGym(undefined); $('.gym-view-switch').hidden = true; $<HTMLSelectElement>('#quick-region').value = '';
     generatedEntries = []; generatedBrief = undefined; $('#generation-progress').hidden = true;
     const savedBrief = result.request.generation_brief as Partial<DraftBrief> | undefined;
     for (const [field, selector] of [['wall_profile', '#quick-wall'], ['style', '#quick-style'], ['difficulty', '#quick-difficulty']] as const) {
       const value = savedBrief?.[field], control = $<HTMLSelectElement>(selector);
       if (value && [...control.options].some(option => option.value === value)) control.value = value;
     }
-    acceptBundle(result); toast('已完成校验并导入结果包。');
+    const region = (result.request.route_constraints as {installation_region?: {gym_id:string;gym_version:string;region_id:string}} | undefined)?.installation_region;
+    if (gym && region?.gym_id === gym.id && region.gym_version === gym.version && gym.regions.some(item => item.id === region.region_id) && savedBrief?.style && savedBrief.difficulty && savedBrief.wall_profile) {
+      selectedRegionId = region.region_id; generatedBrief = {gym_id: gym.id, region_id: selectedRegionId, wall_profile: savedBrief.wall_profile, style: savedBrief.style, difficulty: savedBrief.difficulty};
+      const variant = Number((savedBrief as {variant?: number}).variant ?? 0);
+      generatedEntries = [{ variant, state: 'ready', selectedCandidateId: result.candidates[0].id, result: {id: result.id, label: '导入方案', status: 'unverified', bundle: result, brief: {...generatedBrief, variant, seed: result.request.seed}, geometry_digest: '', sequence_digest: '', elapsed_ms: 0} }];
+      $<HTMLSelectElement>('#quick-region').value = selectedRegionId;
+      view?.setGym(gym, selectedRegionId, id => { void chooseGymRegion(id); }); $('.gym-view-switch').hidden = false;
+    }
+    acceptBundle(result); saveProjectSoon(); toast(selectedRegionId ? '已导入为新的定线记录。' : '已导入独立草稿，调整后请导出保存。');
   } catch (error) { showNotice(`导入失败：${error instanceof Error ? error.message : error}。当前方案未改变。`); }
   finally { input.value = ''; setBusy(false); }
 });
@@ -1302,10 +1475,19 @@ document.addEventListener('click', (event) => {
   const target = event.target as HTMLElement;
   if (!target.closest('#quick-menu') || target.closest('#quick-menu [data-action]')) closeQuickMenu(!!target.closest('#quick-menu [data-action]'));
   const button = (event.target as HTMLElement).closest<HTMLElement>('[data-action]');
-  if (!button || button.hasAttribute('disabled')) return;
+  if (!button || button.hasAttribute('disabled') || projectTransition) return;
   const action = button.dataset.action;
   if (busy && ['candidate', 'style-example', 'route-example', 'setting-example', 'setting-stage', 'setting-path', 'import', 'save-review', 'export-bundle', 'export-review'].includes(action || '')) return;
-  if (action === 'generated-option') selectGeneratedOption(Number(button.dataset.variant));
+  if (action === 'records') void showProjectRecords();
+  else if (action === 'open-project') void openProject(button.dataset.id || '');
+  else if (action === 'save-project') { saveProjectSoon(); void autosave.flush().then(saved => { if (!saved) showNotice(`保存失败：${autosave.error}。修改仍在当前页面，请重试。`); }); }
+  else if (action === 'save-project-copy') {
+    void autosave.saveCopy().then(saved => { if (saved) { $('#notice').hidden = true; toast('修改已另存为新记录，原记录保留。'); } else showNotice(`副本未保存：${autosave.error}`); }).catch(error => showNotice(String(error)));
+  }
+  else if (action === 'new-project') void chooseGymRegion('', true);
+  else if (action === 'gym-overview') setGymOverview(true);
+  else if (action === 'gym-region') { view?.setGymRegion(selectedRegionId, true); setGymOverview(false); }
+  else if (action === 'generated-option') selectGeneratedOption(Number(button.dataset.variant));
   else if (action === 'research') showScreen('research');
   else if (action === 'workbench') showScreen('workbench');
   else if (action === 'checks') showScreen('checks');
@@ -1329,7 +1511,7 @@ document.addEventListener('click', (event) => {
   else if (action === 'beta-audit') void auditBeta();
   else if (action === 'beta-select') selectBeta(button.dataset.id || '');
   else if (action === 'beta-export' && betaReport && !busy) download(betaReport, `beta-audit-${betaReport.source.candidate_id}-r${betaReport.source.revision}.json`);
-  else if (action === 'candidate') { clearBetaAudit(); if (activeId !== button.dataset.id) { clearLearnedExperiment(); clearOwnRoute(); activeDraftIntent = undefined; } activeId = button.dataset.id!; step = 0; selectedHold = ''; selectedInventory = ''; replayOpen = false; $<HTMLInputElement>('#show-body').checked = false; view?.setBody(false); showScreen('workbench'); renderAll(); }
+  else if (action === 'candidate') { clearBetaAudit(); if (activeId !== button.dataset.id) { clearLearnedExperiment(); clearOwnRoute(); activeDraftIntent = undefined; } activeId = button.dataset.id!; step = 0; selectedHold = ''; selectedInventory = ''; replayOpen = false; $<HTMLInputElement>('#show-body').checked = false; view?.setBody(false); showScreen('workbench'); renderAll(); saveProjectSoon(); }
   else if (action === 'phase') { showStep(Number(button.dataset.step)); renderBrief(); }
   else if (action === 'roof-step' || action === 'roof-view') {
     const nextStep = Number(button.dataset.step);
@@ -1397,6 +1579,30 @@ async function loadReferenceDrafts() {
 }
 $('.saved-reference-drafts').addEventListener('toggle', event => { if ((event.target as HTMLDetailsElement).open) void loadReferenceDrafts(); });
 async function initialize() {
+  initializing = true; syncQuickGeneration();
+  if (!researchMode) {
+    $('#canvas-empty').hidden = false;
+    $('#canvas-empty').innerHTML = '<span class="loading-spinner"></span><h2>正在打开示例岩馆</h2><p>恢复场地与定线记录</p>';
+    const results = await Promise.allSettled([api<Defaults>('/api/defaults'), api<ExampleGym>('/api/gym'), api<{ projects: ProjectSummary[]; last_project_id: string | null }>('/api/projects')]);
+    if (results[0].status === 'fulfilled') { defaults = results[0].value; populateControls(defaults.request); }
+    if (results[1].status === 'fulfilled') {
+      gym = results[1].value;
+      $('#generation-title').textContent = gym.name;
+      $('#generation-hint').textContent = '选区域、风格和难度，开始定线。';
+      $<HTMLSelectElement>('#quick-region').innerHTML = '<option value="">在岩壁上选一区域</option>' + gym.regions.map(region => `<option value="${esc(region.id)}">${esc(region.name)}</option>`).join('');
+      showGymPreview(); initializing = false;
+      if (results[2].status === 'fulfilled') {
+        let last = results[2].value.last_project_id;
+        try { const preferred = localStorage.getItem('bettar.last-project'); if (results[2].value.projects.some(item => item.id === preferred)) last = preferred; } catch { /* Optional preference. */ }
+        if (last) await openProject(last);
+      }
+      else if (results[2].status === 'rejected') showNotice('记录暂未读取，已有文件仍保留。可从“定线记录”重试。');
+    } else {
+      $('#canvas-empty').innerHTML = `<h2>岩馆暂未载入</h2><p>请确认本地服务已启动。</p><button class="button outlined" data-action="retry">重新连接</button>`;
+      showNotice(`场地读取失败：${results[1].reason instanceof Error ? results[1].reason.message : String(results[1].reason)}`);
+    }
+    initializing = false; syncDraftControls(); renderSaveStatus(); return;
+  }
   $('#canvas-empty').hidden = false;
   $('#canvas-empty').innerHTML = '<span class="loading-spinner"></span><h2>正在打开工作台</h2><p>读取规则线路与检查结果</p>';
   // Current rules are independent of optional historical fixtures and model runs.

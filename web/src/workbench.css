@@ -240,3 +240,33 @@
 }
 
 #checks-view .support-issue { display: flex; min-height: 44px; margin-bottom: 12px; }
+
+/* The gym is the working context; records stay one action away. */
+#project-save-status { margin-left: auto; color: var(--muted); font-size: 11px; line-height: 1.6; }
+#project-save-status.save-error { color: #9c3e29; cursor: pointer; }
+.gym-view-switch { position: absolute; z-index: 8; top: 56px; left: 18px; display: flex; padding: 3px; border: 1px solid var(--line); border-radius: 6px; background: var(--surface); }
+.gym-view-switch button { min-height: 32px; padding: 6px 10px; border: 0; border-radius: 3px; background: transparent; color: var(--muted); font: inherit; font-size: 11px; cursor: pointer; }
+.gym-view-switch button[aria-pressed="true"] { background: #e9e3d8; color: var(--ink); }
+.gym-view-switch button:disabled { opacity: .45; cursor: default; }
+.gym-region-label { min-height: 40px; padding: 9px 14px; border: 1px solid #b7ac9b; border-radius: 6px; background: #faf8f2; color: var(--ink); font-size: 12px; line-height: 1.4; white-space: nowrap; cursor: pointer; }
+.gym-region-label:hover, .gym-region-label.selected { border-color: var(--clay); background: #eee5d9; }
+#records-view { max-width: 900px; margin: 0 auto; padding: 16px 0 40px; }
+.records-caption, .records-empty { margin: 12px 0 24px; color: var(--muted); font-size: 13px; line-height: 1.7; }
+.project-row { display: flex; justify-content: space-between; align-items: center; gap: 20px; width: 100%; padding: 20px 0; border: 0; border-bottom: 1px solid var(--line); background: transparent; color: var(--ink); font: inherit; text-align: left; cursor: pointer; }
+.project-row:hover { background: #eeeae2; }
+.project-row > span:first-child { min-width: 0; display: grid; gap: 7px; }
+.project-row strong { font-size: 15px; font-weight: 550; overflow-wrap: anywhere; }
+.project-row small, .project-row > span:last-child { color: var(--muted); font-size: 12px; }
+.project-row > span:last-child { display: flex; align-items: center; gap: 8px; flex: none; }
+#project-details { padding: 14px 0; margin: 0 0 16px; border-bottom: 1px solid var(--line); }
+#project-details summary { cursor: pointer; min-height: 32px; font-size: 13px; }
+#project-details label { display: grid; gap: 8px; margin: 16px 0; font-size: 12px; color: var(--muted); }
+#project-details input, #project-details textarea { width: 100%; padding: 12px; border: 1px solid var(--line); border-radius: 6px; background: var(--surface); color: var(--ink); font: inherit; font-size: 14px; }
+@media (max-width: 760px) {
+  #project-save-status { display: block; margin-top: 4px; font-size: 10px; }
+  .generation-heading { position: relative; }
+  .gym-view-switch { top: 52px; left: 12px; }
+  .gym-region-label { min-height: 38px; padding: 8px 10px; font-size: 11px; }
+  .project-row { align-items: start; gap: 12px; padding: 18px 0; }
+  .project-row > span:last-child { font-size: 10px; }
+}

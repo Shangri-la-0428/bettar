@@ -1,0 +1,29 @@
+{
+  "schema_version": "example-gym-python-verification/1",
+  "created_at": "2026-10-15T16:05:42.243952+00:00",
+  "engine_code_hash": "sha256:46133df4955fa3f8cce6ce0a8b58fa5f7842b5d4e366a664b96d0b44846bdb50",
+  "command": ".venv/bin/python -m pytest -q",
+  "passed": 460,
+  "skipped": 2,
+  "failed": 0,
+  "duration_seconds": 225.2,
+  "initial_run": {
+    "passed": 455,
+    "skipped": 2,
+    "failed": 3,
+    "reason": "Current served fixtures carried the previous engine code hash; all three failures were stale-evaluator validation, not accepted as valid results."
+  },
+  "remediation": "Actual re-evaluation of 24 served fixtures and 9 stages of the current own-routes study, preserving geometry and contact sequences. See revalidation.json. No historical research bundles were overwritten.",
+  "post_suite_source_guard_checks": {
+    "command": ".venv/bin/python -m pytest -q tests/test_projects.py::test_old_engine_reopens_editable_with_old_checks_removed tests/test_projects.py::test_old_engine_embedded_setting_checks_do_not_block_rechecking_geometry tests/test_projects.py::test_corrupt_archive_is_reported_and_never_overwritten",
+    "passed": 3,
+    "failed": 0,
+    "duration_seconds": 2.94,
+    "note": "Checks ran in parallel with the full suite after the last defensive storage-list/version and corrupt-file reader changes."
+  },
+  "bundle_readback": {
+    "current_fixtures_validated": 24,
+    "current_own_routes_validated": 3,
+    "own_route_evidence_stages": 9
+  }
+}

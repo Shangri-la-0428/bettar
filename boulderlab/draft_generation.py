@@ -18,7 +18,7 @@ from .own_routes import contact_signature, initial_contact_mask, metrics
 from .setting import _mechanical_rank, _shell
 from .wall_profiles import PROFILES, fit_installed_footprints, repair_panel_spacing
 
-VERSION = "rules-draft-options-v2"
+VERSION = "rules-draft-options-v3"
 SECONDS = 40
 STYLES = {
     "balance": ("技巧移重", "diagonal_balance"),
@@ -37,7 +37,7 @@ LIMITATIONS = [
 
 def validate_options(payload):
     expected = {"wall_profile", "style", "difficulty", "seed", "variant"}
-    if not isinstance(payload, dict) or set(payload) != expected:
+    if not isinstance(payload, dict) or not expected <= set(payload) or set(payload)-expected not in (set(), {"gym_id", "region_id"}):
         raise ValueError("生成线路需要墙面、风格、难度、种子和方案编号。")
     for key, choices in (("wall_profile", WALLS), ("style", STYLES), ("difficulty", DIFFICULTIES)):
         if not isinstance(payload[key], str) or payload[key] not in choices:
@@ -46,6 +46,11 @@ def validate_options(payload):
         raise ValueError("种子须为 0 到 2147483647 的整数。")
     if type(payload["variant"]) is not int or payload["variant"] not in (0, 1, 2):
         raise ValueError("方案编号须为 0、1 或 2。")
+    if "gym_id" in payload:
+        from .example_gym import get_region
+        region = get_region(payload["gym_id"], payload["region_id"])
+        if region["wall_profile"] != payload["wall_profile"]:
+            raise ValueError("所选墙形与定线区域不一致。")
     return dict(payload)
 
 
@@ -82,18 +87,25 @@ def build_request(payload):
             + (options["variant"] - 1) * (3. if foot else 6.) + rng.uniform(-2., 2.), 3)
     fitted = fit_installed_footprints(request, "fit generated proposal inside the selected wall panel")
     spacing = repair_panel_spacing(request)
+    region_fit = []
+    if "gym_id" in options:
+        from .example_gym import apply_gym
+        region_fit = apply_gym(request, options["gym_id"], options["region_id"])
     adjustments = [{"placement_id": after["id"], "before": before, "after": copy.deepcopy(after)}
         for before, after in zip(original, request["reference_layout"]) if before != after]
     brief = {**options, "labels": {"wall": WALLS[options["wall_profile"]], "style": style_label,
         "difficulty": difficulty_label}, "generator_version": VERSION,
         "generator_code_hash": "sha256:" + hashlib.sha256(Path(__file__).read_bytes()
-            + Path(__file__).with_name("support_refinement.py").read_bytes()).hexdigest(),
+            + Path(__file__).with_name("support_refinement.py").read_bytes()
+            + Path(__file__).with_name("example_gym.py").read_bytes()).hexdigest(),
         "difficulty_policy": {"horizontal_spread": spread, "support": "progressively enable installed foot support; declared hand-hold standing faces remain available"},
         "variant_policy": {"corridor_bend_m": bend, "position_jitter_m": [.018, .012], "rotation_jitter_deg": 2.},
-        "adjustments": adjustments, "panel_fit": fitted, "spacing": spacing, "limitations": LIMITATIONS,
+        "adjustments": adjustments, "panel_fit": fitted, "region_fit": region_fit, "spacing": spacing, "limitations": LIMITATIONS,
         "support_policy": "Check several independently searched betas; feed failed release/landing contact directions and moment arms into bounded layout proposals; independently search and check every proposal; retain only a better geometry-first static-support rank.",
         "support_adjustments": [], "support_proposal": "seed"}
     request["generation_brief"] = brief
+    if "gym_id" in options:
+        brief["gym_version"] = request["route_constraints"]["installation_region"]["gym_version"]
     request["setting_design"]["intent"] = f"{style_label} · {difficulty_label}；{LIMITATIONS[0]}"
     validate_request(request)
     return request
@@ -168,7 +180,10 @@ def generate_option(payload, *, seconds=SECONDS):
     deadline = time.perf_counter() + seconds
     label = "方案 " + "ABC"[options["variant"]]
     mask, pool = initial_contact_mask(request)
-    request["route_constraints"] = {"allowed_contacts": mask}
+    region = request.get("route_constraints", {}).get("installation_region")
+    if region:
+        pool = [pid for pid in pool if pid in region["editable_placement_ids"]]
+    request.setdefault("route_constraints", {})["allowed_contacts"] = mask
     best, best_request, attempts = None, None, []
     stages = sorted({0, min(3, len(pool)), len(pool)})
     # Reserve time for feedback, instead of spending the whole budget on a
@@ -211,6 +226,13 @@ def generate_option(payload, *, seconds=SECONDS):
             proposed["generation_brief"]["support_proposal"] = proposal["label"]
             proposed["generation_brief"]["support_adjustments"] = proposal["changes"]
             proposed["generation_brief"]["support_rationale"] = proposal["rationale"]
+            try:
+                validate_request(proposed)
+            except ValueError as exc:
+                refinement.append({"proposal": proposal["label"], "changes": proposal["changes"],
+                    "rationale": proposal["rationale"], "support": None, "accepted": False,
+                    "rejection": str(exc)})
+                continue
             # Every proposed layout is searched from scratch. No old movement
             # order is carried over to make moved holds appear useful.
             remaining_proposals = len(proposals)-index

@@ -33,6 +33,8 @@ export function draftSupportSummary(candidate: Candidate, evaluation?: Evaluatio
 }
 
 export interface DraftBrief {
+  gym_id?: string;
+  region_id?: string;
   wall_profile: 'overhang' | 'roof' | 'dihedral' | 'arete';
   style: 'balance' | 'power' | 'sustained';
   difficulty: 'easy' | 'medium' | 'hard';

@@ -1,0 +1,49 @@
+{
+  "date": "2026-10-16",
+  "scope": "Example gym phase 1: predefined regions, local records, no physics certification",
+  "browser": "Codex in-app browser at localhost:5174",
+  "status": "pass",
+  "original_record_id": "b4ec17cb-e4c1-4635-9578-cbcb88032cea",
+  "imported_record_id": "05474fd2-07f1-46ef-8e83-0c5293879816",
+  "checks": [
+    "Whole gym exposes three physical regions; canvas selection focuses real surfaces",
+    "Live overhang/balance/medium generation returns three independently searched options",
+    "B hold O1 rotated +15 degrees creates revision 2 and preserves original",
+    "Three options, selected B revision, name and notes survive reload",
+    "New roof region saves separately and restores after reload",
+    "Records survive backend restart; reopening returns selected B revision",
+    "Restored revision can be rechecked; result saved and support failures remain visible",
+    "Export retains current option revisions and region constraints; import creates an independent one-option record",
+    "Desktop 1440, mobile 390 and actual 561 layouts inspected without overflow",
+    "Initialization blocks competing records/new/import navigation",
+    "409 copy recovery, serialized saves and newer edits covered by web pure checks"
+  ],
+  "manual_recheck": {
+    "geometry": "pass",
+    "release_failures": 8,
+    "landing_failures": 7
+  },
+  "python": {
+    "passed": 460,
+    "skipped": 2,
+    "evidence": "python-verification.json"
+  },
+  "web": {
+    "scripts_passed": 13,
+    "build": "pass",
+    "known_warning": "Existing main bundle exceeds 500 kB"
+  },
+  "design_review": {
+    "disposition": "ship",
+    "scope": "Example gym homepage and records; established Operate workbench",
+    "material_fixes": [],
+    "detector": []
+  },
+  "record_artifact": "browser-record.json.gz",
+  "screenshots": [
+    "screenshots/desktop.jpg",
+    "screenshots/mobile.jpg",
+    "screenshots/overview-561.jpg",
+    "screenshots/records-561.jpg"
+  ]
+}

@@ -2,6 +2,8 @@
 // thumbnails. Fixtures and source asset registration are prepared separately.
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
+import { execFileSync } from 'node:child_process';
+import { fileURLToPath } from 'node:url';
 import * as THREE from 'three';
 import { registerHoldAssetLibrary, resolveHoldAsset } from '../src/hold-assets.ts';
 import { createHoldModel, createGripOverlay, disposeObject } from '../src/hold-models.ts';
@@ -10,10 +12,24 @@ const library = JSON.parse(fs.readFileSync(new URL('../../assets/holds/library.j
 registerHoldAssetLibrary(library);
 const families = [...new Set(library.assets.map(asset => asset.family))], missingFamilies = ['jug', 'crimp', 'pinch', 'sloper', 'pocket'].filter(family => !families.includes(family));
 assert.ok(library.assets.length > 0, 'registered assets required');
-if (!process.argv.includes('--allow-partial')) assert.deepEqual(missingFamilies, [], 'five registered families');
+// Current contract: four licensed, prepared mesh families; pocket is an
+// explicitly declared procedural fallback. Missing any other family remains
+// a failure, including when the historical --allow-partial flag is supplied.
+assert.deepEqual(missingFamilies.filter(family => family !== 'pocket'), [], 'jug, crimp, pinch and sloper must have registered meshes');
 let models = 0, surfaces = 0, sampledPatchVertices = 0, maxVertexError = 0, maxAnchorError = 0, maxPatchError = 0;
-let fixtureAssetInstances = 0;
+let fixtureAssetInstances = 0, explicitTemplateFallbacks = 0;
 const results = [];
+function verifyFallback(hold, family, label) {
+  assert.equal(hold.type, family);
+  assert.ok(typeof hold.asset_fallback_reason === 'string' && hold.asset_fallback_reason.trim(), `${label}: missing mesh has an explicit reason`);
+  for (const key of ['asset_id', 'asset_geometry_sha256', 'asset_record_sha256', 'asset_scale', 'asset_source']) assert.ok(!(key in hold), `${label}: fallback must not claim ${key}`);
+  assert.ok(hold.grip_surfaces.every(surface => !surface.mesh_anchor), `${label}: no fabricated source-triangle anchors`);
+  assert.equal(resolveHoldAsset(hold).kind, 'template', `${label}: renderer recognises original template`);
+  const model = createHoldModel(hold);
+  assert.equal(model.userData.modelSource, 'original_procedural_synthetic', `${label}: template cannot be reported as external geometry`);
+  assert.ok(model.children.some(object => object.isMesh && object.userData.resin), `${label}: explicit fallback renders geometry`);
+  disposeObject(model); explicitTemplateFallbacks++;
+}
 function inventoryHold(asset, scale) {
   const grips = asset.grip_surfaces.map(surface => ({ ...surface, position: surface.position.map(value => value * scale), radii: surface.radii.map(value => value * scale) }));
   return { id: `verification-${asset.id}-${scale}`, type: asset.family, width: asset.width * scale, height: asset.height * scale, depth: asset.depth * scale,
@@ -80,6 +96,28 @@ for (const asset of library.assets) for (const scale of [1, .65]) {
   results.push({ asset: asset.id, family: asset.family, scale, vertices: positions.count, triangles: asset.geometry.triangles.length, surfaces: hold.grip_surfaces.length });
   disposeObject(model); disposeObject(ghost); models++;
 }
+// Inspect fresh runtime inventories: archived fixture metadata alone cannot
+// prove that today's generation still labels absent mesh families honestly.
+const root = fileURLToPath(new URL('../../', import.meta.url));
+const localPython = fileURLToPath(new URL('../../.venv/bin/python', import.meta.url));
+const currentInventories = JSON.parse(execFileSync(process.env.BETAR_PYTHON || (fs.existsSync(localPython) ? localPython : 'python3'), ['-c', String.raw`
+import json
+from boulderlab.engine import default_request
+programs = ('diagonal_balance', 'opposing_sidepulls', 'roof_exit')
+print(json.dumps({program: default_request(profile='setting', setting_program=program,
+    wall_profile='roof' if program == 'roof_exit' else 'overhang', hold_source='assets', budget=1)['scene']['inventory']
+    for program in programs}))
+`], { cwd: root, encoding: 'utf8' }));
+for (const [program, inventory] of Object.entries(currentInventories)) {
+  const imported = inventory.filter(hold => hold.asset_id);
+  assert.deepEqual(new Set(imported.map(hold => hold.type)), new Set(families), `${program}: current generator uses every registered external family`);
+  for (const hold of imported) assert.equal(resolveHoldAsset(hold).kind, 'asset', `${program}/${hold.id}: current inventory resolves the actual source`);
+  for (const family of missingFamilies) {
+    const fallback = inventory.filter(hold => hold.type === family);
+    assert.ok(fallback.length > 0, `${program}: absent ${family} remains an explicit usable template`);
+    for (const hold of fallback) verifyFallback(hold, family, `${program}/${hold.id}`);
+  }
+}
 if (process.argv.includes('--fixtures')) for (const program of ['diagonal_balance', 'opposing_sidepulls', 'roof_exit']) {
   const bundle = JSON.parse(fs.readFileSync(new URL(`../../fixtures/setting-${program}-bundle.json`, import.meta.url), 'utf8'));
   assert.equal(bundle.request.setting_design.hold_source, 'assets', `${program}: fresh asset example required`);
@@ -103,4 +141,4 @@ if (process.argv.includes('--fixtures')) for (const program of ['diagonal_balanc
     fixtureAssetInstances++;
   }
 }
-console.log(JSON.stringify({ status: 'pass', scope: missingFamilies.length ? 'available assets only; family coverage incomplete' : 'five-family registry', missing_families: missingFamilies, assets: library.assets.length, models, surfaces, fixture_asset_instances: fixtureAssetInstances, sampled_patch_vertices: sampledPatchVertices, max_vertex_error_m: maxVertexError, max_anchor_error_m: maxAnchorError, max_patch_error_m: maxPatchError, checks: ['registered mesh topology and uniform scale', 'real mesh contact anchors and ray picking', 'grip patches stay on source triangles', 'side and incut annotations do not project to outer shell', 'comparison geometry parity', 'missing, hash-mismatched and distorted assets omitted', 'stripped references with retained mesh markers cannot become templates', ...(fixtureAssetInstances ? ['all three asset inventories bind geometry and grip annotations'] : [])], results }, null, 2));
+console.log(JSON.stringify({ status: 'pass', scope: missingFamilies.length ? 'four external mesh families plus explicitly synthetic pocket' : 'five-family registry', missing_families: missingFamilies, assets: library.assets.length, models, surfaces, fixture_asset_instances: fixtureAssetInstances, current_inventories: Object.keys(currentInventories).length, explicit_template_fallbacks: explicitTemplateFallbacks, sampled_patch_vertices: sampledPatchVertices, max_vertex_error_m: maxVertexError, max_anchor_error_m: maxAnchorError, max_patch_error_m: maxPatchError, checks: ['registered mesh topology and uniform scale', 'real mesh contact anchors and ray picking', 'grip patches stay on source triangles', 'side and incut annotations do not project to outer shell', 'comparison geometry parity', 'missing, hash-mismatched and distorted assets omitted', 'stripped references with retained mesh markers cannot become templates', 'three fresh inventories bind current asset registry', 'missing pocket mesh is explicitly synthetic without external references or triangle anchors', ...(fixtureAssetInstances ? ['all three asset inventories bind geometry and grip annotations'] : [])], results }, null, 2));

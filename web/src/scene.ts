@@ -9,6 +9,8 @@ import { inversePoint, transformPoint, tryContactFrame, tryInstallationFrame, tr
 import type { Frame, PlacementContext } from './placement-geometry';
 import { getScenePalette, defaultPaletteId, presentationHold } from './scene-palette';
 import type { ScenePalette } from './scene-palette';
+import { gymEditableIds, gymPatchPoints, gymRegionPoints } from './gym';
+import type { ExampleGym } from './gym';
 
 const limbColors = { LH: 0xad654d, RH: 0x597c88, LF: 0x6e8052, RF: 0xaf8a42 };
 type Drag = { id: string; pointer: number; u: number; v: number; frame: Frame; offsetU: number; offsetV: number; x: number; y: number; moved: boolean };
@@ -25,6 +27,12 @@ export class WallView {
   private comparisonGroup = new THREE.Group();
   private pathGroup = new THREE.Group();
   private markerGroup = new THREE.Group();
+  private gymRegionGroup = new THREE.Group();
+  private gymRegionPickables: THREE.Object3D[] = [];
+  private gym?: ExampleGym;
+  private gymRegionId?: string;
+  private gymOverview = false;
+  private onRegionSelect?: (id: string) => void;
   private raycaster = new THREE.Raycaster();
   private pickables: THREE.Object3D[] = [];
   private labels: CSS2DObject[] = [];
@@ -69,7 +77,7 @@ export class WallView {
     this.floorMaterial.color.setHex(this.palette.floor);
     const floor = new THREE.Mesh(new THREE.PlaneGeometry(30, 30), this.floorMaterial);
     floor.rotation.x = -Math.PI / 2; floor.position.y = -.16; floor.receiveShadow = true;
-    this.scene.add(floor, this.wallGroup, this.poseGroup, this.forceGroup, this.comparisonGroup, this.pathGroup, this.markerGroup);
+    this.scene.add(floor, this.wallGroup, this.poseGroup, this.forceGroup, this.comparisonGroup, this.pathGroup, this.markerGroup, this.gymRegionGroup);
     const canvas = this.renderer.domElement;
     canvas.addEventListener('pointerdown', (event) => this.pointerDown(event), true);
     canvas.addEventListener('pointermove', (event) => this.pointerMove(event), true);
@@ -132,8 +140,8 @@ export class WallView {
   }
   private pointerDown(event: PointerEvent) {
     this.clickStart = { x: event.clientX, y: event.clientY };
-    if (!this.editMode || this.request?.mode === 'fixed' || !this.onMove || event.button !== 0 || this.drag) return;
-    this.setRay(event); const hit = this.raycaster.intersectObjects(this.pickables.filter(object => this.holdGroups.get(String(object.userData.id))?.visible), false)[0];
+    if (this.gymOverview || this.candidate?.read_only === true || !this.editMode || this.request?.mode === 'fixed' || !this.onMove || event.button !== 0 || this.drag) return;
+    this.setRay(event); const hit = this.raycaster.intersectObjects(this.editablePickables(), false)[0];
     const id = hit?.object.userData.id as string | undefined;
     const placement = this.candidate?.placements.find((p) => p.id === id);
     if (!id || !placement) return;
@@ -161,15 +169,26 @@ export class WallView {
       this.cancelDrag(); if (moved && this.editMode && this.request?.mode !== 'fixed') this.onMove?.(drag.id, drag.u, drag.v); return;
     }
     if (Math.hypot(event.clientX - this.clickStart.x, event.clientY - this.clickStart.y) > 5) return;
-    this.setRay(event); const hit = this.raycaster.intersectObjects(this.pickables.filter(object => this.holdGroups.get(String(object.userData.id))?.visible), false)[0];
+    this.setRay(event);
+    if (this.gym && this.gymOverview) {
+      const hit = this.raycaster.intersectObjects(this.gymRegionPickables, false)[0];
+      if (hit) this.onRegionSelect?.(String(hit.object.userData.regionId));
+      return;
+    }
+    const hit = this.raycaster.intersectObjects(this.editablePickables(), false)[0];
     const id = hit?.object.userData.id || this.nearestVisibleHold(event); if (id) this.onSelect(String(id));
+  }
+  private editablePickables() {
+    if (this.candidate?.read_only === true) return [];
+    const editable = gymEditableIds(this.request);
+    return this.pickables.filter(object => (!editable || editable.has(String(object.userData.id))) && this.holdGroups.get(String(object.userData.id))?.visible);
   }
   private nearestVisibleHold(event: PointerEvent): string | undefined {
     // A small click allowance helps tiny footholds without changing drag geometry.
     const bounds = this.renderer.domElement.getBoundingClientRect();
     const nearby: { id: string; point: THREE.Vector3; distance: number; depth: number }[] = [];
     this.scene.updateMatrixWorld(true); this.camera.updateMatrixWorld(true);
-    for (const object of this.pickables) {
+    for (const object of this.editablePickables()) {
       const id = String(object.userData.id);
       if (!(object instanceof THREE.Mesh) || !object.userData.resin || !object.visible || !this.holdGroups.get(id)?.visible) continue;
       const point = new THREE.Box3().setFromObject(object).getCenter(new THREE.Vector3()), projected = point.clone().project(this.camera);
@@ -195,7 +214,7 @@ export class WallView {
     if (this.renderer.domElement.hasPointerCapture(drag.pointer)) this.renderer.domElement.releasePointerCapture(drag.pointer);
     this.syncPlacementFrames(); this.setRouteOnly(this.routeOnly);
     this.controls.enabled = true; this.renderer.domElement.style.cursor = this.editMode ? 'grab' : '';
-    this.poseGroup.visible = true; this.forceGroup.visible = this.showForces; this.pathGroup.visible = this.routePath; this.markerGroup.visible = true;
+    this.syncViewVisibility();
   }
   private holdMesh(hold: Hold, placement: Placement, context: PlacementContext, ghost = false) {
     const frame = tryPlacementFrame(placement, context); if (!frame) return;
@@ -246,7 +265,7 @@ export class WallView {
       const matrix = new THREE.Matrix4();
       positions.forEach((position, i) => { matrix.compose(position, wall.quaternion, new THREE.Vector3(1, 1, 1)); holes.setMatrixAt(i, matrix); });
       this.wallGroup.add(holes);
-      this.wallGroup.add(this.label(panel.label, new THREE.Vector3(...transformPoint(frame, [0, panel.height - .1, .02])), 'panel-label'));
+      if (!this.gym) this.wallGroup.add(this.label(panel.label, new THREE.Vector3(...transformPoint(frame, [0, panel.height - .1, .02])), 'panel-label'));
     });
     const bounds = this.panelBounds()!, size = bounds.getSize(new THREE.Vector3()), centre = bounds.getCenter(new THREE.Vector3());
     const pad = new THREE.Mesh(new RoundedBoxGeometry(size.x + .6, .14, Math.max(2.6, size.z + 2), 3, .04), new THREE.MeshStandardMaterial({ color: this.palette.mat, roughness: .97, bumpMap: grainTexture(), bumpScale: .00045 }));
@@ -283,12 +302,63 @@ export class WallView {
     const holdMap = new Map(request.scene.inventory.map((hold) => [hold.id, hold]));
     candidate.placements.forEach((placement) => { const hold = holdMap.get(placement.inventory_id); if (hold) { const mesh = this.holdMesh(hold, placement, this.context()); if (mesh) this.wallGroup.add(mesh); } });
     comparison?.placements.filter(placement => this.usedPlacements(comparison).visible.has(placement.id)).forEach((placement) => { const hold = holdMap.get(placement.inventory_id); if (hold) { const mesh = this.holdMesh(hold, placement, this.context(comparison.placements), true); if (mesh) this.comparisonGroup.add(mesh); } });
-    this.updatePose(); this.updateMechanics(); this.drawRoute(); this.drawMarkers(); this.select(this.selected); this.setRouteOnly(this.routeOnly);
+    this.updatePose(); this.updateMechanics(); this.drawRoute(); this.drawMarkers(); this.drawGymRegions(); this.select(this.selected); this.setRouteOnly(this.routeOnly);
+  }
+  setGym(gym: ExampleGym | undefined, regionId?: string, onRegionSelect?: (id: string) => void) {
+    this.gym = gym; this.gymRegionId = regionId; this.onRegionSelect = onRegionSelect;
+    if (!gym) this.gymOverview = false;
+    this.controls.maxDistance = gym ? 80 : 18;
+    this.drawGymRegions();
+  }
+  setGymRegion(id?: string, focus = true) {
+    this.cancelDrag(); this.gymRegionId = this.gym?.regions.some(region => region.id === id) ? id : undefined;
+    if (focus) this.gymOverview = !this.gymRegionId;
+    this.drawGymRegions();
+    if (focus) this.perspective();
+  }
+  setGymOverview(value: boolean) {
+    this.cancelDrag(); this.gymOverview = !!this.gym && value; this.drawGymRegions(); this.perspective();
+  }
+  private drawGymRegions() {
+    this.clear(this.gymRegionGroup); this.gymRegionPickables = [];
+    this.syncViewVisibility(); this.refreshLabelVisibility();
+    if (!this.gym) return;
+    for (const region of this.gym.regions) {
+      const selected = region.id === this.gymRegionId;
+      if (!this.gymOverview && !selected) continue;
+      for (const patch of region.patches) {
+        const points = gymPatchPoints(this.gym.scene, patch, .006).map(point => new THREE.Vector3(...point));
+        if (points.length !== 4) continue;
+        const geometry = new THREE.BufferGeometry().setFromPoints(points);
+        geometry.setIndex([0, 1, 2, 0, 2, 3]); geometry.computeVertexNormals();
+        const face = new THREE.Mesh(geometry, new THREE.MeshBasicMaterial({ color: this.palette.route, transparent: true, opacity: selected ? .09 : .025, depthWrite: false, side: THREE.DoubleSide }));
+        face.userData.regionId = region.id; face.userData.surfaceOverlay = true;
+        this.gymRegionGroup.add(face); this.gymRegionPickables.push(face);
+        const outline = new THREE.Line(new THREE.BufferGeometry().setFromPoints([...points, points[0]]), new THREE.LineBasicMaterial({ color: selected ? this.palette.route : this.palette.seam, transparent: true, opacity: selected ? .75 : .4 }));
+        this.gymRegionGroup.add(outline);
+      }
+      if (!this.gymOverview) continue;
+      // Anchor labels to the entrance face, not a screen-space box that could
+      // falsely suggest a folded region is a single flat installation plane.
+      const first = region.patches[0], panel = this.gym.scene.wall_panels?.find(item => item.id === first?.wall_panel_id);
+      if (!first || !panel) continue;
+      const button = document.createElement('button'); button.type = 'button'; button.className = `gym-region-label${selected ? ' selected' : ''}`;
+      button.textContent = region.label; button.setAttribute('aria-label', `选择${region.label}`); button.setAttribute('aria-pressed', String(selected));
+      button.style.pointerEvents = 'auto'; button.addEventListener('click', () => this.onRegionSelect?.(region.id));
+      const label = new CSS2DObject(button);
+      label.position.set(...transformPoint(panelFrame(this.gym.scene.angle_deg, panel), [(first.u_min + first.u_max) / 2, first.v_min + (first.v_max - first.v_min) * .22, .12]));
+      this.gymRegionGroup.add(label);
+    }
+  }
+  private syncViewVisibility() {
+    const local = !this.gymOverview && !this.drag?.moved;
+    this.poseGroup.visible = local; this.forceGroup.visible = local && this.showForces;
+    this.pathGroup.visible = local && this.routePath; this.markerGroup.visible = local;
   }
   setPalette(id: string) { this.palette = getScenePalette(id); this.floorMaterial.color.setHex(this.palette.floor); this.host.style.backgroundColor = this.palette.background; }
   setStep(step: number) { this.step = step; this.updatePose(); this.updateMechanics(); this.setRouteOnly(this.routeOnly); }
   setLabels(value: boolean) { this.showLabels = value; this.refreshLabelVisibility(); }
-  setSurfaces(value: boolean) { this.showSurfaces = value; this.gripOverlays.forEach(overlay => { overlay.visible = value; }); }
+  setSurfaces(value: boolean) { this.showSurfaces = value; const editable = gymEditableIds(this.request); this.gripOverlays.forEach((overlay, id) => { overlay.visible = value && (!editable || editable.has(id)); }); }
   setBody(value: boolean) { this.showBody = value; this.updatePose(); }
   setForces(value: boolean) { this.showForces = value; this.updateMechanics(); }
   setEditMode(value: boolean) { this.cancelDrag(); this.editMode = value; this.renderer.domElement.style.cursor = value && this.request?.mode !== 'fixed' ? 'grab' : ''; }
@@ -325,7 +395,7 @@ export class WallView {
       group.visible = !!allowed || layoutOnly || !value || visible.has(id);
       const placement = this.candidate?.placements.find(p => p.id === id);
       const structural = placement && inventory.get(placement.inventory_id)?.type === 'volume';
-      const inRoute = allowed ? allowed.has(id) : layoutOnly || used.has(id);
+      const inRoute = this.candidate?.read_only !== true && (allowed ? allowed.has(id) : layoutOnly || used.has(id));
       const tint = new THREE.Color(structural ? this.palette.volume : inRoute ? this.palette.route : this.palette.unused);
       group.traverse(object => {
         if (!(object instanceof THREE.Mesh) || !(object.material instanceof THREE.MeshStandardMaterial) || (!object.userData.resin && !object.userData.gripSurface)) return;
@@ -346,13 +416,14 @@ export class WallView {
       if (contact) (limb.endsWith('H') ? hand : foot).add(contact.placement_id);
     }));
     const currentContacts = new Set(Object.values(this.candidate?.states[this.step]?.contacts || {}).flatMap(contact => contact ? [contact.placement_id] : []));
+    const editable = gymEditableIds(this.request);
     this.labels.forEach(label => {
       const id = label.element.dataset.placement || '';
       const footOnly = !hand.has(id) && (foot.has(id) || label.element.dataset.smallFoot === 'true');
-      label.visible = this.showLabels && (!footOnly || id === this.selected || currentContacts.has(id));
+      label.visible = this.candidate?.read_only !== true && !this.gymOverview && (!editable || editable.has(id)) && this.showLabels && (!footOnly || id === this.selected || currentContacts.has(id));
     });
   }
-  setRoutePath(value: boolean) { this.routePath = value; this.pathGroup.visible = value && !this.drag?.moved; }
+  setRoutePath(value: boolean) { this.routePath = value; this.syncViewVisibility(); }
   private drawMarkers() {
     this.clear(this.markerGroup);
     if (!this.request || !this.candidate) return;
@@ -394,7 +465,7 @@ export class WallView {
     }
   }
   private drawRoute() {
-    this.clear(this.pathGroup); this.pathGroup.visible = this.routePath; if (!this.candidate || !this.request) return;
+    this.clear(this.pathGroup); this.syncViewVisibility(); if (!this.candidate || !this.request) return;
     const stateMap = new Map(this.candidate.states.map((s) => [s.id, s])), placementMap = new Map(this.candidate.placements.map((p) => [p.id, p])), holdMap = new Map(this.request.scene.inventory.map((h) => [h.id, h]));
     this.candidate.events.filter((event) => event.limb.endsWith('H')).forEach((event) => {
       const from = stateMap.get(event.from_state)?.contacts[event.limb], to = stateMap.get(event.to_state)?.contacts[event.limb]; if (!from || !to) return;
@@ -408,6 +479,8 @@ export class WallView {
     });
   }
   select(id?: string) {
+    if (this.candidate?.read_only === true) id = undefined;
+    const editable = gymEditableIds(this.request); if (id && editable && !editable.has(id)) id = undefined;
     this.selected = id; this.baseMaterials.forEach((materials, key) => materials.forEach((material) => { material.emissive.setHex(key === id ? 0x603120 : 0); material.emissiveIntensity = .24; }));
     this.labels.forEach((label) => label.element.classList.toggle('selected', label.element.dataset.placement === id));
     this.setRouteOnly(this.routeOnly);
@@ -468,7 +541,7 @@ export class WallView {
   }
 
   private updateMechanics() {
-    this.clear(this.forceGroup); this.forceGroup.visible = this.showForces && !this.drag?.moved;
+    this.clear(this.forceGroup); this.syncViewVisibility();
     if (!this.showForces || !this.candidate || !this.evaluation) return;
     const current = this.evaluation.mechanics_report?.states.find(item => item.state_id === this.candidate!.states[this.step]?.id);
     // Required forces for an infeasible capacity solve are diagnostics, never drawn as a valid equilibrium.
@@ -531,14 +604,20 @@ export class WallView {
     size.set(Math.max(size.x + .7, 1.35), Math.max(size.y + .9, 1.8), size.z + .3);
     return bounds.setFromCenterAndSize(centre, size);
   }
-  private wallTarget() { return this.portraitRouteBounds()?.getCenter(new THREE.Vector3()) || this.panelBounds()?.getCenter(new THREE.Vector3()) || this.wallPosition(0, (this.request?.scene.height || 3) / 2, .08); }
+  private gymFocusBounds(): THREE.Box3 | undefined {
+    if (!this.gym) return;
+    if (this.gymOverview || !this.gymRegionId) return this.panelBounds();
+    const points = gymRegionPoints(this.gym, this.gymRegionId);
+    return points.length ? new THREE.Box3().setFromPoints(points.map(point => new THREE.Vector3(...point))).expandByScalar(.22) : this.panelBounds();
+  }
+  private wallTarget() { return this.gymFocusBounds()?.getCenter(new THREE.Vector3()) || this.portraitRouteBounds()?.getCenter(new THREE.Vector3()) || this.panelBounds()?.getCenter(new THREE.Vector3()) || this.wallPosition(0, (this.request?.scene.height || 3) / 2, .08); }
   front() {
     this.cancelDrag(); const target = this.wallTarget(), direction = this.wallPosition(0, 0, 1).normalize();
     const distance = this.fitDistance(direction);
     this.controls.target.copy(target); this.camera.position.copy(target).addScaledVector(direction, distance); this.controls.update();
   }
   private fitDistance(direction = this.camera.position.clone().sub(this.controls.target).normalize()) {
-    const routeBounds = this.portraitRouteBounds();
+    const routeBounds = this.gymFocusBounds() || this.portraitRouteBounds();
     if (routeBounds) {
       const target = routeBounds.getCenter(new THREE.Vector3()), right = new THREE.Vector3().crossVectors(this.camera.up, direction).normalize();
       const up = new THREE.Vector3().crossVectors(direction, right).normalize();
@@ -557,8 +636,8 @@ export class WallView {
   perspective() {
     this.cancelDrag();
     const target = this.wallTarget();
-    const profile = this.request?.setting_design?.wall_profile;
-    const direction = profile === 'roof' ? new THREE.Vector3(.5, -.1, .86)
+    const profile = this.gym?.regions.find(region => region.id === this.gymRegionId)?.wall_profile || this.request?.setting_design?.wall_profile;
+    const direction = this.gymOverview ? new THREE.Vector3(.12, .1, .99) : profile === 'roof' ? new THREE.Vector3(.5, -.1, .86)
       : profile === 'dihedral' || profile === 'arete' ? new THREE.Vector3(.42, .1, .9)
       : new THREE.Vector3(.28, .1, .955);
     direction.normalize(); const distance = this.fitDistance(direction);
